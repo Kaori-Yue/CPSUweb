@@ -1,0 +1,105 @@
+code,
+kbd,
+pre,
+.img-rounded,
+.img-thumbnail,
+.img-circle,
+.form-control,
+.btn,
+.btn-link,
+.dropdown-menu,
+.list-group-item,
+.input-group-addon,
+.input-group-btn,
+.nav-tabs a,
+.nav-pills a,
+.navbar,
+.navbar-toggle,
+.icon-bar,
+.breadcrumb,
+.pagination,
+.pager *,
+.label,
+.badge,
+.jumbotron,
+.thumbnail,
+.alert,
+.progress,
+.panel,
+.well,
+.modal-content,
+.tooltip-inner,
+.popover,
+.popover-title,
+.carousel-indicators li {
+    border-radius:0 !important;
+}
+
+body {
+    background: #ffffff;
+}
+
+.navbar {
+    background: #40826D;
+    margin-bottom: 0;
+}
+
+.nav > li > a {
+    color: #ffffff;
+}
+
+.nav > li > a:hover, .nav > li > a:active, .nav > li > a:focus {
+    background: #378a70;
+    /*color: #40826D;*/
+}
+
+.navbar-brand {
+    color: #ffffff;
+}
+
+.navbar-brand:hover, .navbar-brand:focus {
+    background: #378a70;
+    color: #FFFFFF;
+}
+
+.icon-bar {
+    background: #ffffff;
+}
+
+.row {
+    margin: 0;
+}
+
+div {
+    margin: 0;
+    padding: 0;
+}
+.row > .container {
+    padding: 8% 0 8% 0;
+}
+
+.col-md-6 {
+    padding: 0;
+}
+
+.panel {
+    margin-top: 2%;
+}
+
+.panel-primary > .panel-heading {
+    text-align: center;
+    background: #0375b4;
+    color: #ffffff;
+}
+
+.panel-body {
+    padding: 5%;
+}
+
+.panel-footer{
+    text-align: center;
+}
+
+.btn-primary {
+    background: #0375b4;
+}
