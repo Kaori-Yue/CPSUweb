@@ -17,6 +17,10 @@
 
 Route::get('/', 'HomeController@index');
 
+Route::get('image', 'ImageController@index');
+Route::get('image/show/{id}', 'ImageController@show');
+Route::post('image', 'ImageController@store');
+
 Route::get('teacher', 'TeacherController@index');
 Route::post('teacher', 'TeacherController@store');
 Route::get('teacher/create', 'TeacherController@create');

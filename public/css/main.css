@@ -3,7 +3,7 @@ kbd,
 pre,
 .img-rounded,
 .img-thumbnail,
-.img-circle,
+/*.img-circle,*/
 .form-control,
 .btn,
 .btn-link,
@@ -36,12 +36,13 @@ pre,
 }
 
 body {
+    font-family: 'Kanit', sans-serif;
     background: #ffffff;
 }
 
 .navbar {
     background: #40826D;
-    margin-bottom: 0;
+    margin-bottom: 200%;
 }
 
 .nav > li > a {
@@ -74,8 +75,22 @@ div {
     margin: 0;
     padding: 0;
 }
+
+.container {
+    margin-top: 3%;
+}
+
+.navbar > .container {
+    margin-top: 0;
+}
+
 .row > .container {
-    padding: 8% 0 8% 0;
+    padding: 8% 1% 8% 1%;
+}
+
+.row > .container > .jumbotron {
+    background: #0375b4;
+    padding: 0;
 }
 
 .col-md-6 {
@@ -87,9 +102,12 @@ div {
 }
 
 .panel-primary > .panel-heading {
-    text-align: center;
     background: #0375b4;
     color: #ffffff;
+}
+
+.panel-heading {
+    text-align: center;
 }
 
 .panel-body {
@@ -102,4 +120,10 @@ div {
 
 .btn-primary {
     background: #0375b4;
+}
+
+.teacher-card {
+    border: solid;
+    margin-top: 1%;
+    margin-bottom: 1%;
 }

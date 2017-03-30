@@ -2,7 +2,8 @@
 
 @section('content')
     <div class="container" {{--style="border: solid"--}}>
-        {!! Form::open(['url' => 'teacher', 'class' => 'form-horizontal']) !!}
+        <div class="row">
+        {!! Form::open(['url' => 'teacher', 'class' => 'form-horizontal', 'files' => 'true']) !!}
         <div class="panel panel-primary">
             <div class="panel-heading">
                 <h1>Create Teacher</h1>
@@ -48,11 +49,16 @@
                     {!! Form::label('status', 'Status') !!}
                     {!! Form::select('status', $status, null, ['class' => 'form-control']) !!}
                 </div>
+                <div class="form-group">
+                    {!! Form::label('image', 'Image') !!}
+                    {!! Form::file('image', ['class' => 'form-control']) !!}
+                </div>
             </div>
             <div class="panel-footer">
                 {!! Form::submit('Finish', ['class' => 'btn btn-primary btn-lg']) !!}
             </div>
         </div>
         {!! Form::close() !!}
+        </div>
     </div>
 @stop

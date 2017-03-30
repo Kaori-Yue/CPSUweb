@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use App\Helper\TokenGenerator;
 use App\Teacher;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\File;
+use Illuminate\Support\Facades\Storage;
 
 class TeacherController extends Controller
 {
@@ -18,7 +20,6 @@ class TeacherController extends Controller
     {
         //$status = Teacher::pluck('status', 'status');
         $status = [
-            null => '',
             'duty' => 'Duty',
             'retire' => 'Retire',
             'study' => 'Study',
@@ -29,13 +30,30 @@ class TeacherController extends Controller
 
     public function store(Request $request)
     {
+        $image = $request->file('image');
+        $file = self::storeFile($image);
+
         $teacher = $request->all();
         $teacher['token'] = (new TokenGenerator())->generate(6);
         $teacher['password'] = password_hash($teacher['name_en'], PASSWORD_DEFAULT);
-        $teacher['image'] = 1;
+        $teacher['image'] = $file->id;
 
         $teacher = Teacher::create($teacher);
-
         return $teacher;
+    }
+
+    public function storeFile($file)
+    {
+        $ex = $file->getClientOriginalExtension();
+        Storage::disk('local')->put($file->getFilename(). '.' . $ex, File::get($file));
+
+        $fileRecord = [
+            'name' => $file->getFilename(). '.' . $ex,
+            'mime' => $file->getClientMimeType(),
+            'original_name' => $file->getClientOriginalName(),
+        ];
+
+        $file = \App\File::create($fileRecord);
+        return $file;
     }
 }
