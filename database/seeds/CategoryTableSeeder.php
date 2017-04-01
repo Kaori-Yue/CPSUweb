@@ -13,7 +13,7 @@ class CategoryTableSeeder extends Seeder
     public function run()
     {
         DB::table('category')->insert([
-            'name' => 'news',
+            'name' => 'News',
             'slug' => 'news',
             'description' => 'this tag for news in department',
             'created_at' => Carbon::now(),
@@ -21,7 +21,7 @@ class CategoryTableSeeder extends Seeder
         ]);
 
         DB::table('category')->insert([
-            'name' => 'announce',
+            'name' => 'Announce',
             'slug' => 'announce',
             'description' => 'this tag for announcement in department',
             'created_at' => Carbon::now(),

@@ -10,7 +10,6 @@
         </div>
         <div class="collapse navbar-collapse" id="mainNavbar">
             <ul class="nav navbar-nav">
-                <li {{--class="active"--}}><a href="#">หน้าหลัก</a></li>
                 <li class="dropdown">
                     <a class="dropdown-toggle" data-toggle="dropdown" href="#">
                         หลักสูตร <span class="caret"></span>
@@ -21,6 +20,7 @@
                         <li><a href="#">Doctor Degree</a></li>
                     </ul>
                 </li>
+                <li {{--class="active"--}}><a href="#">ข่าวสาร</a></li>
                 <li><a href="#">ผลงานวิจัย</a></li>
                 <li><a href="#">บุคลากร</a></li>
                 <li><a href="#">ติดต่อ</a></li>

@@ -21,6 +21,10 @@ Route::get('image', 'ImageController@index');
 Route::get('image/show/{id}', 'ImageController@show');
 Route::post('image', 'ImageController@store');
 
+Route::get('blog', 'BlogController@index');
+Route::post('blog', 'BlogController@store');
+Route::get('blog/create', 'BlogController@create');
+
 Route::get('teacher', 'TeacherController@index');
 Route::post('teacher', 'TeacherController@store');
 Route::get('teacher/create', 'TeacherController@create');
