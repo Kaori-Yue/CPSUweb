@@ -30,12 +30,12 @@ class TeacherController extends Controller
 
     public function store(Request $request)
     {
-        $image = $request->file('image');
-        $file = self::storeFile($image);
-
         $teacher = $request->all();
         $teacher['token'] = (new TokenGenerator())->generate(6);
         $teacher['password'] = password_hash($teacher['name_en'], PASSWORD_DEFAULT);
+
+        $image = $request->file('image');
+        $file = self::storeFile($image);
         $teacher['image'] = $file->id;
 
         $teacher = Teacher::create($teacher);

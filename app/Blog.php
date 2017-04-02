@@ -14,6 +14,7 @@ class Blog extends Model
         'content',
         'cover',
         'status',
+        'publish_at',
         'user_id',
         'category_id',
     ];
