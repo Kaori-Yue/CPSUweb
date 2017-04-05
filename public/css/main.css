@@ -35,9 +35,35 @@ pre,
     border-radius:0 !important;
 }
 
-body {
+html, body {
+    margin:0;
+    padding:0;
+    height:100%;
+    background: #EEEEEE;
     font-family: 'Kanit', sans-serif;
-    background: #ffffff;
+}
+
+#container {
+    min-height:100%;
+    position:relative;
+}
+#header {
+    padding:10px;
+}
+#body {
+    padding-bottom:100px;   /* Height of the footer */
+}
+#footer {
+    position:absolute;
+    bottom:0;
+    width:100%;
+    height:100px;   /* Height of the footer */
+    background:#40826D;
+    color: #ffffff;
+}
+
+#footer > a {
+    text-decoration: none;
 }
 
 .navbar {
@@ -68,7 +94,13 @@ body {
 }
 
 .row {
-    margin: 0;
+    margin: 1% 0 1% 0;
+    padding: 0;
+}
+
+.row-card{
+    padding: 1%;
+    background: #ffffff;
 }
 
 div {
@@ -84,11 +116,12 @@ div {
     margin-top: 0;
 }
 
-.row > .container {
-    padding: 8% 1% 8% 1%;
+.welcome-card {
+    background: #0375b4;
+    padding: 6% 4% 6% 4%;
 }
 
-.row > .container > .jumbotron {
+.welcome-card > .jumbotron {
     background: #0375b4;
     padding: 0;
 }
@@ -98,7 +131,7 @@ div {
 }
 
 .panel {
-    margin-top: 2%;
+    margin-top: 0;
 }
 
 .panel-primary > .panel-heading {
@@ -131,8 +164,9 @@ div {
 .card {
     position: relative;
     height: 300px;
-    padding: 1%;
+    padding: 0 4% 0 4%;
     overflow: hidden;
+    border: solid;
 }
 
 .card > h2 {
@@ -173,15 +207,39 @@ p > span {
     color:#fff;
 }
 
-.carousel-inner > .item > img,
-.carousel-inner > .item > a > img {
-    width: 70%;
-    margin: auto;
+.carousel .item{
+    max-width: 100%;
+    width: auto;
+    height: auto;
+    vertical-align: middle;
 }
 
-footer {
-    background: #40826D;
-    bottom: 0;
-    width: 100%;
-    color: #ffffff;
+.some-space {
+    padding: 1%;
 }
+
+/*.carousel-inner > .item > img,
+.carousel-inner > .item > a > img {
+    width: 50%;
+    margin: auto;
+}*/
+
+/*.carousel-inner > .item > img {*/
+    /*position: absolute;*/
+    /*top: 0;*/
+    /*left: 0;*/
+    /*min-width: 100%;*/
+    /*height: 500px;*/
+/*}*/
+
+/*.carousel.slide{
+    max-width: 1600px;
+    min-width: 900px;
+    overflow: hidden;
+}
+.carousel-inner{
+    width: 1600px;
+    left: 50%;
+    margin-left: -800px;
+}*/
+

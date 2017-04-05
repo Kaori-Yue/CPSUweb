@@ -13,13 +13,16 @@
     <link rel="stylesheet" href="{{ URL::asset('css/main.css') }}">
 </head>
 <body>
-    @include('_nav')
-
-    @yield('content')
-
-    <footer>
-        <p>Posted by: Hege Refsnes</p>
-        <p>Contact information: <a href="mailto:someone@example.com">someone@example.com</a>.</p>
-    </footer>
+    <div id="container">
+        <div id="header">
+            @include('_nav')
+        </div>
+        <div id="body">
+            @yield('content')
+        </div>
+        <div id="footer">
+            @include('_footer')
+        </div>
+    </div>
 </body>
 </html>

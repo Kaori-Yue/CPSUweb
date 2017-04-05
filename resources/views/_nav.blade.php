@@ -20,9 +20,9 @@
                         <li><a href="#">Doctor Degree</a></li>
                     </ul>
                 </li>
-                <li {{--class="active"--}}><a href="#">ข่าวสาร</a></li>
-                <li><a href="#">ผลงานวิจัย</a></li>
-                <li><a href="#">บุคลากร</a></li>
+                <li {{--class="active"--}}><a href="{{ url('blog') }}">ข่าวสาร</a></li>
+                <li><a href="#">ผลงาน</a></li>
+                <li><a href="{{ url('teacher') }}">บุคลากร</a></li>
                 <li><a href="#">ติดต่อ</a></li>
             </ul>
             <ul class="nav navbar-nav navbar-right">
