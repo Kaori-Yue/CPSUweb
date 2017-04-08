@@ -23,7 +23,7 @@
                 <li {{--class="active"--}}><a href="{{ url('blog') }}">ข่าวสาร</a></li>
                 <li><a href="#">ผลงาน</a></li>
                 <li><a href="{{ url('teacher') }}">บุคลากร</a></li>
-                <li><a href="#">ติดต่อ</a></li>
+                <li><a href="{{ url('contact') }}">ติดต่อ</a></li>
             </ul>
             <ul class="nav navbar-nav navbar-right">
                 {{--<li><a href="#"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>

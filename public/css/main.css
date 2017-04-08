@@ -108,8 +108,12 @@ div {
     padding: 0;
 }
 
-.container {
+.container, .container-fluid {
     margin-top: 3%;
+}
+
+.container-fluid {
+    height: 100%;
 }
 
 .navbar > .container {
@@ -155,10 +159,10 @@ div {
     background: #0375b4;
 }
 
-.teacher-card {
-    border: solid;
-    margin-top: 1%;
-    margin-bottom: 1%;
+.teacher-image {
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 
 .card {
@@ -216,6 +220,32 @@ p > span {
 
 .some-space {
     padding: 1%;
+}
+
+.google-maps {
+    position: relative;
+    padding-bottom: 50%;
+    height: 0;
+    overflow: hidden;
+}
+.google-maps iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100% !important;
+    height: 100% !important;
+}
+
+.center-cropped {
+    height: 300px;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.sidebar {
+    background: #CFD8DC;
+    height: 100%;
 }
 
 /*.carousel-inner > .item > img,

@@ -44,12 +44,7 @@
         </div>
         <div class="row">
         @foreach($blogs as $blog)
-            <div class="card card-bg col-md-4 col-xs-12"
-                 style="background-image: url('{{ url('image/show/'.$blog->cover) }}');border: solid">
-                <h2><span>{!! $blog->title !!}</span></h2>
-                <br>
-                <p><span>By {!! $blog->user->name !!}</span></p>
-            </div>
+            @include('blog._card', $blog)
         @endforeach
         </div>
     </div>

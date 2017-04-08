@@ -9,9 +9,9 @@
                     <h2>คณะวิทยาศาสตร์</h2>
                     <h3>มหาวิทยาลัยศิลปากร</h3>
                     <br>
-                    <div class="btn btn-warning btn-lg">
+                    <a href="{{ url('contact') }}" class="btn btn-warning btn-lg">
                         ติดต่อ
-                    </div>
+                    </a>
                 </div>
 
                 <div class="col-md-6 col-xs-12" style="text-align: center;/*border: solid #00ff00;*/">
@@ -26,11 +26,13 @@
             </div>
             <div class="col-md-12">
                 @foreach($blogs as $blog)
-                    <div class="card card-bg col-md-6 col-xs-12" style="background-image: url('{{ url('image/show/'.$blog->cover) }}')">
-                        <h2><span>{!! $blog->title !!}</span></h2>
-                        <br>
-                        <p><span>By {!! $blog->user->name !!}</span></p>
-                    </div>
+                    <a href="{{ url('blog/'.$blog->slug) }}">
+                        <div class="card card-bg col-md-6 col-xs-12" style="background-image: url('{{ url('image/show/'.$blog->cover) }}')">
+                            <h2><span>{!! $blog->title !!}</span></h2>
+                            <br>
+                            <p><span>By {!! $blog->user->name !!}</span></p>
+                        </div>
+                    </a>
                 @endforeach
             </div>
             <div class="col-md-12" style="text-align: right">
@@ -44,11 +46,7 @@
             </div>
             <div class="col-md-12">
                 @foreach($blogs as $blog)
-                <div class="card card-bg col-md-4 col-xs-12" style="background-image: url('{{ url('image/show/'.$blog->cover) }}')">
-                    <h2><span>{!! $blog->title !!}</span></h2>
-                    <br>
-                    <p><span>By {!! $blog->user->name !!}</span></p>
-                </div>
+                    @include('blog._card', $blog)
                 @endforeach
             </div>
             <div class="col-md-12" style="text-align: right">
@@ -59,23 +57,21 @@
         <div class="row row-card col-md-12 col-xs-12">
             {{--<div class="some-space col-md-12"></div>--}}
             <div class="col-md-2">
-                <img src="{{ URL::asset('image/FindUsOnFacebook.png') }}" alt="">
+                <img src="{{ URL::asset('image/FindUsOnFacebook.png') }}" alt="" class="img-responsive">
             </div>
             <div class="col-md-2">
-                {{--<img src="{{ URL::asset('image/ITPE2.jpg') }}" alt="">--}}
+                <img src="{{ URL::asset('image/ITPE2.jpg') }}" alt="" class="img-responsive">
             </div>
             <div class="col-md-4">
-                <img src="{{ URL::asset('image/NLC11.png') }}" alt="">
+                <img src="{{ URL::asset('image/NLC11.png') }}" alt="" class="img-responsive">
             </div>
             <div class="col-md-2">
-                <img src="{{ URL::asset('image/msdn_aa.png') }}" alt="">
+                <img src="{{ URL::asset('image/msdn_aa.png') }}" alt="" class="img-responsive">
             </div>
             <div class="col-md-2">
-                <img src="{{ URL::asset('image/nsc_logo.jpg') }}" alt="">
+                <img src="{{ URL::asset('image/nsc_logo.jpg') }}" alt="" class="img-responsive">
             </div>
             {{--<div class="some-space col-md-12"></div>--}}
         </div>
-
-        <div class="row"></div>
     </div>
 @stop

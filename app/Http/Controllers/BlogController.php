@@ -90,4 +90,10 @@ class BlogController extends Controller
         $file = \App\File::create($fileRecord);
         return $file;
     }
+
+    public function show($slug)
+    {
+        $blog = Blog::where('slug', $slug)->first();
+        return view('blog.show', ['blog' => $blog]);
+    }
 }

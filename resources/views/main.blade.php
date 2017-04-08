@@ -19,6 +19,7 @@
         </div>
         <div id="body">
             @yield('content')
+            <div class="row"></div>
         </div>
         <div id="footer">
             @include('_footer')
