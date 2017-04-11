@@ -16,6 +16,30 @@ class TeacherController extends Controller
         return view('teacher.index', ['teachers' => $teachers]);
     }
 
+    public function sortBy(Request $request)
+    {
+        $sortBy = $request->get('sort_by');
+
+        if($sortBy == 'DESC')
+        {
+            $orderOptions = [
+                'DESC' => 'SortBy: DESC',
+                'ASC' => 'SortBy: ASC',
+            ];
+            $teachers = Teacher::orderBy('id', 'desc')->get();
+        }
+        else
+        {
+            $orderOptions = [
+                'ASC' => 'SortBy: ASC',
+                'DESC' => 'SortBy: DESC',
+            ];
+            $teachers = Teacher::orderBy('id')->get();
+        }
+
+        return view('teacher.admin', ['teachers' => $teachers, 'orderOptions' => $orderOptions]);
+    }
+
     public function create()
     {
         //$status = Teacher::pluck('status', 'status');

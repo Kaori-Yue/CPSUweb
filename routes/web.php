@@ -15,23 +15,32 @@
     return view('welcome');
 });*/
 
-Route::get('/', 'HomeController@index');
+# Todo edit & delete route
 
-Route::get('image', 'ImageController@index');
+#Free Route
+Route::get('/', 'HomeController@index');
+Route::get('blog', 'BlogController@index');
+Route::get('blog/{slug}', 'BlogController@show');
+Route::get('teacher', 'TeacherController@index');
+Route::get('contact', 'ContactController@index');
 Route::get('image/show/{id}', 'ImageController@show');
+
+
+#Admin Route
+Route::get('image', 'ImageController@index');
 Route::post('image', 'ImageController@store');
 
-Route::get('blog', 'BlogController@index');
 Route::post('blog', 'BlogController@store');
-Route::get('blog/create', 'BlogController@create');
-Route::get('blog/{slug}', 'BlogController@show');
 
-Route::get('teacher', 'TeacherController@index');
 Route::post('teacher', 'TeacherController@store');
-Route::get('teacher/create', 'TeacherController@create');
 
-Route::get('contact', 'ContactController@index');
+Route::get('admin', 'AdminController@index');
+Route::get('admin/blog', 'AdminController@blog');
+Route::get('admin/blog/create', 'BlogController@create');
+Route::post('admin/blog/sort', 'BlogController@sortBy');
 
-Route::get('admin/dashboard', 'AdminController@dashboard');
+Route::get('admin/teacher', 'AdminController@teacher');
+Route::get('admin/teacher/create', 'TeacherController@create');
+Route::post('admin/teacher/sort', 'TeacherController@sortBy');
 
 Route::get('test', 'TestController@index');

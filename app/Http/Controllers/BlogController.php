@@ -15,8 +15,32 @@ class BlogController extends Controller
 {
     public function index()
     {
-        $blogs = Blog::all()->take(5);
+        $blogs = Blog::all()->take(6);
         return view('blog.index', ['blogs' => $blogs]);
+    }
+
+    public function sortBy(Request $request)
+    {
+        $sortBy = $request->get('sort_by');
+
+        if($sortBy == 'DESC')
+        {
+            $orderOptions = [
+                'DESC' => 'SortBy: DESC',
+                'ASC' => 'SortBy: ASC',
+            ];
+            $blogs = Blog::orderBy('id', 'desc')->get();
+        }
+        else
+        {
+            $orderOptions = [
+                'ASC' => 'SortBy: ASC',
+                'DESC' => 'SortBy: DESC',
+            ];
+            $blogs = Blog::orderBy('id')->get();
+        }
+
+        return view('blog.admin', ['blogs' => $blogs, 'orderOptions' => $orderOptions]);
     }
 
     public function create()
