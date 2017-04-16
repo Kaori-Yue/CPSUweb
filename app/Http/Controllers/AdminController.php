@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Blog;
 use App\Category;
 use App\Teacher;
+use App\Thesis;
 use Illuminate\Http\Request;
 
 class AdminController extends Controller
@@ -29,7 +30,10 @@ class AdminController extends Controller
         ];
         $blogs = Blog::all();
 
-        return view('blog.admin', ['blogs' => $blogs, 'orderOptions' => $orderOptions]);
+        return view('blog.admin', [
+            'blogs' => $blogs,
+            'orderOptions' => $orderOptions,
+        ]);
     }
 
     public function teacher()
@@ -40,5 +44,11 @@ class AdminController extends Controller
         ];
         $teachers = Teacher::all();
         return view('teacher.admin', ['teachers' => $teachers, 'orderOptions' => $orderOptions]);
+    }
+
+    public function thesis()
+    {
+        $thesis = Thesis::all();
+        return view('thesis.admin', ['thesis' => $thesis]);
     }
 }

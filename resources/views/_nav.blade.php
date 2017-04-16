@@ -21,7 +21,8 @@
                     </ul>
                 </li>
                 <li {{--class="active"--}}><a href="{{ url('blog') }}">ข่าวสาร</a></li>
-                <li><a href="#">ผลงาน</a></li>
+                <li><a href="#">งานวิจัย</a></li>
+                <li><a href="#">ผลงานนักศึกษา</a></li>
                 <li><a href="{{ url('teacher') }}">บุคลากร</a></li>
                 <li><a href="{{ url('contact') }}">ติดต่อ</a></li>
             </ul>

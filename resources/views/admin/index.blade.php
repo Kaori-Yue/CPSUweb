@@ -9,16 +9,24 @@
                         Home
                         <span class="glyphicon glyphicon-chevron-right"></span>
                     </a>
-                    <a href="{{ url('admin/blog') }}" class="list-group-item{{-- active--}}">
+                    <a href="{{ url('admin/blog') }}" class="list-group-item
+                        @if (Request::is('admin/blog/*') || Request::is('admin/blog')) active @endif">
                         Announce/News
                         <span class="glyphicon glyphicon-chevron-right"></span>
                     </a>
-                    <a href="{{ url('admin/teacher') }}" class="list-group-item">
+                    <a href="{{ url('admin/teacher') }}" class="list-group-item
+                        @if (Request::is('admin/teacher/*') || Request::is('admin/teacher')) active @endif">
                         Teacher
                         <span class="glyphicon glyphicon-chevron-right"></span>
                     </a>
-                    <a href="#" class="list-group-item">
+                    <a href="" class="list-group-item
+                        {{--@if (Request::is('admin/thesis/*') || Request::is('admin/thesis')) active @endif--}}">
                         Research
+                        <span class="glyphicon glyphicon-chevron-right"></span>
+                    </a>
+                    <a href="{{ url('admin/thesis') }}" class="list-group-item
+                        @if (Request::is('admin/thesis/*') || Request::is('admin/thesis')) active @endif">
+                        Thesis
                         <span class="glyphicon glyphicon-chevron-right"></span>
                     </a>
                 </div>
