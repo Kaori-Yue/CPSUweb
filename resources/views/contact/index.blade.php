@@ -3,7 +3,7 @@
 @section('content')
     <div class="container">
         <div class="row row-card">
-            <div class="col-md-12">
+            <div class="well well-sm col-md-12">
                 <h2>ที่อยู่</h2>
             </div>
             <div class="col-md-12">
@@ -28,7 +28,7 @@
             </div>
         </div>
         <div class="row row-card">
-            <div class="col-md-12">
+            <div class="well well-sm col-md-12">
                 <h2>โทรศัพท์</h2>
             </div>
             <div class="col-md-12">
@@ -57,7 +57,7 @@
             </div>
         </div>
         <div class="row row-card">
-            <div class="col-md-12">
+            <div class="well well-sm col-md-12">
                 <h2>โทรสาร</h2>
             </div>
             <div class="col-md-12">
@@ -82,7 +82,7 @@
             </div>
         </div>
         <div class="row row-card">
-            <div class="col-md-12">
+            <div class="well well-sm col-md-12">
                 <h2>แผนที่</h2>
             </div>
             <div class="col-md-12 google-maps">

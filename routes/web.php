@@ -32,20 +32,32 @@ Route::get('image/show/{id}', 'ImageController@show');
 Route::get('image', 'ImageController@index');
 Route::post('image', 'ImageController@store');
 
+
 Route::post('blog', 'BlogController@store');
 Route::post('teacher', 'TeacherController@store');
 Route::post('thesis', 'ThesisController@store');
+
+
+Route::get('blog/{slug}/edit', 'BlogController@edit');
+
+
+Route::patch('blog/{id}', 'BlogController@update');
+
 
 Route::get('admin', 'AdminController@index');
 Route::get('admin/blog', 'AdminController@blog');
 Route::get('admin/blog/create', 'BlogController@create');
 Route::post('admin/blog/sort', 'BlogController@sortBy');
 
+
 Route::get('admin/teacher', 'AdminController@teacher');
 Route::get('admin/teacher/create', 'TeacherController@create');
 Route::post('admin/teacher/sort', 'TeacherController@sortBy');
 
+
 Route::get('admin/thesis', 'AdminController@thesis');
 Route::get('admin/thesis/create', 'ThesisController@create');
 
+
 Route::get('test', 'TestController@index');
+Route::get('test/slug', 'TestController@slug');

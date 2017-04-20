@@ -11,7 +11,8 @@ class ThesisController extends Controller
 {
     public function index()
     {
-        
+        $thesis = Thesis::all()->take(3);
+        return view('thesis.index', ['thesis' => $thesis]);
     }
 
     public function create()

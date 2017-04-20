@@ -30,4 +30,13 @@ class TestController extends Controller
         $tag->blogs;
         return $tag;*/
     }
+
+    function slug()
+    {
+        $str = 'แข่งโน่นนี่นั่น';
+        $str = strtolower(trim($str));
+        $str = preg_replace('/[^a-z0-9-]/', '-', $str);
+        $str = preg_replace('/-+/', "-", $str);
+        return $str;
+    }
 }

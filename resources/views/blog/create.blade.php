@@ -1,5 +1,7 @@
 @extends('admin.index')
 
 @section('show')
-    @include('blog._form', ['url' => 'blog', 'submit_text' => 'Create'])
+    {!! Form::open(['url' => 'blog', 'class' => 'form-horizontal', 'files' => 'true']) !!}
+    @include('blog._form', ['header_text' => 'Create Blog', 'submit_text' => 'Create'])
+    {!! Form::close() !!}
 @stop

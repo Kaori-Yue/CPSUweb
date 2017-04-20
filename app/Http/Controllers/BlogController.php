@@ -59,12 +59,43 @@ class BlogController extends Controller
         ]);
     }
 
+    public function edit($slug)
+    {
+        $blog = Blog::where('slug', '=', $slug)->first();
+
+        $datetime = explode(' ', $blog['publish_at']);
+        $blog['publish_date'] = $datetime[0];
+        $blog['publish_time'] = $datetime[1];
+
+        $allTag = '';
+        foreach ($blog->tags as $tag){
+            $allTag .= $tag->name.',';
+        }
+        $blog['hash_tags'] = substr($allTag, 0, -1);
+
+        $status = [
+            'draft' => 'Draft',
+            'disable' => 'Disable',
+            'publish' => 'Publish',
+        ];
+
+        $category = Category::pluck('name', 'id');
+
+        return view('blog.edit', [
+            'blog' => $blog,
+            'status' => $status,
+            'category' => $category
+        ]);
+    }
+
     public function store(Request $request)
     {
         $blog = $request->all();
-        $slug = str_slug($blog['title']);
+        $slug = self::handleSlug($blog['title']);
+
         $cover_image = $request->file('cover');
         $file = self::storeFile($cover_image);
+
         $hash_tags = $blog['hash_tags'];
 
         // Todo make user_id dynamic
@@ -80,9 +111,56 @@ class BlogController extends Controller
         ];
         $blog = Blog::create($blogData);
 
+        self::handleTags($hash_tags, $blog);
+
+        return $blog;
+    }
+
+    public function update(Request $request, $id)
+    {
+        $blog = Blog::findOrFail($id);
+        $updateBlog = $request->all();
+
+        $slug = self::handleSlug($updateBlog['title']);
+        $cover_image = $request->file('cover');
+
+        $hash_tags = $updateBlog['hash_tags'];
+
+        $blogData = [
+            'title' => $updateBlog['title'],
+            'slug' => $slug,
+            'content' => $updateBlog['content'],
+            'status' => $updateBlog['status'],
+            'publish_at' => $updateBlog['publish_date'].' '.$updateBlog['publish_time'],
+            'category_id' => $updateBlog['category_id'],
+            'user_id' => 1
+        ];
+        if(isset($cover_image)){
+            $file = self::storeFile($cover_image);
+            $blogData['cover'] = $file->id;
+        }
+        $blog->update($blogData);
+        self::handleTags($hash_tags, $blog);
+
+        return redirect()->action('AdminController@blog');
+    }
+
+    public function handleSlug($str)
+    {
+        $slug = str_replace(' ', '-', $str);
+        return $slug;
+    }
+
+    public function handleTags($hash_tags, $blog)
+    {
         $hash_tags = str_replace(' ', '', $hash_tags);
         $hash_tags = strtolower($hash_tags);
+        if(substr($hash_tags, strlen($hash_tags)-1) == ','){
+            $hash_tags = substr($hash_tags, 0, -1);
+        }
         $hash_tags = explode(',',$hash_tags);
+
+        BlogTag::where('blog_id', $blog->id)->delete();
 
         foreach ($hash_tags as $hash_tag){
             $tagData = [
@@ -95,9 +173,8 @@ class BlogController extends Controller
                 'blog_id' => $blog->id,
                 'tag_id' => $tag->id
             ];
-            BlogTag::create($blogTagData);
+            BlogTag::firstOrCreate($blogTagData);
         }
-        return $blog;
     }
 
     public function storeFile($file)
@@ -117,6 +194,7 @@ class BlogController extends Controller
 
     public function show($slug)
     {
+        $slug = urldecode($slug);
         $blog = Blog::where('slug', $slug)->first();
         return view('blog.show', ['blog' => $blog]);
     }

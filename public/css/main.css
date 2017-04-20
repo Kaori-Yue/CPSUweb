@@ -109,7 +109,7 @@ div {
 }
 
 .container, .container-fluid {
-    margin-top: 3%;
+    margin-top: 35px;
 }
 
 .container-fluid {
@@ -263,6 +263,12 @@ p > span {
 
 .footer > a {
     text-decoration: none;
+    color: #ffffff;
+}
+
+.well {
+    padding: 0 0 0 1%;
+    background: #FF8F00;
     color: #ffffff;
 }
 
