@@ -42,7 +42,7 @@
 
         <div class="row row-card col-md-12 col-xs-12">
             <div class="col-md-12">
-                <h2>ข่าวสารภาควิชา</h2>
+                <h2>ประกาศ</h2>
             </div>
             <div class="col-md-12">
                 @foreach($blogs as $blog)

@@ -22,7 +22,7 @@
         @endif
 
         @if (Request::is('admin/*'))
-            <a class="btn btn-warning" href="">
+            <a class="btn btn-warning" href="{{ url('teacher/'.$teacher->id.'/edit') }}">
                 Edit
                 <span class="glyphicon glyphicon-wrench"></span>
             </a>

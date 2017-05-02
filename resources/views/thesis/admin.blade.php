@@ -15,9 +15,12 @@
             {!! Form::close() !!}--}}
         </div>
     </div>
+    <div class="row row-card com-md-4">
     @foreach($thesis as $t)
-        <div class="row row-card">
-            <h4>{{ $loop->iteration }}. {{ $t->name }}</h4>
+        <div class="well-lg">
+            <h4>{{ $t->name }}</h4>
         </div>
+        {{--<h4>{{ $loop->iteration }}. {{ $t->name }}</h4>--}}
     @endforeach
+    </div>
 @stop

@@ -13,7 +13,7 @@
         <div class="row row-card col-md-12">
             <h3>ปริญญานิพพนธ์นักศึกษาปริญญาตรี</h3>
         </div>
-        <div class="row row-card col-md-12">
+        <div class="row row-card col-md-4">
         @foreach($thesis as $t)
             <div class="well-lg">
                 <h4>{{ $t->id }}.) {{ $t->name }}</h4>

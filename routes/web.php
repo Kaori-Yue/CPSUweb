@@ -39,9 +39,11 @@ Route::post('thesis', 'ThesisController@store');
 
 
 Route::get('blog/{slug}/edit', 'BlogController@edit');
+Route::get('teacher/{id}/edit', 'TeacherController@edit');
 
 
 Route::patch('blog/{id}', 'BlogController@update');
+Route::patch('teacher/{id}', 'TeacherController@update');
 
 
 Route::get('admin', 'AdminController@index');

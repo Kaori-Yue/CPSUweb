@@ -66,6 +66,33 @@ class TeacherController extends Controller
         return $teacher;
     }
 
+    public function edit($id)
+    {
+        $teacher = Teacher::findOrFail($id);
+        $status = [
+            'duty' => 'Duty',
+            'retire' => 'Retire',
+            'study' => 'Study',
+            'disable' => 'Disable',
+        ];
+
+        return view('teacher.edit', ['status' => $status, 'teacher' => $teacher]);
+    }
+
+    public function update(Request $request, $id)
+    {
+        $teacher = Teacher::findOrFail($id);
+        $editedTeacher = $request->all();
+        $image = $request->file('image');
+        if(isset($image)){
+            $file = self::storeFile($image);
+            $editedTeacher['image'] = $file->id;
+        }
+        $teacher->update($editedTeacher);
+
+        return redirect()->action('AdminController@teacher');
+    }
+
     public function storeFile($file)
     {
         $ex = $file->getClientOriginalExtension();
@@ -80,4 +107,5 @@ class TeacherController extends Controller
         $file = \App\File::create($fileRecord);
         return $file;
     }
+
 }
