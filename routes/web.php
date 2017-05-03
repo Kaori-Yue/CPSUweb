@@ -21,6 +21,7 @@
 Route::get('/', 'HomeController@index');
 Route::get('blog', 'BlogController@index');
 Route::get('thesis', 'ThesisController@index');
+Route::get('research', 'ResearchController@index');
 Route::get('teacher', 'TeacherController@index');
 Route::get('contact', 'ContactController@index');
 
@@ -36,6 +37,7 @@ Route::post('image', 'ImageController@store');
 Route::post('blog', 'BlogController@store');
 Route::post('teacher', 'TeacherController@store');
 Route::post('thesis', 'ThesisController@store');
+Route::post('research', 'ResearchController@store');
 
 
 Route::get('blog/{slug}/edit', 'BlogController@edit');
@@ -59,6 +61,10 @@ Route::post('admin/teacher/sort', 'TeacherController@sortBy');
 
 Route::get('admin/thesis', 'AdminController@thesis');
 Route::get('admin/thesis/create', 'ThesisController@create');
+
+
+Route::get('admin/research', 'AdminController@research');
+Route::get('admin/research/create', 'ResearchController@create');
 
 
 Route::get('test', 'TestController@index');

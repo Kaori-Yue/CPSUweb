@@ -11,4 +11,9 @@ class Research extends Model
     protected $fillable = [
         'file_id', 'name', 'description'
     ];
+
+    public function images()
+    {
+        return $this->belongsToMany('App\File', 'research_image', 'research_id','image_id');
+    }
 }

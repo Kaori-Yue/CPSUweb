@@ -19,8 +19,8 @@
                         Teacher
                         <span class="glyphicon glyphicon-chevron-right"></span>
                     </a>
-                    <a href="" class="list-group-item
-                        {{--@if (Request::is('admin/thesis/*') || Request::is('admin/thesis')) active @endif--}}">
+                    <a href="{{ url('admin/research') }}" class="list-group-item
+                        @if (Request::is('admin/research/*') || Request::is('admin/thesis') || Request::is('research/*/edit')) active @endif">
                         Research
                         <span class="glyphicon glyphicon-chevron-right"></span>
                     </a>

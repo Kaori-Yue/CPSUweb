@@ -13,15 +13,14 @@
     <link rel="stylesheet" href="{{ URL::asset('css/main.css') }}">
 </head>
 <body>
-    <div id="container">
-        <div id="header">
+    <div id="page">
+        <div id="page-head">
             @include('_nav')
         </div>
-        <div id="body">
+        <div id="page-body">
             @yield('content')
-            <div class="row"></div>
         </div>
-        <div id="footer">
+        <div id="page-footer">
             @include('_footer')
         </div>
     </div>
