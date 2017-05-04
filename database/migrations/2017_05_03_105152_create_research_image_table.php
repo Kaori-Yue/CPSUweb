@@ -17,11 +17,12 @@ class CreateResearchImageTable extends Migration
             $table->increments('id');
             $table->integer('research_id')->unsigned();
             $table->integer('image_id')->unsigned();
+            $table->string('name');
+            $table->text('description');
 
             $table->foreign('research_id')
                 ->references('id')
                 ->on('research');
-
 
             $table->foreign('image_id')
                 ->references('id')

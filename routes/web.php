@@ -26,6 +26,7 @@ Route::get('teacher', 'TeacherController@index');
 Route::get('contact', 'ContactController@index');
 
 Route::get('blog/{slug}', 'BlogController@show');
+Route::get('research/{slug}', 'ResearchController@show');
 Route::get('image/show/{id}', 'ImageController@show');
 
 

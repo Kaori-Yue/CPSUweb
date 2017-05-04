@@ -25,8 +25,13 @@ class ResearchController extends Controller
     {
         $file = $request->file('file');
         $file = self::storeFile($file);
+
+        $name = $request->get('name');
+        $slug = self::handleSlug($name);
+
         $research = [
-            'name' => $request->get('name'),
+            'name' => $name,
+            'slug' => $slug,
             'description' => $request->get('description'),
             'file_id' => $file->id
         ];
@@ -34,22 +39,31 @@ class ResearchController extends Controller
         $research = Research::create($research);
 
         $keys = ['image1', 'image2', 'image3', 'image4', 'image5'];
-
+        $i = 1;
         foreach ($keys as $key){
             $image = $request->file($key);
             if(isset($image)){
                 $image = self::storeFile($image);
                 $research_image = [
                     'research_id' => $research->id,
-                    'image_id' => $image->id
+                    'image_id' => $image->id,
+                    'name' => $request->get('name'.$i),
+                    'description' => $request->get('description'.$i)
                 ];
 
                 ResearchImage::create($research_image);
             }
+            $i++;
         }
         $research->images;
 
         return $research;
+    }
+
+    public function show($slug)
+    {
+        $research = Research::where('slug', $slug)->firstOrFail();
+        return view('research.show', ['research' => $research]);
     }
 
     public function storeFile($file)
@@ -65,5 +79,11 @@ class ResearchController extends Controller
 
         $file = \App\File::create($fileRecord);
         return $file;
+    }
+
+    public function handleSlug($str)
+    {
+        $slug = str_replace(' ', '-', $str);
+        return $slug;
     }
 }

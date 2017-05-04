@@ -19,12 +19,16 @@
         @for($i = 1; $i <= 5; $i++)
         <hr>
         <div class="form-group">
-            {!! Form::label('image'.$i, 'Image '.$i) !!}
+            {!! Form::label('name'.$i, 'Section '.$i. ' Name') !!}
+            {!! Form::text('name'.$i, null, ['class' => 'form-control']) !!}
+        </div>
+        <div class="form-group">
+            {!! Form::label('image'.$i, 'Section '.$i. ' Image') !!}
             {!! Form::file('image'.$i, ['class' => 'form-control']) !!}
         </div>
         <div class="form-group">
-            {!! Form::label('image_description'.$i, 'Image '.$i.' Description') !!}
-            {!! Form::textarea('image_description'.$i, null, ['class' => 'form-control']) !!}
+            {!! Form::label('description'.$i, 'Section '.$i.' Description') !!}
+            {!! Form::textarea('description'.$i, null, ['class' => 'form-control']) !!}
         </div>
         @endfor
     </div>

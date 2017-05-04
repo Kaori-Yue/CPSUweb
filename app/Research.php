@@ -9,11 +9,12 @@ class Research extends Model
     public $timestamps = 'true';
     protected $table = 'research';
     protected $fillable = [
-        'file_id', 'name', 'description'
+        'file_id', 'name', 'slug', 'description'
     ];
 
     public function images()
     {
-        return $this->belongsToMany('App\File', 'research_image', 'research_id','image_id');
+        return $this->belongsToMany('App\File', 'research_image', 'research_id','image_id')
+            ->withPivot('name', 'description');
     }
 }

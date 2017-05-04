@@ -11,5 +11,7 @@ class ResearchImage extends Model
     protected $fillable = [
         'research_id',
         'image_id',
+        'name',
+        'description',
     ];
 }

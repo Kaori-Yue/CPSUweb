@@ -17,6 +17,7 @@ class CreateResearchTable extends Migration
             $table->increments('id');
             $table->integer('file_id')->unsigned();
             $table->string('name');
+            $table->string('slug');
             $table->text('description');
             $table->timestamps();
         });
