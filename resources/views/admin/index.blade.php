@@ -9,6 +9,11 @@
                         Home
                         <span class="glyphicon glyphicon-chevron-right"></span>
                     </a>
+                    <a href="{{ url('admin/curricula') }}" class="list-group-item
+                        @if (Request::is('admin/curricula/*') || Request::is('admin/curricula') || Request::is('curricula/*/edit')) active @endif">
+                        Curricula
+                        <span class="glyphicon glyphicon-chevron-right"></span>
+                    </a>
                     <a href="{{ url('admin/blog') }}" class="list-group-item
                         @if (Request::is('admin/blog/*') || Request::is('admin/blog') || Request::is('blog/*/edit')) active @endif">
                         Announce/News

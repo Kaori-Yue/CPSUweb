@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Blog;
 use App\Category;
+use App\Curricula;
+use App\Research;
 use App\Teacher;
 use App\Thesis;
 use Illuminate\Http\Request;
@@ -13,6 +15,12 @@ class AdminController extends Controller
     public function index()
     {
         return view('admin.index');
+    }
+
+    public function curricula()
+    {
+        $curriculas = Curricula::all();
+        return view('curricula.admin', ['curriculas' => $curriculas]);
     }
 
     public function blog()
@@ -50,5 +58,11 @@ class AdminController extends Controller
     {
         $thesis = Thesis::all();
         return view('thesis.admin', ['thesis' => $thesis]);
+    }
+
+    public function research()
+    {
+        $researches = Research::all();
+        return view('research.admin', ['researches' => $researches]);
     }
 }

@@ -68,6 +68,7 @@ class ResearchController extends Controller
 
     public function storeFile($file)
     {
+        // Todo fix bug file name cannot in thai
         $ex = $file->getClientOriginalExtension();
         Storage::disk('local')->put($file->getFilename(). '.' . $ex, File::get($file));
 

@@ -103,6 +103,10 @@ html, body {
     background: #ffffff;
 }
 
+.row-card > ol > li {
+    margin: 2% 0 2% 0;
+}
+
 div {
     margin: 0;
     padding: 0;

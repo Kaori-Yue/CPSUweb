@@ -10,7 +10,7 @@
         </div>
         <div class="collapse navbar-collapse" id="mainNavbar">
             <ul class="nav navbar-nav">
-                <li class="dropdown">
+                {{--<li class="dropdown">
                     <a class="dropdown-toggle" data-toggle="dropdown" href="#">
                         หลักสูตร <span class="caret"></span>
                     </a>
@@ -19,7 +19,8 @@
                         <li><a href="#">Master Degree</a></li>
                         <li><a href="#">Doctor Degree</a></li>
                     </ul>
-                </li>
+                </li>--}}
+                <li><a href="{{ url('curricula') }}">หลักสูตร</a></li>
                 <li {{--class="active"--}}><a href="{{ url('blog') }}">ข่าวสาร</a></li>
                 <li><a href="{{ url('research') }}">งานวิจัย</a></li>
                 <li><a href="{{ url('thesis') }}">ผลงานนักศึกษา</a></li>
