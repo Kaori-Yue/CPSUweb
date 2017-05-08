@@ -25,7 +25,7 @@
                         <span class="glyphicon glyphicon-chevron-right"></span>
                     </a>
                     <a href="{{ url('admin/research') }}" class="list-group-item
-                        @if (Request::is('admin/research/*') || Request::is('admin/thesis') || Request::is('research/*/edit')) active @endif">
+                        @if (Request::is('admin/research/*') || Request::is('admin/research') || Request::is('research/*/edit')) active @endif">
                         Research
                         <span class="glyphicon glyphicon-chevron-right"></span>
                     </a>

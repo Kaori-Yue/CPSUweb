@@ -6,7 +6,9 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="{{ url('/') }}">CPSU</a>
+            <a class="navbar-brand" href="{{ url('/') }}">
+                <b>CPSU</b>
+            </a>
         </div>
         <div class="collapse navbar-collapse" id="mainNavbar">
             <ul class="nav navbar-nav">
@@ -20,12 +22,36 @@
                         <li><a href="#">Doctor Degree</a></li>
                     </ul>
                 </li>--}}
-                <li><a href="{{ url('curricula') }}">หลักสูตร</a></li>
-                <li {{--class="active"--}}><a href="{{ url('blog') }}">ข่าวสาร</a></li>
-                <li><a href="{{ url('research') }}">งานวิจัย</a></li>
-                <li><a href="{{ url('thesis') }}">ผลงานนักศึกษา</a></li>
-                <li><a href="{{ url('teacher') }}">บุคลากร</a></li>
-                <li><a href="{{ url('contact') }}">ติดต่อ</a></li>
+                <li {{--class="active"--}}>
+                    <a href="{{ url('curricula') }}">
+                        หลักสูตร
+                    </a>
+                </li>
+                <li>
+                    <a href="{{ url('blog') }}">
+                        ข่าวสาร
+                    </a>
+                </li>
+                <li>
+                    <a href="{{ url('research') }}">
+                        งานวิจัย
+                    </a>
+                </li>
+                <li>
+                    <a href="{{ url('thesis') }}">
+                        ผลงานนักศึกษา
+                    </a>
+                </li>
+                <li>
+                    <a href="{{ url('teacher') }}">
+                        บุคลากร
+                    </a>
+                </li>
+                <li>
+                    <a href="{{ url('contact') }}">
+                        ติดต่อ
+                    </a>
+                </li>
             </ul>
             <ul class="nav navbar-nav navbar-right">
                 {{--<li><a href="#"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>

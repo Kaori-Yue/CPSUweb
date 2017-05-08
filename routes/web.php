@@ -80,3 +80,4 @@ Route::get('admin/curricula/create', 'CurriculaController@create');
 
 Route::get('test', 'TestController@index');
 Route::get('test/slug', 'TestController@slug');
+Route::get('api/research', 'TestController@research');

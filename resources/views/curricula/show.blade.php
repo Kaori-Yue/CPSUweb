@@ -4,7 +4,8 @@
     <div class="container">
         <div class="row row-card" style="text-align: center">
             <h1>{{ $curricula->name_th }}</h1>
-            <h3>{{ $curricula->name_en }}</h3>
+            <hr>
+            <h4>{{ $curricula->name_en }}</h4>
         </div>
 
         <div class="row row-card" style="padding: 2% 4% 2% 4%">
@@ -82,7 +83,7 @@
             <h3 class="bg-success" style="padding: 1%">รายละเอียดเพิ่มเติม</h3>
             <div class="col-md-12" style="text-align: center">
                 <p>
-                    <a class="btn btn-primary btn-lg" target="_blank" href="{{ url('file/show/'.$curricula->file) }}">ดาวน์โหลด</a>
+                    <a class="btn btn-warning btn-lg" target="_blank" href="{{ url('file/show/'.$curricula->file) }}">ดาวน์โหลด</a>
                 </p>
             </div>
         </div>

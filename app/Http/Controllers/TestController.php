@@ -6,6 +6,7 @@ use App\Blog;
 use App\Category;
 use App\Tag;
 use App\User;
+use App\Research;
 use Illuminate\Http\Request;
 
 class TestController extends Controller
@@ -38,5 +39,11 @@ class TestController extends Controller
         $str = preg_replace('/[^a-z0-9-]/', '-', $str);
         $str = preg_replace('/-+/', "-", $str);
         return $str;
+    }
+
+    public function research()
+    {
+        $researches = Research::all();
+        return $researches;
     }
 }

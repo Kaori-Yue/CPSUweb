@@ -1,4 +1,4 @@
-<div class="row row-card col-md-12">
+<div class="row col-md-12" style="padding: 1%;background: #ffffff">
     <div class="col-md-3 col-xs-12 teacher-image"
          style="background-image: url('{{ url('image/show/'.$teacher->image) }}')"></div>
     <div class="col-md-9 col-xs-12" style="background: #40826D;color: #ffffff;padding: 1%;margin-bottom: 1%">
