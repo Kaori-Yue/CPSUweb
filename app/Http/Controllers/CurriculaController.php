@@ -36,6 +36,21 @@ class CurriculaController extends Controller
         return view('curricula.create', ['degree' => $degree, 'status' => $status]);
     }
 
+    public function edit($id)
+    {
+        $curricula = Curricula::findOrFail($id);
+        $status = [
+            'enable' => 'ใช้งาน',
+            'disable' => 'เลิกใช้งาน',
+        ];
+        $degree = [
+            'Bachelor Degree' => 'Bachelor Degree',
+            'Master Degree' => 'Master Degree',
+            'Doctor Degree' => 'Doctor Degree'
+        ];
+        return view('curricula.edit', ['curricula' => $curricula, 'degree' => $degree, 'status' => $status]);
+    }
+
     public function store(Request $request)
     {
         $curricula = $request->all();
@@ -49,6 +64,28 @@ class CurriculaController extends Controller
         $curricula = Curricula::create($curricula);
 
         return $curricula;
+    }
+
+    public function update(Request $request, $id)
+    {
+        $curricula = Curricula::findOrFail($id);
+
+        $new_curricula = $request->all();
+        $file = $request->file('file');
+
+        if(isset($file)){
+            $file = self::storeFile($file);
+            $new_curricula['file'] = $file->id;
+        }
+
+        if($curricula->name_en != $new_curricula['name_en']){
+            $slug = self::handleSlug($new_curricula['name_en']);
+            $new_curricula['slug'] = $slug;
+        }
+
+        $curricula->update($new_curricula);
+
+        return redirect()->action('AdminController@curricula');
     }
 
     public function storeFile($file)

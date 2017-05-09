@@ -47,10 +47,17 @@ Route::post('curricula', 'CurriculaController@store');
 
 Route::get('blog/{slug}/edit', 'BlogController@edit');
 Route::get('teacher/{id}/edit', 'TeacherController@edit');
+Route::get('curricula/{id}/edit', 'CurriculaController@edit');
+Route::get('research/{id}/edit', 'ResearchController@edit');
 
 
 Route::patch('blog/{id}', 'BlogController@update');
 Route::patch('teacher/{id}', 'TeacherController@update');
+Route::patch('curricula/{id}', 'CurriculaController@update');
+Route::patch('research/{id}', 'ResearchController@update');
+
+
+Route::delete('teacher/{id}', 'TeacherController@destroy');
 
 
 Route::get('admin', 'AdminController@index');

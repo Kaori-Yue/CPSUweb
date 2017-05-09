@@ -1,4 +1,3 @@
-{!! Form::open(['url' => $url, 'class' => 'form-horizontal', 'files' => 'true']) !!}
 <div class="panel panel-primary">
     <div class="panel-heading">
         <h1>Create Curricula</h1>
@@ -6,7 +5,7 @@
     <div class="panel-body">
         <div class="form-group">
             {!! Form::label('degree', 'ระดับหลักสูตร') !!}
-            {!! Form::select('degree', $degree, ['class' => 'form-control']) !!}
+            {!! Form::select('degree', $degree, $curricula->degree, ['class' => 'form-control']) !!}
         </div>
         <div class="form-group">
             {!! Form::label('name_th', 'ชื่อหลักสูตร (TH)') !!}
@@ -42,7 +41,7 @@
         </div>
         <div class="form-group">
             {!! Form::label('status', 'สถานะหลักสูตร') !!}
-            {!! Form::select('status', $status, ['class' => 'form-control']) !!}
+            {!! Form::select('status', $status, $curricula->status, ['class' => 'form-control']) !!}
         </div>
         <div class="form-group">
             {!! Form::label('file', 'ไฟล์รายละเอียดหลักสูตร') !!}
@@ -53,4 +52,3 @@
         {!! Form::submit($submit_text, ['class' => 'btn btn-primary btn-lg']) !!}
     </div>
 </div>
-{!! Form::close() !!}

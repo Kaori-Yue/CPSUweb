@@ -1,5 +1,7 @@
 @extends('admin.index')
 
 @section('show')
-    @include('curricula._form', ['url' => 'curricula', 'submit_text' => 'Create'])
+    {!! Form::open(['url' => 'curricula', 'class' => 'form-horizontal', 'files' => 'true']) !!}
+    @include('curricula._form', ['submit_text' => 'Create'])
+    {!! Form::close() !!}
 @stop

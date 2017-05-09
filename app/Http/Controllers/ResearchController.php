@@ -21,6 +21,13 @@ class ResearchController extends Controller
         return view('research.create');
     }
 
+    public function edit($id)
+    {
+        $research = Research::with('images')->findOrFail($id);
+        return view('research.edit', ['research' => $research]);
+        //return $research;
+    }
+
     public function store(Request $request)
     {
         $file = $request->file('file');
@@ -58,6 +65,63 @@ class ResearchController extends Controller
         $research->images;
 
         return $research;
+    }
+
+    public function update(Request $request, $id)
+    {
+        $research = Research::findOrFail($id);
+        $new_research = $request->all();
+
+        $file = $request->file('file');
+        if(isset($file)){
+            $file = self::storeFile($file);
+            $new_research['file_id'] = $file->id;
+        }
+        $research->update($new_research);
+
+        for ($i = 1; $i <= 5; $i++){
+            if(isset($new_research['image'.$i])){
+                $image = self::storeFile($new_research['image'.$i]);
+                if(isset($new_research['id'.$i])){
+                    $research_image = ResearchImage::where([
+                        ['research_id', $research->id],
+                        ['image_id', $new_research['id'.$i]]
+                    ])->first();
+
+                    $data = [
+                        'research_id' => $research->id,
+                        'image_id' => $image->id,
+                        'name' => $new_research['name'.$i],
+                        'description' => $new_research['description'.$i]
+                    ];
+                    $research_image->update($data);
+                }else{
+                    $research_image = new ResearchImage();
+                    $research_image->research_id = $research->id;
+                    $research_image->image_id = $image->id;
+                    $research_image->name = $new_research['name'.$i];
+                    $research_image->description = $new_research['description'.$i];
+                    $research_image->save();
+                }
+            }
+            else{
+                if(isset($new_research['id'.$i])) {
+                    $research_image = ResearchImage::where([
+                        ['research_id', $research->id],
+                        ['image_id', $new_research['id' . $i]]
+                    ])->first();
+
+                    $data = [
+                        'research_id' => $research->id,
+                        'name' => $new_research['name' . $i],
+                        'description' => $new_research['description' . $i]
+                    ];
+                    $research_image->update($data);
+                }
+            }
+        }
+        return redirect()->action('AdminController@research');
+        //return $new_research;
     }
 
     public function show($slug)

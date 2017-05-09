@@ -1,4 +1,3 @@
-{!! Form::open(['url' => $url, 'class' => 'form-horizontal', 'files' => 'true']) !!}
 <div class="panel panel-primary">
     <div class="panel-heading">
         <h1>Create Research</h1>
@@ -45,4 +44,3 @@
         {!! Form::submit($submit_text, ['class' => 'btn btn-primary btn-lg']) !!}
     </div>
 </div>
-{!! Form::close() !!}

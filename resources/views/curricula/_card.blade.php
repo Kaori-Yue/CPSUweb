@@ -9,9 +9,9 @@
         </div>
     </a>
     @if(Request::is('admin/*'))
-        <div class="col-md-12" style="padding: 1%">
+        <div class="col-md-12" style="padding: 1%;border: solid;border-top-style: none;">
             <div class="col-md-6">
-                <a href="{{ url('curricula/'.$curricula->slug.'/edit') }}" class="btn btn-warning btn-block btn-lg">Edit</a>
+                <a href="{{ url('curricula/'.$curricula->id.'/edit') }}" class="btn btn-warning btn-block btn-lg">Edit</a>
             </div>
             <div class="col-md-6">
                 <a href="" class="btn btn-danger btn-block btn-lg">Delete</a>

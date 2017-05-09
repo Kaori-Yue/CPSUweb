@@ -1,5 +1,7 @@
 @extends('admin.index')
 
 @section('show')
-    @include('research._form', ['url' => 'research', 'submit_text' => 'Create'])
+    {!! Form::open(['url' => 'research', 'class' => 'form-horizontal', 'files' => 'true']) !!}
+    @include('research._form', ['submit_text' => 'Create'])
+    {!! Form::close() !!}
 @stop
