@@ -16,6 +16,14 @@
         </div>--}}
     </div>
 
+    @if(session('status'))
+        <div class="col-md-12 row-card" style="padding: 1%">
+            <div class="alert alert-success">
+                {{ session('status') }}
+            </div>
+        </div>
+    @endif
+
     <div class="row col-md-12" style="padding: 0">
         @foreach($curriculas as $curricula)
             @include('curricula._card', $curricula)

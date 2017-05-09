@@ -195,7 +195,19 @@ class BlogController extends Controller
     public function show($slug)
     {
         $slug = urldecode($slug);
-        $blog = Blog::where('slug', $slug)->first();
+        $blog = Blog::where('slug', $slug)->firstOrFail();
         return view('blog.show', ['blog' => $blog]);
+    }
+
+    public function destroy($id)
+    {
+        $blog = Blog::findOrFail($id);
+        $blog_tags = BlogTag::where('blog_id', $blog->id)->get();
+        foreach ($blog_tags as $blog_tag){
+            $blog_tag->delete();
+        }
+        $blog->delete();
+
+        return redirect()->action('AdminController@blog')->with('status', 'Delete Complete!');
     }
 }

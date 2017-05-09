@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateResearchOwnerTable extends Migration
+class CreateResearchStudentOwnerTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,14 +13,14 @@ class CreateResearchOwnerTable extends Migration
      */
     public function up()
     {
-        Schema::create('research_teacher_owner', function (Blueprint $table){
+        Schema::create('research_student_owner', function (Blueprint $table){
             $table->increments('id');
-            $table->integer('teacher_id')->unsigned();
+            $table->integer('student_id')->unsigned();
             $table->integer('research_id')->unsigned();
 
-            $table->foreign('teacher_id')
+            $table->foreign('student_id')
                 ->references('id')
-                ->on('teacher');
+                ->on('student');
 
             $table->foreign('research_id')
                 ->references('id')
@@ -35,6 +35,6 @@ class CreateResearchOwnerTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('research_teacher_owner');
+        Schema::dropIfExists('research_student_owner');
     }
 }

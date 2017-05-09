@@ -4,7 +4,7 @@
     <div class="container">
         <div class="row row-card">
             <div class="well well-lg">
-                <h1>ผลงานนักศึกษา</h1>
+                <h1>วิทยานิพนธ์นักศึกษา</h1>
             </div>
         </div>
 

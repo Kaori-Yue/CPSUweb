@@ -5,8 +5,10 @@
         <h2>{!! $teacher->name_th !!}</h2>
     </div>
     <div class="col-md-9 col-xs-12">
-
         <h4>{{ $teacher->name_en }}</h4>
+        @if($teacher->position != '')
+            <h4><b>{{ $teacher->position }}</b></h4>
+        @endif
         <p><b>ประวัติการศึกษา</b></p>
         <ul>
             @if($teacher->doctor_degree != '')
@@ -17,20 +19,22 @@
         </ul>
         <p><b>อีเมล : </b>{{ $teacher->email }}</p>
         <p><b>สาขาที่เชี่ยวชาญ : </b>{{ $teacher->expertise }}</p>
-        @if($teacher->position != '')
-        <h4><b>{{ $teacher->position }}</b></h4>
-        @endif
 
         @if (Request::is('admin/*'))
-            <a class="btn btn-warning" href="{{ url('teacher/'.$teacher->id.'/edit') }}">
-                Edit
-                <span class="glyphicon glyphicon-wrench"></span>
-            </a>
-
-            <a class="btn btn-danger" href="">
-                Delete
-                <span class="glyphicon glyphicon-remove-sign"></span>
-            </a>
+            <div class="col-md-6 col-xs-6">
+                <a class="btn btn-warning btn-block" href="{{ url('teacher/'.$teacher->id.'/edit') }}">
+                    Edit
+                    <span class="glyphicon glyphicon-wrench"></span>
+                </a>
+            </div>
+            <div class="col-md-6 col-xs-6">
+                {!! Form::model($teacher, ['method' => 'DELETE', 'url'=>'teacher/'.$teacher->id]) !!}
+                <button class="btn btn-danger btn-block" type="submit">
+                    Delete
+                    <span class="glyphicon glyphicon-remove-sign"></span>
+                </button>
+                {!! Form::close() !!}
+            </div>
         @endif
     </div>
 </div>

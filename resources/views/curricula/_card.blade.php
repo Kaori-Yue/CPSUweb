@@ -11,10 +11,18 @@
     @if(Request::is('admin/*'))
         <div class="col-md-12" style="padding: 1%;border: solid;border-top-style: none;">
             <div class="col-md-6">
-                <a href="{{ url('curricula/'.$curricula->id.'/edit') }}" class="btn btn-warning btn-block btn-lg">Edit</a>
+                <a href="{{ url('curricula/'.$curricula->id.'/edit') }}" class="btn btn-warning btn-block btn-lg">
+                    Edit
+                    <span class="glyphicon glyphicon-wrench"></span>
+                </a>
             </div>
             <div class="col-md-6">
-                <a href="" class="btn btn-danger btn-block btn-lg">Delete</a>
+                {!! Form::model($curricula, ['method' => 'DELETE', 'url'=>'curricula/'.$curricula->id]) !!}
+                <button class="btn btn-danger btn-block btn-lg" type="submit">
+                    Delete
+                    <span class="glyphicon glyphicon-remove-sign"></span>
+                </button>
+                {!! Form::close() !!}
             </div>
         </div>
     @endif

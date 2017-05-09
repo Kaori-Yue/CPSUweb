@@ -93,6 +93,14 @@ class TeacherController extends Controller
         return redirect()->action('AdminController@teacher');
     }
 
+    public function destroy($id)
+    {
+        $teacher = Teacher::findOrFail($id);
+        $teacher->delete();
+
+        return redirect()->action('AdminController@teacher')->with('status', 'Delete Complete!');
+    }
+
     public function storeFile($file)
     {
         $ex = $file->getClientOriginalExtension();

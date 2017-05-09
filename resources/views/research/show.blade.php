@@ -8,7 +8,7 @@
             </h1>
         </div>
 
-        <div class="row row-card" style="text-align: center;padding: 5%">
+        <div class="row row-card" style="text-align: center;padding: 5%; font-family: 'Trirong', serif;">
             <p style="/*text-indent: 50px;*/ line-height: 2.0">{{ $research->description }}</p>
         </div>
 

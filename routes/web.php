@@ -57,7 +57,9 @@ Route::patch('curricula/{id}', 'CurriculaController@update');
 Route::patch('research/{id}', 'ResearchController@update');
 
 
+Route::delete('blog/{id}', 'BlogController@destroy');
 Route::delete('teacher/{id}', 'TeacherController@destroy');
+Route::delete('curricula/{id}', 'CurriculaController@destroy');
 
 
 Route::get('admin', 'AdminController@index');

@@ -114,4 +114,12 @@ class CurriculaController extends Controller
         $curricula = Curricula::where('slug', $slug)->firstOrFail();
         return view('curricula.show', ['curricula' => $curricula]);
     }
+
+    public function destroy($id)
+    {
+        $curricula = Curricula::findOrFail($id);
+        $curricula->delete();
+
+        return redirect()->action('AdminController@curricula')->with('status', 'Delete Complete!');
+    }
 }
