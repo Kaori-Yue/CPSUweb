@@ -15,7 +15,7 @@
         @foreach($research->images as $image)
             <div class="panel panel-primary">
                 <div class="panel-heading">
-                    <h3>{{ $image->pivot->name }}</h3>
+                    <h2>{{ $image->pivot->name }}</h2>
                 </div>
                 <div class="panel-body">
                     @if($loop->index % 2 == 0)

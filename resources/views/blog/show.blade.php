@@ -18,7 +18,7 @@
             </div>
             <hr>
             <div class="col-md-8 col-md-offset-2 col-xs-offset-0">
-                {!! $blog->content !!}</p>
+                {!! $blog->content !!}
             </div>
             <div class="col-md-12 some-space"></div>
         </div>

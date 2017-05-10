@@ -1,11 +1,15 @@
 <div class="panel panel-primary">
     <div class="panel-heading">
-        <h1>Create Curricula</h1>
+        <h1>{{ $form_header }}</h1>
     </div>
     <div class="panel-body">
         <div class="form-group">
             {!! Form::label('degree', 'ระดับหลักสูตร') !!}
+            @if(isset($curricula))
             {!! Form::select('degree', $degree, $curricula->degree, ['class' => 'form-control']) !!}
+            @else
+            {!! Form::select('degree', $degree, null, ['class' => 'form-control']) !!}
+            @endif
         </div>
         <div class="form-group">
             {!! Form::label('name_th', 'ชื่อหลักสูตร (TH)') !!}
@@ -41,7 +45,11 @@
         </div>
         <div class="form-group">
             {!! Form::label('status', 'สถานะหลักสูตร') !!}
+            @if(isset($curricula))
             {!! Form::select('status', $status, $curricula->status, ['class' => 'form-control']) !!}
+            @else
+            {!! Form::select('status', $status, null, ['class' => 'form-control']) !!}
+            @endif
         </div>
         <div class="form-group">
             {!! Form::label('file', 'ไฟล์รายละเอียดหลักสูตร') !!}

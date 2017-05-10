@@ -1,7 +1,7 @@
 @extends('admin.index')
 
 @section('show')
-    <div class="row col-md-12" style="background: #ffffff;padding: 1%">
+    <div class="row-card col-md-12" style="padding: 1%">
         <div class="col-md-8" style="padding: 0">
             <a class="btn btn-primary btn-block" href="{{ url('admin/blog/create') }}">Create</a>
         </div>

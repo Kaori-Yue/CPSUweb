@@ -8,6 +8,10 @@
             {!! Form::text('name', null, ['class' => 'form-control']) !!}
         </div>
         <div class="form-group">
+            {!! Form::label('owner', 'Owner') !!}
+            {!! Form::text('owner', null, ['class' => 'form-control']) !!}
+        </div>
+        <div class="form-group">
             {!! Form::label('description', 'Description') !!}
             {!! Form::textarea('description', null, ['class' => 'form-control']) !!}
         </div>
@@ -24,13 +28,14 @@
             @endif
                     <hr>
                     <div class="form-group">
-                        {!! Form::label('name'.$i, 'Section '.$i. ' Name') !!}
-                        {!! Form::text('name'.$i, null, ['class' => 'form-control']) !!}
-                    </div>
-                    <div class="form-group">
                         {!! Form::label('image'.$i, 'Section '.$i. ' Image') !!}
                         {!! Form::file('image'.$i, ['class' => 'form-control']) !!}
                     </div>
+                    <div class="form-group">
+                        {!! Form::label('name'.$i, 'Section '.$i. ' Name') !!}
+                        {!! Form::text('name'.$i, null, ['class' => 'form-control']) !!}
+                    </div>
+
                     <div class="form-group">
                         {!! Form::label('description'.$i, 'Section '.$i.' Description') !!}
                         {!! Form::textarea('description'.$i, null, ['class' => 'form-control']) !!}

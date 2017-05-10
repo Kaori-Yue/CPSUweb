@@ -9,6 +9,7 @@ use App\Tag;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\File;
 use Illuminate\Support\Facades\Storage;
+use Illuminate\Support\Facades\Auth;
 use Log;
 
 class BlogController extends Controller
@@ -107,13 +108,13 @@ class BlogController extends Controller
             'status' => $blog['status'],
             'publish_at' => $blog['publish_date'].' '.$blog['publish_time'],
             'category_id' => $blog['category_id'],
-            'user_id' => 1
+            'user_id' => Auth::id()
         ];
         $blog = Blog::create($blogData);
 
         self::handleTags($hash_tags, $blog);
 
-        return $blog;
+        return redirect()->action('AdminController@blog');
     }
 
     public function update(Request $request, $id)
@@ -133,7 +134,7 @@ class BlogController extends Controller
             'status' => $updateBlog['status'],
             'publish_at' => $updateBlog['publish_date'].' '.$updateBlog['publish_time'],
             'category_id' => $updateBlog['category_id'],
-            'user_id' => 1
+            'user_id' => Auth::id()
         ];
         if(isset($cover_image)){
             $file = self::storeFile($cover_image);

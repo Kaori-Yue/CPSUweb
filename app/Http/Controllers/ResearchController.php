@@ -39,6 +39,7 @@ class ResearchController extends Controller
         $research = [
             'name' => $name,
             'slug' => $slug,
+            'owner' => $request->get('owner'),
             'description' => $request->get('description'),
             'file_id' => $file->id
         ];
@@ -64,7 +65,7 @@ class ResearchController extends Controller
         }
         $research->images;
 
-        return $research;
+        return redirect()->action('AdminController@research');
     }
 
     public function update(Request $request, $id)
