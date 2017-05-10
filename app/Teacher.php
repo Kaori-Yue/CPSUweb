@@ -17,6 +17,7 @@ class Teacher extends Model
         'email',
         'website',
         'position',
+        'rank',
         'expertise',
         'image',
         'token',

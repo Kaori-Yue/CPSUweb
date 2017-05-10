@@ -50,7 +50,10 @@ class AdminController extends Controller
             'ASC' => 'SortBy: ASC',
             'DESC' => 'SortBy: DESC',
         ];
-        $teachers = Teacher::all();
+        $teachers = Teacher::where('status', 'duty')
+            ->orderBy('rank', 'desc')
+            ->orderBy('name_th')
+            ->get();
         return view('teacher.admin', ['teachers' => $teachers, 'orderOptions' => $orderOptions]);
     }
 

@@ -92,6 +92,7 @@ Route::group(['middleware' => 'auth'], function (){
 Route::get('test', 'TestController@index');
 Route::get('test/slug', 'TestController@slug');
 Route::get('api/research', 'TestController@research');
+Route::get('test/explode', 'TestController@testExplode');
 
 
 Auth::routes();

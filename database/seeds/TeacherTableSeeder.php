@@ -32,6 +32,17 @@ class TeacherTableSeeder extends Seeder
         ]);
      */
 
+    /*
+    Rank value
+    หัวหน้าภาควิชา = 100
+    รองหัวหน้าภาควิชา = 50
+    ศ = 40
+    รศ = 30
+    ผศ = 20
+    อ.ดร. = 10
+    อ = 5
+    */
+
     public function run()
     {
         $generator = new TokenGenerator();
@@ -45,8 +56,9 @@ class TeacherTableSeeder extends Seeder
             'bachelor_degree' => 'วศ.บ. (วิศวกรรมโยธา) มหาวิทยาลัยขอนแก่น (2524)',
             'email' => 'worasangasilp_w@su.ac.th',
             'website' => '',
-            'position' => 'หัวหน้าภาควิชา',
-            'expertise' => 'Databaseecho, Artificial Intelligence',
+            'position' => '',
+            'rank' => 20,
+            'expertise' => 'Database, Artificial Intelligence',
             'image' => 1,
             'token' => $generator->generate(6),
             'password' => password_hash('1', PASSWORD_DEFAULT),
@@ -64,7 +76,8 @@ class TeacherTableSeeder extends Seeder
             'bachelor_degree' => 'วท.บ. (วิทยาการคอมพิวเตอร์) เกียรตินิยมอันดับสอง มหาวิทยาลัยศิลปากร (2539)',
             'email' => 'soonklang_t@su.ac.th',
             'website' => 'http://www.cp.su.ac.th/~tasanawa',
-            'position' => 'รองหัวหน้าภาควิชา',
+            'position' => '',
+            'rank' => 10,
             'expertise' => 'Natural Language Processing, Machine Learning',
             'image' => 2,
             'token' => $generator->generate(6),
@@ -83,7 +96,8 @@ class TeacherTableSeeder extends Seeder
             'bachelor_degree' => 'วศ.บ. (วิศวกรรมคอมพิวเตอร์) เกียรตินิยมอันดับสอง จุฬาลงกรณ์มหาวิทยาลัย (2544)',
             'email' => 'pinyotae@gmail.com และ pinyo@su.ac.th',
             'website' => 'http://www.cp.su.ac.th/~pinyotae/',
-            'position' => 'รองหัวหน้าภาควิชา ฝ่ายวิชาการ',
+            'position' => '',
+            'rank' => 10,
             'expertise' => 'Medical Image Processing, Computer Vision, Pattern Recognition, Machine Learning, High Performance Computing',
             'image' => 3,
             'token' => $generator->generate(6),
@@ -103,6 +117,7 @@ class TeacherTableSeeder extends Seeder
             'email' => 'kasaa@yahoo.com',
             'website' => '',
             'position' => '',
+            'rank' => 10,
             'expertise' => 'Augmented/Virtual Reality, Human Computer Interaction, Game Design and Development, Ubiquitous Computing',
             'image' => 4,
             'token' => $generator->generate(6),
@@ -122,6 +137,7 @@ class TeacherTableSeeder extends Seeder
             'email' => 'praditwong_k@su.ac.th',
             'website' => '',
             'position' => '',
+            'rank' => 10,
             'expertise' => 'Evolutionary Algorithms, Metaheuristics, Optimization',
             'image' => 5,
             'token' => $generator->generate(6),
@@ -141,6 +157,7 @@ class TeacherTableSeeder extends Seeder
             'email' => 'bhurichitiporn_b@su.ac.th',
             'website' => '',
             'position' => '',
+            'rank' => 20,
             'expertise' => 'Discrete Computational Structure, Mathematics',
             'image' => 6,
             'token' => $generator->generate(6),
@@ -160,6 +177,7 @@ class TeacherTableSeeder extends Seeder
             'email' => 'tantatsanawong_p@su.ac.th',
             'website' => '',
             'position' => '',
+            'rank' => 25,
             'expertise' => 'Software Engineering, Computer Networks',
             'image' => 7,
             'token' => $generator->generate(6),
@@ -179,6 +197,7 @@ class TeacherTableSeeder extends Seeder
             'email' => 'kanawong_r@su.ac.th',
             'website' => 'http://www.cp.su.ac.th/~kanawong',
             'position' => '',
+            'rank' => 10,
             'expertise' => 'Image Processing, Computer Vision, Machine Learning',
             'image' => 8,
             'token' => $generator->generate(6),
@@ -198,6 +217,7 @@ class TeacherTableSeeder extends Seeder
             'email' => 'adulkasem_s@su.ac.th',
             'website' => '',
             'position' => '',
+            'rank' => 20,
             'expertise' => 'Access Control and Security, Database Application and Information Technology, Medical Image and Information Processing',
             'image' => 9,
             'token' => $generator->generate(6),
@@ -217,6 +237,7 @@ class TeacherTableSeeder extends Seeder
             'email' => 'sunee@cp.su.ac.th',
             'website' => '',
             'position' => '',
+            'rank' => 10,
             'expertise' => 'Data Mining, Web Mining and Data Warehouse, Decision Support System and Knowledge Engineering, Geographic Information System',
             'image' => 10,
             'token' => $generator->generate(6),
@@ -236,6 +257,7 @@ class TeacherTableSeeder extends Seeder
             'email' => 'weenawadee@hotmail.com',
             'website' => '',
             'position' => '',
+            'rank' => 10,
             'expertise' => 'Case-Base Reasoning for Design Patterns Retrieval, Case-Base Reasoning, Information Retrieval, Software Engineering',
             'image' => 11,
             'token' => $generator->generate(6),
@@ -255,6 +277,7 @@ class TeacherTableSeeder extends Seeder
             'email' => 'wasara@cp.su.ac.th',
             'website' => '',
             'position' => '',
+            'rank' => 10,
             'expertise' => 'Multimedia Retrieval, Web/Internet Technology, Distributed Systems',
             'image' => 12,
             'token' => $generator->generate(6),
@@ -274,6 +297,7 @@ class TeacherTableSeeder extends Seeder
             'email' => 'sethalat@cp.su.ac.th',
             'website' => 'http://www.cp.su.ac.th/~sethalat',
             'position' => '',
+            'rank' => 5,
             'expertise' => 'Computer Networks, Distributed Systems, Ubiquitous and Mobile Computing',
             'image' => 13,
             'token' => $generator->generate(6),
@@ -293,6 +317,7 @@ class TeacherTableSeeder extends Seeder
             'email' => 'arampongsanuwat_s@su.ac.th',
             'website' => 'http://www.cp.su.ac.th/~saowalak',
             'position' => '',
+            'rank' => 10,
             'expertise' => 'Artificial Intelligence, Data Mining, Business Intelligence',
             'image' => 14,
             'token' => $generator->generate(6),
@@ -312,6 +337,7 @@ class TeacherTableSeeder extends Seeder
             'email' => 'chaowalit_o@su.ac.th',
             'website' => 'http://www.cp.su.ac.th/~orawan/',
             'position' => '',
+            'rank' => 10,
             'expertise' => 'Database Application and Design, Data Warehouse and Application, Enterprise Application Programing and Design, System Analysis and Design',
             'image' => 15,
             'token' => $generator->generate(6),
@@ -331,6 +357,7 @@ class TeacherTableSeeder extends Seeder
             'email' => 'oatcomster@gmail.com',
             'website' => 'http://web.sc.su.ac.th/oatcom, http://twitter.com/OaTCoM',
             'position' => '',
+            'rank' => 5,
             'expertise' => 'Knowledge and Information Engineering, Data Mining, KM, Visualization, Pattern Recognition, NLP, Cognitive, Emotional Analysis and Behaviour',
             'image' => 16,
             'token' => $generator->generate(6),
@@ -349,7 +376,8 @@ class TeacherTableSeeder extends Seeder
             'bachelor_degree' => 'วศ.บ. (คอมพิวเตอร์) มหาวิทยาลัยสงขลานครินทร์ (2536)',
             'email' => 'hongwitayakorn_a@cp.su.ac.th',
             'website' => 'http://www.cp.su.ac.th/~apisake',
-            'position' => '',
+            'position' => 'รองหัวหน้าภาควิชา',
+            'rank' => 50,
             'expertise' => 'Digital System Design, Memory Architecture, Embedded System, Microarchitecture Design Techniques',
             'image' => 17,
             'token' => $generator->generate(6),
@@ -369,6 +397,7 @@ class TeacherTableSeeder extends Seeder
             'email' => 'seepanomwan_k@su.ac.th',
             'website' => 'http://www.cp.su.ac.th/~kns',
             'position' => '',
+            'rank' => 10,
             'expertise' => 'Robotics, Wireless Communication',
             'image' => 18,
             'token' => $generator->generate(6),
@@ -387,7 +416,8 @@ class TeacherTableSeeder extends Seeder
             'bachelor_degree' => 'วท.บ. (วิทยาการคอมพิวเตอร์) มหาวิทยาลัยทักษิณ (2542)',
             'email' => 'nuttachot@hotmail.com',
             'website' => 'http://www.cp.su.ac.th/~npromrit',
-            'position' => '',
+            'position' => 'หัวหน้าภาควิชา',
+            'rank' => 100,
             'expertise' => 'Network Management, Computer and Network Security',
             'image' => 19,
             'token' => $generator->generate(6),
@@ -407,10 +437,31 @@ class TeacherTableSeeder extends Seeder
             'email' => 'ksirak@gmail.com',
             'website' => 'http:/www.cp.su.ac.th/~sirak',
             'position' => '',
+            'rank' => 10,
             'expertise' => 'Computer Network Architectures, Algorithms and Protocols',
             'image' => 20,
             'token' => $generator->generate(6),
             'password' => password_hash('20', PASSWORD_DEFAULT),
+            'status' => 'duty',
+            'created_at' => Carbon::now(),
+            'updated_at' => Carbon::now(),
+        ]);
+
+        #21
+        DB::table('teacher')->insert([
+            'name_th' => 'อ.ดร.สัจจาภรณ์ ไวจรรยา',
+            'name_en' => 'Dr.Sajjaporn Waijanya',
+            'doctor_degree' => 'ปร.ด. (เทคโนโลยีสารสนเทศ) มหาวิทยาลัยเทคโนโลยีพระจอมเกล้าพระนครเหนือ (2557)',
+            'master_degree' => 'วท.ม. (วิทยาศาสตร์คอมพิวเตอร์) มหาวิทยาลัยเทคโนโลยีพระจอมเกล้าพระนครเหนือ (2550)',
+            'bachelor_degree' => 'วท.บ. (เทคโนโลยีสารสนเทศ) มหาวิทยาลัยเทคโนโลยีพระจอมเกล้าธนบุรี (2541)',
+            'email' => 'sajjaporn.w@gmail.com',
+            'website' => '',
+            'position' => '',
+            'rank' => 10,
+            'expertise' => '',
+            'image' => 21,
+            'token' => $generator->generate(6),
+            'password' => password_hash('21', PASSWORD_DEFAULT),
             'status' => 'duty',
             'created_at' => Carbon::now(),
             'updated_at' => Carbon::now(),

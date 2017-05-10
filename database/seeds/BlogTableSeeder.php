@@ -17,7 +17,7 @@ class BlogTableSeeder extends Seeder
             'title' => 'test test test',
             'slug' => 'test-test-test',
             'content' => $mock,
-            'cover' => 21,
+            'cover' => 22,
             'status' => 'publish',
             'publish_at' => Carbon::now(),
             'category_id' => 1,

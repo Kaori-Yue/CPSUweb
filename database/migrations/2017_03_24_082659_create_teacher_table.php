@@ -24,6 +24,7 @@ class CreateTeacherTable extends Migration
             $table->string('website')->nullable();
             $table->string('position')->nullable();
             $table->string('expertise')->nullable();
+            $table->integer('rank')->default(0);
             $table->integer('image');
             $table->string('token');
             $table->string('password');

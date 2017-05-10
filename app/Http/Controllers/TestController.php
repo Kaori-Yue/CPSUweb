@@ -46,4 +46,10 @@ class TestController extends Controller
         $researches = Research::all();
         return $researches;
     }
+
+    public function testExplode()
+    {
+        $name = 'ผศ.ดร.ปานใจ ธารทัศนวงศ์';
+        print_r(explode('.', $name));
+    }
 }

@@ -12,7 +12,10 @@ class TeacherController extends Controller
 {
     public function index()
     {
-        $teachers = Teacher::all();
+        $teachers = Teacher::where('status', 'duty')
+            ->orderBy('rank', 'desc')
+            ->orderBy('name_th')
+            ->get();
         return view('teacher.index', ['teachers' => $teachers]);
     }
 
@@ -62,8 +65,52 @@ class TeacherController extends Controller
         $file = self::storeFile($image);
         $teacher['image'] = $file->id;
 
+        $teacher['rank'] = self::handleRank($teacher);
+
         $teacher = Teacher::create($teacher);
-        return $teacher;
+        return redirect()->action('AdminController@teacher');
+    }
+
+    public function handleRank($teacher)
+    {
+        if($teacher['position'] == 'หัวหน้าภาควิชา'){
+            return 100;
+        }elseif($teacher['position'] == 'รองหัวหน้าภาควิชา'){
+            return 50;
+        }
+
+        $pieces = explode('.', $teacher['name_th']);
+        if($pieces[0] == 'ศ'){
+            if($pieces[1] == 'ดร'){
+                return 45;
+            }else{
+                return 40;
+            }
+        }
+        elseif ($pieces[0] == 'รศ'){
+            if($pieces[1] == 'ดร'){
+                return 35;
+            }else{
+                return 30;
+            }
+        }
+        elseif ($pieces[0] == 'ผศ'){
+            if($pieces[1] == 'ดร'){
+                return 25;
+            }else{
+                return 20;
+            }
+        }
+        elseif ($pieces[0] == 'อ'){
+            if($pieces[1] == 'ดร'){
+                return 10;
+            }else{
+                return 5;
+            }
+        }
+        else{
+            return 0;
+        }
     }
 
     public function edit($id)
