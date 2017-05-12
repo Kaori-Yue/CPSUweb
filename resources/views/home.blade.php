@@ -25,13 +25,7 @@
             </div>
             <div class="col-md-12">
                 @foreach($blogs as $blog)
-                    <a href="{{ url('blog/'.$blog->slug) }}">
-                        <div class="card card-bg col-md-6 col-xs-12" style="background-image: url('{{ url('image/show/'.$blog->cover) }}')">
-                            <h2><span>{!! $blog->title !!}</span></h2>
-                            <br>
-                            <p><span>By {!! $blog->user->name !!}</span></p>
-                        </div>
-                    </a>
+                    @include('blog._card', $blog)
                 @endforeach
             </div>
             <div class="col-md-12" style="text-align: right">

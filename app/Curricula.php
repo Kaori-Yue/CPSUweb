@@ -2,10 +2,12 @@
 
 namespace App;
 
+use Laravel\Scout\Searchable;
 use Illuminate\Database\Eloquent\Model;
 
 class Curricula extends Model
 {
+    //use Searchable;
     public $timestamps = true;
     protected $table = 'curricula';
     protected $fillable = [

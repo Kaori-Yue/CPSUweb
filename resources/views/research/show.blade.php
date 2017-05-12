@@ -1,7 +1,7 @@
 @extends('main')
 
 @section('content')
-    <div class="container">
+    <div class="container" style="font-family: 'Trirong', serif;">
         <div class="row" style="text-align: center">
             <h1 class="bg-primary" style="padding: 5%">
                 {{ $research->name }}

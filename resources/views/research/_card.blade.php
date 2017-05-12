@@ -3,8 +3,7 @@
         <div class="well-lg" style="border: solid;border-radius: 0;height: 250px">
             <h3><b>{{ $research->name }}</b></h3>
             <hr>
-            <p>{{ $research->owner }}</p>
-            <p>{{ $research->created_at }}</p>
+            <h4>{{ $research->owner }}</h4>
         </div>
     </a>
     @if(Request::is('admin/*'))

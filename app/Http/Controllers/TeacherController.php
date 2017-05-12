@@ -23,10 +23,21 @@ class TeacherController extends Controller
     {
         $sortBy = $request->get('sort_by');
 
-        if($sortBy == 'DESC')
+        if($sortBy == 'Rank'){
+            $orderOptions = [
+                'Rank' => 'SortBu: Rank',
+                'ASC' => 'SortBy: ASC',
+                'DESC' => 'SortBy: DESC',
+            ];
+            $teachers = Teacher::orderBy('rank', 'desc')
+                ->orderBy('name_th')
+                ->get();
+        }
+        elseif($sortBy == 'DESC')
         {
             $orderOptions = [
                 'DESC' => 'SortBy: DESC',
+                'Rank' => 'SortBy: Rank',
                 'ASC' => 'SortBy: ASC',
             ];
             $teachers = Teacher::orderBy('id', 'desc')->get();
@@ -36,6 +47,7 @@ class TeacherController extends Controller
             $orderOptions = [
                 'ASC' => 'SortBy: ASC',
                 'DESC' => 'SortBy: DESC',
+                'Rank' => 'SortBy: Rank',
             ];
             $teachers = Teacher::orderBy('id')->get();
         }
@@ -131,6 +143,7 @@ class TeacherController extends Controller
         $teacher = Teacher::findOrFail($id);
         $editedTeacher = $request->all();
         $image = $request->file('image');
+        $editedTeacher['rank'] = self::handleRank($editedTeacher);
         if(isset($image)){
             $file = self::storeFile($image);
             $editedTeacher['image'] = $file->id;

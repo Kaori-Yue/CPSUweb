@@ -53,10 +53,12 @@ class BlogController extends Controller
         ];
 
         $category = Category::pluck('name', 'id');
+        $images = \App\File::where('mime', 'image/jpeg')->get();
 
         return view('blog.create', [
             'status' => $status,
-            'category' => $category
+            'category' => $category,
+            'images' => $images
         ]);
     }
 
@@ -81,11 +83,13 @@ class BlogController extends Controller
         ];
 
         $category = Category::pluck('name', 'id');
+        $images = \App\File::where('mime', 'image/jpeg')->get();
 
         return view('blog.edit', [
             'blog' => $blog,
             'status' => $status,
-            'category' => $category
+            'category' => $category,
+            'images' => $images
         ]);
     }
 

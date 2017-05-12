@@ -24,7 +24,7 @@
         </div>
     @endif
 
-    <div class="row col-md-12" style="padding: 0">
+    <div class="row col-md-12" style="padding: 0;background: #ffffff">
         @foreach($curriculas as $curricula)
             @include('curricula._card', $curricula)
         @endforeach

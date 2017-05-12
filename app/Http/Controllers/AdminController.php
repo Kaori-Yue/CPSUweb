@@ -47,6 +47,7 @@ class AdminController extends Controller
     public function teacher()
     {
         $orderOptions = [
+            'Rank' => 'SortBy: Rank',
             'ASC' => 'SortBy: ASC',
             'DESC' => 'SortBy: DESC',
         ];

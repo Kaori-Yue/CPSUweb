@@ -51,18 +51,18 @@ html, body {
     padding:10px;
 }
 #page-body {
-    padding-bottom:170px;   /* Height of the footer */
+    padding-bottom: 305px;   /* Height of the footer */
 }
 #page-footer {
     position:absolute;
     bottom:0;
     width:100%;
-    height:170px;   /* Height of the footer */
+    height:305px;   /* Height of the footer */
     background:#40826D;
     color: #ffffff;
 }
 
-#footer > a {
+.footer > a {
     text-decoration: none;
 }
 
@@ -277,6 +277,23 @@ p > span {
     background: #40826D;
     color: #ffffff;
 }
+
+.curricula-card > a:link {
+    color: #40826D;
+}
+
+.curricula-card > a:visited {
+    color: #40826D;
+}
+
+.curricula-card > a:hover {
+    color: #004D40;
+}
+
+.curricula-card > a:active {
+    color: #004D40;
+}
+
 
 
 /*.carousel-inner > .item > img,

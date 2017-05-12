@@ -2,10 +2,12 @@
 
 namespace App;
 
+use Laravel\Scout\Searchable;
 use Illuminate\Database\Eloquent\Model;
 
 class Teacher extends Model
 {
+    //use Searchable;
     public $timestamps = true;
     protected $table = 'teacher';
     protected $fillable = [
@@ -28,4 +30,9 @@ class Teacher extends Model
     protected $hidden = [
         'password', 'token'
     ];
+
+    public function searchableAs()
+    {
+        return 'teacher_index';
+    }
 }
