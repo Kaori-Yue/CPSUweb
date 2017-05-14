@@ -47,7 +47,7 @@
             </div>
         </div>
 
-        <div class="row row-card col-md-12 col-xs-12" style="padding: 1%">
+        <div class="row row-card col-md-12 col-xs-12" style="padding: 5%">
             {{--<div class="some-space col-md-12"></div>--}}
             <div class="col-md-2 col-xs-6">
                 <img src="{{ URL::asset('image/FindUsOnFacebook.png') }}" alt="" class="img-responsive">

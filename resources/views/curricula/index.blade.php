@@ -4,7 +4,7 @@
     <div class="container">
         <div class="row col-md-12" style="background: #ffffff; text-align: center">
             <div class="well well-lg">
-                <h1 style="padding: 1%">หลักสูตรปัจจุบัน</h1>
+                <h1 style="padding: 2%">หลักสูตรปัจจุบัน</h1>
             </div>
         </div>
 

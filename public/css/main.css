@@ -51,20 +51,24 @@ html, body {
     padding:10px;
 }
 #page-body {
-    padding-bottom: 305px;   /* Height of the footer */
+    padding-bottom: 51vh;   /* Height of the footer */
 }
 #page-footer {
     position:absolute;
     bottom:0;
     width:100%;
-    height:305px;   /* Height of the footer */
+    height:50vh;   /* Height of the footer */
     background:#40826D;
     color: #ffffff;
 }
 
-.footer > a {
-    text-decoration: none;
+.footer {
+    background: #40826D;
 }
+
+/*.footer > a {
+    text-decoration: none;
+}*/
 
 .navbar {
     color: #ffffff;

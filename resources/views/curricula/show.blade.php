@@ -1,7 +1,7 @@
 @extends('main')
 
 @section('content')
-    <div class="container" style="font-family: 'Trirong', serif;">
+    <div class="container" style="font-family: 'Trirong', serif;font-size: 20px">
         <div class="row row-card" style="text-align: center">
             <h1>{{ $curricula->name_th }}</h1>
             <hr>

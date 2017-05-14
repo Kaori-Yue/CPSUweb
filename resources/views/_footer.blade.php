@@ -1,5 +1,5 @@
 <div class="container footer">
-    <div class="col-md-12" style="margin-bottom: 2%">
+    <div class="col-md-12" style="margin-bottom: 5%">
         <div class="col-md-3 col-xs-6">
             <h4>สมัครเรียน</h4>
             <hr>
@@ -30,8 +30,7 @@
             <p>Contact information: <a target="_blank" href="https://www.facebook.com/mig.mikael">Mikael Facebook</a></p>
         </div>
     </div>
-    <hr />
-    <div class="col-md-12" style="text-align: center">
-        <p>© 2017 Department of Computing, Faculty of Science, Silpakorn University</p>
-    </div>
+</div>
+<div class="col-md-12 footer" style="padding: 0 1% 1% 1%;text-align: center">
+    <p>© 2017 Department of Computing, Faculty of Science, Silpakorn University</p>
 </div>

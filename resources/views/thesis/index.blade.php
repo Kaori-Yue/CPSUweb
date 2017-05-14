@@ -2,9 +2,9 @@
 
 @section('content')
     <div class="container">
-        <div class="row row-card">
+        <div class="row col-md-12" style="background: #ffffff;text-align: center">
             <div class="well well-lg">
-                <h1>วิทยานิพนธ์นักศึกษา</h1>
+                <h1 style="padding: 2%">วิทยานิพนธ์นักศึกษา</h1>
             </div>
         </div>
 

@@ -1,14 +1,14 @@
 @extends('main')
 
 @section('content')
-    <div class="container" style="font-family: 'Trirong', serif;">
-        <div class="row" style="text-align: center">
-            <h1 class="bg-primary" style="padding: 5%">
+    <div class="container">
+        <div class="row row-card" style="text-align: center">
+            <h1 style="padding: 3%">
                 {{ $research->name }}
             </h1>
         </div>
 
-        <div class="row row-card" style="text-align: center;padding: 5%; font-family: 'Trirong', serif;">
+        <div class="row row-card" style="text-align: center;padding: 5%; font-family: 'Trirong', serif;font-size: 18px">
             <p style="/*text-indent: 50px;*/ line-height: 2.0">{{ $research->description }}</p>
         </div>
 
