@@ -51,13 +51,13 @@ html, body {
     padding:10px;
 }
 #page-body {
-    padding-bottom: 51vh;   /* Height of the footer */
+    padding-bottom: 52vh;   /* Height of the footer */
 }
 #page-footer {
     position:absolute;
     bottom:0;
     width:100%;
-    height:50vh;   /* Height of the footer */
+    height:48vh;   /* Height of the footer */
     background:#40826D;
     color: #ffffff;
 }
@@ -224,11 +224,48 @@ p > span {
     color:#fff;
 }
 
-.carousel .item{
+/*.carousel .item{
     max-width: 100%;
     width: auto;
     height: auto;
     vertical-align: middle;
+}*/
+
+.carousel-inner {
+    padding: 0;
+    margin: 0;
+}
+
+.item {
+    height: 80vh;
+    padding: 0;
+    margin: 0;
+}
+
+.carousel-caption {
+    padding: 10%;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    opacity: 0;
+}
+
+.first {
+    background: #D98F4F;
+}
+
+.second {
+    background: #2c9cae;
+}
+
+.second .back {
+    display: none;
+    transform: scale(0);
+}
+
+.second .info {
+    opacity: 0;
+    transform: translateY(40px);
 }
 
 .some-space {

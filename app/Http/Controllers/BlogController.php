@@ -16,7 +16,7 @@ class BlogController extends Controller
 {
     public function index()
     {
-        $blogs = Blog::all()->take(6);
+        $blogs = Blog::paginate(8);
         return view('blog.index', ['blogs' => $blogs]);
     }
 

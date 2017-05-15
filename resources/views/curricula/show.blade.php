@@ -67,6 +67,21 @@
                 {!! $curricula->graduation_criteria !!}
             </p>
         </div>
+        @if($curricula->degree != 'Bachelor Degree')
+        <div class="row row-card" style="padding: 2% 4% 2% 4%">
+            <h3 class="bg-success" style="padding: 1%">วิชาที่สอบ</h3>
+            <p style="padding: 0 1% 0 1%">
+                {!! $curricula->entrance_subject !!}
+            </p>
+        </div>
+
+        <div class="row row-card" style="padding: 2% 4% 2% 4%">
+            <h3 class="bg-success" style="padding: 1%">เอกสาร</h3>
+            <p style="padding: 0 1% 0 1%">
+                {!! $curricula->document !!}
+            </p>
+        </div>
+        @endif
 
         <div class="row row-card" style="padding: 2% 4% 2% 4%">
             <div class="col-md-6">

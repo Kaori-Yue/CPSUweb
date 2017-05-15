@@ -25,6 +25,8 @@ class CreateCurriculaTable extends Migration
             $table->integer('credit');
             $table->text('enrollment_criteria');
             $table->text('graduation_criteria');
+            $table->text('entrance_subject');
+            $table->text('document');
             $table->string('status');
             $table->integer('file');
             $table->timestamps();

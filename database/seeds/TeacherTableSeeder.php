@@ -1,470 +1,444 @@
 <?php
 
 use Illuminate\Database\Seeder;
-use Carbon\Carbon;
-use App\Helper\TokenGenerator;
 
 class TeacherTableSeeder extends Seeder
 {
+
     /**
-     * Run the database seeds.
+     * Auto generated seed file
      *
      * @return void
      */
-    /*
-    #1
-        DB::table('teacher')->insert([
-            'name_th' => '',
-            'name_en' => '',
-            'doctor_degree' => '',
-            'master_degree' => '',
-            'bachelor_degree' => '',
-            'email' => '',
-            'website' => '',
-            'position' => '',
-            'expertise' => '',
-            'image' => ,
-            'token' => $generator->generate(6),
-            'password' => password_hash('1', PASSWORD_DEFAULT),
-            'status' => 'duty',
-            'created_at' => Carbon::now(),
-            'updated_at' => Carbon::now(),
-        ]);
-     */
-
-    /*
-    Rank value
-    หัวหน้าภาควิชา = 100
-    รองหัวหน้าภาควิชา = 50
-    ศ = 40
-    รศ = 30
-    ผศ = 20
-    อ.ดร. = 10
-    อ = 5
-    */
-
     public function run()
     {
-        $generator = new TokenGenerator();
+        
 
-        #1
-        DB::table('teacher')->insert([
-            'name_th' => 'ผศ.วิสูตร วรสง่าศิลป์',
-            'name_en' => 'Asst.Prof.Wisoot Worasangasilp',
-            'doctor_degree' => '',
+        \DB::table('teacher')->delete();
+        
+        \DB::table('teacher')->insert(array (
+            0 => 
+            array (
+                'id' => 1,
+                'name_th' => 'ผศ.วิสูตร วรสง่าศิลป์',
+                'name_en' => 'Asst.Prof.Wisoot Worasangasilp',
+                'doctor_degree' => '',
             'master_degree' => 'M.Sc. (Computing and Information Science) Roosevelt University, USA (1988)',
             'bachelor_degree' => 'วศ.บ. (วิศวกรรมโยธา) มหาวิทยาลัยขอนแก่น (2524)',
-            'email' => 'worasangasilp_w@su.ac.th',
-            'website' => '',
-            'position' => '',
-            'rank' => 20,
-            'expertise' => 'Database, Artificial Intelligence',
-            'image' => 1,
-            'token' => $generator->generate(6),
-            'password' => password_hash('1', PASSWORD_DEFAULT),
-            'status' => 'duty',
-            'created_at' => Carbon::now(),
-            'updated_at' => Carbon::now(),
-        ]);
-
-        #2
-        DB::table('teacher')->insert([
-            'name_th' => 'อ.ดร.ทัศนวรรณ ศูนย์กลาง',
-            'name_en' => 'Dr.Tasanawan Soonklang',
+                'email' => 'worasangasilp_w@su.ac.th',
+                'website' => '',
+                'position' => '',
+                'expertise' => 'Database, Artificial Intelligence',
+                'rank' => 20,
+                'image' => 1,
+                'token' => 'U1MHWB',
+                'password' => '$2y$10$5Moz7T4eXOs/.va1i/OH7uCXS9MyucHuVLBvrbq65IKUcCV1czWeC',
+                'created_at' => '2017-05-15 20:34:20',
+                'updated_at' => '2017-05-15 20:34:20',
+                'status' => 'duty',
+            ),
+            1 => 
+            array (
+                'id' => 2,
+                'name_th' => 'อ.ดร.ทัศนวรรณ ศูนย์กลาง',
+                'name_en' => 'Dr.Tasanawan Soonklang',
             'doctor_degree' => 'Ph.D. (Electronics and Electrical Engineering) University of Southampton, UK (2551)',
             'master_degree' => 'วท.ม. (วิทยาศาสตร์คอมพิวเตอร์) จุฬาลงกรณ์มหาวิทยาลัย (2544)',
             'bachelor_degree' => 'วท.บ. (วิทยาการคอมพิวเตอร์) เกียรตินิยมอันดับสอง มหาวิทยาลัยศิลปากร (2539)',
-            'email' => 'soonklang_t@su.ac.th',
-            'website' => 'http://www.cp.su.ac.th/~tasanawa',
-            'position' => '',
-            'rank' => 10,
-            'expertise' => 'Natural Language Processing, Machine Learning',
-            'image' => 2,
-            'token' => $generator->generate(6),
-            'password' => password_hash('2', PASSWORD_DEFAULT),
-            'status' => 'duty',
-            'created_at' => Carbon::now(),
-            'updated_at' => Carbon::now(),
-        ]);
-
-        #3
-        DB::table('teacher')->insert([
-            'name_th' => 'อ.ดร.ภิญโญ แท้ประสาทสิทธิ์',
-            'name_en' => 'Dr.Pinyo Taeprasartsit',
+                'email' => 'soonklang_t@su.ac.th',
+                'website' => 'http://www.cp.su.ac.th/~tasanawa',
+                'position' => '',
+                'expertise' => 'Natural Language Processing, Machine Learning',
+                'rank' => 10,
+                'image' => 2,
+                'token' => 'MFswc7',
+                'password' => '$2y$10$pS7WJFv60VaGnFuOb.yaPO.yWj.373./6c/mJoHepSiN5XEnj2M1a',
+                'created_at' => '2017-05-15 20:34:20',
+                'updated_at' => '2017-05-15 20:34:20',
+                'status' => 'duty',
+            ),
+            2 => 
+            array (
+                'id' => 3,
+                'name_th' => 'อ.ดร.ภิญโญ แท้ประสาทสิทธิ์',
+                'name_en' => 'Dr.Pinyo Taeprasartsit',
             'doctor_degree' => 'Ph.D. (Computer Science and Engineering) The Pennsylvania State University, USA (2554)',
             'master_degree' => 'M.Sc. (Computer Science and Engineering) The Pennsylvania State University, USA (2549)',
             'bachelor_degree' => 'วศ.บ. (วิศวกรรมคอมพิวเตอร์) เกียรตินิยมอันดับสอง จุฬาลงกรณ์มหาวิทยาลัย (2544)',
-            'email' => 'pinyotae@gmail.com และ pinyo@su.ac.th',
-            'website' => 'http://www.cp.su.ac.th/~pinyotae/',
-            'position' => '',
-            'rank' => 10,
-            'expertise' => 'Medical Image Processing, Computer Vision, Pattern Recognition, Machine Learning, High Performance Computing',
-            'image' => 3,
-            'token' => $generator->generate(6),
-            'password' => password_hash('3', PASSWORD_DEFAULT),
-            'status' => 'duty',
-            'created_at' => Carbon::now(),
-            'updated_at' => Carbon::now(),
-        ]);
-
-        #4
-        DB::table('teacher')->insert([
-            'name_th' => 'อ.ดร.กรัญญา สิทธิสงวน',
-            'name_en' => 'Dr.Karanya Sitdhisanguan',
+                'email' => 'pinyotae@gmail.com และ pinyo@su.ac.th',
+                'website' => 'http://www.cp.su.ac.th/~pinyotae/',
+                'position' => '',
+                'expertise' => 'Medical Image Processing, Computer Vision, Pattern Recognition, Machine Learning, High Performance Computing',
+                'rank' => 10,
+                'image' => 3,
+                'token' => '7hsdaT',
+                'password' => '$2y$10$39UJLK/AOGBCKgPgCAgkGeDiVEZxd3ResTY8MKl48UQE2YCqhtfTe',
+                'created_at' => '2017-05-15 20:34:20',
+                'updated_at' => '2017-05-15 20:34:20',
+                'status' => 'duty',
+            ),
+            3 => 
+            array (
+                'id' => 4,
+                'name_th' => 'อ.ดร.กรัญญา สิทธิสงวน',
+                'name_en' => 'Dr.Karanya Sitdhisanguan',
             'doctor_degree' => 'ปร.ด (เทคโนโลยีสารสนเทศ ) สถาบันเทคโนโลยีพระจอมเกล้าเจ้าคุณทหารลาดกระบัง (2555)',
             'master_degree' => 'M.Sc. (Applied Computer Science and Technology) Azusa Pacific University, USA (2541)',
             'bachelor_degree' => 'ศ.บ. (ออกแบบภายใน) มหาวิทยาลัยรังสิต (2536)',
-            'email' => 'kasaa@yahoo.com',
-            'website' => '',
-            'position' => '',
-            'rank' => 10,
-            'expertise' => 'Augmented/Virtual Reality, Human Computer Interaction, Game Design and Development, Ubiquitous Computing',
-            'image' => 4,
-            'token' => $generator->generate(6),
-            'password' => password_hash('4', PASSWORD_DEFAULT),
-            'status' => 'duty',
-            'created_at' => Carbon::now(),
-            'updated_at' => Carbon::now(),
-        ]);
-
-        #5
-        DB::table('teacher')->insert([
-            'name_th' => 'อ.ดร.คทา ประดิษฐวงศ์',
-            'name_en' => 'Dr.Kata Praditwong',
+                'email' => 'kasaa@yahoo.com',
+                'website' => '',
+                'position' => '',
+                'expertise' => 'Augmented/Virtual Reality, Human Computer Interaction, Game Design and Development, Ubiquitous Computing',
+                'rank' => 10,
+                'image' => 4,
+                'token' => 'WoPaal',
+                'password' => '$2y$10$wLjk38Z9QbgIiDymrNUQM.D0R3HuIpPfruhG5rN6nW1mSZyl1M18G',
+                'created_at' => '2017-05-15 20:34:20',
+                'updated_at' => '2017-05-15 20:34:20',
+                'status' => 'duty',
+            ),
+            4 => 
+            array (
+                'id' => 5,
+                'name_th' => 'อ.ดร.คทา ประดิษฐวงศ์',
+                'name_en' => 'Dr.Kata Praditwong',
             'doctor_degree' => 'Ph.D. (Computer Science) University of Birmingham, UK (2551)',
             'master_degree' => 'วท.ม. (วิทยาศาสตร์คอมพิวเตอร์) จุฬาลงกรณ์มหาวิทยาลัย (2544)',
             'bachelor_degree' => 'วท.บ. (วิทยาการคอมพิวเตอร์) เกียรตินิยมอันดับสอง มหาวิทยาลัยศิลปากร (2539)',
-            'email' => 'praditwong_k@su.ac.th',
-            'website' => '',
-            'position' => '',
-            'rank' => 10,
-            'expertise' => 'Evolutionary Algorithms, Metaheuristics, Optimization',
-            'image' => 5,
-            'token' => $generator->generate(6),
-            'password' => password_hash('5', PASSWORD_DEFAULT),
-            'status' => 'duty',
-            'created_at' => Carbon::now(),
-            'updated_at' => Carbon::now(),
-        ]);
-
-        #6
-        DB::table('teacher')->insert([
-            'name_th' => 'ผศ.บัณฑิต ภูริชิติพร',
-            'name_en' => 'Asst.Prof.Bandid Bhurichitiporn',
-            'doctor_degree' => '',
+                'email' => 'praditwong_k@su.ac.th',
+                'website' => '',
+                'position' => '',
+                'expertise' => 'Evolutionary Algorithms, Metaheuristics, Optimization',
+                'rank' => 10,
+                'image' => 5,
+                'token' => '5fHfDV',
+                'password' => '$2y$10$ITKhVfgWYvvb8I09E9IOLeZevhsKdM7pSBxpJUVIoL4PkW8UChlHu',
+                'created_at' => '2017-05-15 20:34:20',
+                'updated_at' => '2017-05-15 20:34:20',
+                'status' => 'duty',
+            ),
+            5 => 
+            array (
+                'id' => 6,
+                'name_th' => 'ผศ.บัณฑิต ภูริชิติพร',
+                'name_en' => 'Asst.Prof.Bandid Bhurichitiporn',
+                'doctor_degree' => '',
             'master_degree' => 'พบ.ม. (สถิติประยุกต์) สาขาคอมพิวเตอร์ สถาบันบัณฑิตพัฒนบริหารศาสตร์ (2533)',
             'bachelor_degree' => 'วท.บ. (คณิตศาสตร์) มหาวิทยาลัยศิลปากร (2528)',
-            'email' => 'bhurichitiporn_b@su.ac.th',
-            'website' => '',
-            'position' => '',
-            'rank' => 20,
-            'expertise' => 'Discrete Computational Structure, Mathematics',
-            'image' => 6,
-            'token' => $generator->generate(6),
-            'password' => password_hash('6', PASSWORD_DEFAULT),
-            'status' => 'duty',
-            'created_at' => Carbon::now(),
-            'updated_at' => Carbon::now(),
-        ]);
-
-        #7
-        DB::table('teacher')->insert([
-            'name_th' => 'ผศ.ดร.ปานใจ ธารทัศนวงศ์',
-            'name_en' => 'Asst.Prof.Dr.Panjai Tantatsanawong',
+                'email' => 'bhurichitiporn_b@su.ac.th',
+                'website' => '',
+                'position' => '',
+                'expertise' => 'Discrete Computational Structure, Mathematics',
+                'rank' => 20,
+                'image' => 6,
+                'token' => '8daDJL',
+                'password' => '$2y$10$XpfOb3lW1JYFXDlGcmwFxeBl1sss8kCxRyKEAuJozK8IxLHu3WgKa',
+                'created_at' => '2017-05-15 20:34:20',
+                'updated_at' => '2017-05-15 20:34:20',
+                'status' => 'duty',
+            ),
+            6 => 
+            array (
+                'id' => 7,
+                'name_th' => 'ผศ.ดร.ปานใจ ธารทัศนวงศ์',
+                'name_en' => 'Asst.Prof.Dr.Panjai Tantatsanawong',
             'doctor_degree' => 'Ph.D. (Computer Science) Asian Institute of Technology, Thailand (2000)',
             'master_degree' => 'วท.ม. (วิทยาศาสตร์คอมพิวเตอร์) จุฬาลงกรณ์มหาวิทยาลัย (2535)',
             'bachelor_degree' => 'วท.บ. (สาธารณสุขศาสตร์) มหาวิทยาลัยมหิดล (2527)',
-            'email' => 'tantatsanawong_p@su.ac.th',
-            'website' => '',
-            'position' => '',
-            'rank' => 25,
-            'expertise' => 'Software Engineering, Computer Networks',
-            'image' => 7,
-            'token' => $generator->generate(6),
-            'password' => password_hash('7', PASSWORD_DEFAULT),
-            'status' => 'duty',
-            'created_at' => Carbon::now(),
-            'updated_at' => Carbon::now(),
-        ]);
-
-        #8
-        DB::table('teacher')->insert([
-            'name_th' => 'อ.ดร.รัชดาพร คณาวงษ์',
-            'name_en' => 'Dr.Ratchadaporn Kanawong',
+                'email' => 'tantatsanawong_p@su.ac.th',
+                'website' => '',
+                'position' => '',
+                'expertise' => 'Software Engineering, Computer Networks',
+                'rank' => 25,
+                'image' => 7,
+                'token' => 'cTXjHZ',
+                'password' => '$2y$10$6OdM0JLES1y.BZO95NCBruxcrnzSV8mLjY0ssirvI/iEpC.aGjxhK',
+                'created_at' => '2017-05-15 20:34:20',
+                'updated_at' => '2017-05-15 20:34:20',
+                'status' => 'duty',
+            ),
+            7 => 
+            array (
+                'id' => 8,
+                'name_th' => 'อ.ดร.รัชดาพร คณาวงษ์',
+                'name_en' => 'Dr.Ratchadaporn Kanawong',
             'doctor_degree' => 'Ph.D. (Computer Science) University of Missouri-Columbia, USA (2012)',
             'master_degree' => 'วศ.ม. (วิศวกรรมคอมพิวเตอร์) มหาวิทยาลัยเทคโนโลยีพระจอมเกล้าเจ้าธนบุรี (2545)',
             'bachelor_degree' => 'วท.บ. (วิทยาการคอมพิวเตอร์) มหาวิทยาลัยศิลปากร (2539)',
-            'email' => 'kanawong_r@su.ac.th',
-            'website' => 'http://www.cp.su.ac.th/~kanawong',
-            'position' => '',
-            'rank' => 10,
-            'expertise' => 'Image Processing, Computer Vision, Machine Learning',
-            'image' => 8,
-            'token' => $generator->generate(6),
-            'password' => password_hash('8', PASSWORD_DEFAULT),
-            'status' => 'duty',
-            'created_at' => Carbon::now(),
-            'updated_at' => Carbon::now(),
-        ]);
-
-        #9
-        DB::table('teacher')->insert([
-            'name_th' => 'ผศ.สุจิตรา อดุลย์เกษม',
-            'name_en' => 'Asst.Prof.Suchitra Adulkasem',
-            'doctor_degree' => '',
+                'email' => 'kanawong_r@su.ac.th',
+                'website' => 'http://www.cp.su.ac.th/~kanawong',
+                'position' => '',
+                'expertise' => 'Image Processing, Computer Vision, Machine Learning',
+                'rank' => 10,
+                'image' => 8,
+                'token' => 'NqhN59',
+                'password' => '$2y$10$vLwq8MFfhElP1KluxMX7cu/oFKuMCB0hQMmIp6L1IafHaDfatZ.yK',
+                'created_at' => '2017-05-15 20:34:20',
+                'updated_at' => '2017-05-15 20:34:20',
+                'status' => 'duty',
+            ),
+            8 => 
+            array (
+                'id' => 9,
+                'name_th' => 'ผศ.สุจิตรา อดุลย์เกษม',
+                'name_en' => 'Asst.Prof.Suchitra Adulkasem',
+                'doctor_degree' => '',
             'master_degree' => 'M.Sc. (Computer Science) Asian Institute of Technology, Thailand (2535)',
             'bachelor_degree' => 'ศษ.บ. (คณิตศาสตร์) มหาวิทยาลัยเชียงใหม่ (2526)',
-            'email' => 'adulkasem_s@su.ac.th',
-            'website' => '',
-            'position' => '',
-            'rank' => 20,
-            'expertise' => 'Access Control and Security, Database Application and Information Technology, Medical Image and Information Processing',
-            'image' => 9,
-            'token' => $generator->generate(6),
-            'password' => password_hash('9', PASSWORD_DEFAULT),
-            'status' => 'duty',
-            'created_at' => Carbon::now(),
-            'updated_at' => Carbon::now(),
-        ]);
-
-        # 10
-        DB::table('teacher')->insert([
-            'name_th' => 'อ.ดร.สุนีย์ พงษ์พินิจภิญโญ',
-            'name_en' => 'Dr.Sunee Pongpinigpinyo',
+                'email' => 'adulkasem_s@su.ac.th',
+                'website' => '',
+                'position' => '',
+                'expertise' => 'Access Control and Security, Database Application and Information Technology, Medical Image and Information Processing',
+                'rank' => 20,
+                'image' => 9,
+                'token' => 'Oibfoa',
+                'password' => '$2y$10$WXpMBX63r00q1ADYyiiHQ.JNS4ntSAE63tzS2Y5NSa0McSFAMLs7W',
+                'created_at' => '2017-05-15 20:34:20',
+                'updated_at' => '2017-05-15 20:34:20',
+                'status' => 'duty',
+            ),
+            9 => 
+            array (
+                'id' => 10,
+                'name_th' => 'อ.ดร.สุนีย์ พงษ์พินิจภิญโญ',
+                'name_en' => 'Dr.Sunee Pongpinigpinyo',
             'doctor_degree' => 'วศ.ด. (วิศวกรรมคอมพิวเตอร์) จุฬาลงกรณ์มหาวิทยาลัย (2549)',
             'master_degree' => 'M.Sc. (Computer Science) Tasmania University, Australia (2539)',
             'bachelor_degree' => 'วท.บ. (สถิติ) เกียรตินิยมอันดับสอง มหาวิทยาลัยศิลปากร (2530)',
-            'email' => 'sunee@cp.su.ac.th',
-            'website' => '',
-            'position' => '',
-            'rank' => 10,
-            'expertise' => 'Data Mining, Web Mining and Data Warehouse, Decision Support System and Knowledge Engineering, Geographic Information System',
-            'image' => 10,
-            'token' => $generator->generate(6),
-            'password' => password_hash('10', PASSWORD_DEFAULT),
-            'status' => 'duty',
-            'created_at' => Carbon::now(),
-            'updated_at' => Carbon::now(),
-        ]);
-
-        #11
-        DB::table('teacher')->insert([
-            'name_th' => 'อ.ดร.วีณาวดี ม่วงอ้น',
-            'name_en' => 'Dr.Weenawadee Muangon',
+                'email' => 'sunee@cp.su.ac.th',
+                'website' => '',
+                'position' => '',
+                'expertise' => 'Data Mining, Web Mining and Data Warehouse, Decision Support System and Knowledge Engineering, Geographic Information System',
+                'rank' => 10,
+                'image' => 10,
+                'token' => '3ouqrx',
+                'password' => '$2y$10$/GSUrg1mM7r0PRsMJuhlh.4Rj0.ZMRS/nWHaAaFeYtgMPX/RLxwy6',
+                'created_at' => '2017-05-15 20:34:21',
+                'updated_at' => '2017-05-15 20:34:21',
+                'status' => 'duty',
+            ),
+            10 => 
+            array (
+                'id' => 11,
+                'name_th' => 'อ.ดร.วีณาวดี ม่วงอ้น',
+                'name_en' => 'Dr.Weenawadee Muangon',
             'doctor_degree' => 'ปร.ด.(วิทยาการคอมพิวเตอร์) มหาวิทยาลัยเทคโนโลยีพระจอมเกล้าเจ้าคุณทหารลาดกระบัง (2556)',
             'master_degree' => 'วท.ม. (วิทยาการคอมพิวเตอร์) มหาวิทยาลัยเทคโนโลยีพระจอมเกล้าเจ้าคุณทหารลาดกระบัง (2549)',
             'bachelor_degree' => 'วท.บ. (คณิตศาสตร์ประยุกต์) มหาวิทยาลัยเทคโนโลยีพระจอมเกล้าเจ้าคุณทหารลาดกระบัง (2544)',
-            'email' => 'weenawadee@hotmail.com',
-            'website' => '',
-            'position' => '',
-            'rank' => 10,
-            'expertise' => 'Case-Base Reasoning for Design Patterns Retrieval, Case-Base Reasoning, Information Retrieval, Software Engineering',
-            'image' => 11,
-            'token' => $generator->generate(6),
-            'password' => password_hash('11', PASSWORD_DEFAULT),
-            'status' => 'duty',
-            'created_at' => Carbon::now(),
-            'updated_at' => Carbon::now(),
-        ]);
-
-        #12
-        DB::table('teacher')->insert([
-            'name_th' => 'อ.ดร.วัสรา รอดเหตุภัย',
-            'name_en' => 'Dr.Wasara Rodhetbhai',
+                'email' => 'weenawadee@hotmail.com',
+                'website' => '',
+                'position' => '',
+                'expertise' => 'Case-Base Reasoning for Design Patterns Retrieval, Case-Base Reasoning, Information Retrieval, Software Engineering',
+                'rank' => 10,
+                'image' => 11,
+                'token' => 'peamTf',
+                'password' => '$2y$10$jjwaGl5Lj5Iqd9qsbHmDEOdWElxPXUsE3SteK6ttj9RI5lsGGWlnm',
+                'created_at' => '2017-05-15 20:34:21',
+                'updated_at' => '2017-05-15 20:34:21',
+                'status' => 'duty',
+            ),
+            11 => 
+            array (
+                'id' => 12,
+                'name_th' => 'อ.ดร.วัสรา รอดเหตุภัย',
+                'name_en' => 'Dr.Wasara Rodhetbhai',
             'doctor_degree' => 'Ph.D. (Computer Science) University of Southampton, UK (2552)',
             'master_degree' => 'วศ.ม. (วิศวกรรมคอมพิวเตอร์) มหาวิทยาลัยเกษตรศาสตร์ (2545)',
             'bachelor_degree' => 'วท.บ. (วิทยาการคอมพิวเตอร์) เกียรตินิยมอันดับสอง มหาวิทยาลัยศิลปากร (2539)',
-            'email' => 'wasara@cp.su.ac.th',
-            'website' => '',
-            'position' => '',
-            'rank' => 10,
-            'expertise' => 'Multimedia Retrieval, Web/Internet Technology, Distributed Systems',
-            'image' => 12,
-            'token' => $generator->generate(6),
-            'password' => password_hash('12', PASSWORD_DEFAULT),
-            'status' => 'duty',
-            'created_at' => Carbon::now(),
-            'updated_at' => Carbon::now(),
-        ]);
-
-        #13
-        DB::table('teacher')->insert([
-            'name_th' => 'อ.เสฐลัทธ์ รอดเหตุภัย',
-            'name_en' => 'Sethalat Rodhetbhai',
-            'doctor_degree' => '',
+                'email' => 'wasara@cp.su.ac.th',
+                'website' => '',
+                'position' => '',
+                'expertise' => 'Multimedia Retrieval, Web/Internet Technology, Distributed Systems',
+                'rank' => 10,
+                'image' => 12,
+                'token' => 'G45WGR',
+                'password' => '$2y$10$70gx7s1MNixsLTdMcGjCiu7itDa3B8YXvRGLNLT4PIv6y2o9XalIu',
+                'created_at' => '2017-05-15 20:34:21',
+                'updated_at' => '2017-05-15 20:34:21',
+                'status' => 'duty',
+            ),
+            12 => 
+            array (
+                'id' => 13,
+                'name_th' => 'อ.เสฐลัทธ์ รอดเหตุภัย',
+                'name_en' => 'Sethalat Rodhetbhai',
+                'doctor_degree' => '',
             'master_degree' => 'วศ.ม. (วิศวกรรมคอมพิวเตอร์) มหาวิทยาลัยเกษตรศาสตร์ (2545)',
             'bachelor_degree' => 'วท.บ. (วิทยาการคอมพิวเตอร์) เกียรตินิยมอันดับสอง มหาวิทยาลัยศิลปากร (2537)',
-            'email' => 'sethalat@cp.su.ac.th',
-            'website' => 'http://www.cp.su.ac.th/~sethalat',
-            'position' => '',
-            'rank' => 5,
-            'expertise' => 'Computer Networks, Distributed Systems, Ubiquitous and Mobile Computing',
-            'image' => 13,
-            'token' => $generator->generate(6),
-            'password' => password_hash('13', PASSWORD_DEFAULT),
-            'status' => 'duty',
-            'created_at' => Carbon::now(),
-            'updated_at' => Carbon::now(),
-        ]);
-
-        #14
-        DB::table('teacher')->insert([
-            'name_th' => 'อ.ดร.เสาวลักษณ์ อร่ามพงศานุวัต',
-            'name_en' => 'Dr.Saowalak Arampongsanuwat',
+                'email' => 'sethalat@cp.su.ac.th',
+                'website' => 'http://www.cp.su.ac.th/~sethalat',
+                'position' => '',
+                'expertise' => 'Computer Networks, Distributed Systems, Ubiquitous and Mobile Computing',
+                'rank' => 5,
+                'image' => 13,
+                'token' => 'zrxx4w',
+                'password' => '$2y$10$NQce3lsQrKNGQmz2yFmQ/Oy0CszgGm/9YcxR0ggw5i/sfa8r3qjdy',
+                'created_at' => '2017-05-15 20:34:21',
+                'updated_at' => '2017-05-15 20:34:21',
+                'status' => 'duty',
+            ),
+            13 => 
+            array (
+                'id' => 14,
+                'name_th' => 'อ.ดร.เสาวลักษณ์ อร่ามพงศานุวัต',
+                'name_en' => 'Dr.Saowalak Arampongsanuwat',
             'doctor_degree' => 'ปร.ด. (เทคโนโลยีสารสนเทศ) มหาวิทยาลัยเทคโนโลยีพระจอมเกล้าพระนครเหนือ (2557)',
             'master_degree' => 'วท.ม. (เทคโนโลยีสารสนเทศ) สถาบันเทคโนโลยีพระจอมเกล้าพระนครเหนือ (2546)',
             'bachelor_degree' => 'วท.บ. (วิทยาการคอมพิวเตอร์) มหาวิทยาลัยศิลปากร (2544)',
-            'email' => 'arampongsanuwat_s@su.ac.th',
-            'website' => 'http://www.cp.su.ac.th/~saowalak',
-            'position' => '',
-            'rank' => 10,
-            'expertise' => 'Artificial Intelligence, Data Mining, Business Intelligence',
-            'image' => 14,
-            'token' => $generator->generate(6),
-            'password' => password_hash('14', PASSWORD_DEFAULT),
-            'status' => 'duty',
-            'created_at' => Carbon::now(),
-            'updated_at' => Carbon::now(),
-        ]);
-
-        #15
-        DB::table('teacher')->insert([
-            'name_th' => 'อ.ดร.อรวรรณ เชาวลิต',
-            'name_en' => 'Dr.Orawan Chaowalit',
+                'email' => 'arampongsanuwat_s@su.ac.th',
+                'website' => 'http://www.cp.su.ac.th/~saowalak',
+                'position' => '',
+                'expertise' => 'Artificial Intelligence, Data Mining, Business Intelligence',
+                'rank' => 10,
+                'image' => 14,
+                'token' => 'tAbW5g',
+                'password' => '$2y$10$hKWNdxpCyiJ8OdZuWGuDyOmalciYJYLLgAgFucJvpRj9cEPgFtyT6',
+                'created_at' => '2017-05-15 20:34:21',
+                'updated_at' => '2017-05-15 20:34:21',
+                'status' => 'duty',
+            ),
+            14 => 
+            array (
+                'id' => 15,
+                'name_th' => 'อ.ดร.อรวรรณ เชาวลิต',
+                'name_en' => 'Dr.Orawan Chaowalit',
             'doctor_degree' => 'Ph.D. (Computer Science) National Institute of Development Administration, Thailand (2557)',
             'master_degree' => 'วท.ม. (วิทยาการคอมพิวเตอร์) มหาวิทยาลัยธรรมศาสตร์ (2547)',
             'bachelor_degree' => 'วท.บ. (วิทยาการคอมพิวเตอร์) มหาวิทยาลัยศิลปากร (2539)',
-            'email' => 'chaowalit_o@su.ac.th',
-            'website' => 'http://www.cp.su.ac.th/~orawan/',
-            'position' => '',
-            'rank' => 10,
-            'expertise' => 'Database Application and Design, Data Warehouse and Application, Enterprise Application Programing and Design, System Analysis and Design',
-            'image' => 15,
-            'token' => $generator->generate(6),
-            'password' => password_hash('15', PASSWORD_DEFAULT),
-            'status' => 'duty',
-            'created_at' => Carbon::now(),
-            'updated_at' => Carbon::now(),
-        ]);
-
-        #16
-        DB::table('teacher')->insert([
-            'name_th' => 'อ.โอภาส วงษ์ทวีทรัพย์',
-            'name_en' => 'Opas Wongtaweesap',
-            'doctor_degree' => '',
+                'email' => 'chaowalit_o@su.ac.th',
+                'website' => 'http://www.cp.su.ac.th/~orawan/',
+                'position' => '',
+                'expertise' => 'Database Application and Design, Data Warehouse and Application, Enterprise Application Programing and Design, System Analysis and Design',
+                'rank' => 10,
+                'image' => 15,
+                'token' => 'ZUBTbE',
+                'password' => '$2y$10$GOM/wQAT21u4WLvqH1Cn8OjhRGRiK7BNebZCtTCC2L/WnEs8qc5LC',
+                'created_at' => '2017-05-15 20:34:21',
+                'updated_at' => '2017-05-15 20:34:21',
+                'status' => 'duty',
+            ),
+            15 => 
+            array (
+                'id' => 16,
+                'name_th' => 'อ.โอภาส วงษ์ทวีทรัพย์',
+                'name_en' => 'Opas Wongtaweesap',
+                'doctor_degree' => '',
             'master_degree' => 'วท.ม. (วิทยาศาสตร์คอมพิวเตอร์) จุฬาลงกรณ์มหาวิทยาลัย (2550)',
             'bachelor_degree' => 'วท.บ. (วิทยาการคอมพิวเตอร์) เกียรตินิยมอันดับสอง มหาวิทยาลัยศิลปากร (2546)',
-            'email' => 'oatcomster@gmail.com',
-            'website' => 'http://web.sc.su.ac.th/oatcom, http://twitter.com/OaTCoM',
-            'position' => '',
-            'rank' => 5,
-            'expertise' => 'Knowledge and Information Engineering, Data Mining, KM, Visualization, Pattern Recognition, NLP, Cognitive, Emotional Analysis and Behaviour',
-            'image' => 16,
-            'token' => $generator->generate(6),
-            'password' => password_hash('16', PASSWORD_DEFAULT),
-            'status' => 'duty',
-            'created_at' => Carbon::now(),
-            'updated_at' => Carbon::now(),
-        ]);
-
-        #17
-        DB::table('teacher')->insert([
-            'name_th' => 'อ.อภิเษก หงษ์วิทยากร',
-            'name_en' => 'Apisake Hongwitayakorn',
-            'doctor_degree' => '',
+                'email' => 'oatcomster@gmail.com',
+                'website' => 'http://web.sc.su.ac.th/oatcom, http://twitter.com/OaTCoM',
+                'position' => '',
+                'expertise' => 'Knowledge and Information Engineering, Data Mining, KM, Visualization, Pattern Recognition, NLP, Cognitive, Emotional Analysis and Behaviour',
+                'rank' => 5,
+                'image' => 16,
+                'token' => 'CLdQVu',
+                'password' => '$2y$10$bsGkwvAveoBk4BPooAjhSeQNhPsaxqomUDt69PQFOYK2Zl9rdZOKW',
+                'created_at' => '2017-05-15 20:34:21',
+                'updated_at' => '2017-05-15 20:34:21',
+                'status' => 'duty',
+            ),
+            16 => 
+            array (
+                'id' => 17,
+                'name_th' => 'อ.อภิเษก หงษ์วิทยากร',
+                'name_en' => 'Apisake Hongwitayakorn',
+                'doctor_degree' => '',
             'master_degree' => 'M.EngSci. (Computer Engineering) University of Adelaide, Australia (2546)',
             'bachelor_degree' => 'วศ.บ. (คอมพิวเตอร์) มหาวิทยาลัยสงขลานครินทร์ (2536)',
-            'email' => 'hongwitayakorn_a@cp.su.ac.th',
-            'website' => 'http://www.cp.su.ac.th/~apisake',
-            'position' => 'รองหัวหน้าภาควิชา',
-            'rank' => 50,
-            'expertise' => 'Digital System Design, Memory Architecture, Embedded System, Microarchitecture Design Techniques',
-            'image' => 17,
-            'token' => $generator->generate(6),
-            'password' => password_hash('17', PASSWORD_DEFAULT),
-            'status' => 'duty',
-            'created_at' => Carbon::now(),
-            'updated_at' => Carbon::now(),
-        ]);
-
-        #18
-        DB::table('teacher')->insert([
-            'name_th' => 'อ.ดร.กฤษณะ สีพนมวัน',
-            'name_en' => 'Dr.Kristsana Seepanomwan',
+                'email' => 'hongwitayakorn_a@cp.su.ac.th',
+                'website' => 'http://www.cp.su.ac.th/~apisake',
+                'position' => 'รองหัวหน้าภาควิชา',
+                'expertise' => 'Digital System Design, Memory Architecture, Embedded System, Microarchitecture Design Techniques',
+                'rank' => 50,
+                'image' => 17,
+                'token' => 'zaz0ja',
+                'password' => '$2y$10$ulKBjOrY3iQb047rzxQHv.0l5C39RYFlGwCvb5k2DedJjPtuGCpvu',
+                'created_at' => '2017-05-15 20:34:21',
+                'updated_at' => '2017-05-15 20:34:21',
+                'status' => 'duty',
+            ),
+            17 => 
+            array (
+                'id' => 18,
+                'name_th' => 'อ.ดร.กฤษณะ สีพนมวัน',
+                'name_en' => 'Dr.Kristsana Seepanomwan',
             'doctor_degree' => 'Ph.D. (Computing) Plymouth University, UK (2559)',
             'master_degree' => 'วท.ม. (วิทยาการคอมพิวเตอร์) สถาบันเทคโนโลยีพระจอมเกล้าพระนครเหนือ (2550)',
             'bachelor_degree' => 'วท.บ. (วิทยาการคอมพิวเตอร์) สถาบันราชภัฏนครปฐม (2542)',
-            'email' => 'seepanomwan_k@su.ac.th',
-            'website' => 'http://www.cp.su.ac.th/~kns',
-            'position' => '',
-            'rank' => 10,
-            'expertise' => 'Robotics, Wireless Communication',
-            'image' => 18,
-            'token' => $generator->generate(6),
-            'password' => password_hash('18', PASSWORD_DEFAULT),
-            'status' => 'duty',
-            'created_at' => Carbon::now(),
-            'updated_at' => Carbon::now(),
-        ]);
-
-        #19
-        DB::table('teacher')->insert([
-            'name_th' => 'อ.ดร.ณัฐโชติ พรหมฤทธิ์',
-            'name_en' => 'Dr.Nuttachot Promrit',
+                'email' => 'seepanomwan_k@su.ac.th',
+                'website' => 'http://www.cp.su.ac.th/~kns',
+                'position' => '',
+                'expertise' => 'Robotics, Wireless Communication',
+                'rank' => 10,
+                'image' => 18,
+                'token' => 'WgGVfo',
+                'password' => '$2y$10$SGlMuESOvZcc10w1ZJt9BOPHrMGfhuKoLoT75/hug40jOyk73fweO',
+                'created_at' => '2017-05-15 20:34:21',
+                'updated_at' => '2017-05-15 20:34:21',
+                'status' => 'duty',
+            ),
+            18 => 
+            array (
+                'id' => 19,
+                'name_th' => 'อ.ดร.ณัฐโชติ พรหมฤทธิ์',
+                'name_en' => 'Dr.Nuttachot Promrit',
             'doctor_degree' => 'ปร.ด. (เทคโนโลยีสารสนเทศ) มหาวิทยาลัยเทคโนโลยีพระจอมเกล้าพระนครเหนือ (2558)',
             'master_degree' => 'วท.ม. (เทคโนโลยีสารสนเทศ) สถาบันเทคโนโลยีพระจอมเกล้าเจ้าคุณทหารลาดกระบัง (2548)',
             'bachelor_degree' => 'วท.บ. (วิทยาการคอมพิวเตอร์) มหาวิทยาลัยทักษิณ (2542)',
-            'email' => 'nuttachot@hotmail.com',
-            'website' => 'http://www.cp.su.ac.th/~npromrit',
-            'position' => 'หัวหน้าภาควิชา',
-            'rank' => 100,
-            'expertise' => 'Network Management, Computer and Network Security',
-            'image' => 19,
-            'token' => $generator->generate(6),
-            'password' => password_hash('19', PASSWORD_DEFAULT),
-            'status' => 'duty',
-            'created_at' => Carbon::now(),
-            'updated_at' => Carbon::now(),
-        ]);
-
-        #20
-        DB::table('teacher')->insert([
-            'name_th' => 'อ.ดร.สิรักข์ แก้วจำนงค์',
-            'name_en' => 'Dr.Sirak Kaewjamnong',
+                'email' => 'nuttachot@hotmail.com',
+                'website' => 'http://www.cp.su.ac.th/~npromrit',
+                'position' => 'หัวหน้าภาควิชา',
+                'expertise' => 'Network Management, Computer and Network Security',
+                'rank' => 100,
+                'image' => 19,
+                'token' => 'EnscW9',
+                'password' => '$2y$10$slfP14lF3vua3RQ.e6pOEOc/Deb0yivjF5gPMxFWL/GIPPoBC/Oo.',
+                'created_at' => '2017-05-15 20:34:22',
+                'updated_at' => '2017-05-15 20:34:22',
+                'status' => 'duty',
+            ),
+            19 => 
+            array (
+                'id' => 20,
+                'name_th' => 'อ.ดร.สิรักข์ แก้วจำนงค์',
+                'name_en' => 'Dr.Sirak Kaewjamnong',
             'doctor_degree' => 'Ph.D. (Computer Science) Lancaster University, UK (2015)',
             'master_degree' => 'วศ.ม. (วิศวกรรมคอมพิวเตอร์) มหาวิทยาลัยเกษตรศาสตร์ (2544)',
             'bachelor_degree' => 'วท.บ. (วิทยาการคอมพิวเตอร์) สถาบันเทคโนโลยีราชมงคล (2540)',
-            'email' => 'ksirak@gmail.com',
-            'website' => 'http:/www.cp.su.ac.th/~sirak',
-            'position' => '',
-            'rank' => 10,
-            'expertise' => 'Computer Network Architectures, Algorithms and Protocols',
-            'image' => 20,
-            'token' => $generator->generate(6),
-            'password' => password_hash('20', PASSWORD_DEFAULT),
-            'status' => 'duty',
-            'created_at' => Carbon::now(),
-            'updated_at' => Carbon::now(),
-        ]);
-
-        #21
-        DB::table('teacher')->insert([
-            'name_th' => 'อ.ดร.สัจจาภรณ์ ไวจรรยา',
-            'name_en' => 'Dr.Sajjaporn Waijanya',
+                'email' => 'ksirak@gmail.com',
+                'website' => 'http:/www.cp.su.ac.th/~sirak',
+                'position' => '',
+                'expertise' => 'Computer Network Architectures, Algorithms and Protocols',
+                'rank' => 10,
+                'image' => 20,
+                'token' => 'ki14iy',
+                'password' => '$2y$10$R2wutYWJViRSLCjgG9VR7.qSwcuqFhqXPuBlCermUiC39Yf18lRce',
+                'created_at' => '2017-05-15 20:34:22',
+                'updated_at' => '2017-05-15 20:34:22',
+                'status' => 'duty',
+            ),
+            20 => 
+            array (
+                'id' => 21,
+                'name_th' => 'อ.ดร.สัจจาภรณ์ ไวจรรยา',
+                'name_en' => 'Dr.Sajjaporn Waijanya',
             'doctor_degree' => 'ปร.ด. (เทคโนโลยีสารสนเทศ) มหาวิทยาลัยเทคโนโลยีพระจอมเกล้าพระนครเหนือ (2557)',
             'master_degree' => 'วท.ม. (วิทยาศาสตร์คอมพิวเตอร์) มหาวิทยาลัยเทคโนโลยีพระจอมเกล้าพระนครเหนือ (2550)',
             'bachelor_degree' => 'วท.บ. (เทคโนโลยีสารสนเทศ) มหาวิทยาลัยเทคโนโลยีพระจอมเกล้าธนบุรี (2541)',
-            'email' => 'sajjaporn.w@gmail.com',
-            'website' => '',
-            'position' => '',
-            'rank' => 10,
-            'expertise' => '',
-            'image' => 21,
-            'token' => $generator->generate(6),
-            'password' => password_hash('21', PASSWORD_DEFAULT),
-            'status' => 'duty',
-            'created_at' => Carbon::now(),
-            'updated_at' => Carbon::now(),
-        ]);
+                'email' => 'sajjaporn.w@gmail.com',
+                'website' => NULL,
+                'position' => NULL,
+                'expertise' => 'Software Engineering, Natural Language Processing, Web Programming / Technology',
+                'rank' => 10,
+                'image' => 21,
+                'token' => 'XkrrW3',
+                'password' => '$2y$10$NL0duz1Hnr4gc5ra2LrDW.McBciOXWlBF1PaCbIwEnRhpslpIH8Kq',
+                'created_at' => '2017-05-15 20:34:22',
+                'updated_at' => '2017-05-15 20:55:55',
+                'status' => 'duty',
+            ),
+        ));
+        
+        
     }
 }

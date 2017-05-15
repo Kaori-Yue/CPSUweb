@@ -44,6 +44,14 @@
             {!! Form::textarea('graduation_criteria', null, ['class' => 'form-control']) !!}
         </div>
         <div class="form-group">
+            {!! Form::label('entrance_subject', 'วิชาที่สอบ') !!}
+            {!! Form::textarea('entrance_subject', null, ['class' => 'form-control']) !!}
+        </div>
+        <div class="form-group">
+            {!! Form::label('document', 'เอกสาร') !!}
+            {!! Form::textarea('document', null, ['class' => 'form-control']) !!}
+        </div>
+        <div class="form-group">
             {!! Form::label('status', 'สถานะหลักสูตร') !!}
             @if(isset($curricula))
             {!! Form::select('status', $status, $curricula->status, ['class' => 'form-control']) !!}

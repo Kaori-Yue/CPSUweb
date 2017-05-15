@@ -36,7 +36,7 @@ class AdminController extends Controller
             'ASC' => 'SortBy: ASC',
             'DESC' => 'SortBy: DESC',
         ];
-        $blogs = Blog::all();
+        $blogs = Blog::paginate(8);
 
         return view('blog.admin', [
             'blogs' => $blogs,
@@ -66,7 +66,7 @@ class AdminController extends Controller
 
     public function research()
     {
-        $researches = Research::all();
+        $researches = Research::paginate(10);
         return view('research.admin', ['researches' => $researches]);
     }
 }

@@ -47,5 +47,8 @@
             @include('blog._card', $blog)
         @endforeach
         </div>
+        <div class="col-md-12" style="text-align: center">
+            <?php echo $blogs->render(); ?>
+        </div>
     </div>
 @stop

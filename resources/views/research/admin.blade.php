@@ -21,4 +21,8 @@
             @include('research._card', $research)
         @endforeach
     </div>
+
+    <div class="col-md-12" style="text-align: center">
+        <?php echo $researches->render(); ?>
+    </div>
 @stop

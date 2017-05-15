@@ -21,7 +21,19 @@ class Curricula extends Model
         'credit',
         'graduation_criteria',
         'enrollment_criteria',
+        'entrance_subject',
+        'document',
         'status',
         'file'
     ];
+
+    public function scopeEnable($query)
+    {
+        return $query->where('status', 'enable');
+    }
+
+    public function scopeDisable($query)
+    {
+        return $query->where('status', 'disable');
+    }
 }

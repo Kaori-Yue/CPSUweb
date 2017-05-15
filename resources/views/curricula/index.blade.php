@@ -35,5 +35,21 @@
             @endforeach
         </div>
 
+        <br>
+        <div></div>
+        <br>
+
+        <div class="row col-md-12" style="background: #ffffff; text-align: center">
+            <div class="well well-lg">
+                <h1 style="padding: 2%">หลักสูตรเก่า</h1>
+            </div>
+        </div>
+
+        <div class="row col-md-12" style="background: #ffffff">
+            @foreach($dis_curriculas as $curricula)
+                @include('curricula._card', $curricula)
+            @endforeach
+        </div>
+
     </div>
 @stop

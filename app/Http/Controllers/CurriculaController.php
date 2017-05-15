@@ -10,14 +10,17 @@ class CurriculaController extends Controller
 {
     public function index()
     {
-        $b_curriculas = Curricula::where('degree', 'Bachelor Degree')->get();
-        $m_curriculas = Curricula::where('degree', 'Master Degree')->get();
-        $d_curriculas = Curricula::where('degree', 'Doctor Degree')->get();
+        $b_curriculas = Curricula::enable()->where('degree', 'Bachelor Degree')->get();
+        $m_curriculas = Curricula::enable()->where('degree', 'Master Degree')->get();
+        $d_curriculas = Curricula::enable()->where('degree', 'Doctor Degree')->get();
+
+        $dis_curriculas = Curricula::disable()->get();
 
         return view('curricula.index', [
             'b_curriculas' => $b_curriculas,
             'm_curriculas' => $m_curriculas,
-            'd_curriculas' => $d_curriculas
+            'd_curriculas' => $d_curriculas,
+            'dis_curriculas' => $dis_curriculas,
         ]);
         //return $curriculas;
     }

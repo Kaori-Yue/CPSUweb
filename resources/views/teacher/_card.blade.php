@@ -1,10 +1,10 @@
 <div class="row col-md-12" style="padding: 1%;background: #ffffff">
-    <div class="col-md-3 col-xs-12 teacher-image"
+    <div class="col-md-3 col-sm-4 col-xs-12 teacher-image"
          style="background-image: url('{{ url('image/show/'.$teacher->image) }}')"></div>
-    <div class="col-md-9 col-xs-12" style="background: #40826D;color: #ffffff;padding: 1%;margin-bottom: 1%">
+    <div class="col-md-9 col-sm-8 col-xs-12" style="background: #40826D;color: #ffffff;padding: 1%;margin-bottom: 1%">
         <h2>{!! $teacher->name_th !!}</h2>
     </div>
-    <div class="col-md-9 col-xs-12">
+    <div class="col-md-9 col-sm-8 col-xs-12">
         <h4>{{ $teacher->name_en }}</h4>
         @if($teacher->position != '')
             <h4><b>{{ $teacher->position }}</b></h4>

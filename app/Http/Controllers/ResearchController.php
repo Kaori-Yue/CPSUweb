@@ -11,7 +11,7 @@ class ResearchController extends Controller
 {
     public function index()
     {
-        $researches = Research::all();
+        $researches = Research::paginate(10);
 
         return view('research.index', ['researches' => $researches]);
     }
