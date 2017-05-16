@@ -2,7 +2,7 @@
 
 @section('content')
     <div class="container" style="font-family: 'Trirong', serif;font-size: 20px">
-        <div class="center-cropped" style="background-image: url('{{ url('image/show/'.$blog->cover) }}')"></div>
+        <div class="row center-cropped" style="background-image: url('{{ url('image/show/'.$blog->cover) }}')"></div>
         <div class="row row-card">
             <div class="col-md-8 col-md-offset-2 col-xs-offset-0">
                 <h1>{{ $blog->title }}</h1>

@@ -19,12 +19,17 @@
 
 #Free Route
 Route::get('/', 'HomeController@index');
+Route::get('home', 'HomeController@index')->name('home');
 Route::get('blog', 'BlogController@index');
 Route::get('thesis', 'ThesisController@index');
 Route::get('research', 'ResearchController@index');
 Route::get('teacher', 'TeacherController@index');
 Route::get('contact', 'ContactController@index');
 Route::get('curricula', 'CurriculaController@index');
+Route::get('history', function (){
+    return view('history');
+});
+
 
 Route::get('blog/{slug}', 'BlogController@show');
 Route::get('research/{slug}', 'ResearchController@show');
@@ -97,4 +102,4 @@ Route::get('test/explode', 'TestController@testExplode');
 
 Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
+

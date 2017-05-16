@@ -31,6 +31,7 @@
         </div>
     </div>
     <div class="col-md-12 col-sm-12 col-xs-12" style="padding: 0 1% 1% 1%;text-align: center">
-        <p>© 2017 Department of Computing, Faculty of Science, Silpakorn University</p>
+        <p>Copyright © 2017 by Department of Computing, Faculty of Science, Silpakorn University.</p>
+        <p>Powered By <a href="https://laravel.com/" style="color: #f4645f">Laravel</a></p>
     </div>
 </div>

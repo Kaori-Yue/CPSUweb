@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Blog;
+use App\Research;
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
@@ -24,7 +25,8 @@ class HomeController extends Controller
      */
     public function index()
     {
-        $blogs = Blog::all();
-        return view('home', ['blogs' => $blogs]);
+        $blogs = Blog::where('category_id', 1)->take(6)->get();
+        $researches = Research::all()->take(4);
+        return view('home', ['blogs' => $blogs, 'researches' => $researches]);
     }
 }

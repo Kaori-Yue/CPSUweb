@@ -1,4 +1,4 @@
-<div class="col-md-6 col-xs-12 row-card" style="padding: 1%">
+<div class="col-md-4 col-sm-6 col-xs-12 row-card" style="padding: 1%">
     <a href="{{ url('blog/'.$blog->slug) }}">
         <div class="card card-bg" style="background-image: url('{{ url('image/show/'.$blog->cover) }}')">
             <h2><span>{!! $blog->title !!}</span></h2>

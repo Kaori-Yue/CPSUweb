@@ -13,40 +13,53 @@
             <div class="carousel-inner">
                 <div class="item first active" id="1">
                     <div class="carousel-caption">
-                        <div class="col col-xs-6">
-                            <h1 class="title">
-                                ภาควิชาคอมพิวเตอร์
+                        <div class="col-md-6 col-xs-12" style="padding: 5% 10% 5% 10%">
+                            <h1 class="title" style="font-size: 40px;">
+                                <span>ภาควิชาคอมพิวเตอร์</span>
                             </h1>
                             <p class="desc">
                                 คณะวิทยาศาสตร์ มหาวิทยาลัยศิลปากร
                             </p>
-                            <ul class="list">
-                                <!-- list items here -->
+                            <br>
+                            <ul class="list" style="text-align: left">
+                                <li class="welcome-li">
+                                    <a href="">ผู้สนใจเข้าศึกษา</a>
+                                </li>
+                                <li class="welcome-li">
+                                    <a href="">นักศึกษาปัจจุบัน</a>
+                                </li>
+                                <li class="welcome-li">
+                                    <a href="">บุคลากร</a>
+                                </li>
+                                <li class="welcome-li">
+                                    <a href="">บุคคลทั่วไป</a>
+                                </li>
                             </ul>
                         </div>
 
-                        <div class="col col-xs-6">
+                        <div class="col-md-6 col-xs-12" style="padding: 2% 10% 10% 10%">
                             <div class="pc-wrapper">
-                                <img class="pc" src="{{ URL::asset('image/SC-SU-Formal-TH.png') }}" alt="" width="100px" height="100px">
+                                <img class="pc img-responsive" src="{{ URL::asset('image/SC-SU-Formal-TH.png') }}" style="width: 100%" width="90%" height="90%">
                                 <div class="price">
-                                    <!-- content here -->
+                                    {{--This is price--}}
                                 </div>
                             </div>
-                            <img class="keyboard" src="{{ URL::asset('image/white-atom.png') }}" alt="" width="100px" height="100px">
+                            {{--<img class="keyboard" src="{{ URL::asset('image/white-atom.png') }}" alt="" width="100px" height="100px">
                             <a type="button" href="{{ url('contact') }}" class="btn btn-warning btn-lg">
                                 ติดต่อ
-                            </a>
+                            </a>--}}
                         </div>
                     </div>
                 </div>
 
                 <div class="item second" id="2">
                     <div class="carousel-caption">
-                        <h2 class="title">
-                            <span>
-                              ภาควิชาคอมพิวเตอร์
-                            </span>
-                        </h2>
+                        <div class="row">
+                            <h2 class="title">
+                                <span>ภาควิชาคอมพิวเตอร์</span>
+                            </h2>
+                        </div>
+
                         <div class="row">
                             <div class="col-xs-4 cms-wrapper">
                                 <div class="cms">
@@ -54,7 +67,10 @@
                                         <h1>1</h1>
                                     </div>
                                     <div class="back">
-                                        <img class="img-responsive" src="{{ URL::asset('image/white-atom.png') }}" alt="">
+                                        <a href="" class="btn btn-primary btn-lg">
+                                            <span class="glyphicon glyphicon-user"></span>
+                                        </a>
+                                        {{--<img class="img-responsive" src="{{ URL::asset('image/white-atom.png') }}" alt="">--}}
                                     </div>
                                 </div>
                                 <p class="info">
@@ -68,7 +84,10 @@
                                         <h1>2</h1>
                                     </div>
                                     <div class="back">
-                                        <img class="img-responsive" src="{{ URL::asset('image/white-atom.png') }}" alt="">
+                                        <a href="" class="btn btn-primary btn-lg">
+                                            <span class="glyphicon glyphicon-user"></span>
+                                        </a>
+                                        {{--<img class="img-responsive" src="{{ URL::asset('image/white-atom.png') }}" alt="">--}}
                                     </div>
                                 </div>
                                 <p class="info">
@@ -82,7 +101,10 @@
                                         <h1>3</h1>
                                     </div>
                                     <div class="back">
-                                        <img class="img-responsive" src="{{ URL::asset('image/white-atom.png') }}" alt="">
+                                        <a href="" class="btn btn-primary btn-lg">
+                                            <span class="glyphicon glyphicon-user"></span>
+                                        </a>
+                                        {{--<img class="img-responsive" src="{{ URL::asset('image/white-atom.png') }}" alt="">--}}
                                     </div>
                                 </div>
                                 <p class="info">
@@ -98,7 +120,6 @@
                     </div>
                 </div>
             </div>
-            {{--
             <a class="left carousel-control" href="#myCarousel" data-slide="prev">
                 <span class="glyphicon glyphicon-chevron-left"></span>
                 <span class="sr-only">Previous</span>
@@ -106,7 +127,7 @@
             <a class="right carousel-control" href="#myCarousel" data-slide="next">
                 <span class="glyphicon glyphicon-chevron-right"></span>
                 <span class="sr-only">Next</span>
-            </a>--}}
+            </a>
         </div>
 
         {{--<div class="row">
@@ -127,7 +148,7 @@
         </div>--}}
 
         <div class="row row-card col-md-12 col-xs-12">
-            <div class="col-md-12">
+            <div class="col-md-12" style="padding-left: 2%">
                 <h2>ข่าวประชาสัมพันธ์</h2>
             </div>
             <div class="col-md-12">
@@ -136,21 +157,21 @@
                 @endforeach
             </div>
             <div class="col-md-12" style="text-align: right">
-                <a href="{{ url('blog') }}"><h4>ดูข่าวทั้งหมด ></h4></a>
+                <a href="{{ url('blog') }}"><h4>ดูข่าวเพิ่มเติม ></h4></a>
             </div>
         </div>
 
         <div class="row row-card col-md-12 col-xs-12">
-            <div class="col-md-12">
-                <h2>ประกาศ</h2>
+            <div class="col-md-12" style="padding-left: 2%">
+                <h2>ผลงานวิจัย</h2>
             </div>
             <div class="col-md-12">
-                @foreach($blogs as $blog)
-                    @include('blog._card', $blog)
+                @foreach($researches as $research)
+                    @include('research._card', $research)
                 @endforeach
             </div>
             <div class="col-md-12" style="text-align: right">
-                <a href="{{ url('blog') }}"><h4>ดูข่าวทั้งหมด ></h4></a>
+                <a href="{{ url('research') }}"><h4>ดูงานวิจัยเพิ่มเติม ></h4></a>
             </div>
         </div>
 
