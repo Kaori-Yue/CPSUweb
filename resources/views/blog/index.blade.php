@@ -47,8 +47,60 @@
             @include('blog._card', $blog)
         @endforeach
         </div>
-        <div class="col-md-12" style="text-align: center">
+        <div class="row col-md-12" style="text-align: center">
             <?php echo $blogs->render(); ?>
         </div>
+
+        <div class="row col-md-12" style="background: #ffffff">
+            <div id="myCanvasContainer">
+                <canvas width="680" height="300" style="padding: 10%;width: 100%" id="myCanvas">
+                    <p>Anything in here will be replaced on browsers that support the canvas element</p>
+                    <ul>
+                        <li><a data-weight="50" href="http://www.google.com" target="_blank">Google</a></li>
+                        <li><a href="">Fish</a></li>
+                        <li><a href="">Chips</a></li>
+                        <li><a href="">Salt</a></li>
+                        <li><a href="">Vinegar</a></li>
+                        <li><a href="">Test</a></li>
+                        <li><a href="">Inpitar</a></li>
+                        <li><a href="">Pakorn</a></li>
+                        <li><a href="">Sapol</a></li>
+                        <li><a href="">ข่าวเด่น</a></li>
+                    </ul>
+                </canvas>
+            </div>
+        </div>
     </div>
+
+    <script type="text/javascript">
+        window.onload = function() {
+            TagCanvas.interval = 20;
+            TagCanvas.textFont = 'Impact,Arial Black,sans-serif';
+            TagCanvas.textColour = '#40826D';
+            TagCanvas.textHeight = 25;
+            TagCanvas.outlineColour = '#D98F4F';
+            TagCanvas.outlineThickness = 5;
+            TagCanvas.maxSpeed = 0.04;
+            TagCanvas.minBrightness = 0.1;
+            TagCanvas.depth = 0.92;
+            TagCanvas.pulsateTo = 0.2;
+            TagCanvas.pulsateTime = 0.75;
+            TagCanvas.initial = [0.1,-0.1];
+            TagCanvas.decel = 0.98;
+            TagCanvas.reverse = true;
+            TagCanvas.hideTags = false;
+            TagCanvas.shadow = '#ccf';
+            TagCanvas.shadowBlur = 3;
+            TagCanvas.weight = true;
+            TagCanvas.dragControl = true;
+            TagCanvas.weightFrom = 'data-weight';
+            TagCanvas.fadeIn = 800;
+            try {
+                TagCanvas.Start('myCanvas');
+            } catch(e) {
+                // something went wrong, hide the canvas container
+                document.getElementById('myCanvasContainer').style.display = 'none';
+            }
+        };
+    </script>
 @stop
