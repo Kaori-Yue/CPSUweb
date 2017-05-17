@@ -30,6 +30,7 @@
     </script>
 </head>
 <body>
+    <img src="{{ URL::asset('image/black_ribbon_bottom_left.png') }}" class="black-ribbon stick-bottom stick-left"/>
     <div id="page">
         <div id="page-head">
             @include('_nav')

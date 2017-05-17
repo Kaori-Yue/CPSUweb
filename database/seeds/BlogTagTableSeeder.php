@@ -11,7 +11,7 @@ class BlogTagTableSeeder extends Seeder
      */
     public function run()
     {
-        DB::table('blog_tag')->insert([
+        /*DB::table('blog_tag')->insert([
             'blog_id' => 1,
             'tag_id' => 1,
         ]);
@@ -19,6 +19,6 @@ class BlogTagTableSeeder extends Seeder
         DB::table('blog_tag')->insert([
             'blog_id' => 1,
             'tag_id' => 2,
-        ]);
+        ]);*/
     }
 }

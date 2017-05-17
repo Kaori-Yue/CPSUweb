@@ -8,12 +8,12 @@
 
             <hr>
             <h3>ไม่พบหน้าเว็บที่ท่านต้องการ</h3>--}}
-                <h1 style="font-size: 100px; font-family: 'Baloo', cursive">01 00</h1>
-                <h1 style="font-size: 100px; font-family: 'Baloo', cursive">00 00</h1>
-                <h1 style="font-size: 100px; font-family: 'Baloo', cursive">01 00</h1>
-
+            <h1 style="font-size: 100px; font-family: 'Baloo', cursive">01 00</h1>
+            <h1 style="font-size: 100px; font-family: 'Baloo', cursive">00 00</h1>
+            <h1 style="font-size: 100px; font-family: 'Baloo', cursive">01 00</h1>
             <hr>
-            <h3>Page Not Found</h3>
+            <h2>Page Not Found</h2>
         </div>
+        @include('_map')
     </div>
 @stop

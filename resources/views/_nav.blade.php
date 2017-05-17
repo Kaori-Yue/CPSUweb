@@ -12,16 +12,6 @@
         </div>
         <div class="collapse navbar-collapse" id="mainNavbar">
             <ul class="nav navbar-nav">
-                {{--<li class="dropdown">
-                    <a class="dropdown-toggle" data-toggle="dropdown" href="#">
-                        หลักสูตร <span class="caret"></span>
-                    </a>
-                    <ul class="dropdown-menu">
-                        <li><a href="#">Bachelor Degree</a></li>
-                        <li><a href="#">Master Degree</a></li>
-                        <li><a href="#">Doctor Degree</a></li>
-                    </ul>
-                </li>--}}
                 <li {{--class="active"--}}>
                     <a href="{{ url('curricula') }}">
                         หลักสูตร
@@ -47,11 +37,20 @@
                         บุคลากร
                     </a>
                 </li>
-                <li>
+                <li class="dropdown">
+                    <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                        เกี่ยวกับ <span class="caret"></span>
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li><a href="{{ url('history') }}">ประวัติภาควิชา</a></li>
+                        <li><a href="{{ url('contact') }}">ติดต่อ</a></li>
+                    </ul>
+                </li>
+                {{--<li>
                     <a href="{{ url('contact') }}">
                         ติดต่อ
                     </a>
-                </li>
+                </li>--}}
             </ul>
             <ul class="nav navbar-nav navbar-right">
                 <!-- Authentication Links -->

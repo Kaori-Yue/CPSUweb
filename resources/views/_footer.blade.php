@@ -24,7 +24,7 @@
             <div class="col-md-3 col-sm-6 col-xs-12" style="padding-bottom: 5%">
                 <h4 style="padding-bottom: 5%"><b>Created By</b></h4>
                 <p>Created by: Chanachai Puttaruksa</p>
-                <p>Contact information: <a target="_blank" href="https://www.facebook.com/mig.mikael">Mikael Facebook</a></p>
+                <p>Contact information: <a target="_blank" style="color: #D98F4F" href="https://www.facebook.com/mig.mikael">Mikael Facebook</a></p>
             </div>
         </div>
         <div class="col-md-12 col-sm-12 col-xs-12">

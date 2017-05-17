@@ -209,5 +209,41 @@ class ImageTableSeeder extends Seeder
             'created_at' => Carbon::now(),
             'updated_at' => Carbon::now(),
         ]);
+
+        # 23
+        DB::table('file')->insert([
+            'name' => 'olympic_2555.jpg',
+            'mime' => 'image/jpeg',
+            'original_name' => 'Olympic_2555.jpg',
+            'created_at' => Carbon::now(),
+            'updated_at' => Carbon::now(),
+        ]);
+
+        # 24
+        DB::table('file')->insert([
+            'name' => 'ITPE.jpg',
+            'mime' => 'image/jpeg',
+            'original_name' => 'ITPE.jpg',
+            'created_at' => Carbon::now(),
+            'updated_at' => Carbon::now(),
+        ]);
+
+        # 25
+        DB::table('file')->insert([
+            'name' => 'posterupdate.jpg',
+            'mime' => 'image/jpeg',
+            'original_name' => 'posterupdate.jpg',
+            'created_at' => Carbon::now(),
+            'updated_at' => Carbon::now(),
+        ]);
+
+        # 26
+        DB::table('file')->insert([
+            'name' => 'NSC2012_Price.jpg',
+            'mime' => 'image/jpeg',
+            'original_name' => 'NSC2012_Price.jpg',
+            'created_at' => Carbon::now(),
+            'updated_at' => Carbon::now(),
+        ]);
     }
 }

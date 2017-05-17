@@ -23,6 +23,7 @@ class CreateBlogTable extends Migration
             $table->dateTime('publish_at');
             $table->integer('category_id')->unsigned();
             $table->integer('user_id')->unsigned();
+            $table->boolean('featured')->default(false);
             $table->timestamps();
 
             $table->foreign('category_id')

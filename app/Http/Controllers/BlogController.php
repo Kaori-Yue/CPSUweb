@@ -16,8 +16,9 @@ class BlogController extends Controller
 {
     public function index()
     {
-        $blogs = Blog::paginate(8);
-        return view('blog.index', ['blogs' => $blogs]);
+        $blogs = Blog::orderBy('created_at', 'DESC')->take(6)->get();
+        $tags = Tag::all();
+        return view('blog.index', ['blogs' => $blogs, 'tags' => $tags]);
     }
 
     public function sortBy(Request $request)

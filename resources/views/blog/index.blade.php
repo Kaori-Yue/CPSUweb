@@ -15,7 +15,7 @@
                 <div class="carousel-inner" role="listbox">
                     @foreach($blogs as $blog)
                         <div class="item @if($loop->first) active @endif"
-                             style="background-image: url('{{ url('image/show/'.$blog->cover) }}');background-size: cover;height: 500px">
+                             style="background-image: url('{{ url('image/show/'.$blog->cover) }}');background-size: cover;">
                             <div class="carousel-caption">
                                 <h3>{{ $blog->title }}</h3>
                                 <p>By.{{ $blog->user->name_en }}</p>
@@ -35,29 +35,24 @@
                 </a>
             </div>
         </div>
-        <div class="row">
-            <div class="panel panel-success">
-                <div class="panel-heading">
-                    <h1>ข่าวสารตามหมวดหมู่</h1>
-                </div>
-            </div>
-        </div>
-        <div class="row">
-        @foreach($blogs as $blog)
-            @include('blog._card', $blog)
-        @endforeach
-        </div>
-        <div class="row col-md-12" style="text-align: center">
-            <?php echo $blogs->render(); ?>
+
+        <div class="row col-md-12 col-xs-12" style="background: #ffffff">
+            <h2 class="bg-success" style="margin: 1% 1% 0 1%;padding: 2%;text-align: left">ข่าวล่าสุด</h2>
+            @foreach($blogs as $blog)
+                @include('blog._card', $blog)
+            @endforeach
         </div>
 
-        <div class="row col-md-12" style="background: #ffffff">
+        <div class="row col-md-12 col-xs-12" style="background: #ffffff">
+            <h2 class="bg-success" style="margin: 1% 1% 0 1%;padding: 2%;text-align: left">ข่าวตามหมวดหมู่</h2>
             <div id="myCanvasContainer">
-                <canvas width="680" height="300" style="padding: 10%;width: 100%" id="myCanvas">
+                <canvas width="680" height="300" style="padding: 3%;width: 100%" id="myCanvas">
                     <p>Anything in here will be replaced on browsers that support the canvas element</p>
                     <ul>
-                        <li><a data-weight="50" href="http://www.google.com" target="_blank">Google</a></li>
-                        <li><a href="">Fish</a></li>
+                        @foreach($tags as $tag)
+                            <li><a href="">{{ $tag->name }}</a></li>
+                        @endforeach
+                        {{--<li><a data-weight="50" href="http://www.google.com" target="_blank">Google</a></li>
                         <li><a href="">Chips</a></li>
                         <li><a href="">Salt</a></li>
                         <li><a href="">Vinegar</a></li>
@@ -65,7 +60,7 @@
                         <li><a href="">Inpitar</a></li>
                         <li><a href="">Pakorn</a></li>
                         <li><a href="">Sapol</a></li>
-                        <li><a href="">ข่าวเด่น</a></li>
+                        <li><a href="">ข่าวเด่น</a></li>--}}
                     </ul>
                 </canvas>
             </div>

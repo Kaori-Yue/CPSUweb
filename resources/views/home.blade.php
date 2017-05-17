@@ -2,7 +2,7 @@
 
 @section('content')
     <div class="container">
-        <div id="myCarousel" class="carousel slide" data-ride="carousel" style="margin-top: 1%">
+        <div id="myCarousel" class="carousel slide row" data-ride="carousel">
             <!-- Indicators -->
             <ol class="carousel-indicators">
                 <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
@@ -147,29 +147,21 @@
             </div>
         </div>--}}
 
-        <div class="row row-card col-md-12 col-xs-12">
-            <div class="col-md-12" style="padding-left: 2%">
-                <h2>ข่าวประชาสัมพันธ์</h2>
-            </div>
-            <div class="col-md-12">
-                @foreach($blogs as $blog)
-                    @include('blog._card', $blog)
-                @endforeach
-            </div>
+        <div class="row col-md-12 col-xs-12" style="background: #ffffff">
+            <h2 class="bg-success" style="margin: 1% 1% 0 1%;padding: 2%;text-align: left">ข่าวประชาสัมพันธ์</h2>
+            @foreach($blogs as $blog)
+                @include('blog._card', $blog)
+            @endforeach
             <div class="col-md-12" style="text-align: right">
                 <a href="{{ url('blog') }}"><h4>ดูข่าวเพิ่มเติม ></h4></a>
             </div>
         </div>
 
-        <div class="row row-card col-md-12 col-xs-12">
-            <div class="col-md-12" style="padding-left: 2%">
-                <h2>ผลงานวิจัย</h2>
-            </div>
-            <div class="col-md-12">
-                @foreach($researches as $research)
-                    @include('research._card', $research)
-                @endforeach
-            </div>
+        <div class="row col-md-12 col-xs-12" style="background: #ffffff">
+            <h2 class="bg-success" style="margin: 1% 1% 0 1%;padding: 2%;text-align: left">ผลงานวิจัย</h2>
+            @foreach($researches as $research)
+                @include('research._card', $research)
+            @endforeach
             <div class="col-md-12" style="text-align: right">
                 <a href="{{ url('research') }}"><h4>ดูงานวิจัยเพิ่มเติม ></h4></a>
             </div>
