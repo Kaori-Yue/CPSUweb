@@ -76,6 +76,10 @@
             {!! Form::label('category_id', 'Category') !!}
             {!! Form::select('category_id', $category, null, ['class' => 'form-control']) !!}
         </div>
+        <div class="form-group">
+            {!! Form::label('featured', 'Featured') !!}
+            {!! Form::select('featured', [0 => 'Normal',1 => 'Featured'], null, ['class' => 'form-control']) !!}
+        </div>
     </div>
     <div class="panel-footer">
         {!! Form::submit($submit_text, ['class' => 'btn btn-primary btn-lg']) !!}

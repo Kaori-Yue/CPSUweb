@@ -34,6 +34,7 @@ Route::get('history', function (){
 Route::get('blog/{slug}', 'BlogController@show');
 Route::get('research/{slug}', 'ResearchController@show');
 Route::get('curricula/{slug}', 'CurriculaController@show');
+Route::get('tag/{slug}', 'TagController@show');
 Route::get('image/show/{id}', 'ImageController@show');
 Route::get('file/show/{id}', 'FileController@show');
 
@@ -65,6 +66,7 @@ Route::group(['middleware' => 'auth'], function (){
 
     Route::delete('blog/{id}', 'BlogController@destroy');
     Route::delete('teacher/{id}', 'TeacherController@destroy');
+    Route::delete('research/{id}', 'ResearchController@destroy');
     Route::delete('curricula/{id}', 'CurriculaController@destroy');
 
 

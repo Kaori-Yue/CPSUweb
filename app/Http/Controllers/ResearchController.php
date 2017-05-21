@@ -152,4 +152,16 @@ class ResearchController extends Controller
         $slug = str_replace(' ', '-', $str);
         return $slug;
     }
+
+    public function destroy($id)
+    {
+        $research = Research::findOrFail($id);
+        $research_images = ResearchImage::where('research_id', $research->id)->get();
+        foreach ($research_images as $image){
+            $image->delete();
+        }
+        $research->delete();
+
+        return redirect()->action('AdminController@research')->with('status', 'Delete Complete!');
+    }
 }

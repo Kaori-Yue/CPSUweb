@@ -1,4 +1,4 @@
-<div class="col-md-4 col-sm-6 col-xs-12 row-card" style="padding: 1%;"  data-toggle="tooltip" data-placement="auto bottom" title="{{ $blog->title }}">
+<div class="col-md-6 col-sm-6 col-xs-12 row-card" style="padding: 1%;"  data-toggle="tooltip" data-placement="auto bottom" title="{{ $blog->title }}">
     <a href="{{ url('blog/'.$blog->slug) }}">
         <div class="card card-bg" style="background-image: url('{{ url('image/show/'.$blog->cover) }}')">
             <div class="card-caption">

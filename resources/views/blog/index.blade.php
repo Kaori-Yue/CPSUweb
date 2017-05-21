@@ -2,38 +2,60 @@
 
 @section('content')
     <div class="container">
-        <div class="row">
-            <div id="myCarousel" class="carousel slide" data-ride="carousel">
-                <!-- Indicators -->
-                <ol class="carousel-indicators">
-                    @foreach($blogs as $blog)
-                        <li data-target="#myCarousel" data-slide-to="{{ $loop->index }}" @if($loop->first) class="active" @endif></li>
-                    @endforeach
-                </ol>
+        @if(sizeof($features) > 0)
+            <div class="row">
+                <div id="myCarousel" class="carousel slide" data-ride="carousel">
+                    <!-- Indicators -->
+                    <ol class="carousel-indicators">
+                        @foreach($features as $blog)
+                            <li data-target="#myCarousel" data-slide-to="{{ $loop->index }}" @if($loop->first) class="active" @endif></li>
+                        @endforeach
+                    </ol>
 
-                <!-- Wrapper for slides -->
-                <div class="carousel-inner" role="listbox">
-                    @foreach($blogs as $blog)
-                        <div class="item @if($loop->first) active @endif"
-                             style="background-image: url('{{ url('image/show/'.$blog->cover) }}');background-size: cover;">
-                            <div class="carousel-caption">
-                                <h3>{{ $blog->title }}</h3>
-                                <p>By.{{ $blog->user->name_en }}</p>
+                    <!-- Wrapper for slides -->
+                    <div class="carousel-inner" role="listbox">
+                        @foreach($features as $blog)
+                            <div class="item @if($loop->first) active @endif"
+                                 style="background-image: url('{{ url('image/show/'.$blog->cover) }}');background-size: cover;">
+                                <div class="carousel-caption">
+                                    <h3>{{ $blog->title }}</h3>
+                                    <p>By.{{ $blog->user->name_en }}</p>
+                                </div>
                             </div>
-                        </div>
-                    @endforeach
-                </div>
+                        @endforeach
+                    </div>
 
-                <!-- Left and right controls -->
-                <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
-                    <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
-                    <span class="sr-only">Previous</span>
-                </a>
-                <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
-                    <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
-                    <span class="sr-only">Next</span>
-                </a>
+                    <!-- Left and right controls -->
+                    <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
+                        <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+                        <span class="sr-only">Previous</span>
+                    </a>
+                    <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
+                        <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+                        <span class="sr-only">Next</span>
+                    </a>
+                </div>
             </div>
+        @endif
+
+        <div class="col-xs-12 hidden-md">
+        </div>
+
+        @if(sizeof($features) > 0)
+            <div class="row col-md-12 col-xs-12" style="background: #ffffff">
+                <h2 class="bg-success" style="margin: 1% 1% 0 1%;padding: 2%;text-align: left">ข่าวเด่น</h2>
+                @foreach($features as $blog)
+                    @include('blog._bcard', $blog)
+                @endforeach
+                <script>
+                    $(document).ready(function(){
+                        $('[data-toggle="tooltip"]').tooltip();
+                    });
+                </script>
+            </div>
+        @endif
+
+        <div class="col-xs-12 hidden-md">
         </div>
 
         <div class="row col-md-12 col-xs-12" style="background: #ffffff">
@@ -41,6 +63,14 @@
             @foreach($blogs as $blog)
                 @include('blog._card', $blog)
             @endforeach
+            <script>
+                $(document).ready(function(){
+                    $('[data-toggle="tooltip"]').tooltip();
+                });
+            </script>
+        </div>
+
+        <div class="col-xs-12 hidden-md">
         </div>
 
         <div class="row col-md-12 col-xs-12" style="background: #ffffff">
@@ -50,7 +80,7 @@
                     <p>Anything in here will be replaced on browsers that support the canvas element</p>
                     <ul>
                         @foreach($tags as $tag)
-                            <li><a href="">{{ $tag->name }}</a></li>
+                            <li><a href="{{ url('tag/'.$tag->slug) }}">{{ $tag->name }}</a></li>
                         @endforeach
                         {{--<li><a data-weight="50" href="http://www.google.com" target="_blank">Google</a></li>
                         <li><a href="">Chips</a></li>

@@ -16,9 +16,22 @@ class BlogController extends Controller
 {
     public function index()
     {
-        $blogs = Blog::orderBy('created_at', 'DESC')->take(6)->get();
+        $blogs = Blog::orderBy('created_at', 'DESC')
+            ->take(6)
+            ->get();
+
+        $features = Blog::where('featured', 1)
+            ->orderBy('created_at', 'DESC')
+            ->take(4)
+            ->get();
+
         $tags = Tag::all();
-        return view('blog.index', ['blogs' => $blogs, 'tags' => $tags]);
+
+        return view('blog.index', [
+            'blogs' => $blogs,
+            'tags' => $tags,
+            'features' => $features
+        ]);
     }
 
     public function sortBy(Request $request)
@@ -31,7 +44,7 @@ class BlogController extends Controller
                 'DESC' => 'SortBy: DESC',
                 'ASC' => 'SortBy: ASC',
             ];
-            $blogs = Blog::orderBy('id', 'desc')->get();
+            $blogs = Blog::orderBy('id', 'desc')->paginate(9);
         }
         else
         {
@@ -39,7 +52,7 @@ class BlogController extends Controller
                 'ASC' => 'SortBy: ASC',
                 'DESC' => 'SortBy: DESC',
             ];
-            $blogs = Blog::orderBy('id')->get();
+            $blogs = Blog::orderBy('id')->paginate(9);
         }
 
         return view('blog.admin', ['blogs' => $blogs, 'orderOptions' => $orderOptions]);
@@ -113,7 +126,8 @@ class BlogController extends Controller
             'status' => $blog['status'],
             'publish_at' => $blog['publish_date'].' '.$blog['publish_time'],
             'category_id' => $blog['category_id'],
-            'user_id' => Auth::id()
+            'user_id' => Auth::id(),
+            'featured' => $blog['featured'],
         ];
         $blog = Blog::create($blogData);
 

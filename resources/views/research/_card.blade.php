@@ -12,7 +12,12 @@
                 <a href="{{ url('research/'.$research->id.'/edit') }}" class="btn btn-warning btn-block btn-lg">Edit</a>
             </div>
             <div class="col-md-6">
-                <a href="" class="btn btn-danger btn-block btn-lg">Delete</a>
+                {!! Form::model($research, ['method' => 'DELETE', 'url'=>'research/'.$research->id]) !!}
+                <button class="btn btn-danger btn-block btn-lg" type="submit">
+                    Delete
+                    <span class="glyphicon glyphicon-remove-sign"></span>
+                </button>
+                {!! Form::close() !!}
             </div>
         </div>
     @endif
