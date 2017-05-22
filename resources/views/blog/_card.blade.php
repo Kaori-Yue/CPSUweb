@@ -2,7 +2,11 @@
     <a href="{{ url('blog/'.$blog->slug) }}">
         <div class="card card-bg" style="background-image: url('{{ url('image/show/'.$blog->cover) }}')">
             <div class="card-caption">
-                <h2><span>{!! iconv_substr($blog->title, 0, 22, 'UTF-8').'...' !!}</span></h2>
+                @if(mb_strlen($blog->title, 'UTF-8') < 22)
+                    <h2><span>{!! iconv_substr($blog->title, 0, 22, 'UTF-8') !!}</span></h2>
+                @else
+                    <h2><span>{!! iconv_substr($blog->title, 0, 22, 'UTF-8').'...' !!}</span></h2>
+                @endif
                 <p><span>By {!! $blog->user->name !!}</span></p>
             </div>
         </div>

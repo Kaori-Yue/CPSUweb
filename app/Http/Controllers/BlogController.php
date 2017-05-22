@@ -230,4 +230,22 @@ class BlogController extends Controller
 
         return redirect()->action('AdminController@blog')->with('status', 'Delete Complete!');
     }
+
+    public function category($category)
+    {
+        $title = '';
+        $blogs = null;
+        if ($category == 'featured-news'){
+            $title = 'หมวดหมู่ : ข่าวเด่น';
+            $blogs = Blog::where('featured', 1)->orderBy('created_at', 'DESC')->paginate(9);
+        }
+        elseif ($category == 'latest-news'){
+            $title = 'หมวดหมู่ : ข่าวล่าสุด';
+            $blogs = Blog::orderBy('created_at', 'DESC')->paginate(9);
+        }else{
+            abort(404);
+        }
+
+        return view('blog.category', ['blogs' => $blogs, 'title' => $title]);
+    }
 }

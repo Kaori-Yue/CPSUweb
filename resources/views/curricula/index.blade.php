@@ -8,6 +8,8 @@
             </div>
         </div>
 
+        <div id="bachelor-degree" class="col-xs-12 some-space hidden-md"></div>
+
         <div class="row col-md-12" style="background: #ffffff">
             <div style="text-align: left">
                 <h2 class="bg-primary" style="padding: 2%;margin: 1% 1% 0 1%">ระดับปริญญาตรี</h2>
@@ -16,6 +18,8 @@
                 @include('curricula._card', $curricula)
             @endforeach
         </div>
+
+        <div id="master-degree" class="col-xs-12 some-space hidden-md"></div>
 
         <div class="row col-md-12" style="background: #ffffff">
             <div style="text-align: left">
@@ -26,6 +30,8 @@
             @endforeach
         </div>
 
+        <div id="doctor-degree" class="col-xs-12 some-space hidden-md"></div>
+
         <div class="row col-md-12" style="background: #ffffff">
             <div style="text-align: left">
                 <h2 class="bg-primary" style="padding: 2%;margin: 1% 1% 0 1%">ระดับปริญญาเอก</h2>
@@ -35,15 +41,15 @@
             @endforeach
         </div>
 
-        <br>
-        <div></div>
-        <br>
+        <div class="col-xs-12 some-space hidden-md"></div>
 
         <div class="row col-md-12" style="background: #ffffff; text-align: center">
             <div class="well well-lg">
                 <h1 style="padding: 2%">หลักสูตรเก่า</h1>
             </div>
-        </div>
+        </div>.
+
+        <div id="old-curricula" class="col-xs-12 some-space hidden-md"></div>
 
         <div class="row col-md-12" style="background: #ffffff">
             @foreach($dis_curriculas as $curricula)

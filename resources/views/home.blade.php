@@ -23,10 +23,10 @@
                             <br>
                             <ul class="list" style="text-align: left">
                                 <li class="welcome-li">
-                                    <a href="">ผู้สนใจเข้าศึกษา</a>
+                                    <a href="{{ url('interested') }}">ผู้สนใจเข้าศึกษา</a>
                                 </li>
                                 <li class="welcome-li">
-                                    <a href="">นักศึกษาปัจจุบัน</a>
+                                    <a href="{{ url('current-student') }}">นักศึกษาปัจจุบัน</a>
                                 </li>
                                 <li class="welcome-li">
                                     <a href="">บุคลากร</a>
@@ -147,7 +147,7 @@
             </div>
         </div>--}}
 
-        <div class="row col-md-12 col-xs-12" style="background: #ffffff">
+        <div id="featured-news" class="row col-md-12 col-xs-12" style="background: #ffffff">
             <h2 class="bg-success" style="margin: 1% 1% 0 1%;padding: 2%;text-align: left">ข่าวเด่น</h2>
             @foreach($blogs as $blog)
                 @include('blog._bcard', $blog)
@@ -155,6 +155,11 @@
             <div class="col-md-12" style="text-align: right">
                 <a href="{{ url('blog') }}"><h4>ดูข่าวเพิ่มเติม ></h4></a>
             </div>
+            <script>
+                $(document).ready(function(){
+                    $('[data-toggle="tooltip"]').tooltip();
+                });
+            </script>
         </div>
 
         <div class="row col-md-12 col-xs-12" style="background: #ffffff">
@@ -261,8 +266,6 @@
         $carousel.on("slide.bs.carousel", function() {
             TweenLite.to($carouselCaption, 0.1, {opacity: 0});
         });
-
-
 
         $(document).keyup(function(e) {
             // right arrow

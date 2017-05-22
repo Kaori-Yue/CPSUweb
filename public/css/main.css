@@ -217,7 +217,7 @@ p > span {
 }*/
 
 .carousel {
-    height: 80vh;
+    height: 500px;
 }
 
 .carousel-inner {
@@ -226,7 +226,7 @@ p > span {
 }
 
 .item {
-    height: 80vh;
+    height: 500px;
     padding: 0;
     margin: 0;
     max-width: 100%;
@@ -261,7 +261,7 @@ p > span {
 }
 
 .some-space {
-    padding: 1%;
+    padding-top: 1%;
 }
 
 .google-maps {
@@ -298,6 +298,11 @@ p > span {
 
 .footer {
     text-align: left;
+}
+
+.footer > p > a {
+    text-decoration: none;
+    color: #ffffff;
 }
 
 .footer > a {
@@ -351,6 +356,37 @@ p > span {
 
 .bg-primary {
     background: #D98F4F;
+}
+
+.map-col {
+    padding: 0 5% 5% 5%
+}
+
+.map-list {
+    margin-bottom: 8%
+}
+
+.map-list > li {
+    margin-bottom: 5%;
+}
+
+.pagination > .active > span {
+    background-color: #40826D;
+    border-color: #40826D;
+}
+
+.pagination>.active>a,
+.pagination>.active>a:focus,
+.pagination>.active>a:hover,
+.pagination>.active>span,
+.pagination>.active>span:focus,
+.pagination>.active>span:hover {
+    background-color: #40826D;
+    border-color: #40826D;
+}
+
+.pagination > li > a{
+    color: #40826D;
 }
 
 /*.carousel-inner > .item > img,

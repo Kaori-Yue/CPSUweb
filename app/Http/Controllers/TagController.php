@@ -9,9 +9,10 @@ class TagController extends Controller
 {
     public function show($slug)
     {
-        $tag = Tag::where('slug', $slug)->first();
-        $blogs = $tag->blogs;
-        $allTags = Tag::all();
-        return view('blog.index', ['blogs' => $blogs, 'tags' => $allTags]);
+        $tag = Tag::where('slug', $slug)->firstOrFail();
+        $blogs = $tag->blogs()->paginate(9);
+
+        $title = 'หมวดหมู่ : '.$tag->name;
+        return view('blog.category', ['blogs' => $blogs, 'title' => $title]);
     }
 }

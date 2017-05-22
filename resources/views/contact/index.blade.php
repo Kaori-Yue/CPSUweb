@@ -2,11 +2,15 @@
 
 @section('content')
     <div class="container">
-        <div class="row col-md-12" style="background: #ffffff">
-            <div class="well well-lg" style="text-align: center">
+
+        <div class="row col-md-12" style="background: #ffffff; text-align: center">
+            <div class="well well-lg">
                 <h1 style="padding: 2%">ติดต่อภาควิชา</h1>
             </div>
         </div>
+
+        <div id="address" class="col-xs-12 some-space hidden-md"></div>
+
         <div class="row row-card" style="padding: 1%">
             <div style="text-align: left">
                 <h2 class="bg-success" style="padding: 2%;margin: 1% 1% 0 1% ">ที่อยู่</h2>
@@ -32,6 +36,9 @@
                 </div>
             </div>
         </div>
+
+        <div id="telephone" class="col-xs-12 some-space hidden-md"></div>
+
         <div class="row row-card" style="padding: 1%">
             <div style="text-align: left">
                 <h2 class="bg-success" style="padding: 2%;margin: 1% 1% 0 1% ">โทรศัพท์</h2>
@@ -61,6 +68,9 @@
                 </table>
             </div>
         </div>
+
+        <div id="fax" class="col-xs-12 some-space hidden-md"></div>
+
         <div class="row row-card" style="padding: 1%">
             <div style="text-align: left">
                 <h2 class="bg-success" style="padding: 2%;margin: 1% 1% 0 1% ">โทรสาร</h2>
@@ -86,6 +96,9 @@
                 </table>
             </div>
         </div>
+
+        <div id="map" class="col-xs-12 some-space hidden-md"></div>
+
         <div class="row row-card" style="padding: 1%">
             <div style="text-align: left">
                 <h2 class="bg-success" style="padding: 2%;margin: 1% 1% 0 1% ">แผนที่</h2>

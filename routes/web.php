@@ -26,8 +26,21 @@ Route::get('research', 'ResearchController@index');
 Route::get('teacher', 'TeacherController@index');
 Route::get('contact', 'ContactController@index');
 Route::get('curricula', 'CurriculaController@index');
+
+
 Route::get('history', function (){
     return view('history');
+});
+Route::get('sitemap', function (){
+    return view('sitemap');
+});
+
+Route::get('interested', function (){
+    return view('spacial.interested');
+});
+
+Route::get('current-student', function (){
+    return view('spacial.student');
 });
 
 
@@ -37,6 +50,9 @@ Route::get('curricula/{slug}', 'CurriculaController@show');
 Route::get('tag/{slug}', 'TagController@show');
 Route::get('image/show/{id}', 'ImageController@show');
 Route::get('file/show/{id}', 'FileController@show');
+
+
+Route::get('blog/category/{category}', 'BlogController@category');
 
 
 Route::group(['middleware' => 'auth'], function (){
@@ -96,10 +112,10 @@ Route::group(['middleware' => 'auth'], function (){
     // sort
 });
 
-Route::get('test', 'TestController@index');
+/*Route::get('test', 'TestController@index');
 Route::get('test/slug', 'TestController@slug');
 Route::get('api/research', 'TestController@research');
-Route::get('test/explode', 'TestController@testExplode');
+Route::get('test/explode', 'TestController@testExplode');*/
 
 
 Auth::routes();

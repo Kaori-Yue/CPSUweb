@@ -38,8 +38,7 @@
             </div>
         @endif
 
-        <div class="col-xs-12 hidden-md">
-        </div>
+        <div id="featured-news" class="col-xs-12 some-space hidden-md"></div>
 
         @if(sizeof($features) > 0)
             <div class="row col-md-12 col-xs-12" style="background: #ffffff">
@@ -47,6 +46,9 @@
                 @foreach($features as $blog)
                     @include('blog._bcard', $blog)
                 @endforeach
+                <div class="col-md-12" style="text-align: right">
+                    <a href="{{ url('blog/category/featured-news') }}"><h4>ข่าวเด่นเพิ่มเติม ></h4></a>
+                </div>
                 <script>
                     $(document).ready(function(){
                         $('[data-toggle="tooltip"]').tooltip();
@@ -55,14 +57,16 @@
             </div>
         @endif
 
-        <div class="col-xs-12 hidden-md">
-        </div>
+        <div id="latest-news" class="col-xs-12 some-space hidden-md"></div>
 
         <div class="row col-md-12 col-xs-12" style="background: #ffffff">
             <h2 class="bg-success" style="margin: 1% 1% 0 1%;padding: 2%;text-align: left">ข่าวล่าสุด</h2>
             @foreach($blogs as $blog)
                 @include('blog._card', $blog)
             @endforeach
+            <div class="col-md-12" style="text-align: right">
+                <a href="{{ url('blog/category/latest-news') }}"><h4>ข่าวล่าสุดเพิ่มเติม ></h4></a>
+            </div>
             <script>
                 $(document).ready(function(){
                     $('[data-toggle="tooltip"]').tooltip();
@@ -70,8 +74,7 @@
             </script>
         </div>
 
-        <div class="col-xs-12 hidden-md">
-        </div>
+        <div id="tag-news" class="col-xs-12 some-space hidden-md"></div>
 
         <div class="row col-md-12 col-xs-12" style="background: #ffffff">
             <h2 class="bg-success" style="margin: 1% 1% 0 1%;padding: 2%;text-align: left">ข่าวตามหมวดหมู่</h2>

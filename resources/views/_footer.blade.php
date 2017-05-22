@@ -3,23 +3,45 @@
         <div class="col-md-12">
             <div class="col-md-3 col-sm-6 col-xs-12" style="padding-bottom: 5%">
                 <h4 style="padding-bottom: 5%"><b>สมัครเรียน</b></h4>
-                <p>หลักสูตรปริญญาตรี</p>
-                <p>หลักสูตรปริญญาโท</p>
-                <p>หลักสูตรปริญญาเอก</p>
+                <p>
+                    <a href="{{ url('curricula#bachelor-degree') }}" style="color: #ffffff">หลักสูตรปริญญาตรี</a>
+                </p>
+                <p>
+                    <a href="{{ url('curricula#master-degree') }}" style="color: #ffffff">หลักสูตรปริญญาโท</a>
+                </p>
+                <p>
+                    <a href="{{ url('curricula#doctor-degree') }}" style="color: #ffffff">หลักสูตรปริญญาเอก</a>
+                </p>
             </div>
             <div class="col-md-3 col-sm-6 col-xs-12" style="padding-bottom: 5%">
                 <h4 style="padding-bottom: 5%"><b>เกี่ยวกับภาควิชา</b></h4>
-                <p>แนะนำภาควิชา</p>
-                <p>คณาจารย์</p>
-                <p>เจ้าหน้าที่</p>
-                <p>ผลงานวิจัย</p>
-                <p>วิทยานิพนธ์</p>
+                <p>
+                    <a href="{{ url('history') }}" style="color: #ffffff">ประวัติภาควิชา</a>
+                </p>
+                <p>
+                    <a href="{{ url('teacher#teacher') }}" style="color: #ffffff">คณาจารย์</a>
+                </p>
+                <p>
+                    <a href="{{ url('teacher#staff') }}" style="color: #ffffff">เจ้าหน้าที่</a>
+                </p>
+                <p>
+                    <a href="{{ url('research') }}" style="color: #ffffff">ผลงานวิจัย</a>
+                </p>
+                <p>
+                    <a href="{{ url('thesis') }}" style="color: #ffffff">วิทยานิพนธ์</a>
+                </p>
             </div>
             <div class="col-md-3 col-sm-6 col-xs-12" style="padding-bottom: 5%">
                 <h4 style="padding-bottom: 5%"><b>ติดต่อภาควิชา</b></h4>
-                <p>เบอร์โทรศัพท์/โทรสาร</p>
-                <p>ที่อยู่ภาควิชา</p>
-                <p>แผนที่</p>
+                <p>
+                    <a href="{{ url('contact#telephone') }}" style="color: #ffffff">เบอร์โทรศัพท์/โทรสาร</a>
+                </p>
+                <p>
+                    <a href="{{ url('contact#address') }}" style="color: #ffffff">ที่อยู่ภาควิชา</a>
+                </p>
+                <p>
+                    <a href="{{ url('contact#map') }}" style="color: #ffffff">แผนที่</a>
+                </p>
             </div>
             <div class="col-md-3 col-sm-6 col-xs-12" style="padding-bottom: 5%">
                 <h4 style="padding-bottom: 5%"><b>Created By</b></h4>
