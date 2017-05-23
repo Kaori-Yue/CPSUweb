@@ -3,15 +3,25 @@
         <h1>{{ $header_text }}</h1>
     </div>
     <div class="panel-body">
-        <div class="form-group">
+        <div class="form-group{{ $errors->has('cover') ? ' has-error' : '' }}">
             {!! Form::label('cover', 'Cover Image') !!}
             {!! Form::file('cover', ['class' => 'form-control']) !!}
+            @if ($errors->has('cover'))
+                <span class="help-block">
+                    <strong>{{ $errors->first('cover') }}</strong>
+                </span>
+            @endif
         </div>
-        <div class="form-group">
+        <div class="form-group{{ $errors->has('title') ? ' has-error' : '' }}">
             {!! Form::label('title', 'Title') !!}
             {!! Form::text('title', null, ['class' => 'form-control']) !!}
+            @if ($errors->has('title'))
+                <span class="help-block">
+                    <strong>{{ $errors->first('title') }}</strong>
+                </span>
+            @endif
         </div>
-        <div class="form-group">
+        <div class="form-group{{ $errors->has('content') ? ' has-error' : '' }}">
             {!! Form::label('content', 'Content') !!}
             <div class="col-md-12" style="padding: 0">
                 <button type="button" class="btn btn-default" data-toggle="modal" data-target="#myModal">
@@ -55,6 +65,11 @@
                 </button>
             </div>
             {!! Form::textarea('content', null, ['class' => 'form-control', 'rows' => '30']) !!}
+            @if ($errors->has('content'))
+                <span class="help-block">
+                    <strong>{{ $errors->first('content') }}</strong>
+                </span>
+            @endif
         </div>
         <div class="form-group">
             {!! Form::label('hash_tags', 'HashTag (Separate by comma if multiple)') !!}
@@ -68,13 +83,23 @@
             {!! Form::label('publish_time', 'Publish Time') !!}
             {!! Form::time('publish_time', null, ['class' => 'form-control']) !!}
         </div>
-        <div class="form-group">
+        <div class="form-group{{ $errors->has('status') ? ' has-error' : '' }}">
             {!! Form::label('status', 'Status') !!}
             {!! Form::select('status', $status, null, ['class' => 'form-control']) !!}
+            @if ($errors->has('status'))
+                <span class="help-block">
+                    <strong>{{ $errors->first('status') }}</strong>
+                </span>
+            @endif
         </div>
-        <div class="form-group">
+        <div class="form-group{{ $errors->has('category_id') ? ' has-error' : '' }}">
             {!! Form::label('category_id', 'Category') !!}
             {!! Form::select('category_id', $category, null, ['class' => 'form-control']) !!}
+            @if ($errors->has('category_id'))
+                <span class="help-block">
+                    <strong>{{ $errors->first('category_id') }}</strong>
+                </span>
+            @endif
         </div>
         <div class="form-group">
             {!! Form::label('featured', 'Featured') !!}

@@ -109,6 +109,15 @@ class BlogController extends Controller
 
     public function store(Request $request)
     {
+        $this->validate($request, [
+            'cover' => 'required|image',
+            'title' => 'required|unique:blog|max:191',
+            'content' => 'required',
+            'status' => 'required|in:draft,disable,publish',
+            'category_id' => 'required|integer|min:0',
+            'featured' => 'required|integer|between:0,1',
+        ]);
+
         $blog = $request->all();
         $slug = self::handleSlug($blog['title']);
 
@@ -117,7 +126,6 @@ class BlogController extends Controller
 
         $hash_tags = $blog['hash_tags'];
 
-        // Todo make user_id dynamic
         $blogData = [
             'title' => $blog['title'],
             'slug' => $slug,
@@ -138,6 +146,15 @@ class BlogController extends Controller
 
     public function update(Request $request, $id)
     {
+        $this->validate($request, [
+            'cover' => 'image',
+            'title' => 'required|unique:blog|max:191',
+            'content' => 'required',
+            'status' => 'required|in:draft,disable,publish',
+            'category_id' => 'required|integer|min:0',
+            'featured' => 'required|integer|between:0,1',
+        ]);
+
         $blog = Blog::findOrFail($id);
         $updateBlog = $request->all();
 

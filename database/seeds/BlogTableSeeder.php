@@ -72,6 +72,7 @@ class BlogTableSeeder extends Seeder
         $mock = 'lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem';
         for ($i = 1; $i <= 20; $i++){
             $num = rand(1, 5);
+            $is_featured = rand(0, 1);
             if($num == 1){
                 DB::table('blog')->insert([
                     'title' => 'Lambda Mini Hackaton '.$i,
@@ -82,6 +83,7 @@ class BlogTableSeeder extends Seeder
                     'publish_at' => Carbon::now(),
                     'category_id' => 1,
                     'user_id' => 1,
+                    'featured' => $is_featured,
                     'created_at' => Carbon::now(),
                     'updated_at' => Carbon::now()
                 ]);
@@ -107,6 +109,7 @@ class BlogTableSeeder extends Seeder
                     'publish_at' => Carbon::now(),
                     'category_id' => 1,
                     'user_id' => 1,
+                    'featured' => $is_featured,
                     'created_at' => Carbon::now(),
                     'updated_at' => Carbon::now()
                 ]);
@@ -132,6 +135,7 @@ class BlogTableSeeder extends Seeder
                     'publish_at' => Carbon::now(),
                     'category_id' => 1,
                     'user_id' => 1,
+                    'featured' => $is_featured,
                     'created_at' => Carbon::now(),
                     'updated_at' => Carbon::now()
                 ]);
@@ -157,6 +161,7 @@ class BlogTableSeeder extends Seeder
                     'publish_at' => Carbon::now(),
                     'category_id' => 1,
                     'user_id' => 1,
+                    'featured' => $is_featured,
                     'created_at' => Carbon::now(),
                     'updated_at' => Carbon::now()
                 ]);
@@ -177,6 +182,7 @@ class BlogTableSeeder extends Seeder
                     'publish_at' => Carbon::now(),
                     'category_id' => 1,
                     'user_id' => 1,
+                    'featured' => $is_featured,
                     'created_at' => Carbon::now(),
                     'updated_at' => Carbon::now()
                 ]);

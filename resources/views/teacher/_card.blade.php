@@ -21,6 +21,7 @@
         <p><b>สาขาที่เชี่ยวชาญ : </b>{{ $teacher->expertise }}</p>
 
         @if (Request::is('admin/*'))
+            <h4><b>Status : {{ $teacher->status }}</b></h4>
             <div class="col-md-6 col-xs-6">
                 <a class="btn btn-warning btn-block" href="{{ url('teacher/'.$teacher->id.'/edit') }}">
                     Edit
