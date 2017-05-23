@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Blog;
 use App\Research;
 use Illuminate\Http\Request;
+use DB;
 
 class HomeController extends Controller
 {
@@ -25,6 +26,12 @@ class HomeController extends Controller
      */
     public function index()
     {
+        try {
+            DB::connection()->getPdo();
+        } catch (\Exception $e) {
+            die("Could not connect to the database.  Please check your configuration.");
+        }
+
         $blogs = Blog::where([
             ['category_id', 1],
             ['featured', 1]

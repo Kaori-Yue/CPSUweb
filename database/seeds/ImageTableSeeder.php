@@ -14,9 +14,9 @@ class ImageTableSeeder extends Seeder
     {
         # 1
         DB::table('file')->insert([
-            'name' => '1.jpg',
+            'name' => '1-1.jpg',
             'mime' => 'image/jpeg',
-            'original_name' => '1.jpg',
+            'original_name' => '1-1.jpg',
             'created_at' => Carbon::now(),
             'updated_at' => Carbon::now(),
         ]);
@@ -32,117 +32,117 @@ class ImageTableSeeder extends Seeder
 
         # 3
         DB::table('file')->insert([
-            'name' => '3.jpg',
+            'name' => '3-1.jpg',
             'mime' => 'image/jpeg',
-            'original_name' => '3.jpg',
+            'original_name' => '3-1.jpg',
             'created_at' => Carbon::now(),
             'updated_at' => Carbon::now(),
         ]);
 
         # 4
         DB::table('file')->insert([
-            'name' => '4.jpg',
+            'name' => '4-1.jpg',
             'mime' => 'image/jpeg',
-            'original_name' => '4.jpg',
+            'original_name' => '4-1.jpg',
             'created_at' => Carbon::now(),
             'updated_at' => Carbon::now(),
         ]);
 
         # 5
         DB::table('file')->insert([
-            'name' => '5.jpg',
+            'name' => '5-1.jpg',
             'mime' => 'image/jpeg',
-            'original_name' => '5.jpg',
+            'original_name' => '5-1.jpg',
             'created_at' => Carbon::now(),
             'updated_at' => Carbon::now(),
         ]);
 
         # 6
         DB::table('file')->insert([
-            'name' => '6.jpg',
+            'name' => '6-1.jpg',
             'mime' => 'image/jpeg',
-            'original_name' => '6.jpg',
+            'original_name' => '6-1.jpg',
             'created_at' => Carbon::now(),
             'updated_at' => Carbon::now(),
         ]);
 
         # 7
         DB::table('file')->insert([
-            'name' => '7.jpg',
+            'name' => '7-1.jpg',
             'mime' => 'image/jpeg',
-            'original_name' => '7.jpg',
+            'original_name' => '7-1.jpg',
             'created_at' => Carbon::now(),
             'updated_at' => Carbon::now(),
         ]);
 
         # 8
         DB::table('file')->insert([
-            'name' => '8.jpg',
+            'name' => '8-1.jpg',
             'mime' => 'image/jpeg',
-            'original_name' => '8.jpg',
+            'original_name' => '8-1.jpg',
             'created_at' => Carbon::now(),
             'updated_at' => Carbon::now(),
         ]);
 
         # 9
         DB::table('file')->insert([
-            'name' => '9.jpg',
+            'name' => '9-1.jpg',
             'mime' => 'image/jpeg',
-            'original_name' => '9.jpg',
+            'original_name' => '9-1.jpg',
             'created_at' => Carbon::now(),
             'updated_at' => Carbon::now(),
         ]);
 
         # 10
         DB::table('file')->insert([
-            'name' => '10.jpg',
+            'name' => '10-1.jpg',
             'mime' => 'image/jpeg',
-            'original_name' => '10.jpg',
+            'original_name' => '10-1.jpg',
             'created_at' => Carbon::now(),
             'updated_at' => Carbon::now(),
         ]);
 
         # 11
         DB::table('file')->insert([
-            'name' => '11.jpg',
+            'name' => '11-1.jpg',
             'mime' => 'image/jpeg',
-            'original_name' => '11.jpg',
+            'original_name' => '11-1.jpg',
             'created_at' => Carbon::now(),
             'updated_at' => Carbon::now(),
         ]);
 
         # 12
         DB::table('file')->insert([
-            'name' => '12.jpg',
+            'name' => '12-1.jpg',
             'mime' => 'image/jpeg',
-            'original_name' => '12.jpg',
+            'original_name' => '12-1.jpg',
             'created_at' => Carbon::now(),
             'updated_at' => Carbon::now(),
         ]);
 
         # 13
         DB::table('file')->insert([
-            'name' => '13.jpg',
+            'name' => '13-1.jpg',
             'mime' => 'image/jpeg',
-            'original_name' => '13.jpg',
+            'original_name' => '13-1.jpg',
             'created_at' => Carbon::now(),
             'updated_at' => Carbon::now(),
         ]);
 
         # 14
         DB::table('file')->insert([
-            'name' => '14.jpg',
+            'name' => '14-1.jpg',
             'mime' => 'image/jpeg',
-            'original_name' => '14.jpg',
+            'original_name' => '14-1.jpg',
             'created_at' => Carbon::now(),
             'updated_at' => Carbon::now(),
         ]);
 
         # 15
         DB::table('file')->insert([
-            'name' => '15.jpg',
+            'name' => '15-1.jpg',
             'mime' => 'image/jpeg',
-            'original_name' => '15.jpg',
+            'original_name' => '15-1.jpg',
             'created_at' => Carbon::now(),
             'updated_at' => Carbon::now(),
         ]);
@@ -158,45 +158,45 @@ class ImageTableSeeder extends Seeder
 
         # 17
         DB::table('file')->insert([
-            'name' => '17.jpg',
+            'name' => '17-1.jpg',
             'mime' => 'image/jpeg',
-            'original_name' => '17.jpg',
+            'original_name' => '17-1.jpg',
             'created_at' => Carbon::now(),
             'updated_at' => Carbon::now(),
         ]);
 
         # 18
         DB::table('file')->insert([
-            'name' => '18.jpg',
+            'name' => '18-1.jpg',
             'mime' => 'image/jpeg',
-            'original_name' => '18.jpg',
+            'original_name' => '18-1.jpg',
             'created_at' => Carbon::now(),
             'updated_at' => Carbon::now(),
         ]);
 
         # 19
         DB::table('file')->insert([
-            'name' => '19.jpg',
+            'name' => '19-1.jpg',
             'mime' => 'image/jpeg',
-            'original_name' => '19.jpg',
+            'original_name' => '19-1.jpg',
             'created_at' => Carbon::now(),
             'updated_at' => Carbon::now(),
         ]);
 
         # 20
         DB::table('file')->insert([
-            'name' => '20.jpg',
+            'name' => '20-1.jpg',
             'mime' => 'image/jpeg',
-            'original_name' => '20.jpg',
+            'original_name' => '20-1.jpg',
             'created_at' => Carbon::now(),
             'updated_at' => Carbon::now(),
         ]);
 
         # 21
         DB::table('file')->insert([
-            'name' => '21.jpg',
+            'name' => '21-1.jpg',
             'mime' => 'image/jpeg',
-            'original_name' => '21.jpg',
+            'original_name' => '21-1.jpg',
             'created_at' => Carbon::now(),
             'updated_at' => Carbon::now(),
         ]);
