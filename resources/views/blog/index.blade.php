@@ -46,8 +46,8 @@
                 @foreach($features as $blog)
                     @include('blog._bcard', $blog)
                 @endforeach
-                <div class="col-md-12" style="text-align: right">
-                    <a href="{{ url('blog/category/featured-news') }}"><h4>ข่าวเด่นเพิ่มเติม ></h4></a>
+                <div class="col-md-12" style="text-align: right;border: solid">
+                    <h4><a href="{{ url('blog/category/featured-news') }}">ข่าวเด่นเพิ่มเติม ></a></h4>
                 </div>
                 <script>
                     $(document).ready(function(){
@@ -64,15 +64,16 @@
             @foreach($blogs as $blog)
                 @include('blog._card', $blog)
             @endforeach
-            <div class="col-md-12" style="text-align: right">
-                <a href="{{ url('blog/category/latest-news') }}"><h4>ข่าวล่าสุดเพิ่มเติม ></h4></a>
-            </div>
+            {{--<div class="col-md-12" style="text-align: right">
+                <h4><a href="{{ url('blog/category/latest-news') }}">ข่าวล่าสุดเพิ่มเติม ></a></h4>
+            </div>--}}
             <script>
                 $(document).ready(function(){
                     $('[data-toggle="tooltip"]').tooltip();
                 });
             </script>
         </div>
+
 
         <div id="tag-news" class="col-xs-12 some-space hidden-md"></div>
 

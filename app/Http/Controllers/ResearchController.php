@@ -30,6 +30,13 @@ class ResearchController extends Controller
 
     public function store(Request $request)
     {
+        $this->validate($request, [
+            'file' => 'required|mimes:application/pdf,application/vnd.openxmlformats-officedocument.wordprocessingml.document',
+            'name' => 'required|max:191',
+            'description' => 'required|max:65534',
+            'owner' => 'required|max:191',
+        ]);
+
         $file = $request->file('file');
         $file = self::storeFile($file);
 
@@ -41,7 +48,7 @@ class ResearchController extends Controller
             'slug' => $slug,
             'owner' => $request->get('owner'),
             'description' => $request->get('description'),
-            'file_id' => $file->id
+            'file' => $file->id
         ];
 
         $research = Research::create($research);
@@ -70,13 +77,20 @@ class ResearchController extends Controller
 
     public function update(Request $request, $id)
     {
+        $this->validate($request, [
+            'file' => 'mimes:application/pdf,application/vnd.openxmlformats-officedocument.wordprocessingml.document',
+            'name' => 'required|max:191',
+            'description' => 'required|max:65534',
+            'owner' => 'required|max:191',
+        ]);
+
         $research = Research::findOrFail($id);
         $new_research = $request->all();
 
         $file = $request->file('file');
         if(isset($file)){
             $file = self::storeFile($file);
-            $new_research['file_id'] = $file->id;
+            $new_research['file'] = $file->id;
         }
         $research->update($new_research);
 

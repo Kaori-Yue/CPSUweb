@@ -32,7 +32,7 @@
                                     <a href="">บุคลากร</a>
                                 </li>
                                 <li class="welcome-li">
-                                    <a href="">บุคคลทั่วไป</a>
+                                    <a href="">รู้จักภาควิชา</a>
                                 </li>
                             </ul>
                         </div>
@@ -148,13 +148,15 @@
         </div>--}}
 
         <div id="featured-news" class="row col-md-12 col-xs-12" style="background: #ffffff">
-            <h2 class="bg-success" style="margin: 1% 1% 0 1%;padding: 2%;text-align: left">ข่าวเด่น</h2>
+            <h2 class="bg-success" style="margin: 1% 1% 0 1%;padding: 2%;text-align: left">
+                ข่าวเด่น
+            </h2>
             @foreach($blogs as $blog)
                 @include('blog._bcard', $blog)
             @endforeach
-            <div class="col-md-12" style="text-align: right">
-                <a href="{{ url('blog') }}"><h4>ดูข่าวเพิ่มเติม ></h4></a>
-            </div>
+            {{--<div class="col-md-12" style="text-align: right">
+                <h4><a href="{{ url('blog') }}">ดูข่าวเพิ่มเติม ></a></h4>
+            </div>--}}
             <script>
                 $(document).ready(function(){
                     $('[data-toggle="tooltip"]').tooltip();

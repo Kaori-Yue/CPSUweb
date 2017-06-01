@@ -195,6 +195,13 @@ div {
     bottom: 0
 }
 
+.card-action {
+    background: rgba(217, 143, 79, 0.8);
+    text-align: center;
+    border-radius: 0%;
+    padding: 3%;
+}
+
 h2 > span {
     color: white;
     letter-spacing: -1px;

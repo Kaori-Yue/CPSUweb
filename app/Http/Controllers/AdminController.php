@@ -14,7 +14,18 @@ class AdminController extends Controller
 {
     public function index()
     {
-        return view('admin.index');
+        $curricula = Curricula::count();
+        $blog = Blog::count();
+        $teacher = Teacher::count();
+        $research = Research::count();
+        $thesis = Thesis::count();
+        return view('admin.summary', [
+            'curricula' => $curricula,
+            'blog' => $blog,
+            'teacher' => $teacher,
+            'research' => $research,
+            'thesis' => $thesis
+        ]);
     }
 
     public function curricula()
@@ -51,8 +62,7 @@ class AdminController extends Controller
             'ASC' => 'SortBy: ASC',
             'DESC' => 'SortBy: DESC',
         ];
-        $teachers = Teacher::where('status', 'duty')
-            ->orderBy('rank', 'desc')
+        $teachers = Teacher::orderBy('rank', 'desc')
             ->orderBy('name_th')
             ->get();
         return view('teacher.admin', ['teachers' => $teachers, 'orderOptions' => $orderOptions]);

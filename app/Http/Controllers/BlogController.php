@@ -141,7 +141,7 @@ class BlogController extends Controller
 
         self::handleTags($hash_tags, $blog);
 
-        return redirect()->action('AdminController@blog');
+        return redirect()->action('AdminController@blog')->with('status', 'Create Complete!');
     }
 
     public function update(Request $request, $id)
@@ -179,7 +179,7 @@ class BlogController extends Controller
         $blog->update($blogData);
         self::handleTags($hash_tags, $blog);
 
-        return redirect()->action('AdminController@blog');
+        return redirect()->action('AdminController@blog')->with('status', 'Update Complete!');
     }
 
     public function handleSlug($str)

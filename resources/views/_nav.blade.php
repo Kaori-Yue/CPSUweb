@@ -42,9 +42,9 @@
                         เกี่ยวกับ <span class="caret"></span>
                     </a>
                     <ul class="dropdown-menu">
+                        <li><a href="{{ url('sitemap') }}">แผนผังเว็บไซต์</a></li>
                         <li><a href="{{ url('history') }}">ประวัติภาควิชา</a></li>
                         <li><a href="{{ url('contact') }}">ติดต่อ</a></li>
-                        <li><a href="{{ url('sitemap') }}">แผนผังเว็บไซต์</a></li>
                     </ul>
                 </li>
                 {{--<li>

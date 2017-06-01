@@ -69,6 +69,20 @@ class TeacherController extends Controller
 
     public function store(Request $request)
     {
+        $this->validate($request, [
+            'name_th' => 'required|max:191',
+            'name_en' => 'required|max:191',
+            'doctor_degree' => 'required|max:191',
+            'master_degree' => 'required|max:191',
+            'bachelor_degree' => 'required|max:191',
+            'email' => 'required|max:191',
+            'website' => 'required|max:191',
+            'position' => 'required|max:191',
+            'expertise' => 'required|max:191',
+            'status' => 'required|in:duty,retire',
+            'image' => 'required|image',
+        ]);
+
         $teacher = $request->all();
         $teacher['token'] = (new TokenGenerator())->generate(6);
         $teacher['password'] = password_hash($teacher['name_en'], PASSWORD_DEFAULT);
@@ -79,8 +93,8 @@ class TeacherController extends Controller
 
         $teacher['rank'] = self::handleRank($teacher);
 
-        $teacher = Teacher::create($teacher);
-        return redirect()->action('AdminController@teacher');
+        Teacher::create($teacher);
+        return redirect()->action('AdminController@teacher')->with('status', 'Create Complete!');
     }
 
     public function handleRank($teacher)
@@ -140,17 +154,33 @@ class TeacherController extends Controller
 
     public function update(Request $request, $id)
     {
+        $this->validate($request, [
+            'name_th' => 'required|max:191',
+            'name_en' => 'required|max:191',
+            'doctor_degree' => 'required|max:191',
+            'master_degree' => 'required|max:191',
+            'bachelor_degree' => 'required|max:191',
+            'email' => 'required|max:191',
+            'website' => 'required|max:191',
+            'position' => 'required|max:191',
+            'expertise' => 'required|max:191',
+            'status' => 'required|in:duty,retire',
+            'image' => 'image',
+        ]);
+
         $teacher = Teacher::findOrFail($id);
         $editedTeacher = $request->all();
+
         $image = $request->file('image');
         $editedTeacher['rank'] = self::handleRank($editedTeacher);
+
         if(isset($image)){
             $file = self::storeFile($image);
             $editedTeacher['image'] = $file->id;
         }
         $teacher->update($editedTeacher);
 
-        return redirect()->action('AdminController@teacher');
+        return redirect()->action('AdminController@teacher')->with('status', 'Update Complete!');
     }
 
     public function destroy($id)

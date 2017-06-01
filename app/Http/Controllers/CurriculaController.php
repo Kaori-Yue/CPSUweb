@@ -56,6 +56,22 @@ class CurriculaController extends Controller
 
     public function store(Request $request)
     {
+        $this->validate($request, [
+            'degree' => 'required|max:191',
+            'name_th' => 'required|max:191',
+            'name_en' => 'required|max:191',
+            'degree_name_th' => 'required|max:191',
+            'degree_name_en' => 'required|max:191',
+            'cost' => 'required|integer|min:0',
+            'credit' => 'required|integer',
+            'enrollment_criteria' => 'required|max:65534',
+            'graduation_criteria' => 'required|max:65534',
+            'entrance_subject' => 'required|max:65534',
+            'document' => 'required|max:65534',
+            'status' => 'required|in:enable,disable',
+            'file' => 'required|mimes:application/pdf,application/vnd.openxmlformats-officedocument.wordprocessingml.document',
+        ]);
+
         $curricula = $request->all();
         $file = $request->file('file');
         $file = self::storeFile($file);
@@ -64,13 +80,30 @@ class CurriculaController extends Controller
         $curricula['slug'] = $slug;
 
         $curricula['file'] = $file->id;
-        $curricula = Curricula::create($curricula);
+        Curricula::create($curricula);
 
-        return $curricula;
+        return redirect()->action('AdminController@curricula')->with('status', 'Create Complete!');
+
     }
 
     public function update(Request $request, $id)
     {
+        $this->validate($request, [
+            'degree' => 'required|max:191',
+            'name_th' => 'required|max:191',
+            'name_en' => 'required|max:191',
+            'degree_name_th' => 'required|max:191',
+            'degree_name_en' => 'required|max:191',
+            'cost' => 'required|integer|min:0',
+            'credit' => 'required|integer',
+            'enrollment_criteria' => 'required|max:65534',
+            'graduation_criteria' => 'required|max:65534',
+            'entrance_subject' => 'required|max:65534',
+            'document' => 'required|max:65534',
+            'status' => 'require|in:enable,disable',
+            'file' => 'mimes:application/pdf,application/vnd.openxmlformats-officedocument.wordprocessingml.document,',
+        ]);
+
         $curricula = Curricula::findOrFail($id);
 
         $new_curricula = $request->all();
@@ -88,7 +121,7 @@ class CurriculaController extends Controller
 
         $curricula->update($new_curricula);
 
-        return redirect()->action('AdminController@curricula');
+        return redirect()->action('AdminController@curricula')->with('status', 'Create Complete!');
     }
 
     public function storeFile($file)
