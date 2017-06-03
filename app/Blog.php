@@ -36,4 +36,9 @@ class Blog extends Model
     {
         return $this->belongsToMany('App\Tag', 'blog_tag', 'blog_id','tag_id');
     }
+
+    public function scopePublish($query)
+    {
+        return $query->where('status', 'publish');
+    }
 }

@@ -31,7 +31,6 @@ class ResearchController extends Controller
     public function store(Request $request)
     {
         $this->validate($request, [
-            'file' => 'required|mimes:application/pdf,application/vnd.openxmlformats-officedocument.wordprocessingml.document',
             'name' => 'required|max:191',
             'description' => 'required|max:65534',
             'owner' => 'required|max:191',
@@ -72,7 +71,7 @@ class ResearchController extends Controller
         }
         $research->images;
 
-        return redirect()->action('AdminController@research');
+        return redirect()->action('AdminController@research')->with('status', 'Create Complete!');
     }
 
     public function update(Request $request, $id)
@@ -135,7 +134,7 @@ class ResearchController extends Controller
                 }
             }
         }
-        return redirect()->action('AdminController@research');
+        return redirect()->action('AdminController@research')->with('status', 'Update Complete!');
         //return $new_research;
     }
 

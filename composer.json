@@ -10,7 +10,8 @@
         "laravel/scout": "^3.0",
         "laravel/tinker": "~1.0",
         "laravelcollective/html": "^5.4",
-        "orangehill/iseed": "dev-master"
+        "orangehill/iseed": "dev-master",
+        "roumen/sitemap": "^2.6"
     },
     "require-dev": {
         "fzaninotto/faker": "~1.4",

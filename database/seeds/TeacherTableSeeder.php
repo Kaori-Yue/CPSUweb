@@ -100,7 +100,7 @@ class TeacherTableSeeder extends Seeder
             4 => 
             array (
                 'id' => 5,
-                'name_th' => 'อ.ดร.คทา ประดิษฐวงศ์',
+                'name_th' => 'ผศ.ดร.คทา ประดิษฐวงศ์',
                 'name_en' => 'Dr.Kata Praditwong',
             'doctor_degree' => 'Ph.D. (Computer Science) University of Birmingham, UK (2551)',
             'master_degree' => 'วท.ม. (วิทยาศาสตร์คอมพิวเตอร์) จุฬาลงกรณ์มหาวิทยาลัย (2544)',
@@ -109,7 +109,7 @@ class TeacherTableSeeder extends Seeder
                 'website' => '',
                 'position' => '',
                 'expertise' => 'Evolutionary Algorithms, Metaheuristics, Optimization',
-                'rank' => 10,
+                'rank' => 25,
                 'image' => 5,
                 'token' => '5fHfDV',
                 'password' => '$2y$10$ITKhVfgWYvvb8I09E9IOLeZevhsKdM7pSBxpJUVIoL4PkW8UChlHu',

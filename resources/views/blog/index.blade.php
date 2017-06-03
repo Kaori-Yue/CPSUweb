@@ -46,7 +46,7 @@
                 @foreach($features as $blog)
                     @include('blog._bcard', $blog)
                 @endforeach
-                <div class="col-md-12" style="text-align: right;border: solid">
+                <div class="col-md-12 col-xs-12" style="text-align: right">
                     <h4><a href="{{ url('blog/category/featured-news') }}">ข่าวเด่นเพิ่มเติม ></a></h4>
                 </div>
                 <script>

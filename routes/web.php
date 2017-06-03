@@ -15,8 +15,6 @@
     return view('welcome');
 });*/
 
-# Todo edit & delete route
-
 #Free Route
 Route::get('/', 'HomeController@index');
 Route::get('home', 'HomeController@index')->name('home');
@@ -31,9 +29,12 @@ Route::get('curricula', 'CurriculaController@index');
 Route::get('history', function (){
     return view('history');
 });
+
 Route::get('sitemap', function (){
     return view('sitemap');
 });
+Route::get('sitemap2', 'SiteMapController@index');
+
 
 Route::get('interested', function (){
     return view('spacial.interested');
