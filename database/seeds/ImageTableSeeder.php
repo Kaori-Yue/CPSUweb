@@ -212,9 +212,9 @@ class ImageTableSeeder extends Seeder
 
         # 23
         DB::table('file')->insert([
-            'name' => 'olympic_2555.jpg',
+            'name' => 'Olympic.jpg',
             'mime' => 'image/jpeg',
-            'original_name' => 'olympic_2555.jpg',
+            'original_name' => 'Olympic.jpg',
             'created_at' => Carbon::now(),
             'updated_at' => Carbon::now(),
         ]);

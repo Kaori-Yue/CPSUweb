@@ -148,7 +148,7 @@ class BlogController extends Controller
     {
         $this->validate($request, [
             'cover' => 'image',
-            'title' => 'required|unique:blog|max:191',
+            'title' => 'required|max:191',
             'content' => 'required',
             'status' => 'required|in:draft,disable,publish',
             'category_id' => 'required|integer|min:0',
