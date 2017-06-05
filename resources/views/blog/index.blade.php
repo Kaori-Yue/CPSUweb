@@ -64,9 +64,9 @@
             @foreach($blogs as $blog)
                 @include('blog._card', $blog)
             @endforeach
-            {{--<div class="col-md-12" style="text-align: right">
+            <div class="col-md-12 col-xs-12" style="text-align: right">
                 <h4><a href="{{ url('blog/category/latest-news') }}">ข่าวล่าสุดเพิ่มเติม ></a></h4>
-            </div>--}}
+            </div>
             <script>
                 $(document).ready(function(){
                     $('[data-toggle="tooltip"]').tooltip();
@@ -101,7 +101,7 @@
         </div>
     </div>
 
-    <script type="text/javascript">
+    {{--<script type="text/javascript">
         window.onload = function() {
             TagCanvas.interval = 20;
             TagCanvas.textFont = 'Impact,Arial Black,sans-serif';
@@ -127,9 +127,8 @@
             try {
                 TagCanvas.Start('myCanvas');
             } catch(e) {
-                // something went wrong, hide the canvas container
                 document.getElementById('myCanvasContainer').style.display = 'none';
             }
         };
-    </script>
+    </script>--}}
 @stop

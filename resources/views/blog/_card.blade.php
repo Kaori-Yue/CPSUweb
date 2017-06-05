@@ -43,14 +43,14 @@
                 </div>
                 <div class="modal-body" style="height: 200px">
                     <div class="col-md-6 col-xs-6" style="padding: 8%">
-                        <a href="">
+                        <button type="button" class="btn btn-primary" id="shareToFB{{$blog->id}}">
                             <img style="height: 100px" class="img-responsive" src="{{ URL::asset('image/fb_circle.png') }}" alt="share to facebook">
-                        </a>
+                        </button>
                     </div>
                     <div class="col-md-6 col-xs-6" style="padding: 8%">
-                        <a href="">
+                        <button type="button" class="btn btn-info" id="shareToTW{{$blog->id}}">
                             <img style="height: 100px" class="img-responsive" src="{{ URL::asset('image/twitter_circle.png') }}" alt="share to twitter">
-                        </a>
+                        </button>
                     </div>
                 </div>
                 <div class="modal-footer">
@@ -59,4 +59,31 @@
             </div>
         </div>
     </div>
+    <script>
+        window.fbAsyncInit = function() {
+            FB.init({
+                appId            : '2293906834168058',
+                autoLogAppEvents : true,
+                xfbml            : true,
+                version          : 'v2.9'
+            });
+            FB.AppEvents.logPageView();
+        };
+
+        (function(d, s, id){
+            var js, fjs = d.getElementsByTagName(s)[0];
+            if (d.getElementById(id)) {return;}
+            js = d.createElement(s); js.id = id;
+            js.src = "//connect.facebook.net/en_US/sdk.js";
+            fjs.parentNode.insertBefore(js, fjs);
+        }(document, 'script', 'facebook-jssdk'));
+
+        document.getElementById('shareToFB{{$blog->id}}').onclick = function() {
+            FB.ui({
+                method: 'share',
+                display: 'popup',
+                href: '{{ 'http://202.28.72.71/CPSUweb/public/index.php/blog/'.$blog->slug }}',
+            }, function(response){});
+        }
+    </script>
 </div>
