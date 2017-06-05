@@ -81,7 +81,6 @@
             <h2 class="bg-success" style="margin: 1% 1% 0 1%;padding: 2%;text-align: left">ข่าวตามหมวดหมู่</h2>
             <div id="myCanvasContainer">
                 <canvas width="680" height="300" style="padding: 3%;width: 100%" id="myCanvas">
-                    <p>Anything in here will be replaced on browsers that support the canvas element</p>
                     <ul>
                         @foreach($tags as $tag)
                             <li><a href="{{ url('tag/'.$tag->slug) }}">{{ $tag->name }}</a></li>
@@ -101,7 +100,7 @@
         </div>
     </div>
 
-    {{--<script type="text/javascript">
+    <script type="text/javascript">
         window.onload = function() {
             TagCanvas.interval = 20;
             TagCanvas.textFont = 'Impact,Arial Black,sans-serif';
@@ -130,5 +129,5 @@
                 document.getElementById('myCanvasContainer').style.display = 'none';
             }
         };
-    </script>--}}
+    </script>
 @stop
