@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Helper\TokenGenerator;
+use App\Staff;
 use App\Teacher;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\File;
@@ -12,11 +13,17 @@ class TeacherController extends Controller
 {
     public function index()
     {
-        $teachers = Teacher::where('status', 'duty')
+        $teachers = Teacher::duty()
             ->orderBy('rank', 'desc')
             ->orderBy('name_th')
             ->get();
-        return view('teacher.index', ['teachers' => $teachers]);
+
+        $staffs = Staff::duty()->orderBy('name_th')->get();
+
+        return view('teacher.index', [
+            'teachers' => $teachers,
+            'staffs' => $staffs
+        ]);
     }
 
     public function sortBy(Request $request)
@@ -72,14 +79,14 @@ class TeacherController extends Controller
         $this->validate($request, [
             'name_th' => 'required|max:191',
             'name_en' => 'required|max:191',
-            'doctor_degree' => 'required|max:191',
+            'doctor_degree' => 'max:191',
             'master_degree' => 'required|max:191',
             'bachelor_degree' => 'required|max:191',
-            'email' => 'required|max:191',
-            'website' => 'required|max:191',
-            'position' => 'required|max:191',
-            'expertise' => 'required|max:191',
-            'status' => 'required|in:duty,retire',
+            'email' => 'max:191',
+            'website' => 'max:191',
+            'position' => 'max:191',
+            'expertise' => 'max:191',
+            'status' => 'required|in:duty,retire,disable,study',
             'image' => 'required|image',
         ]);
 
@@ -157,14 +164,14 @@ class TeacherController extends Controller
         $this->validate($request, [
             'name_th' => 'required|max:191',
             'name_en' => 'required|max:191',
-            'doctor_degree' => 'required|max:191',
+            'doctor_degree' => 'max:191',
             'master_degree' => 'required|max:191',
             'bachelor_degree' => 'required|max:191',
-            'email' => 'required|max:191',
-            'website' => 'required|max:191',
-            'position' => 'required|max:191',
-            'expertise' => 'required|max:191',
-            'status' => 'required|in:duty,retire',
+            'email' => 'max:191',
+            'website' => 'max:191',
+            'position' => 'max:191',
+            'expertise' => 'max:191',
+            'status' => 'required|in:duty,retire,disable,study',
             'image' => 'image',
         ]);
 

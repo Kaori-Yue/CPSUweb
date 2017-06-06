@@ -19,6 +19,9 @@
         </ul>
         <p><b>อีเมล : </b>{{ $teacher->email }}</p>
         <p><b>สาขาที่เชี่ยวชาญ : </b>{{ $teacher->expertise }}</p>
+        @if($teacher->website != '')
+        <p><b>เว็บไซต์ : </b>{{ $teacher->website }}</p>
+        @endif
 
         @if (Request::is('admin/*'))
             <h4><b>Status : {{ $teacher->status }}</b></h4>

@@ -16,6 +16,7 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
     <link href="https://fonts.googleapis.com/css?family=Baloo" rel="stylesheet">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.19.1/TweenMax.min.js"></script>
+
     <script src="{{ URL::asset('js/tagcanvas.min.js') }}" type="text/javascript"></script>
     <link rel="stylesheet" href="{{ URL::asset('css/main.css') }}">
 

@@ -21,9 +21,9 @@
 
         <div class="row col-md-12" style="background: #ffffff">
             <h2 class="bg-primary" style="margin: 1% 1% 0 1%;padding: 2%;text-align: left">เจ้าหน้าที่</h2>
-            {{--@foreach($teachers as $teacher)
-                @include('teacher._card', $teacher)
-            @endforeach--}}
+            @foreach($staffs as $staff)
+                @include('staff._card', $staff)
+            @endforeach
         </div>
     </div>
 

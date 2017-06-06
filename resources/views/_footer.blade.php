@@ -44,9 +44,29 @@
                 </p>
             </div>
             <div class="col-md-3 col-sm-6 col-xs-12" style="padding-bottom: 5%">
-                <h4 style="padding-bottom: 5%"><b>Created By</b></h4>
-                <p>Created by: Chanachai Puttaruksa</p>
-                <p>Contact information: <a target="_blank" style="color: #D98F4F" href="https://www.facebook.com/mig.mikael">Mikael Facebook</a></p>
+                <h4>
+                    <b>ภาควิชาคอมพิวเตอร์ คณะวิทยาศาสตร์</b>
+                </h4>
+                <p>ถนนราชมรรคาใน อำเภอเมืองฯ จังหวัดนครปฐม 73000</p>
+                <p>
+                    <i class="fa fa-facebook-official"></i>
+                    &nbsp&nbsp
+                    <a style="color: #ffffff" href="https://www.facebook.com/groups/CPSUTH/" target="_blank">
+                        Facebook Page
+                    </a>
+                </p>
+
+                <p>
+                    <i class="fa fa-phone-square"></i>
+                    &nbsp&nbsp
+                    0-3424-5334-5
+                </p>
+
+                <p>
+                    <i class="fa fa-phone-square"></i>
+                    &nbsp&nbsp
+                    0-3427-2923
+                </p>
             </div>
         </div>
         <div class="col-md-12 col-sm-12 col-xs-12">

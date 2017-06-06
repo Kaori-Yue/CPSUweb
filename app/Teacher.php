@@ -31,8 +31,23 @@ class Teacher extends Model
         'password', 'token'
     ];
 
-    public function searchableAs()
+    public function scopeDuty($query)
     {
-        return 'teacher_index';
+        return $query->where('status', 'duty');
+    }
+
+    public function scopeStudy($query)
+    {
+        return $query->where('status', 'study');
+    }
+
+    public function scopeRetire($query)
+    {
+        return $query->where('status', 'retire');
+    }
+
+    public function scopeDisable($query)
+    {
+        return $query->where('status', 'disable');
     }
 }

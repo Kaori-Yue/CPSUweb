@@ -64,6 +64,7 @@ Route::group(['middleware' => 'auth'], function (){
 
     Route::post('blog', 'BlogController@store');
     Route::post('teacher', 'TeacherController@store');
+    Route::post('staff', 'StaffController@store');
     Route::post('thesis', 'ThesisController@store');
     Route::post('research', 'ResearchController@store');
     Route::post('curricula', 'CurriculaController@store');
@@ -71,18 +72,21 @@ Route::group(['middleware' => 'auth'], function (){
 
     Route::get('blog/{slug}/edit', 'BlogController@edit');
     Route::get('teacher/{id}/edit', 'TeacherController@edit');
+    Route::get('staff/{id}/edit', 'StaffController@edit');
     Route::get('curricula/{id}/edit', 'CurriculaController@edit');
     Route::get('research/{id}/edit', 'ResearchController@edit');
 
 
     Route::patch('blog/{id}', 'BlogController@update');
     Route::patch('teacher/{id}', 'TeacherController@update');
+    Route::patch('staff/{id}', 'StaffController@update');
     Route::patch('curricula/{id}', 'CurriculaController@update');
     Route::patch('research/{id}', 'ResearchController@update');
 
 
     Route::delete('blog/{id}', 'BlogController@destroy');
     Route::delete('teacher/{id}', 'TeacherController@destroy');
+    Route::delete('staff/{id}', 'StaffController@destroy');
     Route::delete('research/{id}', 'ResearchController@destroy');
     Route::delete('curricula/{id}', 'CurriculaController@destroy');
 
@@ -102,15 +106,18 @@ Route::group(['middleware' => 'auth'], function (){
 
     Route::get('admin/thesis', 'AdminController@thesis');
     Route::get('admin/thesis/create', 'ThesisController@create');
-    // sort
+
 
     Route::get('admin/research', 'AdminController@research');
     Route::get('admin/research/create', 'ResearchController@create');
-    // sort
+
 
     Route::get('admin/curricula', 'AdminController@curricula');
     Route::get('admin/curricula/create', 'CurriculaController@create');
-    // sort
+
+
+    Route::get('admin/staff', 'AdminController@staff');
+    Route::get('admin/staff/create', 'StaffController@create');
 });
 
 /*Route::get('test', 'TestController@index');

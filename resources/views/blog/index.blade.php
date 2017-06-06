@@ -79,29 +79,22 @@
 
         <div class="row col-md-12 col-xs-12" style="background: #ffffff">
             <h2 class="bg-success" style="margin: 1% 1% 0 1%;padding: 2%;text-align: left">ข่าวตามหมวดหมู่</h2>
-            <div id="myCanvasContainer">
+            {{--<div id="myCanvasContainer">
                 <canvas width="680" height="300" style="padding: 3%;width: 100%" id="myCanvas">
                     <ul>
                         @foreach($tags as $tag)
                             <li><a href="{{ url('tag/'.$tag->slug) }}">{{ $tag->name }}</a></li>
                         @endforeach
-                        {{--<li><a data-weight="50" href="http://www.google.com" target="_blank">Google</a></li>
-                        <li><a href="">Chips</a></li>
-                        <li><a href="">Salt</a></li>
-                        <li><a href="">Vinegar</a></li>
-                        <li><a href="">Test</a></li>
-                        <li><a href="">Inpitar</a></li>
-                        <li><a href="">Pakorn</a></li>
-                        <li><a href="">Sapol</a></li>
-                        <li><a href="">ข่าวเด่น</a></li>--}}
+                        <li><a data-weight="50" href="http://www.google.com" target="_blank">Google</a></li>
                     </ul>
                 </canvas>
-            </div>
+            </div>--}}
+
         </div>
     </div>
 
     <script type="text/javascript">
-        window.onload = function() {
+        /*window.onload = function() {
             TagCanvas.interval = 20;
             TagCanvas.textFont = 'Impact,Arial Black,sans-serif';
             TagCanvas.textColour = '#40826D';
@@ -128,7 +121,7 @@
             } catch(e) {
                 document.getElementById('myCanvasContainer').style.display = 'none';
             }
-        };
+        };*/
 
         window.fbAsyncInit = function() {
             FB.init({

@@ -6,6 +6,7 @@ use App\Blog;
 use App\Category;
 use App\Curricula;
 use App\Research;
+use App\Staff;
 use App\Teacher;
 use App\Thesis;
 use Illuminate\Http\Request;
@@ -66,6 +67,12 @@ class AdminController extends Controller
             ->orderBy('name_th')
             ->get();
         return view('teacher.admin', ['teachers' => $teachers, 'orderOptions' => $orderOptions]);
+    }
+
+    public function staff()
+    {
+        $staffs = Staff::all();
+        return view('staff.admin', ['staffs' => $staffs]);
     }
 
     public function thesis()
