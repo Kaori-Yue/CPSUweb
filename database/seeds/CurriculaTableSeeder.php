@@ -34,7 +34,7 @@ class CurriculaTableSeeder extends Seeder
                 'entrance_subject' => '',
                 'document' => '',
                 'status' => 'enable',
-                'file' => 37,
+                'file' => 32,
                 'created_at' => '2017-05-07 12:04:22',
                 'updated_at' => '2017-05-09 08:54:50',
             ),
@@ -55,7 +55,7 @@ class CurriculaTableSeeder extends Seeder
                 'entrance_subject' => '',
                 'document' => '',
                 'status' => 'enable',
-                'file' => 38,
+                'file' => 33,
                 'created_at' => '2017-05-07 12:12:50',
                 'updated_at' => '2017-05-09 08:52:03',
             ),
@@ -69,7 +69,7 @@ class CurriculaTableSeeder extends Seeder
             'degree_name_th' => 'วิทยาศาสตรมหาบัณฑิต (เทคโนโลยีสารสนเทศ), วท.ม. (เทคโนโลยีสารสนเทศ)',
             'degree_name_en' => 'Master of Science (Information Technology), M.Sc. (Information Technology)',
                 'cost' => 27000,
-                'credit' => 36,
+                'credit' => 34,
                 'enrollment_criteria' => '<ol>
 <li>เป็นผู้สำเร็จการศึกษาระดับปริญญาตรี สาขาวิชาเทคโนโลยีสารสนเทศ สาขาวิชาวิทยาการ
 คอมพิวเตอร์ สาขาวิชาวิศวกรรมคอมพิวเตอร์ หรือสาขาวิชาอื่นๆ ที่เกี่ยวข้อง โดยมีค่าระดับคะแนนเฉลี่ยสะสม
@@ -108,7 +108,7 @@ SEPT หรือผลสอบภาษาอังกฤษจากสถา
 วิทยานิพนธ์มาด้วย</li>
 </ol>',
                 'status' => 'enable',
-                'file' => 39,
+                'file' => 35,
                 'created_at' => '2017-05-07 12:23:32',
                 'updated_at' => '2017-05-15 19:41:51',
             ),
@@ -159,7 +159,7 @@ SEPT หรือผลสอบภาษาอังกฤษจากสถา
 <li>ให้นักศึกษาเตรียมเอกสารวิทยานิพนธ์หรือการค้นคว้าอิสระระดับปริญญาโทมาในวันสอบสัมภาษณ์</li>
 </ol>',
                 'status' => 'enable',
-                'file' => 40,
+                'file' => 36,
                 'created_at' => '2017-05-07 12:29:00',
                 'updated_at' => '2017-05-15 19:42:05',
             ),

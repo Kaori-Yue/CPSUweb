@@ -17,6 +17,9 @@
     <link href="https://fonts.googleapis.com/css?family=Baloo" rel="stylesheet">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.19.1/TweenMax.min.js"></script>
 
+    <script src="{{ URL::asset('js/bower_components/jqcloud2/dist/jqcloud.min.js') }}"></script>
+    <link rel="stylesheet" href="{{ URL::asset('js/bower_components/jqcloud2/dist/jqcloud.min.css') }}">
+
     <script src="{{ URL::asset('js/tagcanvas.min.js') }}" type="text/javascript"></script>
     <link rel="stylesheet" href="{{ URL::asset('css/main.css') }}">
 
@@ -46,5 +49,6 @@
     </div>
     <!-- Scripts -->
     {{--<script src="{{ asset('js/app.js') }}"></script>--}}
+    <script src="{{ URL::asset('js/fb.js') }}"></script>
 </body>
 </html>

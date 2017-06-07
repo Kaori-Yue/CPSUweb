@@ -52,9 +52,16 @@
         <div id="old-curricula" class="col-xs-12 some-space hidden-md"></div>
 
         <div class="row col-md-12" style="background: #ffffff">
-            @foreach($dis_curriculas as $curricula)
-                @include('curricula._card', $curricula)
-            @endforeach
+            @if(sizeof($dis_curriculas) > 0)
+                @foreach($dis_curriculas as $curricula)
+                    @include('curricula._card', $curricula)
+                @endforeach
+            @else
+                <div class="col-md-12" style="text-align: center">
+                    <h4>ไม่มีหลักสูตรเก่า</h4>
+                </div>
+
+            @endif
         </div>
 
     </div>
