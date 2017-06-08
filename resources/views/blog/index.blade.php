@@ -83,9 +83,17 @@
                 <canvas width="680" height="300" style="padding: 3%;width: 100%" id="myCanvas">
                     <ul>
                         @foreach($tags as $tag)
-                            <li><a href="{{ url('tag/'.$tag->slug) }}">{{ $tag->name }}</a></li>
+                            <li>
+                                <a href="{{ url('tag/'.$tag->slug) }}">
+                                    {{ $tag->name }}
+                                </a>
+                            </li>
                         @endforeach
-                        <li><a data-weight="40" href="http://www.google.com" target="_blank">Google</a></li>
+                        <li>
+                            <a data-weight="50" href="http://www.google.com" target="_blank">
+                                Google
+                            </a>
+                        </li>
                     </ul>
                 </canvas>
             </div>
@@ -100,12 +108,13 @@
     <script type="text/javascript">
         window.onload = function() {
             TagCanvas.interval = 20;
-            TagCanvas.textFont = 'Impact,Arial Black,sans-serif';
+            TagCanvas.textFont = '';
             TagCanvas.textColour = '#40826D';
             TagCanvas.textHeight = 25;
             TagCanvas.outlineColour = '#D98F4F';
-            TagCanvas.outlineThickness = 3;
-            TagCanvas.minSpeed = 0.00;
+            TagCanvas.outlineThickness = 5;
+            TagCanvas.outlineMethod = 'colour';
+            TagCanvas.minSpeed = 0;
             TagCanvas.maxSpeed = 0.01;
             TagCanvas.minBrightness = 0.1;
             TagCanvas.depth = 0.92;
@@ -118,11 +127,10 @@
             TagCanvas.shadow = '#ccf';
             TagCanvas.shadowBlur = 3;
             TagCanvas.weight = true;
-            TagCanvas.dragControl = true;
             TagCanvas.weightFrom = 'data-weight';
             TagCanvas.fadeIn = 800;
-            TagCanvas.pinchZoom = true;
             TagCanvas.wheelZoom = false;
+            TagCanvas.dragControl = true;
             try {
                 TagCanvas.Start('myCanvas');
             } catch(e) {
@@ -131,29 +139,13 @@
 
             var words = [
                 @foreach($tags as $tag)
-                {text: "{{ $tag->name }}", weight: 13},
+                {text: "{{ $tag->name }}", weight: {!! $tag->weight !!}, link: '{{ url('tag/'.$tag->slug) }}' },
                 @endforeach
-                /*{text: "Lorem", weight: 13},
-                {text: "Ipsum", weight: 10.5},
-                {text: "Dolor", weight: 9.4},
-                {text: "Sit", weight: 8},
-                {text: "Amet", weight: 6.2},
-                {text: "Consectetur", weight: 5},
-                {text: "Adipiscing", weight: 5},
-                {text: "Lorem2", weight: 13},
-                {text: "Ipsum2", weight: 10.5},
-                {text: "Dolor2", weight: 9.4},
-                {text: "Sit2", weight: 8},
-                {text: "Amet2", weight: 6.2},
-                {text: "Consectetur2", weight: 5},
-                {text: "Adipiscing2", weight: 5}*/
-                /* ... */
             ];
 
             $('#demo').jQCloud(words,{
                 autoResize: true,
                 shape: "elliptic"
-
             });
         };
     </script>

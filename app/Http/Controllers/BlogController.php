@@ -26,6 +26,10 @@ class BlogController extends Controller
             ->get();
 
         $tags = Tag::all();
+        foreach ($tags as $tag){
+            $tag_count = BlogTag::where('tag_id', $tag->id)->count();
+            $tag['weight'] = $tag_count;
+        }
 
         return view('blog.index', [
             'blogs' => $blogs,

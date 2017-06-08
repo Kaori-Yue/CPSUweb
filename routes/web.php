@@ -124,7 +124,7 @@ Route::group(['middleware' => 'auth'], function (){
 Route::get('test/slug', 'TestController@slug');
 Route::get('api/research', 'TestController@research');
 Route::get('test/explode', 'TestController@testExplode');*/
-
+Route::get('test/tag', 'TestController@testTag');
 
 Auth::routes();
 

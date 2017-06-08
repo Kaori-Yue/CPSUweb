@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Blog;
+use App\BlogTag;
 use App\Category;
 use App\Tag;
 use App\User;
@@ -51,5 +52,14 @@ class TestController extends Controller
     {
         $name = 'ผศ.ดร.ปานใจ ธารทัศนวงศ์';
         print_r(explode('.', $name));
+    }
+
+    public function testTag()
+    {
+        $tags = Tag::all();
+        foreach ($tags as $tag){
+            $count = BlogTag::where('tag_id', $tag->id)->count();
+            echo $tag->id.') '.$tag->name.' '.$count.'<br>';
+        }
     }
 }

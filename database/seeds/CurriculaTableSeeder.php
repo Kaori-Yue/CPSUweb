@@ -20,10 +20,10 @@ class CurriculaTableSeeder extends Seeder
             0 => 
             array (
                 'id' => 1,
-                'slug' => 'Bachelor-of-Science-Program-in-Information-Technology-2556',
+                'slug' => 'Bachelor-of-Science-Program-in-Information-Technology',
                 'degree' => 'Bachelor Degree',
-                'name_th' => 'หลักสูตรวิทยาศาสตรบัณฑิต สาขาวิชาเทคโนโลยีสารสนเทศ 2556',
-                'name_en' => 'Bachelor of Science Program in Information Technology 2556',
+                'name_th' => 'หลักสูตรวิทยาศาสตรบัณฑิต สาขาวิชาเทคโนโลยีสารสนเทศ',
+                'name_en' => 'Bachelor of Science Program in Information Technology',
             'degree_name_th' => 'วิทยาศาสตรบัณฑิต (เทคโนโลยีสารสนเทศ), วท.บ. (เทคโนโลยีสารสนเทศ)',
             'degree_name_en' => 'Bachelor of Science (Information Technology), B.Sc. (Information Technology)',
                 'cost' => 19000,
@@ -43,7 +43,7 @@ class CurriculaTableSeeder extends Seeder
                 'id' => 2,
                 'slug' => 'Bachelor-of-Science-Program-in-Computer-Science',
                 'degree' => 'Bachelor Degree',
-                'name_th' => 'หลักสูตรวิทยาศาสตรบัณฑิต สาขาวิชา วิทยาการคอมพิวเตอร์',
+                'name_th' => 'หลักสูตรวิทยาศาสตรบัณฑิต สาขาวิชาวิทยาการคอมพิวเตอร์',
                 'name_en' => 'Bachelor of Science Program in Computer Science',
             'degree_name_th' => 'วิทยาศาสตรบัณฑิต (วิทยาการคอมพิวเตอร์), วท.บ. (วิทยาการคอมพิวเตอร์)',
             'degree_name_en' => 'Bachelor of Science (Computer Science), B.Sc. (Computer Science)',
