@@ -131,6 +131,7 @@
             TagCanvas.fadeIn = 800;
             TagCanvas.wheelZoom = false;
             TagCanvas.dragControl = true;
+            TagCanvas.pinchZoom = true;
             try {
                 TagCanvas.Start('myCanvas');
             } catch(e) {

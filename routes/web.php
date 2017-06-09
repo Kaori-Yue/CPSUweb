@@ -125,6 +125,8 @@ Route::get('test/slug', 'TestController@slug');
 Route::get('api/research', 'TestController@research');
 Route::get('test/explode', 'TestController@testExplode');*/
 Route::get('test/tag', 'TestController@testTag');
+Route::get('test/image', 'TestController@testImage');
+Route::get('test/resize', 'TestController@resizeImg');
 
 Auth::routes();
 

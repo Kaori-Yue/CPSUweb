@@ -7,8 +7,11 @@ use App\BlogTag;
 use App\Category;
 use App\Tag;
 use App\User;
+use App\File;
 use App\Research;
 use Illuminate\Http\Request;
+use Intervention\Image\Facades\Image;
+use Illuminate\Support\Facades\Storage;
 
 class TestController extends Controller
 {
@@ -61,5 +64,35 @@ class TestController extends Controller
             $count = BlogTag::where('tag_id', $tag->id)->count();
             echo $tag->id.') '.$tag->name.' '.$count.'<br>';
         }
+    }
+
+    public function testImage()
+    {
+        $img = Image::cache(function($image) {
+            return $image->make(storage_path().'\\app\\resize_3-1.jpg');
+        }, 60, true);
+
+        return $img->response('jpg');
+    }
+
+    public function resizeImg()
+    {
+        for ($i = 27; $i <= 31; $i++){
+            $image = File::findOrFail($i);
+            $file = Storage::disk('local')->get($image->name);
+            $size = Storage::disk('local')->size($image->name);
+
+            if($size > 1000000){
+                $img = Image::make($file)->resize('400', null, function ($constraint) {
+                    $constraint->aspectRatio();
+                });
+            }else{
+                $img = Image::make($file);
+            }
+
+            $img->save(storage_path().'\\app\\resize_'.$image->name);
+        }
+
+        return 'resize complete';
     }
 }

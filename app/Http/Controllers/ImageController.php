@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\File;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
+use Intervention\Image\Facades\Image;
 
 class ImageController extends Controller
 {
