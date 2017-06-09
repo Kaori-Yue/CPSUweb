@@ -1,5 +1,9 @@
 @extends('main')
 
+@section('head')
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.19.1/TweenMax.min.js"></script>
+@stop
+
 @section('content')
     <div class="container">
         <div id="myCarousel" class="carousel slide row" data-ride="carousel">
@@ -279,4 +283,8 @@
             }
         });
     </script>
+@stop
+
+@section('script')
+    <script src="{{ URL::asset('js/fb.js') }}"></script>
 @stop

@@ -1,5 +1,13 @@
 @extends('main')
 
+@section('head')
+    {{-- jqcloud --}}
+    <script src="{{ URL::asset('js/bower_components/jqcloud2/dist/jqcloud.min.js') }}"></script>
+    <link rel="stylesheet" href="{{ URL::asset('js/bower_components/jqcloud2/dist/jqcloud.min.css') }}">
+    {{-- tagcanvas --}}
+    <script src="{{ URL::asset('js/tagcanvas.min.js') }}" type="text/javascript"></script>
+@stop
+
 @section('content')
     <div class="container">
         @if(sizeof($features) > 0)
@@ -150,4 +158,8 @@
             });
         };
     </script>
+@stop
+
+@section('script')
+    <script src="{{ URL::asset('js/fb.js') }}"></script>
 @stop

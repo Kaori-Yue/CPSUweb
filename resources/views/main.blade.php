@@ -7,23 +7,28 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     @yield('meta')
 
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-    <link href="https://fonts.googleapis.com/css?family=Kanit:400,700&amp;subset=thai" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Trirong" rel="stylesheet">
+    {{-- bootstrap & jquery --}}
+    <link rel="stylesheet" href="{{ URL::asset('js/bower_components/bootstrap/dist/css/bootstrap.min.css') }}">
+    <script src="{{ URL::asset('js/bower_components/jquery/dist/jquery.min.js') }}"></script>
+    <script src="{{ URL::asset('js/bower_components/bootstrap/dist/js/bootstrap.min.js') }}"></script>
+
+    {{-- font --}}
+    <link href="https://fonts.googleapis.com/css?family=Kanit" rel="stylesheet">
+
+    {{-- icon --}}
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
-    <link href="https://fonts.googleapis.com/css?family=Baloo" rel="stylesheet">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.19.1/TweenMax.min.js"></script>
 
-    <script src="{{ URL::asset('js/bower_components/jqcloud2/dist/jqcloud.min.js') }}"></script>
-    <link rel="stylesheet" href="{{ URL::asset('js/bower_components/jqcloud2/dist/jqcloud.min.css') }}">
 
-    <script src="{{ URL::asset('js/tagcanvas.min.js') }}" type="text/javascript"></script>
+    <!-- Specific content -->
+    @yield('head')
+
+    <!-- Main CSS -->
     <link rel="stylesheet" href="{{ URL::asset('css/main.css') }}">
 
-    <title>{{ config('app.name', 'Laravel') }}</title>
+
+    <title>{{ config('app.name', 'CPSU') }}</title>
+
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
@@ -48,7 +53,6 @@
         </div>
     </div>
     <!-- Scripts -->
-    {{--<script src="{{ asset('js/app.js') }}"></script>--}}
-    <script src="{{ URL::asset('js/fb.js') }}"></script>
+    @yield('script')
 </body>
 </html>

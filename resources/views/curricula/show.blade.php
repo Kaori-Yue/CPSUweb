@@ -1,5 +1,9 @@
 @extends('main')
 
+@section('head')
+    <link href="https://fonts.googleapis.com/css?family=Trirong" rel="stylesheet">
+@stop
+
 @section('content')
     <div class="container" style="font-family: 'Trirong', serif;font-size: 20px">
         <div class="row row-card" style="text-align: center">

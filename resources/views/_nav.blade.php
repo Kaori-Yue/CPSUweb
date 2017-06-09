@@ -28,13 +28,13 @@
                     </a>
                 </li>
                 <li>
-                    <a href="{{ url('thesis') }}">
-                        วิทยานิพนธ์
+                    <a href="{{ url('teacher') }}">
+                        บุคลากร
                     </a>
                 </li>
                 <li>
-                    <a href="{{ url('teacher') }}">
-                        บุคลากร
+                    <a href="{{ url('contact') }}">
+                        ติดต่อ
                     </a>
                 </li>
                 <li class="dropdown">
@@ -42,16 +42,10 @@
                         เกี่ยวกับ <span class="caret"></span>
                     </a>
                     <ul class="dropdown-menu">
-                        <li><a href="{{ url('sitemap') }}">แผนผังเว็บไซต์</a></li>
                         <li><a href="{{ url('history') }}">ประวัติภาควิชา</a></li>
-                        <li><a href="{{ url('contact') }}">ติดต่อ</a></li>
+                        <li><a href="{{ url('sitemap') }}">แผนผังเว็บไซต์</a></li>
                     </ul>
                 </li>
-                {{--<li>
-                    <a href="{{ url('contact') }}">
-                        ติดต่อ
-                    </a>
-                </li>--}}
             </ul>
             <ul class="nav navbar-nav navbar-right">
                 <!-- Authentication Links -->
