@@ -7,13 +7,12 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     @yield('meta')
 
+
     {{-- bootstrap & jquery --}}
     <link rel="stylesheet" href="{{ URL::asset('js/bower_components/bootstrap/dist/css/bootstrap.min.css') }}">
     <script src="{{ URL::asset('js/bower_components/jquery/dist/jquery.min.js') }}"></script>
     <script src="{{ URL::asset('js/bower_components/bootstrap/dist/js/bootstrap.min.js') }}"></script>
 
-    {{-- font --}}
-    <link href="https://fonts.googleapis.com/css?family=Kanit" rel="stylesheet">
 
     {{-- icon --}}
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -22,6 +21,7 @@
 
     <!-- Specific content -->
     @yield('head')
+
 
     <!-- Main CSS -->
     <link rel="stylesheet" href="{{ URL::asset('css/main.css') }}">

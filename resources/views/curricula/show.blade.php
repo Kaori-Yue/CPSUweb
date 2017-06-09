@@ -1,15 +1,11 @@
 @extends('main')
 
-@section('head')
-    <link href="https://fonts.googleapis.com/css?family=Trirong" rel="stylesheet">
-@stop
-
 @section('content')
     <div class="container" style="font-family: 'Trirong', serif;font-size: 20px">
         <div class="row row-card" style="text-align: center">
-            <h1>{{ $curricula->name_th }}</h1>
+            <h1><b>{{ $curricula->name_th }}</b></h1>
             <hr>
-            <h4>{{ $curricula->name_en }}</h4>
+            <h3><b>{{ $curricula->name_en }}</b></h3>
         </div>
 
         <div class="row row-card" style="padding: 2% 4% 2% 4%">

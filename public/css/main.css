@@ -35,6 +35,16 @@ pre,
     border-radius:0 !important;
 }
 
+@font-face {
+    font-family: "Kanit";
+    src: url("../font/Kanit/Kanit-Regular.ttf") format('truetype');
+}
+
+@font-face {
+    font-family: "Trirong";
+    src: url("../font/Trirong/Trirong-Regular.ttf") format('truetype');
+}
+
 html, body {
     margin:0;
     padding:0;
@@ -404,6 +414,11 @@ p > span {
 
 .pagination > li > a{
     color: #40826D;
+}
+
+.paragraph {
+    font-family: 'Kanit', sans-serif;
+    font-size: 20px;
 }
 
 /*.carousel-inner > .item > img,
