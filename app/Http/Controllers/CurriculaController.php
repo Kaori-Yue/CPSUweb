@@ -2,12 +2,12 @@
 
 namespace App\Http\Controllers;
 use App\Curricula;
-use Illuminate\Support\Facades\File;
-use Illuminate\Support\Facades\Storage;
 use Illuminate\Http\Request;
+use App\Traits\FileTrait;
 
 class CurriculaController extends Controller
 {
+    use FileTrait;
     public function index()
     {
         $b_curriculas = Curricula::enable()->where('degree', 'Bachelor Degree')->get();
@@ -69,7 +69,7 @@ class CurriculaController extends Controller
             'entrance_subject' => 'required|max:65534',
             'document' => 'required|max:65534',
             'status' => 'required|in:enable,disable',
-            'file' => 'required|mimes:application/pdf,application/vnd.openxmlformats-officedocument.wordprocessingml.document',
+            'file' => 'required|mimes:pdf,doc,docx',
         ]);
 
         $curricula = $request->all();
@@ -100,8 +100,8 @@ class CurriculaController extends Controller
             'graduation_criteria' => 'required|max:65534',
             'entrance_subject' => 'required|max:65534',
             'document' => 'required|max:65534',
-            'status' => 'require|in:enable,disable',
-            'file' => 'mimes:application/pdf,application/vnd.openxmlformats-officedocument.wordprocessingml.document,',
+            'status' => 'required|in:enable,disable',
+            'file' => 'mimes:pdf,doc,docx',
         ]);
 
         $curricula = Curricula::findOrFail($id);
@@ -122,21 +122,6 @@ class CurriculaController extends Controller
         $curricula->update($new_curricula);
 
         return redirect()->action('AdminController@curricula')->with('status', 'Create Complete!');
-    }
-
-    public function storeFile($file)
-    {
-        $ex = $file->getClientOriginalExtension();
-        Storage::disk('local')->put($file->getFilename(). '.' . $ex, File::get($file));
-
-        $fileRecord = [
-            'name' => $file->getFilename(). '.' . $ex,
-            'mime' => $file->getClientMimeType(),
-            'original_name' => $file->getClientOriginalName(),
-        ];
-
-        $file = \App\File::create($fileRecord);
-        return $file;
     }
 
     public function handleSlug($str)

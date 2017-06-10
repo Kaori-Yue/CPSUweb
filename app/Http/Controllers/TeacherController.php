@@ -6,13 +6,11 @@ use App\Helper\TokenGenerator;
 use App\Staff;
 use App\Teacher;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\File;
-use Illuminate\Support\Facades\Storage;
-use Illuminate\Support\Facades\App;
-use Intervention\Image\Facades\Image;
+use App\Traits\ImageTrait;
 
 class TeacherController extends Controller
 {
+    use ImageTrait;
     public function index()
     {
         $teachers = Teacher::duty()
@@ -97,7 +95,7 @@ class TeacherController extends Controller
         $teacher['password'] = password_hash($teacher['name_en'], PASSWORD_DEFAULT);
 
         $image = $request->file('image');
-        $file = self::storeFile($image);
+        $file = $this->storeImage($image, 'profile');
         $teacher['image'] = $file->id;
 
         $teacher['rank'] = self::handleRank($teacher);
@@ -184,7 +182,7 @@ class TeacherController extends Controller
         $editedTeacher['rank'] = self::handleRank($editedTeacher);
 
         if(isset($image)){
-            $file = self::storeFile($image);
+            $file = $this->storeImage($image, 'profile');
             $editedTeacher['image'] = $file->id;
         }
         $teacher->update($editedTeacher);
@@ -198,44 +196,6 @@ class TeacherController extends Controller
         $teacher->delete();
 
         return redirect()->action('AdminController@teacher')->with('status', 'Delete Complete!');
-    }
-
-    public function storeFile($file)
-    {
-        $ex = $file->getClientOriginalExtension();
-        Storage::disk('local')->put($file->getFilename(). '.' . $ex, File::get($file));
-
-        $fileRecord = [
-            'name' => $file->getFilename(). '.' . $ex,
-            'mime' => $file->getClientMimeType(),
-            'original_name' => $file->getClientOriginalName(),
-        ];
-
-        $file = \App\File::create($fileRecord);
-
-        self::resizeImage($file);
-
-        return $file;
-    }
-
-    public function resizeImage($file)
-    {
-        $size = Storage::disk('local')->size($file->name);
-        if($size > 999999){
-            $image = Storage::disk('local')->get($file->name);
-            $img = Image::make($image)->resize('400', null, function ($constraint) {
-                $constraint->aspectRatio();
-            });
-
-            if (App::environment('local')) {
-                $img->save(storage_path().'\\app\\resize_'.$file->name);
-            }else{
-                $img->save(storage_path().'/app/resize_'.$file->name);
-            }
-
-            $file->name = 'resize_'.$file->name;
-            $file->save();
-        }
     }
 
 }

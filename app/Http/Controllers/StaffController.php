@@ -3,12 +3,12 @@
 namespace App\Http\Controllers;
 use App\Helper\TokenGenerator;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\File;
-use Illuminate\Support\Facades\Storage;
+use App\Traits\ImageTrait;
 use App\Staff;
 
 class StaffController extends Controller
 {
+    use ImageTrait;
     public function create()
     {
         $status = [
@@ -35,7 +35,7 @@ class StaffController extends Controller
         $staff['password'] = password_hash($staff['name_en'], PASSWORD_DEFAULT);
 
         $image = $request->file('image');
-        $file = self::storeFile($image);
+        $file = self::storeImage($image, 'profile');
         $staff['image'] = $file->id;
 
 
@@ -71,7 +71,7 @@ class StaffController extends Controller
 
         $image = $request->file('image');
         if(isset($image)){
-            $file = self::storeFile($image);
+            $file = self::storeImage($image, 'profile');
             $editedStaff['image'] = $file->id;
         }
         $staff->update($editedStaff);
@@ -85,20 +85,5 @@ class StaffController extends Controller
         $staff->delete();
 
         return redirect()->action('AdminController@staff')->with('status', 'Delete Complete!');
-    }
-
-    public function storeFile($file)
-    {
-        $ex = $file->getClientOriginalExtension();
-        Storage::disk('local')->put($file->getFilename(). '.' . $ex, File::get($file));
-
-        $fileRecord = [
-            'name' => $file->getFilename(). '.' . $ex,
-            'mime' => $file->getClientMimeType(),
-            'original_name' => $file->getClientOriginalName(),
-        ];
-
-        $file = \App\File::create($fileRecord);
-        return $file;
     }
 }

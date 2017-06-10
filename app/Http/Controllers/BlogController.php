@@ -7,13 +7,13 @@ use App\BlogTag;
 use App\Category;
 use App\Tag;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\File;
-use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Facades\Auth;
+use App\Traits\ImageTrait;
 use Log;
 
 class BlogController extends Controller
 {
+    use ImageTrait;
     public function index()
     {
         $blogs = Blog::orderBy('created_at', 'DESC')
@@ -126,7 +126,7 @@ class BlogController extends Controller
         $slug = self::handleSlug($blog['title']);
 
         $cover_image = $request->file('cover');
-        $file = self::storeFile($cover_image);
+        $file = $this->storeImage($cover_image, 'cover');
 
         $hash_tags = $blog['hash_tags'];
 
@@ -177,7 +177,7 @@ class BlogController extends Controller
             'user_id' => Auth::id()
         ];
         if(isset($cover_image)){
-            $file = self::storeFile($cover_image);
+            $file = $this->storeImage($cover_image, 'cover');
             $blogData['cover'] = $file->id;
         }
         $blog->update($blogData);
@@ -216,21 +216,6 @@ class BlogController extends Controller
             ];
             BlogTag::firstOrCreate($blogTagData);
         }
-    }
-
-    public function storeFile($file)
-    {
-        $ex = $file->getClientOriginalExtension();
-        Storage::disk('local')->put($file->getFilename(). '.' . $ex, File::get($file));
-
-        $fileRecord = [
-            'name' => $file->getFilename(). '.' . $ex,
-            'mime' => $file->getClientMimeType(),
-            'original_name' => $file->getClientOriginalName(),
-        ];
-
-        $file = \App\File::create($fileRecord);
-        return $file;
     }
 
     public function show($slug)

@@ -3,12 +3,13 @@
 namespace App\Http\Controllers;
 use App\Research;
 use App\ResearchImage;
-use Illuminate\Support\Facades\File;
-use Illuminate\Support\Facades\Storage;
 use Illuminate\Http\Request;
+use App\Traits\FileTrait;
+use App\Traits\ImageTrait;
 
 class ResearchController extends Controller
 {
+    use FileTrait, ImageTrait;
     public function index()
     {
         $researches = Research::paginate(10);
@@ -31,6 +32,7 @@ class ResearchController extends Controller
     public function store(Request $request)
     {
         $this->validate($request, [
+            'file' => 'mimes:pdf,doc,docx',
             'name' => 'required|max:191',
             'description' => 'required|max:65534',
             'owner' => 'required|max:191',
@@ -57,7 +59,7 @@ class ResearchController extends Controller
         foreach ($keys as $key){
             $image = $request->file($key);
             if(isset($image)){
-                $image = self::storeFile($image);
+                $image = self::storeImage($image, 'normal');
                 $research_image = [
                     'research_id' => $research->id,
                     'image_id' => $image->id,
@@ -77,7 +79,7 @@ class ResearchController extends Controller
     public function update(Request $request, $id)
     {
         $this->validate($request, [
-            'file' => 'mimes:application/pdf,application/vnd.openxmlformats-officedocument.wordprocessingml.document',
+            'file' => 'mimes:pdf,doc,docx',
             'name' => 'required|max:191',
             'description' => 'required|max:65534',
             'owner' => 'required|max:191',
@@ -95,7 +97,7 @@ class ResearchController extends Controller
 
         for ($i = 1; $i <= 5; $i++){
             if(isset($new_research['image'.$i])){
-                $image = self::storeFile($new_research['image'.$i]);
+                $image = self::storeImage($new_research['image'.$i], 'normal');
                 if(isset($new_research['id'.$i])){
                     $research_image = ResearchImage::where([
                         ['research_id', $research->id],
@@ -142,22 +144,6 @@ class ResearchController extends Controller
     {
         $research = Research::where('slug', $slug)->firstOrFail();
         return view('research.show', ['research' => $research]);
-    }
-
-    public function storeFile($file)
-    {
-        // Todo fix bug file name cannot in thai
-        $ex = $file->getClientOriginalExtension();
-        Storage::disk('local')->put($file->getFilename(). '.' . $ex, File::get($file));
-
-        $fileRecord = [
-            'name' => $file->getFilename(). '.' . $ex,
-            'mime' => $file->getClientMimeType(),
-            'original_name' => $file->getClientOriginalName(),
-        ];
-
-        $file = \App\File::create($fileRecord);
-        return $file;
     }
 
     public function handleSlug($str)
