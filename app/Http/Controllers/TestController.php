@@ -12,6 +12,7 @@ use App\Research;
 use Illuminate\Http\Request;
 use Intervention\Image\Facades\Image;
 use Illuminate\Support\Facades\Storage;
+use Illuminate\Support\Facades\App;
 
 class TestController extends Controller
 {
@@ -93,6 +94,12 @@ class TestController extends Controller
             $img->save(storage_path().'\\app\\resize_'.$image->name);
         }
 
-        return 'resize complete';
+        if (App::environment('local')) {
+            return 'local';
+        }else{
+            return 'production';
+        }
+
+
     }
 }

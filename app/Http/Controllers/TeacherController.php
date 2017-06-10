@@ -8,6 +8,8 @@ use App\Teacher;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\File;
 use Illuminate\Support\Facades\Storage;
+use Illuminate\Support\Facades\App;
+use Intervention\Image\Facades\Image;
 
 class TeacherController extends Controller
 {
@@ -210,7 +212,30 @@ class TeacherController extends Controller
         ];
 
         $file = \App\File::create($fileRecord);
+
+        self::resizeImage($file);
+
         return $file;
+    }
+
+    public function resizeImage($file)
+    {
+        $size = Storage::disk('local')->size($file->name);
+        if($size > 999999){
+            $image = Storage::disk('local')->get($file->name);
+            $img = Image::make($image)->resize('400', null, function ($constraint) {
+                $constraint->aspectRatio();
+            });
+
+            if (App::environment('local')) {
+                $img->save(storage_path().'\\app\\resize_'.$file->name);
+            }else{
+                $img->save(storage_path().'/app/resize_'.$file->name);
+            }
+
+            $file->name = 'resize_'.$file->name;
+            $file->save();
+        }
     }
 
 }
