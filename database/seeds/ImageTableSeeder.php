@@ -230,7 +230,7 @@ class ImageTableSeeder extends Seeder
 
         # 25
         DB::table('file')->insert([
-            'name' => 'posterupdate.jpg',
+            'name' => 'resize_posterupdate.jpg',
             'mime' => 'image/jpeg',
             'original_name' => 'posterupdate.jpg',
             'created_at' => Carbon::now(),

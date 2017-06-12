@@ -8,14 +8,14 @@
                 <h4 class="modal-title">Share {{ $blog->title }} to ...</h4>
             </div>
             <div class="modal-body" style="height: 200px">
-                <div class="col-md-6 col-xs-6" style="padding: 8%">
-                    <button type="button" class="btn btn-primary" id="shareToFB{{$blog->id}}">
-                        <img style="height: 100px" class="img-responsive" src="{{ URL::asset('image/fb_circle.png') }}" alt="share to facebook">
+                <div class="col-md-6 col-xs-6" style="padding: 1%; text-align: center">
+                    <button type="button" class="btn btn-default" id="shareToFB{{$blog->id}}">
+                        <img style="height: 100px" class="img-responsive" src="{{ URL::asset('image/fb_square.png') }}" alt="share to facebook">
                     </button>
                 </div>
-                <div class="col-md-6 col-xs-6" style="padding: 8%">
-                    <button type="button" class="btn btn-info" id="shareToTW{{$blog->id}}">
-                        <img style="height: 100px" class="img-responsive" src="{{ URL::asset('image/twitter_circle.png') }}" alt="share to twitter">
+                <div class="col-md-6 col-xs-6" style="padding: 1%; text-align: center">
+                    <button type="button" class="btn btn-default" id="shareToTW{{$blog->id}}">
+                        <img style="height: 100px" class="img-responsive" src="{{ URL::asset('image/tw_square.png') }}" alt="share to twitter">
                     </button>
                 </div>
             </div>

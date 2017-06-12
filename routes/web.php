@@ -123,10 +123,10 @@ Route::group(['middleware' => 'auth'], function (){
 /*Route::get('test', 'TestController@index');
 Route::get('test/slug', 'TestController@slug');
 Route::get('api/research', 'TestController@research');
-Route::get('test/explode', 'TestController@testExplode');*/
+Route::get('test/explode', 'TestController@testExplode');
 Route::get('test/tag', 'TestController@testTag');
 Route::get('test/image', 'TestController@testImage');
-Route::get('test/resize', 'TestController@resizeImg');
+Route::get('test/resize', 'TestController@resizeImg');*/
 
 Auth::routes();
 

@@ -78,13 +78,13 @@ class TestController extends Controller
 
     public function resizeImg()
     {
-        for ($i = 27; $i <= 31; $i++){
-            $image = File::findOrFail($i);
+        for ($i = 0; $i <= 0; $i++){
+            $image = File::findOrFail(25);
             $file = Storage::disk('local')->get($image->name);
             $size = Storage::disk('local')->size($image->name);
 
             if($size > 1000000){
-                $img = Image::make($file)->resize('400', null, function ($constraint) {
+                $img = Image::make($file)->resize('800', null, function ($constraint) {
                     $constraint->aspectRatio();
                 });
             }else{
@@ -93,13 +93,6 @@ class TestController extends Controller
 
             $img->save(storage_path().'\\app\\resize_'.$image->name);
         }
-
-        if (App::environment('local')) {
-            return 'local';
-        }else{
-            return 'production';
-        }
-
-
+        return 'resize complete';
     }
 }
