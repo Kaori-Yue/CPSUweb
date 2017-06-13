@@ -63,4 +63,9 @@ trait ImageTrait
             $file->save();
         }
     }
+
+    public function deleteImage($file)
+    {
+        Storage::delete($file->name);
+    }
 }

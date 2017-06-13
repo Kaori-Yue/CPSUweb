@@ -24,8 +24,8 @@
                         @foreach($features as $blog)
                             <div class="item @if($loop->first) active @endif"
                                  style="background-image: url('{{ url('image/show/'.$blog->cover) }}');background-size: cover;">
-                                <a href="{{ url('blog/') }}">
-                                    <div class="carousel-caption" style="top: 70%;background: rgba(217, 143, 79, 0.8);">
+                                <a href="{{ url('blog/'.$blog->slug) }}">
+                                    <div class="carousel-caption" style="top: 75%;background: rgba(217, 143, 79, 0.8);">
                                         <h3>{{ $blog->title }}</h3>
                                     </div>
                                 </a>

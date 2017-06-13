@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
+use App\File;
 use App\Research;
 use App\ResearchImage;
 use Illuminate\Http\Request;
@@ -158,8 +159,12 @@ class ResearchController extends Controller
         $research_images = ResearchImage::where('research_id', $research->id)->get();
         foreach ($research_images as $image){
             $image->delete();
+            $file = File::findOrFail($image->image_id);
+            self::deleteImage($file);
         }
         $research->delete();
+        $file = File::findOrFail($research->file);
+        self::deleteFile($file);
 
         return redirect()->action('AdminController@research')->with('status', 'Delete Complete!');
     }

@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 use App\Curricula;
+use App\File;
 use Illuminate\Http\Request;
 use App\Traits\FileTrait;
 
@@ -140,6 +141,9 @@ class CurriculaController extends Controller
     {
         $curricula = Curricula::findOrFail($id);
         $curricula->delete();
+
+        $file = File::findOrFail($curricula->file);
+        self::deleteFile($file);
 
         return redirect()->action('AdminController@curricula')->with('status', 'Delete Complete!');
     }

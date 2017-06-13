@@ -12,7 +12,7 @@
 
         <div class="row col-md-12" style="background: #ffffff">
             <div style="text-align: left">
-                <h2 class="bg-primary" style="padding: 2%;margin: 1% 1% 0 1%">ระดับปริญญาตรี</h2>
+                <h2 class="bg-success" style="padding: 2%;margin: 1% 1% 0 1%">ระดับปริญญาตรี</h2>
             </div>
             @foreach($b_curriculas as $curricula)
                 @include('curricula._card', $curricula)
@@ -23,7 +23,7 @@
 
         <div class="row col-md-12" style="background: #ffffff">
             <div style="text-align: left">
-                <h2 class="bg-primary" style="padding: 2%;margin: 1% 1% 0 1%">ระดับปริญญาโท</h2>
+                <h2 class="bg-success" style="padding: 2%;margin: 1% 1% 0 1%">ระดับปริญญาโท</h2>
             </div>
             @foreach($m_curriculas as $curricula)
                 @include('curricula._card', $curricula)
@@ -34,7 +34,7 @@
 
         <div class="row col-md-12" style="background: #ffffff">
             <div style="text-align: left">
-                <h2 class="bg-primary" style="padding: 2%;margin: 1% 1% 0 1%">ระดับปริญญาเอก</h2>
+                <h2 class="bg-success" style="padding: 2%;margin: 1% 1% 0 1%">ระดับปริญญาเอก</h2>
             </div>
             @foreach($d_curriculas as $curricula)
                 @include('curricula._card', $curricula)

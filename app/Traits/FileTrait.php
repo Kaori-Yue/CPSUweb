@@ -26,4 +26,9 @@ trait FileTrait
         $file = \App\File::create($fileRecord);
         return $file;
     }
+
+    public function deleteFile($file)
+    {
+        Storage::delete($file->name);
+    }
 }

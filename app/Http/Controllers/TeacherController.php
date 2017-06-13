@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\File;
 use App\Helper\TokenGenerator;
 use App\Staff;
 use App\Teacher;
@@ -194,6 +195,9 @@ class TeacherController extends Controller
     {
         $teacher = Teacher::findOrFail($id);
         $teacher->delete();
+
+        $image = File::findOrFail($teacher->image);
+        self::deleteImage($image);
 
         return redirect()->action('AdminController@teacher')->with('status', 'Delete Complete!');
     }

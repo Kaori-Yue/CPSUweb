@@ -1,6 +1,6 @@
 <div class="col-md-12 curricula-card" style="padding: 1%">
-    <a href="{{ url('curricula/'.$curricula->slug) }}" style="text-decoration: none">
-        <div class="well-lg" style="border: solid;border-radius: 0">
+    <a href="{{ url('curricula/'.$curricula->slug) }}" style="color: #FFFFFF;text-decoration: none">
+        <div class="well-lg" style="height: 250px;background: rgba(217, 143, 79, 0.7);border-radius: 0">
             <h3><b>{{ $curricula->name_th }}</b></h3>
             <h4>{{ $curricula->name_en }}</h4>
             <hr>

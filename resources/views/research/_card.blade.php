@@ -1,9 +1,9 @@
-<div class="col-md-6" style="padding: 1%">
-    <a href="{{ url('research/'.$research->slug) }}" style="text-decoration: none">
-        <div class="well-lg" style="border: solid;border-radius: 0;height: 250px">
+<div class="col-md-6" style="padding: 1%;">
+    <a href="{{ url('research/'.$research->slug) }}" style="color: #FFFFFF;text-decoration: none">
+        <div class="well-lg" style="height: 250px;background: rgba(217, 143, 79, 0.7);border-radius: 0">
             <h3><b>{{ $research->name }}</b></h3>
             <hr>
-            <h4>{{ $research->owner }}</h4>
+            <h4>โดย {{ $research->owner }}</h4>
         </div>
     </a>
     @if(Request::is('admin/*'))

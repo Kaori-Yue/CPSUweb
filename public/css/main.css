@@ -61,7 +61,7 @@ html, body {
     padding:10px;
 }
 #page-body {
-    padding-bottom: 52vh;   /* Height of the footer */
+    padding-bottom: 48vh;   /* Height of the footer */
 }
 #page-footer {
     position:absolute;
@@ -74,6 +74,11 @@ html, body {
 
 .footer {
     background: #40826D;
+}
+
+.container {
+    padding-top: 5px;
+    padding-bottom: 5px;
 }
 
 /*.footer > a {
@@ -306,7 +311,7 @@ p > span {
 }
 
 .center-cropped {
-    height: 350px;
+    height: 400px;
     background-position: center center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -420,6 +425,11 @@ p > span {
     font-family: 'Kanit', sans-serif;
     font-size: 20px;
 }
+
+/*.bg-success {
+    background: #40826D;
+    color: #ffffff;
+}*/
 
 /*.carousel-inner > .item > img,
 .carousel-inner > .item > a > img {

@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Blog;
 use App\BlogTag;
 use App\Category;
+use App\File;
 use App\Tag;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -232,6 +233,10 @@ class BlogController extends Controller
         foreach ($blog_tags as $blog_tag){
             $blog_tag->delete();
         }
+
+        $cover = File::findOrFail($blog->cover);
+        self::deleteImage($cover);
+
         $blog->delete();
 
         return redirect()->action('AdminController@blog')->with('status', 'Delete Complete!');
