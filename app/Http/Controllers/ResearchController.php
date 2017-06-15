@@ -33,7 +33,7 @@ class ResearchController extends Controller
     public function store(Request $request)
     {
         $this->validate($request, [
-            //'file' => 'mimes:pdf,doc,docx',
+            'file' => 'mimes:pdf,doc,docx',
             'name' => 'required|max:191',
             'description' => 'required|max:65534',
             'owner' => 'required|max:191',

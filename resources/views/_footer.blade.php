@@ -27,9 +27,9 @@
                 <p>
                     <a href="{{ url('research') }}" style="color: #ffffff">ผลงานวิจัย</a>
                 </p>
-                <p>
+                {{--<p>
                     <a href="{{ url('thesis') }}" style="color: #ffffff">วิทยานิพนธ์</a>
-                </p>
+                </p>--}}
             </div>
             <div class="col-md-3 col-sm-6 col-xs-12" style="padding-bottom: 5%">
                 <h4 style="padding-bottom: 5%"><b>ติดต่อภาควิชา</b></h4>
