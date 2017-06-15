@@ -34,11 +34,11 @@
                         Research
                         <span class="glyphicon glyphicon-chevron-right"></span>
                     </a>
-                    <a href="{{ url('admin/thesis') }}" class="list-group-item
+                    {{--<a href="{{ url('admin/thesis') }}" class="list-group-item
                         @if (Request::is('admin/thesis/*') || Request::is('admin/thesis') || Request::is('thesis/*/edit')) active @endif">
                         Thesis
                         <span class="glyphicon glyphicon-chevron-right"></span>
-                    </a>
+                    </a>--}}
                 </div>
             </div>
             <div class="col-md-10 col-xs-12 content-card">

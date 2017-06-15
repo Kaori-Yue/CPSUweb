@@ -95,4 +95,44 @@ class TestController extends Controller
         }
         return 'resize complete';
     }
+
+    public function testCompress()
+    {
+        $file = File::find(40);
+        $size = Storage::disk('local')->size($file->name);
+
+        if($size > 400000){
+            if (App::environment('local')) {
+                //windows path
+                $img_path = storage_path().'\\app\\'.$file->name;
+            }else{
+                //linux path
+                $img_path = storage_path().'/app/'.$file->name;
+            }
+
+            if ($file->mime == 'image/jpeg')
+                $image = imagecreatefromjpeg($img_path);
+
+            elseif ($file->mime == 'image/gif')
+                $image = imagecreatefromgif($img_path);
+
+            elseif ($file->mime == 'image/png')
+                $image = imagecreatefrompng($img_path);
+
+            else
+                return abort(500);
+
+            if (App::environment('local')) {
+                //windows path
+                $des_path = storage_path().'\\app\\compress_'.$file->name;
+            }else{
+                //linux path
+                $des_path = storage_path().'/app/compress_'.$file->name;
+            }
+
+            imagejpeg($image, $des_path, 40);
+
+            return 'compress finish';
+        }
+    }
 }

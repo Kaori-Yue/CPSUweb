@@ -27,9 +27,42 @@ trait ImageTrait
 
         $file = \App\File::create($fileRecord);
 
-        self::resizeImage($file, $type);
+        //self::resizeImage($file, $type);
+        self::compress($file);
 
         return $file;
+    }
+
+    public function compress($file)
+    {
+        $size = Storage::disk('local')->size($file->name);
+        if($size > 400000){
+            if (App::environment('local')) {
+                //windows path
+                $img_path = storage_path().'\\app\\'.$file->name;
+                $des_path = storage_path().'\\app\\compress_'.$file->name;
+            }else{
+                //linux path
+                $img_path = storage_path().'/app/'.$file->name;
+                $des_path = storage_path().'/app/compress_'.$file->name;
+            }
+
+            if ($file->mime == 'image/jpeg')
+                $image = imagecreatefromjpeg($img_path);
+
+            elseif ($file->mime == 'image/gif')
+                $image = imagecreatefromgif($img_path);
+
+            elseif ($file->mime == 'image/png')
+                $image = imagecreatefrompng($img_path);
+
+            else return abort(500);
+
+            imagejpeg($image, $des_path, 25);
+
+            $file->name = 'compress_'.$file->name;
+            $file->save();
+        }
     }
 
     public function resizeImage($file, $type)
