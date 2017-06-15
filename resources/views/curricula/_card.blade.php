@@ -1,15 +1,15 @@
-<div class="col-md-12 curricula-card" style="padding: 1%">
+<div class="col-md-12" style="padding: 1%">
     <a href="{{ url('curricula/'.$curricula->slug) }}" style="color: #FFFFFF;text-decoration: none">
-        <div class="well-lg" style="height: 250px;background: rgba(217, 143, 79, 0.7);border-radius: 0">
+        <div class="well-lg" style="height: 240px;background: rgba(217, 143, 79, 0.8);border-radius: 0">
             <h3><b>{{ $curricula->name_th }}</b></h3>
             <h4>{{ $curricula->name_en }}</h4>
+            <div class="hidden-xs"><br></div>
             <hr>
-            {{--<p>{{ substr($research->description, 0, 120) }}</p>--}}
             <p>{{ $curricula->degree_name_th }}</p>
         </div>
     </a>
     @if(Request::is('admin/*'))
-        <div class="col-md-12" style="padding: 1%;border: solid;border-top-style: none;">
+        <div class="col-md-12" style="background:rgba(217, 143, 79, 0.7);padding: 1%;border-top-style: none;">
             <div class="col-md-6">
                 <a href="{{ url('curricula/'.$curricula->id.'/edit') }}" class="btn btn-warning btn-block btn-lg">
                     Edit

@@ -348,20 +348,8 @@ p > span {
     color: #ffffff;
 }
 
-.curricula-card > a:link {
-    color: #40826D;
-}
-
-.curricula-card > a:visited {
-    color: #40826D;
-}
-
-.curricula-card > a:hover {
-    color: #004D40;
-}
-
-.curricula-card > a:active {
-    color: #004D40;
+.well-lg {
+    padding: 10px 24px 10px 24px;
 }
 
 .welcome-li {

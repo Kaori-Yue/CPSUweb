@@ -54,7 +54,7 @@
                     </div>
                     <div class="panel-body" style="text-align: center">
                         <p>
-                            <a target="_blank" class="btn btn-warning btn-lg" href="{{ url('file/show/'.$research->file_id) }}">
+                            <a target="_blank" class="btn btn-warning btn-lg" href="{{ url('file/show/'.$research->file) }}">
                                 ดาวน์โหลด
                             </a>
                         </p>
