@@ -60,15 +60,15 @@ class CurriculaController extends Controller
         $this->validate($request, [
             'degree' => 'required|max:191',
             'name_th' => 'required|max:191',
-            'name_en' => 'required|max:191',
+            'name_en' => 'required|max:191|unique:curricula',
             'degree_name_th' => 'required|max:191',
             'degree_name_en' => 'required|max:191',
             'cost' => 'required|integer|min:0',
             'credit' => 'required|integer',
-            'enrollment_criteria' => 'required|max:65534',
-            'graduation_criteria' => 'required|max:65534',
-            'entrance_subject' => 'required|max:65534',
-            'document' => 'required|max:65534',
+            'enrollment_criteria' => 'max:65534',
+            'graduation_criteria' => 'max:65534',
+            'entrance_subject' => 'max:65534',
+            'document' => 'max:65534',
             'status' => 'required|in:enable,disable',
             'file' => 'required|mimes:pdf,doc,docx',
         ]);
@@ -97,10 +97,10 @@ class CurriculaController extends Controller
             'degree_name_en' => 'required|max:191',
             'cost' => 'required|integer|min:0',
             'credit' => 'required|integer',
-            'enrollment_criteria' => 'required|max:65534',
-            'graduation_criteria' => 'required|max:65534',
-            'entrance_subject' => 'required|max:65534',
-            'document' => 'required|max:65534',
+            'enrollment_criteria' => 'max:65534',
+            'graduation_criteria' => 'max:65534',
+            'entrance_subject' => 'max:65534',
+            'document' => 'max:65534',
             'status' => 'required|in:enable,disable',
             'file' => 'mimes:pdf,doc,docx',
         ]);
@@ -115,10 +115,9 @@ class CurriculaController extends Controller
             $new_curricula['file'] = $file->id;
         }
 
-        if($curricula->name_en != $new_curricula['name_en']){
-            $slug = self::handleSlug($new_curricula['name_en']);
-            $new_curricula['slug'] = $slug;
-        }
+        $slug = self::handleSlug($new_curricula['name_en']);
+        $new_curricula['slug'] = $slug;
+
 
         $curricula->update($new_curricula);
 

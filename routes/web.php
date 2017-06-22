@@ -120,7 +120,7 @@ Route::group(['middleware' => 'auth'], function (){
     Route::get('admin/staff/create', 'StaffController@create');
 });
 
-
+Route::get('test/handle_img', 'TestController@resizeImg');
 Auth::routes();
 
 

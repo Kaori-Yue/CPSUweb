@@ -13,9 +13,11 @@ use Illuminate\Http\Request;
 use Intervention\Image\Facades\Image;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Facades\App;
+use App\Traits\ImageTrait;
 
 class TestController extends Controller
 {
+    use ImageTrait;
     public function index()
     {
         /*$user = User::find(1);
@@ -78,13 +80,21 @@ class TestController extends Controller
 
     public function resizeImg()
     {
-        for ($i = 0; $i <= 0; $i++){
-            $image = File::findOrFail(25);
-            $file = Storage::disk('local')->get($image->name);
-            $size = Storage::disk('local')->size($image->name);
+        for ($i = 1; $i <= 31; $i++){
+            $image = File::findOrFail($i);
+            $file = Storage::disk('local')->get($image->original_name);
+            $size = Storage::disk('local')->size($image->original_name);
+
+            if($i <= 21){
+                $result_size = '400';
+            }elseif ($i <= 26){
+                $result_size = '800';
+            }else{
+                $result_size = '400';
+            }
 
             if($size > 1000000){
-                $img = Image::make($file)->resize('800', null, function ($constraint) {
+                $img = Image::make($file)->resize($result_size, null, function ($constraint) {
                     $constraint->aspectRatio();
                 });
             }else{

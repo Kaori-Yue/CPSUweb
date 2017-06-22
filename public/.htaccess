@@ -52,13 +52,13 @@
   Header set Cache-Control "max-age=2678400, public"
   </filesmatch>
   <filesmatch "\.(html|htm)$">
-  Header set Cache-Control "max-age=7200, private, must-revalidate"
+  Header set Cache-Control "max-age=7200, public, must-revalidate"
   </filesmatch>
   <filesmatch "\.(pdf)$">
   Header set Cache-Control "max-age=86400, public"
   </filesmatch>
   <filesmatch "\.(js)$">
-  Header set Cache-Control "max-age=2678400, private"
+  Header set Cache-Control "max-age=2678400, public"
   </filesmatch>
 </IfModule>
 <IfModule mod_rewrite.c>

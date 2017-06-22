@@ -34,7 +34,7 @@ class ResearchController extends Controller
     {
         $this->validate($request, [
             'file' => 'mimes:pdf,doc,docx',
-            'name' => 'required|max:191',
+            'name' => 'required|max:191|unique:research',
             'description' => 'required|max:65534',
             'owner' => 'required|max:191',
         ]);
@@ -88,6 +88,10 @@ class ResearchController extends Controller
 
         $research = Research::findOrFail($id);
         $new_research = $request->all();
+
+        $name = $request->get('name');
+        $slug = self::handleSlug($name);
+        $new_research['slug'] = $name;
 
         $file = $request->file('file');
         if(isset($file)){

@@ -27,8 +27,8 @@ trait ImageTrait
 
         $file = \App\File::create($fileRecord);
 
-        //self::resizeImage($file, $type);
         self::compress($file);
+        self::resizeImage($file, $type);
 
         return $file;
     }
@@ -36,65 +36,69 @@ trait ImageTrait
     public function compress($file)
     {
         $size = Storage::disk('local')->size($file->name);
-        if($size > 400000){
-            if (App::environment('local')) {
-                //windows path
-                $img_path = storage_path().'\\app\\'.$file->name;
-                $des_path = storage_path().'\\app\\compress_'.$file->name;
-            }else{
-                //linux path
-                $img_path = storage_path().'/app/'.$file->name;
-                $des_path = storage_path().'/app/compress_'.$file->name;
-            }
 
-            if ($file->mime == 'image/jpeg')
-                $image = imagecreatefromjpeg($img_path);
-
-            elseif ($file->mime == 'image/gif')
-                $image = imagecreatefromgif($img_path);
-
-            elseif ($file->mime == 'image/png')
-                $image = imagecreatefrompng($img_path);
-
-            else return abort(500);
-
-            imagejpeg($image, $des_path, 25);
-
-            $file->name = 'compress_'.$file->name;
-            $file->save();
+        if (App::environment('local')) {
+            //windows path
+            $img_path = storage_path().'\\app\\'.$file->name;
+            $des_path = storage_path().'\\app\\compress_'.$file->name;
+        }else{
+            //linux path
+            $img_path = storage_path().'/app/'.$file->name;
+            $des_path = storage_path().'/app/compress_'.$file->name;
         }
+
+        if ($file->mime == 'image/jpeg')
+            $image = imagecreatefromjpeg($img_path);
+
+        elseif ($file->mime == 'image/gif')
+            $image = imagecreatefromgif($img_path);
+
+        elseif ($file->mime == 'image/png')
+            $image = imagecreatefrompng($img_path);
+
+        else return abort(500);
+
+        if($size > 10000000){//         10 MB
+            imagejpeg($image, $des_path, 10);
+        }elseif($size > 5000000){//     5 MB
+            imagejpeg($image, $des_path, 20);
+        }elseif($size > 2000000){//     2 MB
+            imagejpeg($image, $des_path, 25);
+        }else{
+            imagejpeg($image, $des_path, 30);
+        }
+
+        $file->name = 'compress_'.$file->name;
+        $file->save();
     }
 
     public function resizeImage($file, $type)
     {
-        $size = Storage::disk('local')->size($file->name);
-        if($size > 999999){
-            $image = Storage::disk('local')->get($file->name);
+        $image = Storage::disk('local')->get($file->name);
 
-            if($type == 'profile'){
-                $width = '400';
-            }elseif ($type == 'cover'){
-                $width = '800';
-            }else{
-                // default value
-                $width = '500';
-            }
-
-            $img = Image::make($image)->resize($width, null, function ($constraint) {
-                $constraint->aspectRatio();
-            });
-
-            if (App::environment('local')) {
-                //windows path
-                $img->save(storage_path().'\\app\\resize_'.$file->name);
-            }else{
-                //linux path
-                $img->save(storage_path().'/app/resize_'.$file->name);
-            }
-
-            $file->name = 'resize_'.$file->name;
-            $file->save();
+        if($type == 'profile'){
+            $width = '400';
+        }elseif ($type == 'cover'){
+            $width = '800';
+        }else{
+            // default value
+            $width = '500';
         }
+
+        $img = Image::make($image)->resize($width, null, function ($constraint) {
+            $constraint->aspectRatio();
+        });
+
+        if (App::environment('local')) {
+            //windows path
+            $img->save(storage_path().'\\app\\resize_'.$file->name);
+        }else{
+            //linux path
+            $img->save(storage_path().'/app/resize_'.$file->name);
+        }
+
+        $file->name = 'resize_'.$file->name;
+        $file->save();
     }
 
     public function deleteImage($file)

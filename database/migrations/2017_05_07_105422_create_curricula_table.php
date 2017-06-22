@@ -23,10 +23,10 @@ class CreateCurriculaTable extends Migration
             $table->string('degree_name_en');
             $table->integer('cost');
             $table->integer('credit');
-            $table->text('enrollment_criteria');
-            $table->text('graduation_criteria');
-            $table->text('entrance_subject');
-            $table->text('document');
+            $table->text('enrollment_criteria')->nullable();
+            $table->text('graduation_criteria')->nullable();
+            $table->text('entrance_subject')->nullable();
+            $table->text('document')->nullable();
             $table->string('status');
             $table->integer('file');
             $table->timestamps();

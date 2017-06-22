@@ -203,7 +203,7 @@ class ImageTableSeeder extends Seeder
 
         # 22
         DB::table('file')->insert([
-            'name' => 'blog.jpg',
+            'name' => 'resize_blog.jpg',
             'mime' => 'image/jpeg',
             'original_name' => 'blog.jpg',
             'created_at' => Carbon::now(),
@@ -212,7 +212,7 @@ class ImageTableSeeder extends Seeder
 
         # 23
         DB::table('file')->insert([
-            'name' => 'Olympic.jpg',
+            'name' => 'resize_Olympic.jpg',
             'mime' => 'image/jpeg',
             'original_name' => 'Olympic.jpg',
             'created_at' => Carbon::now(),
@@ -221,7 +221,7 @@ class ImageTableSeeder extends Seeder
 
         # 24
         DB::table('file')->insert([
-            'name' => 'ITPE.jpg',
+            'name' => 'resize_ITPE.jpg',
             'mime' => 'image/jpeg',
             'original_name' => 'ITPE.jpg',
             'created_at' => Carbon::now(),
@@ -239,7 +239,7 @@ class ImageTableSeeder extends Seeder
 
         # 26
         DB::table('file')->insert([
-            'name' => 'NSC2012_Price.jpg',
+            'name' => 'resize_NSC2012_Price.jpg',
             'mime' => 'image/jpeg',
             'original_name' => 'NSC2012_Price.jpg',
             'created_at' => Carbon::now(),
