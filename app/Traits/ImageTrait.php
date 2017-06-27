@@ -58,14 +58,12 @@ trait ImageTrait
 
         else return abort(500);
 
-        if($size > 10000000){//         10 MB
+        if($size > 10000000){//         5 MB
             imagejpeg($image, $des_path, 10);
-        }elseif($size > 5000000){//     5 MB
-            imagejpeg($image, $des_path, 20);
         }elseif($size > 2000000){//     2 MB
-            imagejpeg($image, $des_path, 25);
+            imagejpeg($image, $des_path, 20);
         }else{
-            imagejpeg($image, $des_path, 30);
+            imagejpeg($image, $des_path, 25);
         }
 
         $file->name = 'compress_'.$file->name;
@@ -99,6 +97,19 @@ trait ImageTrait
 
         $file->name = 'resize_'.$file->name;
         $file->save();
+
+        // make image thumbnail
+        $img = Image::make($image)->resize(100, null, function ($constraint) {
+            $constraint->aspectRatio();
+        });
+
+        if (App::environment('local')) {
+            //windows path
+            $img->save(storage_path().'\\app\\thumbnail_'.$file->name);
+        }else{
+            //linux path
+            $img->save(storage_path().'/app/thumbnail_'.$file->name);
+        }
     }
 
     public function deleteImage($file)

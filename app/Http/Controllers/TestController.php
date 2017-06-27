@@ -80,26 +80,13 @@ class TestController extends Controller
 
     public function resizeImg()
     {
-        for ($i = 1; $i <= 31; $i++){
-            $image = File::findOrFail($i);
+        for ($i = 0; $i <= 0; $i++){
+            $image = File::findOrFail(20);
             $file = Storage::disk('local')->get($image->original_name);
-            $size = Storage::disk('local')->size($image->original_name);
 
-            if($i <= 21){
-                $result_size = '400';
-            }elseif ($i <= 26){
-                $result_size = '800';
-            }else{
-                $result_size = '400';
-            }
-
-            if($size > 1000000){
-                $img = Image::make($file)->resize($result_size, null, function ($constraint) {
-                    $constraint->aspectRatio();
-                });
-            }else{
-                $img = Image::make($file);
-            }
+            $img = Image::make($file)->resize('400', null, function ($constraint) {
+                $constraint->aspectRatio();
+            });
 
             $img->save(storage_path().'\\app\\resize_'.$image->name);
         }
@@ -108,41 +95,40 @@ class TestController extends Controller
 
     public function testCompress()
     {
-        $file = File::find(40);
-        $size = Storage::disk('local')->size($file->name);
+        $file = File::find(30);
+        //$size = Storage::disk('local')->size($file->name);
 
-        if($size > 400000){
-            if (App::environment('local')) {
-                //windows path
-                $img_path = storage_path().'\\app\\'.$file->name;
-            }else{
-                //linux path
-                $img_path = storage_path().'/app/'.$file->name;
-            }
-
-            if ($file->mime == 'image/jpeg')
-                $image = imagecreatefromjpeg($img_path);
-
-            elseif ($file->mime == 'image/gif')
-                $image = imagecreatefromgif($img_path);
-
-            elseif ($file->mime == 'image/png')
-                $image = imagecreatefrompng($img_path);
-
-            else
-                return abort(500);
-
-            if (App::environment('local')) {
-                //windows path
-                $des_path = storage_path().'\\app\\compress_'.$file->name;
-            }else{
-                //linux path
-                $des_path = storage_path().'/app/compress_'.$file->name;
-            }
-
-            imagejpeg($image, $des_path, 40);
-
-            return 'compress finish';
+        if (App::environment('local')) {
+            //windows path
+            $img_path = storage_path().'\\app\\'.$file->name;
+        }else{
+            //linux path
+            $img_path = storage_path().'/app/'.$file->name;
         }
+
+        if ($file->mime == 'image/jpeg')
+            $image = imagecreatefromjpeg($img_path);
+
+        elseif ($file->mime == 'image/gif')
+            $image = imagecreatefromgif($img_path);
+
+        elseif ($file->mime == 'image/png')
+            $image = imagecreatefrompng($img_path);
+
+        else
+            return abort(500);
+
+        if (App::environment('local')) {
+            //windows path
+            $des_path = storage_path().'\\app\\compress_'.$file->name;
+        }else{
+            //linux path
+            $des_path = storage_path().'/app/compress_'.$file->name;
+        }
+
+        imagejpeg($image, $des_path, 25);
+
+        return 'compress finish';
+
     }
 }

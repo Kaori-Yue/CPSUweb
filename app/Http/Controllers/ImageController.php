@@ -22,6 +22,14 @@ class ImageController extends Controller
         return response($file, 200)->header('Content-Type', $image->mime);
     }
 
+    public function thumbnail($id)
+    {
+        $image = File::findOrFail($id);
+        $file = Storage::disk('local')->get('thumb_'.$image->name);
+
+        return response($file, 200)->header('Content-Type', $image->mime);
+    }
+
     public function store(Request $request)
     {
         $file = $request->file('image');

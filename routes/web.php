@@ -50,6 +50,7 @@ Route::get('research/{slug}', 'ResearchController@show');
 Route::get('curricula/{slug}', 'CurriculaController@show');
 Route::get('tag/{slug}', 'TagController@show');
 Route::get('image/show/{id}', 'ImageController@show');
+Route::get('image/thumbnail/{id}', 'ImageController@thumbnail');
 Route::get('file/show/{id}', 'FileController@show');
 
 
@@ -118,9 +119,14 @@ Route::group(['middleware' => 'auth'], function (){
 
     Route::get('admin/staff', 'AdminController@staff');
     Route::get('admin/staff/create', 'StaffController@create');
+
+
+    Route::get('admin/image', 'AdminController@image');
+
 });
 
-Route::get('test/handle_img', 'TestController@resizeImg');
+Route::get('test/resize', 'TestController@resizeImg');
+Route::get('test/compress', 'TestController@testCompress');
 Auth::routes();
 
 

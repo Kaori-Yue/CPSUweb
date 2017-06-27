@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Blog;
 use App\Category;
 use App\Curricula;
+use App\File;
 use App\Research;
 use App\Staff;
 use App\Teacher;
@@ -85,5 +86,13 @@ class AdminController extends Controller
     {
         $researches = Research::paginate(10);
         return view('research.admin', ['researches' => $researches]);
+    }
+
+    public function image()
+    {
+        $images = File::where('mime', 'like', 'image%')
+            ->orderBy('id', 'desc')
+            ->paginate(12);
+        return view('image.admin', ['images' => $images]);
     }
 }
