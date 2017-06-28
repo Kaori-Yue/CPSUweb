@@ -1,8 +1,8 @@
 <div class="col-md-3 col-sm-4 col-xs-6 row-card" style="padding: 1%;">
-    <div class="card card-bg" style="background-image: url('{{ url('image/show/'.$image->id) }}'); height: 200px; overflow: hidden">
+    <div class="card card-bg" style="background-image: url('{{ url('image/thumbnail/'.$image->id) }}'); height: 200px; overflow: hidden">
         <div class="card-caption">
             <div class="col-md-6 col-xs-12">
-                <button class="btn btn-default btn-block" id="image-link{{$image->id}}" data-clipboard-text="{{ url('image/thumbnail/'.$image->id) }}">
+                <button class="btn btn-default btn-block" id="image-link{{$image->id}}" data-clipboard-text="{{ url('image/show/'.$image->id) }}">
                     <i class="fa fa-clone"></i>
                 </button>
             </div>

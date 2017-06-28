@@ -10,7 +10,18 @@
                 @else
                     <h2><span>{!! iconv_substr($blog->title, 0, 35, 'UTF-8').'...' !!}</span></h2>
                 @endif
-                <p><span>By {!! $blog->user->name !!}</span></p>
+                <p>
+                    @if(Request::is('admin/*'))
+                    @if($blog->status == 'publish')
+                        <b><span class="label label-success">Publish</span></b>
+                    @elseif($blog->status == 'draft')
+                        <b><span class="label label-default">Draft</span></b>
+                    @else
+                        <b><span class="label label-danger">Disable</span></b>
+                    @endif
+                    @endif
+                    <span>By {!! $blog->user->name !!}</span>
+                </p>
             </div>
         </a>
     </div>

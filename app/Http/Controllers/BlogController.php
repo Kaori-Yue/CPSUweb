@@ -18,11 +18,13 @@ class BlogController extends Controller
     public function index()
     {
         $blogs = Blog::orderBy('created_at', 'DESC')
+            ->publish()
             ->take(6)
             ->get();
 
         $features = Blog::where('featured', 1)
             ->orderBy('created_at', 'DESC')
+            ->publish()
             ->take(4)
             ->get();
 
