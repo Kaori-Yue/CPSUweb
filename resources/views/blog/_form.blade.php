@@ -129,7 +129,7 @@
                         <div id="home" class="tab-pane fade in active">
                             <h3>ALL Image</h3>
                             @foreach($images as $image)
-                                <img style="height: 200px;width: 200px;overflow: hidden" class="img-responsive img-thumbnail" src="{{ url('image/show/'.$image->id) }}" alt="">
+                                <img style="height: 200px;width: 200px;overflow: hidden" class="img-responsive img-thumbnail" src="{{ url('image/thumbnail/'.$image->id) }}" alt="">
                             @endforeach
                         </div>
                         <div id="menu1" class="tab-pane fade">

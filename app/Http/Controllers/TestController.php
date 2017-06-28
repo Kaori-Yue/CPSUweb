@@ -131,4 +131,66 @@ class TestController extends Controller
         return 'compress finish';
 
     }
+
+    public function compressAll()
+    {
+        //$names = ['1-1.jpg', '2-1.jpg', '3-1.jpg', '4-1.jpg', '5-1.jpg', '6-1.jpg', '7-1.jpg', '8-1.jpg', '9-1.jpg', '10-1.jpg', '11-1.jpg', '12-1.jpg', '13-1.jpg', '14-1.jpg', '15-1.jpg', '16-1.jpg', '17-1.jpg', '18-1.jpg', '19-1.jpg', '20-1.jpg', '21-1.jpg', 'staff1.jpg', 'staff2.jpg', 'staff3.jpg', 'staff4.jpg', 'staff5.jpg', 'blog.jpg', 'ITPE.jpg', 'NSC2012_Price.jpg', 'Olympic.jpg', 'posterupdate.jpg'];
+        $names = ['blog.jpg', 'ITPE.jpg', 'NSC2012_Price.jpg', 'Olympic.jpg', 'posterupdate.jpg'];
+        foreach ($names as $name){
+
+            if (App::environment('local')) {
+                //windows path
+                $img_path = storage_path().'\\app\\'.$name;
+                $des_path = storage_path().'\\app\\cp_'.$name;
+            }else{
+                //linux path
+                $img_path = storage_path().'/app/'.$name;
+                $des_path = storage_path().'/app/cp_'.$name;
+            }
+
+            $size = Storage::disk('local')->size($name);
+            $image = imagecreatefromjpeg($img_path);
+
+            if($size > 10000000){//         5 MB
+                imagejpeg($image, $des_path, 10);
+            }elseif($size > 2000000){//     2 MB
+                imagejpeg($image, $des_path, 20);
+            }elseif($size > 1000000){//     1 MB
+                imagejpeg($image, $des_path, 25);
+            }elseif($size > 200000){//      200 KB
+                imagejpeg($image, $des_path, 50);
+            }else{
+                imagejpeg($image, $des_path, 80);
+            }
+            $name = 'cp_'.$name;
+
+
+            $image = Storage::disk('local')->get($name);
+            $img = Image::make($image)->resize(800, null, function ($constraint) {
+                $constraint->aspectRatio();
+            });
+
+            if (App::environment('local')) {
+                //windows path
+                $img->save(storage_path().'\\app\\re_'.$name);
+            }else{
+                //linux path
+                $img->save(storage_path().'/app/re_'.$name);
+            }
+
+
+            $img = Image::make($image)->resize(200, null, function ($constraint) {
+                $constraint->aspectRatio();
+            });
+
+            if (App::environment('local')) {
+                //windows path
+                $img->save(storage_path().'\\app\\thumb_'.$name);
+            }else{
+                //linux path
+                $img->save(storage_path().'/app/thumb_'.$name);
+            }
+        }
+        return 'finish';
+    }
 }

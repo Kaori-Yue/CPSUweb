@@ -33,6 +33,32 @@ trait ImageTrait
         return $file;
     }
 
+    public function updateImage($file, $type, $id)
+    {
+        $image = \App\File::findOrFail($id);
+        $old_filename = $image->name;
+
+        $ex = $file->getClientOriginalExtension();
+        Storage::disk('local')->put($file->getFilename(). '.' . $ex, File::get($file));
+
+        $fileRecord = [
+            'name' => $file->getFilename(). '.' . $ex,
+            'mime' => $file->getClientMimeType(),
+            'original_name' => $file->getClientOriginalName(),
+        ];
+
+        $image->update($fileRecord);
+
+        self::compress($image);
+        self::resizeImage($image, $type);
+
+        Storage::delete($old_filename);
+        Storage::delete('re_cp_'.$old_filename);
+        Storage::delete('thumb_re_cp_'.$old_filename);
+
+        return $image;
+    }
+
     public function compress($file)
     {
         $size = Storage::disk('local')->size($file->name);
@@ -40,11 +66,11 @@ trait ImageTrait
         if (App::environment('local')) {
             //windows path
             $img_path = storage_path().'\\app\\'.$file->name;
-            $des_path = storage_path().'\\app\\compress_'.$file->name;
+            $des_path = storage_path().'\\app\\cp_'.$file->name;
         }else{
             //linux path
             $img_path = storage_path().'/app/'.$file->name;
-            $des_path = storage_path().'/app/compress_'.$file->name;
+            $des_path = storage_path().'/app/cp_'.$file->name;
         }
 
         if ($file->mime == 'image/jpeg')
@@ -62,17 +88,22 @@ trait ImageTrait
             imagejpeg($image, $des_path, 10);
         }elseif($size > 2000000){//     2 MB
             imagejpeg($image, $des_path, 20);
-        }else{
+        }elseif($size > 1000000){//     1 MB
             imagejpeg($image, $des_path, 25);
+        }elseif($size > 200000){//      200 KB
+            imagejpeg($image, $des_path, 50);
+        }else{
+            imagejpeg($image, $des_path, 80);
         }
 
-        $file->name = 'compress_'.$file->name;
+        $file->name = 'cp_'.$file->name;
         $file->save();
     }
 
     public function resizeImage($file, $type)
     {
         $image = Storage::disk('local')->get($file->name);
+        $old_filename = $file->name;
 
         if($type == 'profile'){
             $width = '400';
@@ -89,31 +120,35 @@ trait ImageTrait
 
         if (App::environment('local')) {
             //windows path
-            $img->save(storage_path().'\\app\\resize_'.$file->name);
+            $img->save(storage_path().'\\app\\re_'.$file->name);
         }else{
             //linux path
-            $img->save(storage_path().'/app/resize_'.$file->name);
+            $img->save(storage_path().'/app/re_'.$file->name);
         }
 
-        $file->name = 'resize_'.$file->name;
+        $file->name = 're_'.$file->name;
         $file->save();
 
         // make image thumbnail
-        $img = Image::make($image)->resize(100, null, function ($constraint) {
+        $img = Image::make($image)->resize(200, null, function ($constraint) {
             $constraint->aspectRatio();
         });
 
         if (App::environment('local')) {
             //windows path
-            $img->save(storage_path().'\\app\\thumbnail_'.$file->name);
+            $img->save(storage_path().'\\app\\thumb_'.$file->name);
         }else{
             //linux path
-            $img->save(storage_path().'/app/thumbnail_'.$file->name);
+            $img->save(storage_path().'/app/thumb_'.$file->name);
         }
+
+        Storage::delete($old_filename);
     }
 
     public function deleteImage($file)
     {
         Storage::delete($file->name);
+        Storage::delete('re_cp_'.$file->name);
+        Storage::delete('thumb_re_cp_'.$file->name);
     }
 }

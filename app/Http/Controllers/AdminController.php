@@ -92,7 +92,7 @@ class AdminController extends Controller
     {
         $images = File::where('mime', 'like', 'image%')
             ->orderBy('id', 'desc')
-            ->paginate(12);
+            ->paginate(20);
         return view('image.admin', ['images' => $images]);
     }
 }

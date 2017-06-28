@@ -14,7 +14,7 @@ class ImageTableSeeder extends Seeder
     {
         # 1
         DB::table('file')->insert([
-            'name' => 'resize_1-1.jpg',
+            'name' => 're_cp_1-1.jpg',
             'mime' => 'image/jpeg',
             'original_name' => '1-1.jpg',
             'created_at' => Carbon::now(),
@@ -23,7 +23,7 @@ class ImageTableSeeder extends Seeder
 
         # 2
         DB::table('file')->insert([
-            'name' => 'resize_2-1.jpg',
+            'name' => 're_cp_2-1.jpg',
             'mime' => 'image/jpeg',
             'original_name' => '2.jpg',
             'created_at' => Carbon::now(),
@@ -32,7 +32,7 @@ class ImageTableSeeder extends Seeder
 
         # 3
         DB::table('file')->insert([
-            'name' => 'resize_3-1.jpg',
+            'name' => 're_cp_3-1.jpg',
             'mime' => 'image/jpeg',
             'original_name' => '3-1.jpg',
             'created_at' => Carbon::now(),
@@ -41,7 +41,7 @@ class ImageTableSeeder extends Seeder
 
         # 4
         DB::table('file')->insert([
-            'name' => 'resize_4-1.jpg',
+            'name' => 're_cp_4-1.jpg',
             'mime' => 'image/jpeg',
             'original_name' => '4-1.jpg',
             'created_at' => Carbon::now(),
@@ -50,7 +50,7 @@ class ImageTableSeeder extends Seeder
 
         # 5
         DB::table('file')->insert([
-            'name' => 'resize_5-1.jpg',
+            'name' => 're_cp_5-1.jpg',
             'mime' => 'image/jpeg',
             'original_name' => '5-1.jpg',
             'created_at' => Carbon::now(),
@@ -59,7 +59,7 @@ class ImageTableSeeder extends Seeder
 
         # 6
         DB::table('file')->insert([
-            'name' => 'resize_6-1.jpg',
+            'name' => 're_cp_6-1.jpg',
             'mime' => 'image/jpeg',
             'original_name' => '6-1.jpg',
             'created_at' => Carbon::now(),
@@ -68,7 +68,7 @@ class ImageTableSeeder extends Seeder
 
         # 7
         DB::table('file')->insert([
-            'name' => 'resize_7-1.jpg',
+            'name' => 're_cp_7-1.jpg',
             'mime' => 'image/jpeg',
             'original_name' => '7-1.jpg',
             'created_at' => Carbon::now(),
@@ -77,7 +77,7 @@ class ImageTableSeeder extends Seeder
 
         # 8
         DB::table('file')->insert([
-            'name' => 'resize_8-1.jpg',
+            'name' => 're_cp_8-1.jpg',
             'mime' => 'image/jpeg',
             'original_name' => '8-1.jpg',
             'created_at' => Carbon::now(),
@@ -86,7 +86,7 @@ class ImageTableSeeder extends Seeder
 
         # 9
         DB::table('file')->insert([
-            'name' => 'resize_9-1.jpg',
+            'name' => 're_cp_9-1.jpg',
             'mime' => 'image/jpeg',
             'original_name' => '9-1.jpg',
             'created_at' => Carbon::now(),
@@ -95,7 +95,7 @@ class ImageTableSeeder extends Seeder
 
         # 10
         DB::table('file')->insert([
-            'name' => 'resize_10-1.jpg',
+            'name' => 're_cp_10-1.jpg',
             'mime' => 'image/jpeg',
             'original_name' => '10-1.jpg',
             'created_at' => Carbon::now(),
@@ -104,7 +104,7 @@ class ImageTableSeeder extends Seeder
 
         # 11
         DB::table('file')->insert([
-            'name' => 'resize_11-1.jpg',
+            'name' => 're_cp_11-1.jpg',
             'mime' => 'image/jpeg',
             'original_name' => '11-1.jpg',
             'created_at' => Carbon::now(),
@@ -113,7 +113,7 @@ class ImageTableSeeder extends Seeder
 
         # 12
         DB::table('file')->insert([
-            'name' => 'resize_12-1.jpg',
+            'name' => 're_cp_12-1.jpg',
             'mime' => 'image/jpeg',
             'original_name' => '12-1.jpg',
             'created_at' => Carbon::now(),
@@ -122,7 +122,7 @@ class ImageTableSeeder extends Seeder
 
         # 13
         DB::table('file')->insert([
-            'name' => 'resize_13-1.jpg',
+            'name' => 're_cp_13-1.jpg',
             'mime' => 'image/jpeg',
             'original_name' => '13-1.jpg',
             'created_at' => Carbon::now(),
@@ -131,7 +131,7 @@ class ImageTableSeeder extends Seeder
 
         # 14
         DB::table('file')->insert([
-            'name' => 'resize_14-1.jpg',
+            'name' => 're_cp_14-1.jpg',
             'mime' => 'image/jpeg',
             'original_name' => '14-1.jpg',
             'created_at' => Carbon::now(),
@@ -140,7 +140,7 @@ class ImageTableSeeder extends Seeder
 
         # 15
         DB::table('file')->insert([
-            'name' => 'resize_15-1.jpg',
+            'name' => 're_cp_15-1.jpg',
             'mime' => 'image/jpeg',
             'original_name' => '15-1.jpg',
             'created_at' => Carbon::now(),
@@ -149,16 +149,16 @@ class ImageTableSeeder extends Seeder
 
         # 16
         DB::table('file')->insert([
-            'name' => 'resize_16.jpg',
+            'name' => 're_cp_16-1.jpg',
             'mime' => 'image/jpeg',
-            'original_name' => '16.jpg',
+            'original_name' => '16-1.jpg',
             'created_at' => Carbon::now(),
             'updated_at' => Carbon::now(),
         ]);
 
         # 17
         DB::table('file')->insert([
-            'name' => 'resize_17-1.jpg',
+            'name' => 're_cp_17-1.jpg',
             'mime' => 'image/jpeg',
             'original_name' => '17-1.jpg',
             'created_at' => Carbon::now(),
@@ -167,7 +167,7 @@ class ImageTableSeeder extends Seeder
 
         # 18
         DB::table('file')->insert([
-            'name' => 'resize_18-1.jpg',
+            'name' => 're_cp_18-1.jpg',
             'mime' => 'image/jpeg',
             'original_name' => '18-1.jpg',
             'created_at' => Carbon::now(),
@@ -176,7 +176,7 @@ class ImageTableSeeder extends Seeder
 
         # 19
         DB::table('file')->insert([
-            'name' => 'resize_19-1.jpg',
+            'name' => 're_cp_19-1.jpg',
             'mime' => 'image/jpeg',
             'original_name' => '19-1.jpg',
             'created_at' => Carbon::now(),
@@ -185,7 +185,7 @@ class ImageTableSeeder extends Seeder
 
         # 20
         DB::table('file')->insert([
-            'name' => 'resize_20-1.jpg',
+            'name' => 're_cp_20-1.jpg',
             'mime' => 'image/jpeg',
             'original_name' => '20-1.jpg',
             'created_at' => Carbon::now(),
@@ -194,7 +194,7 @@ class ImageTableSeeder extends Seeder
 
         # 21
         DB::table('file')->insert([
-            'name' => 'resize_21-1.jpg',
+            'name' => 're_cp_21-1.jpg',
             'mime' => 'image/jpeg',
             'original_name' => '21-1.jpg',
             'created_at' => Carbon::now(),
@@ -203,7 +203,7 @@ class ImageTableSeeder extends Seeder
 
         # 22
         DB::table('file')->insert([
-            'name' => 'resize_blog.jpg',
+            'name' => 're_cp_blog.jpg',
             'mime' => 'image/jpeg',
             'original_name' => 'blog.jpg',
             'created_at' => Carbon::now(),
@@ -212,7 +212,7 @@ class ImageTableSeeder extends Seeder
 
         # 23
         DB::table('file')->insert([
-            'name' => 'resize_Olympic.jpg',
+            'name' => 're_cp_Olympic.jpg',
             'mime' => 'image/jpeg',
             'original_name' => 'Olympic.jpg',
             'created_at' => Carbon::now(),
@@ -221,7 +221,7 @@ class ImageTableSeeder extends Seeder
 
         # 24
         DB::table('file')->insert([
-            'name' => 'resize_ITPE.jpg',
+            'name' => 're_cp_ITPE.jpg',
             'mime' => 'image/jpeg',
             'original_name' => 'ITPE.jpg',
             'created_at' => Carbon::now(),
@@ -230,7 +230,7 @@ class ImageTableSeeder extends Seeder
 
         # 25
         DB::table('file')->insert([
-            'name' => 'resize_posterupdate.jpg',
+            'name' => 're_cp_posterupdate.jpg',
             'mime' => 'image/jpeg',
             'original_name' => 'posterupdate.jpg',
             'created_at' => Carbon::now(),
@@ -239,7 +239,7 @@ class ImageTableSeeder extends Seeder
 
         # 26
         DB::table('file')->insert([
-            'name' => 'resize_NSC2012_Price.jpg',
+            'name' => 're_cp_NSC2012_Price.jpg',
             'mime' => 'image/jpeg',
             'original_name' => 'NSC2012_Price.jpg',
             'created_at' => Carbon::now(),
@@ -248,7 +248,7 @@ class ImageTableSeeder extends Seeder
 
         # 27
         DB::table('file')->insert([
-            'name' => 'resize_staff1.jpg',
+            'name' => 're_cp_staff1.jpg',
             'mime' => 'image/jpeg',
             'original_name' => 'staff1.jpg',
             'created_at' => Carbon::now(),
@@ -257,7 +257,7 @@ class ImageTableSeeder extends Seeder
 
         # 28
         DB::table('file')->insert([
-            'name' => 'resize_staff2.jpg',
+            'name' => 're_cp_staff2.jpg',
             'mime' => 'image/jpeg',
             'original_name' => 'staff2.jpg',
             'created_at' => Carbon::now(),
@@ -266,7 +266,7 @@ class ImageTableSeeder extends Seeder
 
         # 29
         DB::table('file')->insert([
-            'name' => 'resize_staff3.jpg',
+            'name' => 're_cp_staff3.jpg',
             'mime' => 'image/jpeg',
             'original_name' => 'staff3.jpg',
             'created_at' => Carbon::now(),
@@ -275,7 +275,7 @@ class ImageTableSeeder extends Seeder
 
         # 30
         DB::table('file')->insert([
-            'name' => 'resize_staff4.jpg',
+            'name' => 're_cp_staff4.jpg',
             'mime' => 'image/jpeg',
             'original_name' => 'staff4.jpg',
             'created_at' => Carbon::now(),
@@ -284,7 +284,7 @@ class ImageTableSeeder extends Seeder
 
         # 31
         DB::table('file')->insert([
-            'name' => 'resize_staff5.jpg',
+            'name' => 're_cp_staff5.jpg',
             'mime' => 'image/jpeg',
             'original_name' => 'staff5.jpg',
             'created_at' => Carbon::now(),

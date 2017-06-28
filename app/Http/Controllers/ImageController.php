@@ -2,21 +2,17 @@
 
 namespace App\Http\Controllers;
 
-use App\File;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
-use Intervention\Image\Facades\Image;
+use App\Traits\ImageTrait;
 
 class ImageController extends Controller
 {
-    public function index()
-    {
-
-    }
+    use ImageTrait;
 
     public function show($id)
     {
-        $image = File::findOrFail($id);
+        $image = \App\File::findOrFail($id);
         $file = Storage::disk('local')->get($image->name);
 
         return response($file, 200)->header('Content-Type', $image->mime);
@@ -24,25 +20,73 @@ class ImageController extends Controller
 
     public function thumbnail($id)
     {
-        $image = File::findOrFail($id);
+        $image = \App\File::findOrFail($id);
         $file = Storage::disk('local')->get('thumb_'.$image->name);
 
         return response($file, 200)->header('Content-Type', $image->mime);
     }
 
-    public function store(Request $request)
+    public function create()
     {
-        $file = $request->file('image');
-        $ex = $file->getClientOriginalExtension();
-        Storage::disk('local')->put($file->getFilename(). '.' . $ex, File::get($file));
-
-        $fileRecord = [
-            'name' => $file->getFilename(). '.' . $ex,
-            'mime' => $file->getClientMimeType(),
-            'original_name' => $file->getClientOriginalName(),
+        $type = [
+            'others' => 'Others',
+            'profile' => 'Profile',
+            'cover' => 'Cover',
         ];
 
-        $file = File::create($fileRecord);
-        return $file;
+        return view('image.create', ['type' => $type]);
+
+    }
+
+    public function store(Request $request)
+    {
+        $this->validate($request, [
+            'image' => 'image',
+        ]);
+
+        $file = $request->file('image');
+        $type = $request->get('type');
+
+        self::storeImage($file, $type);
+
+        return redirect()->action('AdminController@image')
+            ->with('status', 'Create Complete!');
+    }
+
+    public function edit($id)
+    {
+        $type = [
+            'others' => 'Others',
+            'profile' => 'Profile',
+            'cover' => 'Cover',
+        ];
+
+        $image = \App\File::findOrFail($id);
+
+        return view('image.edit', ['image' => $image, 'type' => $type]);
+    }
+
+    public function update(Request $request, $id)
+    {
+        $this->validate($request, [
+            'image' => 'image',
+        ]);
+
+        $file = $request->file('image');
+        $type = $request->get('type');
+        self::updateImage($file, $type, $id);
+
+        return redirect()->action('AdminController@image')
+            ->with('status', 'Update Complete!');
+    }
+
+    public function destroy($id)
+    {
+        $image = \App\File::findOrFail($id);
+        self::deleteImage($image);
+        $image->delete();
+
+        return redirect()->action('AdminController@image')
+            ->with('status', 'Delete Complete!');
     }
 }

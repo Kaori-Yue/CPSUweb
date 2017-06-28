@@ -63,6 +63,7 @@ Route::group(['middleware' => 'auth'], function (){
     Route::post('image', 'ImageController@store');
 
 
+    Route::post('img', 'ImageController@store');
     Route::post('blog', 'BlogController@store');
     Route::post('teacher', 'TeacherController@store');
     Route::post('staff', 'StaffController@store');
@@ -71,6 +72,7 @@ Route::group(['middleware' => 'auth'], function (){
     Route::post('curricula', 'CurriculaController@store');
 
 
+    Route::get('image/{id}/edit', 'ImageController@edit');
     Route::get('blog/{slug}/edit', 'BlogController@edit');
     Route::get('teacher/{id}/edit', 'TeacherController@edit');
     Route::get('staff/{id}/edit', 'StaffController@edit');
@@ -78,6 +80,7 @@ Route::group(['middleware' => 'auth'], function (){
     Route::get('research/{id}/edit', 'ResearchController@edit');
 
 
+    Route::patch('image/{id}', 'ImageController@update');
     Route::patch('blog/{id}', 'BlogController@update');
     Route::patch('teacher/{id}', 'TeacherController@update');
     Route::patch('staff/{id}', 'StaffController@update');
@@ -85,6 +88,7 @@ Route::group(['middleware' => 'auth'], function (){
     Route::patch('research/{id}', 'ResearchController@update');
 
 
+    Route::delete('image/{id}', 'ImageController@destroy');
     Route::delete('blog/{id}', 'BlogController@destroy');
     Route::delete('teacher/{id}', 'TeacherController@destroy');
     Route::delete('staff/{id}', 'StaffController@destroy');
@@ -122,11 +126,13 @@ Route::group(['middleware' => 'auth'], function (){
 
 
     Route::get('admin/image', 'AdminController@image');
+    Route::get('admin/image/create', 'ImageController@create');
 
 });
 
 Route::get('test/resize', 'TestController@resizeImg');
 Route::get('test/compress', 'TestController@testCompress');
+Route::get('test/compress_all', 'TestController@compressAll');
 Auth::routes();
 
 
