@@ -38,22 +38,11 @@ class AdminController extends Controller
 
     public function blog()
     {
-        /*$status = [
-            'draft' => 'Draft',
-            'disable' => 'Disable',
-            'publish' => 'Publish',
-        ];
-
-        $category = Category::pluck('name', 'id');*/
-        $orderOptions = [
-            'ASC' => 'SortBy: ASC',
-            'DESC' => 'SortBy: DESC',
-        ];
-        $blogs = Blog::paginate(8);
+        $blogs = Blog::orderBy('created_at', 'DESC')
+            ->paginate(8);
 
         return view('blog.admin', [
             'blogs' => $blogs,
-            'orderOptions' => $orderOptions,
         ]);
     }
 

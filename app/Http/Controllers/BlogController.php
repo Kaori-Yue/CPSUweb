@@ -41,28 +41,13 @@ class BlogController extends Controller
         ]);
     }
 
-    public function sortBy(Request $request)
+    public function filter($filter)
     {
-        $sortBy = $request->get('sort_by');
+        $blogs = Blog::where('status', $filter)
+            ->orderBy('created_at', 'DESC')
+            ->paginate(8);
 
-        if($sortBy == 'DESC')
-        {
-            $orderOptions = [
-                'DESC' => 'SortBy: DESC',
-                'ASC' => 'SortBy: ASC',
-            ];
-            $blogs = Blog::orderBy('id', 'desc')->paginate(9);
-        }
-        else
-        {
-            $orderOptions = [
-                'ASC' => 'SortBy: ASC',
-                'DESC' => 'SortBy: DESC',
-            ];
-            $blogs = Blog::orderBy('id')->paginate(9);
-        }
-
-        return view('blog.admin', ['blogs' => $blogs, 'orderOptions' => $orderOptions]);
+        return view('blog.admin',['blogs' => $blogs]);
     }
 
     public function create()

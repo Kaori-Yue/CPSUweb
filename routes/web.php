@@ -49,9 +49,9 @@ Route::get('blog/{slug}', 'BlogController@show');
 Route::get('research/{slug}', 'ResearchController@show');
 Route::get('curricula/{slug}', 'CurriculaController@show');
 Route::get('tag/{slug}', 'TagController@show');
+Route::get('file/show/{id}', 'FileController@show');
 Route::get('image/show/{id}', 'ImageController@show');
 Route::get('image/thumbnail/{id}', 'ImageController@thumbnail');
-Route::get('file/show/{id}', 'FileController@show');
 
 
 Route::get('blog/category/{category}', 'BlogController@category');
@@ -101,7 +101,7 @@ Route::group(['middleware' => 'auth'], function (){
 
     Route::get('admin/blog', 'AdminController@blog');
     Route::get('admin/blog/create', 'BlogController@create');
-    Route::post('admin/blog/sort', 'BlogController@sortBy');
+    Route::get('admin/blog/filter/{filter}', 'BlogController@filter');
 
 
     Route::get('admin/teacher', 'AdminController@teacher');
