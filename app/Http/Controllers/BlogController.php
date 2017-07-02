@@ -8,6 +8,7 @@ use App\Category;
 use App\File;
 use App\Tag;
 use Illuminate\Http\Request;
+use Illuminate\Support\Collection;
 use Illuminate\Support\Facades\Auth;
 use App\Traits\ImageTrait;
 use Log;
@@ -59,7 +60,9 @@ class BlogController extends Controller
         ];
 
         $category = Category::pluck('name', 'id');
-        $images = \App\File::where('mime', 'image/jpeg')->get();
+        $images = \App\File::where('mime', 'like','image%')
+            ->take(16)
+            ->get();
 
         return view('blog.create', [
             'status' => $status,
@@ -210,8 +213,42 @@ class BlogController extends Controller
     public function show($slug)
     {
         $slug = urldecode($slug);
-        $blog = Blog::where('slug', $slug)->firstOrFail();
-        return view('blog.show', ['blog' => $blog]);
+        $blog = Blog::where('slug', $slug)
+            ->publish()
+            ->firstOrFail();
+
+        $blogTag = $blog->tags;
+        $allBlog = Blog::all()->reverse();
+
+        $collection = new Collection();
+        foreach ($allBlog as $b){
+            $intersect = $blogTag->intersect($b->tags);
+            $collection->push([
+                'blog_id' => $b->id,
+                'intersect' => sizeof($intersect)
+            ]);
+        }
+
+        $sorted = $collection->where('intersect', '>=', 1)
+            ->sortByDesc('intersect')
+            ->values();
+
+        $sorted = $sorted->sortByDesc('blog_id')->values()->take(3);
+        $relateBlog_id = [];
+        foreach ($sorted as $sort){
+            array_push($relateBlog_id, $sort['blog_id']);
+        }
+        $relateBlogs = Blog::publish()
+            ->whereIn('id', $relateBlog_id)
+            ->where('id', '!=', $blog->id)
+            ->orderBy('id', 'desc')
+            ->get();
+
+        //return $relateBlogs;
+        return view('blog.show', [
+            'blog' => $blog,
+            'relateBlogs' => $relateBlogs
+        ]);
     }
 
     public function destroy($id)
@@ -236,11 +273,16 @@ class BlogController extends Controller
         $blogs = null;
         if ($category == 'featured-news'){
             $title = 'หมวดหมู่ : ข่าวเด่น';
-            $blogs = Blog::where('featured', 1)->orderBy('created_at', 'DESC')->paginate(9);
+            $blogs = Blog::publish()
+                ->where('featured', 1)
+                ->orderBy('created_at', 'DESC')
+                ->paginate(9);
         }
         elseif ($category == 'latest-news'){
             $title = 'หมวดหมู่ : ข่าวล่าสุด';
-            $blogs = Blog::orderBy('created_at', 'DESC')->paginate(9);
+            $blogs = Blog::publish()
+                ->orderBy('created_at', 'DESC')
+                ->paginate(9);
         }else{
             abort(404);
         }

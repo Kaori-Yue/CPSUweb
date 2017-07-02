@@ -14,8 +14,8 @@
             </script>
         </div>
 
-        <div class="col-md-12" style="text-align: center;">
-            <?php echo $blogs->render(); ?>
+        <div class="row col-md-12 col-xs-12" style="text-align: center;">
+            {{ $blogs->links() }}
         </div>
     </div>
 @stop

@@ -45,28 +45,41 @@
                 <br>
             </div>
 
-            <div class="row row-card" style="padding: 5% 0 5% 0">
+            <div class="row row-card" style="padding: 5% 0 5% 0; text-align: center">
                 <div class="col-md-10 col-md-offset-1 col-xs-offset-0">
                     <div class="col-md-6 col-xs-6">
-                        <div class="col-md-2">
+                        <div class="col-md-2 col-xs-12">
                             <img style="height: 50px" src="{{ URL::asset('image/fb_square.png') }}" class="img-responsive" alt="">
                         </div>
-                        <div class="col-md-10">
+                        <div class="col-md-10 col-xs-12">
                             <h4>Share to Facebook</h4>
                         </div>
                     </div>
                     <div class="col-md-6 col-xs-6">
-                        <div class="col-md-2">
+                        <div class="col-md-2 col-xs-12">
                             <img style="height: 50px" src="{{ URL::asset('image/tw_square.png') }}" class="img-responsive" alt="">
                         </div>
-                        <div class="col-md-10">
+                        <div class="col-md-10 col-xs-12">
                             <h4>Share to Twitter</h4>
                         </div>
                     </div>
                 </div>
             </div>
 
-
+            <div class="row col-md-12 col-xs-12" style="background: #ffffff">
+                <h2 class="bg-success" style="margin: 1% 1% 0 1%;padding: 2%;text-align: left">ข่าวที่เกี่ยวข้อง</h2>
+                @foreach($relateBlogs as $blog)
+                    @include('blog._card', $blog)
+                @endforeach
+                <div class="col-md-12 col-xs-12" style="text-align: right">
+                    <h4><a href="">ข่าวที่เกี่ยวข้องเพิ่มเติม ></a></h4>
+                </div>
+                <script>
+                    $(document).ready(function(){
+                        $('[data-toggle="tooltip"]').tooltip();
+                    });
+                </script>
+            </div>
         </div>
     </div>
 @stop

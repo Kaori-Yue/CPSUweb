@@ -64,13 +64,16 @@
                     <i class="material-icons">local_movies</i>
                 </button>
             </div>
-            {!! Form::textarea('content', null, ['class' => 'form-control', 'rows' => '30']) !!}
+            {!! Form::textarea('content', null, ['class' => 'form-control', 'rows' => '5', 'style' => 'font-size:20px', 'id' => 'demo']) !!}
             @if ($errors->has('content'))
                 <span class="help-block">
                     <strong>{{ $errors->first('content') }}</strong>
                 </span>
             @endif
         </div>
+
+        <div id="out" style="border: solid; min-height: 300px;font-size: 20px"></div>
+
         <div class="form-group">
             {!! Form::label('hash_tags', 'HashTag (Separate by comma if multiple)') !!}
             {!! Form::text('hash_tags', null, ['class' => 'form-control']) !!}
@@ -119,31 +122,17 @@
                     <h4 class="modal-title">Upload Image</h4>
                 </div>
                 <div class="modal-body">
-                    <ul class="nav nav-tabs">
-                        <li class="active"><a data-toggle="tab" href="#home">Home</a></li>
-                        <li><a data-toggle="tab" href="#menu1">Menu 1</a></li>
-                        <li><a data-toggle="tab" href="#menu2">Menu 2</a></li>
-                    </ul>
-
-                    <div class="tab-content">
-                        <div id="home" class="tab-pane fade in active">
-                            <h3>ALL Image</h3>
-                            @foreach($images as $image)
-                                <img style="height: 200px;width: 200px;overflow: hidden" class="img-responsive img-thumbnail" src="{{ url('image/thumbnail/'.$image->id) }}" alt="">
-                            @endforeach
-                        </div>
-                        <div id="menu1" class="tab-pane fade">
-                            <h3>Menu 1</h3>
-                            <p>Some content in menu 1.</p>
-                        </div>
-                        <div id="menu2" class="tab-pane fade">
-                            <h3>Menu 2</h3>
-                            <p>Some content in menu 2.</p>
-                        </div>
+                    <div id="home" class="tab-pane fade in active">
+                        <h3>
+                            ALL Image
+                            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                        </h3>
+                        @foreach($images as $image)
+                            @include('image._card')
+                        @endforeach
                     </div>
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
                 </div>
             </div>
         </div>
@@ -217,10 +206,39 @@
             document.forms.blogForm.content.value = text;
         }
 
+        function addTable() {
+            var text = document.forms.blogForm.content.value;
+            text += "<table class='table table-hover'>\n";
+            text += "\t<thead>\n";
+            text += "\t<tr>\n";
+            text += "\t\t<th></th>\n";
+            text += "\t\t<th></th>\n";
+            text += "\t<tr>\n";
+            text += "\t</thead>\n";
+            text += "\t<tbody>\n";
+            text += "\t<tr>\n";
+            text += "\t\t<td></td>\n";
+            text += "\t\t<td></td>\n";
+            text += "\t<tr>\n";
+            text += "\t</tbody>\n";
+            text += "</table>";
+            document.forms.blogForm.content.value = text;
+        }
+
+        function addLink() {
+            var text = document.forms.blogForm.content.value;
+            text += "<a href=' '></a>";
+            document.forms.blogForm.content.value = text;
+        }
+
         function addVideo() {
             var text = document.forms.blogForm.content.value;
             text += "<iframe width='100%' height='100%' src=' '></iframe>";
             document.forms.blogForm.content.value = text;
         }
+
+        $("#demo").on("input propertychange", function(){
+            $("#out").html($("textarea").val());
+        });
     </script>
 </div>
