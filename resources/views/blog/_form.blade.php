@@ -64,15 +64,20 @@
                     <i class="material-icons">local_movies</i>
                 </button>
             </div>
-            {!! Form::textarea('content', null, ['class' => 'form-control', 'rows' => '5', 'style' => 'font-size:20px', 'id' => 'demo']) !!}
-            @if ($errors->has('content'))
-                <span class="help-block">
+            <div class="col-md-6">
+                {!! Form::textarea('content', null, ['class' => 'form-control', 'rows' => '25', 'style' => 'font-size:14px', 'id' => 'demo']) !!}
+                @if ($errors->has('content'))
+                    <span class="help-block">
                     <strong>{{ $errors->first('content') }}</strong>
                 </span>
-            @endif
+                @endif
+            </div>
+            <div class="col-md-6">
+                <div id="out" style="padding: 1%;background: #f9f9f9; height: 490px;font-size: 14px"></div>
+            </div>
         </div>
 
-        <div id="out" style="border: solid; min-height: 300px;font-size: 20px"></div>
+
 
         <div class="form-group">
             {!! Form::label('hash_tags', 'HashTag (Separate by comma if multiple)') !!}
@@ -124,7 +129,7 @@
                 <div class="modal-body">
                     <div id="home" class="tab-pane fade in active">
                         <h3>
-                            ALL Image
+                            Recent Image
                             <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
                         </h3>
                         @foreach($images as $image)

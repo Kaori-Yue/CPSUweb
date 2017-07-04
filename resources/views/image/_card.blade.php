@@ -24,7 +24,7 @@
             @else
             <div class="col-md-12" style="display: block">
                 <div class="col-md-6 col-xs-6">
-                    <button class="btn btn-default btn-block" id="image-link{{$image->id}}"
+                    <button type="button" class="btn btn-default btn-block" id="image-link{{$image->id}}"
                             data-clipboard-text="{{ url('image/show/'.$image->id) }}">
                         <i class="fa fa-clone"></i>
                     </button>
