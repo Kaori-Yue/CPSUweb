@@ -64,6 +64,7 @@ Route::group(['middleware' => 'auth'], function (){
 
 
     Route::post('img', 'ImageController@store');
+    Route::post('file', 'FileController@store');
     Route::post('blog', 'BlogController@store');
     Route::post('teacher', 'TeacherController@store');
     Route::post('staff', 'StaffController@store');
@@ -106,7 +107,7 @@ Route::group(['middleware' => 'auth'], function (){
 
     Route::get('admin/teacher', 'AdminController@teacher');
     Route::get('admin/teacher/create', 'TeacherController@create');
-    Route::post('admin/teacher/sort', 'TeacherController@sortBy');
+    Route::get('admin/teacher/filter/{filter}', 'TeacherController@filter');
 
 
     Route::get('admin/thesis', 'AdminController@thesis');
@@ -127,6 +128,10 @@ Route::group(['middleware' => 'auth'], function (){
 
     Route::get('admin/image', 'AdminController@image');
     Route::get('admin/image/create', 'ImageController@create');
+
+
+    Route::get('admin/file', 'AdminController@file');
+    Route::get('admin/file/create', 'FileController@create');
 
 });
 

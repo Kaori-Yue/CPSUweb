@@ -27,40 +27,16 @@ class TeacherController extends Controller
         ]);
     }
 
-    public function sortBy(Request $request)
+    public function filter($filter)
     {
-        $sortBy = $request->get('sort_by');
+        $teachers = Teacher::where('status', $filter)
+            ->orderBy('rank', 'desc')
+            ->orderBy('name_th')
+            ->get();
 
-        if($sortBy == 'Rank'){
-            $orderOptions = [
-                'Rank' => 'SortBu: Rank',
-                'ASC' => 'SortBy: ASC',
-                'DESC' => 'SortBy: DESC',
-            ];
-            $teachers = Teacher::orderBy('rank', 'desc')
-                ->orderBy('name_th')
-                ->get();
-        }
-        elseif($sortBy == 'DESC')
-        {
-            $orderOptions = [
-                'DESC' => 'SortBy: DESC',
-                'Rank' => 'SortBy: Rank',
-                'ASC' => 'SortBy: ASC',
-            ];
-            $teachers = Teacher::orderBy('id', 'desc')->get();
-        }
-        else
-        {
-            $orderOptions = [
-                'ASC' => 'SortBy: ASC',
-                'DESC' => 'SortBy: DESC',
-                'Rank' => 'SortBy: Rank',
-            ];
-            $teachers = Teacher::orderBy('id')->get();
-        }
-
-        return view('teacher.admin', ['teachers' => $teachers, 'orderOptions' => $orderOptions]);
+        return view('teacher.admin', [
+            'teachers' => $teachers
+        ]);
     }
 
     public function create()

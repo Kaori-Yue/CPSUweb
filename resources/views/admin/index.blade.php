@@ -39,6 +39,11 @@
                         Image
                         <span class="glyphicon glyphicon-chevron-right"></span>
                     </a>
+                    <a href="{{ url('admin/file') }}" class="list-group-item
+                        @if (Request::is('admin/file/*') || Request::is('admin/file') || Request::is('file/*/edit')) active @endif">
+                        File
+                        <span class="glyphicon glyphicon-chevron-right"></span>
+                    </a>
                     {{--<a href="{{ url('admin/thesis') }}" class="list-group-item
                         @if (Request::is('admin/thesis/*') || Request::is('admin/thesis') || Request::is('thesis/*/edit')) active @endif">
                         Thesis

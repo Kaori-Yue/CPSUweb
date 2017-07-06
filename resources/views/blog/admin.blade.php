@@ -7,11 +7,19 @@
         </div>
 
         <div class="col-md-4" style="padding: 0; text-align: left">
-            <div class="btn-group">
-                <a href="{{ url('admin/blog') }}" class="btn btn-default">All</a>
-                <a href="{{ url('admin/blog/filter/publish') }}" class="btn btn-default">Publish</a>
-                <a href="{{ url('admin/blog/filter/draft') }}" class="btn btn-default">Draft</a>
-                <a href="{{ url('admin/blog/filter/disable') }}" class="btn btn-default">Disable</a>
+            <div class="btn-group btn-group-justified">
+                <a href="{{ url('admin/blog') }}" class="btn btn-default">
+                    All
+                </a>
+                <a href="{{ url('admin/blog/filter/publish') }}" class="btn btn-default">
+                    Publish
+                </a>
+                <a href="{{ url('admin/blog/filter/draft') }}" class="btn btn-default">
+                    Draft
+                </a>
+                <a href="{{ url('admin/blog/filter/disable') }}" class="btn btn-default">
+                    Disable
+                </a>
             </div>
         </div>
     </div>

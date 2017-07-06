@@ -61,7 +61,7 @@ class BlogController extends Controller
 
         $category = Category::pluck('name', 'id');
         $images = \App\File::where('mime', 'like','image%')
-            ->orderBy('created_at', 'desc')
+            ->orderBy('id', 'desc')
             ->take(16)
             ->get();
 

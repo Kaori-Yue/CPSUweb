@@ -48,15 +48,12 @@ class AdminController extends Controller
 
     public function teacher()
     {
-        $orderOptions = [
-            'Rank' => 'SortBy: Rank',
-            'ASC' => 'SortBy: ASC',
-            'DESC' => 'SortBy: DESC',
-        ];
         $teachers = Teacher::orderBy('rank', 'desc')
             ->orderBy('name_th')
             ->get();
-        return view('teacher.admin', ['teachers' => $teachers, 'orderOptions' => $orderOptions]);
+        return view('teacher.admin', [
+            'teachers' => $teachers
+        ]);
     }
 
     public function staff()
@@ -82,6 +79,16 @@ class AdminController extends Controller
         $images = File::where('mime', 'like', 'image%')
             ->orderBy('id', 'desc')
             ->paginate(20);
+
         return view('image.admin', ['images' => $images]);
+    }
+
+    public function file()
+    {
+        $files = File::where('mime', 'NOT LIKE', 'image%')
+            ->orderBy('id', 'desc')
+            ->paginate(20);
+
+        return view('file.admin', ['files' => $files]);
     }
 }

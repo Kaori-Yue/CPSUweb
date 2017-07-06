@@ -2,7 +2,28 @@
     <div class="col-md-3 col-sm-4 col-xs-12 teacher-image"
          style="background-image: url('{{ url('image/show/'.$teacher->image) }}')"></div>
     <div class="col-md-9 col-sm-8 col-xs-12" style="background: #40826D;color: #ffffff;padding: 1%;margin-bottom: 1%">
-        <h2>{!! $teacher->name_th !!}</h2>
+        <h2>
+            {!! $teacher->name_th !!}
+            @if (Request::is('admin/*'))
+                @if($teacher->status == 'duty')
+                <b>
+                    <span class="label label-success">Duty</span>
+                </b>
+                @elseif($teacher->status == 'retire')
+                <b>
+                    <span class="label label-danger">Retire</span>
+                </b>
+                @elseif($teacher->status == 'study')
+                <b>
+                    <span class="label label-primary">Study</span>
+                </b>
+                @elseif($teacher->status == 'disable')
+                <b>
+                    <span class="label label-default">Disable</span>
+                </b>
+                @endif
+            @endif
+        </h2>
     </div>
     <div class="col-md-9 col-sm-8 col-xs-12">
         <h4>{{ $teacher->name_en }}</h4>
@@ -24,7 +45,6 @@
         @endif
 
         @if (Request::is('admin/*'))
-            <h4><b>Status : {{ $teacher->status }}</b></h4>
             <div class="col-md-6 col-xs-6">
                 <a class="btn btn-warning btn-block" href="{{ url('teacher/'.$teacher->id.'/edit') }}">
                     Edit

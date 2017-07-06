@@ -6,13 +6,24 @@
             <a class="btn btn-primary btn-block" href="{{ url('admin/teacher/create') }}">Create</a>
         </div>
 
-        <div class="col-md-4" style="padding: 0; text-align: left">
-            {!! Form::open(['url' => 'admin/teacher/sort', 'class' => 'form-inline']) !!}
-            <div class="form-group">
-                {!! Form::select('sort_by', $orderOptions, null, ['class' => 'form-control']) !!}
+        <div class="col-md-4" style="padding: 0; text-align: left;display: inline">
+            <div class="btn-group btn-group-justified">
+                <a href="{{ url('admin/teacher') }}" class="btn btn-default">
+                    All
+                </a>
+                <a href="{{ url('admin/teacher/filter/duty') }}" class="btn btn-default">
+                    Duty
+                </a>
+                <a href="{{ url('admin/teacher/filter/retire') }}" class="btn btn-default">
+                    Retire
+                </a>
+                <a href="{{ url('admin/teacher/filter/study') }}" class="btn btn-default">
+                    Study
+                </a>
+                {{--<a href="{{ url('admin/teacher/filter/disable') }}" class="btn btn-default">
+                    disable
+                </a>--}}
             </div>
-            {!! Form::submit('Sort', ['class' => 'btn btn-default']) !!}
-            {!! Form::close() !!}
         </div>
     </div>
 

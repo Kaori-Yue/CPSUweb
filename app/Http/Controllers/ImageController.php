@@ -35,7 +35,6 @@ class ImageController extends Controller
         ];
 
         return view('image.create', ['type' => $type]);
-
     }
 
     public function store(Request $request)
