@@ -74,6 +74,7 @@ Route::group(['middleware' => 'auth'], function (){
 
 
     Route::get('image/{id}/edit', 'ImageController@edit');
+    Route::get('file/{id}/edit', 'FileController@edit');
     Route::get('blog/{slug}/edit', 'BlogController@edit');
     Route::get('teacher/{id}/edit', 'TeacherController@edit');
     Route::get('staff/{id}/edit', 'StaffController@edit');
@@ -82,6 +83,7 @@ Route::group(['middleware' => 'auth'], function (){
 
 
     Route::patch('image/{id}', 'ImageController@update');
+    Route::patch('file/{id}', 'FileController@update');
     Route::patch('blog/{id}', 'BlogController@update');
     Route::patch('teacher/{id}', 'TeacherController@update');
     Route::patch('staff/{id}', 'StaffController@update');
@@ -90,6 +92,7 @@ Route::group(['middleware' => 'auth'], function (){
 
 
     Route::delete('image/{id}', 'ImageController@destroy');
+    Route::delete('file/{id}', 'FileController@destroy');
     Route::delete('blog/{id}', 'BlogController@destroy');
     Route::delete('teacher/{id}', 'TeacherController@destroy');
     Route::delete('staff/{id}', 'StaffController@destroy');

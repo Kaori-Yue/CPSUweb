@@ -24,8 +24,11 @@
         <div class="form-group{{ $errors->has('content') ? ' has-error' : '' }}">
             {!! Form::label('content', 'Content') !!}
             <div class="col-md-12" style="padding: 0">
-                <button type="button" class="btn btn-default" data-toggle="modal" data-target="#myModal">
+                <button type="button" class="btn btn-default" data-toggle="modal" data-target="#imageModal">
                     <i class="material-icons">insert_photo</i>
+                </button>
+                <button type="button" class="btn btn-default" data-toggle="modal" data-target="#fileModal">
+                    <i class="material-icons">attach_file</i>
                 </button>
                 <button onclick="addTab()" type="button" class="btn btn-default">
                     <i class="material-icons">format_indent_increase</i>
@@ -119,12 +122,12 @@
         {!! Form::reset('Reset', ['class' => 'btn btn-default btn-lg']) !!}
     </div>
 
-    <div class="modal fade" id="myModal" role="dialog">
+    <div class="modal fade" id="imageModal" role="dialog">
         <div class="modal-dialog modal-lg">
             <div class="modal-content">
                 <div class="modal-header">
                     <button type="button" class="close" data-dismiss="modal">&times;</button>
-                    <h4 class="modal-title">Upload Image</h4>
+                    <h4 class="modal-title">Uploaded Image</h4>
                 </div>
                 <div class="modal-body">
                     <div id="home" class="tab-pane fade in active">
@@ -134,6 +137,29 @@
                         </h3>
                         @foreach($images as $image)
                             @include('image._card')
+                        @endforeach
+                    </div>
+                </div>
+                <div class="modal-footer">
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade" id="fileModal" role="dialog">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h4 class="modal-title">Uploaded File</h4>
+                </div>
+                <div class="modal-body">
+                    <div id="home" class="tab-pane fade in active">
+                        <h3>
+                            Recent File
+                            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                        </h3>
+                        @foreach($files as $file)
+                            @include('file._card')
                         @endforeach
                     </div>
                 </div>

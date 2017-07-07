@@ -65,10 +65,16 @@ class BlogController extends Controller
             ->take(16)
             ->get();
 
+        $files = \App\File::where('mime', 'NOT LIKE', 'image%')
+            ->orderBy('id', 'desc')
+            ->take(16)
+            ->get();
+
         return view('blog.create', [
             'status' => $status,
             'category' => $category,
-            'images' => $images
+            'images' => $images,
+            'files' => $files
         ]);
     }
 

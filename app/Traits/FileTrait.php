@@ -27,6 +27,27 @@ trait FileTrait
         return $file;
     }
 
+    public function updateFile($file, $id)
+    {
+        $f = \App\File::findOrFail($id);
+        $old_filename = $f->name;
+
+        $ex = $file->getClientOriginalExtension();
+        Storage::disk('local')->put($file->getFilename(). '.' . $ex, File::get($file));
+
+        $fileRecord = [
+            'name' => $file->getFilename(). '.' . $ex,
+            'mime' => $file->getClientMimeType(),
+            'original_name' => $file->getClientOriginalName(),
+        ];
+
+        $f->update($fileRecord);
+
+        Storage::delete($old_filename);
+
+        return $f;
+    }
+
     public function deleteFile($file)
     {
         Storage::delete($file->name);
