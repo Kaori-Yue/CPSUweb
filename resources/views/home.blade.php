@@ -18,7 +18,7 @@
                 <div class="item first active" id="1">
                     <div class="carousel-caption">
                         <div class="col-md-6 col-xs-12" style="padding: 5% 10% 5% 10%">
-                            <h1 class="title" style="font-size: 40px;">
+                            <h1 class="title">
                                 <span>ภาควิชาคอมพิวเตอร์</span>
                             </h1>
                             <p class="desc">
@@ -27,21 +27,21 @@
                             <br>
                             <ul class="list" style="text-align: left">
                                 <li class="welcome-li">
-                                    <a href="{{ url('interested') }}">ผู้สนใจเข้าศึกษา</a>
+                                    <h4><a href="{{ url('interested') }}">ผู้สนใจเข้าศึกษา</a></h4>
                                 </li>
                                 <li class="welcome-li">
-                                    <a href="{{ url('current-student') }}">นักศึกษาปัจจุบัน</a>
+                                    <h4><a href="{{ url('current-student') }}">นักศึกษาปัจจุบัน</a></h4>
                                 </li>
                                 <li class="welcome-li">
-                                    <a href="">บุคลากร</a>
+                                    <h4><a href="">บุคลากร</a></h4>
                                 </li>
                                 <li class="welcome-li">
-                                    <a href="">รู้จักภาควิชา</a>
+                                    <h4><a href="">รู้จักภาควิชา</a></h4>
                                 </li>
                             </ul>
                         </div>
 
-                        <div class="col-md-6 col-xs-12" style="padding: 2% 10% 10% 10%">
+                        <div class="col-md-6 hidden-xs" style="padding: 2% 10% 10% 10%">
                             <div class="pc-wrapper">
                                 <img class="pc img-responsive" src="{{ URL::asset('image/SC-SU-Formal-TH.png') }}" style="width: 100%" width="90%" height="90%">
                                 <div class="price">
