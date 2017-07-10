@@ -317,7 +317,7 @@ p > span {
 }
 
 .center-cropped {
-    height: 50vh;
+    height: 70vh;
     background-position: center center;
     background-repeat: no-repeat;
     background-size: cover;

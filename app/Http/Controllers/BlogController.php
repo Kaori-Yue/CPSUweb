@@ -221,7 +221,7 @@ class BlogController extends Controller
     {
         $slug = urldecode($slug);
         $blog = Blog::where('slug', $slug)
-            ->publish()
+            /*->publish()*/
             ->firstOrFail();
 
         $blogTag = $blog->tags;
