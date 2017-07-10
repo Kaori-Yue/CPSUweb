@@ -3,11 +3,11 @@
     @if(strpos($file->mime, 'pdf'))
         #B22222
     @elseif(strpos($file->mime, 'wordprocess') || strpos($file->mime, 'msword'))
-        #483D8B
+        #303F9F
     @elseif(strpos($file->mime, 'spreadsheet') || strpos($file->mime, 'ms-excel'))
         #2E8B57
     @elseif(strpos($file->mime, 'presentation') || strpos($file->mime, 'ms-powerpoint'))
-        #FF7F50
+        #D84315
     @elseif(strpos($file->mime, 'zip-compressed') || strpos($file->mime, 'rar-compressed') || strpos($file->mime, '7z-compressed'))
         #A0522D
     @elseif(strpos($file->mime, 'plain'))

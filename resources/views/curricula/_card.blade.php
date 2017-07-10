@@ -2,7 +2,7 @@
     <a href="{{ url('curricula/'.$curricula->slug) }}" style="color: #FFFFFF;text-decoration: none">
         <div class="curricula-card">
             <h3><b>{{ $curricula->name_th }}</b></h3>
-            <h4>{{ $curricula->name_en }}</h4>
+            <h3>{{ $curricula->name_en }}</h3>
             <div class="hidden-xs">
                 <br>
             </div>

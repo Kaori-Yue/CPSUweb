@@ -138,6 +138,7 @@ Route::group(['middleware' => 'auth'], function (){
 
 });
 
+Route::get('test/test', 'TestController@testSVG');
 Route::get('test/resize', 'TestController@resizeImg');
 Route::get('test/compress', 'TestController@testCompress');
 Route::get('test/compress_all', 'TestController@compressAll');

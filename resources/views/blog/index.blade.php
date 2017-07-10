@@ -152,7 +152,7 @@
             ];
 
             $('#demo').jQCloud(words,{
-                colors: ["#800026", "#bd0026", "#e31a1c", "#fc4e2a", "#fd8d3c", "#feb24c", "#fed976", "#ffeda0", "#ffffcc"],
+                /*colors: ["#800026", "#bd0026", "#e31a1c", "#fc4e2a", "#fd8d3c", "#feb24c", "#fed976", "#ffeda0", "#ffffcc"],*/
                 autoResize: true,
                 shape: "elliptic"
             });

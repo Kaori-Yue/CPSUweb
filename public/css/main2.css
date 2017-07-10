@@ -1,0 +1,381 @@
+code,
+kbd,
+pre,
+.img-rounded,
+.img-thumbnail,
+.form-control,
+/*.btn,*/
+.btn-link,
+.dropdown-menu,
+.list-group-item,
+.input-group-addon,
+.input-group-btn,
+.nav-tabs a,
+.nav-pills a,
+.navbar,
+.navbar-toggle,
+.icon-bar,
+.breadcrumb,
+.pagination,
+.pager *,
+/*.label,*/
+.badge,
+.jumbotron,
+.thumbnail,
+.alert,
+.progress,
+.panel,
+.well,
+.modal-content,
+.tooltip-inner,
+.popover,
+.popover-title,
+.carousel-indicators li {
+    border-radius:0 !important;
+}
+
+@font-face {
+    font-family: "Kanit";
+    src: url("../font/Kanit/Kanit-Regular.ttf") format('truetype');
+}
+
+@font-face {
+    font-family: "Trirong";
+    src: url("../font/Trirong/Trirong-Regular.ttf") format('truetype');
+}
+
+html, body {
+    margin:0;
+    padding:0;
+    height:100%;
+    background: #EEEEEE;
+    font-family: 'Kanit', sans-serif;
+}
+
+h1{
+    font-size: 36px;
+}
+
+h2{
+    font-size: 30px;
+}
+
+h3{
+    font-size: 24px;
+}
+
+h4{
+    font-size: 18px;
+}
+
+p{
+    font-size: 14px;
+}
+
+#page {
+    min-height:100%;
+    position:relative;
+}
+#page-head {
+    padding:10px;
+}
+#page-body {
+    padding-bottom: 40vh;   /* Height of the footer */
+}
+#page-footer {
+    position:absolute;
+    bottom:0;
+    width:100%;
+    height:40vh;   /* Height of the footer */
+    background:#40826D;
+    color: #ffffff;
+}
+
+.footer {
+    background: #40826D;
+}
+
+.container {
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+
+.container, .container-fluid {
+    margin-top: 30px;
+}
+
+.container-fluid {
+    height: 100%;
+}
+
+.navbar {
+    color: #ffffff;
+    background: #40826D;
+    margin-bottom: 200%;
+}
+
+.navbar > .container {
+    margin-top: 0;
+}
+
+.nav > li > a {
+    color: #FFFFFF;
+}
+
+.nav > li > a:hover, .nav > li > a:active, .nav > li > a:focus {
+    background: #ffffff;
+    color: #40826D;
+}
+
+.navbar-brand {
+    color: #FFFFFF;
+    background: #40826D;
+}
+
+.navbar-brand:hover, .navbar-brand:focus {
+    background: #ffffff;
+    color: #40826D;
+}
+
+.icon-bar {
+    background: #ffffff;
+}
+
+.row {
+    margin: 1% 0 1% 0;
+    padding: 0;
+}
+
+.row-card > ol > li {
+    margin: 2% 0 2% 0;
+}
+
+.pagination > .active > span {
+    background-color: #40826D;
+    border-color: #40826D;
+}
+
+.pagination>.active>a,
+.pagination>.active>a:focus,
+.pagination>.active>a:hover,
+.pagination>.active>span,
+.pagination>.active>span:focus,
+.pagination>.active>span:hover {
+    background-color: #40826D;
+    border-color: #40826D;
+}
+
+.pagination > li > a{
+    color: #40826D;
+}
+
+.black-ribbon {
+    position: fixed;
+    z-index: 9999;
+    width: 70px;
+}
+
+@media only all and (min-width: 768px) {
+    .black-ribbon {
+        width: auto;
+    }
+}
+
+.stick-left { left: 0; }
+.stick-right { right: 0; }
+.stick-top { top: 0; }
+.stick-bottom { bottom: 0; }
+
+.some-space {
+    padding-top: 1%;
+}
+
+.btn {
+    box-shadow: 1px 1px 1px #888888;
+}
+
+.carousel {
+    height: auto;
+    width: 100%;
+}
+
+.carousel-inner {
+    padding: 0;
+    margin: 0;
+    box-shadow: 1px 1px 5px #888888;
+}
+
+.item {
+    position: absolute;
+    top: 0;
+    left: 0;
+    min-width: 100%;
+    height: 80vh;
+    max-width: none;
+    background-size: cover;
+}
+
+.carousel-caption {
+    left: 5%;
+    height: 20%;
+    width: 90%;
+    padding-top: 2%;
+    margin: 1%;
+    top: 75%;
+    background: rgba(255, 255, 255, 0.9);
+    color: #0f0f0f;
+    /*opacity: 0;*/
+}
+
+.carousel-indicators {
+    bottom: 0;
+    margin-bottom: 2%;
+}
+
+.carousel-indicators > li {
+    color: #0f0f0f;
+}
+
+.label-primary{
+
+    background: #40826D;
+    font-size: 14px;
+}
+
+.label-secondary{
+    background: #ffbf00;
+    font-size: 14px;
+}
+
+.btn-secondary{
+    border-radius: 50%;
+    background: #ffbf00;
+    color: #FFFFFF;
+}
+
+/*----------------------------------------------------------------------*/
+
+.regular-card {
+    margin: 8px;
+    padding: 20px;
+    background: #FFFFFF;
+    box-shadow: 1px 1px 5px #888888;
+}
+
+
+/*----------------------------------------------------------------------*/
+
+.blog-card {
+    position: relative;
+    margin: 8px;
+    overflow: hidden;
+    box-shadow: 1px 1px 5px #888888;
+    background: #ffffff;
+}
+
+.blog-card > .card-title {
+    height: 250px;
+    background-position:center center;
+    background-repeat:no-repeat;
+    background-size:cover;
+    color:#fff;
+}
+
+.blog-card > .card-text{
+    height: auto;
+    width: 100%;
+}
+
+.blog-card > .card-text > p > span {
+    color: #0f0f0f;
+}
+
+.blog-card > .card-menu{
+    color: #0f0f0f;
+    height: auto;
+    width: 100%;
+    padding-bottom: 8px;
+    display: inline;
+    align-items: center;
+}
+
+/*----------------------------------------------------------------------*/
+
+@media only screen and (max-width: 768px) {
+    h1{
+        font-size: 30px;
+    }
+
+    h2{
+        font-size: 28px;
+    }
+
+    h3{
+        font-size: 20px;
+    }
+
+    h4{
+        font-size: 18px;
+    }
+
+    p{
+        font-size: 16px;
+    }
+
+    .curricula-card {
+        height: 240px;
+    }
+
+    .item {
+        height: 50vh;
+        max-width: none;
+    }
+
+    .carousel-caption {
+        padding-top: 0;
+        /*opacity: 0;*/
+    }
+}
+
+@media only screen and (max-width : 480px) {
+    .container{
+        padding-right: 5px;
+        padding-left: 5px;
+    }
+
+    h1{
+        font-size: 28px;
+    }
+
+    h2{
+        font-size: 26px;
+    }
+
+    h3{
+        font-size: 18px;
+    }
+
+    h4{
+        font-size: 16px;
+    }
+
+    p{
+        font-size: 14px;
+    }
+
+    .curricula-card {
+        height: 230px;
+    }
+
+    .item {
+        height: 50vh;
+        max-width: none;
+    }
+
+    .carousel-caption {
+        padding-top: 0;
+        height: 30%;
+        z-index: 25;
+        /*opacity: 0;*/
+    }
+}

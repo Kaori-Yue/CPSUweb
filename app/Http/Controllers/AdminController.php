@@ -21,12 +21,16 @@ class AdminController extends Controller
         $teacher = Teacher::count();
         $research = Research::count();
         $thesis = Thesis::count();
+        $image = File::where('mime', 'like', 'image%')->count();
+        $file = File::where('mime', 'NOT LIKE', 'image%')->count();
         return view('admin.summary', [
             'curricula' => $curricula,
             'blog' => $blog,
             'teacher' => $teacher,
             'research' => $research,
-            'thesis' => $thesis
+            'thesis' => $thesis,
+            'image' => $image,
+            'file' => $file
         ]);
     }
 

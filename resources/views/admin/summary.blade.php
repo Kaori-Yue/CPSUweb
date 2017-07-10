@@ -35,6 +35,22 @@
                 <a href="{{ url('admin/research/create') }}" class="btn btn-default">Create</a>
             </div>
         </div>
+        <div class="col-md-3" style="padding: 10px">
+            <div class="bg-primary" style="height: 300px;padding: 5%">
+                <h2>Image</h2>
+                <hr>
+                <h4>Amount: {{ $image }}</h4>
+                <a href="{{ url('admin/image/create') }}" class="btn btn-default">Create</a>
+            </div>
+        </div>
+        <div class="col-md-3" style="padding: 10px">
+            <div class="bg-info" style="height: 300px;padding: 5%">
+                <h2>File</h2>
+                <hr>
+                <h4>Amount: {{ $file }}</h4>
+                <a href="{{ url('admin/file/create') }}" class="btn btn-default">Create</a>
+            </div>
+        </div>
         {{--<div class="col-md-3" style="padding: 10px">
             <div class="bg-danger" style="height: 300px;padding: 5%">
                 <h2>Thesis</h2>

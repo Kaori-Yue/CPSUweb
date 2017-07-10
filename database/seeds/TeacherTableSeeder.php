@@ -140,8 +140,8 @@ class TeacherTableSeeder extends Seeder
             6 => 
             array (
                 'id' => 7,
-                'name_th' => 'ผศ.ดร.ปานใจ ธารทัศนวงศ์',
-                'name_en' => 'Asst.Prof.Dr.Panjai Tantatsanawong',
+                'name_th' => 'รศ.ดร.ปานใจ ธารทัศนวงศ์',
+                'name_en' => 'Assoc.Prof.Panjai Tantatsanawong',
             'doctor_degree' => 'Ph.D. (Computer Science) Asian Institute of Technology, Thailand (2000)',
             'master_degree' => 'วท.ม. (วิทยาศาสตร์คอมพิวเตอร์) จุฬาลงกรณ์มหาวิทยาลัย (2535)',
             'bachelor_degree' => 'วท.บ. (สาธารณสุขศาสตร์) มหาวิทยาลัยมหิดล (2527)',
@@ -149,7 +149,7 @@ class TeacherTableSeeder extends Seeder
                 'website' => '',
                 'position' => '',
                 'expertise' => 'Software Engineering, Computer Networks',
-                'rank' => 25,
+                'rank' => 35,
                 'image' => 7,
                 'token' => 'cTXjHZ',
                 'password' => '$2y$10$6OdM0JLES1y.BZO95NCBruxcrnzSV8mLjY0ssirvI/iEpC.aGjxhK',

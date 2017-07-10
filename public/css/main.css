@@ -53,6 +53,10 @@ html, body {
     font-family: 'Kanit', sans-serif;
 }
 
+p {
+    font-size: 16px;
+}
+
 #page {
     min-height:100%;
     position:relative;
@@ -198,11 +202,18 @@ div {
     height: 350px;
     padding: 0 0 0 0;
     overflow: hidden;
+    box-shadow: 1px 1px 5px #888888;
     /*border: solid;*/
 }
 
+.card-bg{
+    background-position:center center;
+    background-repeat:no-repeat;
+    background-size:cover;
+    color:#fff;
+}
+
 .card-caption {
-    /*background: #D98F4F;*/
     background: rgba(217, 143, 79, 0.8);
     padding: 2%;
     position: absolute;
@@ -217,26 +228,23 @@ div {
     padding: 3%;
 }
 
+.card-actions {
+    background: rgba(255, 255, 255, 1);
+    text-align: center;
+    border-radius: 0;
+    padding: 3%;
+}
+
+
 h2 > span {
-    color: white;
+    color: #ffffff;
     letter-spacing: -1px;
 }
 
 p > span {
-    color: white;
+    color: #ffffff;
     letter-spacing: -1px;
 }
-
-.card-bg{
-    background-position:center center;
-    background-repeat:no-repeat;
-    background-size:cover;
-    color:#fff;
-}
-
-/*.carousel .item{
-
-}*/
 
 .carousel {
     height: auto;
@@ -256,15 +264,6 @@ p > span {
     height: 70vh;
     max-width: none;
 }
-
-/*.item {
-    height: 500px;
-    padding: 0;
-    margin: 0;
-    max-width: 100%;
-    width: auto;
-    vertical-align: middle;
-}*/
 
 .carousel-caption {
     top: 0;
@@ -435,37 +434,8 @@ a > .label-success {
     background: #40826D;
 }
 
-/*.bg-success {
-    background: #40826D;
-    color: #ffffff;
-}*/
 
-/*.carousel-inner > .item > img,
-.carousel-inner > .item > a > img {
-    width: 50%;
-    margin: auto;
-}*/
-
-/*.carousel-inner > .item > img {*/
-    /*position: absolute;*/
-    /*top: 0;*/
-    /*left: 0;*/
-    /*min-width: 100%;*/
-    /*height: 500px;*/
-/*}*/
-
-/*.carousel.slide{
-    max-width: 1600px;
-    min-width: 900px;
-    overflow: hidden;
-}
-.carousel-inner{
-    width: 1600px;
-    left: 50%;
-    margin-left: -800px;
-}*/
-
-@media screen and (max-width: 768px) {
+@media only screen and (max-width: 768px) {
     h1{
         font-size: 30px;
     }
@@ -483,15 +453,14 @@ a > .label-success {
     }
 
     p{
-        font-size: 12px;
+        font-size: 16px;
     }
 
     .curricula-card {
-        height: 220px;
+        height: 240px;
     }
 
     .item {
-
         height: 50vh;
         max-width: none;
     }
@@ -502,3 +471,40 @@ a > .label-success {
     }
 }
 
+@media only screen and (max-width : 480px) {
+    h1{
+        font-size: 28px;
+    }
+
+    h2{
+        font-size: 26px;
+    }
+
+    h3{
+        font-size: 18px;
+    }
+
+    h4{
+        font-size: 16px;
+    }
+
+    p{
+        font-size: 14px;
+    }
+
+    .curricula-card {
+        height: 230px;
+    }
+
+    .item {
+        height: 50vh;
+        max-width: none;
+    }
+
+    .carousel-caption {
+        padding-top: 0;
+        height: 30%;
+        z-index: 25;
+        /*opacity: 0;*/
+    }
+}

@@ -193,4 +193,9 @@ class TestController extends Controller
         }
         return 'finish';
     }
+
+    public function testSVG()
+    {
+        return view('test2');
+    }
 }

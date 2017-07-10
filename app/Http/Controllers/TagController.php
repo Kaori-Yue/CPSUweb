@@ -13,6 +13,6 @@ class TagController extends Controller
         $blogs = $tag->blogs()->paginate(9);
 
         $title = 'หมวดหมู่ : '.$tag->name;
-        return view('blog.category', ['blogs' => $blogs, 'title' => $title]);
+        return view('blog.category2', ['blogs' => $blogs, 'title' => $title]);
     }
 }
