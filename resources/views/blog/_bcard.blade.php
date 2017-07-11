@@ -1,31 +1,48 @@
-<div class="col-md-6 col-sm-6 col-xs-12 row-card" style="padding: 1%;">
-    <div class="card card-bg" style="background-image: url('{{ url('image/show/'.$blog->cover) }}')">
-        <div class="col-md-2 col-md-offset-10 col-xs-2 col-xs-offset-10 card-action">
-            <a href="#" class="fa fa-share" data-toggle="modal" data-target="#sharePanel{{$blog->id}}" style="font-size: 20px; color: #FFFFFF"></a>
+<div class="col-md-6 col-sm-6 col-xs-12 row-card" style="padding: 10px;">
+    <div class="blog-card">
+        <div class="card-bg" style="background-image: url('{{ url('image/show/'.$blog->cover) }}')">
+            <a href="{{ url('blog/'.$blog->slug) }}">
+                <div style="height: 65%"></div>
+            </a>
         </div>
-        <a href="{{ url('blog/'.$blog->slug) }}">
-            <div class="card-caption" data-toggle="tooltip" data-placement="auto bottom" title="{{ $blog->title }}">
+        <div class="card-caption" data-toggle="tooltip" data-placement="auto bottom" title="{{ $blog->title }}">
+            <a href="{{ url('blog/'.$blog->slug) }}" style="text-decoration: none">
                 @if(mb_strlen($blog->title, 'UTF-8') < 35)
                     <h2><span>{!! iconv_substr($blog->title, 0, 35, 'UTF-8') !!}</span></h2>
                 @else
                     <h2><span>{!! iconv_substr($blog->title, 0, 35, 'UTF-8').'...' !!}</span></h2>
                 @endif
                 <p>
-                    @if(Request::is('admin/*'))
-                    @if($blog->status == 'publish')
-                        <b><span class="label label-success">Publish</span></b>
-                    @elseif($blog->status == 'draft')
-                        <b><span class="label label-default">Draft</span></b>
-                    @else
-                        <b><span class="label label-danger">Disable</span></b>
-                    @endif
-                    @endif
                     <span>By {!! $blog->user->name !!}</span>
+                    @if(Request::is('admin/*'))
+                        @if($blog->status == 'publish')
+                            <b><span class="label label-success">Publish</span></b>
+                        @elseif($blog->status == 'draft')
+                            <b><span class="label label-default">Draft</span></b>
+                        @else
+                            <b><span class="label label-danger">Disable</span></b>
+                        @endif
+                    @endif
                 </p>
+            </a>
+        </div>
+        <div class="card-action">
+            <div class="col-md-10 col-xs-10" style="padding-left: 0;text-align: left">
+                @foreach($blog->tags as $tag)
+                    @if($loop->iteration <= 2)
+                        <a href="{{ url('tag/'.$tag->slug) }}" style="text-decoration: none">
+                            <span class="label label-success">{{ $tag->name }}</span>
+                        </a>
+                    @endif
+                @endforeach
             </div>
-        </a>
+            <div class="col-md-2 col-xs-2" style="padding-right: 0;text-align: center">
+                <a href="#" data-toggle="modal" data-target="#sharePanel{{$blog->id}}" style="color: #0f0f0f">
+                    <i class="material-icons">share</i>
+                </a>
+            </div>
+        </div>
     </div>
-
     @if(Request::is('admin/*'))
         <div class="col-md-6 col-xs-6">
             <a href="{{ url('blog/'.$blog->slug.'/edit') }}" class="btn btn-warning btn-lg btn-block">
@@ -42,6 +59,5 @@
             {!! Form::close() !!}
         </div>
     @endif
-
     @include('blog._share', $blog)
 </div>

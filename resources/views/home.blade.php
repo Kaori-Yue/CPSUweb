@@ -16,7 +16,7 @@
             <!-- Wrapper for slides -->
             <div class="carousel-inner">
                 <div class="item first active" id="1">
-                    <div class="carousel-caption">
+                    <div class="carousel-caption" style="top: 0;height: 100%;background: none">
                         <div class="col-md-6 col-xs-12" style="padding: 5% 10% 5% 10%">
                             <h1 class="title">
                                 <span>ภาควิชาคอมพิวเตอร์</span>
@@ -57,7 +57,7 @@
                 </div>
 
                 <div class="item second" id="2">
-                    <div class="carousel-caption">
+                    <div class="carousel-caption" style="top: 0;height: 100%;background: none">
                         <div class="row">
                             <h2 class="title">
                                 <span>ภาควิชาคอมพิวเตอร์</span>
@@ -152,7 +152,7 @@
         </div>--}}
 
         <div id="featured-news" class="row col-md-12 col-xs-12" style="background: #ffffff">
-            <h2 class="bg-success" style="margin: 1% 1% 0 1%;padding: 2%;text-align: left">
+            <h2 class="bg-success section-heading">
                 ข่าวเด่น
             </h2>
             @foreach($blogs as $blog)
@@ -169,7 +169,7 @@
         </div>
 
         <div class="row col-md-12 col-xs-12" style="background: #ffffff">
-            <h2 class="bg-success" style="margin: 1% 1% 0 1%;padding: 2%;text-align: left">ผลงานวิจัย</h2>
+            <h2 class="bg-success section-heading">ผลงานวิจัย</h2>
             @foreach($researches as $research)
                 @include('research._card', $research)
             @endforeach
