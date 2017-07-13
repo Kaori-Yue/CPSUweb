@@ -43,7 +43,7 @@
 
                         <div class="col-md-6 hidden-xs" style="padding: 2% 10% 10% 10%">
                             <div class="pc-wrapper">
-                                <img class="pc img-responsive" src="{{ URL::asset('image/SC-SU-Formal-TH.png') }}" style="width: 100%" width="90%" height="90%">
+                                <img class="pc img-responsive" src="{{ URL::asset('image/SC-SU-Formal-TH_resize.png') }}" style="width: 100%" width="90%" height="90%">
                                 <div class="price">
                                     {{--This is price--}}
                                 </div>

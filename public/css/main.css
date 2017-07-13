@@ -250,6 +250,55 @@ div {
     bottom: 0
 }
 
+.file-card {
+    position: relative;
+    padding: 0 0 0 0;
+    overflow: hidden;
+    box-shadow: 1px 1px 5px #888888;
+}
+
+.file-card > .card-bg{
+    height: 100%;
+    background-position:center center;
+    background-repeat:no-repeat;
+    background-size:cover;
+    color:#fff;
+}
+
+.file-card > .card-caption {
+    padding: 3%;
+    color: #ffffff;
+    text-align: center;
+    background: rgba(0, 0, 0, 0.4);
+    position: absolute;
+    width: 100%;
+    bottom: 0
+}
+
+.image-card {
+    border: #6fb29b solid 1px;
+    position: relative;
+    padding: 0 0 0 0;
+    overflow: hidden;
+    box-shadow: 1px 1px 5px #888888;
+}
+
+.image-card > .card-bg{
+    height: 100%;
+    background-position:center center;
+    background-repeat:no-repeat;
+    background-size:cover;
+    color:#fff;
+}
+
+.image-card > .card-caption {
+    border: #6fb29b solid 1px;
+    background: rgba(0, 0, 0, 0.4);
+    position: absolute;
+    width: 100%;
+    bottom: 0
+}
+
 h2 > span {
     color: #0f0f0f;
     letter-spacing: -1px;
