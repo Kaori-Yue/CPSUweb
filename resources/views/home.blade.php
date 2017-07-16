@@ -84,20 +84,20 @@
 
         <div class="row row-card col-md-12 col-xs-12" style="padding: 20px">
             {{--<div class="some-space col-md-12"></div>--}}
-            <div class="col-md-2 col-xs-6">
-                <img src="{{ URL::asset('image/FindUsOnFacebook.png') }}" alt="" class="img-responsive">
+            <div class="col-md-2 col-sm-2 col-xs-6">
+                <img src="{{ URL::asset('image/FindUsOnFacebook.gif') }}" alt="" class="img-responsive">
             </div>
-            <div class="col-md-2 col-xs-6">
-                <img src="{{ URL::asset('image/ITPE2.jpg') }}" alt="" class="img-responsive">
+            <div class="col-md-2 col-sm-2 col-xs-6">
+                <img src="{{ URL::asset('image/ITPE2.gif') }}" alt="" class="img-responsive">
             </div>
-            <div class="col-md-4 col-xs-12">
-                <img src="{{ URL::asset('image/NLC11.png') }}" alt="" class="img-responsive">
+            <div class="col-md-4 col-sm-4 col-xs-12">
+                <img src="{{ URL::asset('image/NLC11.gif') }}" alt="" class="img-responsive">
             </div>
-            <div class="col-md-2 col-xs-6">
-                <img src="{{ URL::asset('image/msdn_aa.png') }}" alt="" class="img-responsive">
+            <div class="col-md-2 col-sm-2 col-xs-6">
+                <img src="{{ URL::asset('image/msdn_aa.gif') }}" alt="" class="img-responsive">
             </div>
-            <div class="col-md-2 col-xs-6">
-                <img src="{{ URL::asset('image/nsc_logo.jpg') }}" alt="" class="img-responsive">
+            <div class="col-md-2 col-sm-2 col-xs-6">
+                <img src="{{ URL::asset('image/nsc_logo.gif') }}" alt="" class="img-responsive">
             </div>
             {{--<div class="some-space col-md-12"></div>--}}
         </div>
