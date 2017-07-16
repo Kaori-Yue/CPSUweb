@@ -81,9 +81,10 @@ html, body {
     padding-bottom: 5px;
 }
 
-/*.footer > a {
-    text-decoration: none;
-}*/
+.container-fluid>.navbar-collapse, .container-fluid>.navbar-header, .container>.navbar-collapse, .container>.navbar-header {
+    margin-right: 5px;
+    margin-left: 5px;
+}
 
 .navbar {
     color: #ffffff;
@@ -115,7 +116,7 @@ html, body {
 }
 
 .row {
-    margin: 1% 0 1% 0;
+    margin: 10px 0 10px 0;
     padding: 0;
 }
 
@@ -328,7 +329,7 @@ div {
 }
 
 .research-card {
-    background: rgba(130,109,64, 0.6);
+    background: rgba(130,109,64, 0.5);
     background-position:top right;
     background-repeat:no-repeat;
     background-size: 45%;
@@ -395,12 +396,12 @@ p > span {
 
 .first {
     /*background: rgba(64,130,109,0.6);*/
-    background: rgba(130,76,64,0.6);
+    background: rgba(130,76,64,0.4);
     /*background: rgba(130,109,64,0.6);*/
 }
 
 .second {
-    background: #2c9cae;
+    background: rgba(130,109,64,0.4);;
 }
 
 .second .back {
@@ -546,6 +547,16 @@ a > .label-success {
 }
 
 @media only screen and (max-width: 768px) {
+    .container-fluid>.navbar-collapse, .container-fluid>.navbar-header, .container>.navbar-collapse, .container>.navbar-header {
+        margin-right: 8px;
+        margin-left: 8px;
+    }
+
+    .container {
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+
     h1{
         font-size: 30px;
     }
@@ -584,12 +595,26 @@ a > .label-success {
         padding-top: 0;
         /*opacity: 0;*/
     }
+
+    .center-cropped {
+        height: 40vh;
+    }
 }
 
 @media only screen and (max-width : 480px) {
+    .container-fluid>.navbar-collapse, .container-fluid>.navbar-header, .container>.navbar-collapse, .container>.navbar-header {
+        margin-right: -20px;
+        margin-left: -8px;
+    }
+
     .container {
         padding-left: 10px;
         padding-right: 10px;
+    }
+
+    .row {
+        margin: 5px 0 5px 0;
+        padding: 0;
     }
 
     h1{
@@ -617,17 +642,21 @@ a > .label-success {
     }
 
     .research-card {
-        background-size: 85%;
+        background-size: 250%;
         height: 280px;
     }
 
-    .research-card > a > .research-content {
+    .research-card >a > .research-content {
         padding: 10px 15px 15px 15px;
     }
 
     .item {
         height: 50vh;
         max-width: none;
+    }
+
+    .center-cropped {
+        height: 30vh;
     }
 
     .carousel-caption {

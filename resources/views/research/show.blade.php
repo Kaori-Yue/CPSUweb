@@ -1,7 +1,7 @@
 @extends('main')
 
 @section('content')
-    <div style="background: #6fb29b">
+    <div style="background: rgba(130,109,64,0.4)">
         <div class="container">
             <div class="row">
                 <div class="panel panel-default">
