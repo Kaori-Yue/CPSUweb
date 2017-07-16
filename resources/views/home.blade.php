@@ -15,114 +15,32 @@
 
             <!-- Wrapper for slides -->
             <div class="carousel-inner">
-                <div class="item first active" id="1">
-                    <div class="carousel-caption" style="top: 0;height: 100%;background: none">
-                        <div class="col-md-6 col-xs-12" style="padding: 5% 10% 5% 10%">
-                            <h1 class="title">
-                                <span>ภาควิชาคอมพิวเตอร์</span>
-                            </h1>
-                            <p class="desc">
-                                คณะวิทยาศาสตร์ มหาวิทยาลัยศิลปากร
-                            </p>
-                            <br>
-                            <ul class="list" style="text-align: left">
-                                <li class="welcome-li">
-                                    <h4><a href="{{ url('interested') }}">ผู้สนใจเข้าศึกษา</a></h4>
-                                </li>
-                                <li class="welcome-li">
-                                    <h4><a href="{{ url('current-student') }}">นักศึกษาปัจจุบัน</a></h4>
-                                </li>
-                                <li class="welcome-li">
-                                    <h4><a href="">บุคลากร</a></h4>
-                                </li>
-                                <li class="welcome-li">
-                                    <h4><a href="">รู้จักภาควิชา</a></h4>
-                                </li>
-                            </ul>
-                        </div>
-
-                        <div class="col-md-6 hidden-xs" style="padding: 2% 10% 10% 10%">
-                            <div class="pc-wrapper">
-                                <img class="pc img-responsive" src="{{ URL::asset('image/SC-SU-Formal-TH_resize.png') }}" style="width: 100%" width="90%" height="90%">
-                                <div class="price">
-                                    {{--This is price--}}
-                                </div>
-                            </div>
-                            {{--<img class="keyboard" src="{{ URL::asset('image/white-atom.png') }}" alt="" width="100px" height="100px">
-                            <a type="button" href="{{ url('contact') }}" class="btn btn-warning btn-lg">
-                                ติดต่อ
-                            </a>--}}
-                        </div>
+                <div class="item first active">
+                    <svg viewBox="0 0 160 160" width="160" height="160" fill="rgba(217, 143, 79, 1)">
+                        <circle cx="80" cy="80" r="50" />
+                        <g transform=" matrix(0.866, -0.5, 0.25, 0.433, 80, 80)">
+                            <path d="M 0,70 A 65,70 0 0,0 65,0 5,5 0 0,1 75,0 75,70 0 0,1 0,70Z" fill="#FFF">
+                                <animateTransform attributeName="transform" type="rotate" from="360 0 0" to="0 0 0" dur="1s" repeatCount="indefinite" />
+                            </path>
+                        </g>
+                        <path d="M 50,0 A 50,50 0 0,0 -50,0Z" transform="matrix(0.866, -0.5, 0.5, 0.866, 80, 80)" />
+                    </svg>
+                    <div class="carousel-caption">
+                        <h3>Department of Computing</h3>
+                        <p>Silpakorn University</p>
                     </div>
                 </div>
 
-                <div class="item second" id="2">
-                    <div class="carousel-caption" style="top: 0;height: 100%;background: none">
-                        <div class="row">
-                            <h2 class="title">
-                                <span>ภาควิชาคอมพิวเตอร์</span>
-                            </h2>
-                        </div>
-
-                        <div class="row">
-                            <div class="col-xs-4 cms-wrapper">
-                                <div class="cms">
-                                    <div class="front">
-                                        <h1>1</h1>
-                                    </div>
-                                    <div class="back">
-                                        <a href="" class="btn btn-primary btn-lg">
-                                            <span class="glyphicon glyphicon-user"></span>
-                                        </a>
-                                        {{--<img class="img-responsive" src="{{ URL::asset('image/white-atom.png') }}" alt="">--}}
-                                    </div>
-                                </div>
-                                <p class="info">
-                                    one
-                                </p>
+                @foreach($blogs as $blog)
+                    <div class="item"
+                         style="background-image: url('{{ url('image/show/'.$blog->cover) }}');background-size: cover;">
+                        <a href="{{ url('blog/'.$blog->slug) }}">
+                            <div class="carousel-caption" style="">
+                                <h3>{{ $blog->title }}</h3>
                             </div>
-
-                            <div class="col-xs-4 cms-wrapper">
-                                <div class="cms">
-                                    <div class="front">
-                                        <h1>2</h1>
-                                    </div>
-                                    <div class="back">
-                                        <a href="" class="btn btn-primary btn-lg">
-                                            <span class="glyphicon glyphicon-user"></span>
-                                        </a>
-                                        {{--<img class="img-responsive" src="{{ URL::asset('image/white-atom.png') }}" alt="">--}}
-                                    </div>
-                                </div>
-                                <p class="info">
-                                    two
-                                </p>
-                            </div>
-
-                            <div class="col-xs-4 cms-wrapper">
-                                <div class="cms">
-                                    <div class="front">
-                                        <h1>3</h1>
-                                    </div>
-                                    <div class="back">
-                                        <a href="" class="btn btn-primary btn-lg">
-                                            <span class="glyphicon glyphicon-user"></span>
-                                        </a>
-                                        {{--<img class="img-responsive" src="{{ URL::asset('image/white-atom.png') }}" alt="">--}}
-                                    </div>
-                                </div>
-                                <p class="info">
-                                    three
-                                </p>
-                            </div>
-
-                        </div>
-
-                        <div class="source">
-
-                        </div>
+                        </a>
                     </div>
-                </div>
+                @endforeach
             </div>
             <a class="left carousel-control" href="#myCarousel" data-slide="prev">
                 <span class="glyphicon glyphicon-chevron-left"></span>
@@ -152,7 +70,7 @@
         </div>--}}
 
         <div id="featured-news" class="row col-md-12 col-xs-12" style="background: #ffffff">
-            <h2 class="bg-success section-heading">
+            <h2 class="primary-section-heading">
                 ข่าวเด่น
             </h2>
             @foreach($blogs as $blog)
@@ -169,7 +87,7 @@
         </div>
 
         <div class="row col-md-12 col-xs-12" style="background: #ffffff">
-            <h2 class="bg-success section-heading">ผลงานวิจัย</h2>
+            <h2 class="primary-section-heading">ผลงานวิจัย</h2>
             @foreach($researches as $research)
                 @include('research._card', $research)
             @endforeach
@@ -178,7 +96,7 @@
             </div>
         </div>
 
-        <div class="row row-card col-md-12 col-xs-12" style="padding: 5%">
+        <div class="row row-card col-md-12 col-xs-12" style="padding: 20px">
             {{--<div class="some-space col-md-12"></div>--}}
             <div class="col-md-2 col-xs-6">
                 <img src="{{ URL::asset('image/FindUsOnFacebook.png') }}" alt="" class="img-responsive">
@@ -198,91 +116,6 @@
             {{--<div class="some-space col-md-12"></div>--}}
         </div>
     </div>
-    <script>
-        var $carousel = $("#myCarousel");
-        var $carouselCaption = $(".carousel-caption");
-        var firstTl, secondTl, counter = 0;
-
-        $carousel.carousel({
-            interval: false
-        });
-
-        function firstTimeline() {
-            var tl = new TimelineLite();
-
-            tl
-                .to(".first .carousel-caption", 0.1, {opacity: 1})
-                .from(".first .pc", 1, { y: -300, opacity: 0, ease: Bounce.easeOut})
-                .from(".first .keyboard", 1, { y: 300, opacity: 0, ease: Bounce.easeOut}, "-=1")
-                .staggerFrom(".first .list li", 0.75, {opacity: 0, cycle: {x: [-200, 200]}, ease: Power2.easeOut}, 0.15, "-=0.5")
-                .from(".first .desc", 0.7, {x: 500, opacity: 0, ease: Power4.easeOut}, "-=0.5")
-                .from(".first .title", 0.7, {x: -500, opacity: 0, ease: Power2.easeOut}, "-=0.7")
-                .from(".first .price", 0.7, {scale: 0.01, ease: Power4.easeOut})
-                .from(".first a", 0.7, { y: -700, autoAlpha: 0, ease: Bounce.easeOut}, "-=0.3");
-
-            return tl;
-        }
-
-        function secondTimeline() {
-            var tl = new TimelineLite({onComplete: allDone});
-
-            tl
-                .from(".second .title", 0.5, { y: -400, opacity: 0, ease: Sine.easeInOut})
-                .staggerFrom(".second .cms-wrapper", 0.5, {scale: 0, rotation: 180, ease: Power2.easeInOut, onComplete: completeFunc}, 1.2);
-
-            return tl;
-        }
-
-        function completeFunc() {
-            var $this = $(this.target),
-                $info = $this.find(".info"),
-                $front = $this.find(".front"),
-                $back = $this.find(".back");
-
-            TweenLite.to($front, 0.3, {display: "none", scale: 0});
-            TweenLite.to($back, 0.3, {display: "block", scale: 1, delay: 0.3});
-            TweenLite.to($info, 0.3, {opacity: 1, y: 0, delay: 0.3});
-        }
-
-        function allDone() {
-            TweenLite.to(".second .source", 0.3, {autoAlpha: 1, delay: 1});
-        }
-
-        $(window).on("load", function() {
-            firstTl = firstTimeline();
-        });
-
-        $carousel.on("slid.bs.carousel", function (e) {
-            TweenLite.to($carouselCaption, 0.1, {opacity: 1});
-            var slideId = e.relatedTarget.id;
-            if(slideId === "1") {
-                firstTl.restart();
-                secondTl.pause();
-            } else if(slideId === "2") {
-                if(counter === 0) {
-                    secondTl = secondTimeline();
-                } else {
-                    TweenLite.set([".second .front", ".second .back", ".second .info", ".second .source"], {clearProps:"all"});
-                    secondTl.restart();
-                }
-                counter++;
-            }
-        });
-
-        $carousel.on("slide.bs.carousel", function() {
-            TweenLite.to($carouselCaption, 0.1, {opacity: 0});
-        });
-
-        $(document).keyup(function(e) {
-            // right arrow
-            if(e.which === 39) {
-                $carousel.carousel("next");
-                // left arrow
-            } else if(e.which === 37) {
-                $carousel.carousel("prev");
-            }
-        });
-    </script>
 @stop
 
 @section('script')

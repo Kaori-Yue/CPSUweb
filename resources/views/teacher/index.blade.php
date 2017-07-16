@@ -11,7 +11,7 @@
         <div id="teacher" class="col-xs-12 some-space hidden-md"></div>
 
         <div class="row col-md-12" style="background: #ffffff">
-            <h2 class="bg-primary" style="margin: 10px 10px 0 10px;padding: 2%;text-align: left;box-shadow: 1px 1px 5px #888888;">คณาจารย์</h2>
+            <h2 class="secondary-section-heading">คณาจารย์</h2>
             @foreach($teachers as $teacher)
                 @include('teacher._card', $teacher)
             @endforeach
@@ -20,7 +20,7 @@
         <div id="staff" class="col-xs-12 some-space hidden-md"></div>
 
         <div class="row col-md-12" style="background: #ffffff">
-            <h2 class="bg-primary" style="margin: 10px 10px 0 10px;padding: 2%;text-align: left;box-shadow: 1px 1px 5px #888888;">เจ้าหน้าที่</h2>
+            <h2 class="secondary-section-heading">เจ้าหน้าที่</h2>
             @foreach($staffs as $staff)
                 @include('staff._card', $staff)
             @endforeach

@@ -1,5 +1,5 @@
 <div class="col-md-12" style="padding: 10px">
-    <div class="research-card" style="background-image: url('{{ URL::asset('image/SC-SU-Formal-TH_resize.png') }}')">
+    <div class="research-card">
         <a href="{{ url('research/'.$research->slug) }}" style="text-decoration: none">
             <div class="research-content col-md-8 col-sm-8">
                 <h3><b>{!! $research->name !!}</b></h3>

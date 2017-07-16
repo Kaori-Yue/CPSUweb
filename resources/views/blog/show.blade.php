@@ -45,29 +45,25 @@
                 <br>
             </div>
 
-            <div class="row row-card" style="padding: 5% 0 5% 0; text-align: center">
-                <div class="col-md-10 col-md-offset-1 col-xs-offset-0">
+            <div class="row row-card" style="padding: 15px 0 15px 0; text-align: center">
+                <div class="col-md-12">
                     <div class="col-md-6 col-xs-6">
-                        <div class="col-md-2 col-xs-12">
-                            <img style="height: 50px" src="{{ URL::asset('image/fb_square.png') }}" class="img-responsive" alt="">
-                        </div>
-                        <div class="col-md-10 col-xs-12">
-                            <h4>Share to Facebook</h4>
-                        </div>
+                        <button type="button" class="btn btn-default btn-block" id="shareToFB" style="background:#3b5998;color: #FFFFFF">
+                            <img style="height: 100px" class="img-responsive img-circle" src="{{ URL::asset('image/fb-art.png') }}" alt="share to facebook">
+                            Share on Facebook
+                        </button>
                     </div>
                     <div class="col-md-6 col-xs-6">
-                        <div class="col-md-2 col-xs-12">
-                            <img style="height: 50px" src="{{ URL::asset('image/tw_square.png') }}" class="img-responsive" alt="">
-                        </div>
-                        <div class="col-md-10 col-xs-12">
-                            <h4>Share to Twitter</h4>
-                        </div>
+                        <button type="button" class="btn btn-default btn-block" id="shareToTW" style="background: #28A9E2;color: #FFFFFF">
+                            <img style="height: 100px" class="img-responsive" src="{{ URL::asset('image/twitter-logo.jpg') }}" alt="share to twitter">
+                            Share on Twitter
+                        </button>
                     </div>
                 </div>
             </div>
 
             <div class="row col-md-12 col-xs-12" style="background: #ffffff">
-                <h2 class="bg-success section-heading">ข่าวที่เกี่ยวข้อง</h2>
+                <h2 class="primary-section-heading">ข่าวที่เกี่ยวข้อง</h2>
                 @foreach($relateBlogs as $blog)
                     @include('blog._card', $blog)
                 @endforeach
@@ -82,4 +78,24 @@
             </div>
         </div>
     </div>
+
+    <script>
+        document.getElementById('shareToFB').onclick = function() {
+            FB.ui({
+                method: 'share',
+                display: 'popup',
+                href: '{{ 'http://202.28.72.71/CPSUweb/public/index.php/blog/'.$blog->slug }}',
+            }, function(response){});
+        };
+
+        document.getElementById('shareToTW').onclick = function() {
+            var url = "{{ 'http://202.28.72.71/CPSUweb/public/index.php/blog/'.$blog->slug }}";
+            var text = "{{ $blog->title }}";
+            window.open('http://twitter.com/share?url=' + encodeURIComponent(url) + '&text=' + encodeURIComponent(text), '', 'left=0,top=0,width=550,height=450,personalbar=0,toolbar=0,scrollbars=0,resizable=0');
+        };
+    </script>
+@stop
+
+@section('script')
+    <script src="{{ URL::asset('js/fb.js') }}"></script>
 @stop
