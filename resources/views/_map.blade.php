@@ -1,6 +1,6 @@
 <div class="row row-card col-md-12 col-xs-12">
     <div class="col-md-12" style="text-align: center">
-        <h2 class="bg-success" style="padding: 2%">แผนผังเว็บไซต์</h2>
+        <h2 class="bg-success section-heading">แผนผังเว็บไซต์</h2>
     </div>
     <div class="col-md-12 some-space"></div>
     <div class="col-md-12">

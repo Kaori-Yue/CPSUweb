@@ -299,6 +299,55 @@ div {
     bottom: 0
 }
 
+.curricula-card {
+    background-position:center center;
+    background-repeat:no-repeat;
+    background-size:cover;
+    height: 240px;
+    border-radius: 0;
+    box-shadow: 1px 1px 5px #888888;
+    color: #FFFFFF;
+}
+
+.curricula-card > a {
+    text-decoration: none;
+    color: #0f0f0f;
+}
+
+.curricula-card > a > .curricula-content{
+    padding: 15px;
+    background: rgba(255, 255, 255, 0.7);
+    height: 100%;
+    width: 100%;
+}
+
+.curricula-card > .curricula-action {
+    box-shadow: 1px 1px 5px #888888;
+    background: #ffffff;
+    padding: 1%;
+}
+
+.research-card {
+    background: rgba(130,109,64, 0.6);
+    background-position:top right;
+    background-repeat:no-repeat;
+    background-size: 45%;
+    height: 350px;
+    box-shadow: 1px 1px 5px #888888;
+}
+
+.research-card > a > .research-content {
+    padding: 30px 15px 30px 30px;
+    height: 100%;
+    color: #ffffff;
+}
+
+.research-card > .research-action {
+    box-shadow: 1px 1px 5px #888888;
+    background: #ffffff;
+    padding: 1%;
+}
+
 h2 > span {
     color: #0f0f0f;
     letter-spacing: -1px;
@@ -345,7 +394,9 @@ p > span {
 }
 
 .first {
-    background: #D98F4F;
+    /*background: rgba(64,130,109,0.6);*/
+    background: rgba(130,76,64,0.6);
+    /*background: rgba(130,109,64,0.6);*/
 }
 
 .second {
@@ -395,7 +446,7 @@ p > span {
 
 .content-card {
     background: #CFD8DC;
-    padding: 2% 1% 1% 1%;
+    padding: 1%;
 }
 
 .footer {
@@ -416,21 +467,6 @@ p > span {
     padding: 0 0 0 1%;
     background: #40826D;
     color: #ffffff;
-}
-
-.research-card {
-    padding: 1% 4% 1% 4%;
-}
-
-.curricula-card {
-    padding: 2% 2% 2% 2%;
-    height: 240px;
-    background: rgba(217, 143, 79, 0.8);
-    border-radius: 0
-}
-
-.curricula-content > p{
-    font-size: 20px;
 }
 
 .welcome-li {
@@ -534,6 +570,11 @@ a > .label-success {
         height: 240px;
     }
 
+    .research-card {
+        background-size: 60%;
+        height: 300px;
+    }
+
     .item {
         height: 50vh;
         max-width: none;
@@ -575,6 +616,15 @@ a > .label-success {
         height: 230px;
     }
 
+    .research-card {
+        background-size: 85%;
+        height: 280px;
+    }
+
+    .research-card > a > .research-content {
+        padding: 10px 15px 15px 15px;
+    }
+
     .item {
         height: 50vh;
         max-width: none;
@@ -587,3 +637,8 @@ a > .label-success {
         /*opacity: 0;*/
     }
 }
+
+
+/*
+rgba(217, 143, 79, 0.7)
+*/

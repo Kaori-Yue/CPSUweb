@@ -1,7 +1,7 @@
 @extends('main')
 
 @section('content')
-    <div style="background: rgba(217, 143, 79, 0.7)">
+    <div style="background: #6fb29b">
         <div class="container">
             <div class="row row-card" style="text-align: center">
                 <h3>{{ $curricula->name_th }}</h3>

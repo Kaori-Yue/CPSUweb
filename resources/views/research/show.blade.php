@@ -1,13 +1,13 @@
 @extends('main')
 
 @section('content')
-    <div style="background: rgba(217, 143, 79, 0.7)">
+    <div style="background: #6fb29b">
         <div class="container">
             <div class="row">
                 <div class="panel panel-default">
                     <div class="panel-heading" style="padding: 3%">
-                        <img src="{{ URL::asset('image/SC-SU-Formal-TH.png') }}" width="100">
-                        <h1>{{ $research->name }}</h1>
+                        <img src="{{ URL::asset('image/SC-SU-Formal-TH_resize.png') }}" width="100">
+                        <h1>{!! $research->name !!}</h1>
                     </div>
                     <div class="panel-body" style="text-align: center;padding: 5%; font-family: 'Trirong', serif;font-size: 18px">
                         <p style="/*text-indent: 50px;*/ line-height: 2.0">{{ $research->description }}</p>

@@ -15,34 +15,17 @@
     return view('welcome');
 });*/
 
+Auth::routes();
+
 #Free Route
 Route::get('/', 'HomeController@index');
 Route::get('home', 'HomeController@index')->name('home');
 Route::get('blog', 'BlogController@index');
-#Route::get('thesis', 'ThesisController@index');
 Route::get('research', 'ResearchController@index');
 Route::get('teacher', 'TeacherController@index');
 Route::get('contact', 'ContactController@index');
 Route::get('curricula', 'CurriculaController@index');
-
-
-Route::get('history', function (){
-    return view('history');
-});
-
-Route::get('sitemap', function (){
-    return view('sitemap');
-});
-Route::get('sitemap2', 'SiteMapController@index');
-
-
-Route::get('interested', function (){
-    return view('spacial.interested');
-});
-
-Route::get('current-student', function (){
-    return view('spacial.student');
-});
+#Route::get('thesis', 'ThesisController@index');
 
 
 Route::get('blog/{slug}', 'BlogController@show');
@@ -52,8 +35,6 @@ Route::get('tag/{slug}', 'TagController@show');
 Route::get('file/show/{id}', 'FileController@show');
 Route::get('image/show/{id}', 'ImageController@show');
 Route::get('image/thumbnail/{id}', 'ImageController@thumbnail');
-
-
 Route::get('blog/category/{category}', 'BlogController@category');
 
 
@@ -115,8 +96,6 @@ Route::group(['middleware' => 'auth'], function (){
 
     Route::get('admin/thesis', 'AdminController@thesis');
     Route::get('admin/thesis/create', 'ThesisController@create');
-
-
     Route::get('admin/research', 'AdminController@research');
     Route::get('admin/research/create', 'ResearchController@create');
 
@@ -138,9 +117,28 @@ Route::group(['middleware' => 'auth'], function (){
 
 });
 
-Route::get('test/resize', 'TestController@resizeImg');
-Route::get('test/compress', 'TestController@testCompress');
-Route::get('test/compress_all', 'TestController@compressAll');
-Auth::routes();
+
+Route::get('history', function (){
+    return view('history');
+});
+
+Route::get('sitemap', function (){
+    return view('sitemap');
+});
+Route::get('sitemap2', 'SiteMapController@index');
+
+
+Route::get('interested', function (){
+    return view('spacial.interested');
+});
+
+Route::get('current-student', function (){
+    return view('spacial.student');
+});
+
+
+//Route::get('test/resize', 'TestController@resizeImg');
+//Route::get('test/compress', 'TestController@testCompress');
+//Route::get('test/compress_all', 'TestController@compressAll');
 
 
