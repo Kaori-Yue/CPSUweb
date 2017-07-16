@@ -3,7 +3,20 @@
         <div class="col-md-3 col-sm-4 col-xs-12 staff-image"
              style="background-image: url('{{ url('image/show/'.$staff->image) }}')"></div>
         <div class="col-md-9 col-sm-8 col-xs-12" style="background: #6fb29b;color: #ffffff;padding: 1%;margin-bottom: 1%">
-            <h2>{!! $staff->name_th !!}</h2>
+            <h2>
+                {!! $staff->name_th !!}
+                @if (Request::is('admin/*'))
+                    @if($staff->status == 'duty')
+                        <b>
+                            <span class="label label-success">Duty</span>
+                        </b>
+                    @elseif($staff->status == 'disable')
+                        <b>
+                            <span class="label label-default">Disable</span>
+                        </b>
+                    @endif
+                @endif
+            </h2>
         </div>
         <div class="col-md-9 col-sm-8 col-xs-12">
             <h3>{{ $staff->name_en }}</h3>
@@ -14,7 +27,6 @@
             <p><b>เว็บไซต์ : </b>{{ $staff->website }}</p>
 
             @if (Request::is('admin/*'))
-                <h4><b>Status : {{ $staff->status }}</b></h4>
                 <div class="col-md-6 col-xs-6">
                     <a class="btn btn-warning btn-block" href="{{ url('staff/'.$staff->id.'/edit') }}">
                         Edit

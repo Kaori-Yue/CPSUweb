@@ -58,7 +58,7 @@ class AdminController extends Controller
 
     public function staff()
     {
-        $staffs = Staff::all();
+        $staffs = Staff::orderBy('name_th')->get();
         return view('staff.admin', ['staffs' => $staffs]);
     }
 

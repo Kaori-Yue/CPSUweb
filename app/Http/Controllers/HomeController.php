@@ -32,10 +32,11 @@ class HomeController extends Controller
             die("Could not connect to the database.  Please check your configuration.");
         }
 
-        $blogs = Blog::where([
-            ['category_id', 1],
-            ['featured', 1]
-        ])->take(4)->get();
+        $blogs = Blog::where('featured', 1)
+            ->orderBy('created_at', 'DESC')
+            ->publish()
+            ->take(4)
+            ->get();
 
         $researches = Research::all()->take(4);
         return view('home', ['blogs' => $blogs, 'researches' => $researches]);

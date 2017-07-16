@@ -14,27 +14,34 @@
                 @endif
                 <p>
                     <span>By {!! $blog->user->name !!}</span>
-                    @if(Request::is('admin/*'))
-                        @if($blog->status == 'publish')
-                            <b><span class="label label-success">Publish</span></b>
-                        @elseif($blog->status == 'draft')
-                            <b><span class="label label-default">Draft</span></b>
-                        @else
-                            <b><span class="label label-danger">Disable</span></b>
-                        @endif
-                    @endif
                 </p>
             </a>
         </div>
         <div class="card-action">
             <div class="col-md-10 col-xs-10" style="padding-left: 0;text-align: left">
-                @foreach($blog->tags as $tag)
-                    @if($loop->iteration <= 2)
-                        <a href="{{ url('tag/'.$tag->slug) }}" style="text-decoration: none">
-                            <span class="label label-success">{{ $tag->name }}</span>
-                        </a>
+                @if(Request::is('admin/*'))
+                    @if($blog->status == 'publish')
+                        <b><span class="label label-success">Publish</span></b>
+                    @elseif($blog->status == 'draft')
+                        <b><span class="label label-default">Draft</span></b>
+                    @else
+                        <b><span class="label label-danger">Disable</span></b>
                     @endif
-                @endforeach
+
+                    @if($blog->featured == 1)
+                        <b><span class="label label-success">Featured</span></b>
+                    @else
+                        <b><span class="label label-default">Normal</span></b>
+                    @endif
+                @else
+                    @foreach($blog->tags as $tag)
+                        @if($loop->iteration <= 2)
+                            <a href="{{ url('tag/'.$tag->slug) }}" style="text-decoration: none">
+                                <span class="label label-success">{{ $tag->name }}</span>
+                            </a>
+                        @endif
+                    @endforeach
+                @endif
             </div>
             <div class="col-md-2 col-xs-2" style="padding-right: 0;text-align: center">
                 <a href="#" data-toggle="modal" data-target="#sharePanel{{$blog->id}}" style="color: #0f0f0f">

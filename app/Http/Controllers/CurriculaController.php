@@ -26,6 +26,16 @@ class CurriculaController extends Controller
         //return $curriculas;
     }
 
+    public function filter($filter)
+    {
+        $curriculas = Curricula::where('status', $filter)
+            ->get();
+
+        return view('curricula.admin', [
+            'curriculas' => $curriculas
+        ]);
+    }
+
     public function create()
     {
         $status = [

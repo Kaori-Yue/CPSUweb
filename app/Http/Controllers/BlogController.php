@@ -44,9 +44,22 @@ class BlogController extends Controller
 
     public function filter($filter)
     {
-        $blogs = Blog::where('status', $filter)
-            ->orderBy('created_at', 'DESC')
-            ->paginate(8);
+        if($filter == 'normal' || $filter == 'featured'){
+            if($filter == 'normal'){
+                $filter = 0;
+            }else{
+                $filter = 1;
+            }
+
+            $blogs = Blog::where('featured', $filter)
+                ->orderBy('created_at', 'DESC')
+                ->paginate(8);
+        }
+        else{
+            $blogs = Blog::where('status', $filter)
+                ->orderBy('created_at', 'DESC')
+                ->paginate(8);
+        }
 
         return view('blog.admin',['blogs' => $blogs]);
     }
@@ -173,7 +186,8 @@ class BlogController extends Controller
             'status' => $updateBlog['status'],
             'publish_at' => $updateBlog['publish_date'].' '.$updateBlog['publish_time'],
             'category_id' => $updateBlog['category_id'],
-            'user_id' => Auth::id()
+            'user_id' => Auth::id(),
+            'featured' => $updateBlog['featured'],
         ];
         if(isset($cover_image)){
             $file = $this->storeImage($cover_image, 'cover');

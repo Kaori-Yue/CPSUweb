@@ -94,18 +94,22 @@ Route::group(['middleware' => 'auth'], function (){
     Route::get('admin/teacher/filter/{filter}', 'TeacherController@filter');
 
 
-    Route::get('admin/thesis', 'AdminController@thesis');
-    Route::get('admin/thesis/create', 'ThesisController@create');
-    Route::get('admin/research', 'AdminController@research');
-    Route::get('admin/research/create', 'ResearchController@create');
+    Route::get('admin/staff', 'AdminController@staff');
+    Route::get('admin/staff/create', 'StaffController@create');
+    Route::get('admin/staff/filter/{filter}', 'StaffController@filter');
 
 
     Route::get('admin/curricula', 'AdminController@curricula');
     Route::get('admin/curricula/create', 'CurriculaController@create');
+    Route::get('admin/curricula/filter/{filter}', 'CurriculaController@filter');
 
 
-    Route::get('admin/staff', 'AdminController@staff');
-    Route::get('admin/staff/create', 'StaffController@create');
+    Route::get('admin/thesis', 'AdminController@thesis');
+    Route::get('admin/thesis/create', 'ThesisController@create');
+
+
+    Route::get('admin/research', 'AdminController@research');
+    Route::get('admin/research/create', 'ResearchController@create');
 
 
     Route::get('admin/image', 'AdminController@image');

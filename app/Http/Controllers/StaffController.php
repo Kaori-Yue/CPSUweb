@@ -18,6 +18,17 @@ class StaffController extends Controller
         return view('staff.create', ['status' => $status]);
     }
 
+    public function filter($filter)
+    {
+        $staffs = Staff::where('status', $filter)
+            ->orderBy('name_th')
+            ->get();
+
+        return view('staff.admin', [
+            'staffs' => $staffs
+        ]);
+    }
+
     public function store(Request $request)
     {
         $this->validate($request, [

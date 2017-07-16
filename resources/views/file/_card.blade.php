@@ -41,7 +41,9 @@
             @endif
         </div>
         <div class="card-caption">
-            <p style="padding-bottom: 1%;margin-bottom: 0">{{ $file->original_name }}</p>
+            <p style="padding-bottom: 1%;margin-bottom: 0">
+                {!! iconv_substr($file->original_name, 0, 22, 'UTF-8') !!}
+            </p>
             @if(Request::is('admin/file'))
                 <div class="col-md-6 col-xs-12">
                     <button class="btn btn-default btn-block" id="file-link{{$file->id}}"

@@ -10,7 +10,9 @@
             <!-- Indicators -->
             <ol class="carousel-indicators">
                 <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-                <li data-target="#myCarousel" data-slide-to="1"></li>
+                @foreach($blogs as $blog)
+                <li data-target="#myCarousel" data-slide-to="{{ $loop->index }}"></li>
+                @endforeach
             </ol>
 
             <!-- Wrapper for slides -->
@@ -52,22 +54,6 @@
             </a>
         </div>
 
-        {{--<div class="row">
-            <div class="welcome-card col-md-12 col-xs-12" style="/*border: solid #ff0000*/">
-                <div class="col-md-6 col-xs-12" style="text-align: center;/*border: solid #00ff00;*/">
-                    <img src="{{ URL::asset('image/white-atom.png') }}" alt="department logo">
-                </div>
-                <div class="jumbotron col-md-6 col-xs-12" style="color: #ffffff;text-align: right/*border: solid #00ff00*/">
-                    <h1>ภาควิชาคอมพิวเตอร์</h1>
-                    <h2>คณะวิทยาศาสตร์</h2>
-                    <h3>มหาวิทยาลัยศิลปากร</h3>
-                    <br>
-                    <a href="{{ url('contact') }}" class="btn btn-warning btn-lg">
-                        ติดต่อ
-                    </a>
-                </div>
-            </div>
-        </div>--}}
 
         <div id="featured-news" class="row col-md-12 col-xs-12" style="background: #ffffff">
             <h2 class="primary-section-heading">

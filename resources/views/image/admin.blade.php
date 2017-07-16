@@ -7,7 +7,7 @@
 @section('show')
     <div class="col-md-12 row-card" style="padding: 1%">
         <div class="col-md-8" style="padding: 0">
-            <a class="btn btn-primary btn-block" href="{{ url('admin/image/create') }}">Upload</a>
+            <a class="btn btn-primary btn-block btn-lg" href="{{ url('admin/image/create') }}">Upload</a>
         </div>
     </div>
 

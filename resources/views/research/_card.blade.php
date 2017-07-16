@@ -1,23 +1,23 @@
 <div class="col-md-12" style="padding: 10px">
     <div class="research-card">
-        <a href="{{ url('research/'.$research->slug) }}" style="text-decoration: none">
-            <div class="research-content col-md-8 col-sm-8">
+        <div class="research-content col-md-8 col-sm-8">
+            <a href="{{ url('research/'.$research->slug) }}" style="text-decoration: none">
                 <h3><b>{!! $research->name !!}</b></h3>
                 <div class="hidden-xs hidden-sm">
                     <br>
                 </div>
                 <hr>
                 <h4>โดย {{ $research->owner }}</h4>
-            </div>
-        </a>
+            </a>
+        </div>
         @if(Request::is('admin/*'))
             <div class="research-action col-md-12">
-                <div class="col-md-6">
-                    <a href="{{ url('research/'.$research->id.'/edit') }}" class="btn btn-warning btn-block btn-lg">Edit</a>
+                <div class="col-md-6 col-sm-6 col-xs-6">
+                    <a href="{{ url('research/'.$research->id.'/edit') }}" class="btn btn-warning btn-block">Edit</a>
                 </div>
-                <div class="col-md-6">
+                <div class="col-md-6 col-sm-6 col-xs-6">
                     {!! Form::model($research, ['method' => 'DELETE', 'url'=>'research/'.$research->id]) !!}
-                    <button class="btn btn-danger btn-block btn-lg" type="submit">
+                    <button class="btn btn-danger btn-block" type="submit">
                         Delete
                         <span class="glyphicon glyphicon-remove-sign"></span>
                     </button>

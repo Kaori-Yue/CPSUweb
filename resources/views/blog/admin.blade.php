@@ -3,23 +3,58 @@
 @section('show')
     <div class="row-card col-md-12" style="padding: 1%">
         <div class="col-md-8" style="padding: 0">
-            <a class="btn btn-primary btn-block" href="{{ url('admin/blog/create') }}">Create</a>
+            <a class="btn btn-primary btn-block btn-lg" href="{{ url('admin/blog/create') }}">Create</a>
         </div>
 
         <div class="col-md-4" style="padding: 0; text-align: left">
-            <div class="btn-group btn-group-justified">
-                <a href="{{ url('admin/blog') }}" class="btn btn-default">
-                    All
-                </a>
-                <a href="{{ url('admin/blog/filter/publish') }}" class="btn btn-default">
+            <div class="dropdown">
+                <button class="btn btn-default btn-block btn-lg dropdown-toggle" type="button" data-toggle="dropdown">
+                    @if(Request::is('*/publish'))
                     Publish
-                </a>
-                <a href="{{ url('admin/blog/filter/draft') }}" class="btn btn-default">
+                    @elseif(Request::is('*/draft'))
                     Draft
-                </a>
-                <a href="{{ url('admin/blog/filter/disable') }}" class="btn btn-default">
+                    @elseif(Request::is('*/disable'))
                     Disable
-                </a>
+                    @elseif(Request::is('*/featured'))
+                    Featured
+                    @elseif(Request::is('*/normal'))
+                    Normal
+                    @else
+                    All Blog
+                    @endif
+                    <span class="caret"></span></button>
+                <ul class="dropdown-menu">
+                    <li>
+                        <a href="{{ url('admin/blog') }}" class="btn btn-default btn-lg">
+                            All
+                        </a>
+                    </li>
+                    <li>
+                        <a href="{{ url('admin/blog/filter/publish') }}" class="btn btn-default btn-lg">
+                            Publish
+                        </a>
+                    </li>
+                    <li>
+                        <a href="{{ url('admin/blog/filter/draft') }}" class="btn btn-default btn-lg">
+                            Draft
+                        </a>
+                    </li>
+                    <li>
+                        <a href="{{ url('admin/blog/filter/disable') }}" class="btn btn-default btn-lg">
+                            Disable
+                        </a>
+                    </li>
+                    <li>
+                        <a href="{{ url('admin/blog/filter/featured') }}" class="btn btn-default btn-lg">
+                            Feature
+                        </a>
+                    </li>
+                    <li>
+                        <a href="{{ url('admin/blog/filter/normal') }}" class="btn btn-default btn-lg">
+                            Normal
+                        </a>
+                    </li>
+                </ul>
             </div>
         </div>
     </div>

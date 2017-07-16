@@ -235,8 +235,7 @@ div {
 }
 
 .blog-card > .card-caption {
-    /*background: #D98F4F;*/
-    background: rgba(255, 255, 255, 0.7);
+    background: rgba(255, 255, 255, 0.8);
     padding: 2% 2% 50px 2%;
     position: absolute;
     width: 100%;
@@ -310,22 +309,16 @@ div {
     color: #FFFFFF;
 }
 
-.curricula-card > a {
+.curricula-card > .curricula-content > a {
     text-decoration: none;
     color: #0f0f0f;
 }
 
-.curricula-card > a > .curricula-content{
+.curricula-card > .curricula-content{
     padding: 15px;
     background: rgba(255, 255, 255, 0.7);
     height: 100%;
     width: 100%;
-}
-
-.curricula-card > .curricula-action {
-    box-shadow: 1px 1px 5px #888888;
-    background: #ffffff;
-    padding: 1%;
 }
 
 .research-card {
@@ -338,15 +331,14 @@ div {
     box-shadow: 1px 1px 5px #888888;
 }
 
-.research-card > a > .research-content {
+.research-card > .research-content > a {
     padding: 30px 15px 30px 30px;
     height: 100%;
     color: #ffffff;
 }
 
 .research-card > .research-action {
-    box-shadow: 1px 1px 5px #888888;
-    background: #ffffff;
+    bottom: 0;
     padding: 1%;
 }
 
@@ -415,7 +407,7 @@ p > span {
 
 .first {
     /*background: rgba(64,130,109,0.6);*/
-    background: rgba(130,76,64,0.5);
+    background: rgba(130,76,64,0.7);
     /*background: rgba(130,109,64,0.6);*/
 }
 
@@ -555,7 +547,7 @@ p > span {
 
 a > .label-success {
     font-size: 14px;
-    background: #40826D;
+    background: #6fb29b;
 }
 
 .primary-section-heading {
@@ -574,6 +566,11 @@ a > .label-success {
     box-shadow: 1px 1px 5px #888888;
     background: rgba(130,109,64,0.7);
     color: #ffffff;
+}
+
+.btn-group > .btn-success{
+    background: #40826D;
+    border-color: #40826D;
 }
 
 @media only screen and (max-width: 768px) {
@@ -677,16 +674,16 @@ a > .label-success {
     }
 
     .curricula-card {
-        height: 230px;
+        height: 270px;
     }
 
     .research-card {
         background-size: 250%;
-        height: 280px;
+        height: 320px;
     }
 
-    .research-card >a > .research-content {
-        padding: 10px 15px 15px 15px;
+    .research-card > .research-content > a {
+        padding: 10px 15px 0 15px;
     }
 
     .item {
