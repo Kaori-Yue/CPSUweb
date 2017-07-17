@@ -74,6 +74,14 @@
                     @else btn btn-default @endif ">
                         File
                     </a>
+
+                    <a href="{{ url('admin/user') }}" class="
+                    @if (Request::is('admin/user/*'))btn btn-success
+                    @elseif(Request::is('admin/user'))btn btn-success
+                    @elseif(Request::is('user/*/edit'))btn btn-success
+                    @else btn btn-default @endif ">
+                        User
+                    </a>
                 </div>
             </div>
         </div>

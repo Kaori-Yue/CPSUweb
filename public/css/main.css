@@ -568,9 +568,14 @@ a > .label-success {
     color: #ffffff;
 }
 
-.btn-group > .btn-success{
+.btn-success{
     background: #40826D;
     border-color: #40826D;
+}
+
+.btn-success:hover {
+    background: #0b5542;
+    border-color: #0b5542;
 }
 
 @media only screen and (max-width: 768px) {

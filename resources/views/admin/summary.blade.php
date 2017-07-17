@@ -2,7 +2,9 @@
 
 @section('show')
     <div class="row-card col-md-12 col-sm-12 col-xs-12" style="padding: 1%">
-        <h1 style="margin: 0;padding: 2%">Summary</h1>
+        <h2 class="primary-section-heading">
+            Summary
+        </h2>
         <div class="col-md-3 col-sm-6" style="padding: 10px">
             <div class="bg-info" style="height: 300px;padding: 5%">
                 <h2>Curricula</h2>
@@ -28,11 +30,43 @@
             </div>
         </div>
         <div class="col-md-3 col-sm-6" style="padding: 10px">
+            <div class="bg-warning" style="height: 300px;padding: 5%">
+                <h2>Staff</h2>
+                <hr>
+                <h4>Amount: {{ $staff }}</h4>
+                <a href="{{ url('admin/staff/create') }}" class="btn btn-default">Create</a>
+            </div>
+        </div>
+        <div class="col-md-3 col-sm-6" style="padding: 10px">
             <div class="bg-danger" style="height: 300px;padding: 5%">
                 <h2>Research</h2>
                 <hr>
                 <h4>Amount: {{ $research }}</h4>
                 <a href="{{ url('admin/research/create') }}" class="btn btn-default">Create</a>
+            </div>
+        </div>
+        <div class="col-md-3 col-sm-6" style="padding: 10px">
+            <div class="bg-danger" style="height: 300px;padding: 5%">
+                <h2>Image</h2>
+                <hr>
+                <h4>Amount: {{ $image }}</h4>
+                <a href="{{ url('admin/image/create') }}" class="btn btn-default">Create</a>
+            </div>
+        </div>
+        <div class="col-md-3 col-sm-6" style="padding: 10px">
+            <div class="bg-danger" style="height: 300px;padding: 5%">
+                <h2>File</h2>
+                <hr>
+                <h4>Amount: {{ $file }}</h4>
+                <a href="{{ url('admin/file/create') }}" class="btn btn-default">Create</a>
+            </div>
+        </div>
+        <div class="col-md-3 col-sm-6" style="padding: 10px">
+            <div class="bg-danger" style="height: 300px;padding: 5%">
+                <h2>User</h2>
+                <hr>
+                <h4>Amount: {{ $user }}</h4>
+                <a href="{{ url('admin/user/create') }}" class="btn btn-default">Create</a>
             </div>
         </div>
         {{--<div class="col-md-3" style="padding: 10px">

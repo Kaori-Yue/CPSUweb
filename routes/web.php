@@ -39,86 +39,95 @@ Route::get('blog/category/{category}', 'BlogController@category');
 
 
 Route::group(['middleware' => 'auth'], function (){
-    #Admin Route
-    Route::get('image', 'ImageController@index');
-    Route::post('image', 'ImageController@store');
+
+    Route::get('dashboard', 'UserController@dashboard');
 
 
-    Route::post('img', 'ImageController@store');
-    Route::post('file', 'FileController@store');
-    Route::post('blog', 'BlogController@store');
-    Route::post('teacher', 'TeacherController@store');
-    Route::post('staff', 'StaffController@store');
-    Route::post('thesis', 'ThesisController@store');
-    Route::post('research', 'ResearchController@store');
-    Route::post('curricula', 'CurriculaController@store');
+    Route::group(['middleware' => 'adminAuth'], function (){
+        #Admin Route
+        Route::get('admin', 'AdminController@dashboard');
+
+        Route::post('img', 'ImageController@store');
+        Route::post('file', 'FileController@store');
+        Route::post('blog', 'BlogController@store');
+        Route::post('user','UserController@store');
+        Route::post('teacher', 'TeacherController@store');
+        Route::post('staff', 'StaffController@store');
+        Route::post('thesis', 'ThesisController@store');
+        Route::post('research', 'ResearchController@store');
+        Route::post('curricula', 'CurriculaController@store');
 
 
-    Route::get('image/{id}/edit', 'ImageController@edit');
-    Route::get('file/{id}/edit', 'FileController@edit');
-    Route::get('blog/{slug}/edit', 'BlogController@edit');
-    Route::get('teacher/{id}/edit', 'TeacherController@edit');
-    Route::get('staff/{id}/edit', 'StaffController@edit');
-    Route::get('curricula/{id}/edit', 'CurriculaController@edit');
-    Route::get('research/{id}/edit', 'ResearchController@edit');
+        Route::get('image/{id}/edit', 'ImageController@edit');
+        Route::get('file/{id}/edit', 'FileController@edit');
+        Route::get('blog/{slug}/edit', 'BlogController@edit');
+        Route::get('user/{id}/edit', 'UserController@edit');
+        Route::get('teacher/{id}/edit', 'TeacherController@edit');
+        Route::get('staff/{id}/edit', 'StaffController@edit');
+        Route::get('curricula/{id}/edit', 'CurriculaController@edit');
+        Route::get('research/{id}/edit', 'ResearchController@edit');
 
 
-    Route::patch('image/{id}', 'ImageController@update');
-    Route::patch('file/{id}', 'FileController@update');
-    Route::patch('blog/{id}', 'BlogController@update');
-    Route::patch('teacher/{id}', 'TeacherController@update');
-    Route::patch('staff/{id}', 'StaffController@update');
-    Route::patch('curricula/{id}', 'CurriculaController@update');
-    Route::patch('research/{id}', 'ResearchController@update');
+        Route::patch('image/{id}', 'ImageController@update');
+        Route::patch('file/{id}', 'FileController@update');
+        Route::patch('blog/{id}', 'BlogController@update');
+        Route::patch('user/{id}', 'UserController@update');
+        Route::patch('teacher/{id}', 'TeacherController@update');
+        Route::patch('staff/{id}', 'StaffController@update');
+        Route::patch('curricula/{id}', 'CurriculaController@update');
+        Route::patch('research/{id}', 'ResearchController@update');
 
 
-    Route::delete('image/{id}', 'ImageController@destroy');
-    Route::delete('file/{id}', 'FileController@destroy');
-    Route::delete('blog/{id}', 'BlogController@destroy');
-    Route::delete('teacher/{id}', 'TeacherController@destroy');
-    Route::delete('staff/{id}', 'StaffController@destroy');
-    Route::delete('research/{id}', 'ResearchController@destroy');
-    Route::delete('curricula/{id}', 'CurriculaController@destroy');
+        Route::delete('image/{id}', 'ImageController@destroy');
+        Route::delete('file/{id}', 'FileController@destroy');
+        Route::delete('blog/{id}', 'BlogController@destroy');
+        Route::delete('teacher/{id}', 'TeacherController@destroy');
+        Route::delete('staff/{id}', 'StaffController@destroy');
+        Route::delete('research/{id}', 'ResearchController@destroy');
+        Route::delete('curricula/{id}', 'CurriculaController@destroy');
 
 
-    Route::get('admin', 'AdminController@index');
+        Route::get('admin/blog', 'AdminController@blog');
+        Route::get('admin/blog/create', 'BlogController@create');
+        Route::get('admin/blog/filter/{filter}', 'BlogController@filter');
 
 
-    Route::get('admin/blog', 'AdminController@blog');
-    Route::get('admin/blog/create', 'BlogController@create');
-    Route::get('admin/blog/filter/{filter}', 'BlogController@filter');
+        Route::get('admin/teacher', 'AdminController@teacher');
+        Route::get('admin/teacher/create', 'TeacherController@create');
+        Route::get('admin/teacher/filter/{filter}', 'TeacherController@filter');
 
 
-    Route::get('admin/teacher', 'AdminController@teacher');
-    Route::get('admin/teacher/create', 'TeacherController@create');
-    Route::get('admin/teacher/filter/{filter}', 'TeacherController@filter');
+        Route::get('admin/staff', 'AdminController@staff');
+        Route::get('admin/staff/create', 'StaffController@create');
+        Route::get('admin/staff/filter/{filter}', 'StaffController@filter');
 
 
-    Route::get('admin/staff', 'AdminController@staff');
-    Route::get('admin/staff/create', 'StaffController@create');
-    Route::get('admin/staff/filter/{filter}', 'StaffController@filter');
+        Route::get('admin/curricula', 'AdminController@curricula');
+        Route::get('admin/curricula/create', 'CurriculaController@create');
+        Route::get('admin/curricula/filter/{filter}', 'CurriculaController@filter');
 
 
-    Route::get('admin/curricula', 'AdminController@curricula');
-    Route::get('admin/curricula/create', 'CurriculaController@create');
-    Route::get('admin/curricula/filter/{filter}', 'CurriculaController@filter');
+        Route::get('admin/user', 'AdminController@user');
+        Route::get('admin/user/create','UserController@create');
+        Route::get('admin/user/filter/{filter}', 'UserController@filter');
 
 
-    Route::get('admin/thesis', 'AdminController@thesis');
-    Route::get('admin/thesis/create', 'ThesisController@create');
+        Route::get('admin/image', 'AdminController@image');
+        Route::get('admin/image/create', 'ImageController@create');
+        Route::get('admin/image/filter/{filter}', 'ImageController@filter');
 
 
-    Route::get('admin/research', 'AdminController@research');
-    Route::get('admin/research/create', 'ResearchController@create');
+        Route::get('admin/file', 'AdminController@file');
+        Route::get('admin/file/create', 'FileController@create');
 
 
-    Route::get('admin/image', 'AdminController@image');
-    Route::get('admin/image/create', 'ImageController@create');
+        Route::get('admin/research', 'AdminController@research');
+        Route::get('admin/research/create', 'ResearchController@create');
 
 
-    Route::get('admin/file', 'AdminController@file');
-    Route::get('admin/file/create', 'FileController@create');
-
+        Route::get('admin/thesis', 'AdminController@thesis');
+        Route::get('admin/thesis/create', 'ThesisController@create');
+    });
 });
 
 

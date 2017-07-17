@@ -3,7 +3,7 @@
         <div class="card-bg" style="background-image: url('{{ url('image/thumbnail/'.$image->id) }}'); height: 200px;">
         </div>
         <div class="card-caption">
-            @if(Request::is('admin/image'))
+            @if(Request::is('admin/image') || Request::is('admin/image/*'))
                 <div class="col-md-6 col-xs-12">
                     <button class="btn btn-default btn-block" id="image-link{{$image->id}}" data-clipboard-text="{{ url('image/show/'.$image->id) }}">
                         <i class="fa fa-clone"></i>

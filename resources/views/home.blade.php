@@ -1,7 +1,7 @@
 @extends('main')
 
 @section('head')
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.19.1/TweenMax.min.js"></script>
+
 @stop
 
 @section('content')
@@ -10,14 +10,20 @@
             <!-- Indicators -->
             <ol class="carousel-indicators">
                 <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+                <li data-target="#myCarousel" data-slide-to="1"></li>
                 @foreach($blogs as $blog)
-                <li data-target="#myCarousel" data-slide-to="{{ $loop->index }}"></li>
+                <li data-target="#myCarousel" data-slide-to="{{ $loop->index + 2 }}"></li>
                 @endforeach
             </ol>
 
             <!-- Wrapper for slides -->
             <div class="carousel-inner">
-                <div class="item first active">
+
+                <div class="item second active">
+                    <img src="{{ URL::asset('image/silpakorn70yr.png') }}" class="img-responsive" style="width:100%;height: 100%" alt="">
+                </div>
+
+                <div class="item first">
                     <svg viewBox="0 0 160 160" width="160" height="160" fill="rgba(217, 143, 79, 1)">
                         <circle cx="80" cy="80" r="50" />
                         <g transform=" matrix(0.866, -0.5, 0.25, 0.433, 80, 80)">

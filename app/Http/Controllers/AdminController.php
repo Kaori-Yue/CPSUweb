@@ -10,23 +10,33 @@ use App\Research;
 use App\Staff;
 use App\Teacher;
 use App\Thesis;
+use App\User;
 use Illuminate\Http\Request;
 
 class AdminController extends Controller
 {
-    public function index()
+    public function dashboard()
     {
         $curricula = Curricula::count();
         $blog = Blog::count();
         $teacher = Teacher::count();
+        $staff = Staff::count();
         $research = Research::count();
         $thesis = Thesis::count();
+        $image = File::where('mime', 'like', 'image%')->count();
+        $file = File::where('mime', 'NOT LIKE', 'image%')->count();
+        $user = User::where('role', '!=', 'admin')->count();
+
         return view('admin.summary', [
             'curricula' => $curricula,
             'blog' => $blog,
             'teacher' => $teacher,
+            'staff' => $staff,
             'research' => $research,
-            'thesis' => $thesis
+            'thesis' => $thesis,
+            'image' => $image,
+            'file' => $file,
+            'user' => $user
         ]);
     }
 
@@ -90,5 +100,14 @@ class AdminController extends Controller
             ->paginate(20);
 
         return view('file.admin', ['files' => $files]);
+    }
+
+    public function user()
+    {
+        $users = User::where('role', '!=', 'admin')
+            ->orderBy('id', 'desc')
+            ->paginate(10);
+
+        return view('user.admin', ['users' => $users]);
     }
 }

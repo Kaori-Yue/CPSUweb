@@ -3,7 +3,7 @@
 @section('content')
     <div class="container">
         <div class="row col-md-12 col-xs-12" style="background: #ffffff">
-            <h2 class="bg-success" style="margin: 1% 1% 0 1%;padding: 2%;text-align: left">{{ $title }}</h2>
+            <h2 class="primary-section-heading">{{ $title }}</h2>
             @foreach($blogs as $blog)
                 @include('blog._card', $blog)
             @endforeach

@@ -52,12 +52,12 @@ class BlogController extends Controller
             }
 
             $blogs = Blog::where('featured', $filter)
-                ->orderBy('created_at', 'DESC')
+                ->orderBy('id', 'DESC')
                 ->paginate(8);
         }
         else{
             $blogs = Blog::where('status', $filter)
-                ->orderBy('created_at', 'DESC')
+                ->orderBy('id', 'DESC')
                 ->paginate(8);
         }
 

@@ -106,9 +106,9 @@ trait ImageTrait
         $old_filename = $file->name;
 
         if($type == 'profile'){
-            $width = '400';
+            $width = '300';
         }elseif ($type == 'cover'){
-            $width = '800';
+            $width = '900';
         }else{
             // default value
             $width = '500';

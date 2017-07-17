@@ -26,6 +26,16 @@ class ImageController extends Controller
         return response($file, 200)->header('Content-Type', $image->mime);
     }
 
+    public function filter($filter)
+    {
+        $images = \App\File::where('mime', 'like', 'image%')
+            ->where('mime', 'like', '%'.$filter)
+            ->orderBy('id', 'desc')
+            ->paginate(20);
+
+        return view('image.admin', ['images' => $images]);
+    }
+
     public function create()
     {
         $type = [
