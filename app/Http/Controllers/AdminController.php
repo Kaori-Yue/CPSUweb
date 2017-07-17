@@ -104,8 +104,8 @@ class AdminController extends Controller
 
     public function user()
     {
-        $users = User::where('role', '!=', 'admin')
-            ->orderBy('id', 'desc')
+        $users = User::/*where('role', '!=', 'admin')
+            ->*/orderBy('id', 'desc')
             ->paginate(10);
 
         return view('user.admin', ['users' => $users]);
