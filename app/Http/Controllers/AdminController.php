@@ -18,7 +18,9 @@ class AdminController extends Controller
     public function dashboard()
     {
         $curricula = Curricula::count();
-        $blog = Blog::count();
+        $publish_blog = Blog::where('status', 'publish')->count();
+        $draft_blog = Blog::where('status', 'draft')->count();
+        $disable_blog = Blog::where('status', 'disable')->count();
         $teacher = Teacher::count();
         $staff = Staff::count();
         $research = Research::count();
@@ -26,17 +28,23 @@ class AdminController extends Controller
         $image = File::where('mime', 'like', 'image%')->count();
         $file = File::where('mime', 'NOT LIKE', 'image%')->count();
         $user = User::where('role', '!=', 'admin')->count();
+        $admin_user = User::where('role', 'admin')->count();
+        $suspend_user = User::where('role', 'suspend')->count();
 
         return view('admin.summary', [
             'curricula' => $curricula,
-            'blog' => $blog,
+            'publish_blog' => $publish_blog,
+            'draft_blog' => $draft_blog,
+            'disable_blog' => $disable_blog,
             'teacher' => $teacher,
             'staff' => $staff,
             'research' => $research,
             'thesis' => $thesis,
             'image' => $image,
             'file' => $file,
-            'user' => $user
+            'user' => $user,
+            'admin_user' => $admin_user,
+            'suspend_user' => $suspend_user
         ]);
     }
 
@@ -104,8 +112,8 @@ class AdminController extends Controller
 
     public function user()
     {
-        $users = User::/*where('role', '!=', 'admin')
-            ->*/orderBy('id', 'desc')
+        $users = User::where('role', '!=', 'admin')
+            ->orderBy('id', 'desc')
             ->paginate(10);
 
         return view('user.admin', ['users' => $users]);
