@@ -322,7 +322,7 @@ div {
 }
 
 .research-card {
-    background: rgba(130,109,64, 0.5);
+    background: rgba(130, 109, 64, 0.5);
     background-image: url('../image/SC-SU-Formal-TH_resize.png');
     background-position:top right;
     background-repeat:no-repeat;
@@ -353,10 +353,34 @@ div {
 
 .summary-card {
     box-shadow: 1px 1px 5px #888888;
-    background: rgba(130,109,64, 0.6);
+    background: rgba(130, 109, 64, 0.6);
     color: #ffffff;
     padding: 10px;
     height: 320px;
+}
+
+.summary-card > h2 > a {
+    color: #FFFFFF;
+}
+
+.summary-card > h2 > .btn {
+    color: #000000;
+}
+
+.summary-card-small {
+    box-shadow: 1px 1px 5px #888888;
+    background: rgba(130, 76, 64, 0.6);
+    color: #ffffff;
+    padding: 10px;
+    height: 200px;
+}
+
+.summary-card-small > h2 > a {
+    color: #FFFFFF;
+}
+
+.summary-card-small > h2 > .btn {
+    color: #000000;
 }
 
 .chart {

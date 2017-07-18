@@ -37,7 +37,7 @@
             ]);
 
             var options = {
-                title: 'Blog Summary',
+                title: 'User Summary',
                 pieHole: 0.2,
             };
 
@@ -55,7 +55,8 @@
         <div class="col-md-6 col-sm-6" style="padding: 10px">
             <div class="summary-card">
                 <h2>
-                    Blog <a href="{{ url('admin/blog/create') }}" class="btn btn-default">Create</a>
+                    <a href="{{ url('admin/blog') }}">Blog</a>
+                    <a href="{{ url('admin/blog/create') }}" class="btn btn-default">Create</a>
                 </h2>
                 <hr>
                 <div id="blogchart" class="chart"></div>
@@ -64,59 +65,71 @@
         <div class="col-md-6 col-sm-6" style="padding: 10px">
             <div class="summary-card">
                 <h2>
-                    User <a href="{{ url('admin/user/create') }}" class="btn btn-default">Create</a>
+                    <a href="{{ url('admin/user') }}">User</a>
+                    <a href="{{ url('admin/user/create') }}" class="btn btn-default">Create</a>
                 </h2>
                 <hr>
                 <div id="userchart" class="chart"></div>
             </div>
         </div>
         <div class="col-md-4 col-sm-6" style="padding: 10px">
-            <div class="summary-card">
-                <h2>Curricula
-                    <a href="{{ url('admin/curricula/create') }}" class="btn btn-default">Create</a>
+            <div class="summary-card-small">
+                <h2>
+                    <a href="{{ url('admin/curricula') }}">Curricula</a>
                 </h2>
                 <hr>
                 <h4>Amount: {{ $curricula }}</h4>
+                <a href="{{ url('admin/curricula/create') }}" class="btn btn-default btn-block">Create</a>
             </div>
         </div>
         <div class="col-md-4 col-sm-6" style="padding: 10px">
-            <div class="summary-card">
-                <h2>Teacher</h2>
+            <div class="summary-card-small">
+                <h2>
+                    <a href="{{ url('admin/teacher') }}">Teacher</a>
+                </h2>
                 <hr>
                 <h4>Amount: {{ $teacher }}</h4>
-                <a href="{{ url('admin/teacher/create') }}" class="btn btn-default">Create</a>
+                <a href="{{ url('admin/teacher/create') }}" class="btn btn-default btn-block">Create</a>
             </div>
         </div>
         <div class="col-md-4 col-sm-6" style="padding: 10px">
-            <div class="summary-card">
-                <h2>Staff</h2>
+            <div class="summary-card-small">
+                <h2>
+                    <a href="{{ url('admin/staff') }}">Staff</a>
+                </h2>
                 <hr>
                 <h4>Amount: {{ $staff }}</h4>
-                <a href="{{ url('admin/staff/create') }}" class="btn btn-default">Create</a>
+                <a href="{{ url('admin/staff/create') }}" class="btn btn-default btn-block">Create</a>
             </div>
         </div>
         <div class="col-md-4 col-sm-6" style="padding: 10px">
-            <div class="summary-card">
-                <h2>Research</h2>
+            <div class="summary-card-small">
+                <h2>
+                    <a href="{{ url('admin/research') }}">Research</a>
+                </h2>
                 <hr>
                 <h4>Amount: {{ $research }}</h4>
-                <a href="{{ url('admin/research/create') }}" class="btn btn-default">Create</a>
+                <a href="{{ url('admin/research/create') }}" class="btn btn-default btn-block">Create</a>
             </div>
         </div>
         <div class="col-md-4 col-sm-6" style="padding: 10px">
-            <div class="summary-card">
-                <h2>Image</h2>
+            <div class="summary-card-small">
+                <h2>
+                    <a href="{{ url('admin/image') }}">Image</a>
+                </h2>
                 <hr>
                 <h4>Amount: {{ $image }}</h4>
-                <a href="{{ url('admin/image/create') }}" class="btn btn-default">Create</a>
+                <a href="{{ url('admin/image/create') }}" class="btn btn-default btn-block">Create</a>
             </div>
         </div>
         <div class="col-md-4 col-sm-6" style="padding: 10px">
-            <div class="summary-card">
-                <h2>File</h2>
+            <div class="summary-card-small">
+                <h2>
+                    <a href="{{ url('admin/file') }}">File</a>
+                </h2>
                 <hr>
                 <h4>Amount: {{ $file }}</h4>
-                <a href="{{ url('admin/file/create') }}" class="btn btn-default">Create</a>
+                <a href="{{ url('admin/file/create') }}" class="btn btn-default btn-block">Create</a>
             </div>
         </div>
         {{--<div class="col-md-3" style="padding: 10px">
@@ -127,6 +140,5 @@
                 <a href="{{ url('admin/thesis/create') }}" class="btn btn-default">Create</a>
             </div>
         </div>--}}
-
     </div>
 @endsection

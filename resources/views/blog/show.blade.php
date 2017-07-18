@@ -49,7 +49,7 @@
                 <div class="col-md-12">
                     <div class="col-md-6 col-xs-6">
                         <button type="button" class="btn btn-default btn-block" id="shareToFB" style="background:#3b5998;color: #FFFFFF">
-                            <img style="height: 100px" class="img-responsive img-circle" src="{{ URL::asset('image/fb-art.png') }}" alt="share to facebook">
+                            <img style="height: 100px" class="img-responsive" src="{{ URL::asset('image/fb-art.png') }}" alt="share to facebook">
                             Share on Facebook
                         </button>
                     </div>
