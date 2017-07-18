@@ -19,11 +19,7 @@
             <!-- Wrapper for slides -->
             <div class="carousel-inner">
 
-                <div class="item second active">
-                    <img src="{{ URL::asset('image/silpakorn70yr.png') }}" class="img-responsive" style="width:100%;height: 100%" alt="">
-                </div>
-
-                <div class="item first">
+                <div class="item first active">
                     <svg viewBox="0 0 160 160" width="160" height="160" fill="rgba(217, 143, 79, 1)">
                         <circle cx="80" cy="80" r="50" />
                         <g transform=" matrix(0.866, -0.5, 0.25, 0.433, 80, 80)">
@@ -37,6 +33,10 @@
                         <h3>Department of Computing</h3>
                         <p>Silpakorn University</p>
                     </div>
+                </div>
+
+                <div class="item second">
+                    <img src="{{ URL::asset('image/silpakorn70yr.png') }}" class="img-responsive" style="width:100%;height: 100%" alt="">
                 </div>
 
                 @foreach($blogs as $blog)
