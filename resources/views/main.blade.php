@@ -8,19 +8,8 @@
     <meta http-equiv="Cache-Control" content="public">
     @yield('meta')
 
-
-    {{-- StyleSheet --}}
-    <link rel="stylesheet" href="{{ URL::asset('js/bower_components/bootstrap/dist/css/bootstrap.min.css') }}">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
-
-
     <!-- Specific content -->
     @yield('head')
-
-
-    <!-- Main CSS -->
-    <link rel="stylesheet" href="{{ URL::asset('css/main.css') }}">
 
 
     <title>{{ config('app.name', 'CPSU') }}</title>
@@ -49,9 +38,17 @@
         </div>
     </div>
 
-    <!-- Specific content -->
+    <!-- Script content -->
     <script src="{{ URL::asset('js/bower_components/jquery/dist/jquery.min.js') }}"></script>
     <script src="{{ URL::asset('js/bower_components/bootstrap/dist/js/bootstrap.min.js') }}"></script>
+    {{-- StyleSheet --}}
+    <link rel="stylesheet" href="{{ URL::asset('js/bower_components/bootstrap/dist/css/bootstrap.min.css') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+
+    <!-- Main CSS -->
+    <link rel="stylesheet" href="{{ URL::asset('css/main.css') }}">
+
     @yield('script')
 </body>
 </html>

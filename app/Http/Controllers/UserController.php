@@ -15,7 +15,7 @@ class UserController extends Controller
             return redirect()->action('AdminController@dashboard');
         }
 
-        return 'this is dashboard';
+        return view('user.dashboard');
     }
 
     public function filter($filter)

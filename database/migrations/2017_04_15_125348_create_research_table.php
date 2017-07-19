@@ -15,7 +15,7 @@ class CreateResearchTable extends Migration
     {
         Schema::create('research', function (Blueprint $table){
             $table->increments('id');
-            $table->integer('file');
+            $table->integer('file')->nullable();
             $table->string('name');
             $table->string('slug');
             $table->text('description');
