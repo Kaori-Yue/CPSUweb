@@ -77,3 +77,7 @@
         <?php echo $blogs->render(); ?>
     </div>
 @endsection
+
+@section('script')
+    <script async src="{{ URL::asset('js/fb.js') }}"></script>
+@endsection

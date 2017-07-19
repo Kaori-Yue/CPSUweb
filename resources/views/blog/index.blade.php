@@ -100,7 +100,7 @@
 
 @section('script')
     {{-- jqcloud --}}
-    <script src="{{ URL::asset('js/bower_components/jqcloud2/dist/jqcloud.min.js') }}"></script>
+    <script async src="{{ URL::asset('js/bower_components/jqcloud2/dist/jqcloud.min.js') }}"></script>
     <link rel="stylesheet" href="{{ URL::asset('js/bower_components/jqcloud2/dist/jqcloud.min.css') }}">
 
     <script src="{{ URL::asset('js/fb.js') }}"></script>

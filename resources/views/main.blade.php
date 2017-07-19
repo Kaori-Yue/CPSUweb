@@ -40,7 +40,7 @@
 
     <!-- Script content -->
     <script src="{{ URL::asset('js/bower_components/jquery/dist/jquery.min.js') }}"></script>
-    <script src="{{ URL::asset('js/bower_components/bootstrap/dist/js/bootstrap.min.js') }}"></script>
+    <script async src="{{ URL::asset('js/bower_components/bootstrap/dist/js/bootstrap.min.js') }}"></script>
     {{-- StyleSheet --}}
     <link rel="stylesheet" href="{{ URL::asset('js/bower_components/bootstrap/dist/css/bootstrap.min.css') }}">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">

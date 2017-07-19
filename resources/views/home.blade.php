@@ -107,5 +107,5 @@
 @endsection
 
 @section('script')
-    <script src="{{ URL::asset('js/fb.js') }}"></script>
+    <script async src="{{ URL::asset('js/fb.js') }}"></script>
 @endsection
