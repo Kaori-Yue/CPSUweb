@@ -4,4 +4,4 @@
     <div class="container">
 
     </div>
-@stop
+@endsection

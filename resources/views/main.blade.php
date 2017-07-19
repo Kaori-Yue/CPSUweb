@@ -9,13 +9,8 @@
     @yield('meta')
 
 
-    {{-- bootstrap & jquery --}}
+    {{-- StyleSheet --}}
     <link rel="stylesheet" href="{{ URL::asset('js/bower_components/bootstrap/dist/css/bootstrap.min.css') }}">
-    <script src="{{ URL::asset('js/bower_components/jquery/dist/jquery.min.js') }}"></script>
-    <script src="{{ URL::asset('js/bower_components/bootstrap/dist/js/bootstrap.min.js') }}"></script>
-
-
-    {{-- icon --}}
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
 
@@ -53,7 +48,10 @@
             @include('_footer')
         </div>
     </div>
-    <!-- Scripts -->
+
+    <!-- Specific content -->
+    <script src="{{ URL::asset('js/bower_components/jquery/dist/jquery.min.js') }}"></script>
+    <script src="{{ URL::asset('js/bower_components/bootstrap/dist/js/bootstrap.min.js') }}"></script>
     @yield('script')
 </body>
 </html>

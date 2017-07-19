@@ -81,4 +81,4 @@
 
         {{ $users->links() }}
     </div>
-@stop
+@endsection

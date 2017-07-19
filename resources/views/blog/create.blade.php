@@ -1,6 +1,12 @@
 @extends('admin.index')
 
-@section('head')
+@section('show')
+    {!! Form::open(['url' => 'blog', 'class' => 'form-horizontal', 'files' => 'true', 'name' => 'blogForm']) !!}
+    @include('blog._form', ['header_text' => 'Create Blog', 'submit_text' => 'Create'])
+    {!! Form::close() !!}
+@endsection
+
+@section('script')
     <script src="{{ URL::asset('js/bower_components/tinymce/tinymce.min.js') }}"></script>
     <script>
         tinymce.init({
@@ -12,16 +18,10 @@
             ],
             toolbar: 'insertfile undo redo | styleselect | bold italic | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link image | print preview media fullpage | forecolor backcolor emoticons',
             image_list: [
-                @foreach($images as $image)
+                    @foreach($images as $image)
                 {title: "{!! $image->original_name !!}", value: "{!! url('image/show/'.$image->id) !!}"},
                 @endforeach
             ]
         });
     </script>
-@endsection
-
-@section('show')
-    {!! Form::open(['url' => 'blog', 'class' => 'form-horizontal', 'files' => 'true', 'name' => 'blogForm']) !!}
-    @include('blog._form', ['header_text' => 'Create Blog', 'submit_text' => 'Create'])
-    {!! Form::close() !!}
 @endsection

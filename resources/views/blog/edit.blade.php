@@ -1,5 +1,12 @@
 @extends('admin.index')
 
+@section('show')
+    {!! Form::model($blog, ['url' => 'blog/'.$blog->id, 'method' => 'PATCH',
+        'class' => 'form-horizontal', 'files' => 'true', 'name' => 'blogForm']) !!}
+    @include('blog._form', ['header_text' => 'Edit Blog', 'submit_text' => 'Finish'])
+    {!! Form::close() !!}
+@endsection
+
 @section('head')
     <script src="{{ URL::asset('js/bower_components/tinymce/tinymce.min.js') }}"></script>
     <script>
@@ -20,10 +27,3 @@
         });
     </script>
 @endsection
-
-@section('show')
-    {!! Form::model($blog, ['url' => 'blog/'.$blog->id, 'method' => 'PATCH',
-        'class' => 'form-horizontal', 'files' => 'true', 'name' => 'blogForm']) !!}
-    @include('blog._form', ['header_text' => 'Edit Blog', 'submit_text' => 'Finish'])
-    {!! Form::close() !!}
-@stop

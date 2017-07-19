@@ -51,4 +51,4 @@
             @include('curricula._card', $curricula)
         @endforeach
     </div>
-@stop
+@endsection

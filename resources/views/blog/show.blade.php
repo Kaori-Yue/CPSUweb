@@ -12,7 +12,7 @@
 <meta name="twitter:title" content="{{ $blog->title }}" />
 <meta name="twitter:description" content="Department of Computing Silpakorn University" />
 <meta name="twitter:image" content="{{ url('image/show/'.$blog->cover) }}" />
-@stop
+@endsection
 
 @section('content')
     <div style="background: rgba(130,109,64,0.4)">
@@ -78,7 +78,10 @@
             </div>
         </div>
     </div>
+@endsection
 
+@section('script')
+    <script src="{{ URL::asset('js/fb.js') }}"></script>
     <script>
         document.getElementById('shareToFB').onclick = function() {
             FB.ui({
@@ -94,8 +97,4 @@
             window.open('http://twitter.com/share?url=' + encodeURIComponent(url) + '&text=' + encodeURIComponent(text), '', 'left=0,top=0,width=550,height=450,personalbar=0,toolbar=0,scrollbars=0,resizable=0');
         };
     </script>
-@stop
-
-@section('script')
-    <script src="{{ URL::asset('js/fb.js') }}"></script>
-@stop
+@endsection

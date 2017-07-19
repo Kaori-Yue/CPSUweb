@@ -2,7 +2,7 @@
 
 @section('head')
     <script src="{{ URL::asset('js/clipboard/dist/clipboard.min.js') }}"></script>
-@stop
+@endsection
 
 @section('show')
     <div class="col-md-12 row-card" style="padding: 1%">
@@ -66,4 +66,4 @@
     <div class="row col-md-12" style="text-align: center">
         <?php echo $images->render(); ?>
     </div>
-@stop
+@endsection

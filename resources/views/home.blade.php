@@ -1,9 +1,5 @@
 @extends('main')
 
-@section('head')
-
-@stop
-
 @section('content')
     <div class="container">
         <div id="myCarousel" class="carousel slide row" data-ride="carousel">
@@ -108,8 +104,8 @@
             {{--<div class="some-space col-md-12"></div>--}}
         </div>
     </div>
-@stop
+@endsection
 
 @section('script')
     <script src="{{ URL::asset('js/fb.js') }}"></script>
-@stop
+@endsection

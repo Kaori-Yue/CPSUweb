@@ -18,4 +18,4 @@
             <?php echo $researches->render(); ?>
         </div>
     </div>
-@stop
+@endsection

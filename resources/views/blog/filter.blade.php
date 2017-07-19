@@ -32,4 +32,4 @@
     <div class="row col-md-12" style="text-align: center">
         <?php echo $blogs->render(); ?>
     </div>
-@stop
+@endsection

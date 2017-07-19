@@ -18,4 +18,4 @@
             {{ $blogs->links() }}
         </div>
     </div>
-@stop
+@endsection

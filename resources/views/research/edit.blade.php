@@ -5,4 +5,4 @@
         'class' => 'form-horizontal', 'files' => 'true']) !!}
     @include('research._formEdit', ['url' => 'research', 'submit_text' => 'Finish'])
     {!! Form::close() !!}
-@stop
+@endsection

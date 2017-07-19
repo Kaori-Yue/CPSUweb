@@ -50,4 +50,4 @@
             @include('staff._card', $staff)
         @endforeach
     </div>
-@stop
+@endsection

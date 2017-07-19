@@ -30,4 +30,4 @@
             <h2 class="bg-success" style="margin: 1% 1% 0 1%;padding: 2%;text-align: left">ปริญญานิพนธ์นักศึกษาปริญญาเอก</h2>
         </div>
     </div>
-@stop
+@endsection

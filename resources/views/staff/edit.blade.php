@@ -5,4 +5,4 @@
         'class' => 'form-horizontal', 'files' => 'true']) !!}
     @include('staff._form', ['header_text' => 'Edit Staff', 'submit_text' => 'Finish'])
     {!! Form::close() !!}
-@stop
+@endsection

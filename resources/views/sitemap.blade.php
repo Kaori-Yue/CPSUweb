@@ -4,4 +4,4 @@
     <div class="container">
         @include('_map')
     </div>
-@stop
+@endsection

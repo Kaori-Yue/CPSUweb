@@ -65,4 +65,4 @@
         @include('teacher._card', $teacher)
         @endforeach
     </div>
-@stop
+@endsection

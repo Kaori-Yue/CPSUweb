@@ -91,7 +91,7 @@ class ResearchController extends Controller
 
         $name = $request->get('name');
         $slug = self::handleSlug($name);
-        $new_research['slug'] = $name;
+        $new_research['slug'] = $slug;
 
         $file = $request->file('file');
         if(isset($file)){

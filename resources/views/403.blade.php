@@ -1,9 +1,5 @@
 @extends('main')
 
-@section('head')
-    <link href="https://fonts.googleapis.com/css?family=Baloo" rel="stylesheet">
-@stop
-
 @section('content')
     <div class="container">
         <div class="row col-md-12" style="background: #ffffff; text-align: center">
@@ -12,4 +8,8 @@
             </div>
         </div>
     </div>
+@endsection
+
+@section('script')
+    <link href="https://fonts.googleapis.com/css?family=Baloo" rel="stylesheet">
 @stop

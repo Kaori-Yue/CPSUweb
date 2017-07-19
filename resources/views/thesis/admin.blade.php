@@ -23,4 +23,4 @@
         {{--<h4>{{ $loop->iteration }}. {{ $t->name }}</h4>--}}
     @endforeach
     </div>
-@stop
+@endsection
