@@ -383,6 +383,18 @@ div {
     color: #000000;
 }
 
+.form-card {
+    box-shadow: 1px 1px 5px #888888;
+    background: rgba(109,64,130,0.7);
+    color: #ffffff;
+    padding: 10px;
+    height: auto;
+}
+
+.form-card > ol > li > a {
+    color: #FFFFFF;
+}
+
 .chart {
     width: 100%;
     min-height: 200px;

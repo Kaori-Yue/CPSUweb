@@ -13,6 +13,10 @@ class UserController extends Controller
         $user = Auth::user();
         if($user->role == 'admin'){
             return redirect()->action('AdminController@dashboard');
+        }elseif ($user->role == 'suspend'){
+            return view('suspend');
+        }elseif ($user->role == 'banned'){
+            return view('401');
         }
 
         return view('user.dashboard');
