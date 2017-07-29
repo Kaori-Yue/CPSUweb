@@ -41,7 +41,7 @@ Route::get('blog/category/{category}', 'BlogController@category');
 Route::group(['middleware' => 'auth'], function (){
 
     Route::get('dashboard', 'UserController@dashboard');
-
+    Route::get('dashboard/project_form', 'UserController@project');
 
     Route::group(['middleware' => 'adminAuth'], function (){
         #Admin Route

@@ -88,4 +88,9 @@ class UserController extends Controller
 
         return redirect()->action('AdminController@user');
     }
+
+    public function project()
+    {
+        return view('user.projectForm');
+    }
 }
