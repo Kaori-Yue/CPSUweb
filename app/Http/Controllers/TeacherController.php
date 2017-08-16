@@ -6,6 +6,7 @@ use App\File;
 use App\Helper\TokenGenerator;
 use App\Staff;
 use App\Teacher;
+use App\User;
 use Illuminate\Http\Request;
 use App\Traits\ImageTrait;
 
@@ -77,7 +78,17 @@ class TeacherController extends Controller
 
         $teacher['rank'] = self::handleRank($teacher);
 
-        Teacher::create($teacher);
+        $teacher = Teacher::create($teacher);
+
+        $user = [
+            'name' => $teacher->name_th,
+            'email' => $teacher->email,
+            'password' => $teacher->password,
+            'role' => 'teacher',
+            'remember_token' => ''
+        ];
+        User::create($user);
+
         return redirect()->action('AdminController@teacher')->with('status', 'Create Complete!');
     }
 
