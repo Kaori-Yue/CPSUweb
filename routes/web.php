@@ -37,6 +37,7 @@ Route::get('file/show/{id}', 'FileController@show');
 Route::get('image/show/{id}', 'ImageController@show');
 Route::get('image/thumbnail/{id}', 'ImageController@thumbnail');
 Route::get('blog/category/{category}', 'BlogController@category');
+Route::get('document/category/{category}', 'DocumentController@category');
 
 
 Route::group(['middleware' => 'auth'], function (){

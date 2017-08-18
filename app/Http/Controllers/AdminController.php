@@ -113,9 +113,10 @@ class AdminController extends Controller
 
     public function document()
     {
+        $categories = Document::select('category')->distinct()->get();
         $documents = Document::orderBy('id', 'desc')
-            ->paginate(20);
-        return view('document.admin', ['documents' => $documents]);
+            ->paginate(12);
+        return view('document.admin', ['documents' => $documents, 'categories' => $categories]);
     }
 
     public function user()

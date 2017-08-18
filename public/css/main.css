@@ -146,6 +146,10 @@ div {
     margin-top: 0;
 }
 
+.label {
+    letter-spacing: 1px;
+}
+
 .welcome-card {
     background: #0375b4;
     padding: 6% 4% 6% 4%;
@@ -323,12 +327,20 @@ div {
 
 .document-card {
     color: #FFFFFF;
+    height: 200px;
     box-shadow: 1px 1px 5px #888888;
 }
 
 .document-card > .document-content{
     padding: 15px;
-    background: rgba(130, 109, 64, 0.6);
+    background: rgba(130, 109, 64, 0.7);
+    height: 100%;
+    width: 100%;
+}
+
+.label-secondary {
+    background: rgba(109,64,130,0.7);
+    /*letter-spacing: 1px;*/
 }
 
 .research-card {
@@ -677,6 +689,14 @@ a > .label-success {
         height: 300px;
     }
 
+    .document-card {
+        height: 220px;
+    }
+
+    /*.document-card > .document-content{
+        padding: 10px;
+    }*/
+
     .item {
         height: 50vh;
         max-width: none;
@@ -748,6 +768,14 @@ a > .label-success {
 
     .research-card > .research-content > a {
         padding: 10px 15px 0 15px;
+    }
+
+    .document-card {
+        height: 230px;
+    }
+
+    .document-card > .document-content{
+        padding: 5px;
     }
 
     .item {

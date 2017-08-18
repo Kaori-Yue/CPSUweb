@@ -12,11 +12,22 @@ class DocumentController extends Controller
     use FileTrait;
     public function index()
     {
-        $documents = Document::groupBy('category')
-            ->show()
-            ->get();
+        $documents = [];
+        $categories = [];
 
-        return view('document.index');
+        $keys = Document::select('category')->distinct()->get();
+        foreach ($keys as $key){
+            $temp = Document::where('category', $key['category'])
+                ->show()
+                ->get();
+            $documents[$key['category']] = $temp;
+            array_push($categories, $key['category']);
+        }
+
+        return view('document.index', [
+            'documents' => $documents,
+            'categories' => $categories
+        ]);
     }
 
     public function create()
@@ -45,7 +56,7 @@ class DocumentController extends Controller
             'description' => 'max:65534',
             'category' => 'required|max:191',
             'status' => 'required|in:show,hide',
-            'file' => 'required|mimes:pdf,doc,docx',
+            'file' => 'required|mimes:docx,doc,xlsx,xls,pptx,ppt,pdf,zip,rar,7z,txt',
         ]);
 
         $document = $request->all();
@@ -68,7 +79,7 @@ class DocumentController extends Controller
             'description' => 'max:65534',
             'category' => 'required|max:191',
             'status' => 'required|in:show,hide',
-            'file' => 'mimes:pdf,doc,docx',
+            'file' => 'mimes:docx,doc,xlsx,xls,pptx,ppt,pdf,zip,rar,7z,txt',
         ]);
 
         $document = Document::findOrFail($id);
@@ -106,5 +117,23 @@ class DocumentController extends Controller
     {
         $slug = str_replace(' ', '-', $str);
         return $slug;
+    }
+
+    public function category($category)
+    {
+        $documents = Document::where('category', $category)
+            ->show()
+            ->get();
+
+        $title = $category;
+        return view('document.category', ['documents' => $documents, 'title' => $title]);
+    }
+
+    public function filter($filter)
+    {
+        $documents = Document::where('category', $filter)
+            ->paginate(12);
+
+        return view('document.admin', ['documents' => $documents]);
     }
 }
