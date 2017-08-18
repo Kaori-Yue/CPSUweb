@@ -24,6 +24,7 @@ Route::get('blog', 'BlogController@index');
 Route::get('research', 'ResearchController@index');
 Route::get('teacher', 'TeacherController@index');
 Route::get('contact', 'ContactController@index');
+Route::get('document', 'DocumentController@index');
 Route::get('curricula', 'CurriculaController@index');
 #Route::get('thesis', 'ThesisController@index');
 
@@ -56,6 +57,7 @@ Route::group(['middleware' => 'auth'], function (){
         Route::post('thesis', 'ThesisController@store');
         Route::post('research', 'ResearchController@store');
         Route::post('curricula', 'CurriculaController@store');
+        Route::post('document', 'DocumentController@store');
 
 
         Route::get('image/{id}/edit', 'ImageController@edit');
@@ -64,8 +66,9 @@ Route::group(['middleware' => 'auth'], function (){
         Route::get('user/{id}/edit', 'UserController@edit');
         Route::get('teacher/{id}/edit', 'TeacherController@edit');
         Route::get('staff/{id}/edit', 'StaffController@edit');
-        Route::get('curricula/{id}/edit', 'CurriculaController@edit');
         Route::get('research/{id}/edit', 'ResearchController@edit');
+        Route::get('curricula/{id}/edit', 'CurriculaController@edit');
+        Route::get('document/{id}/edit', 'DocumentController@edit');
 
 
         Route::patch('image/{id}', 'ImageController@update');
@@ -74,8 +77,9 @@ Route::group(['middleware' => 'auth'], function (){
         Route::patch('user/{id}', 'UserController@update');
         Route::patch('teacher/{id}', 'TeacherController@update');
         Route::patch('staff/{id}', 'StaffController@update');
-        Route::patch('curricula/{id}', 'CurriculaController@update');
         Route::patch('research/{id}', 'ResearchController@update');
+        Route::patch('curricula/{id}', 'CurriculaController@update');
+        Route::patch('document/{id}', 'DocumentController@update');
 
 
         Route::delete('image/{id}', 'ImageController@destroy');
@@ -85,6 +89,7 @@ Route::group(['middleware' => 'auth'], function (){
         Route::delete('staff/{id}', 'StaffController@destroy');
         Route::delete('research/{id}', 'ResearchController@destroy');
         Route::delete('curricula/{id}', 'CurriculaController@destroy');
+        Route::delete('document/{id}', 'DocumentController@destroy');
 
 
         Route::get('admin/blog', 'AdminController@blog');
@@ -115,6 +120,10 @@ Route::group(['middleware' => 'auth'], function (){
         Route::get('admin/image', 'AdminController@image');
         Route::get('admin/image/create', 'ImageController@create');
         Route::get('admin/image/filter/{filter}', 'ImageController@filter');
+
+
+        Route::get('admin/document', 'AdminController@document');
+        Route::get('admin/document/create', 'DocumentController@create');
 
 
         Route::get('admin/file', 'AdminController@file');

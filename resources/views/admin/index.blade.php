@@ -84,6 +84,18 @@
                     </a>
                 </div>
             </div>
+
+            <div class="col-md-12 col-xs-12" style="padding-left: 0;padding-right: 0">
+                <div class="btn-group btn-group-justified">
+                    <a href="{{ url('admin/document') }}" class="
+                    @if (Request::is('admin/document/*'))btn btn-success
+                    @elseif(Request::is('admin/document'))btn btn-success
+                    @elseif(Request::is('document/*/edit'))btn btn-success
+                    @else btn btn-default @endif ">
+                        Document
+                    </a>
+                </div>
+            </div>
         </div>
         <div class="row">
             <div class="col-md-12 col-xs-12 content-card">

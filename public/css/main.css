@@ -321,6 +321,16 @@ div {
     width: 100%;
 }
 
+.document-card {
+    color: #FFFFFF;
+    box-shadow: 1px 1px 5px #888888;
+}
+
+.document-card > .document-content{
+    padding: 15px;
+    background: rgba(130, 109, 64, 0.6);
+}
+
 .research-card {
     background: rgba(130, 109, 64, 0.5);
     background-image: url('../image/SC-SU-Formal-TH_resize.png');

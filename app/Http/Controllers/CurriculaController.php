@@ -131,7 +131,7 @@ class CurriculaController extends Controller
 
         $curricula->update($new_curricula);
 
-        return redirect()->action('AdminController@curricula')->with('status', 'Create Complete!');
+        return redirect()->action('AdminController@curricula')->with('status', 'Edit Success!');
     }
 
     public function handleSlug($str)
@@ -149,10 +149,12 @@ class CurriculaController extends Controller
     public function destroy($id)
     {
         $curricula = Curricula::findOrFail($id);
-        $curricula->delete();
 
         $file = File::findOrFail($curricula->file);
         self::deleteFile($file);
+
+        $file->delete();
+        $curricula->delete();
 
         return redirect()->action('AdminController@curricula')->with('status', 'Delete Complete!');
     }

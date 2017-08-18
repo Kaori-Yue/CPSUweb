@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Blog;
 use App\Category;
 use App\Curricula;
+use App\Document;
 use App\File;
 use App\Research;
 use App\Staff;
@@ -108,6 +109,13 @@ class AdminController extends Controller
             ->paginate(20);
 
         return view('file.admin', ['files' => $files]);
+    }
+
+    public function document()
+    {
+        $documents = Document::orderBy('id', 'desc')
+            ->paginate(20);
+        return view('document.admin', ['documents' => $documents]);
     }
 
     public function user()

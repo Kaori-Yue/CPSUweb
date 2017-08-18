@@ -33,8 +33,8 @@
                     </a>
                 </li>
                 <li>
-                    <a href="{{ url('contact') }}">
-                        ติดต่อ
+                    <a href="{{ url('document') }}">
+                        เอกสาร
                     </a>
                 </li>
                 <li class="dropdown">
@@ -44,6 +44,7 @@
                     <ul class="dropdown-menu">
                         <li><a href="{{ url('history') }}">ประวัติภาควิชา</a></li>
                         <li><a href="{{ url('sitemap') }}">แผนผังเว็บไซต์</a></li>
+                        <li><a href="{{ url('contact') }}">ติดต่อ</a></li>
                     </ul>
                 </li>
             </ul>
@@ -82,11 +83,11 @@
                 </li>
                 @endif
 
-                <li>
+                {{--<li>
                     <a href="#">
                         <span class="glyphicon glyphicon-search"></span>
                     </a>
-                </li>
+                </li>--}}
             </ul>
         </div>
     </div>
