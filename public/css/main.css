@@ -649,6 +649,31 @@ a > .label-success {
     border-color: #0b5542;
 }
 
+.btn-success:focus {
+    background: #0b5542;
+    border-color: #0b5542;
+}
+
+#goTopBtn {
+    display: none;
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 99;
+    border: none;
+    /*outline: none;*/
+    background-color: rgba(109,64,130,0.8);
+    color: white;
+    /*cursor: pointer;*/
+    padding: 15px;
+    border-radius: 45%;
+    box-shadow: 1px 1px 5px #888888;
+}
+
+#goTopBtn:hover {
+    background-color: rgba(79,39,71,0.8);
+}
+
 @media only screen and (max-width: 768px) {
     .container-fluid>.navbar-collapse, .container-fluid>.navbar-header, .container>.navbar-collapse, .container>.navbar-header {
         margin-right: 8px;
@@ -718,6 +743,10 @@ a > .label-success {
 
     .address-card {
         padding: 1.5%;
+    }
+
+    #goTopBtn {
+        padding: 12px;
     }
 }
 
@@ -801,6 +830,10 @@ a > .label-success {
 
     .address-card {
         padding: 3%;
+    }
+
+    #goTopBtn {
+        padding: 10px;
     }
 }
 

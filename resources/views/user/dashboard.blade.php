@@ -30,36 +30,13 @@
                     </div>
                 </div>
             </div>
-
-            <div class="col-md-3" style="padding: 1%">
-                <div class="panel panel-warning"  style="box-shadow: 1px 1px 5px #888888;">
-                    <div class="panel-heading">
-                        <i class="material-icons" style="font-size:48px">library_books</i>
-                        <h3>Blah Blah Form</h3>
-                    </div>
-
-                    <div class="panel-body">
-                        แบบฟอร์มสำหรับจัดทำโครงงานปริญญานิพนธ์
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-md-3" style="padding: 1%">
-                <div class="panel panel-danger" style="box-shadow: 1px 1px 5px #888888;">
-                    <div class="panel-heading">
-                        <i class="material-icons" style="font-size:48px">library_books</i>
-                        <h3>Blah Blah Form</h3>
-                    </div>
-
-                    <div class="panel-body">
-                        แบบฟอร์มสำหรับจัดทำโครงงานปริญญานิพนธ์
-                    </div>
-                </div>
-            </div>
         </div>
 
-        <div class="row row-card col-md-12" style="height: 400px">
-            <h3 class="secondary-section-heading">News For Students</h3>
+        <div class="row col-xs-12 col-md-12" style="background: #FFFFFF">
+            <h3 class="secondary-section-heading">ข่าวสำหรับนักศึกษา</h3>
+            @foreach($blogs as $blog)
+                @include('blog._card', $blog)
+            @endforeach
         </div>
     </div>
 @endsection

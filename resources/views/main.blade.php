@@ -25,7 +25,13 @@
     </script>
 </head>
 <body data-spy="scroll" data-target=".navbar" data-offset="100">
+
     <img src="{{ URL::asset('image/black_ribbon_bottom_left.png') }}" class="black-ribbon stick-bottom stick-left"/>
+
+    <button onclick="topFunction()" id="goTopBtn" title="Go to top">
+        <i class="material-icons">arrow_upward</i>
+    </button>
+
     <div id="page">
         <div id="page-head">
             @include('_nav')
@@ -50,5 +56,23 @@
     <link rel="stylesheet" href="{{ URL::asset('css/main.css') }}">
 
     @yield('script')
+
+    <script>
+        // Trigger when the user scrolls down 500px from the top of the document
+        window.onscroll = function() {scrollFunction()};
+
+        function scrollFunction() {
+            if (document.body.scrollTop > 800 || document.documentElement.scrollTop > 800) {
+                document.getElementById("goTopBtn").style.display = "block";
+            } else {
+                document.getElementById("goTopBtn").style.display = "none";
+            }
+        }
+
+        function topFunction() {
+            document.body.scrollTop = 0;
+            document.documentElement.scrollTop = 0;
+        }
+    </script>
 </body>
 </html>

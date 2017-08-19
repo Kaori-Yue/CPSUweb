@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\User;
+use App\Tag;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
@@ -19,7 +20,10 @@ class UserController extends Controller
             return view('401');
         }
 
-        return view('user.dashboard');
+        $tag = Tag::where('name', 'competition')->first();
+        $blogs = $tag->blogs;
+
+        return view('user.dashboard', ['blogs' => $blogs]);
     }
 
     public function filter($filter)
