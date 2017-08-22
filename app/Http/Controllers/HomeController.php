@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Blog;
+use App\Category;
 use App\Research;
 use Illuminate\Http\Request;
 use DB;
@@ -38,7 +39,14 @@ class HomeController extends Controller
             ->take(4)
             ->get();
 
+        $category = Category::where('name', 'Announce')->first();
+        $announce = $category->blogs()->take(4);
+
         $researches = Research::all()->take(4);
-        return view('home', ['blogs' => $blogs, 'researches' => $researches]);
+        return view('home', [
+            'blogs' => $blogs,
+            'announce' => $announce,
+            'researches' => $researches
+        ]);
     }
 }

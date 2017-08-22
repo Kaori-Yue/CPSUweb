@@ -22,6 +22,7 @@ class CreateStudentTable extends Migration
             $table->string('password');
             $table->string('token');
             $table->integer('image');
+            $table->integer('user_id')->nullable();
             $table->enum('status', [
                 'enable',
                 'disable',

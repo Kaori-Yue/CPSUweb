@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Database\Seeder;
+use Carbon\Carbon;
 
 class UsersTableSeeder extends Seeder
 {
@@ -12,8 +13,6 @@ class UsersTableSeeder extends Seeder
      */
     public function run()
     {
-        
-
         \DB::table('users')->delete();
         
         \DB::table('users')->insert(array (
@@ -40,7 +39,23 @@ class UsersTableSeeder extends Seeder
                 'updated_at' => '2017-06-09 18:49:23',
             ),
         ));
-        
+
+        $teachers = \App\Teacher::all();
+        $count = 3;
+        foreach ($teachers as $teacher){
+            DB::table('users')->insert([
+                'name' => $teacher->name_th,
+                'email' => $teacher->email,
+                'password' => $teacher->password,
+                'role' => 'teacher',
+                'created_at' => Carbon::now(),
+                'updated_at' => Carbon::now(),
+            ]);
+
+            $teacher->user_id = $count;
+            $teacher->save();
+            $count++;
+        }
         
     }
 }

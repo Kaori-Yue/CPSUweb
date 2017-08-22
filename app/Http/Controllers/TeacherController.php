@@ -87,7 +87,9 @@ class TeacherController extends Controller
             'role' => 'teacher',
             'remember_token' => ''
         ];
-        User::create($user);
+        $user = User::create($user);
+        $teacher->user_id = $user->id;
+        $teacher->save();
 
         return redirect()->action('AdminController@teacher')->with('status', 'Create Complete!');
     }

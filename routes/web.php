@@ -43,7 +43,9 @@ Route::get('document/category/{category}', 'DocumentController@category');
 Route::group(['middleware' => 'auth'], function (){
 
     Route::get('dashboard', 'UserController@dashboard');
-    Route::get('dashboard/project_form', 'UserController@project');
+    Route::get('profile', 'UserController@profile');
+    Route::get('profile/edit', 'UserController@editProfile');
+    Route::post('user/update', 'UserController@updateProfile');
 
     Route::group(['middleware' => 'adminAuth'], function (){
         #Admin Route

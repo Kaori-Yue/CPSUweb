@@ -674,6 +674,23 @@ a > .label-success {
     background-color: rgba(79,39,71,0.8);
 }
 
+.profile-card {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    max-width: 500px;
+    margin: auto;
+    text-align: center;
+    border: #40826D 2px solid;
+}
+
+.profile-content {
+    padding: 0 16px;
+}
+
+.profile-card > .profile-content > .title {
+    color: grey;
+    font-size: 18px;
+}
+
 @media only screen and (max-width: 768px) {
     .container-fluid>.navbar-collapse, .container-fluid>.navbar-header, .container>.navbar-collapse, .container>.navbar-header {
         margin-right: 8px;
@@ -715,7 +732,7 @@ a > .label-success {
     }
 
     .document-card {
-        height: 230px;
+        height: 240px;
     }
 
     /*.document-card > .document-content{

@@ -27,9 +27,9 @@
                 <p>
                     <a href="{{ url('research') }}" style="color: #ffffff">ผลงานวิจัย</a>
                 </p>
-                {{--<p>
-                    <a href="{{ url('thesis') }}" style="color: #ffffff">วิทยานิพนธ์</a>
-                </p>--}}
+                <p>
+                    <a href="{{ url('document') }}" style="color: #ffffff">เอกสาร</a>
+                </p>
             </div>
             <div class="col-md-3 col-sm-6 col-xs-12" style="padding-bottom: 5%">
                 <h4 style="padding-bottom: 5%"><b>ติดต่อภาควิชา</b></h4>
@@ -41,6 +41,9 @@
                 </p>
                 <p>
                     <a href="{{ url('contact#map') }}" style="color: #ffffff">แผนที่</a>
+                </p>
+                <p>
+                    <a href="https://migmikael.github.io" target="_blank" style="color: #ffffff">ผู้พัฒนา</a>
                 </p>
             </div>
             <div class="col-md-3 col-sm-6 col-xs-12" style="padding-bottom: 5%">

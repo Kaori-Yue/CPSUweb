@@ -28,6 +28,7 @@ class CreateTeacherTable extends Migration
             $table->integer('image');
             $table->string('token');
             $table->string('password');
+            $table->integer('user_id')->nullable();
             $table->timestamps();
             $table->enum('status', [
                 'duty',     // ปฏิบัติงาน

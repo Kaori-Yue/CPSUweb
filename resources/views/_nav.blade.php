@@ -65,7 +65,12 @@
                     <ul class="dropdown-menu" role="menu">
                         <li>
                             <a href="{{ url('dashboard') }}">
-                            <b>Dashboard</b>
+                                <b>Dashboard</b>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="{{ url('profile') }}">
+                                <b>Profile</b>
                             </a>
                         </li>
                         <li>

@@ -17,7 +17,7 @@ class CreateBlogTable extends Migration
             $table->increments('id');
             $table->string('title');
             $table->string('slug')->unique();
-            $table->longText('content');
+            $table->longText('content')->nullable();
             $table->integer('cover');
             $table->enum('status', ['draft', 'disable', 'publish']);
             $table->dateTime('publish_at');
