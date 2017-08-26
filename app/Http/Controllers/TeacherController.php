@@ -191,4 +191,9 @@ class TeacherController extends Controller
         return redirect()->action('AdminController@teacher')->with('status', 'Delete Complete!');
     }
 
+    public function dashboard()
+    {
+        return view('teacher.dashboard');
+    }
+
 }

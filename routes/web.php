@@ -140,6 +140,11 @@ Route::group(['middleware' => 'auth'], function (){
         Route::get('admin/thesis', 'AdminController@thesis');
         Route::get('admin/thesis/create', 'ThesisController@create');
     });
+
+    Route::group(['middleware' => 'teacherAuth'], function (){
+        Route::get('dashboard/teacher', 'TeacherController@dashboard');
+        Route::get('teacher/blog', 'AdminController@blog');
+    });
 });
 
 
