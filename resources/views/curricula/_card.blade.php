@@ -25,12 +25,30 @@
                     </a>
                 </div>
                 <div class="col-md-6 col-sm-6 col-xs-6">
-                    {!! Form::model($curricula, ['method' => 'DELETE', 'url'=>'curricula/'.$curricula->id]) !!}
-                    <button class="btn btn-danger btn-block" type="submit">
-                        Delete
-                        <span class="glyphicon glyphicon-remove-sign"></span>
-                    </button>
-                    {!! Form::close() !!}
+                    <button type="button" class="btn btn-danger btn-block" data-toggle="modal" data-target="#deleteModal">Delete</button>
+
+                    <div class="modal fade" id="deleteModal" role="dialog">
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                    <h4 class="modal-title">Delete</h4>
+                                </div>
+                                <div class="modal-body">
+                                    <p>Do you want to delete this curricula ?</p>
+                                </div>
+                                <div class="modal-footer">
+                                    {!! Form::model($curricula, ['method' => 'DELETE', 'url'=>'curricula/'.$curricula->id]) !!}
+                                    <button class="btn btn-danger btn-block" type="submit">
+                                        Delete
+                                    </button>
+                                    {!! Form::close() !!}
+                                    <br>
+                                    <button type="button" class="btn btn-default btn-block" data-dismiss="modal">Close</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             @endif
         </div>

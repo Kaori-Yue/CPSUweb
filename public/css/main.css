@@ -691,6 +691,11 @@ a > .label-success {
     font-size: 18px;
 }
 
+.modal {
+    color: #000000;
+    text-align: left;
+}
+
 @media only screen and (max-width: 768px) {
     .container-fluid>.navbar-collapse, .container-fluid>.navbar-header, .container>.navbar-collapse, .container>.navbar-header {
         margin-right: 8px;
