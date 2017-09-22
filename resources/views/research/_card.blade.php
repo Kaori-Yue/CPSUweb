@@ -26,7 +26,7 @@
                                     <h4 class="modal-title">Delete</h4>
                                 </div>
                                 <div class="modal-body">
-                                    <p>Do you want to delete this staff?</p>
+                                    <p>Do you want to delete this research?</p>
                                 </div>
                                 <div class="modal-footer">
                                     {!! Form::model($research, ['method' => 'DELETE', 'url'=>'research/'.$research->id]) !!}
