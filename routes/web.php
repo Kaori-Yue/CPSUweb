@@ -143,7 +143,7 @@ Route::group(['middleware' => 'auth'], function (){
 
     Route::group(['middleware' => 'teacherAuth'], function (){
         Route::get('dashboard/teacher', 'TeacherController@dashboard');
-        Route::get('teacher/blog', 'AdminController@blog');
+        #Route::get('teacher/blog', 'AdminController@blog');
     });
 });
 
