@@ -94,6 +94,14 @@
                     @else btn btn-default @endif ">
                         Document
                     </a>
+
+                    <a href="{{ url('admin/category') }}" class="
+                    @if (Request::is('admin/category/*'))btn btn-success
+                    @elseif(Request::is('admin/category'))btn btn-success
+                    @elseif(Request::is('user/*/edit'))btn btn-success
+                    @else btn btn-default @endif ">
+                        Category
+                    </a>
                 </div>
             </div>
         </div>

@@ -127,4 +127,14 @@ class AdminController extends Controller
 
         return view('user.admin', ['users' => $users]);
     }
+
+    public function category()
+    {
+        $categorys = Category::orderBy('name', 'ASC')
+            ->paginate(8);
+
+        return view('category.admin', [
+            'categorys' => $categorys,
+        ]);
+    }
 }

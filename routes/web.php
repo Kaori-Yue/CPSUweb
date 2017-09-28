@@ -61,6 +61,7 @@ Route::group(['middleware' => 'auth'], function (){
         Route::post('research', 'ResearchController@store');
         Route::post('curricula', 'CurriculaController@store');
         Route::post('document', 'DocumentController@store');
+        Route::post('category', 'CategoryController@store');
 
 
         Route::get('image/{id}/edit', 'ImageController@edit');
