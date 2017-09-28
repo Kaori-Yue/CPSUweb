@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 
 class CategoryController extends Controller
 {
+
     public function store(Request $request)
     {
         $this->validate($request, [
@@ -51,5 +52,17 @@ class CategoryController extends Controller
         return redirect()->action('AdminController@category')->with('status', 'Update Complete!');
     }
 
+    public function handleSlug($str)
+    {
+        $slug = str_replace(' ', '-', $str);
+        return $slug;
+    }
+
+    public function destroy($id)
+    {
+        $category = Category::findOrFail($id);
+        $category->delete();
+        return redirect()->action('AdminController@category')->with('status', 'Delete Complete!');
+    }
 
 }
