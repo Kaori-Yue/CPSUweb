@@ -1,0 +1,44 @@
+@import "components/variables";
+@import "components/container";
+@import "components/navbar";
+@import "components/card";
+@import "components/form";
+@import "components/color";
+@import "components/title";
+@import "components/wrapper";
+@import "components/logo";
+
+
+@font-face {
+  font-family: Kanit;
+  src: url(font/Kanit/Kanit-Regular.ttf);
+}
+@font-face {
+  font-family: Kanit;
+  src: url(font/Kanit/Kanit-Bold.ttf);
+  font-weight: bold;
+}
+@font-face {
+  font-family: Kanit;
+  src: url(font/Kanit/Kanit-Light.ttf);
+  font-weight: 100;
+}
+
+body{
+  margin: 0;
+  font-family: Kanit;
+  background-color: $color-light-gray;
+}
+
+h1,h2,h3,h4,h5,h6,p{
+  margin: 0;
+}
+
+a{
+  text-decoration: none;
+  color: $color-green;
+  &:hover{
+    opacity: 0.5;
+  }
+
+}
