@@ -85,6 +85,16 @@
                 <a href="{{ url('admin/file/create') }}" class="btn btn-default btn-block">Create</a>
             </div>
         </div>
+        <div class="col-md-4 col-sm-6" style="padding: 10px">
+            <div class="summary-card-small">
+                <h2>
+                    <a href="{{ url('admin/Category') }}">Category</a>
+                </h2>
+                <hr>
+                <h4>Amount: {{ $category }}</h4>
+                <a href="{{ url('admin/category/create') }}" class="btn btn-default btn-block">Create</a>
+            </div>
+        </div>
     </div>
 @endsection
 

@@ -696,6 +696,19 @@ a > .label-success {
     text-align: left;
 }
 
+.category-card {
+    color: #FFFFFF;
+    height: 250px;
+    box-shadow: 1px 1px 5px #888888;
+}
+
+.category-card > .category-content{
+    padding: 15px;
+    background: rgba(130, 109, 64, 0.7);
+    height: 100%;
+    width: 100%;
+}
+
 @media only screen and (max-width: 768px) {
     .container-fluid>.navbar-collapse, .container-fluid>.navbar-header, .container>.navbar-collapse, .container>.navbar-header {
         margin-right: 8px;

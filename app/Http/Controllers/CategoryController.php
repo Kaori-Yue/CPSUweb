@@ -8,6 +8,17 @@ use Illuminate\Http\Request;
 class CategoryController extends Controller
 {
 
+    public function create()
+    {
+        return view('category.create');
+    }
+
+    public function edit($id)
+    {
+        $category = Category::findOrFail($id);
+        return view('category.edit', ['category' => $category]);
+    }
+
     public function store(Request $request)
     {
         $this->validate($request, [
@@ -19,11 +30,11 @@ class CategoryController extends Controller
         $slug = self::handleSlug($category['name']);
 
         $categoryData = [
-            'title' => $category['name'],
+            'name' => $category['name'],
             'slug' => $slug,
             'description' => $category['description'],
         ];
-        $category = Category::create($categoryData);
+        Category::create($categoryData);
 
         return redirect()->action('AdminController@category')
             ->with('status', 'Create Complete!');
@@ -50,6 +61,12 @@ class CategoryController extends Controller
         $category->update($categoryData);
 
         return redirect()->action('AdminController@category')->with('status', 'Update Complete!');
+    }
+
+    public function show($slug)
+    {
+        $category = Category::where('slug', $slug)->firstOrFail();
+        return view('category.show', ['category' => $category]);
     }
 
     public function handleSlug($str)

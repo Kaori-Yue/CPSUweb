@@ -31,7 +31,7 @@ class AdminController extends Controller
         $user = User::where('role', '!=', 'admin')->count();
         $admin_user = User::where('role', 'admin')->count();
         $suspend_user = User::where('role', 'suspend')->count();
-
+        $category = Category::count();
         return view('admin.summary', [
             'curricula' => $curricula,
             'publish_blog' => $publish_blog,
@@ -45,7 +45,8 @@ class AdminController extends Controller
             'file' => $file,
             'user' => $user,
             'admin_user' => $admin_user,
-            'suspend_user' => $suspend_user
+            'suspend_user' => $suspend_user,
+            'category' => $category,
         ]);
     }
 
@@ -130,11 +131,11 @@ class AdminController extends Controller
 
     public function category()
     {
-        $categorys = Category::orderBy('name', 'ASC')
+        $categories = Category::orderBy('name', 'ASC')
             ->paginate(8);
 
         return view('category.admin', [
-            'categorys' => $categorys,
+            'categories' => $categories,
         ]);
     }
 }

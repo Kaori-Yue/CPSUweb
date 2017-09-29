@@ -73,6 +73,7 @@ Route::group(['middleware' => 'auth'], function (){
         Route::get('research/{id}/edit', 'ResearchController@edit');
         Route::get('curricula/{id}/edit', 'CurriculaController@edit');
         Route::get('document/{id}/edit', 'DocumentController@edit');
+        Route::get('category/{id}/edit', 'CategoryController@edit');
 
 
         Route::patch('image/{id}', 'ImageController@update');
@@ -84,6 +85,7 @@ Route::group(['middleware' => 'auth'], function (){
         Route::patch('research/{id}', 'ResearchController@update');
         Route::patch('curricula/{id}', 'CurriculaController@update');
         Route::patch('document/{id}', 'DocumentController@update');
+        Route::patch('category/{id}', 'CategoryController@update');
 
 
         Route::delete('image/{id}', 'ImageController@destroy');
@@ -94,6 +96,7 @@ Route::group(['middleware' => 'auth'], function (){
         Route::delete('research/{id}', 'ResearchController@destroy');
         Route::delete('curricula/{id}', 'CurriculaController@destroy');
         Route::delete('document/{id}', 'DocumentController@destroy');
+        Route::delete('category/{id}', 'CategoryController@destroy');
 
 
         Route::get('admin/blog', 'AdminController@blog');
@@ -140,6 +143,9 @@ Route::group(['middleware' => 'auth'], function (){
 
         Route::get('admin/thesis', 'AdminController@thesis');
         Route::get('admin/thesis/create', 'ThesisController@create');
+
+        Route::get('admin/category', 'AdminController@category');
+        Route::get('admin/category/create', 'CategoryController@create');
     });
 
     Route::group(['middleware' => 'teacherAuth'], function (){
