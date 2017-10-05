@@ -35,7 +35,7 @@ class BlogController extends Controller
             $tag['weight'] = $tag_count;
         }
 
-        return view('blog.index', [
+        return view('blog.index2', [
             'blogs' => $blogs,
             'tags' => $tags,
             'features' => $features

@@ -17,7 +17,7 @@ class CurriculaController extends Controller
 
         $dis_curriculas = Curricula::disable()->get();
 
-        return view('curricula.index', [
+        return view('curricula.index2', [
             'b_curriculas' => $b_curriculas,
             'm_curriculas' => $m_curriculas,
             'd_curriculas' => $d_curriculas,

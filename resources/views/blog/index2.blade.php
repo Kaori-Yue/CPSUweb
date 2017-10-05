@@ -1,8 +1,10 @@
 @extends('main2')
 
+@section('title', "ข่าวสาร")
+
 @section('content')
     <h1 class="title">ข่าวล่าสุด
-        <a href="#" class="more-detail-title">ดูข่าวเพิ่ทเติม</a>
+        <a href="#" class="more-detail-title">ดูข่าวเพิ่มเติม</a>
     </h1>
     <ul class="wrapper-card-news">
 
@@ -68,7 +70,7 @@
     </ul>
 
     <h1 class="title">ข่าวการแข่งขัน (หมวดหมู่)
-        <a href="#" class="more-detail-title">ดูข่าวเพิ่ทเติม</a>
+        <a href="#" class="more-detail-title">ดูข่าวเพิ่มเติม</a>
     </h1>
     <ul class="wrapper-card-news">
         <li>

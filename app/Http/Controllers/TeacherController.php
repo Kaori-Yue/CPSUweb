@@ -22,7 +22,7 @@ class TeacherController extends Controller
 
         $staffs = Staff::duty()->orderBy('name_th')->get();
 
-        return view('teacher.index', [
+        return view('teacher.index2', [
             'teachers' => $teachers,
             'staffs' => $staffs
         ]);

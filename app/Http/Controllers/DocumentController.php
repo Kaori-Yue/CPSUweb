@@ -24,7 +24,7 @@ class DocumentController extends Controller
             array_push($categories, $key['category']);
         }
 
-        return view('document.index', [
+        return view('document.index2', [
             'documents' => $documents,
             'categories' => $categories
         ]);
