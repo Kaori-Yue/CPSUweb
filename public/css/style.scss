@@ -7,7 +7,7 @@
 @import "components/title";
 @import "components/wrapper";
 @import "components/logo";
-
+@import "components/dropDownMenu";
 
 @font-face {
   font-family: Kanit;
@@ -28,6 +28,16 @@ body{
   margin: 0;
   font-family: Kanit;
   background-color: $color-light-gray;
+
+  padding-top: 50px;
+  @media screen and (min-width: $device-tablet) {
+    padding-top: 90px;
+  }
+  @media screen and (min-width: $device-computer) {
+  }
+  @media screen and (min-width: $device-lg-computer) {
+
+  }
 }
 
 h1,h2,h3,h4,h5,h6,p{

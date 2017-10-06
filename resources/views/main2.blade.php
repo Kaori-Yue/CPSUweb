@@ -26,8 +26,11 @@
             <li class="menu-navbar">
                 <a href="{{ url('document') }}">เอกสาร</a>
             </li>
-            <li class="menu-navbar">
-                <a href="">เกี่ยวข้องกับภาควิชา</a>
+            <li class="menu-navbar">เกี่ยวกับภาควิชา
+                <ul class="drop-down-menu">
+                    <li class="list-menu-drop-down">ประวัติภาควิชา</li>
+                    <li class="list-menu-drop-down">ติดต่อภาควิชา</li>
+                </ul>
             </li>
         </ul>
     </div>

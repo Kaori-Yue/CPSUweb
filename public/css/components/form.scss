@@ -180,3 +180,147 @@
 
   }
 }
+
+.form-read-research{
+  width: 100%;
+  background-color: $color-white;
+  padding: 10px;
+  margin: 10px 0;
+  box-sizing: border-box;
+  .logo-su{
+    display: block;
+    margin: auto;
+    width: 50px;
+    height: auto;
+    @media screen and (min-width: $device-tablet) {
+      width: 100px;
+
+    }
+    @media screen and (min-width: $device-computer) {
+
+    }
+  }
+  .title-research{
+    font-size: 18px;
+    text-align: center;
+    font-weight: 100;
+    margin-top: 20px;
+    @media screen and (min-width: $device-tablet) {
+      font-size: 20px;
+
+    }
+    @media screen and (min-width: $device-computer) {
+
+    }
+  }
+  .description-research{
+    font-size: 14px;
+    font-family: Thonburi;
+    text-align: center;
+    margin-top: 10px;
+    @media screen and (min-width: $device-tablet) {
+      font-size: 16px;
+      margin-top: 20px;
+
+    }
+    @media screen and (min-width: $device-computer) {
+
+    }
+  }
+
+  .wrapper-content-research{
+    width: 100%;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    padding: 0;
+    margin: 0;
+    margin-top: 40px;
+
+    li{
+      list-style-type: none;
+      width: 100%;
+      box-sizing: border-box;
+      margin-bottom: 10px;
+
+
+
+      .image-content-research{
+        width: 100%;
+        box-sizing: border-box;
+        display: inline;
+        float: none;
+
+        img{
+          width: 100%;
+
+        }
+        @media screen and (min-width: $device-tablet) {
+          width: 50%;
+          float: left;
+          padding-right: 10px;
+
+        }
+        @media screen and (min-width: $device-computer) {
+
+        }
+
+      }
+      .content-research{
+        margin-top: 10px;
+        box-sizing: border-box;
+        width: 100%;
+        float: none;
+        display: inline;
+        height: 100%;
+
+        font-family: Thonburi;
+        @media screen and (min-width: $device-tablet) {
+          width: 50%;
+          float: right;
+          padding-left: 10px;
+          margin-top: 0px;
+
+        }
+        @media screen and (min-width: $device-computer) {
+
+        }
+      }
+      @media screen and (min-width: $device-tablet) {
+        margin-bottom: 30px;
+        &:nth-of-type(2n){
+          .image-content-research{
+            float: right;
+          }
+          .content-research{
+            float: left;
+          }
+        }
+
+
+      }
+      @media screen and (min-width: $device-computer) {
+
+      }
+    }
+    @media screen and (min-width: $device-tablet) {
+
+
+
+    }
+    @media screen and (min-width: $device-computer) {
+
+    }
+  }
+
+
+  @media screen and (min-width: $device-tablet) {
+    padding: 20px;
+    margin: 20px 0;
+  }
+  @media screen and (min-width: $device-computer) {
+
+  }
+
+}
