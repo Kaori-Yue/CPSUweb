@@ -7,6 +7,7 @@ use App\BlogTag;
 use App\Category;
 use App\File;
 use App\Tag;
+use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Illuminate\Support\Collection;
 use Illuminate\Support\Facades\Auth;
@@ -131,10 +132,13 @@ class BlogController extends Controller
             'status' => 'required|in:draft,disable,publish',
             'category_id' => 'required|integer|min:0',
             'featured' => 'required|integer|between:0,1',
+
         ]);
 
         $blog = $request->all();
         $slug = self::handleSlug($blog['title']);
+
+        $publish_at = self::handleDateTime($blog['publish_date'].' '.$blog['publish_time']);
 
         $cover_image = $request->file('cover');
         $file = $this->storeImage($cover_image, 'cover');
@@ -147,7 +151,7 @@ class BlogController extends Controller
             'content' => $blog['content'],
             'cover' => $file->id,
             'status' => $blog['status'],
-            'publish_at' => $blog['publish_date'].' '.$blog['publish_time'],
+            'publish_at' => $publish_at,
             'category_id' => $blog['category_id'],
             'user_id' => Auth::id(),
             'featured' => $blog['featured'],
@@ -309,5 +313,13 @@ class BlogController extends Controller
         }
 
         return view('blog.category', ['blogs' => $blogs, 'title' => $title]);
+    }
+
+    public function handleDateTime($dateTime)
+    {
+        if($dateTime == " "){
+            $dateTime = Carbon::now()->toDateTimeString();
+        }
+        return $dateTime;
     }
 }
