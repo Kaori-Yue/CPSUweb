@@ -53,9 +53,9 @@
                     </a>
                 </div>
                 <div class="col-md-6 col-xs-6">
-                    <button type="button" class="btn btn-danger btn-block" data-toggle="modal" data-target="#deleteModal">Delete</button>
+                    <button type="button" class="btn btn-danger btn-block" data-toggle="modal" data-target="#deleteModal{{$teacher->id}}">Delete</button>
 
-                    <div class="modal fade" id="deleteModal" role="dialog">
+                    <div class="modal fade" id="deleteModal{{$teacher->id}}" role="dialog">
                         <div class="modal-dialog">
                             <div class="modal-content">
                                 <div class="modal-header">

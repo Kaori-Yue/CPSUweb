@@ -58,11 +58,11 @@
                         </a>
                     </div>
                     <div class="col-md-6 col-xs-6">
-                        <button type="button" class="btn btn-danger btn-block" data-toggle="modal" data-target="#deleteModal">
+                        <button type="button" class="btn btn-danger btn-block" data-toggle="modal" data-target="#deleteModal{{$file->id}}">
                             <span class="glyphicon glyphicon-remove-sign"></span>
                         </button>
 
-                        <div class="modal fade" id="deleteModal" role="dialog">
+                        <div class="modal fade" id="deleteModal{{$file->id}}" role="dialog">
                             <div class="modal-dialog">
                                 <div class="modal-content">
                                     <div class="modal-header">
