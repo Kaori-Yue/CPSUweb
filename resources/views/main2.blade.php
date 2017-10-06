@@ -33,6 +33,15 @@
                 </ul>
             </li>
         </ul>
+        <button class="btn-navbar-list-menu">เมนู</button>
+        <ul class="list-menu-navbar-mobile">
+            <li class="menu-navbar-mobile">ข่าวสาร</li>
+            <li class="menu-navbar-mobile" >หลักสูตร</li>
+            <li class="menu-navbar-mobile">บุคลากร</li>
+            <li class="menu-navbar-mobile">ผลงานวิจัย</li>
+            <li class="menu-navbar-mobile">เอกสาร</li>
+            <li class="menu-navbar-mobile">เกี่ยวข้องกับภาควิชา</li>
+        </ul>
     </div>
 </nav>
 <div class="container">
