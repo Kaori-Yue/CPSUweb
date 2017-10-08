@@ -53,8 +53,8 @@ class HomeController extends Controller
 
     public function cutContent($content)
     {
-        if(strlen($content) > 35){
-           $content =  str_limit($content, 35);
+        if(strlen($content) > 40){
+           $content =  str_limit($content, 40);
         }
         return $content;
     }

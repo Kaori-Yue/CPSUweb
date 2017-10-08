@@ -1,12 +1,14 @@
-@extends('main')
+@extends('main2')
 
 @section('content')
     <div class="container">
-        <div class="row col-md-12 col-xs-12" style="background: #ffffff">
-            <h2 class="primary-section-heading">{{ $title }}</h2>
+        <h1 class="title">{{$title}}</h1>
+        <ul class="wrapper-card-document">
             @foreach($documents as $document)
-                @include('document._card', $document)
+                <li>
+                    @include('document._card2')
+                </li>
             @endforeach
-        </div>
+        </ul>
     </div>
 @endsection

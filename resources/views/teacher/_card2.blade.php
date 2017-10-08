@@ -24,12 +24,6 @@
                 </ul>
             </li>
             <li>
-                <p class="title-detail-all">อีเมล</p>
-                <ul class="list-detail-all">
-                    <li class="in-detail">{{$teacher->email}}</li>
-                </ul>
-            </li>
-            <li>
                 <p class="title-detail-all">สาขาที่เชี่ยวชาญ</p>
                 <ul class="list-detail-all">
                     <li class="in-detail">{{$teacher->expertise}}</li>
@@ -39,6 +33,12 @@
                 <p class="title-detail-all">เว็บไซต์</p>
                 <ul class="list-detail-all">
                     <li class="in-detail">{{$teacher->website}}</li>
+                </ul>
+            </li>
+            <li>
+                <p class="title-detail-all">อีเมล</p>
+                <ul class="list-detail-all">
+                    <li class="in-detail">{{$teacher->email}}</li>
                 </ul>
             </li>
         </ul>

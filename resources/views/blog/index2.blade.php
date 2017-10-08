@@ -8,7 +8,9 @@
     </h1>
         <ul class="wrapper-card-news">
             @foreach($blogs as $blog)
-                @include('blog.card2', $blog)
+            <li>
+                @include('blog._card2', $blog)
+            </li>
             @endforeach
         </ul>
     <h1 class="title">ข่าวการแข่งขัน (หมวดหมู่)

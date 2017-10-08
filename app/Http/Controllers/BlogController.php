@@ -30,6 +30,9 @@ class BlogController extends Controller
             ->take(4)
             ->get();
 
+        for($i = 0; $i < 6; ++$i){
+            $blogs[$i]["content"] = self::cutContent($blogs[$i]["content"]);
+        }
         $tags = Tag::all();
         foreach ($tags as $tag){
             $tag_count = BlogTag::where('tag_id', $tag->id)->count();
@@ -321,5 +324,13 @@ class BlogController extends Controller
             $dateTime = Carbon::now()->toDateTimeString();
         }
         return $dateTime;
+    }
+
+    public function cutContent($content)
+    {
+        if(strlen($content) > 50){
+            $content =  str_limit($content, 40);
+        }
+        return $content;
     }
 }

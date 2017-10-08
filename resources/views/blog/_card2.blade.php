@@ -1,5 +1,4 @@
-<li>
-    <div class="card-news background-white">
+ <div class="card-news background-white">
         <ul class="container-card-news">
             <li class="image-card-news">
                 <img src="{{ url('image/show/'.$blog->cover) }}" />
@@ -25,5 +24,4 @@
                 </li>
             </ul>
         </div>
-    </div>
-</li>
+ </div>
