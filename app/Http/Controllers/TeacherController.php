@@ -13,6 +13,20 @@ use App\Traits\ImageTrait;
 class TeacherController extends Controller
 {
     use ImageTrait;
+    public $status = [
+        'duty' => 'Duty',
+        'retire' => 'Retire',
+        'study' => 'Study',
+        'disable' => 'Disable',
+    ];
+
+    public $rank = [
+        100 => 'หัวหน้าภาควิชา',
+        90 => 'รองหัวหน้าภาควิชา',
+        50 => 'เลขาภาควิชา',
+        0 => 'อาจารย์'
+    ];
+
     public function index()
     {
         $teachers = Teacher::duty()
@@ -43,13 +57,7 @@ class TeacherController extends Controller
     public function create()
     {
         //$status = Teacher::pluck('status', 'status');
-        $status = [
-            'duty' => 'Duty',
-            'retire' => 'Retire',
-            'study' => 'Study',
-            'disable' => 'Disable',
-        ];
-        return view('teacher.create', ['status' => $status]);
+        return view('teacher.create', ['status' => $this->status]);
     }
 
     public function store(Request $request)
@@ -99,6 +107,8 @@ class TeacherController extends Controller
         if($teacher['position'] == 'หัวหน้าภาควิชา'){
             return 100;
         }elseif($teacher['position'] == 'รองหัวหน้าภาควิชา'){
+            return 90;
+        }elseif($teacher['position'] == 'เลขาภาควิชา'){
             return 50;
         }
 
@@ -139,14 +149,11 @@ class TeacherController extends Controller
     public function edit($id)
     {
         $teacher = Teacher::findOrFail($id);
-        $status = [
-            'duty' => 'Duty',
-            'retire' => 'Retire',
-            'study' => 'Study',
-            'disable' => 'Disable',
-        ];
 
-        return view('teacher.edit', ['status' => $status, 'teacher' => $teacher]);
+        return view('teacher.edit', [
+            'status' => $this->status,
+            'teacher' => $teacher
+        ]);
     }
 
     public function update(Request $request, $id)

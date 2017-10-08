@@ -2,6 +2,7 @@
 
 @section('content')
     <div class="container">
+        @if(!Request::is('admin'))
         <div class="row" style="background: #CFD8DC;padding: 10px">
             <div class="col-md-12 col-xs-12" style="padding-left: 0;padding-right: 0">
                 <div class="btn-group btn-group-justified">
@@ -105,6 +106,7 @@
                 </div>
             </div>
         </div>
+        @endif
         <div class="row">
             <div class="col-md-12 col-xs-12 content-card">
                 @yield('show')

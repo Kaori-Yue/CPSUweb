@@ -40,9 +40,9 @@ class ImageController extends Controller
     public function create()
     {
         $type = [
-            'others' => 'Others',
-            'profile' => 'Profile',
-            'cover' => 'Cover',
+            'others' => 'ปกติ',
+            'profile' => 'เล็ก',
+            'cover' => 'ใหญ่',
         ];
 
         return view('image.create', ['type' => $type]);
@@ -66,9 +66,9 @@ class ImageController extends Controller
     public function edit($id)
     {
         $type = [
-            'others' => 'Others',
-            'profile' => 'Profile',
-            'cover' => 'Cover',
+            'others' => 'ปกติ',
+            'profile' => 'เล็ก',
+            'cover' => 'ใหญ่',
         ];
 
         $image = \App\File::findOrFail($id);
@@ -81,6 +81,10 @@ class ImageController extends Controller
         $this->validate($request, [
             'image' => 'image',
         ]);
+
+        if(!$request->hasFile('image')){
+            return redirect()->back()->withErrors(['image' => 'File not found']);
+        }
 
         $file = $request->file('image');
         $type = $request->get('type');
