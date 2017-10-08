@@ -3,6 +3,7 @@
         <h1>{{ $header_text }}</h1>
     </div>
     <div class="panel-body">
+        @if(Request::is('*/create'))
         <div class="form-group{{ $errors->has('cover') ? ' has-error' : '' }}">
             {!! Form::label('cover', 'Cover Image') !!}
             {!! Form::file('cover', ['class' => 'form-control']) !!}
@@ -12,6 +13,31 @@
                 </span>
             @endif
         </div>
+        @else
+            {!! Form::label('cover', 'Current Cover Image') !!}<br>
+            <img src="{{ url('image/show/'.$blog->cover) }}" height="100" alt="">
+            or
+            <button data-toggle="collapse" data-target="#cover" type="button" class="btn btn-warning">
+                New Cover Image
+            </button>
+
+            <div id="cover" class="collapse">
+                <div class="form-group{{ $errors->has('cover') ? ' has-error' : '' }}">
+                    {!! Form::label('cover', 'New Cover Image') !!}
+                    {!! Form::file('cover', ['class' => 'form-control']) !!}
+                    @if ($errors->has('cover'))
+                        <span class="help-block">
+                    <strong>{{ $errors->first('cover') }}</strong>
+                </span>
+                    @endif
+                </div>
+            </div>
+            <div class="col-md-12">
+                <hr>
+            </div>
+        @endif
+
+
         <div class="form-group{{ $errors->has('title') ? ' has-error' : '' }}">
             {!! Form::label('title', 'Title') !!}
             {!! Form::text('title', null, ['class' => 'form-control']) !!}

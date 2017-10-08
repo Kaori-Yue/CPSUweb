@@ -103,6 +103,7 @@
             @endif
         </div>
 
+        @if(Request::is('*/create'))
         <div class="form-group{{ $errors->has('image') ? ' has-error' : '' }}">
             {!! Form::label('image', 'Image') !!}
             {!! Form::file('image', ['class' => 'form-control']) !!}
@@ -112,6 +113,24 @@
                 </span>
             @endif
         </div>
+        @else
+            {!! Form::label('image', 'Current Image') !!}<br>
+            <img src="{{ url('image/show/'.$teacher->image) }}" height="100" alt="">
+            or
+            <button data-toggle="collapse" data-target="#cover" type="button" class="btn btn-warning">
+                New Image
+            </button>
+
+            <div id="cover" class="collapse">
+                {!! Form::label('image', 'Image') !!}
+                {!! Form::file('image', ['class' => 'form-control']) !!}
+                @if ($errors->has('image'))
+                    <span class="help-block">
+                    <strong>{{ $errors->first('image') }}</strong>
+                </span>
+                @endif
+            </div>
+        @endif
 
     </div>
     <div class="panel-footer">

@@ -18,10 +18,29 @@
             ],
             toolbar: 'insertfile undo redo | styleselect | bold italic | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link image | print preview media fullpage | forecolor backcolor emoticons',
             image_list: [
-                    @foreach($images as $image)
+                @foreach($images as $image)
                 {title: "{!! $image->original_name !!}", value: "{!! url('image/show/'.$image->id) !!}"},
                 @endforeach
-            ]
+            ],
+            image_class_list: [
+                {title: 'Responsive', value: 'img-responsive'},
+                {title: 'None', value: ''}
+            ],
+            setup: function(ed) {
+                ed.on('keydown', function(event) {
+                    if (event.keyCode === 9) { // tab pressed
+                        if (event.shiftKey) {
+                            ed.execCommand('Outdent');
+                        }
+                        else {
+                            ed.execCommand('Indent');
+                        }
+
+                        event.preventDefault();
+                        return false;
+                    }
+                });
+            }
         });
     </script>
 @endsection
