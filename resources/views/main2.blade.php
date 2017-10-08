@@ -9,7 +9,7 @@
 <body>
 <nav class="navbar">
     <div class="container">
-        <h1 class="logo-navbar">CPSU</h1>
+        <a href="{{ url('') }}"><h1 class="logo-navbar">CPSU</h1>
         <ul class="list-menu-navbar">
             <li class="menu-navbar">
                 <a href="{{ url('blog') }}">ข่าวสาร</a>
@@ -20,27 +20,42 @@
             <li class="menu-navbar">
                 <a href="{{ url('teacher') }}">บุคลากร</a>
             </li>
-            <li class="menu-navbar">
+            <!--<li class="menu-navbar">
                 <a href="{{ url('research') }}">ผลงานวิจัย</a>
-            </li>
+            </li>-->
             <li class="menu-navbar">
                 <a href="{{ url('document') }}">เอกสาร</a>
             </li>
-            <li class="menu-navbar">เกี่ยวกับภาควิชา
+            <li class="menu-navbar">
+                <a>เกี่ยวกับภาควิชา</a>
                 <ul class="drop-down-menu">
-                    <li class="list-menu-drop-down">ประวัติภาควิชา</li>
-                    <li class="list-menu-drop-down">ติดต่อภาควิชา</li>
+                    <li class="list-menu-drop-down">
+                        <a href="{{url('history')}}">ประวัติภาควิชา</a>
+                    </li>
+                    <li class="list-menu-drop-down">
+                        <a href="{{url('contact')}}">ติดต่อภาควิชา</a>
+                    </li>
                 </ul>
             </li>
         </ul>
         <button class="btn-navbar-list-menu">เมนู</button>
         <ul class="list-menu-navbar-mobile">
-            <li class="menu-navbar-mobile">ข่าวสาร</li>
-            <li class="menu-navbar-mobile" >หลักสูตร</li>
-            <li class="menu-navbar-mobile">บุคลากร</li>
-            <li class="menu-navbar-mobile">ผลงานวิจัย</li>
-            <li class="menu-navbar-mobile">เอกสาร</li>
-            <li class="menu-navbar-mobile">เกี่ยวข้องกับภาควิชา</li>
+            <li class="menu-navbar-mobile">
+                <a href="{{ url('blog') }}">ข่าวสาร</a>
+            </li>
+            <li class="menu-navbar-mobile" >
+                <a href="{{ url('curricula') }}">หลักสูตร</a>
+            </li>
+            <li class="menu-navbar-mobile">
+                <a href="{{ url('teacher') }}">บุคลากร</a>
+            </li>
+            <!--<li class="menu-navbar-mobile">
+                <a href="{{ url('research') }}">ผลงานวิจัย</a>
+            </li>-->
+            <li class="menu-navbar-mobile">
+                <a href="{{ url('document') }}">เอกสาร</a>
+            </li>
+            <li class="menu-navbar-mobile">เกี่ยวกับภาควิชา</li>
         </ul>
     </div>
 </nav>

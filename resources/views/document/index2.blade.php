@@ -4,44 +4,20 @@
 
 @section('content')
 <div class="container">
-    <h1 class="title">แบบฟอร์มทั่วไป</h1>
-    <ul class="wrapper-card-document">
-        <li>
-            <div class="card-document">
-
-                <h1 class="title">มศก.1
-                    <div class="management-logo">
-                        <img src="Icon-Share.png" />
-                        <p class="description-management-logo">Download</p>
-                    </div>
-                </h1>
-                <p class="description-card-document">คำร้องทั่วไป</p>
-            </div>
-        </li>
-        <li>
-            <div class="card-document">
-
-                <h1 class="title">มศก.1
-                    <div class="management-logo">
-                        <img src="Icon-Share.png" />
-                        <p class="description-management-logo">Download</p>
-                    </div>
-                </h1>
-                <p class="description-card-document">คำร้องทั่วไป</p>
-            </div>
-        </li>
-        <li>
-            <div class="card-document">
-
-                <h1 class="title">มศก.1
-                    <div class="management-logo">
-                        <img src="Icon-Share.png" />
-                        <p class="description-management-logo">Download</p>
-                    </div>
-                </h1>
-                <p class="description-card-document">คำร้องทั่วไป</p>
-            </div>
-        </li>
-    </ul>
+    @foreach($categories as $category)
+        <h1 class="title">{{$category}}</h1>
+        <ul class="wrapper-card-document">
+            @foreach($documents[$category] as $document)
+            <li>
+                @if($loop->iteration <= 6)
+                @include('document._card2')
+                @endif
+            </li>
+            @endforeach
+        </ul>
+        <div class="col-sm-12 col-md-12 text-right">
+            <h4 style="float: right"><a href="{{ url('document/category/'.$category) }}">เพิ่มเติม ></a></h4><br>
+        </div>
+    @endforeach
 </div>
 @endsection

@@ -14,6 +14,8 @@ class CurriculaController extends Controller
         $b_curriculas = Curricula::enable()->where('degree', 'Bachelor Degree')->get();
         $m_curriculas = Curricula::enable()->where('degree', 'Master Degree')->get();
         $d_curriculas = Curricula::enable()->where('degree', 'Doctor Degree')->get();
+        $all_curriculas = Curricula::enable()->get();
+
 
         $dis_curriculas = Curricula::disable()->get();
 
@@ -22,6 +24,7 @@ class CurriculaController extends Controller
             'm_curriculas' => $m_curriculas,
             'd_curriculas' => $d_curriculas,
             'dis_curriculas' => $dis_curriculas,
+            'all_curriculas' => $all_curriculas,
         ]);
         //return $curriculas;
     }

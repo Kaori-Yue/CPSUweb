@@ -4,7 +4,7 @@
 
 @section('content')
     <h1 class="title">ข่าวล่าสุด
-        <a href="#" class="more-detail-title">ดูข่าวเพิ่มเติม</a>
+        <a href="{{url('blog')}}" class="more-detail-title">ดูข่าวเพิ่มเติม</a>
     </h1>
     <ul class="wrapper-card-news">
         @foreach($blogs as $blog)
@@ -13,7 +13,7 @@
     </ul>
 
     <h1 class="title">หลักสูตร
-        <a href="#" class="more-detail-title">ดูหลักสูตรเพิ่มเติม</a>
+        <a href="{{url('curricula')}}" class="more-detail-title">ดูหลักสูตรเพิ่มเติม</a>
     </h1>
 
     <ul class="wrapper-card-course">
