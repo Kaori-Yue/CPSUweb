@@ -40,9 +40,9 @@ class HomeController extends Controller
             ->take(4)
             ->get();
 
-        for($i = 0; $i < 4; ++$i){
+        /*for($i = 0; $i < 4; ++$i){
             $blogs[$i]["content"] = self::cutContent($blogs[$i]["content"]);
-        }
+        }*/
 
         $curriculas = Curricula::enable()->take(2)->get();
         return view('home2', [
