@@ -163,6 +163,55 @@ SEPT หรือผลสอบภาษาอังกฤษจากสถา
                 'created_at' => '2017-05-07 12:29:00',
                 'updated_at' => '2017-05-15 19:42:05',
             ),
+            4 =>
+                array (
+                    'id' => 5,
+                    'slug' => 'Bachelor-of-Science-Program-in-Information-Technology-2017',
+                    'degree' => 'Bachelor Degree',
+                    'name_th' => 'หลักสูตรวิทยาศาสตรบัณฑิต สาขาวิทชาเทคโนโลยีสารสนเทศ 2560',
+                    'name_en' => 'Bachelor of Science Program in Information Technology 2017',
+                    'degree_name_th' => 'วิทยาศาสตรบัณฑิต (เทคโนโลยีสารสนเทศ)',
+                    'degree_name_en' => 'Bachelor of Science (Information Technology)',
+                    'cost' => 20000,
+                    'credit' => 135,
+                    'enrollment_criteria' => 'สำเร็จการศึกษาระดับมัธยมศึกษาปีที่ 6 หรือเทียบเท่า',
+                    'graduation_criteria' => '- นักเทคโนโลยีสารสนเทศ หรือนักเทคโนโลยีและสารสนเทศ
+- นักวิชาการเทคโนโลยีสารสนเทศ
+- นักวิเคราะห์ และออกแบบระบบงานสารสนเทศ
+- นักพัฒนาระบบ นักพัฒนาเว็บไซต์
+- ผู้ดูแลระบบเครืองข่าย และเครื่องแม่ข่าย
+- ผู้จัดการโครงการสารสนเทศ
+- ผู้จัดการซอฟต์แวร์ หรือผู้จัดการเทคโนโลยีสารสนเทศ
+- นักวิชาชีพในสถานประกอบการที่มีการใช้เทคโนโลยีสารสนเทศ
+- นักวิเคราะห์ข้อมูลทางธุรกิจ
+- นักวิทยาศาสตร์ข้อมูล',
+                    'entrance_subject' => NULL,
+                    'document' => NULL,
+                    'status' => 'enable',
+                    'file' => 121,
+                    'created_at' => '2017-10-09 13:45:15',
+                    'updated_at' => '2017-10-09 13:45:15',
+                ),
+            5 =>
+                array (
+                    'id' => 6,
+                    'slug' => 'Bachelor-of-Science-Program-in-Computer-Science-2017',
+                    'degree' => 'Bachelor Degree',
+                    'name_th' => 'หลักสูตรวิทยาศาสตรบัณฑิต  สาขาวิชาวิทยาการคอมพิวเตอร์ 2560',
+                    'name_en' => 'Bachelor of Science Program in Computer Science 2017',
+                    'degree_name_th' => 'วิทยาศาสตรบัณฑิต (วิทยาการคอมพิวเตอร์)',
+                    'degree_name_en' => 'Bachelor of Science (Computer Science)',
+                    'cost' => 20000,
+                    'credit' => 137,
+                    'enrollment_criteria' => 'สำเร็จการศึกษาระดับมัธยมศึกษาปีที่ 6 หรือเทียบเท่า',
+                    'graduation_criteria' => 'เกรดเฉลี่ยไม่ต่ำกว่า 2.00 เกรดเฉลี่ยวิชาเฉพาะไม่ต่ำกว่า 2.00',
+                    'entrance_subject' => NULL,
+                    'document' => NULL,
+                    'status' => 'enable',
+                    'file' => 122,
+                    'created_at' => '2017-10-09 13:51:00',
+                    'updated_at' => '2017-10-09 13:51:00',
+                ),
         ));
         
         
