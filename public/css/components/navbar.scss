@@ -180,7 +180,7 @@
 
 
   .logos-navbar-bottom{
-    width: 50px;
+    width: 20px;
     display: block;
     margin: 20px auto;
     padding: 0;
@@ -211,7 +211,12 @@
         width: 30px;
       }
     }
+    @media screen and (min-width: $device-tablet) {
+      width: 50px;
+    }
+    @media screen and (min-width: $device-computer) {
 
+    }
   }
   .copyright{
     text-align: center;

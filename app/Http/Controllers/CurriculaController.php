@@ -146,7 +146,7 @@ class CurriculaController extends Controller
     public function show($slug)
     {
         $curricula = Curricula::where('slug', $slug)->firstOrFail();
-        return view('curricula.show', ['curricula' => $curricula]);
+        return view('curricula.show2', ['curricula' => $curricula]);
     }
 
     public function destroy($id)
