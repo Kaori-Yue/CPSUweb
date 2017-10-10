@@ -156,7 +156,7 @@ Route::group(['middleware' => 'auth'], function (){
 
 
 Route::get('history', function (){
-    return view('history');
+    return view('history2');
 });
 
 Route::get('sitemap', function (){

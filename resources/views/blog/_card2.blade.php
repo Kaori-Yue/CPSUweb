@@ -1,4 +1,5 @@
  <div class="card-news background-white">
+     <a href="{{ url('blog/'.$blog->slug) }}" style="text-decoration: none">
         <ul class="container-card-news">
             <li class="image-card-news">
                 <img src="{{ url('image/show/'.$blog->cover) }}" />
@@ -9,8 +10,8 @@
                 <h1 class="title">{!! iconv_substr($blog->title, 0, 22, 'UTF-8') !!}</h1>
                 <p class="description-card-news">{!! iconv_substr($blog->content, 0, 50, 'UTF-8') !!}</p>
             </li>
-
         </ul>
+     </a>
         <div class="detail-card-news">
             <p class="create-by-card-news">โดย : {!! $blog->user->name !!}</p>
             <ul class="logos-share-card-news">

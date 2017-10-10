@@ -106,17 +106,18 @@ trait ImageTrait
         $old_filename = $file->name;
 
         if($type == 'profile'){
-            $width = '300';
-        }elseif ($type == 'cover'){
             $width = '900';
+            $height = $width;
+        }elseif ($type == 'cover'){
+            $width = '1920';
+            $height = $width/4*3;
         }else{
             // default value
             $width = '500';
+            $height = $width;
         }
 
-        $img = Image::make($image)->resize($width, null, function ($constraint) {
-            $constraint->aspectRatio();
-        });
+        $img = Image::make($image)->resize($width, $height);
 
         if (App::environment('local')) {
             //windows path
