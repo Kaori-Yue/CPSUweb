@@ -9,15 +9,6 @@
     height: auto;
   }
 
-  &:hover{
-    opacity: 1;
-
-    .description-management-logo{
-      display: block;
-    }
-
-  }
-
   .description-management-logo{
     padding: 5px 15px;
     position: absolute;
@@ -35,7 +26,14 @@
 
   @media screen and (min-width: $device-tablet) {
     width: 20px;
+    &:hover{
+      opacity: 1;
 
+      .description-management-logo{
+        display: block;
+      }
+
+    }
 
   }
   @media screen and (min-width: $device-computer) {

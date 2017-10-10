@@ -274,12 +274,18 @@
   position: relative;
   .title{
     margin: 0;
-
+    position: relative;
     .management-logo{
-      float: right;
+      position: absolute;
+      right: 5px;
+      top: 0;
       .description-management-logo{
         font-size: 16px;
 
+      }
+      @media screen and (min-width: $device-tablet) {
+        right: 0px;
+        top: 0px;
       }
     }
 

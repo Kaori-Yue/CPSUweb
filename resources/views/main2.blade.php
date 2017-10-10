@@ -42,8 +42,8 @@
                 </ul>
             </li>
         </ul>
-        <button class="btn-navbar-list-menu">เมนู</button>
-        <ul class="list-menu-navbar-mobile">
+        <button class="btn-navbar-list-menu" onclick="clickBtnMenu()">เมนู</button>
+        <ul class="list-menu-navbar-mobile" id="menuMobile">
             <li class="menu-navbar-mobile">
                 <a href="{{ url('blog') }}">ข่าวสาร</a>
             </li>
@@ -63,9 +63,7 @@
         </ul>
     </div>
 </nav>
-<div class="container">
     @yield('content')
-</div>
 
 <nav class="navbar-bottom">
     <div class="container">
@@ -77,6 +75,7 @@
         <p class="copyright">Copyright © 2017 by Department of Computing, Faculty of Science, Silpakorn University.</p>
     </div>
 </nav>
+<script src="{{URL::asset('js/slide.js')}}"></script>
 
 </body>
 </html>

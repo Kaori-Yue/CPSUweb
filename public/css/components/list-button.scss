@@ -2,7 +2,9 @@
   margin: 15px auto;
   display: block;
 
-  a.btn-nextpage{
+
+
+  .btn-nextpage{
     font-size: 14px;
     font-weight: 100;
     padding: 5px 10px;
@@ -32,3 +34,47 @@
 
   }
 }
+
+//.pagination{
+//  display: block;
+//  margin: 10px 0;
+//  border-radius: 0;
+//  padding: 0;
+//
+//  >li{
+//    display: inline-block;
+//    list-style-type: none;
+//    background-color: $color-white;
+//    padding: 5px 10px;
+//    color: $color-green;
+//    font-size: 14px;
+//    cursor: pointer;
+//    font-weight: 100;
+//    &:hover{
+//      background-color: $color-green;
+//      a{
+//        color: $color-white
+//      }
+//    }
+//
+//    @media screen and (min-width: $device-tablet) {
+//      font-size: 16px;
+//      padding: 10px 20px;
+//    }
+//    @media screen and (min-width: $device-computer) {
+//
+//    }
+//  }
+//
+//  .active{
+//    background-color: $color-green;
+//    color: $color-white;
+//  }
+//
+//  @media screen and (min-width: $device-tablet) {
+//    margin: 20px 0;
+//  }
+//  @media screen and (min-width: $device-computer) {
+//
+//  }
+//}

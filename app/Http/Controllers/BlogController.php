@@ -19,6 +19,12 @@ class BlogController extends Controller
     use ImageTrait;
     public function index()
     {
+        $all_blog = [];
+        $categories = Category::all();
+        foreach ($categories as $category){
+            $category->blogs;
+        }
+
         $blogs = Blog::orderBy('created_at', 'DESC')
             ->publish()
             ->take(6)
@@ -42,7 +48,8 @@ class BlogController extends Controller
         return view('blog.index2', [
             'blogs' => $blogs,
             'tags' => $tags,
-            'features' => $features
+            'features' => $features,
+            'categories' => $categories,
         ]);
     }
 
@@ -273,7 +280,7 @@ class BlogController extends Controller
             ->get();
 
         //return $relateBlogs;
-        return view('blog.show', [
+        return view('blog.show2', [
             'blog' => $blog,
             'relateBlogs' => $relateBlogs
         ]);
@@ -298,24 +305,33 @@ class BlogController extends Controller
     public function category($category)
     {
         $title = '';
-        $blogs = null;
-        if ($category == 'featured-news'){
+            $category_id = Category::select('id')->where('slug', $category)->get();
+
+        if(count($category_id) == 0){
+            abort(404);
+        }
+
+
+
+        $blogs = Blog::where('category_id', $category_id[0]['id'])->orderBy('created_at','DESC')->paginate(8);
+
+        //$blogs = $categories->blogs()->paginate(8);
+        /*if ($category == 'featured-news'){
             $title = 'หมวดหมู่ : ข่าวเด่น';
             $blogs = Blog::publish()
                 ->where('featured', 1)
                 ->orderBy('created_at', 'DESC')
-                ->paginate(9);
+                ->paginate(8);
         }
         elseif ($category == 'latest-news'){
             $title = 'หมวดหมู่ : ข่าวล่าสุด';
             $blogs = Blog::publish()
                 ->orderBy('created_at', 'DESC')
-                ->paginate(9);
+                ->paginate(8);
         }else{
             abort(404);
-        }
-
-        return view('blog.category', ['blogs' => $blogs, 'title' => $title]);
+        }*/
+        return view('blog.category', [ 'title' => $category, 'blogs' => $blogs ]);
     }
 
     public function handleDateTime($dateTime)

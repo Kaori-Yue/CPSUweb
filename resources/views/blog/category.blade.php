@@ -2,21 +2,20 @@
 
 @section('content')
     <div class="container">
-        <div class="row col-md-12 col-xs-12" style="background: #ffffff">
-            <h2 class="primary-section-heading">{{ $title }}</h2>
+            <h1 class="title">{{ $title }}</h1>
             <ul class="wrapper-card-news">
-            @foreach($blogs as $blog)
+                @foreach($blogs as $blog)
                 <li>
                     @include('blog._card2', $blog)
                 </li>
-            @endforeach
+                @endforeach
+
             </ul>
             <script>
                 $(document).ready(function(){
                     $('[data-toggle="tooltip"]').tooltip();
                 });
             </script>
-        </div>
         <div class="row col-md-12 col-xs-12" style="text-align: center;">
             {{ $blogs->links() }}
         </div>

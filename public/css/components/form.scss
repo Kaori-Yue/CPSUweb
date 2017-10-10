@@ -72,8 +72,7 @@
         width: 100%;
         position: relative;
         top:-60px;
-
-        img{
+        .image-first-news{
           width: 100%;
           height: auto;
           margin-bottom: 10px;
@@ -84,6 +83,11 @@
 
         .zone-content-form-read-news{
           width: 100%;
+          font-size: 14px;
+          font-family: Thonburi;
+          @media screen and (min-width: $device-tablet) {
+            font-size: 16px;
+          }
         }
 
         @media screen and (min-width: $device-tablet) {
@@ -176,6 +180,28 @@
 
     }
   }
+
+  .image-history{
+    width: 100%;
+    height: auto;
+    margin-bottom: 10px;
+    @media screen and (min-width: $device-tablet) {
+      margin-bottom: 20px;
+    }
+  }
+  .title-history{
+    font-family: Thonburi;
+    font-size: 14px;
+
+
+    @media screen and (min-width: $device-tablet) {
+      font-size: 16px;
+    }
+    @media screen and (min-width: $device-computer) {
+
+    }
+  }
+
   @media screen and (min-width: $device-tablet) {
     margin: 20px 0;
   }

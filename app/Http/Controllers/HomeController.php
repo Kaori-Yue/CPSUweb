@@ -43,11 +43,13 @@ class HomeController extends Controller
         /*for($i = 0; $i < 4; ++$i){
             $blogs[$i]["content"] = self::cutContent($blogs[$i]["content"]);
         }*/
+        $announce = Category::with('blogs')->where('slug', 'announce')->paginate(5);
 
         $curriculas = Curricula::enable()->take(2)->get();
         return view('home2', [
             'blogs' => $blogs,
-            'curriculas' => $curriculas
+            'curriculas' => $curriculas,
+            'announce' => $announce[0],
         ]);
     }
 

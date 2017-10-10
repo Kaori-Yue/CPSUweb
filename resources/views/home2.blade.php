@@ -3,6 +3,26 @@
 @section('title', "หน้าหลัก")
 
 @section('content')
+    <div class="slideshow-container">
+        @foreach($announce->blogs as $blog)
+        <div class="mySlides fade">
+            @if(count($blog) != 0){
+            <img src="{{ url('image/show/'.$blog->cover) }}">
+            @endif
+        }
+            <!--<div class="text">Caption Text</div>-->
+        </div>
+        @endforeach
+
+        <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+        <a class="next" onclick="plusSlides(1)">&#10095;</a>
+        <div class="zone-dot">
+            <span class="dot" onclick="currentSlide(1)"></span>
+            <span class="dot" onclick="currentSlide(2)"></span>
+            <span class="dot" onclick="currentSlide(3)"></span>
+        </div>
+    </div>
+    <div class="container">
     <h1 class="title">ข่าวล่าสุด
         <a href="{{url('blog')}}" class="more-detail-title">ดูข่าวเพิ่มเติม</a>
     </h1>
@@ -20,7 +40,11 @@
 
     <ul class="wrapper-card-course">
         @foreach($curriculas as $curricula)
-            @include('curricula.card2', $curricula)
+            <li>
+                @include('curricula._card2', $curricula)
+            </li>
+
         @endforeach
     </ul>
+    </div>
 @endsection

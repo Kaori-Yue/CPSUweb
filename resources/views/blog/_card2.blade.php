@@ -20,9 +20,25 @@
                     <p class="description-logo-share-card-news">Share Facebook</p>
                 </li>
                 <li class="logo-share-card-news">
-                    <img src="{{ URL::asset('image/twitter.png') }}">
+                    <img src="{{ URL::asset('image/twitter.png') }}" id="shareToTW{{$blog->id}}">
                     <p class="description-logo-share-card-news">Share Twitter</p>
                 </li>
             </ul>
         </div>
  </div>
+
+ <script>
+     document.getElementById('shareToFB{{$blog->id}}').onclick = function() {
+         FB.ui({
+             method: 'share',
+             display: 'popup',
+             href: '{{ 'http://202.28.72.71/CPSUweb/public/index.php/blog/'.$blog->slug }}',
+         }, function(response){});
+     };
+
+     document.getElementById('shareToTW{{$blog->id}}').onclick = function() {
+         var url = "{{ 'http://202.28.72.71/CPSUweb/public/index.php/blog/'.$blog->slug }}";
+         var text = "{{ $blog->title }}";
+         window.open('http://twitter.com/share?url=' + encodeURIComponent(url) + '&text=' + encodeURIComponent(text), '', 'left=0,top=0,width=550,height=450,personalbar=0,toolbar=0,scrollbars=0,resizable=0');
+     };
+ </script>

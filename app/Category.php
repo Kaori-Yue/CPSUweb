@@ -16,6 +16,6 @@ class Category extends Model
 
     public function blogs()
     {
-        return $this->hasMany('App\Blog');
+        return $this->hasMany('App\Blog')->orderBy('created_at','DESC');
     }
 }
