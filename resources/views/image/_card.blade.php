@@ -6,18 +6,18 @@
             @if(Request::is('admin/image') || Request::is('admin/image/*'))
                 <div class="col-md-6 col-xs-12">
                     <button class="btn btn-default btn-block" id="image-link{{$image->id}}" data-clipboard-text="{{ url('image/show/'.$image->id) }}">
-                        <i class="fa fa-clone"></i>
+                        คัดลอก
                     </button>
                 </div>
                 <div class="col-md-6 col-xs-12" style="display: block">
                     <div class="col-md-6 col-xs-6">
                         <a href="{{ url('image/'.$image->id.'/edit') }}" class="btn btn-warning btn-block">
-                            <span class="glyphicon glyphicon-wrench"></span>
+                            แก้ไข
                         </a>
                     </div>
                     <div class="col-md-6 col-xs-6">
                         <button type="button" class="btn btn-danger btn-block" data-toggle="modal" data-target="#deleteModal{{$image->id}}">
-                            <span class="glyphicon glyphicon-remove-sign"></span>
+                            ลบ
                         </button>
 
                         <div class="modal fade" id="deleteModal{{$image->id}}" role="dialog">
