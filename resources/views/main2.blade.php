@@ -59,7 +59,20 @@
             <li class="menu-navbar-mobile">
                 <a href="{{ url('document') }}">เอกสาร</a>
             </li>
-            <li class="menu-navbar-mobile">เกี่ยวกับภาควิชา</li>
+            <li class="menu-navbar-mobile" id="buttonSubMenu">เกี่ยวกับภาควิชา
+                <ul class="subs-menu-navbar-mobile" id="subMenuMobile">
+                    <li class="sub-menu-navbar-mobile">
+                        <a href="{{url('history')}}">ประวัติภาควิชา</a>
+                    </li>
+                    <li class="sub-menu-navbar-mobile">
+                        <a href="{{url('sitemap')}}">แผนผังเว็บไซต์</a>
+                    </li>
+                    <li class="sub-menu-navbar-mobile">
+                        <a href="{{url('contact')}}">ติดต่อภาควิชา</a>
+                    </li>
+                </ul>
+
+            </li>
         </ul>
     </div>
 </nav>
