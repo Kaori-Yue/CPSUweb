@@ -76,6 +76,7 @@
     </div>
 </nav>
 <script src="{{URL::asset('js/slide.js')}}"></script>
+<script src="{{URL::asset('js/fb.js')}}"></script>
 
 </body>
 </html>
