@@ -15,7 +15,7 @@
         <div class="detail-card-news">
             <p class="create-by-card-news">โดย : {!! $blog->user->name !!}</p>
             <ul class="logos-share-card-news">
-                <li class="logo-share-card-news" onclick="shareFB({{$blog->id}})">
+                <li class="logo-share-card-news" onclick="shareFB({{$blog->id}}, {{$blog->slug}})">
                     <img src="{{ URL::asset('image/facebook.png') }}">
                     <p class="description-logo-share-card-news">Share Facebook</p>
                 </li>
@@ -33,7 +33,7 @@
  <script>
 
 
-     function shareFB(blogId) {
+     function shareFB(blogId, slug) {
          console.log(blogId);
          FB.ui({
              method: 'share',
