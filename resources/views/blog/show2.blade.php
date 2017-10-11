@@ -6,7 +6,7 @@
     <meta property="og:description" content="Department of Computing Silpakorn University">
     <meta property="og:locale" content="th_TH">
     <meta property="og:image" content="{{ url('image/show/'.$blog->cover) }}">
-    <meta property="og:url" content="{{ 'http://202.28.72.71/CPSUweb/public/index.php/blog/'.$blog->slug }}">
+    <meta property="og:url" content="{{ 'http://202.28.72.71/blog/'.$blog->slug }}">
 
     <meta name="twitter:card" content="summary" />
     <meta name="twitter:title" content="{{ $blog->title }}" />

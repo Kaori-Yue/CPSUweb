@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width">
     <title>@yield('title')</title>
     <link rel="stylesheet" href="{{ URL::asset('css/style.css') }}">
-
+    @yield('meta')
 </head>
 <body>
 <nav class="navbar">
