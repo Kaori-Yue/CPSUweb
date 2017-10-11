@@ -69,7 +69,7 @@
     <div class="container">
         <ul class="logos-navbar-bottom">
             <li class="logo-navbar-bottom">
-                <a href="https://www.facebook.com/groups/CPSUTH/">
+                <a href="https://www.facebook.com/groups/CPSUTH/" target="_blank">
                 <img src="{{ URL::asset('image/facebook_white.png') }}">
                 </a>
             </li>
