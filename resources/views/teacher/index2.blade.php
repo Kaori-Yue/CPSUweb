@@ -12,5 +12,13 @@
          </li>
         @endforeach
     </ul>
+    <h1 class="title">บุคลากร</h1>
+    <ul class="wrapper-card-person">
+        @foreach($staffs as $staff)
+            <li>
+                @include('staff._card2', $staff)
+            </li>
+        @endforeach
+    </ul>
 </div>
 @endsection
