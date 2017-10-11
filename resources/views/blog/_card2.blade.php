@@ -15,13 +15,18 @@
         <div class="detail-card-news">
             <p class="create-by-card-news">โดย : {!! $blog->user->name !!}</p>
             <ul class="logos-share-card-news">
-                <li class="logo-share-card-news" id="shareToFB{{$blog->id}}">
+                <li class="logo-share-card-news" >
+                    <a href="#" id="shareToFB{{$blog->id}}">
                     <img src="{{ URL::asset('image/facebook.png') }}">
                     <p class="description-logo-share-card-news">Share Facebook</p>
+                    </a>
                 </li>
-                <li class="logo-share-card-news" id="shareToTW{{$blog->id}}">
-                    <img src="{{ URL::asset('image/twitter.png') }}" >
-                    <p class="description-logo-share-card-news">Share Twitter</p>
+                <li class="logo-share-card-news">
+                    <a  href="#" id="shareToTW{{$blog->id}}">
+                        <img src="{{ URL::asset('image/twitter.png') }}" >
+                        <p class="description-logo-share-card-news">Share Twitter</p>
+                    </a>
+
                 </li>
             </ul>
         </div>
