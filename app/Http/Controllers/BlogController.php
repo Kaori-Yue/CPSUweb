@@ -142,6 +142,8 @@ class BlogController extends Controller
             'status' => 'required|in:draft,disable,publish',
             'category_id' => 'required|integer|min:0',
             'featured' => 'required|integer|between:0,1',
+            'description' => 'required|max:50',
+
 
         ]);
 
@@ -165,6 +167,7 @@ class BlogController extends Controller
             'category_id' => $blog['category_id'],
             'user_id' => Auth::id(),
             'featured' => $blog['featured'],
+            'description' => $blog['description'],
         ];
         $blog = Blog::create($blogData);
 
@@ -183,6 +186,8 @@ class BlogController extends Controller
             'status' => 'required|in:draft,disable,publish',
             'category_id' => 'required|integer|min:0',
             'featured' => 'required|integer|between:0,1',
+            'description' => 'required|max:50',
+
         ]);
 
         $blog = Blog::findOrFail($id);
@@ -202,6 +207,7 @@ class BlogController extends Controller
             'category_id' => $updateBlog['category_id'],
             'user_id' => Auth::id(),
             'featured' => $updateBlog['featured'],
+            'description' => $updateBlog['description']
         ];
         if(isset($cover_image)){
             $file = $this->storeImage($cover_image, 'cover');
@@ -310,8 +316,6 @@ class BlogController extends Controller
         if(count($category_id) == 0){
             abort(404);
         }
-
-
 
         $blogs = Blog::where('category_id', $category_id[0]['id'])->orderBy('created_at','DESC')->paginate(8);
 

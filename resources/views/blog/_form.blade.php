@@ -47,6 +47,15 @@
                 </span>
             @endif
         </div>
+            <div class="form-group{{ $errors->has('description') ? ' has-error' : '' }}">
+                {!! Form::label('description', 'Description') !!}
+                {!! Form::text('description', null, ['class' => 'form-control']) !!}
+                @if ($errors->has('description'))
+                    <span class="help-block">
+                    <strong>{{ $errors->first('description') }}</strong>
+                </span>
+                @endif
+            </div>
         <div class="form-group{{ $errors->has('content') ? ' has-error' : '' }}">
             {!! Form::label('content', 'Content') !!}
             {!! Form::textarea('content', null, ['class' => 'form-control', 'rows' => '30', 'style' => 'font-size:16px', 'id' => 'demo']) !!}
