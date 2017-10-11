@@ -15,11 +15,9 @@
         <div class="detail-card-news">
             <p class="create-by-card-news">โดย : {!! $blog->user->name !!}</p>
             <ul class="logos-share-card-news">
-                <li class="logo-share-card-news" >
-                    <a href="#" id="shareToFB{{$blog->id}}">
+                <li class="logo-share-card-news" onclick="shareFB({{$blog->id}})">
                     <img src="{{ URL::asset('image/facebook.png') }}">
                     <p class="description-logo-share-card-news">Share Facebook</p>
-                    </a>
                 </li>
                 <li class="logo-share-card-news">
                     <a  href="#" id="shareToTW{{$blog->id}}">
@@ -33,6 +31,17 @@
  </div>
 
  <script>
+
+
+     function shareFB(blogId) {
+         console.log(blogId);
+         FB.ui({
+             method: 'share',
+             display: 'popup',
+             href: '{{ 'http://202.28.72.71/CPSUweb/public/index.php/blog/'. blogId }}',
+         }, function(response){});
+     }
+
      document.getElementById('shareToFB{{$blog->id}}').onclick = function() {
          FB.ui({
              method: 'share',
