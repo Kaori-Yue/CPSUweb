@@ -38,7 +38,7 @@
          FB.ui({
              method: 'share',
              display: 'popup',
-             href: '{{ 'http://202.28.72.71/CPSUweb/public/index.php/blog/'. blogId }}',
+             href: 'http://202.28.72.71/CPSUweb/public/index.php/blog/'+ blogId ,
          }, function(response){});
      }
 
