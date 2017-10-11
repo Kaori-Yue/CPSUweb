@@ -1,9 +1,9 @@
 @extends('main2')
 
 @section('meta')
-    <meta property="og:title"  content="ลองดู" />
+    <meta property="og:title"  content="{{$blog->title}}" />
     <meta property="og:type" content="article">
-    <meta property="og:description" content="hi">
+    <meta property="og:description" content="รอขิงทำนะ">
     <meta property="og:locale" content="th_TH">
     <meta property="og:image" content="{{ url('image/show/'.$blog->cover) }}">
     <meta property="og:url" content="{{ 'http://202.28.72.71/blog/'.$blog->slug }}">
