@@ -151,10 +151,10 @@
           .description-logo-share-card-news{
 
             @media screen and (min-width: $device-tablet) {
-
+              display: block;
             }
             @media screen and (min-width: $device-computer) {
-              display: block;
+
             }
           }
         }
