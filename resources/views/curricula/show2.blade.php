@@ -75,7 +75,7 @@
                     <li>
                         <p class="title-detail-all">PDF</p>
                         <ul class="list-detail-all">
-                            <li class="in-detail"><a href="{{ url('file/show/'.$curricula->file) }}"><button class="background-green color-white btn-download-detail">ดาวน์โหลด</button></a></li>
+                            <li class="in-detail"><a href="{{ url('file/show/'.$curricula->file) }}" class="background-green color-white btn-download-detail">ดาวน์โหลด</a></li>
                         </ul>
                     </li>
                 </ul>

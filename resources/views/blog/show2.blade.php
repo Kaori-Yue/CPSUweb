@@ -18,6 +18,16 @@
     <div class="form-read-news">
         <div class="header-form-read-news">
             <div class="container">
+                <ul class="logos-share-card-news">
+                    <li class="logo-share-card-news" id="shareToFB">
+                        <img src="{{ URL::asset('image/facebook_white.png') }}" />
+                        <p class="description-logo-share-card-news">Share Facebook</p>
+                    </li>
+                    <li class="logo-share-card-news" id="shareToTW">
+                        <img src="{{ URL::asset('image/twitter_white.png') }}" />
+                        <p class="description-logo-share-card-news">Share Twitter</p>
+                    </li>
+                </ul>
                 <p class="category-header-form-read-news">ข่าวสาร / การแข่งขัน</p>
                 <h1 class="title">{{$blog->title}}</h1>
                 <p class="create-by-form-read-news">
@@ -51,18 +61,18 @@
 @endsection
 
 @section('script')
-    <script src="{{ URL::asset('js/fb.js') }}"></script>
+
     <script>
         document.getElementById('shareToFB').onclick = function() {
             FB.ui({
                 method: 'share',
                 display: 'popup',
-                href: '{{ 'http://202.28.72.71/CPSUweb/public/index.php/blog/'.$blog->slug }}',
+                href: '{{ 'http://202.28.72.71/blog/'.$blog->slug }}',
             }, function(response){});
         };
 
         document.getElementById('shareToTW').onclick = function() {
-            var url = "{{ 'http://202.28.72.71/CPSUweb/public/index.php/blog/'.$blog->slug }}";
+            var url = "{{ 'http://202.28.72.71/blog/'.$blog->slug }}";
             var text = "{{ $blog->title }}";
             window.open('http://twitter.com/share?url=' + encodeURIComponent(url) + '&text=' + encodeURIComponent(text), '', 'left=0,top=0,width=550,height=450,personalbar=0,toolbar=0,scrollbars=0,resizable=0');
         };
