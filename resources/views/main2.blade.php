@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width">
     <title>@yield('title')</title>
-    <link rel="stylesheet" href="{{ URL::asset('css/style.css') }}">
+    <link rel="stylesheet" href="{{ URL::asset('css/style.css') }}" />
     @yield('meta')
 </head>
 <body>
@@ -63,13 +63,15 @@
         </ul>
     </div>
 </nav>
-    @yield('content')
+@yield('content')
 
 <nav class="navbar-bottom">
     <div class="container">
         <ul class="logos-navbar-bottom">
             <li class="logo-navbar-bottom">
+                <a href="https://www.facebook.com/groups/CPSUTH/">
                 <img src="{{ URL::asset('image/facebook_white.png') }}">
+                </a>
             </li>
         </ul>
         <p class="copyright">Copyright © 2017 by Department of Computing, Faculty of Science, Silpakorn University.</p>
