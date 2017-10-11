@@ -34,8 +34,7 @@ class HomeController extends Controller
             die("Could not connect to the database.  Please check your configuration.");
         }
 
-        $blogs = Blog::where('featured', 1)
-            ->orderBy('created_at', 'DESC')
+        $blogs = Blog::orderBy('created_at', 'DESC')
             ->publish()
             ->take(4)
             ->get();
