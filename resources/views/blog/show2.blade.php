@@ -31,7 +31,9 @@
             <div class="container">
                 <div class="zone-read-content-form-read-news">
                     <img class="image-first-news" src="{{url('image/show/'.$blog->cover) }}}}">
-                    <div class="zone-content-form-read-news">{{$blog->content}}</div>
+                    <div class="zone-content-form-read-news">
+                        {!! $blog->content !!}
+                    </div>
                 </div>
                 <h1 class="title">ข่าวที่เกี่ยวข้อง</h1>
                 <ul class="wrapper-card-news">

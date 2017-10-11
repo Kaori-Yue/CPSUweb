@@ -174,7 +174,7 @@ Route::get('current-student', function (){
 });
 
 
-//Route::get('test/resize', 'TestController@resizeImg');
+//Route::get('test', 'TestController@test23');
 //Route::get('test/compress', 'TestController@testCompress');
 //Route::get('test/compress_all', 'TestController@compressAll');
 
