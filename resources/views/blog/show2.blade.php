@@ -58,10 +58,6 @@
             </div>
         </div>
     </div>
-@endsection
-
-@section('script')
-
     <script>
         document.getElementById('shareToFB{{$blog->id}}').onclick = function() {
             FB.ui({
@@ -78,3 +74,4 @@
         };
     </script>
 @endsection
+
