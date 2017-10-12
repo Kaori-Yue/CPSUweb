@@ -19,11 +19,11 @@
         <div class="header-form-read-news">
             <div class="container">
                 <ul class="logos-share-card-news">
-                    <li class="logo-share-card-news" id="shareToFB">
+                    <li class="logo-share-card-news" id="shareToFB{{$blog->id}}">
                         <img src="{{ URL::asset('image/facebook_white.png') }}" />
                         <p class="description-logo-share-card-news">Share Facebook</p>
                     </li>
-                    <li class="logo-share-card-news" id="shareToTW">
+                    <li class="logo-share-card-news" id="shareToTW{{$blog->id}}">
                         <img src="{{ URL::asset('image/twitter_white.png') }}" />
                         <p class="description-logo-share-card-news">Share Twitter</p>
                     </li>
