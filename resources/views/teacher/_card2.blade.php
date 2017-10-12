@@ -20,7 +20,7 @@
                     @if($teacher->doctor_degree != '')
                         <li class="in-detail">{{$teacher->doctor_degree}}</li>
                     @endif
-                    <li class="in-detail">{{$teacher->master_degree}}</li><li class="in-detail">{{$teacher->banchelor_degree}}</li>
+                    <li class="in-detail">{{$teacher->master_degree}}</li><li class="in-detail">{{$teacher->bachelor_degree}}</li>
                 </ul>
             </li>
             <li>
