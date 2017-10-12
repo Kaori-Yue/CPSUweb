@@ -12,19 +12,28 @@
     <div class="container">
         <a href="{{ url('') }}"><h1 class="logo-navbar">CPSU</h1>
         <ul class="list-menu-navbar">
-            <li class="menu-navbar">
+
+            <li class="
+            @if(Request::is('blog'))active-menu-navbar
+            @else menu-navbar  @endif ">
                 <a href="{{ url('blog') }}">ข่าวสาร</a>
             </li>
-            <li class="menu-navbar">
+            <li class="
+            @if(Request::is('curricula'))active-menu-navbar
+            @else menu-navbar  @endif ">
                 <a href="{{ url('curricula') }}">หลักสูตร</a>
             </li>
-            <li class="menu-navbar">
+            <li class="
+            @if(Request::is('teacher'))active-menu-navbar
+            @else menu-navbar  @endif ">
                 <a href="{{ url('teacher') }}">บุคลากร</a>
             </li>
             <!--<li class="menu-navbar">
                 <a href="{{ url('research') }}">ผลงานวิจัย</a>
             </li>-->
-            <li class="menu-navbar">
+            <li class="
+            @if(Request::is('document'))active-menu-navbar
+            @else menu-navbar  @endif ">
                 <a href="{{ url('document') }}">เอกสาร</a>
             </li>
             <li class="menu-navbar">

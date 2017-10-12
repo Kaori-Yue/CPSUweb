@@ -19,6 +19,8 @@
                 <ul class="list-detail-all">
                     @if($teacher->doctor_degree != '')
                         <li class="in-detail">{{$teacher->doctor_degree}}</li>
+                    @else
+                        <li class="in-detail">-</li>
                     @endif
                     <li class="in-detail">{{$teacher->master_degree}}</li><li class="in-detail">{{$teacher->bachelor_degree}}</li>
                 </ul>
