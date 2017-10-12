@@ -63,16 +63,16 @@
 @section('script')
 
     <script>
-        document.getElementById('shareToFB').onclick = function() {
+        document.getElementById('shareToFB{{$blog->id}}').onclick = function() {
             FB.ui({
                 method: 'share',
                 display: 'popup',
-                href: '{{ 'http://202.28.72.71/blog/'.$blog->slug }}',
+                href: '{{ 'http://202.28.72.71/CPSUweb/public/index.php/blog/'.$blog->slug }}',
             }, function(response){});
         };
 
-        document.getElementById('shareToTW').onclick = function() {
-            var url = "{{ 'http://202.28.72.71/blog/'.$blog->slug }}";
+        document.getElementById('shareToTW{{$blog->id}}').onclick = function() {
+            var url = "{{ 'http://202.28.72.71/CPSUweb/public/index.php/blog/'.$blog->slug }}";
             var text = "{{ $blog->title }}";
             window.open('http://twitter.com/share?url=' + encodeURIComponent(url) + '&text=' + encodeURIComponent(text), '', 'left=0,top=0,width=550,height=450,personalbar=0,toolbar=0,scrollbars=0,resizable=0');
         };
