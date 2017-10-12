@@ -146,6 +146,7 @@ class CurriculaController extends Controller
     public function show($slug)
     {
         $curricula = Curricula::where('slug', $slug)->firstOrFail();
+        $curricula['cost'] = $english_format_number = number_format($curricula['cost']);
         return view('curricula.show2', ['curricula' => $curricula]);
     }
 
