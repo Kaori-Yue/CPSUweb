@@ -34,11 +34,9 @@ class TeacherController extends Controller
             ->orderBy('name_th')
             ->get();
 
-        $staffs = Staff::duty()->orderBy('name_th')->get();
 
         return view('teacher.index2', [
             'teachers' => $teachers,
-            'staffs' => $staffs
         ]);
     }
 

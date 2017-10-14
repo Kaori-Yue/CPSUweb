@@ -6,9 +6,21 @@ use Illuminate\Http\Request;
 use App\Traits\ImageTrait;
 use App\Staff;
 
+
 class StaffController extends Controller
 {
     use ImageTrait;
+
+    public function index()
+    {
+
+        $staffs = Staff::duty()->orderBy('name_th')->get();
+
+        return view('staff.index', [
+            'staffs' => $staffs
+        ]);
+    }
+
     public function create()
     {
         $status = [

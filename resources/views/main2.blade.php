@@ -23,10 +23,16 @@
             @else menu-navbar  @endif ">
                 <a href="{{ url('curricula') }}">หลักสูตร</a>
             </li>
-            <li class="
-            @if(Request::is('teacher'))active-menu-navbar
-            @else menu-navbar  @endif ">
-                <a href="{{ url('teacher') }}">บุคลากร</a>
+            <li class="menu-navbar">บุคลากร
+                <ul class="drop-down-menu">
+                    <li class="list-menu-drop-down">
+                        <a href="{{ url('teacher') }}">สายวิชาการ</a>
+                    </li>
+                    <li class="list-menu-drop-down">
+                        <a href="{{ url('staff') }}">สายสนับสนุนวิชาการ</a>
+                    </li>
+                </ul>
+
             </li>
             <!--<li class="menu-navbar">
                 <a href="{{ url('research') }}">ผลงานวิจัย</a>

@@ -22,6 +22,7 @@ Route::get('/', 'HomeController@index');
 Route::get('home', 'HomeController@index')->name('home');
 Route::get('blog', 'BlogController@index');
 //Route::get('research', 'ResearchController@index');
+Route::get('staff', 'StaffController@index');
 Route::get('teacher', 'TeacherController@index');
 Route::get('contact', 'ContactController@index');
 Route::get('document', 'DocumentController@index');
