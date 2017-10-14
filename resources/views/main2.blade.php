@@ -65,8 +65,15 @@
             <li class="menu-navbar-mobile" >
                 <a href="{{ url('curricula') }}">หลักสูตร</a>
             </li>
-            <li class="menu-navbar-mobile">
-                <a href="{{ url('teacher') }}">บุคลากร</a>
+            <li class="menu-navbar-mobile">บุคลากร
+                <ul class="subs-menu-navbar-mobile">
+                    <li class="sub-menu-navbar-mobile">
+                        <a href="{{url('history')}}">สายวิชาการ</a>
+                    </li>
+                    <li class="sub-menu-navbar-mobile">
+                        <a href="{{url('sitemap')}}">สายสนับสนุนวิชาการ</a>
+                    </li>
+                </ul>
             </li>
             <!--<li class="menu-navbar-mobile">
                 <a href="{{ url('research') }}">ผลงานวิจัย</a>
