@@ -123,13 +123,19 @@
 
             <div id="cover" class="collapse">
                 {!! Form::label('image', 'Image') !!}
-                {!! Form::file('image', ['class' => 'form-control']) !!}
+                {!! Form::file('image', ['class' => 'form-control', 'id' => 'upload', 'value' => 'Choose a file', 'accept' => 'image/*']) !!}
                 @if ($errors->has('image'))
                     <span class="help-block">
                     <strong>{{ $errors->first('image') }}</strong>
                 </span>
                 @endif
             </div>
+            <div class="upload-demo-wrap" style="margin: 20px 0">
+                <div id="upload-demo"></div>
+
+            </div>
+
+
         @endif
 
     </div>
@@ -138,6 +144,5 @@
     </div>
 </div>
 
-<script>
 
-</script>
+

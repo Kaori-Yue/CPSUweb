@@ -6,6 +6,7 @@
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <meta http-equiv="Cache-Control" content="public">
+
     @yield('meta')
 
     <!-- Specific content -->
@@ -53,9 +54,62 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
 
     <!-- Main CSS -->
+    <link rel="stylesheet" href="{{ URL::asset('js/bower_components/Croppie/croppie.css') }}" />
     <link rel="stylesheet" href="{{ URL::asset('css/main.css') }}">
 
+    <script src="{{URL::asset('js/bower_components/Croppie/croppie.min.js')}}"></script>
     @yield('script')
+    <script>
+
+        var $uploadCrop;
+
+        function readFile(input) {
+            if (input.files && input.files[0]) {
+                console.log(input.files[0]);
+                var reader = new FileReader();
+
+                reader.onload = function (e) {
+                    $('.upload-demo').addClass('ready');
+                    $uploadCrop.croppie('bind', {
+                        url: e.target.result
+                    }).then(function(){
+                        console.log('jQuery bind complete');
+                    });
+
+                }
+
+                reader.readAsDataURL(input.files[0]);
+            }
+            else {
+                swal("Sorry - you're browser doesn't support the FileReader API");
+            }
+        }
+
+        $uploadCrop = $('#upload-demo').croppie({
+            viewport: { width: 100, height: 100 },
+            boundary: { width: 300, height: 300 },
+            showZoomer: false,
+            enableResize: true,
+            enableOrientation: true
+        });
+
+        $('#upload').on('change', function () {
+            readFile(this);
+        });
+        $('.upload-result').on('click', function (ev) {
+
+//            $uploadCrop.croppie('result', {
+//                type: 'canvas',
+//                size: 'viewport'
+//            }).then(function (resp) {
+//                console.log(resp);
+//                popupResult({
+//                    src: resp
+//                });
+//            });
+        });
+
+    </script>
 
     <script>
         // Trigger when the user scrolls down 500px from the top of the document
