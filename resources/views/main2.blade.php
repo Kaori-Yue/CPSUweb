@@ -69,10 +69,10 @@
             <li class="menu-navbar-mobile">บุคลากร
                 <ul class="subs-menu-navbar-mobile">
                     <li class="sub-menu-navbar-mobile">
-                        <a href="{{url('history')}}">สายวิชาการ</a>
+                        <a href="{{url('teacher')}}">สายวิชาการ</a>
                     </li>
                     <li class="sub-menu-navbar-mobile">
-                        <a href="{{url('sitemap')}}">สายสนับสนุนวิชาการ</a>
+                        <a href="{{url('staff')}}">สายสนับสนุนวิชาการ</a>
                     </li>
                 </ul>
             </li>
