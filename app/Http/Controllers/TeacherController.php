@@ -167,7 +167,7 @@ class TeacherController extends Controller
             'position' => 'max:191',
             'expertise' => 'max:191',
             'status' => 'required|in:duty,retire,disable,study',
-            'image' => 'mimes:jpeg,bmp,png',
+            'image' => 'image',
         ]);
 
         $teacher = Teacher::findOrFail($id);
