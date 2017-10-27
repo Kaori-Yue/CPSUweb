@@ -16,9 +16,9 @@
         <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
         <a class="next" onclick="plusSlides(1)">&#10095;</a>
         <div class="zone-dot">
-            <span class="dot" onclick="currentSlide(1)"></span>
-            <span class="dot" onclick="currentSlide(2)"></span>
-            <span class="dot" onclick="currentSlide(3)"></span>
+            @foreach($announce->blogs as $blog)
+                <span class="dot" onclick="currentSlide({{$loop->iteration}})"></span>
+            @endforeach
         </div>
     </div>
     <div class="container">
