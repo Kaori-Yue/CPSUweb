@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width">
     <title>@yield('title')</title>
+    <link rel="stylesheet" href="{{ URL::asset('css/font-awesome-4.7.0/css/font-awesome.css') }}" />
     <link rel="stylesheet" href="{{ URL::asset('css/style.css') }}" />
     @yield('meta')
 </head>
@@ -57,7 +58,7 @@
                 </ul>
             </li>
         </ul>
-        <button class="btn-navbar-list-menu" onclick="clickBtnMenu()">เมนู</button>
+        <button class="btn-navbar-list-menu" onclick="clickBtnMenu()"><i class="fa fa-bars" aria-hidden="true"></i></button>
         <ul class="list-menu-navbar-mobile" id="menuMobile">
             <li class="menu-navbar-mobile">
                 <a href="{{ url('blog') }}">ข่าวสาร</a>
