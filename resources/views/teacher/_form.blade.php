@@ -137,3 +137,7 @@
         {!! Form::submit($submit_text, ['class' => 'btn btn-primary btn-lg']) !!}
     </div>
 </div>
+
+<script>
+
+</script>

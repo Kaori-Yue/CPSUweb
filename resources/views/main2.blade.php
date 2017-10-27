@@ -6,6 +6,8 @@
     <title>@yield('title')</title>
     <link rel="stylesheet" href="{{ URL::asset('css/font-awesome-4.7.0/css/font-awesome.css') }}" />
     <link rel="stylesheet" href="{{ URL::asset('css/style.css') }}" />
+    <link rel="stylesheet" href="{{ URL::asset('js/bower_components/Croppie/croppie.css') }}">
+    <script rel="script" src="{{URL::asset('js/bower_components/Croppie/croppie.js')}}"></script>
     @yield('meta')
 </head>
 <body>
