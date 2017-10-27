@@ -6,10 +6,10 @@
     <div class="slideshow-container">
         @foreach($announce->blogs as $blog)
         <div class="mySlides fade">
-            @if(count($blog) != 0){
+            @if(count($blog) != 0)
                 <img src="{{ url('image/show/'.$blog->cover) }}" />
             @endif
-            }
+
             <!--<div class="text">Caption Text</div>-->
         </div>
         @endforeach
