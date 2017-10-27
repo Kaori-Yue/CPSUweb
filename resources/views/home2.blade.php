@@ -7,9 +7,14 @@
         @foreach($announce->blogs as $blog)
         <div class="mySlides fade">
             @if(count($blog) != 0)
+<<<<<<< HEAD
                 <img src="{{ url('image/show/'.$blog->cover) }}" />
             @endif
 
+=======
+            <a href="{{url('blog/'.$blog->slug)}}"> <img src="{{ url('image/show/'.$blog->cover) }}" /></a>
+            @endif
+>>>>>>> 8ef7571862a8892cfd15bb75258b6003d75a22f2
             <!--<div class="text">Caption Text</div>-->
         </div>
         @endforeach
@@ -17,9 +22,9 @@
         <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
         <a class="next" onclick="plusSlides(1)">&#10095;</a>
         <div class="zone-dot">
-            <span class="dot" onclick="currentSlide(1)"></span>
-            <span class="dot" onclick="currentSlide(2)"></span>
-            <span class="dot" onclick="currentSlide(3)"></span>
+            @foreach($announce->blogs as $blog)
+                <span class="dot" onclick="currentSlide({{$loop->iteration}})"></span>
+            @endforeach
         </div>
     </div>
     <div class="container">
