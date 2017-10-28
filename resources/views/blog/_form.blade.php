@@ -6,12 +6,23 @@
         @if(Request::is('*/create'))
         <div class="form-group{{ $errors->has('cover') ? ' has-error' : '' }}">
             {!! Form::label('cover', 'Cover Image') !!}
-            {!! Form::file('cover', ['class' => 'form-control']) !!}
+            {!! Form::file('image', ['class' => 'form-control', 'id' => 'upload', 'value' => 'Choose a file', 'accept' => 'image/*']) !!}
+            <div class="form-group">
+                <div class="upload-demo-wrap" style="margin: 20px 0">
+                    <div id="upload-demo"></div>
+                </div>
+                <div style="display: none">
+                    {!! Form::label('imageCrop', 'imageCrop') !!}
+                    {!! Form::text('newImage', null, ['class' => 'form-control']) !!}
+                </div>
+            </div>
+            {{--{!! Form::file('cover', ['class' => 'form-control']) !!}--}}
             @if ($errors->has('cover'))
                 <span class="help-block">
                     <strong>{{ $errors->first('cover') }}</strong>
                 </span>
             @endif
+
         </div>
         @else
             {!! Form::label('cover', 'Current Cover Image') !!}<br>
@@ -100,9 +111,10 @@
             {!! Form::label('featured', 'Featured') !!}
             {!! Form::select('featured', [0 => 'Normal',1 => 'Featured'], null, ['class' => 'form-control']) !!}
         </div>
+
     </div>
     <div class="panel-footer">
-        {!! Form::submit($submit_text, ['class' => 'btn btn-primary btn-lg']) !!}
+        {!! Form::submit($submit_text, ['class' => 'btn btn-primary btn-lg upload-result']) !!}
         {!! Form::reset('Reset', ['class' => 'btn btn-default btn-lg']) !!}
     </div>
 </div>

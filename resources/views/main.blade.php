@@ -97,16 +97,16 @@
             readFile(this);
         });
         $('.upload-result').on('click', function (ev) {
-
-//            $uploadCrop.croppie('result', {
-//                type: 'canvas',
-//                size: 'viewport'
-//            }).then(function (resp) {
-//                console.log(resp);
+            $uploadCrop.croppie('result', {
+                type: 'canvas',
+                size: 'viewport'
+            }).then(function (resp) {
+                var newImage = document.getElementsByName("newImage");
+                newImage[0].value = resp;
 //                popupResult({
 //                    src: resp
 //                });
-//            });
+            });
         });
 
     </script>

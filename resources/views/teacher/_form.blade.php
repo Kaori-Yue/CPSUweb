@@ -132,15 +132,20 @@
             </div>
             <div class="upload-demo-wrap" style="margin: 20px 0">
                 <div id="upload-demo"></div>
-
             </div>
+            <div style="display: none">
+                {!! Form::label('imageCrop', 'imageCrop') !!}
+                {!! Form::text('newImage', null, ['class' => 'form-control']) !!}
+            </div>
+
+
 
 
         @endif
 
     </div>
     <div class="panel-footer">
-        {!! Form::submit($submit_text, ['class' => 'btn btn-primary btn-lg']) !!}
+        {!! Form::submit($submit_text, ['class' => 'btn btn-primary btn-lg upload-result']) !!}
     </div>
 </div>
 
