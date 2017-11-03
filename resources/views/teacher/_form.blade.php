@@ -135,12 +135,8 @@
             </div>
             <div style="display: none">
                 {!! Form::label('imageCrop', 'imageCrop') !!}
-                {!! Form::text('newImage', null, ['class' => 'form-control']) !!}
+                {!! Form::file('new_image', null, ['class' => 'form-control']) !!}
             </div>
-
-
-
-
         @endif
 
     </div>

@@ -167,18 +167,18 @@ class TeacherController extends Controller
             'position' => 'max:191',
             'expertise' => 'max:191',
             'status' => 'required|in:duty,retire,disable,study',
-            'image' => 'image',
+            'new_image' => 'image',
         ]);
 
         $teacher = Teacher::findOrFail($id);
         $editedTeacher = $request->all();
 
-        $image = $request->file('image');
+        $image = $request->file('new_image');
         $editedTeacher['rank'] = self::handleRank($editedTeacher);
 
         if(isset($image)){
             $file = $this->storeImage($image, 'profile');
-            $editedTeacher['image'] = $file->id;
+            $editedTeacher['new_image'] = $file->id;
         }
         $teacher->update($editedTeacher);
 
