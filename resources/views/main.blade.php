@@ -97,16 +97,23 @@
         $('#upload').on('change', function () {
             readFile(this);
         });
-        $('.upload-result').on('click', function (ev) {
+        $('.upload-result-teacher-update').on('click', function (ev) {
+            var data = $("#teacher_edit").serialize();
             $uploadCrop.croppie('result', {
                 type: 'canvas',
                 size: 'viewport'
             }).then(function (resp) {
-                var newImage = document.getElementsByName("newImage");
-                newImage[0].value = resp;
-//                popupResult({
-//                    src: resp
-//                });
+                var teacher_id = document.getElementById('teacher_id').value;
+                $.ajax({
+                    url: "../../teacher/" + teacher_id,
+                    type: "PATCH",
+                    data: data ,
+                    success: function (data) {//alert(data);
+                        html = '<img src="' + resp + '" />';
+                        $("#upload-demo-i").html(html);
+                        console.log(data);
+                    }
+                });
             });
         });
 

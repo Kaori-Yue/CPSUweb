@@ -167,22 +167,23 @@ class TeacherController extends Controller
             'position' => 'max:191',
             'expertise' => 'max:191',
             'status' => 'required|in:duty,retire,disable,study',
-            'new_image' => 'image',
+            'image' => 'image',
         ]);
 
         $teacher = Teacher::findOrFail($id);
         $editedTeacher = $request->all();
 
-        $image = $request->file('new_image');
+        $image = $request->file('image');
         $editedTeacher['rank'] = self::handleRank($editedTeacher);
 
         if(isset($image)){
             $file = $this->storeImage($image, 'profile');
-            $editedTeacher['new_image'] = $file->id;
+            $editedTeacher['image'] = $file->id;
         }
         $teacher->update($editedTeacher);
 
         return redirect()->action('AdminController@teacher')->with('status', 'Update Complete!');
+        //return $request->all();
     }
 
     public function destroy($id)

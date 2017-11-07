@@ -113,6 +113,7 @@
                 </span>
             @endif
         </div>
+
         @else
             {!! Form::label('image', 'Current Image') !!}<br>
             <img src="{{ url('image/show/'.$teacher->image) }}" height="100" alt="">
@@ -123,7 +124,7 @@
 
             <div id="cover" class="collapse">
                 {!! Form::label('image', 'Image') !!}
-                {!! Form::file('image', ['class' => 'form-control', 'id' => 'upload', 'value' => 'Choose a file', 'accept' => 'image/*']) !!}
+                {!! Form::file('image', ['class' => 'form-control upload-result-teacher-update', 'id' => 'upload', 'value' => 'Choose a file', 'accept' => 'image/*']) !!}
                 @if ($errors->has('image'))
                     <span class="help-block">
                     <strong>{{ $errors->first('image') }}</strong>
@@ -134,14 +135,13 @@
                 <div id="upload-demo"></div>
             </div>
             <div style="display: none">
-                {!! Form::label('imageCrop', 'imageCrop') !!}
+                {!! Form::hidden('imageCrop', $teacher->id, ['value' => $teacher->id, 'id' => 'teacher_id']) !!}
                 {!! Form::file('new_image', null, ['class' => 'form-control']) !!}
             </div>
         @endif
-
     </div>
     <div class="panel-footer">
-        {!! Form::submit($submit_text, ['class' => 'btn btn-primary btn-lg upload-result']) !!}
+        {!! Form::submit($submit_text, ['class' => 'btn btn-primary btn-lg upload-result-teacher-update']) !!}
     </div>
 </div>
 
