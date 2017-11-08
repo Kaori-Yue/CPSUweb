@@ -153,6 +153,7 @@ class BlogController extends Controller
         $publish_at = self::handleDateTime($blog['publish_date'].' '.$blog['publish_time']);
 
         $cover_image = $request->file('cover');
+        $cover_image = $this->base64_to_jpeg($request->get('new_image'), $cover_image);
         $file = $this->storeImage($cover_image, 'cover');
 
         $hash_tags = $blog['hash_tags'];
@@ -195,7 +196,7 @@ class BlogController extends Controller
 
         $slug = self::handleSlug($updateBlog['title']);
         $cover_image = $request->file('cover');
-
+        $cover_image = $this->base64_to_jpeg($request->get('new_image'), $cover_image);
         $hash_tags = $updateBlog['hash_tags'];
 
         $blogData = [
@@ -352,5 +353,22 @@ class BlogController extends Controller
             $content =  str_limit($content, 40);
         }
         return $content;
+    }
+
+    function base64_to_jpeg( $base64_string, $output_file ) {
+        $ifp = fopen( $output_file, 'wb' );
+
+        // split the string on commas
+        // $data[ 0 ] == "data:image/png;base64"
+        // $data[ 1 ] == <actual base64 string>
+        $data = explode( ',', $base64_string );
+
+        // we could add validation here with ensuring count( $data ) > 1
+        fwrite( $ifp, base64_decode( $data[ 1 ] ) );
+
+        // clean up the file resource
+        fclose( $ifp );
+
+        return $output_file;
     }
 }

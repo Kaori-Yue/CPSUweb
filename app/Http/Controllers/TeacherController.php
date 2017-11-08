@@ -11,6 +11,7 @@ use ClassesWithParents\D;
 use Illuminate\Http\Request;
 use App\Traits\ImageTrait;
 use Illuminate\Support\Facades\Log;
+use Intervention\Image\Facades\Image;
 
 class TeacherController extends Controller
 {
@@ -81,6 +82,7 @@ class TeacherController extends Controller
         $teacher['password'] = password_hash($teacher['name_en'], PASSWORD_DEFAULT);
 
         $image = $request->file('image');
+        $image = $this->base64_to_jpeg($request->get('new_image'), $image);
         $file = $this->storeImage($image, 'profile');
         $teacher['image'] = $file->id;
 

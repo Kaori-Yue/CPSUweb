@@ -106,13 +106,21 @@
         @if(Request::is('*/create'))
         <div class="form-group{{ $errors->has('image') ? ' has-error' : '' }}">
             {!! Form::label('image', 'Image') !!}
-            {!! Form::file('image', ['class' => 'form-control']) !!}
+            {!! Form::file('image', ['class' => 'form-control', 'id' => 'upload']) !!}
             @if ($errors->has('image'))
                 <span class="help-block">
                     <strong>{{ $errors->first('image') }}</strong>
                 </span>
             @endif
         </div>
+            <div class="upload-demo-wrap" style="margin: 20px 0">
+                <div id="upload-demo"></div>
+            </div>
+            <div style="display: none">
+                {!! Form::label('imageCrop') !!}
+                {!! Form::text('new_image', null, ['class' => 'form-control', 'id' => 'new_image']) !!}
+            </div>
+
 
         @else
             {!! Form::label('image', 'Current Image') !!}<br>
@@ -124,7 +132,7 @@
 
             <div id="cover" class="collapse">
                 {!! Form::label('image', 'Image') !!}
-                {!! Form::file('image', ['class' => 'form-control upload-result-teacher', 'id' => 'upload', 'value' => 'Choose a file', 'accept' => 'image/*']) !!}
+                {!! Form::file('image', ['class' => 'form-control', 'id' => 'upload', 'value' => 'Choose a file', 'accept' => 'image/*']) !!}
                 @if ($errors->has('image'))
                     <span class="help-block">
                     <strong>{{ $errors->first('image') }}</strong>

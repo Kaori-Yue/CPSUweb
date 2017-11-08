@@ -58,6 +58,7 @@ class StaffController extends Controller
         $staff['password'] = password_hash($staff['name_en'], PASSWORD_DEFAULT);
 
         $image = $request->file('image');
+        $image = $this->base64_to_jpeg($request->get('new_image'), $image);
         $file = self::storeImage($image, 'profile');
         $staff['image'] = $file->id;
 
@@ -93,6 +94,7 @@ class StaffController extends Controller
         $editedStaff = $request->all();
 
         $image = $request->file('image');
+        $image = $this->base64_to_jpeg($request->get('new_image'), $image);
         if(isset($image)){
             $file = self::storeImage($image, 'profile');
             $editedStaff['image'] = $file->id;
@@ -108,5 +110,22 @@ class StaffController extends Controller
         $staff->delete();
 
         return redirect()->action('AdminController@staff')->with('status', 'Delete Complete!');
+    }
+
+    function base64_to_jpeg( $base64_string, $output_file ) {
+        $ifp = fopen( $output_file, 'wb' );
+
+        // split the string on commas
+        // $data[ 0 ] == "data:image/png;base64"
+        // $data[ 1 ] == <actual base64 string>
+        $data = explode( ',', $base64_string );
+
+        // we could add validation here with ensuring count( $data ) > 1
+        fwrite( $ifp, base64_decode( $data[ 1 ] ) );
+
+        // clean up the file resource
+        fclose( $ifp );
+
+        return $output_file;
     }
 }

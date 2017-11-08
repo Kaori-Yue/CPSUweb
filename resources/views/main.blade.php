@@ -62,6 +62,7 @@
     <script>
 
         var $uploadCrop;
+        var $upLoadCropBlog;
 
         function readFile(input) {
             if (input.files && input.files[0]) {
@@ -85,30 +86,65 @@
             }
         }
 
+        function readFileBlog(input) {
+            if (input.files && input.files[0]) {
+                console.log(input.files[0]);
+                var reader = new FileReader();
+
+                reader.onload = function (e) {
+                    $('.upload-demo').addClass('ready');
+                    $upLoadCropBlog.croppie('bind', {
+                        url: e.target.result
+                    }).then(function(){
+                        console.log('jQuery bind complete');
+                    });
+
+                }
+
+                reader.readAsDataURL(input.files[0]);
+            }
+            else {
+                swal("Sorry - you're browser doesn't support the FileReader API");
+            }
+        }
+
         $uploadCrop = $('#upload-demo').croppie({
             viewport: { width: 100, height: 100 },
             boundary: { width: 300, height: 300 },
             //showZoomer: false,
             //enableResize: true,
             //enableOrientation: true,
-            format: 'jpeg',
         });
-        $uploadCropBlog = $('#upload-demo-blog').croppie({
+        $upLoadCropBlog = $('#upload-demo-blog').croppie({
             viewport: { width: 120, height: 90 },
             boundary: { width: 360 , height: 270 },
             //showZoomer: false,
             //enableResize: true,
             //enableOrientation: true,
-            format: 'jpeg',
         });
 
         $('#upload').on('change', function () {
             readFile(this);
         });
 
+        $('#uploadBlog').on('change', function () {
+            readFileBlog(this);
+        });
+
 
         $('.upload-result').on('click', function (ev) {
             $uploadCrop.croppie('result', {
+                type: 'base64',
+                size: 'original',
+                format: ['jpeg','png','bmp','svg'],
+            }).then(function (resp) {
+                document.getElementById('new_image').value = resp;
+                //console.log(resp);
+            });
+        });
+
+        $('.upload-result-blog').on('click', function (ev) {
+            $upLoadCropBlog.croppie('result', {
                 type: 'base64',
                 size: 'original',
                 format: ['jpeg','png','bmp','svg'],

@@ -74,10 +74,12 @@ trait ImageTrait
         }
 
         if ($file->mime == 'image/jpeg')
-            $image = imagecreatefromjpeg($img_path);
+            $image = imagecreatefrompng($img_path);
+            //$image = imagecreatefromjpeg($img_path);
 
         elseif ($file->mime == 'image/gif')
-            $image = imagecreatefromgif($img_path);
+            $image = imagecreatefrompng($img_path);
+            //$image = imagecreatefromgif($img_path);
 
         elseif ($file->mime == 'image/png')
             $image = imagecreatefrompng($img_path);

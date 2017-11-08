@@ -6,14 +6,14 @@
         @if(Request::is('*/create'))
         <div class="form-group{{ $errors->has('cover') ? ' has-error' : '' }}">
             {!! Form::label('cover', 'Cover Image') !!}
-            {!! Form::file('image', ['class' => 'form-control', 'id' => 'upload', 'value' => 'Choose a file', 'accept' => 'image/*']) !!}
+            {!! Form::file('cover', ['class' => 'form-control', 'id' => 'uploadBlog', 'value' => 'Choose a file', 'accept' => 'image/*']) !!}
             <div class="form-group">
                 <div class="upload-demo-wrap" style="margin: 20px 0">
-                    <div id="upload-demo"></div>
+                    <div id="upload-demo-blog"></div>
                 </div>
                 <div style="display: none">
                     {!! Form::label('imageCrop', 'imageCrop') !!}
-                    {!! Form::text('newImage', null, ['class' => 'form-control']) !!}
+                    {!! Form::text('new_image', null, ['class' => 'form-control','id' => 'new_image']) !!}
                 </div>
             </div>
             {{--{!! Form::file('cover', ['class' => 'form-control']) !!}--}}
@@ -35,7 +35,7 @@
             <div id="cover" class="collapse">
                 <div class="form-group{{ $errors->has('cover') ? ' has-error' : '' }}">
                     {!! Form::label('cover', 'New Cover Image') !!}
-                    {!! Form::file('cover', ['class' => 'form-control']) !!}
+                    {!! Form::file('cover', ['class' => 'form-control', 'id' => 'uploadBlog']) !!}
                     @if ($errors->has('cover'))
                         <span class="help-block">
                     <strong>{{ $errors->first('cover') }}</strong>
@@ -119,7 +119,7 @@
 
     </div>
     <div class="panel-footer">
-        {!! Form::submit($submit_text, ['class' => 'btn btn-primary btn-lg upload-result']) !!}
+        {!! Form::submit($submit_text, ['class' => 'btn btn-primary btn-lg upload-result-blog']) !!}
         {!! Form::reset('Reset', ['class' => 'btn btn-default btn-lg']) !!}
     </div>
 </div>
