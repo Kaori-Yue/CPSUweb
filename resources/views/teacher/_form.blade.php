@@ -135,8 +135,8 @@
                 <div id="upload-demo"></div>
             </div>
             <div style="display: none">
-                {!! Form::hidden('imageCrop', $teacher->id, ['value' => $teacher->id, 'id' => 'teacher_id']) !!}
-                {!! Form::file('new_image', null, ['class' => 'form-control']) !!}
+                {!! Form::label('imageCrop', $teacher->id, ['id' => 'teacher_id']) !!}
+                {!! Form::text('new_image', null, ['class' => 'form-control', 'id' => 'new_image']) !!}
             </div>
         @endif
     </div>

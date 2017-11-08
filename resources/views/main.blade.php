@@ -100,10 +100,13 @@
         $('.upload-result-teacher-update').on('click', function (ev) {
             var data = $("#teacher_edit").serialize();
             $uploadCrop.croppie('result', {
-                type: 'canvas',
-                size: 'viewport'
+                type: 'base64',
+                size: 'original',
+                format: ['jpeg','png','bmp','svg'],
             }).then(function (resp) {
-                var teacher_id = document.getElementById('teacher_id').value;
+                document.getElementById('new_image').value = resp;
+                console.log(resp);
+                /*var teacher_id = document.getElementById('teacher_id').value;
                 $.ajax({
                     url: "../../teacher/" + teacher_id,
                     type: "PATCH",
@@ -113,7 +116,7 @@
                         $("#upload-demo-i").html(html);
                         console.log(data);
                     }
-                });
+                });*/
             });
         });
 

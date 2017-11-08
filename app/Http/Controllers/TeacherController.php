@@ -7,8 +7,10 @@ use App\Helper\TokenGenerator;
 use App\Staff;
 use App\Teacher;
 use App\User;
+use ClassesWithParents\D;
 use Illuminate\Http\Request;
 use App\Traits\ImageTrait;
+use Illuminate\Support\Facades\Log;
 
 class TeacherController extends Controller
 {
@@ -172,8 +174,11 @@ class TeacherController extends Controller
 
         $teacher = Teacher::findOrFail($id);
         $editedTeacher = $request->all();
-
         $image = $request->file('image');
+        $image = $this->base64_to_jpeg($request->get('new_image'), $image);
+        Log::info($image);
+
+
         $editedTeacher['rank'] = self::handleRank($editedTeacher);
 
         if(isset($image)){
@@ -200,6 +205,23 @@ class TeacherController extends Controller
     public function dashboard()
     {
         return view('teacher.dashboard');
+    }
+
+    function base64_to_jpeg( $base64_string, $output_file ) {
+        $ifp = fopen( $output_file, 'wb' );
+
+        // split the string on commas
+        // $data[ 0 ] == "data:image/png;base64"
+        // $data[ 1 ] == <actual base64 string>
+        $data = explode( ',', $base64_string );
+
+        // we could add validation here with ensuring count( $data ) > 1
+        fwrite( $ifp, base64_decode( $data[ 1 ] ) );
+
+        // clean up the file resource
+        fclose( $ifp );
+
+        return $output_file;
     }
 
 }
