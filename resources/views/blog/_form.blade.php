@@ -43,9 +43,14 @@
                     @endif
                 </div>
             </div>
-            <div class="col-md-12">
-                <hr>
+            <div class="upload-demo-wrap" style="margin: 20px 0">
+                <div id="upload-demo-blog"></div>
             </div>
+            <div style="display: none">
+                {!! Form::label('imageCrop', $blog->id, ['id' => 'blog_id']) !!}
+                {!! Form::text('new_image', null, ['class' => 'form-control', 'id' => 'new_image']) !!}
+            </div>
+
         @endif
 
 

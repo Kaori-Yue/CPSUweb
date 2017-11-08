@@ -93,12 +93,21 @@
             //enableOrientation: true,
             format: 'jpeg',
         });
+        $uploadCropBlog = $('#upload-demo-blog').croppie({
+            viewport: { width: 120, height: 90 },
+            boundary: { width: 360 , height: 270 },
+            //showZoomer: false,
+            //enableResize: true,
+            //enableOrientation: true,
+            format: 'jpeg',
+        });
 
         $('#upload').on('change', function () {
             readFile(this);
         });
+
+
         $('.upload-result').on('click', function (ev) {
-            var data = $("#teacher_edit").serialize();
             $uploadCrop.croppie('result', {
                 type: 'base64',
                 size: 'original',

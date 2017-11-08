@@ -124,7 +124,7 @@
 
             <div id="cover" class="collapse">
                 {!! Form::label('image', 'Image') !!}
-                {!! Form::file('image', ['class' => 'form-control upload-result-teacher-update', 'id' => 'upload', 'value' => 'Choose a file', 'accept' => 'image/*']) !!}
+                {!! Form::file('image', ['class' => 'form-control upload-result-teacher', 'id' => 'upload', 'value' => 'Choose a file', 'accept' => 'image/*']) !!}
                 @if ($errors->has('image'))
                     <span class="help-block">
                     <strong>{{ $errors->first('image') }}</strong>
