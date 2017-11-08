@@ -97,7 +97,7 @@
         $('#upload').on('change', function () {
             readFile(this);
         });
-        $('.upload-result-teacher-update').on('click', function (ev) {
+        $('.upload-result').on('click', function (ev) {
             var data = $("#teacher_edit").serialize();
             $uploadCrop.croppie('result', {
                 type: 'base64',
@@ -105,20 +105,11 @@
                 format: ['jpeg','png','bmp','svg'],
             }).then(function (resp) {
                 document.getElementById('new_image').value = resp;
-                console.log(resp);
-                /*var teacher_id = document.getElementById('teacher_id').value;
-                $.ajax({
-                    url: "../../teacher/" + teacher_id,
-                    type: "PATCH",
-                    data: data ,
-                    success: function (data) {//alert(data);
-                        html = '<img src="' + resp + '" />';
-                        $("#upload-demo-i").html(html);
-                        console.log(data);
-                    }
-                });*/
+                //console.log(resp);
             });
         });
+
+
 
     </script>
 

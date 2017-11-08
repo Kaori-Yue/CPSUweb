@@ -141,7 +141,7 @@
         @endif
     </div>
     <div class="panel-footer">
-        {!! Form::submit($submit_text, ['class' => 'btn btn-primary btn-lg upload-result-teacher-update']) !!}
+        {!! Form::submit($submit_text, ['class' => 'btn btn-primary btn-lg upload-result']) !!}
     </div>
 </div>
 
