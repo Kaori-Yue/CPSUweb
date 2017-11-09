@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width">
     <title>@yield('title')</title>
     <link rel="stylesheet" href="{{ URL::asset('css/font-awesome-4.7.0/css/font-awesome.css') }}" />
-    <link rel="stylesheet" href="{{ URL::asset('css/style.css') }}" />
+    <link rel="stylesheet" href="{{ URL::asset('css/css/style.css') }}" />
 
 
     @yield('meta')
