@@ -39,6 +39,11 @@ class HomeController extends Controller
             ->take(4)
             ->get();
 
+        foreach ($blogs as $blog){
+            $blog['title'] = $this->cutTitle($blog['title']);
+            $blog['description'] = $this->cutContent($blog['description']);
+        }
+
         /*for($i = 0; $i < 4; ++$i){
             $blogs[$i]["content"] = self::cutContent($blogs[$i]["content"]);
         }*/
@@ -52,10 +57,18 @@ class HomeController extends Controller
         ]);
     }
 
+    public function cutTitle($content)
+    {
+        if(strlen($content) > 22){
+            $content =  str_limit($content, 22);
+        }
+        return $content;
+    }
+
     public function cutContent($content)
     {
-        if(strlen($content) > 40){
-           $content =  str_limit($content, 40);
+        if(strlen($content) > 50){
+            $content =  str_limit($content, 50);
         }
         return $content;
     }

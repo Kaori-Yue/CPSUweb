@@ -7,8 +7,8 @@
             </li>
             <li class="content-card-news">
                 <p class="time-create-news">{{ $blog->publish_at }}</p>
-                <h1 class="title">{!! iconv_substr($blog->title, 0, 22, 'UTF-8') !!}</h1>
-                <p class="description-card-news">{!! iconv_substr($blog->description, 0, 50, 'UTF-8') !!}</p>
+                <h1 class="title">{!! $blog->title !!}</h1>
+                <p class="description-card-news">{!! $blog->description !!}</p>
             </li>
         </ul>
      </a>

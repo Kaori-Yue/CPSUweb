@@ -49,9 +49,9 @@
                 </div>
                 <h1 class="title">ข่าวที่เกี่ยวข้อง</h1>
                 <ul class="wrapper-card-news">
-                    @foreach($relateBlogs as $blog)
+                    @foreach($relateBlogs as $blog_r)
                     <li>
-                            @include('blog._card3', $blog)
+                            @include('blog._card3', $blog_r)
                     </li>
                     @endforeach
 

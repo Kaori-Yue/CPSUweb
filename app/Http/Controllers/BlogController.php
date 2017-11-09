@@ -23,6 +23,10 @@ class BlogController extends Controller
         $categories = Category::all();
         foreach ($categories as $category){
             $category->blogs;
+            foreach ($category->blogs as $blog){
+                $blog['title'] = $this->cutTitle($blog['title']);
+                $blog['description'] = $this->cutContent($blog['description']);
+            }
         }
 
         $blogs = Blog::orderBy('created_at', 'DESC')
@@ -44,6 +48,13 @@ class BlogController extends Controller
             $tag_count = BlogTag::where('tag_id', $tag->id)->count();
             $tag['weight'] = $tag_count;
         }
+
+        /*foreach ($categories->blogs->blog as $blog){
+            $blog['title'] = $this->cutTitle("asdasdsad");
+            $blog['description'] = $this->cutContent($blog['description']);
+        }*/
+
+
 
         return view('blog.index2', [
             'blogs' => $blogs,
@@ -347,10 +358,18 @@ class BlogController extends Controller
         return $dateTime;
     }
 
+    public function cutTitle($content)
+    {
+        if(strlen($content) > 22){
+            $content =  str_limit($content, 22);
+        }
+        return $content;
+    }
+
     public function cutContent($content)
     {
         if(strlen($content) > 50){
-            $content =  str_limit($content, 40);
+            $content =  str_limit($content, 50);
         }
         return $content;
     }
