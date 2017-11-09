@@ -94,9 +94,12 @@ a{
   height: 100%;
 
   a{
-    opacity: 1;
     text-decoration: none;
     cursor:pointer;
+
+    &:hover{
+      opacity: 1;
+    }
   }
   img{
     width: 100%;
