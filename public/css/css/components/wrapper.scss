@@ -276,6 +276,7 @@
       box-sizing: border-box;
 
       li{
+
         a{
           text-decoration: none;
           color: $color-black;
@@ -364,17 +365,11 @@
 
     }
     @media screen and (min-width: $device-lg-computer) {
-      width: 50%;
-      padding-right: 5px;
-      &:nth-child(2n){
-        padding-left: 5px;
-        padding-right: 0px;
-      }
+
     }
   }
 
   @media screen and (min-width: $device-tablet) {
-
 
   }
   @media screen and (min-width: $device-computer) {

@@ -478,10 +478,13 @@
         padding: 20px; } }
   @media screen and (min-width: 768px) {
     .card-person {
-      margin: 180px 0 20px 0; } }
+      margin: 30px 0 20px 0; } }
+  @media screen and (min-width: 1024px) {
+    .card-person {
+      margin: 140px 0 20px 0; } }
   @media screen and (min-width: 1280px) {
     .card-person {
-      margin: 80px 0 20px 0; } }
+      margin: 160px 0 20px 0; } }
 
 .card-research {
   width: 100%;
@@ -1067,13 +1070,6 @@
             .wrapper-card-person li .wrapper-detail-all li:nth-of-type(2n) {
               padding-left: 10px;
               padding-right: 0px; } }
-    @media screen and (min-width: 1280px) {
-      .wrapper-card-person li {
-        width: 50%;
-        padding-right: 5px; }
-        .wrapper-card-person li:nth-child(2n) {
-          padding-left: 5px;
-          padding-right: 0px; } }
 
 .wrapper-card-research {
   width: 100%;
