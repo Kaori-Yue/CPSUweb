@@ -1,5 +1,7 @@
 @extends('main2')
 
+@section('title', $curricula->name_th)
+
 @section('content')
     <div class="container">
         <div class="form-contact">

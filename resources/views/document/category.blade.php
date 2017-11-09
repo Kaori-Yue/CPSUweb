@@ -1,5 +1,7 @@
 @extends('main2')
 
+@section('title', $title)
+
 @section('content')
     <div class="container">
         <h1 class="title">{{$title}}</h1>

@@ -1,5 +1,7 @@
 @extends('main2')
 
+@section('title', $blog->title)
+
 @section('meta')
     <meta property="og:title"  content="{{$blog->title}}" />
     <meta property="og:type" content="article">
@@ -10,7 +12,7 @@
 
     <meta name="twitter:card" content="summary" />
     <meta name="twitter:title" content="{{ $blog->title }}" />
-    <meta name="twitter:description" content="Department of Computing Silpakorn University" />
+    <meta name="twitter:description" content="{{$blog->description}}" />
     <meta name="twitter:image" content="{{ url('image/show/'.$blog->cover) }}" />
 @endsection
 

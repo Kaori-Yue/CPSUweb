@@ -1,6 +1,6 @@
 @extends('main2')
 
-@section('title', "บุคลากร")
+@section('title', "บุคลากรสายสนับสนุนวิชาการ")
 
 @section('content')
     <div class="container">

@@ -1,6 +1,6 @@
 @extends('main2')
 
-@section('title', "เกี่ยวข้องกับภาควิชา")
+@section('title', "ติดต่อภาควิชา")
 
 @section('content')
 <div class="container">

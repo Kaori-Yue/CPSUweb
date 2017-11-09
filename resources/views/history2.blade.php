@@ -1,5 +1,7 @@
 @extends('main2')
 
+@section('title', "ประวัติภาควิชา")
+
 @section('content')
     <div class="container">
         <div class="form-contact">

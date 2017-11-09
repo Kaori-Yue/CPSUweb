@@ -1,5 +1,7 @@
 @extends('main2')
 
+@section('title', "ไม่พบหน้านี้ในระบบ")
+
 @section('content')
     <div class="container">
         <h1 class="not-found">ขออภัยค่ะ ไม่พบหน้านี้ในระบบ</h1>
