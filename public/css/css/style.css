@@ -1240,6 +1240,10 @@ a {
 .mySlides {
   display: none;
   height: 100%; }
+  .mySlides a {
+    opacity: 1;
+    text-decoration: none;
+    cursor: pointer; }
   .mySlides img {
     width: 100%;
     height: 100%; }
