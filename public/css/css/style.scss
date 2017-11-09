@@ -114,7 +114,7 @@ a{
 .prev, .next {
   cursor: pointer;
   position: absolute;
-  top: calc(50% - 50px);
+  top:50%;
   width: auto;
   //margin-top: -22px;
   padding: 10px;
@@ -128,7 +128,7 @@ a{
   @media screen and (min-width: $device-tablet) {
     font-size: 30px;
     padding: 15px;
-    top: calc(50% - 80px);
+
 
   }
 }
