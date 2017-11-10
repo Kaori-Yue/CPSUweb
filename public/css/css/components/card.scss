@@ -464,6 +464,11 @@
           }
           .in-detail{
 
+            a{
+              color: $color-green;
+
+            }
+
           }
           @media screen and (min-width: $device-tablet) {
 

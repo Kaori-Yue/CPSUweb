@@ -32,7 +32,7 @@
             <li>
                 <p class="title-detail-all">เว็บไซต์</p>
                 <ul class="list-detail-all">
-                    <li class="in-detail"><a href="{{$teacher->website}}" target="_blank">{{$teacher->website}}</a></li>
+                    <li class="in-detail"><a href="http://{{$teacher->website}}" target="_blank">{{$teacher->website}}</a></li>
                 </ul>
             </li>
             <li>
