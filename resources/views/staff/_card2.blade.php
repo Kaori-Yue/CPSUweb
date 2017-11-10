@@ -17,7 +17,7 @@
             <li>
                 <p class="title-detail-all">เว็บไซต์</p>
                 <ul class="list-detail-all">
-                    <li class="in-detail">{{$staff->website}}</li>
+                    <li class="in-detail"><a href="{{$staff->website}}">{{$staff->website}}</a></li>
                 </ul>
             </li>
             <li>
