@@ -60,7 +60,7 @@
         }
 
         .drop-down-menu{
-          top: 30px;
+          top: 27px;
           right: 0;
           width: 220px;
           .list-menu-drop-down{
@@ -99,6 +99,12 @@
         position: relative;
         margin-left: 5px;
         border-bottom: 3px solid $color-green;
+
+        a{
+          color: $color-black;
+          opacity: 1;
+        }
+
 
         @media screen and (min-width: $device-tablet) {
           margin-left: 5px;

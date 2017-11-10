@@ -35,7 +35,6 @@
                         <a href="{{ url('staff') }}">สายสนับสนุนวิชาการ</a>
                     </li>
                 </ul>
-
             </li>
             <!--<li class="menu-navbar">
                 <a href="{{ url('research') }}">ผลงานวิจัย</a>

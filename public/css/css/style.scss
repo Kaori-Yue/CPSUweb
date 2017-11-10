@@ -77,6 +77,19 @@ a{
     justify-content: center;
     position: relative;
     bottom: 30px;
+
+    .title-annoucement{
+      color: $color-light-gray;
+      font-size: 18px;
+      text-align: center;
+
+      @media screen and (min-width: $device-tablet) {
+        font-size: 24px;
+
+      }
+    }
+
+
     @media screen and (min-width: $device-tablet) {
       bottom: 40px;
 
