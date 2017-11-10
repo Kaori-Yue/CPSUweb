@@ -463,6 +463,8 @@
           @media screen and (min-width: 768px) {
             .card-person .detail-card-person .wrapper-detail-all li .list-detail-all {
               font-size: 18px; } }
+          .card-person .detail-card-person .wrapper-detail-all li .list-detail-all .in-detail a {
+            color: #117167; }
         @media screen and (min-width: 768px) {
           .card-person .detail-card-person .wrapper-detail-all li {
             width: 50%;
