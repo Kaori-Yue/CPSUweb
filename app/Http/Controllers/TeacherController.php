@@ -177,9 +177,8 @@ class TeacherController extends Controller
         $teacher = Teacher::findOrFail($id);
         $editedTeacher = $request->all();
         $image = $request->file('image');
+        if(isset($image))
         $image = $this->base64_to_jpeg($request->get('new_image'), $image);
-        Log::info($image);
-
 
         $editedTeacher['rank'] = self::handleRank($editedTeacher);
 
@@ -218,6 +217,8 @@ class TeacherController extends Controller
         $data = explode( ',', $base64_string );
 
         // we could add validation here with ensuring count( $data ) > 1
+        fwrite( $ifp, base64_decode( $data[ 0 ] ) );
+
         fwrite( $ifp, base64_decode( $data[ 1 ] ) );
 
         // clean up the file resource
