@@ -261,6 +261,70 @@
         .wrapper-card-detail-curricula .list-card-detail-curricula:nth-of-type(2n) {
           padding-left: 10px; } }
 
+.wrapper-card-person-read-person {
+  display: flex;
+  list-style-type: none;
+  flex-wrap: wrap;
+  max-height: 181px;
+  overflow: hidden; }
+  .wrapper-card-person-read-person .list-wrapper-card-person-read-person {
+    width: 50%;
+    margin-bottom: 10px; }
+    .wrapper-card-person-read-person .list-wrapper-card-person-read-person:nth-of-type(n) {
+      padding-right: 5px; }
+    .wrapper-card-person-read-person .list-wrapper-card-person-read-person:nth-of-type(2n) {
+      padding-right: 0px;
+      padding-left: 5px; }
+    .wrapper-card-person-read-person .list-wrapper-card-person-read-person .card-person:hover {
+      box-shadow: none;
+      border: 1px solid #F0F0F0; }
+    .wrapper-card-person-read-person .list-wrapper-card-person-read-person .card-person .role-card-person {
+      font-size: 12px;
+      font-weight: 100;
+      color: #117167;
+      margin-top: 5px;
+      text-align: center; }
+      @media screen and (min-width: 768px) {
+        .wrapper-card-person-read-person .list-wrapper-card-person-read-person .card-person .role-card-person {
+          font-size: 12px; } }
+    .wrapper-card-person-read-person .list-wrapper-card-person-read-person .card-person .name-card-person {
+      font-size: 12px; }
+      @media screen and (min-width: 768px) {
+        .wrapper-card-person-read-person .list-wrapper-card-person-read-person .card-person .name-card-person {
+          font-size: 12px; } }
+    @media screen and (min-width: 768px) {
+      .wrapper-card-person-read-person .list-wrapper-card-person-read-person {
+        width: 33.33333%; }
+        .wrapper-card-person-read-person .list-wrapper-card-person-read-person:nth-of-type(3n+1) {
+          padding-left: 0;
+          padding-right: 10px; }
+        .wrapper-card-person-read-person .list-wrapper-card-person-read-person:nth-of-type(3n+2) {
+          padding: 0 5px; }
+        .wrapper-card-person-read-person .list-wrapper-card-person-read-person:nth-of-type(3n+3) {
+          padding-left: 10px;
+          padding-right: 0px; } }
+    @media screen and (min-width: 980px) {
+      .wrapper-card-person-read-person .list-wrapper-card-person-read-person {
+        width: 25%; }
+        .wrapper-card-person-read-person .list-wrapper-card-person-read-person:nth-of-type(2n+1) {
+          padding-left: 0;
+          padding-right: 5px; }
+        .wrapper-card-person-read-person .list-wrapper-card-person-read-person:nth-of-type(2n+2) {
+          padding-left: 0px;
+          padding-right: 5px; }
+        .wrapper-card-person-read-person .list-wrapper-card-person-read-person:nth-of-type(2n+3) {
+          padding-left: 5px;
+          padding-right: 0px; }
+        .wrapper-card-person-read-person .list-wrapper-card-person-read-person:nth-of-type(2n+4) {
+          padding-left: 5px;
+          padding-right: 0px; } }
+  @media screen and (min-width: 768px) {
+    .wrapper-card-person-read-person {
+      max-height: 257px; } }
+  @media screen and (min-width: 980px) {
+    .wrapper-card-person-read-person {
+      max-height: 263px; } }
+
 .color-green {
   color: #117167; }
 
@@ -731,6 +795,65 @@
 .active-card-person {
   background-color: #ffffff;
   box-shadow: 0 19px 38px rgba(0, 0, 0, 0.3), 0 15px 12px rgba(0, 0, 0, 0.22); }
+
+.active-card-person-read-person {
+  background-color: #ffffff;
+  border: 1px solid #F0F0F0; }
+
+.card-read-person {
+  width: 100%;
+  background-color: #F0F0F0;
+  padding: 10px;
+  border-radius: 4px; }
+  .card-read-person .header-card-read-person {
+    width: 100%;
+    display: inline-block;
+    position: relative; }
+    .card-read-person .header-card-read-person .image-header-card-person {
+      width: 100%;
+      height: auto; }
+      @media screen and (min-width: 768px) {
+        .card-read-person .header-card-read-person .image-header-card-person {
+          overflow: hidden;
+          float: left;
+          width: 20%; } }
+    .card-read-person .header-card-read-person .role-card-read-person {
+      color: #117167;
+      font-weight: 100;
+      margin-top: 5px;
+      font-size: 16px;
+      text-align: center; }
+      @media screen and (min-width: 768px) {
+        .card-read-person .header-card-read-person .role-card-read-person {
+          position: absolute;
+          right: 20px;
+          font-size: 18px; } }
+    .card-read-person .header-card-read-person .name-th-card-read-person {
+      width: 100%;
+      font-weight: 100;
+      text-align: center;
+      margin-top: 5px;
+      font-size: 16px; }
+      @media screen and (min-width: 768px) {
+        .card-read-person .header-card-read-person .name-th-card-read-person {
+          text-align: left;
+          margin-top: 10px;
+          padding-left: calc(20% + 30px);
+          font-size: 18px; } }
+    .card-read-person .header-card-read-person .name-eng-card-read-person {
+      width: 100%;
+      font-weight: 100;
+      text-align: center;
+      font-size: 16px; }
+      @media screen and (min-width: 768px) {
+        .card-read-person .header-card-read-person .name-eng-card-read-person {
+          text-align: left;
+          margin-top: 10px;
+          padding-left: calc(20% + 30px);
+          font-size: 18px; } }
+  @media screen and (min-width: 768px) {
+    .card-read-person {
+      padding: 20px; } }
 
 @font-face {
   font-family: Kanit;

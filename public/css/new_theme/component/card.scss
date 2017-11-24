@@ -453,3 +453,103 @@
   background-color: $color-white;
   box-shadow: 0 19px 38px rgba(0,0,0,0.30), 0 15px 12px rgba(0,0,0,0.22);
 }
+.active-card-person-read-person{
+  background-color: $color-white;
+  border: 1px solid $color-light-gray;
+}
+
+
+.card-read-person{
+  width: 100%;
+  background-color: $color-light-gray;
+  padding: 10px;
+  border-radius: 4px;
+
+  .header-card-read-person{
+    width: 100%;
+    display: inline-block;
+    position: relative;
+    .image-header-card-person{
+      width: 100%;
+      height: auto;
+
+      @media screen and (min-width: $device-tablet) {
+        //width: 150px;
+        //height: 150px;
+        overflow: hidden;
+        float: left;
+        width: 20%;
+
+      }
+      @media screen and (min-width: $device-computer) {
+
+      }
+    }
+    .role-card-read-person{
+      color: $color-green;
+      font-weight: 100;
+      margin-top: 5px;
+      font-size: $font-small-title-mobile;
+      text-align: center;
+      @media screen and (min-width: $device-tablet) {
+        position: absolute;
+        right: 20px;
+        font-size: $font-small-title-tablet-computer;
+      }
+      @media screen and (min-width: $device-computer) {
+
+      }
+    }
+
+    .name-th-card-read-person{
+       width: 100%;
+       font-weight: 100;
+       text-align: center;
+       margin-top: 5px;
+       font-size: $font-small-title-mobile;
+       @media screen and (min-width: $device-tablet) {
+         text-align: left;
+          margin-top: 10px;
+         padding-left: calc(20% + 30px);
+         font-size: $font-small-title-tablet-computer;
+       }
+       @media screen and (min-width: $device-computer) {
+
+       }
+     }
+    .name-eng-card-read-person{
+      width: 100%;
+      font-weight: 100;
+      text-align: center;
+
+      font-size: $font-small-title-mobile;
+      @media screen and (min-width: $device-tablet) {
+        text-align: left;
+        margin-top: 10px;
+        padding-left: calc(20% + 30px);
+        font-size: $font-small-title-tablet-computer;
+      }
+      @media screen and (min-width: $device-computer) {
+
+      }
+    }
+
+
+
+
+    @media screen and (min-width: $device-tablet) {
+
+    }
+    @media screen and (min-width: $device-computer) {
+
+    }
+  }
+
+  @media screen and (min-width: $device-tablet) {
+    padding: 20px;
+
+  }
+  @media screen and (min-width: $device-computer) {
+
+  }
+}
