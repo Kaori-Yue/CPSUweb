@@ -1,0 +1,57 @@
+@import "variables";
+@import "component/container";
+@import "component/wrapper";
+@import "component/color";
+@import "component/button";
+@import "component/navbar";
+@import "component/title";
+@import "component/card";
+
+
+
+@font-face {
+  font-family: Kanit;
+  src: url(font/Kanit/Kanit-Regular.ttf);
+}
+@font-face {
+  font-family: Kanit;
+  src: url(font/Kanit/Kanit-Bold.ttf);
+  font-weight: bold;
+}
+@font-face {
+  font-family: Kanit;
+  src: url(font/Kanit/Kanit-Light.ttf);
+  font-weight: 100;
+}
+
+* {box-sizing:border-box}
+
+html,body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+}
+
+body{
+  position: relative;
+  min-height: 100%;
+  height: auto;
+}
+
+h1,h2,h3,h4,h5,h6,p,ul,li{
+  margin: 0;
+  padding: 0;
+}
+
+body{
+  margin: 0;
+  font-family: Kanit;
+
+
+
+}
+
+a{
+  text-decoration: none;
+  color: $color-green;
+}

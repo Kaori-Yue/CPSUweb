@@ -1,0 +1,455 @@
+.card-news-vertical{
+  width: 100%;
+
+
+  a{
+    color: black;
+  }
+
+  .image-card-news-vertical{
+    width: 100%;
+    height: auto;
+    cursor: pointer;
+  }
+
+  .title-card-news-vertical{
+    cursor: pointer;
+    font-weight: 100;
+    font-size: $font-small-title-mobile;
+    width: 100%;
+    &:hover{
+      color: $color-green;
+    }
+
+    @media screen and (min-width: $device-tablet) {
+      font-size: $font-small-title-tablet-computer;
+
+    }
+    @media screen and (min-width: $device-computer) {
+
+    }
+  }
+
+  .description-card-news-vertical{
+    font-weight: 100;
+    margin-top: 5px;
+    width: 100%;
+    font-size: $font-small-description-mobile;
+    color: $color-gray;
+    @media screen and (min-width: $device-tablet) {
+      font-size: $font-small-description-tablet-computer;
+    }
+    @media screen and (min-width: $device-computer) {
+
+    }
+  }
+
+  .wrapper-time-create-card-news-vertical{
+    margin-top: 5px;
+    width: 100%;
+    display: flex;
+    .image-calendar-card-news-vertical{
+      width: 18px;
+      height: 18px;
+      @media screen and (min-width: $device-tablet) {
+        width: 20px;
+        height: 20px;
+      }
+      @media screen and (min-width: $device-computer) {
+
+      }
+    }
+    .time-create-card-news-vertical{
+
+      font-size: $font-small-description-mobile;
+      color: $color-gray;
+      font-weight: 100;
+      padding-left: 10px;
+      line-height: 1.7;
+      @media screen and (min-width: $device-tablet) {
+        font-size: $font-small-description-tablet-computer;
+        line-height: 1.9;
+      }
+      @media screen and (min-width: $device-computer) {
+
+      }
+    }
+
+  }
+
+  @media screen and (min-width: $device-tablet) {
+
+  }
+  @media screen and (min-width: $device-computer) {
+
+  }
+}
+
+
+.card-news-horizontal{
+  width: 100%;
+  display: inline-block;
+  a{
+    color: black;
+  }
+
+  .image-card-news-horizontal{
+    width: 45%;
+    height: auto;
+    overflow: hidden;
+    float: left;
+    cursor: pointer;
+  }
+
+  .title-card-news-horizontal{
+    cursor: pointer;
+    display: flex;
+    padding-left: 10px;
+    font-weight: 100;
+    font-size: $font-big-description-mobile;
+
+    &:hover{
+      color: $color-green;
+    }
+
+    @media screen and (min-width: $device-tablet) {
+      font-size: $font-small-tablet-computer;
+
+    }
+    @media screen and (min-width: $device-computer) {
+
+    }
+  }
+
+
+  @media screen and (min-width: $device-tablet) {
+
+  }
+  @media screen and (min-width: $device-computer) {
+
+  }
+}
+
+
+.card-curricula{
+  width: 100%;
+  background-color: $color-light-gray;
+  height: 180px;
+  padding: 20px  10px;
+  cursor: pointer;
+
+  &:hover{
+    background-color: $color-white;
+    box-shadow: 0 19px 38px rgba(0,0,0,0.30), 0 15px 12px rgba(0,0,0,0.22);
+  }
+
+  .image-card-curricula{
+    display: block;
+    margin: auto;
+    width: 44px;
+    height: 52px;
+    @media screen and (min-width: $device-tablet) {
+      width: 54px;
+      height: 64px;
+    }
+    @media screen and (min-width: $device-computer) {
+
+    }
+  }
+  .type-card-curricula{
+    color: $color-green;
+    text-align: center;
+    font-weight: 100;
+    font-size: $font-small-title-mobile;
+    margin-top: 20px;
+    @media screen and (min-width: $device-tablet) {
+      font-size: $font-small-title-tablet-computer;
+    }
+    @media screen and (min-width: $device-computer) {
+
+    }
+  }
+
+  .detail-card-curricula{
+    text-align: center;
+    font-weight: 100;
+    font-size: $font-big-description-mobile;
+    margin-top: 5px;
+    @media screen and (min-width: $device-tablet) {
+      font-size: $font-big-description-tablet-computer;
+    }
+    @media screen and (min-width: $device-computer) {
+
+    }
+  }
+
+
+
+  @media screen and (min-width: $device-tablet) {
+    padding: 20px;
+    height: 200px;
+  }
+  @media screen and (min-width: $device-computer) {
+
+  }
+}
+
+.card-type-person{
+  background-color: $color-light-gray;
+  width: 100%;
+  height: 120px;
+  cursor: pointer;
+  padding: 20px 0;
+
+  &:hover{
+    background-color: $color-white;
+    box-shadow: 0 19px 38px rgba(0,0,0,0.30), 0 15px 12px rgba(0,0,0,0.22);
+  }
+  .image-card-type-person{
+    display: block;
+    margin: auto;
+    width: 50px;
+    height: 50px;
+    @media screen and (min-width: $device-tablet) {
+      width: 81px;
+      height: 81px;
+    }
+    @media screen and (min-width: $device-computer) {
+
+    }
+  }
+
+  .name-card-type-person{
+    font-weight: 100;
+    text-align: center;
+    margin-top: 5px;
+    font-size: $font-small-title-mobile;
+    @media screen and (min-width: $device-tablet) {
+      margin-top: 10px;
+      font-size: $font-small-title-tablet-computer;
+    }
+    @media screen and (min-width: $device-computer) {
+
+    }
+  }
+
+  @media screen and (min-width: $device-tablet) {
+    padding: 20px 0;
+    height: 160px;
+  }
+  @media screen and (min-width: $device-computer) {
+
+  }
+}
+
+.card-detail-curricula{
+  width: 100%;
+  background-color: $color-light-gray;
+  height: 100px;
+  cursor: pointer;
+
+  &:hover{
+    background-color: $color-white;
+    box-shadow: 0 19px 38px rgba(0,0,0,0.30), 0 15px 12px rgba(0,0,0,0.22);
+  }
+
+  .wrapper-in-card-detail-curricula{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    list-style-type: none;
+
+    .list-in-card-detail-curricula{
+      &:nth-of-type(1){
+        width: 20%;
+        padding-right: 10px;
+        position: relative;
+        .image-card-detail-curricula{
+          position: absolute;
+          width: 26px;
+          height: 37px;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+          @media screen and (min-width: $device-tablet) {
+            width: 31px;
+            height: 42px;
+          }
+          @media screen and (min-width: $device-computer) {
+
+          }
+        }
+
+      }
+      &:nth-of-type(2){
+        width: 80%;
+        padding-left: 10px;
+
+        .field-card-detail-curricula{
+          color: $color-green;
+
+          margin-top: 15px;
+          font-size: $font-big-description-mobile;
+          @media screen and (min-width: $device-tablet) {
+            font-size: $font-big-description-tablet-computer;
+          }
+          @media screen and (min-width: $device-computer) {
+
+          }
+        }
+
+        .name-card-detail-curricula{
+          font-weight: 100;
+          padding-right: 10px;
+          font-size: $font-big-description-mobile;
+          @media screen and (min-width: $device-tablet) {
+            font-size: $font-big-description-tablet-computer;
+            padding-right: 20px;
+          }
+          @media screen and (min-width: $device-computer) {
+
+          }
+        }
+
+      }
+    }
+
+  }
+
+  @media screen and (min-width: $device-tablet) {
+    height: 110px;
+  }
+  @media screen and (min-width: $device-computer) {
+
+  }
+}
+
+.card-document{
+  background-color: $color-light-gray;
+  width: 100%;
+  padding: 10px;
+  height: 180px;
+  position: relative;
+
+
+  .name-card-document{
+
+    font-size: $font-small-title-mobile;
+    @media screen and (min-width: $device-tablet) {
+      font-size: $font-small-title-tablet-computer;
+    }
+    @media screen and (min-width: $device-computer) {
+
+    }
+  }
+  .decription-card-document{
+    font-weight: 100;
+    font-family: Thonburi;
+    font-size: $font-big-description-mobile;
+    color: $color-gray;
+    margin-top: 10px;
+    @media screen and (min-width: $device-tablet) {
+      font-size: $font-big-description-tablet-computer;
+    }
+    @media screen and (min-width: $device-computer) {
+
+    }
+  }
+
+
+    .btn-download-card-document{
+      width: calc(100% - 20px);
+      cursor: pointer;
+      height: 40px;
+      position: absolute;
+      bottom: 10px;
+      left: 10px;
+      background-color: $color-white;
+      border: none;
+
+      img{
+        width: 16px;
+        height: 18px;
+        @media screen and (min-width: $device-tablet) {
+          width: 18px;
+          height: 20px;
+        }
+        @media screen and (min-width: $device-computer) {
+
+        }
+      }
+
+      @media screen and (min-width: $device-tablet) {
+
+      }
+      @media screen and (min-width: $device-computer) {
+
+      }
+    }
+
+
+
+
+  @media screen and (min-width: $device-tablet) {
+    height: 200px;
+  }
+  @media screen and (min-width: $device-computer) {
+
+  }
+}
+
+.card-person{
+  cursor: pointer;
+  background-color: $color-light-gray;
+  width: 100%;
+  padding-bottom: 10px;
+
+  &:hover{
+    background-color: $color-white;
+    box-shadow: 0 19px 38px rgba(0,0,0,0.30), 0 15px 12px rgba(0,0,0,0.22);
+  }
+
+
+  .image-card-person{
+    width: 100%;
+    height: auto;
+  }
+  .role-card-person{
+    font-size: $font-small-title-mobile;
+    font-weight: 100;
+    color: $color-green;
+    margin-top: 10px;
+    text-align: center;
+    @media screen and (min-width: $device-tablet) {
+      font-size: $font-small-title-tablet-computer;
+    }
+    @media screen and (min-width: $device-computer) {
+
+    }
+  }
+  .name-card-person{
+    margin-top: 10px;
+    font-size: $font-big-description-mobile;
+    font-weight: 100;
+    text-align: center;
+    @media screen and (min-width: $device-tablet) {
+      font-size: $font-big-description-tablet-computer;
+    }
+    @media screen and (min-width: $device-computer) {
+
+    }
+  }
+
+  @media screen and (min-width: $device-tablet) {
+
+  }
+  @media screen and (min-width: $device-computer) {
+
+  }
+}
+
+.active-card-person{
+  background-color: $color-white;
+  box-shadow: 0 19px 38px rgba(0,0,0,0.30), 0 15px 12px rgba(0,0,0,0.22);
+}

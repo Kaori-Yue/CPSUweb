@@ -1,0 +1,45 @@
+.container{
+  width: 100%;
+  padding: 0 10px;
+  position: relative;
+
+
+  @media screen and (min-width: $device-tablet) {
+    width: $device-tablet;
+    display: block;
+    padding: 0 20px;
+    margin: auto;
+
+
+
+  }
+  @media screen and (min-width: $device-computer) {
+    width: $device-computer;
+    padding: 0;
+
+  }
+}
+
+.container-content{
+  width: 100%;
+  padding: 0 10px;
+  position: relative;
+
+  padding-bottom: 422px;
+
+  @media screen and (min-width: $device-tablet) {
+    width: $device-tablet;
+    display: block;
+    padding: 0 20px;
+    margin: auto;
+    padding-bottom: 328px;
+
+
+  }
+  @media screen and (min-width: $device-computer) {
+    width: $device-computer;
+    padding: 0;
+    padding-bottom: 293px;
+
+  }
+}

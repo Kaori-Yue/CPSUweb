@@ -1,0 +1,17 @@
+.button-next, .button-previous{
+
+  background-color: $color-light-gray;
+  border: none;
+  cursor: pointer;
+  &:focus{
+    outline: none;
+  }
+
+  @media screen and (min-width: $device-tablet) {
+    width: 28px;
+    height: 28px;
+  }
+  @media screen and (min-width: $device-computer) {
+
+  }
+}
