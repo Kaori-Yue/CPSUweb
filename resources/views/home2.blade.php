@@ -4,28 +4,40 @@
 
 @section('content')
 
-    <div class="slideshow-container">
-        @foreach($announce->blogs as $blog)
-        <div class="mySlides fade">
-            @if(count($blog) != 0)
-            <a href="{{url('blog/'.$blog->slug)}}" >
-                <img src="{{ url('image/show/'.$blog->cover) }}" />
-            </a>
-            @endif
-            <!--<div class="text">Caption Text</div>-->
-        </div>
-        @endforeach
-        <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
-        <a class="next" onclick="plusSlides(1)">&#10095;</a>
-        <div class="zone-dot">
-            <p></p>
-            @foreach($announce->blogs as $blog)
-                <span class="dot" onclick="currentSlide({{$loop->iteration}})"></span>
-            @endforeach
-        </div>
-    </div>
+    {{--<div class="slideshow-container">--}}
+        {{--@foreach($announce->blogs as $blog)--}}
+        {{--<div class="mySlides fade">--}}
+            {{--@if(count($blog) != 0)--}}
+            {{--<a href="{{url('blog/'.$blog->slug)}}" >--}}
+                {{--<img src="{{ url('image/show/'.$blog->cover) }}" />--}}
+            {{--</a>--}}
+            {{--@endif--}}
+            {{--<!--<div class="text">Caption Text</div>-->--}}
+        {{--</div>--}}
+        {{--@endforeach--}}
+        {{--<a class="prev" onclick="plusSlides(-1)">&#10094;</a>--}}
+        {{--<a class="next" onclick="plusSlides(1)">&#10095;</a>--}}
+        {{--<div class="zone-dot">--}}
+            {{--<p></p>--}}
+            {{--@foreach($announce->blogs as $blog)--}}
+                {{--<span class="dot" onclick="currentSlide({{$loop->iteration}})"></span>--}}
+            {{--@endforeach--}}
+        {{--</div>--}}
+    {{--</div>--}}
     <div class="container-content">
+        <ul class="wrapper-image-slide-announcement owl-carousel-announcement-home-page owl-carousel owl-theme">
+            <li class="wrapper-image-slide-announcement">
+                <img src="{{ URL::asset('image/tesa-demo-web.svg') }}" />
+            </li>
+            <li class="wrapper-image-slide-announcement">
+                <img src="{{ URL::asset('image/nut-demo.jpeg') }}" />
+            </li>
+            <li class="wrapper-image-slide-announcement">
+                <img src="{{ URL::asset('image/nut-demo.jpeg') }}" />
+            </li>
 
+
+        </ul>
         <ul class="wrapper-nav">
             <li class="list-nav">
                 <img src="{{ URL::asset('image/home-nav.svg') }}" class="image-home-list-nav">

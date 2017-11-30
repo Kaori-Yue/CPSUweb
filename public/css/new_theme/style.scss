@@ -82,3 +82,74 @@ a{
 
   }
 }
+
+.owl-prev, .owl-next{
+  opacity: 0.8;
+  width: 25px;
+  height: 25px;
+  border-radius: 0;
+
+  &:hover{
+    opacity: 1;
+  }
+  img{
+    position: relative;
+    top: -3px;
+    left: 0px;
+    width: 5px;
+    height: 8px;
+    @media screen and (min-width: $device-tablet) {
+      top: 8px;
+      left: -1px;
+      width: 13px;
+      height: 15px;
+    }
+    @media screen and (min-width: $device-computer) {
+
+    }
+  }
+
+  @media screen and (min-width: $device-tablet) {
+    width: 40px;
+    height: 40px;
+  }
+  @media screen and (min-width: $device-computer) {
+
+  }
+}
+.owl-next{
+  right: 10px;
+  top: 80px;
+  position: absolute;
+  @media screen and (min-width: $device-tablet) {
+    right: 10px;
+    top: 145px;
+  }
+  @media screen and (min-width: $device-computer) {
+
+  }
+}
+.owl-prev{
+  left: 10px;
+  top: 80px;
+  position: absolute;
+  @media screen and (min-width: $device-tablet) {
+    left: 10px;
+    top: 145px;
+  }
+  @media screen and (min-width: $device-computer) {
+
+  }
+}
+.owl-dots{
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  @media screen and (min-width: $device-tablet) {
+    bottom: 0;
+  }
+  @media screen and (min-width: $device-computer) {
+
+  }
+}

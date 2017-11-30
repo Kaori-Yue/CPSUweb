@@ -25,19 +25,10 @@
                 หลักสูตร
             </a>
 
-            <a class="menu-navbar-top">บุคลากร
-                {{--<ul class="drop-down-menu">--}}
-                    {{--<li class="list-menu-drop-down">--}}
-                        {{--<a href="{{ url('teacher') }}">สายวิชาการ</a>--}}
-                    {{--</li>--}}
-                    {{--<li class="list-menu-drop-down">--}}
-                        {{--<a href="{{ url('staff') }}">สายสนับสนุนวิชาการ</a>--}}
-                    {{--</li>--}}
-                {{--</ul>--}}
+            <a class="menu-navbar-top">
+                บุคลากร
             </a>
-            <!--<li class="menu-navbar">
-                <a href="{{ url('research') }}">ผลงานวิจัย</a>
-            </li>-->
+
             <a class="menu-navbar-top" href="{{ url('document') }}">
                 เอกสาร
             </a>
@@ -47,45 +38,14 @@
             </a>
 
         </div>
-        {{--<button class="btn-navbar-list-menu" onclick="clickBtnMenu()"><i class="fa fa-bars" aria-hidden="true"></i></button>--}}
-        {{--<ul class="list-menu-navbar-mobile" id="menuMobile">--}}
-            {{--<li class="menu-navbar-mobile">--}}
-                {{--<a href="{{ url('blog') }}">ข่าวสาร</a>--}}
-            {{--</li>--}}
-            {{--<li class="menu-navbar-mobile" >--}}
-                {{--<a href="{{ url('curricula') }}">หลักสูตร</a>--}}
-            {{--</li>--}}
-            {{--<li class="menu-navbar-mobile">บุคลากร--}}
-                {{--<ul class="subs-menu-navbar-mobile">--}}
-                    {{--<li class="sub-menu-navbar-mobile">--}}
-                        {{--<a href="{{url('teacher')}}">สายวิชาการ</a>--}}
-                    {{--</li>--}}
-                    {{--<li class="sub-menu-navbar-mobile">--}}
-                        {{--<a href="{{url('staff')}}">สายสนับสนุนวิชาการ</a>--}}
-                    {{--</li>--}}
-                {{--</ul>--}}
-            {{--</li>--}}
-            {{--<!--<li class="menu-navbar-mobile">--}}
-                {{--<a href="{{ url('research') }}">ผลงานวิจัย</a>--}}
-            {{--</li>-->--}}
-            {{--<li class="menu-navbar-mobile">--}}
-                {{--<a href="{{ url('document') }}">เอกสาร</a>--}}
-            {{--</li>--}}
-            {{--<li class="menu-navbar-mobile" id="buttonSubMenu">เกี่ยวกับภาควิชา--}}
-                {{--<ul class="subs-menu-navbar-mobile" id="subMenuMobile">--}}
-                    {{--<li class="sub-menu-navbar-mobile">--}}
-                        {{--<a href="{{url('history')}}">ประวัติภาควิชา</a>--}}
-                    {{--</li>--}}
-                    {{--<li class="sub-menu-navbar-mobile">--}}
-                        {{--<a href="{{url('sitemap')}}">แผนผังเว็บไซต์</a>--}}
-                    {{--</li>--}}
-                    {{--<li class="sub-menu-navbar-mobile">--}}
-                        {{--<a href="{{url('contact')}}">ติดต่อภาควิชา</a>--}}
-                    {{--</li>--}}
-                {{--</ul>--}}
-
-            {{--</li>--}}
-        {{--</ul>--}}
+        <button class="btn-hamberger" onclick="clickBtnMenu()"><i class="fa fa-bars" aria-hidden="true"></i></button>
+        <ul class="wrapper-list-nav-mobile" id="menuMobile">
+            <li class="list-nav-mobile">ข่าวสาร</li>
+            <li class="list-nav-mobile">ข่าวสาร</li>
+            <li class="list-nav-mobile">ข่าวสาร</li>
+            <li class="list-nav-mobile">ข่าวสาร</li>
+            <li class="list-nav-mobile">ข่าวสาร</li>
+        </ul>
     </div>
 </nav>
 @yield('content')
@@ -153,6 +113,18 @@
 <script src="{{URL::asset('js/slide.js')}}"></script>
 <script src="{{URL::asset('js/fb.js')}}"></script>
 <script>
+
+    $('.owl-carousel-announcement-home-page').owlCarousel({
+        loop: true,
+        items: 1,
+        nav: true,
+        autoplay:true,
+        autoplayTimeout:5000,
+        autoplayHoverPause:true,
+        dots: true,
+        navText: ["<img src='{{ URL::asset('image/chevron-left.svg') }}'>","<img src='{{ URL::asset('image/chevron-right.svg') }}'>"]
+
+    })
     $('.owl-carousel-news-home').owlCarousel({
         loop:true,
 
@@ -198,7 +170,6 @@
     $('.button-previous').click(function () {
         slider.trigger('prev.owl.carousel');
     });
-
 </script>
 
 </body>

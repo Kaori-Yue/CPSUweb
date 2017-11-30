@@ -37,4 +37,3 @@ function clickBtnMenu() {
     }
     isBtnMenu = !isBtnMenu;
 }
-
