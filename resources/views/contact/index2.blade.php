@@ -6,7 +6,7 @@
 <div class="container">
     <div class="form-contact">
         <div class="title-form-contact">
-            ภาควิชาคอมพิวเตอร์ คณะวิทยาศาสตร์ มหาลัยศิลปากร
+            ภาควิชาคอมพิวเตอร์ คณะวิทยาศาสตร์ มหาวิทยาลัยศิลปากร
         </div>
         <div class="detail-form-contact">
             <h1 class="title">ที่อยู่</h1>
@@ -14,7 +14,7 @@
                 <li>
                     <p class="title-detail-all">ภาษาไทย</p>
                     <ul class="list-detail-all">
-                        <li class="in-detail">คณะวิทยาศาสตร์, มหาลัยศิลปากร</li>
+                        <li class="in-detail">คณะวิทยาศาสตร์, มหาวิทยาลัยศิลปากร</li>
                         <li class="in-detail">วิทยาเขต พระราชวังสนามจันทร์</li>
                         <li class="in-detail">ถนน ราชมรรคาใน</li>
                         <li class="in-detail">อำเภอ เมืองฯ</li>

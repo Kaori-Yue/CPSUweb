@@ -1,0 +1,111 @@
+.wrapper-detail-all{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  list-style-type: none;
+  width: 100%;
+  margin-top: 10px;
+  .list-detail-all{
+    width: 100%;
+    margin-bottom: 10px;
+    .header-small-detail{
+      font-size: $font-small-title-mobile;
+      font-weight: 100;
+      padding-left: 10px;
+      @media screen and (min-width: $device-tablet) {
+        font-size: $font-small-title-tablet-computer;
+      }
+      @media screen and (min-width: $device-computer) {
+
+      }
+    }
+
+    .wrapper-small-detail{
+      padding-left: 20px;
+      margin-top: 10px;
+      list-style-type: none;
+      .list-small-detail{
+        font-weight: 100;
+        margin-top: 5px;
+        font-family: Thonburi;
+        font-size: $font-big-description-mobile;
+
+        .btn-download-pdf{
+          background-color: $color-green;
+          width: 100px;
+          height: 40px;
+          border: none;
+          cursor: pointer;
+          &:focus{
+            outline: none;
+          }
+
+          img{
+            width: 16px;
+            height: 18px;
+            @media screen and (min-width: $device-tablet) {
+              width: 18px;
+              height: 20px;
+            }
+            @media screen and (min-width: $device-computer) {
+
+            }
+          }
+
+          @media screen and (min-width: $device-tablet) {
+            width: 100px;
+            height: 40px;
+          }
+          @media screen and (min-width: $device-computer) {
+
+          }
+        }
+
+
+        @media screen and (min-width: $device-tablet) {
+          font-size: $font-big-description-tablet-computer
+        }
+        @media screen and (min-width: $device-computer) {
+
+        }
+      }
+
+      @media screen and (min-width: $device-tablet) {
+        margin-top: 10px;
+      }
+      @media screen and (min-width: $device-computer) {
+
+      }
+    }
+
+
+    @media screen and (min-width: $device-tablet) {
+      width: 50%;
+      margin-bottom: 20px;
+    }
+    @media screen and (min-width: $device-computer) {
+
+    }
+  }
+
+  .header-big-detail{
+    width: 100%;
+    font-size: 18px;
+    font-weight: 100;
+    color: $color-green;
+
+    margin-bottom: 10px;
+    @media screen and (min-width: $device-tablet) {
+      font-size: 20px;
+    }
+    @media screen and (min-width: $device-computer) {
+
+    }
+  }
+  @media screen and (min-width: $device-tablet) {
+    margin-top: 20px;
+  }
+  @media screen and (min-width: $device-computer) {
+
+  }
+}

@@ -1,3 +1,58 @@
+.wrapper-nav{
+  width: 100%;
+  margin: 10px 0;
+  list-style-type: none;
+  .list-nav{
+    margin-right: 10px;
+    display: inline-block;
+    font-weight: 100;
+
+    font-size: $font-small-description-mobile;
+    color: $color-gray;
+    cursor: pointer;
+    &:hover{
+      color: $color-green;
+    }
+    .image-home-list-nav{
+      cursor: pointer;
+      position: relative;
+      width: 18px;
+      height: 20px;
+      top: 5px;
+      @media screen and (min-width: $device-tablet) {
+        top: 4px;
+        width: 20px;
+        height: 22px;
+      }
+      @media screen and (min-width: $device-computer) {
+
+      }
+    }
+    .image-chevron-right-list-nav{
+      cursor: default;
+
+      @media screen and (min-width: $device-tablet) {
+
+      }
+      @media screen and (min-width: $device-computer) {
+
+      }
+    }
+    @media screen and (min-width: $device-tablet) {
+      font-size: $font-big-description-tablet-computer;
+    }
+    @media screen and (min-width: $device-computer) {
+
+    }
+  }
+  @media screen and (min-width: $device-tablet) {
+    margin: 20px 0;
+  }
+  @media screen and (min-width: $device-computer) {
+
+  }
+}
+
 .wrapper-news-home-page{
   width: 100%;
   display: flex;
@@ -45,9 +100,10 @@
 
     @media screen and (min-width: $device-tablet) {
       &:nth-of-type(1){
+        width: 100%;
         .wrapper-card-news{
           .list-wrapper-card-news{
-            width: 50%;
+            width: 100%;
 
             &:nth-of-type(1){
               padding-right: 10px;
@@ -59,6 +115,7 @@
         }
       }
       &:nth-of-type(2){
+        width: 100%;
         .wrapper-card-news{
           .list-wrapper-card-news{
             width: 50%;
@@ -87,20 +144,8 @@
 
         .wrapper-card-news{
           .list-wrapper-card-news{
+            width: 100%;
 
-            @media screen and (min-width: $device-tablet) {
-              width: 50%;
-              &:nth-of-type(1) {
-                padding-right: 10px;
-              }
-
-              &:nth-of-type(2){
-                padding-left: 10px;
-              }
-            }
-            @media screen and (min-width: $device-computer) {
-
-            }
           }
         }
 
@@ -461,12 +506,10 @@
   display: flex;
   list-style-type: none;
   flex-wrap: wrap;
-  max-height: 181px;
 
-  overflow: hidden;
   .list-wrapper-card-person-read-person{
 
-    width: 50%;
+    width: 100%;
     margin-bottom: 10px;
 
     &:nth-of-type(n){
@@ -513,7 +556,7 @@
     }
 
     @media screen and (min-width: $device-tablet) {
-      width: 33.33333%;
+
       &:nth-of-type(3n+1){
         padding-left: 0;
         padding-right: 10px;
@@ -528,7 +571,7 @@
 
     }
     @media screen and (min-width: $device-computer) {
-      width: 25%;
+
       &:nth-of-type(2n+1){
         padding-left: 0;
         padding-right: 5px;
@@ -548,9 +591,10 @@
     }
   }
   @media screen and (min-width: $device-tablet) {
-    max-height: 257px;
+
   }
   @media screen and (min-width: $device-computer) {
-    max-height: 263px;
+
   }
 }
+

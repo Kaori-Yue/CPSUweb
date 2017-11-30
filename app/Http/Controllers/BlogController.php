@@ -207,7 +207,8 @@ class BlogController extends Controller
 
         $slug = self::handleSlug($updateBlog['title']);
         $cover_image = $request->file('cover');
-        $cover_image = $this->base64_to_jpeg($request->get('new_image'), $cover_image);
+        if(isset($cover_image))
+            $cover_image = $this->base64_to_jpeg($request->get('new_image'), $cover_image);
         $hash_tags = $updateBlog['hash_tags'];
 
         $blogData = [

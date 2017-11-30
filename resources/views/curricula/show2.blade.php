@@ -3,7 +3,7 @@
 @section('title', $curricula->name_th)
 
 @section('content')
-    <div class="container">
+    <div class="container-content">
         <div class="form-contact">
             <div class="title-form-contact">
                 {{ $curricula->name_th }}

@@ -3,7 +3,7 @@
 @section('title', "บุคลากรสายวิชาการ")
 
 @section('content')
-<div class="container">
+<div class="container-content">
     <h1 class="title">บุคลากรสายวิชาการ</h1>
     <ul class="wrapper-card-person">
         @foreach($teachers as $teacher)

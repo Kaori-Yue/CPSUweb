@@ -140,7 +140,7 @@
                 @endif
             </div>
             <div class="upload-demo-wrap" style="margin: 20px 0">
-                <div id="upload-demo"></div>
+                <div id="upload-demo" class="upload-result-teacher-update"></div>
             </div>
             <div style="display: none">
                 {!! Form::label('imageCrop', $teacher->id, ['id' => 'teacher_id']) !!}

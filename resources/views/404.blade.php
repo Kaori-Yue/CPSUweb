@@ -3,7 +3,7 @@
 @section('title', "ไม่พบหน้านี้ในระบบ")
 
 @section('content')
-    <div class="container">
+    <div class="container-content">
         <h1 class="not-found">ขออภัยค่ะ ไม่พบหน้านี้ในระบบ</h1>
 
         {{--<img class="img-thumbnail img-responsive" src="{{ URL::asset('image/groot.gif') }}" alt="" style="height: 300px;border: none">

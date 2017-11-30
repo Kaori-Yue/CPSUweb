@@ -6,7 +6,7 @@
 @import "component/navbar";
 @import "component/title";
 @import "component/card";
-
+@import "component/detail";
 
 
 @font-face {
@@ -54,4 +54,31 @@ body{
 a{
   text-decoration: none;
   color: $color-green;
+}
+
+.description-history{
+  font-weight: 100;
+  font-family: Thonburi;
+  font-size: $font-big-description-mobile;
+  @media screen and (min-width: $device-tablet) {
+    font-size: $font-big-description-tablet-computer;
+
+  }
+  @media screen and (min-width: $device-computer) {
+
+  }
+}
+
+.not-found{
+  text-align: center;
+  font-weight: 100;
+  margin: 10px 0;
+  font-size: $font-big-title-mobile;
+  @media screen and (min-width: $device-tablet) {
+    font-size: $font-big-title-tablet-computer;
+    margin: 20px 0;
+  }
+  @media screen and (min-width: $device-computer) {
+
+  }
 }

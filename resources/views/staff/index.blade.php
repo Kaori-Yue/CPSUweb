@@ -3,7 +3,7 @@
 @section('title', "บุคลากรสายสนับสนุนวิชาการ")
 
 @section('content')
-    <div class="container">
+    <div class="container-content">
         <h1 class="title">บุคลากรสายสนับสนุนวิชาการ</h1>
         <ul class="wrapper-card-person">
             @foreach($staffs as $staff)

@@ -1,7 +1,7 @@
 @extends('main')
 
 @section('content')
-    <div class="container">
+    <div class="container-content">
         <div class="row col-md-12" style="background: #ffffff;text-align: center">
             <div class="well well-lg">
                 <h1 style="padding: 2%">วิทยานิพนธ์นักศึกษา</h1>

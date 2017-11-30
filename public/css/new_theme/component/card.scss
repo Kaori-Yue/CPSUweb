@@ -534,15 +534,54 @@
       }
     }
 
-
-
-
     @media screen and (min-width: $device-tablet) {
 
     }
     @media screen and (min-width: $device-computer) {
 
     }
+  }
+
+  .wrapper-detail-all{
+
+    .list-detail-all{
+      width: 100%;
+
+      .header-small-detail{
+        padding: 0;
+        color: $color-green;
+        @media screen and (min-width: $device-tablet) {
+
+        }
+        @media screen and (min-width: $device-computer) {
+
+        }
+      }
+      .wrapper-small-detail{
+        padding-left: 10px;
+        @media screen and (min-width: $device-tablet) {
+          padding-left: 20px;
+        }
+        @media screen and (min-width: $device-computer) {
+
+        }
+      }
+
+      @media screen and (min-width: $device-tablet) {
+        &:nth-last-child(1){
+          width: 50%;
+
+        }
+        &:nth-last-child(2){
+          width: 50%;
+
+        }
+      }
+      @media screen and (min-width: $device-computer) {
+
+      }
+    }
+
   }
 
   @media screen and (min-width: $device-tablet) {

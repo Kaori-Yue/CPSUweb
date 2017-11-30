@@ -3,7 +3,7 @@
 @section('title', "เอกสาร")
 
 @section('content')
-<div class="container">
+<div class="container-content">
     @foreach($categories as $category)
         <h1 class="title">{{$category}}
             <a href="{{ url('document/category/'.$category) }}" class="more-detail-title">ดูเพิ่มเติม ></a>
