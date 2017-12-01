@@ -146,8 +146,6 @@
 
     $('.owl-carousel-teachers').owlCarousel({
         loop:true,
-
-
         responsive: {
             0:{
                 items:2,
@@ -162,14 +160,35 @@
             }
         }
     })
-    var slider = $('.owl-carousel');
+    var slider_teacher = $('#teachers');
 
-    $('.button-next').click(function () {
-        slider.trigger('next.owl.carousel');
+    $('#btn-next-teacher').click(function () {
+        slider_teacher.trigger('next.owl.carousel');
     });
-    $('.button-previous').click(function () {
-        slider.trigger('prev.owl.carousel');
+    $('#btn-prve-teacher').click(function () {
+        slider_teacher.trigger('prev.owl.carousel');
     });
+
+    var slider_person = $('#person');
+
+    $('#btn-next-person').click(function () {
+        slider_person.trigger('next.owl.carousel');
+    });
+    $('#btn-prve-person').click(function () {
+        slider_person.trigger('prev.owl.carousel');
+    });
+
+
+
+    var slider_news = $('#news');
+
+    $('#btn-next-news').click(function () {
+        slider_news.trigger('next.owl.carousel');
+    });
+    $('#btn-prve-news').click(function () {
+        slider_news.trigger('prev.owl.carousel');
+    });
+
 </script>
 
 </body>

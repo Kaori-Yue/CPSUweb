@@ -57,16 +57,16 @@
                 <div class="wrapper-header-title">
                     <h1 class="header-title">ข่าวเด่น</h1>
                     <div class="wrapper-buttom-next-previous">
-                        <button class="button-previous" >
+                        <button class="button-previous" id="btn-next-news" >
                             <img src="{{ URL::asset('image/chevron-left.svg') }}">
                         </button>
-                        <button class="button-next" >
+                        <button class="button-next" id="btn-prve-news">
                             <img src="{{ URL::asset('image/chevron-right.svg') }}">
                         </button>
                     </div>
                     <div class="line-header-title"></div>
                 </div>
-                <ul class="wrapper-card-news owl-carousel-news-home owl-carousel">
+                <ul class="wrapper-card-news owl-carousel-news-home owl-carousel" id="news">
                     <li class="list-wrapper-card-news">
                         <div class="card-news-vertical">
                             <a>
@@ -383,17 +383,17 @@
         <div class="wrapper-header-title">
             <h1 class="header-title">บุคลากรสายวิชาการ</h1>
             <div class="wrapper-buttom-next-previous">
-                <button class="button-previous">
+                <button class="button-previous" id="btn-prev-teacher">
                     <img src="{{ URL::asset('image/chevron-left.svg') }}">
                 </button>
-                <button class="button-next">
+                <button class="button-next" id="btn-next-teacher">
                     <img src="{{ URL::asset('image/chevron-right.svg') }}">
                 </button>
             </div>
             <div class="line-header-title"></div>
         </div>
 
-        <ul class="wrapper-card-person-read-person owl-carousel-teachers owl-carousel">
+        <ul class="wrapper-card-person-read-person owl-carousel-teachers owl-carousel" id="teachers">
             <li class="list-wrapper-card-person-read-person">
                 <div class="card-person">
                     <img class="image-card-person" src="{{ URL::asset('image/nut-demo.jpeg') }}" />
