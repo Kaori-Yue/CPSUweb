@@ -9,7 +9,7 @@
         <div class="line-header-title"></div>
 
     </div>
-    <ul class="wrapper-card-course">
+    <ul class="wrapper-cand-all">
         @foreach($b_curriculas as $curricula)
         <li>
             @include('curricula._card2', $curricula)
@@ -21,7 +21,7 @@
         <div class="line-header-title"></div>
 
     </div>
-    <ul class="wrapper-card-course">
+    <ul class="wrapper-cand-all">
         @foreach($m_curriculas as $curricula)
             <li>
                 @include('curricula._card2', $curricula)
@@ -34,7 +34,7 @@
 
     </div>
 
-    <ul class="wrapper-card-course">
+    <ul class="wrapper-cand-all">
         @foreach($d_curriculas as $curricula)
             <li>
                 @include('curricula._card2', $curricula)

@@ -88,7 +88,7 @@
         <div class="col-md-4 col-sm-6" style="padding: 10px">
             <div class="summary-card-small">
                 <h2>
-                    <a href="{{ url('admin/Category') }}">Category</a>
+                    <a href="{{ url('admin/category') }}">Category</a>
                 </h2>
                 <hr>
                 <h4>Amount: {{ $category }}</h4>

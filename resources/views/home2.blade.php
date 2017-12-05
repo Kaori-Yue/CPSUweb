@@ -219,7 +219,7 @@
         {{--<a href="{{url('blog')}}" class="more-detail-title">ดูข่าวเพิ่มเติม</a>--}}
     {{--</h1>--}}
 
-    <ul class="wrapper-card-news">
+    {{--}}<ul class="wrapper-card-news">
         @foreach($blogs as $blog)
         <li>
             @include('blog._card2', $blog)

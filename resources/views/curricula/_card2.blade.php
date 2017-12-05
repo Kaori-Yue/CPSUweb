@@ -1,7 +1,17 @@
  <a href="{{ url('curricula/'.$curricula->slug) }}" style="text-decoration: none">
-                <div class="card-course">
-                    <p class="type-card-course">หลักสูตร : {{$curricula->degree_name_th}}</p>
-                    <h1 class="name-card-course">{{$curricula->name_th}}</h1>
-                    <h1 class="name-card-course">{{$curricula->name_en}}</h1>
-                </div>
+     <li class="list-wrapper-card-all">
+         <div class="card-curricula">
+             <img src="{{ URL::asset('image/curricula.svg') }}" class="image-card-curricula">
+             <h3 class="type-card-curricula">
+                 @if($curricula->degree == 'Bachelor Degree')
+                     ปริญญาตรี
+                 @elseif($curricula->degree == 'Master Degree')
+                     ปริญญาโท
+                 @else
+                     ปริญญาเอก
+                 @endif
+             </h3>
+             <p class="detail-card-curricula">{{$curricula->name_th}}</p>
+         </div>
+     </li>
  </a>
