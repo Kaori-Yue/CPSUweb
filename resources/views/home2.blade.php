@@ -57,10 +57,10 @@
                 <div class="wrapper-header-title">
                     <h1 class="header-title">ข่าวเด่น</h1>
                     <div class="wrapper-buttom-next-previous">
-                        <button class="button-previous" id="btn-next-news" >
+                        <button class="button-previous" id="btn-prve-news" >
                             <img src="{{ URL::asset('image/chevron-left.svg') }}">
                         </button>
-                        <button class="button-next" id="btn-prve-news">
+                        <button class="button-next" id="btn-next-news">
                             <img src="{{ URL::asset('image/chevron-right.svg') }}">
                         </button>
                     </div>
@@ -383,7 +383,7 @@
         <div class="wrapper-header-title">
             <h1 class="header-title">บุคลากรสายวิชาการ</h1>
             <div class="wrapper-buttom-next-previous">
-                <button class="button-previous" id="btn-prev-teacher">
+                <button class="button-previous" id="btn-prve-teacher">
                     <img src="{{ URL::asset('image/chevron-left.svg') }}">
                 </button>
                 <button class="button-next" id="btn-next-teacher">

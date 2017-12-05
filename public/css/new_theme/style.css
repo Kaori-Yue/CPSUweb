@@ -413,9 +413,11 @@
     font-weight: 100;
     font-size: 18px;
     top: 15px; }
+    .navbar-top .brand-navbar-top a {
+      color: #117167; }
     @media screen and (min-width: 768px) {
       .navbar-top .brand-navbar-top {
-        top: 25px;
+        top: 20px;
         font-size: 24px; } }
   .navbar-top .wrapper-manu-navbar-top {
     float: right;

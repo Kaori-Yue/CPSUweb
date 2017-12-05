@@ -12,8 +12,12 @@
     font-size: $font-big-title-mobile;
     top: 15px;
 
+    a{
+      color: $color-green;
+    }
+
     @media screen and (min-width: $device-tablet) {
-      top:25px;
+      top:20px;
       font-size: $font-big-title-tablet-computer;
 
     }
