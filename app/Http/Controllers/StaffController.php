@@ -129,4 +129,10 @@ class StaffController extends Controller
 
         return $output_file;
     }
+
+    public function show($id){
+        $staff = Staff::findOrFail($id);
+        $staffs = Staff::duty()->orderBy('name_th')->get();
+        return view('staff.detail',['staff_read' => $staff, 'staffs' => $staffs]);
+    }
 }

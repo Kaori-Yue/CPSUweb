@@ -89,6 +89,17 @@
     &:nth-last-child(1){
       border-bottom: none;
     }
+
+    .sub-wrapper-mobile{
+      width: 100%;
+      list-style-type: none;
+      .list-sub-wrapper-mobile{
+        width: 100%;
+        padding-top: 10px;
+        padding-left: 10px;
+      }
+    }
+
   }
   @media screen and (min-width: $device-tablet) {
     display: none;
@@ -286,6 +297,7 @@
   .list-wrapper-card-all{
     width: 100%;
     margin-bottom: 10px;
+
     @media screen and (min-width: $device-tablet) {
       margin-bottom: 20px;
       width: 50%;
@@ -311,6 +323,17 @@
         padding-left: 10px;
         padding-right: 0px;
       }
+    }
+  }
+  .last-list-wrapper-card-all{
+    width: 100%;
+    text-align: right;
+    @media screen and (min-width: $device-tablet) {
+
+
+    }
+    @media screen and (min-width: $device-computer) {
+
     }
   }
 

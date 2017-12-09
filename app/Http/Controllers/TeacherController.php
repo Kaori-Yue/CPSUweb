@@ -227,4 +227,13 @@ class TeacherController extends Controller
         return $output_file;
     }
 
+
+    public function show($id){
+        $teacher = Teacher::findOrFail($id);
+        $teachers = $teachers = Teacher::duty()
+            ->orderBy('rank', 'desc')
+            ->orderBy('name_th')
+            ->get();;
+        return view('teacher.detail',['teacher_read' => $teacher, 'teachers' => $teachers]);
+    }
 }

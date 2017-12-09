@@ -163,4 +163,8 @@ class UserController extends Controller
 
         return redirect()->action('UserController@profile');
     }
+
+    public function index(){
+        return view('person.index');
+    }
 }

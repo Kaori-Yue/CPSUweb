@@ -6,6 +6,14 @@
     <div class="container-content">
         <div class="wrapper-header-title">
             <h1 class="header-title">ข่าวเด่น</h1>
+            <div class="wrapper-buttom-next-previous">
+                <button class="button-previous" id="btn-prve-read_news_bookmark" >
+                    <img src="{{ URL::asset('image/chevron-left.svg') }}">
+                </button>
+                <button class="button-next" id="btn-next-read_news_bookmark">
+                    <img src="{{ URL::asset('image/chevron-right.svg') }}">
+                </button>
+            </div>
             <div class="line-header-title"></div>
         </div>
         @foreach($categories as $category)
@@ -13,7 +21,7 @@
                 <h1 class="title">{{$category->name}}
                     <a href={{url("blog/category/".$category->name)}} class="more-detail-title">ดูข่าวเพิ่มเติม</a>
                 </h1>
-                {{--<ul class="wrapper-card-news">
+                {{--<ul class="wrapper-card-news owl-carousel owl-carousel-read-news-bookmark" id="news_bookmark">
                     @foreach($category->blogs as $blog)
                         <li>
                             @if($loop->iteration <= 4)

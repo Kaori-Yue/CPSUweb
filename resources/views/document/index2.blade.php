@@ -5,19 +5,24 @@
 @section('content')
 <div class="container-content">
     @foreach($categories as $category)
-        <h1 class="title">{{$category}}
-            <a href="{{ url('document/category/'.$category) }}" class="more-detail-title">ดูเพิ่มเติม ></a>
-        </h1>
-        <ul class="wrapper-card-document">
-            @foreach($documents[$category] as $document)
-            <li>
-                @if($loop->iteration <= 6)
-                @include('document._card2')
-                @endif
-            </li>
-            @endforeach
-        </ul>
+    <div class="wrapper-header-title">
+        <h1 class="header-title">{{$category}}</h1>
+        <div class="line-header-title"></div>
+    </div>
 
+    <ul class="wrapper-cand-all">
+        @foreach($documents[$category] as $document)
+            @if($loop->iteration <= 6)
+                <li class="list-wrapper-card-all">
+                    @include('document._card2')
+                </li>
+            @endif
+        @endforeach
+        <li class="last-list-wrapper-card-all">
+            <a href="{{ url('document/category/'.$category) }}">ดูแบบฟอร์มเพิ่มเติม</a>
+        </li>
+    </ul>
     @endforeach
+    
 </div>
 @endsection

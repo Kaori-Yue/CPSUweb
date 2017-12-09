@@ -4,13 +4,17 @@
 
 @section('content')
     <div class="container-content">
-        <h1 class="title">บุคลากรสายสนับสนุนวิชาการ</h1>
-        <ul class="wrapper-card-person">
+        <div class="wrapper-header-title">
+            <h1 class="header-title">บุคลากรสายสนับสนุนวิชาการ</h1>
+            <div class="line-header-title"></div>
+        </div>
+        <ul class="wrapper-cand-all">
             @foreach($staffs as $staff)
-                <li>
+                <li class="list-wrapper-card-all">
                     @include('staff._card2', $staff)
                 </li>
             @endforeach
         </ul>
+
     </div>
 @endsection
