@@ -26,17 +26,11 @@
     {{--</div>--}}
     <div class="container-content">
         <ul class="wrapper-image-slide-announcement owl-carousel-announcement-home-page owl-carousel owl-theme">
+            @foreach($blogs_a as $blog_a)
             <li class="wrapper-image-slide-announcement">
-                <img src="{{ URL::asset('image/tesa-demo-web.svg') }}" />
+                <a href="{{"blog/". $blog_a->slug}}"><img src="{{ url('image/show/'.$blog_a->cover) }}" /></a>
             </li>
-            <li class="wrapper-image-slide-announcement">
-                <img src="{{ URL::asset('image/nut-demo.jpeg') }}" />
-            </li>
-            <li class="wrapper-image-slide-announcement">
-                <img src="{{ URL::asset('image/nut-demo.jpeg') }}" />
-            </li>
-
-
+            @endforeach
         </ul>
         <ul class="wrapper-nav">
             <li class="list-nav">
@@ -67,86 +61,9 @@
                     <div class="line-header-title"></div>
                 </div>
                 <ul class="wrapper-card-news owl-carousel-news-home owl-carousel" id="news">
-                    <li class="list-wrapper-card-news">
-                        <div class="card-news-vertical">
-                            <a>
-                                <img class="image-card-news-vertical" src="{{ URL::asset('image/tesa-demo-web.svg') }}">
-                            </a>
-                            <a>
-                                <h3 class="title-card-news-vertical">TESA ร่วมกับ ม.เทคโนโลยี่พระจอมเกล้าพระนครเหนือ และ กรมอุทยานแห่งชาติ สัตว์ป่า และ พันธุ์พืช</h3>
-                            </a>
-                            <p class="description-card-news-vertical">ค่ายฟรีที่น้องๆ จะได้เรียนรู้เเละพัฒนาผลงานจริง ผ่านคำเเเนะนำจากเหล่ากูรูผู้ก่อตั้งเว็บไซต์ ชื่อดังระดับประเทศ อาทิ Pantip, Dek-D, Wongnai, TARAD, lnwshop, iURBAN, MacThai...</p>
-                            <div class="wrapper-time-create-card-news-vertical">
-                                <img class="image-calendar-card-news-vertical" src="{{ URL::asset('image/calendar.svg') }}" />
-                                <p class="time-create-card-news-vertical">13 พฤศจิกายน 2560</p>
-                            </div>
-                        </div>
-
-                    </li>
-                    <li class="list-wrapper-card-news">
-                        <div class="card-news-vertical">
-                            <a>
-                                <img class="image-card-news-vertical" src="{{ URL::asset('image/tesa-demo-web.svg') }}">
-                            </a>
-                            <a>
-                                <h3 class="title-card-news-vertical">TESA ร่วมกับ ม.เทคโนโลยี่พระจอมเกล้าพระนครเหนือ และ กรมอุทยานแห่งชาติ สัตว์ป่า และ พันธุ์พืช</h3>
-                            </a>
-                            <p class="description-card-news-vertical">ค่ายฟรีที่น้องๆ จะได้เรียนรู้เเละพัฒนาผลงานจริง ผ่านคำเเเนะนำจากเหล่ากูรูผู้ก่อตั้งเว็บไซต์ ชื่อดังระดับประเทศ อาทิ Pantip, Dek-D, Wongnai, TARAD, lnwshop, iURBAN, MacThai...</p>
-                            <div class="wrapper-time-create-card-news-vertical">
-                                <img class="image-calendar-card-news-vertical" src="{{ URL::asset('image/calendar.svg') }}" />
-                                <p class="time-create-card-news-vertical">13 พฤศจิกายน 2560</p>
-                            </div>
-                        </div>
-
-                    </li>
-                    <li class="list-wrapper-card-news">
-                        <div class="card-news-vertical">
-                            <a>
-                                <img class="image-card-news-vertical" src="{{ URL::asset('image/tesa-demo-web.svg') }}">
-                            </a>
-                            <a>
-                                <h3 class="title-card-news-vertical">TESA ร่วมกับ ม.เทคโนโลยี่พระจอมเกล้าพระนครเหนือ และ กรมอุทยานแห่งชาติ สัตว์ป่า และ พันธุ์พืช</h3>
-                            </a>
-                            <p class="description-card-news-vertical">ค่ายฟรีที่น้องๆ จะได้เรียนรู้เเละพัฒนาผลงานจริง ผ่านคำเเเนะนำจากเหล่ากูรูผู้ก่อตั้งเว็บไซต์ ชื่อดังระดับประเทศ อาทิ Pantip, Dek-D, Wongnai, TARAD, lnwshop, iURBAN, MacThai...</p>
-                            <div class="wrapper-time-create-card-news-vertical">
-                                <img class="image-calendar-card-news-vertical" src="{{ URL::asset('image/calendar.svg') }}" />
-                                <p class="time-create-card-news-vertical">13 พฤศจิกายน 2560</p>
-                            </div>
-                        </div>
-
-                    </li>
-                    <li class="list-wrapper-card-news">
-                        <div class="card-news-vertical">
-                            <a>
-                                <img class="image-card-news-vertical" src="{{ URL::asset('image/tesa-demo-web.svg') }}">
-                            </a>
-                            <a>
-                                <h3 class="title-card-news-vertical">TESA ร่วมกับ ม.เทคโนโลยี่พระจอมเกล้าพระนครเหนือ และ กรมอุทยานแห่งชาติ สัตว์ป่า และ พันธุ์พืช</h3>
-                            </a>
-                            <p class="description-card-news-vertical">ค่ายฟรีที่น้องๆ จะได้เรียนรู้เเละพัฒนาผลงานจริง ผ่านคำเเเนะนำจากเหล่ากูรูผู้ก่อตั้งเว็บไซต์ ชื่อดังระดับประเทศ อาทิ Pantip, Dek-D, Wongnai, TARAD, lnwshop, iURBAN, MacThai...</p>
-                            <div class="wrapper-time-create-card-news-vertical">
-                                <img class="image-calendar-card-news-vertical" src="{{ URL::asset('image/calendar.svg') }}" />
-                                <p class="time-create-card-news-vertical">13 พฤศจิกายน 2560</p>
-                            </div>
-                        </div>
-
-                    </li>
-                    <li class="list-wrapper-card-news">
-                        <div class="card-news-vertical">
-                            <a>
-                                <img class="image-card-news-vertical" src="{{ URL::asset('image/tesa-demo-web.svg') }}">
-                            </a>
-                            <a>
-                                <h3 class="title-card-news-vertical">TESA ร่วมกับ ม.เทคโนโลยี่พระจอมเกล้าพระนครเหนือ และ กรมอุทยานแห่งชาติ สัตว์ป่า และ พันธุ์พืช</h3>
-                            </a>
-                            <p class="description-card-news-vertical">ค่ายฟรีที่น้องๆ จะได้เรียนรู้เเละพัฒนาผลงานจริง ผ่านคำเเเนะนำจากเหล่ากูรูผู้ก่อตั้งเว็บไซต์ ชื่อดังระดับประเทศ อาทิ Pantip, Dek-D, Wongnai, TARAD, lnwshop, iURBAN, MacThai...</p>
-                            <div class="wrapper-time-create-card-news-vertical">
-                                <img class="image-calendar-card-news-vertical" src="{{ URL::asset('image/calendar.svg') }}" />
-                                <p class="time-create-card-news-vertical">13 พฤศจิกายน 2560</p>
-                            </div>
-                        </div>
-
-                    </li>
+                    @foreach($blogs_f as $blog_f)
+                        @include('blog._card6', $blog_f)
+                    @endforeach
                 </ul>
             </li>
             <li class="list-wrapper-news-home-page">
@@ -156,58 +73,11 @@
                     <div class="line-header-title"></div>
                 </div>
                 <ul class="wrapper-card-news">
+                    @foreach($blogs as $blog)
+                        @include('blog._card7', $blog)
+                    @endforeach
                     <li class="list-wrapper-card-news">
-                        <div class="card-news-horizontal">
-                            <a>
-                                <img class="image-card-news-horizontal" src="{{ URL::asset('image/tesa-demo-web.svg') }}">
-                            </a>
-                            <a>
-                                <h3 class="title-card-news-horizontal">TESA ร่วมกับ ม.เทคโนโลยี่พระจอมเกล้าพระนครเหนือ และ กรมอุทยานแห่งชาติ...</h3>
-                            </a>
-                        </div>
-                    </li>
-                    <li class="list-wrapper-card-news">
-                        <div class="card-news-horizontal">
-                            <a>
-                                <img class="image-card-news-horizontal" src="{{ URL::asset('image/tesa-demo-web.svg') }}">
-                            </a>
-                            <a>
-                                <h3 class="title-card-news-horizontal">TESA ร่วมกับ ม.เทคโนโลยี่พระจอมเกล้าพระนครเหนือ และ กรมอุทยานแห่งชาติ...</h3>
-                            </a>
-                        </div>
-                    </li>
-                    <li class="list-wrapper-card-news">
-                        <div class="card-news-horizontal">
-                            <a>
-                                <img class="image-card-news-horizontal" src="{{ URL::asset('image/tesa-demo-web.svg') }}">
-                            </a>
-                            <a>
-                                <h3 class="title-card-news-horizontal">TESA ร่วมกับ ม.เทคโนโลยี่พระจอมเกล้าพระนครเหนือ และ กรมอุทยานแห่งชาติ...</h3>
-                            </a>
-                        </div>
-                    </li>
-                    <li class="list-wrapper-card-news">
-                        <div class="card-news-horizontal">
-                            <a>
-                                <img class="image-card-news-horizontal" src="{{ URL::asset('image/tesa-demo-web.svg') }}">
-                            </a>
-                            <a>
-                                <h3 class="title-card-news-horizontal">TESA ร่วมกับ ม.เทคโนโลยี่พระจอมเกล้าพระนครเหนือ และ กรมอุทยานแห่งชาติ...</h3>
-                            </a>
-                        </div>
-                    </li>
-                    <li class="list-wrapper-card-news">
-                        <div class="card-news-horizontal">
-                            <a>
-                                <img class="image-card-news-horizontal" src="{{ URL::asset('image/tesa-demo-web.svg') }}">
-                            </a>
-                            <a>
-                                <h3 class="title-card-news-horizontal">TESA ร่วมกับ ม.เทคโนโลยี่พระจอมเกล้าพระนครเหนือ และ กรมอุทยานแห่งชาติ...</h3>
-                            </a>
-                        </div>
-                    </li>
-                    <li class="list-wrapper-card-news">
-                        <a class="watch-more-card-news">ดูข่าวทั้งหมด</a>
+                        <a href="blog" class="watch-more-card-news">ดูข่าวทั้งหมด</a>
                     </li>
                 </ul>
             </li>

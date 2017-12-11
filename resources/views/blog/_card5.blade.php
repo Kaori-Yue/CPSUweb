@@ -1,15 +1,22 @@
-<li class="list-wrapper-card-news">
-    <div class="card-news-horizontal">
+
+
+<li class="list-wrapper-card-all">
+    <div class="card-news-vertical">
         <a>
-            <img class="image-card-news-horizontal" src="{{ url('image/show/'.$blog->cover) }}">
+            <img class="image-card-news-vertical" src="{{ url('image/show/'.$blog->cover) }}">
         </a>
         <a href="{{"blog/". $blog->slug}}">
-            <h3 class="title-card-news-horizontal">{!! $blog->title !!}</h3>
+            <h3 class="title-card-news-vertical">{!! $blog->title !!}</h3>
         </a>
+        <p class="description-card-news-vertical">{!! $blog->description !!}</p>
+        <div class="wrapper-time-create-card-news-vertical">
+            <img class="image-calendar-card-news-vertical" src="{{ URL::asset('image/calendar.svg') }}" />
+            <p class="time-create-card-news-vertical">{{ $blog->publish_at }}</p>
+        </div>
     </div>
 </li>
-
 <script>
+
     document.getElementById('shareToFB{{$blog->id}}').onclick = function() {
         FB.ui({
             method: 'share',

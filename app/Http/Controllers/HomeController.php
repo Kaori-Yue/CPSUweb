@@ -34,13 +34,33 @@ class HomeController extends Controller
             die("Could not connect to the database.  Please check your configuration.");
         }
 
+        $category_id = Category::where('slug','=','ประกาศ')
+            ->pluck('id');
+
+        $blogs_a = Blog::orderBy('created_at', 'DESC')
+            ->where('category_id','=',$category_id)
+            ->take(3)
+            ->get();
+
+        $blogs_f = Blog::orderBy('created_at', 'DESC')
+            ->where('featured', '=', '1')
+            ->take(2)
+            ->get();
+
         $blogs = Blog::orderBy('created_at', 'DESC')
             ->publish()
-            ->take(4)
+            ->take(5)
             ->get();
 
         foreach ($blogs as $blog){
-            $blog['title'] = $this->cutTitle($blog['title']);
+            $blog['description'] = $this->cutContent($blog['description']);
+        }
+
+        foreach ($blogs_a as $blog){
+            $blog['description'] = $this->cutContent($blog['description']);
+        }
+
+        foreach ($blogs_f as $blog){
             $blog['description'] = $this->cutContent($blog['description']);
         }
 
@@ -50,8 +70,10 @@ class HomeController extends Controller
         $announce = Category::with('blogs')->where('slug', 'announce')->paginate(5);
 
         $curriculas = Curricula::enable()->take(2)->get();
-        return view('home2', [
+        return  view('home2', [
             'blogs' => $blogs,
+            'blogs_f' => $blogs_f,
+            'blogs_a' => $blogs_a,
             'curriculas' => $curriculas,
             'announce' => $announce[0],
         ]);
