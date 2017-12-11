@@ -164,8 +164,8 @@ class BlogController extends Controller
         $publish_at = self::handleDateTime($blog['publish_date'].' '.$blog['publish_time']);
 
         $cover_image = $request->file('cover');
-        $cover_image = $this->base64_to_jpeg($request->get('new_image'), $cover_image);
-        $file = $this->storeImage($cover_image, 'cover');
+        $cover_image_crop = $this->base64_to_jpeg($request->get('new_image'), $cover_image);
+        $file = $this->storeImage($cover_image, $cover_image_crop, 'cover');
 
         $hash_tags = $blog['hash_tags'];
 
@@ -204,12 +204,15 @@ class BlogController extends Controller
 
         $blog = Blog::findOrFail($id);
         $updateBlog = $request->all();
+        $cover_image_crop = Image::class;
 
         $slug = self::handleSlug($updateBlog['title']);
         $cover_image = $request->file('cover');
+
         if(isset($cover_image))
-            $cover_image = $this->base64_to_jpeg($request->get('new_image'), $cover_image);
+            $cover_image_crop = $this->base64_to_jpeg($request->get('new_image'), $cover_image);
         $hash_tags = $updateBlog['hash_tags'];
+        //return response()->json(['og' => $cover_image,'crop' => $cover_image_crop]);
 
         $blogData = [
             'title' => $updateBlog['title'],
@@ -222,10 +225,12 @@ class BlogController extends Controller
             'featured' => $updateBlog['featured'],
             'description' => $updateBlog['description']
         ];
+
         if(isset($cover_image)){
-            $file = $this->storeImage($cover_image, 'cover');
+            $file = $this->storeImage($cover_image, $cover_image_crop, 'cover');
             $blogData['cover'] = $file->id;
         }
+
         $blog->update($blogData);
         self::handleTags($hash_tags, $blog);
 

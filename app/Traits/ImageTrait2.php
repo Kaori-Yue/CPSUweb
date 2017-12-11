@@ -8,7 +8,7 @@ use Intervention\Image\Facades\Image;
 
 trait ImageTrait2
 {
-    public function storeImage($file, $type)
+    public function storeImage($file, $file_crop, $type)
     {
         $ex = $file->getClientOriginalExtension();
         Storage::disk('local')->put($file->getFilename() . '.' . $ex, File::get($file));
@@ -21,13 +21,27 @@ trait ImageTrait2
 
         $file = \App\File::create($fileRecord);
 
+        $file_name = $file->name;
+
         self::compress($file);
-        self::resizeImage($file, $type);
+        //self::resizeImage($file, $type);
+
+        $file_crop->name = $file->name;
+
+        $file_crop = Image::make($file_crop);
+
+        if (App::environment('local')) {
+            //windows path
+            $file_crop->save(storage_path() . '\\app\\crop_' . $file_name);
+        } else {
+            //linux path
+            $file_crop->save(storage_path() . '/app/crop_' . $file_name);
+        }
 
         return $file;
     }
 
-    public function updateImage($file, $type, $id)
+    public function updateImage($file, $file_crop, $id)
     {
         $image = \App\File::findOrFail($id);
         $old_filename = $image->name;
@@ -44,12 +58,21 @@ trait ImageTrait2
         $image->update($fileRecord);
 
         self::compress($image);
-        self::resizeImage($image, $type);
+        //self::resizeImage($image, $type);
+        //$file_crop->name = $image->name;
+
+        /*if (App::environment('local')) {
+            //windows path
+            $file_crop->save(storage_path() . '\\app\\crop_' . $file_crop->name);
+        } else {
+            //linux path
+            $file_crop->save(storage_path() . '/app/crop_' . $file_crop->name);
+        }
 
         Storage::delete($old_filename);
         Storage::delete('re_cp_' . $old_filename);
         Storage::delete('thumb_re_cp_' . $old_filename);
-
+*/
         return $image;
     }
 
@@ -68,12 +91,12 @@ trait ImageTrait2
         }
 
         if ($file->mime == 'image/jpeg')
-            $image = imagecreatefrompng($img_path);
-        //$image = imagecreatefromjpeg($img_path);
+            //$image = imagecreatefrompng($img_path);
+            $image = imagecreatefromjpeg($img_path);
 
         elseif ($file->mime == 'image/gif')
-            $image = imagecreatefrompng($img_path);
-        //$image = imagecreatefromgif($img_path);
+            //$image = imagecreatefrompng($img_path);
+            $image = imagecreatefromgif($img_path);
 
         elseif ($file->mime == 'image/png')
             $image = imagecreatefrompng($img_path);
