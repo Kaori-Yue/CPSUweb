@@ -43,6 +43,14 @@
                 3. ใบสำคัญรับเงินที่กรอกรายละเอียดครบถ้วน พร้อมลงนามรับเงินโดยหัวหน้าโครงงานเท่านั้น!!!
 
                 4. ในกรณีที่หัวหน้าโครงงานไม่สามารถมารับทุนได้ด้วยตนเอง ให้ทำหนังสือมอบอำนาจลงนามโดยหัวหน้าโครงงาน พร้อมสำเนาบัตรประชาชน หรือบัตรประจำตัวของผู้รับมอบอำนาจ ทั้งนี้การดำเนินการในเอกสารในข้อที่ 1 - 3 ยังต้องเป็นเพียงหัวหน้าโครงการเท่านั้นที่ลงนามไว้ครบถ้วน ลายเซ็นครบตรงกันทุกเอกสาร แต่ในกรณีนี้ได้มอบอำนาจให้คนอื่นนำเอกสารทั้งหมดมารับเงินทุนแทน</p>
+            <ul class="wrapper-btn-share">
+                <li class="list-btn-share">
+                    <button class="btn-square btn-share-facebook" id="shareToFB{{$blog->id}}">Share Facebook</button>
+                </li>
+                <li class="list-btn-share">
+                    <button class="btn-square btn-share-twitter" id="shareToTW{{$blog->id}}">Share Twitter</button>
+                </li>
+            </ul>
         </li>
         <li class="list-wrapper-read-news">
             <div class="wrapper-header-title">

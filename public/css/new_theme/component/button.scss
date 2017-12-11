@@ -15,3 +15,37 @@
 
   }
 }
+
+.btn-square{
+  border: none;
+  cursor: pointer;
+  padding: 10px;
+  @media screen and (min-width: $device-tablet) {
+    padding: 20px;
+  }
+  @media screen and (min-width: $device-computer) {
+
+  }
+}
+.btn-share-facebook{
+  background-color: $color-facebook;
+  color: $color-white;
+  font-size: $font-small-description-mobile;
+  @media screen and (min-width: $device-tablet) {
+    font-size: $font-small-description-tablet-computer
+  }
+  @media screen and (min-width: $device-computer) {
+
+  }
+}
+.btn-share-twitter{
+  background-color: $color-twiiter;
+  color: $color-white;
+  font-size: $font-small-description-mobile;
+  @media screen and (min-width: $device-tablet) {
+    font-size: $font-small-description-tablet-computer
+  }
+  @media screen and (min-width: $device-computer) {
+
+  }
+}
