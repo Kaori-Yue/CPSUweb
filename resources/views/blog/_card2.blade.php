@@ -1,32 +1,18 @@
- <div class="card-news background-white">
-     <a href="{{ url('blog/'.$blog->slug) }}" style="text-decoration: none">
-        <ul class="container-card-news">
-            <li class="image-card-news">
-                <img src="{{ url('image/show/'.$blog->cover) }}" />
-                <!--<img src="23.jpeg"/>-->
-            </li>
-            <li class="content-card-news">
-                <p class="time-create-news">{{ $blog->publish_at }}</p>
-                <h1 class="title">{!! $blog->title !!}</h1>
-                <p class="description-card-news">{!! $blog->description !!}</p>
-            </li>
-        </ul>
-     </a>
-        <div class="detail-card-news">
-            <p class="create-by-card-news">โดย : {!! $blog->user->name !!}</p>
-            <ul class="logos-share-card-news">
-                <li class="logo-share-card-news" id="shareToFB{{$blog->id}}">
-                    <img src="{{ URL::asset('image/facebook.png') }}">
-                    <p class="description-logo-share-card-news">Share Facebook</p>
-                </li>
-                <li class="logo-share-card-news" id="shareToTW{{$blog->id}}">
-                    <img src="{{ URL::asset('image/twitter.png') }}" >
-                    <p class="description-logo-share-card-news">Share Twitter</p>
-                </li>
-            </ul>
-        </div>
- </div>
-
+ <li class="list-card-news-category">
+     <div class="card-news-vertical">
+         <a>
+             <img class="image-card-news-vertical" src="{{ url('image/show/'.$blog->cover) }}">
+         </a>
+         <a href="{{"blog/". $blog->slug}}">
+             <h3 class="title-card-news-vertical">{!! $blog->title !!}</h3></a>
+         </a>
+         <p class="description-card-news-vertical">{!! $blog->description !!}</p>
+         <div class="wrapper-time-create-card-news-vertical">
+             <img class="image-calendar-card-news-vertical" src="{{ URL::asset('image/calendar.svg') }}" />
+             <p class="time-create-card-news-vertical">{{ $blog->publish_at }}</p>
+         </div>
+     </div>
+ </li>
  <script>
 
      document.getElementById('shareToFB{{$blog->id}}').onclick = function() {
