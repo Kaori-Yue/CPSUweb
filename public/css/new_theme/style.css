@@ -92,6 +92,13 @@
     font-size: 12px; }
     .wrapper-list-nav-mobile .list-nav-mobile:nth-last-child(1) {
       border-bottom: none; }
+    .wrapper-list-nav-mobile .list-nav-mobile .sub-wrapper-mobile {
+      width: 100%;
+      list-style-type: none; }
+      .wrapper-list-nav-mobile .list-nav-mobile .sub-wrapper-mobile .list-sub-wrapper-mobile {
+        width: 100%;
+        padding-top: 10px;
+        padding-left: 10px; }
   @media screen and (min-width: 768px) {
     .wrapper-list-nav-mobile {
       display: none; } }
@@ -199,6 +206,9 @@
         .wrapper-cand-all .list-wrapper-card-all:nth-of-type(3n+3) {
           padding-left: 10px;
           padding-right: 0px; } }
+  .wrapper-cand-all .last-list-wrapper-card-all {
+    width: 100%;
+    text-align: right; }
 
 .wrapper-category-news {
   display: flex;
@@ -432,6 +442,28 @@
       cursor: pointer; }
       .navbar-top .wrapper-manu-navbar-top .menu-navbar-top:hover {
         color: #117167; }
+        .navbar-top .wrapper-manu-navbar-top .menu-navbar-top:hover .drop-down-menu {
+          display: block; }
+      .navbar-top .wrapper-manu-navbar-top .menu-navbar-top .drop-down-menu {
+        display: none;
+        position: absolute;
+        width: 240px;
+        background-color: #ffffff;
+        right: 0;
+        padding: 10px;
+        z-index: 2;
+        box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+        list-style-type: none; }
+        .navbar-top .wrapper-manu-navbar-top .menu-navbar-top .drop-down-menu .list-menu-drop-down {
+          width: 100%;
+          border-bottom: 1px solid #F0F0F0;
+          text-align: center; }
+          .navbar-top .wrapper-manu-navbar-top .menu-navbar-top .drop-down-menu .list-menu-drop-down:hover {
+            color: #117167; }
+          .navbar-top .wrapper-manu-navbar-top .menu-navbar-top .drop-down-menu .list-menu-drop-down:nth-last-of-type(1) {
+            border-bottom: none; }
+          .navbar-top .wrapper-manu-navbar-top .menu-navbar-top .drop-down-menu .list-menu-drop-down a {
+            color: #000000; }
     @media screen and (min-width: 768px) {
       .navbar-top .wrapper-manu-navbar-top {
         display: block;
@@ -672,6 +704,7 @@
 .card-curricula {
   width: 100%;
   background-color: #F0F0F0;
+  max-height: 180px;
   height: 180px;
   padding: 20px  10px;
   cursor: pointer; }
@@ -681,18 +714,18 @@
   .card-curricula .image-card-curricula {
     display: block;
     margin: auto;
-    width: 44px;
-    height: 52px; }
+    width: 60px;
+    height: 60px; }
     @media screen and (min-width: 768px) {
       .card-curricula .image-card-curricula {
-        width: 54px;
-        height: 64px; } }
+        width: 80px;
+        height: 80px; } }
   .card-curricula .type-card-curricula {
     color: #117167;
     text-align: center;
     font-weight: 100;
     font-size: 16px;
-    margin-top: 20px; }
+    margin-top: 10px; }
     @media screen and (min-width: 768px) {
       .card-curricula .type-card-curricula {
         font-size: 18px; } }
@@ -707,26 +740,28 @@
   @media screen and (min-width: 768px) {
     .card-curricula {
       padding: 20px;
-      height: 200px; } }
+      max-height: 220px;
+      height: 220px; } }
 
 .card-type-person {
   background-color: #F0F0F0;
   width: 100%;
-  height: 120px;
+  height: 110px;
+  max-height: 110px;
   cursor: pointer;
-  padding: 20px 0; }
+  padding: 10px 0; }
   .card-type-person:hover {
     background-color: #ffffff;
     box-shadow: 0 19px 38px rgba(0, 0, 0, 0.3), 0 15px 12px rgba(0, 0, 0, 0.22); }
   .card-type-person .image-card-type-person {
     display: block;
     margin: auto;
-    width: 50px;
-    height: 50px; }
+    width: 60px;
+    height: 60px; }
     @media screen and (min-width: 768px) {
       .card-type-person .image-card-type-person {
-        width: 81px;
-        height: 81px; } }
+        width: 80px;
+        height: 80px; } }
   .card-type-person .name-card-type-person {
     font-weight: 100;
     text-align: center;
@@ -739,7 +774,8 @@
   @media screen and (min-width: 768px) {
     .card-type-person {
       padding: 20px 0;
-      height: 160px; } }
+      height: 160px;
+      max-height: 160px; } }
 
 .card-detail-curricula {
   width: 100%;
@@ -761,15 +797,15 @@
       position: relative; }
       .card-detail-curricula .wrapper-in-card-detail-curricula .list-in-card-detail-curricula:nth-of-type(1) .image-card-detail-curricula {
         position: absolute;
-        width: 26px;
-        height: 37px;
+        width: 45px;
+        height: 45px;
         top: 50%;
         left: 50%;
         transform: translate(-50%, -50%); }
         @media screen and (min-width: 768px) {
           .card-detail-curricula .wrapper-in-card-detail-curricula .list-in-card-detail-curricula:nth-of-type(1) .image-card-detail-curricula {
-            width: 31px;
-            height: 42px; } }
+            width: 65px;
+            height: 65px; } }
     .card-detail-curricula .wrapper-in-card-detail-curricula .list-in-card-detail-curricula:nth-of-type(2) {
       width: 80%;
       padding-left: 10px; }
@@ -797,7 +833,8 @@
   width: 100%;
   padding: 10px;
   height: 180px;
-  position: relative; }
+  position: relative;
+  margin-bottom: 10px; }
   .card-document .name-card-document {
     font-size: 16px; }
     @media screen and (min-width: 768px) {
@@ -830,13 +867,15 @@
           height: 20px; } }
   @media screen and (min-width: 768px) {
     .card-document {
-      height: 200px; } }
+      height: 200px;
+      margin-bottom: 20px; } }
 
 .card-person {
   cursor: pointer;
   background-color: #F0F0F0;
   width: 100%;
-  padding-bottom: 10px; }
+  padding-bottom: 10px;
+  margin-bottom: 10px; }
   .card-person:hover {
     background-color: #ffffff;
     box-shadow: 0 19px 38px rgba(0, 0, 0, 0.3), 0 15px 12px rgba(0, 0, 0, 0.22); }
@@ -860,6 +899,9 @@
     @media screen and (min-width: 768px) {
       .card-person .name-card-person {
         font-size: 16px; } }
+  @media screen and (min-width: 768px) {
+    .card-person {
+      margin-bottom: 20px; } }
 
 .active-card-person {
   background-color: #ffffff;
@@ -1111,5 +1153,13 @@ a {
   @media screen and (min-width: 768px) {
     .owl-dots {
       bottom: 0; } }
+
+.image-history {
+  width: 100%;
+  height: auto;
+  margin-bottom: 10px; }
+  @media screen and (min-width: 768px) {
+    .image-history {
+      margin-bottom: 20px; } }
 
 /*# sourceMappingURL=style.css.map */

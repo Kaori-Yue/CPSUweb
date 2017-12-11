@@ -25,7 +25,7 @@
                 หลักสูตร
             </a>
 
-            <a class="menu-navbar-top">
+            <a class="menu-navbar-top" href="{{ url('person') }}">
                 บุคลากร
             </a>
 
@@ -33,18 +33,47 @@
                 เอกสาร
             </a>
 
-            <a class="menu-navbar-top">
+            <div class="menu-navbar-top">
                 เกี่ยวกับภาควิชา
-            </a>
+                <ul class="drop-down-menu">
+                    <li class="list-menu-drop-down"><a href="{{ url('history') }}">ประวัติภาควิชา</a></li>
+                    <li class="list-menu-drop-down"><a href="{{ url('contact') }}">ติดต่อภาควิชา</a></li>
+                </ul>
+            </div>
+
 
         </div>
         <button class="btn-hamberger" onclick="clickBtnMenu()"><i class="fa fa-bars" aria-hidden="true"></i></button>
         <ul class="wrapper-list-nav-mobile" id="menuMobile">
-            <li class="list-nav-mobile">ข่าวสาร</li>
-            <li class="list-nav-mobile">ข่าวสาร</li>
-            <li class="list-nav-mobile">ข่าวสาร</li>
-            <li class="list-nav-mobile">ข่าวสาร</li>
-            <li class="list-nav-mobile">ข่าวสาร</li>
+            <li class="list-nav-mobile">
+                <a href="{{ url('blog') }}">
+                    ข่าวสาร
+                </a>
+            </li>
+            <li class="list-nav-mobile">
+                <a href="{{ url('curricula') }}">
+                    หลักสูตร
+                </a>
+            </li>
+            <li class="list-nav-mobile">
+                <a href="{{ url('person') }}">
+                    บุคลากร
+                </a>
+            </li>
+            <li class="list-nav-mobile">
+                <a href="{{ url('document') }}">
+                    เอกสาร
+                </a>
+            </li>
+            <li class="list-nav-mobile">
+                เกี่ยวกับภาควิชา
+                <ul class="sub-wrapper-mobile">
+                    <li class="list-sub-wrapper-mobile">
+                        <a href="{{ url('history') }}">ประวัติภาควิชา</a>
+                    </li>
+                    <li class="list-sub-wrapper-mobile"><a href="{{ url('contact') }}">ติดต่อภาควิชา</a></li>
+                </ul>
+            </li>
         </ul>
     </div>
 </nav>
@@ -165,17 +194,34 @@
     $('#btn-next-teacher').click(function () {
         slider_teacher.trigger('next.owl.carousel');
     });
-    $('#btn-prve-teacher').click(function () {
-        slider_teacher.trigger('prev.owl.carousel');
+    $('#btn-prve-teacher').click(function (){slider_teacher.trigger('prev.owl.carousel');
     });
 
-    var slider_person = $('#person');
 
-    $('#btn-next-person').click(function () {
-        slider_person.trigger('next.owl.carousel');
+    $('.owl-carousel-staff').owlCarousel({
+        loop:true,
+        responsive: {
+            0:{
+                items:2,
+
+            },
+            768:{
+                items:3,
+
+            },
+            980:{
+                items:5,
+            }
+        }
+    })
+
+    var slider_staff = $('#staff');
+
+    $('#btn-next-staff').click(function () {
+        slider_staff.trigger('next.owl.carousel');
     });
-    $('#btn-prve-person').click(function () {
-        slider_person.trigger('prev.owl.carousel');
+    $('#btn-prve-staff').click(function () {
+        slider_staff.trigger('prev.owl.carousel');
     });
 
 
@@ -187,6 +233,32 @@
     });
     $('#btn-prve-news').click(function () {
         slider_news.trigger('prev.owl.carousel');
+    });
+
+
+    $('.owl-carousel-read-news-bookmark').owlCarousel({
+        loop:true,
+        responsive: {
+            0:{
+                items:2,
+
+            },
+            768:{
+                items:3,
+
+            },
+            980:{
+                items:3,
+            }
+        }
+    })
+    var slider_read_news_bookmark = $('#news_bookmark');
+
+    $('#btn-next-read_news_bookmark').click(function () {
+        slider_read_news_bookmark.trigger('next.owl.carousel');
+    });
+    $('#btn-prve-read_news_bookmark').click(function () {
+        slider_read_news_bookmark.trigger('prev.owl.carousel');
     });
 
 </script>

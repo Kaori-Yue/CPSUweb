@@ -41,8 +41,49 @@
       line-height: 5;
       margin-left: 8px;
       cursor: pointer;
+
       &:hover{
         color: $color-green;
+        .drop-down-menu{
+          display: block;
+        }
+      }
+
+      .drop-down-menu{
+        display: none;
+        position: absolute;
+        width: 240px;
+        background-color: $color-white;
+        right: 0;
+        padding: 10px;
+        z-index: 2;
+        box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+
+        list-style-type: none;
+        .list-menu-drop-down{
+
+          width: 100%;
+          border-bottom: 1px solid $color-light-gray;
+          text-align: center;
+          &:hover{
+            color: $color-green;
+          }
+
+          &:nth-last-of-type(1){
+            border-bottom: none;
+          }
+          a{
+
+            color: $color-black;
+          }
+        }
+
+        @media screen and (min-width: $device-tablet) {
+
+        }
+        @media screen and (min-width: $device-computer) {
+
+        }
       }
 
     }
