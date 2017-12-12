@@ -13,6 +13,19 @@
                     @endforeach
                 </ul>--}}
     <div class="container-content">
+        <ul class="wrapper-nav">
+            <li class="list-nav">
+                <img src="{{ URL::asset('image/home-nav.svg') }}" class="image-home-list-nav">
+            </li>
+            <li class="list-nav">
+                <img src="{{ URL::asset('image/chevron-right-green.svg') }}" class="image-chevron-right-list-nav">
+            </li>
+            <li class="list-nav"><a href="../">หน้าแรก</a></li>
+            <li class="list-nav">
+                <img src="{{ URL::asset('image/chevron-right-green.svg') }}" class="image-chevron-right-list-nav">
+            </li>
+            <li class="list-nav">ข่าวสาร</li>
+        </ul>
         @foreach($categories as $category)
             <div class="wrapper-header-title">
                 <h1 class="header-title">{{$category->name}}</h1>
@@ -33,7 +46,7 @@
                                 @endif
                             @endforeach
                                 <li class="list-wrapper-card-news">
-                                    <a class="watch-more-card-news" href="{{"blog/category/". $category->slug}}">ดูข่าวทั้งหมด</a>
+                                    <a class="watch-more-card-news" href="{{url("blog/category/". $category->slug)}}">ดูข่าวทั้งหมด</a>
                                 </li>
                         </ul>
                     </li>

@@ -18,6 +18,24 @@
 
 @section('content')
 <div class="container-content">
+    <ul class="wrapper-nav">
+        <li class="list-nav">
+            <img src="{{ URL::asset('image/home-nav.svg') }}" class="image-home-list-nav">
+        </li>
+        <li class="list-nav">
+            <img src="{{ URL::asset('image/chevron-right-green.svg') }}" class="image-chevron-right-list-nav">
+        </li>
+        <li class="list-nav"><a href="{{url("")}}">หน้าแรก</a></li>
+        <li class="list-nav">
+            <img src="{{ URL::asset('image/chevron-right-green.svg') }}" class="image-chevron-right-list-nav">
+        </li>
+        <li class="list-nav"><a href={{url("blog")}}>ข่าวสาร</a></li>
+        <li class="list-nav">
+            <img src="{{ URL::asset('image/chevron-right-green.svg') }}" class="image-chevron-right-list-nav">
+        </li>
+        <li class="list-nav">{{$title}}</li>
+
+    </ul>
     <ul class="wrapper-read-news">
         <li class="list-wrapper-read-news">
             <div class="wrapper-header-title">

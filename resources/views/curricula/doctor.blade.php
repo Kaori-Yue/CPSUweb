@@ -11,11 +11,11 @@
             <li class="list-nav">
                 <img src="{{ URL::asset('image/chevron-right-green.svg') }}" class="image-chevron-right-list-nav">
             </li>
-            <li class="list-nav"><a href="../">หน้าแรก</a></li>
+            <li class="list-nav"><a href="{{url("")}}">หน้าแรก</a></li>
             <li class="list-nav">
                 <img src="{{ URL::asset('image/chevron-right-green.svg') }}" class="image-chevron-right-list-nav">
             </li>
-            <li class="list-nav"><a href="../curricula">หลักสูตร</a></li>
+            <li class="list-nav"><a href="{{url("/curricula")}}">หลักสูตร</a></li>
             <li class="list-nav">
                 <img src="{{ URL::asset('image/chevron-right-green.svg') }}" class="image-chevron-right-list-nav">
             </li>

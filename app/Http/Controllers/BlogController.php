@@ -275,6 +275,9 @@ class BlogController extends Controller
         $blog = Blog::where('slug', $slug)
             /*->publish()*/
             ->firstOrFail();
+        $title = Category::where('id', '=', $blog->category_id)
+            ->take(1)
+            ->value('name');
 
         $blogTag = $blog->tags;
         $allBlog = Blog::all()->reverse();
@@ -305,6 +308,7 @@ class BlogController extends Controller
 
         //return $relateBlogs;
         return view('blog.show2', [
+            'title' => $title,
             'blog' => $blog,
             'relateBlogs' => $relateBlogs
         ]);

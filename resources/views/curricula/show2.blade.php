@@ -11,21 +11,21 @@
             <li class="list-nav">
                 <img src="{{ URL::asset('image/chevron-right-green.svg') }}" class="image-chevron-right-list-nav">
             </li>
-            <li class="list-nav"><a href="../">หน้าแรก</a></li>
+            <li class="list-nav"><a href="{{url("")}}">หน้าแรก</a></li>
             <li class="list-nav">
                 <img src="{{ URL::asset('image/chevron-right-green.svg') }}" class="image-chevron-right-list-nav">
             </li>
-            <li class="list-nav"><a href="../curricula">หลักสูตร</a></li>
+            <li class="list-nav"><a href="{{url("/curricula")}}">หลักสูตร</a></li>
             <li class="list-nav">
                 <img src="{{ URL::asset('image/chevron-right-green.svg') }}" class="image-chevron-right-list-nav">
             </li>
             <li class="list-nav">
                 @if($curricula->degree == 'Bachelor Degree')
-                    <a href="../curricula/bachelor">ปริญญาตรี
+                    <a href="{{url('curricula/bachelor')}}">ปริญญาตรี
                         @elseif($curricula->degree == 'Master Degree')
-                            <a href="../curricula/master">ปริญญาโท
+                            <a href="{{url('curricula/master')}}">ปริญญาโท
                                 @else
-                                    <a href="../curricula/master">ปริญญาเอก
+                                    <a href="{{url('curricula/doctor')}}">ปริญญาเอก
                                         @endif
                                     </a>
             </li>
