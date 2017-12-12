@@ -489,13 +489,13 @@
 
 
 
-        <ul class="wrapper-card-course">
+        <!--<ul class="wrapper-card-course">
         @foreach($curriculas as $curricula)
             <li>
                 @include('curricula._card2', $curricula)
             </li>
 
-        @endforeach
+        @endforeach-->
     </ul>
     </div>
 
