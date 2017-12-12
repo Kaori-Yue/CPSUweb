@@ -1,6 +1,6 @@
 <li class="list-wrapper-card-news">
     <div class="card-news-horizontal">
-        <a>
+        <a href="{{url("blog/". $blog_r->slug)}}">
             <img class="image-card-news-horizontal" src="{{ url('image/show/'.$blog_r->cover) }}">
         </a>
         <a href="{{url("blog/". $blog_r->slug)}}">
