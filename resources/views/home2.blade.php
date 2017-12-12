@@ -40,10 +40,6 @@
                 <img src="{{ URL::asset('image/chevron-right-green.svg') }}" class="image-chevron-right-list-nav">
             </li>
             <li class="list-nav">หน้าแรก</li>
-            <li class="list-nav">
-                <img src="{{ URL::asset('image/chevron-right-green.svg') }}" class="image-chevron-right-list-nav">
-            </li>
-            <li class="list-nav">อ่านข่าวทั้งหมด</li>
         </ul>
 
         <ul class="wrapper-news-home-page">
@@ -484,19 +480,42 @@
 
 
 
-
-
-
-
-
-        <!--<ul class="wrapper-card-course">
-        @foreach($curriculas as $curricula)
-            <li>
-                @include('curricula._card2', $curricula)
+        <div class="wrapper-header-title">
+            <h1 class="header-title">หลักสูตร</h1>
+            <div class="line-header-title"></div>
+        </div>
+        <ul class="wrapper-cand-all">
+            <li class="list-wrapper-card-all">
+                <a href="curricula/bachelor">
+                    <div class="card-curricula">
+                        <img src="{{ URL::asset('image/curricula.svg') }}" class="image-card-curricula">
+                        <h3 class="type-card-curricula">ปริญญาตรี</h3>
+                        <p class="detail-card-curricula">วิทยาการคอมพิวเตอร์<br>เทคโนโลยีสารสนเทศ</p>
+                    </div>
+                </a>
             </li>
+            <li class="list-wrapper-card-all">
+                <a href="curricula/master">
+                    <div class="card-curricula">
+                        <img src="{{ URL::asset('image/curricula.svg') }}" class="image-card-curricula">
+                        <h3 class="type-card-curricula">ปริญญาโท</h3>
+                        <p class="detail-card-curricula">เทคโนโลยีสารสนเทศ</p>
+                    </div>
+                </a>
+            </li>
+            <li class="list-wrapper-card-all">
+                <a href="curricula/doctor">
+                    <div class="card-curricula">
+                        <img src="{{ URL::asset('image/curricula.svg') }}" class="image-card-curricula">
+                        <h3 class="type-card-curricula">ปริญญาเอก</h3>
+                        <p class="detail-card-curricula">เทคโนโลยีสารสนเทศ</p>
+                    </div>
+                </a>
+            </li>
+        </ul>
 
-        @endforeach-->
-    </ul>
+
+
     </div>
 
 @endsection

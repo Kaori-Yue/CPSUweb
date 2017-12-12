@@ -1,0 +1,35 @@
+@extends('main2')
+
+@section('title', "หลักสูตรปริญญาเอก")
+
+@section('content')
+    <div class="container-content">
+        <ul class="wrapper-nav">
+            <li class="list-nav">
+                <img src="{{ URL::asset('image/home-nav.svg') }}" class="image-home-list-nav">
+            </li>
+            <li class="list-nav">
+                <img src="{{ URL::asset('image/chevron-right-green.svg') }}" class="image-chevron-right-list-nav">
+            </li>
+            <li class="list-nav"><a href="../">หน้าแรก</a></li>
+            <li class="list-nav">
+                <img src="{{ URL::asset('image/chevron-right-green.svg') }}" class="image-chevron-right-list-nav">
+            </li>
+            <li class="list-nav"><a href="../curricula">หลักสูตร</a></li>
+            <li class="list-nav">
+                <img src="{{ URL::asset('image/chevron-right-green.svg') }}" class="image-chevron-right-list-nav">
+            </li>
+            <li class="list-nav">ปริญญาเอก</li>
+        </ul>
+        <div class="wrapper-header-title">
+            <h1 class="header-title">หลักสูตรปริญญาเอก</h1>
+            <div class="line-header-title"></div>
+
+        </div>
+        <ul class="wrapper-card-detail-curricula">
+            @foreach($d_curriculas as $curricula)
+                @include('curricula._card2', $curricula)
+            @endforeach
+        </ul>
+    </div>
+@endsection

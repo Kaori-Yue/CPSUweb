@@ -29,6 +29,54 @@ class CurriculaController extends Controller
         //return $curriculas;
     }
 
+    public function bachelor()
+    {
+        $b_curriculas = Curricula::enable()->where('degree', 'Bachelor Degree')->get();
+        $all_curriculas = Curricula::enable()->get();
+
+
+        $dis_curriculas = Curricula::disable()->get();
+
+        return view('curricula.bachelor', [
+            'b_curriculas' => $b_curriculas,
+            'dis_curriculas' => $dis_curriculas,
+            'all_curriculas' => $all_curriculas,
+        ]);
+        //return $curriculas;
+    }
+
+    public function master()
+    {
+        $m_curriculas = Curricula::enable()->where('degree', 'Master Degree')->get();
+        $all_curriculas = Curricula::enable()->get();
+
+
+        $dis_curriculas = Curricula::disable()->get();
+
+        return view('curricula.master', [
+            'm_curriculas' => $m_curriculas,
+            'dis_curriculas' => $dis_curriculas,
+            'all_curriculas' => $all_curriculas,
+        ]);
+        //return $curriculas;
+    }
+
+    public function doctor()
+    {
+        $d_curriculas = Curricula::enable()->where('degree', 'Doctor Degree')->get();
+        $all_curriculas = Curricula::enable()->get();
+
+
+        $dis_curriculas = Curricula::disable()->get();
+
+        return view('curricula.doctor', [
+            'd_curriculas' => $d_curriculas,
+            'dis_curriculas' => $dis_curriculas,
+            'all_curriculas' => $all_curriculas,
+        ]);
+        //return $curriculas;
+    }
+
     public function filter($filter)
     {
         $curriculas = Curricula::where('status', $filter)

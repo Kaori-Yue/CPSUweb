@@ -28,6 +28,9 @@ Route::get('teacher', 'TeacherController@index');
 Route::get('contact', 'ContactController@index');
 Route::get('document', 'DocumentController@index');
 Route::get('curricula', 'CurriculaController@index');
+Route::get('curricula/bachelor', 'CurriculaController@bachelor');
+Route::get('curricula/master', 'CurriculaController@master');
+Route::get('curricula/doctor', 'CurriculaController@doctor');
 #Route::get('thesis', 'ThesisController@index');
 
 
