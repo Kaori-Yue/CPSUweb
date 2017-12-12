@@ -15,7 +15,7 @@
     <div class="container-content">
         @foreach($categories as $category)
             <div class="wrapper-header-title">
-                <a href={{url("blog/category/".$category->name)}} class="more-detail-title"><h1 class="header-title">{{$category->name}}</h1></a>
+                <h1 class="header-title">{{$category->name}}</h1>
                 <div class="line-header-title"></div>
             </div>
             @if(count($category->blogs) != 0)
