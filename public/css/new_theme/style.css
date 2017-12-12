@@ -679,7 +679,8 @@
       margin: 20px 0; } }
 
 .card-news-vertical {
-  width: 100%; }
+  width: 100%;
+  margin-bottom: 10px; }
   .card-news-vertical a {
     color: black; }
   .card-news-vertical .image-card-news-vertical {
@@ -726,6 +727,9 @@
         .card-news-vertical .wrapper-time-create-card-news-vertical .time-create-card-news-vertical {
           font-size: 12px;
           line-height: 1.9; } }
+  @media screen and (min-width: 768px) {
+    .card-news-vertical {
+      margin-bottom: 20px; } }
 
 .card-news-horizontal {
   width: 100%;

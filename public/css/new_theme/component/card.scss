@@ -1,7 +1,7 @@
 .card-news-vertical{
   width: 100%;
 
-
+  margin-bottom: 10px;
   a{
     color: black;
   }
@@ -78,7 +78,7 @@
   }
 
   @media screen and (min-width: $device-tablet) {
-
+    margin-bottom: 20px;
   }
   @media screen and (min-width: $device-computer) {
 

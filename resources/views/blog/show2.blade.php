@@ -31,10 +31,10 @@
             <p class="description-read-news">{!! $blog->content !!}</p>
             <ul class="wrapper-btn-share">
                 <li class="list-btn-share">
-                    <button class="btn-share-facebook" id="shareToFB{{$blog->id}}">Share Facebook</button>
+                    <button class="btn-square btn-share-facebook" id="shareToFB{{$blog->id}}">Share Facebook</button>
                 </li>
                 <li class="list-btn-share">
-                    <button class="btn-share-twitter" id="shareToTW{{$blog->id}}">Share Twitter</button>
+                    <button class="btn-square btn-share-twitter" id="shareToTW{{$blog->id}}">Share Twitter</button>
                 </li>
             </ul>
         </li>
