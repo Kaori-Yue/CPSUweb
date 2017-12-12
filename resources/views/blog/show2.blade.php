@@ -21,13 +21,13 @@
     <ul class="wrapper-read-news">
         <li class="list-wrapper-read-news">
             <div class="wrapper-header-title">
-                <h1 class="header-title">การแข่งขัน NFC 2012</h1>
+                <h1 class="header-title">{{$blog->title}}</h1>
             </div>
             <div class="wrapper-time-create-card-news-vertical">
                 <img class="image-calendar-card-news-vertical" src="{{ URL::asset('image/calendar.svg') }}" />
-                <p class="time-create-card-news-vertical">13 พฤศจิกายน 2560</p>
+                <p class="time-create-card-news-vertical">{{$blog->publish_at}}</p>
             </div>
-            <img src="{{ URL::asset('image/tesa-demo-web.svg') }}" class="image-read-news">
+            <img src="{{ url('image/show/'.$blog->cover) }}" class="image-read-news">
             <p class="description-read-news">{!! $blog->content !!}</p>
             <ul class="wrapper-btn-share">
                 <li class="list-btn-share">
@@ -40,30 +40,13 @@
         </li>
         <li class="list-wrapper-read-news">
             <div class="wrapper-header-title">
-                <h1 class="header-title">ข่าวประชาสัมพันธ์</h1>
+                <h1 class="header-title">ข่าวที่เกี่ยวข้อง</h1>
                 <div class="line-header-title"></div>
             </div>
             <ul class="wrapper-card-news">
-                <li class="list-wrapper-card-news">
-                    <div class="card-news-horizontal">
-                        <a>
-                            <img class="image-card-news-horizontal" src="{{ URL::asset('image/tesa-demo-web.svg') }}">
-                        </a>
-                        <a>
-                            <h3 class="title-card-news-horizontal">TESA ร่วมกับ ม.เทคโนโลยี่พระจอมเกล้าพระนครเหนือ และ กรมอุทยานแห่งชาติ...</h3>
-                        </a>
-                    </div>
-                </li>
-                <li class="list-wrapper-card-news">
-                    <div class="card-news-horizontal">
-                        <a>
-                            <img class="image-card-news-horizontal" src="{{ URL::asset('image/tesa-demo-web.svg') }}">
-                        </a>
-                        <a>
-                            <h3 class="title-card-news-horizontal">TESA ร่วมกับ ม.เทคโนโลยี่พระจอมเกล้าพระนครเหนือ และ กรมอุทยานแห่งชาติ...</h3>
-                        </a>
-                    </div>
-                </li>
+                @foreach($relateBlogs as $blog_r)
+                    @include('blog._card4', $blog_r)
+                @endforeach
             </ul>
         </li>
     </ul>
@@ -92,7 +75,7 @@
             </div>
         </div>
 
-        <div class="content-form-read-news">
+        <!--<div class="content-form-read-news">
             <div class="container">
                 <div class="zone-read-content-form-read-news">
                     <img class="image-first-news" src="{{url('image/show/'.$blog->cover) }}}}">
@@ -111,19 +94,19 @@
                 </ul>
 
             </div>
-        </div>
+        </div> -->
     </div>
     <script>
         document.getElementById('shareToFB{{$blog->id}}').onclick = function() {
             FB.ui({
                 method: 'share',
                 display: 'popup',
-                href: '{{ 'http://202.28.72.71/blog/'.$blog->slug }}',
+                href: '{{ url('blog/'.$blog->slug) }}',
             }, function(response){});
         };
 
         document.getElementById('shareToTW{{$blog->id}}').onclick = function() {
-            var url = "{{ 'http://202.28.72.71/blog/'.$blog->slug }}";
+            var url = "{{ url('blog/'.$blog->slug) }}";
             var text = "{{ $blog->title }}";
             window.open('http://twitter.com/share?url=' + encodeURIComponent(url) + '&text=' + encodeURIComponent(text), '', 'left=0,top=0,width=550,height=450,personalbar=0,toolbar=0,scrollbars=0,resizable=0');
         };

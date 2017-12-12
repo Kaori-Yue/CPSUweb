@@ -3,7 +3,7 @@
         <a>
             <img class="image-card-news-horizontal" src="{{ url('image/show/'.$blog_r->cover) }}">
         </a>
-        <a href="{{"blog/". $blog_r->slug}}">
+        <a href="{{url("blog/". $blog_r->slug)}}">
             <h3 class="title-card-news-horizontal">{!! $blog_r->title !!}</h3>
         </a>
     </div>

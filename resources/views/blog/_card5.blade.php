@@ -5,7 +5,7 @@
         <a>
             <img class="image-card-news-vertical" src="{{ url('image/show/'.$blog->cover) }}">
         </a>
-        <a href="{{"blog/". $blog->slug}}">
+        <a href="{{"../../blog/". $blog->slug}}">
             <h3 class="title-card-news-vertical">{!! $blog->title !!}</h3>
         </a>
         <p class="description-card-news-vertical">{!! $blog->description !!}</p>
@@ -21,12 +21,12 @@
         FB.ui({
             method: 'share',
             display: 'popup',
-            href: '{{ 'http://202.28.72.71/blog/'.$blog->slug }}',
+            href: '{{ url('blog/'.$blog->slug) }}',
         }, function(response){});
     };
 
     document.getElementById('shareToTW{{$blog->id}}').onclick = function() {
-        var url = "{{ 'http://202.28.72.71/blog/'.$blog->slug }}";
+        var url = "{{ url('blog/'.$blog->slug) }}";
         var text = "{{ $blog->title }}";
         window.open('http://twitter.com/share?url=' + encodeURIComponent(url) + '&text=' + encodeURIComponent(text), '', 'left=0,top=0,width=550,height=450,personalbar=0,toolbar=0,scrollbars=0,resizable=0');
     };
