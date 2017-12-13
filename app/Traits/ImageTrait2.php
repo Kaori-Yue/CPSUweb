@@ -23,12 +23,12 @@ trait ImageTrait2
 
         $file_name = $file->name;
 
-        self::compress($file);
+        //self::compress($file);
         //self::resizeImage($file, $type);
 
-        $file_crop->name = $file->name;
+        //$file_crop->name = $file->name;
 
-        $file_crop = Image::make($file_crop);
+        $file_crop = Image::make(file_get_contents($file_crop));
 
         if (App::environment('local')) {
             //windows path

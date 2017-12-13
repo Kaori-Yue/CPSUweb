@@ -11,12 +11,13 @@ use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Illuminate\Support\Collection;
 use Illuminate\Support\Facades\Auth;
-use App\Traits\ImageTrait;
+use App\Traits\ImageTrait2;
 use Log;
+Use Intervention\Image\Facades\Image;
 
 class BlogController extends Controller
 {
-    use ImageTrait;
+    use ImageTrait2;
     public function index()
     {
         $all_blog = [];
@@ -204,15 +205,12 @@ class BlogController extends Controller
 
         $blog = Blog::findOrFail($id);
         $updateBlog = $request->all();
-        $cover_image_crop = Image::class;
 
         $slug = self::handleSlug($updateBlog['title']);
         $cover_image = $request->file('cover');
 
-        if(isset($cover_image))
-            $cover_image_crop = $this->base64_to_jpeg($request->get('new_image'), $cover_image);
         $hash_tags = $updateBlog['hash_tags'];
-        //return response()->json(['og' => $cover_image,'crop' => $cover_image_crop]);
+
 
         $blogData = [
             'title' => $updateBlog['title'],
@@ -227,7 +225,7 @@ class BlogController extends Controller
         ];
 
         if(isset($cover_image)){
-            $file = $this->storeImage($cover_image, $cover_image_crop, 'cover');
+            $file = $this->storeImage($cover_image, $request->get('new_image'), 'cover');
             $blogData['cover'] = $file->id;
         }
 
