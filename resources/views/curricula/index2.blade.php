@@ -6,17 +6,17 @@
 <div class="container-content">
     <ul class="wrapper-nav">
         <li class="list-nav">
-            <img src="{{ URL::asset('image/home-nav.svg') }}" class="image-home-list-nav">
+            <a href="{{url("")}}">
+                <img src="{{ URL::asset('image/home-nav.svg') }}" class="image-home-list-nav">
+            </a>
         </li>
         <li class="list-nav">
             <img src="{{ URL::asset('image/chevron-right-green.svg') }}" class="image-chevron-right-list-nav">
         </li>
-            <li class="list-nav"><a href="../">หน้าแรก</a></li>
-        <li class="list-nav">
-            <img src="{{ URL::asset('image/chevron-right-green.svg') }}" class="image-chevron-right-list-nav">
-        </li>
-        <li class="list-nav">หลักสูตร</li>
+        <li class="list-nav"><a href="{{url("/curricula")}}">หลักสูตร</a></li>
+
     </ul>
+
     <ul class="wrapper-cand-all">
         <li class="list-wrapper-card-all">
             <a href="curricula/bachelor">

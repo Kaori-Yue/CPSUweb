@@ -32,15 +32,7 @@
             </li>
             @endforeach
         </ul>
-        <ul class="wrapper-nav">
-            <li class="list-nav">
-                <img src="{{ URL::asset('image/home-nav.svg') }}" class="image-home-list-nav">
-            </li>
-            <li class="list-nav">
-                <img src="{{ URL::asset('image/chevron-right-green.svg') }}" class="image-chevron-right-list-nav">
-            </li>
-            <li class="list-nav">หน้าแรก</li>
-        </ul>
+
 
         <ul class="wrapper-news-home-page">
             <li class="list-wrapper-news-home-page">
