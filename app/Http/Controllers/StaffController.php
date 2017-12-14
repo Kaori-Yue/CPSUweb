@@ -3,13 +3,13 @@
 namespace App\Http\Controllers;
 use App\Helper\TokenGenerator;
 use Illuminate\Http\Request;
-use App\Traits\ImageTrait;
+use App\Traits\ImageTrait2;
 use App\Staff;
 
 
 class StaffController extends Controller
 {
-    use ImageTrait;
+    use ImageTrait2;
 
     public function index()
     {
@@ -58,8 +58,8 @@ class StaffController extends Controller
         $staff['password'] = password_hash($staff['name_en'], PASSWORD_DEFAULT);
 
         $image = $request->file('image');
-        $image = $this->base64_to_jpeg($request->get('new_image'), $image);
-        $file = self::storeImage($image, 'profile');
+        //$image = $this->base64_to_jpeg($request->get('new_image'), $image);
+        $file = self::storeImage($image, $request->get('new_image'), 'profile');
         $staff['image'] = $file->id;
 
 
@@ -95,9 +95,9 @@ class StaffController extends Controller
 
         $image = $request->file('image');
         if(isset($image))
-            $image = $this->base64_to_jpeg($request->get('new_image'), $image);
+            //$image = $this->base64_to_jpeg($request->get('new_image'), $image);
         if(isset($image)){
-            $file = self::storeImage($image, 'profile');
+            $file = self::storeImage($image, $request->get('new_image'), 'profile');
             $editedStaff['image'] = $file->id;
         }
         $staff->update($editedStaff);

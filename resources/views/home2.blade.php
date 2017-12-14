@@ -28,7 +28,7 @@
         <ul class="wrapper-image-slide-announcement owl-carousel-announcement-home-page owl-carousel owl-theme">
             @foreach($blogs_a as $blog_a)
             <li class="wrapper-image-slide-announcement">
-                <a href="{{"blog/". $blog_a->slug}}"><img src="{{ url('image/show/'.$blog_a->cover) }}" /></a>
+                <a href="{{"blog/". $blog_a->slug}}"><img src="{{ url('image/crop/'.$blog_a->cover) }}" /></a>
             </li>
             @endforeach
         </ul>
@@ -53,12 +53,10 @@
                         @include('blog._card6', $blog_f)
                     @endforeach
                 </ul>
-
             </li>
             <li class="list-wrapper-news-home-page">
                 <div class="wrapper-header-title">
                     <h1 class="header-title">ข่าวล่าสุด</h1>
-
                     <div class="line-header-title"></div>
                 </div>
                 <ul class="wrapper-card-news">

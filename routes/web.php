@@ -42,6 +42,7 @@ Route::get('staff/{id}', 'StaffController@show');
 Route::get('tag/{slug}', 'TagController@show');
 Route::get('file/show/{id}', 'FileController@show');
 Route::get('image/show/{id}', 'ImageController@show');
+Route::get('image/crop/{id}', 'ImageController@crop');
 Route::get('image/thumbnail/{id}', 'ImageController@thumbnail');
 Route::get('blog/category/{category}', 'BlogController@category');
 Route::get('document/category/{category}', 'DocumentController@category');

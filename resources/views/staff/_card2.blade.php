@@ -40,7 +40,7 @@
     @endphp
             ">
 
-        <img class="image-card-person" src="{{url('image/show/'.$staff->image)}}" />
+        <img class="image-card-person" src="{{url('image/crop/'.$staff->image)}}" />
         <h3 class="role-card-person">
             @if($staff->position != '')
                 <span class="position-card-person">{{$staff->position}}</span>

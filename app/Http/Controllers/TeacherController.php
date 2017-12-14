@@ -9,13 +9,13 @@ use App\Teacher;
 use App\User;
 use ClassesWithParents\D;
 use Illuminate\Http\Request;
-use App\Traits\ImageTrait;
+use App\Traits\ImageTrait2;
 use Illuminate\Support\Facades\Log;
 use Intervention\Image\Facades\Image;
 
 class TeacherController extends Controller
 {
-    use ImageTrait;
+    use ImageTrait2;
     public $status = [
         'duty' => 'Duty',
         'retire' => 'Retire',
@@ -82,8 +82,8 @@ class TeacherController extends Controller
         $teacher['password'] = password_hash($teacher['name_en'], PASSWORD_DEFAULT);
 
         $image = $request->file('image');
-        $image = $this->base64_to_jpeg($request->get('new_image'), $image);
-        $file = $this->storeImage($image, 'profile');
+        //$image = $this->base64_to_jpeg($request->get('new_image'), $image);
+        $file = $this->storeImage($image, $request->get('new_image'), 'profile');
         $teacher['image'] = $file->id;
 
         $teacher['rank'] = self::handleRank($teacher);
@@ -178,12 +178,12 @@ class TeacherController extends Controller
         $editedTeacher = $request->all();
         $image = $request->file('image');
         if(isset($image))
-        $image = $this->base64_to_jpeg($request->get('new_image'), $image);
+        //$image = $this->base64_to_jpeg($request->get('new_image'), $image);
 
         $editedTeacher['rank'] = self::handleRank($editedTeacher);
 
         if(isset($image)){
-            $file = $this->storeImage($image, 'profile');
+            $file = $this->storeImage($image, $request->get('new_image'), 'profile');
             $editedTeacher['image'] = $file->id;
         }
         $teacher->update($editedTeacher);

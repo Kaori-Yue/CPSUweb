@@ -116,8 +116,8 @@
             //enableOrientation: true,
         });
         $upLoadCropBlog = $('#upload-demo-blog').croppie({
-            viewport: { width: 120, height: 90 },
-            boundary: { width: 360 , height: 270 },
+            viewport: { width: 120, height: 60 },
+            boundary: { width: 360 , height: 180 },
             //showZoomer: false,
             //enableResize: true,
             //enableOrientation: true,

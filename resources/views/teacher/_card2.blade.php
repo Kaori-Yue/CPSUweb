@@ -54,7 +54,7 @@
     @endphp
 ">
 
-        <img class="image-card-person" src="{{url('image/show/'.$teacher->image)}}" />
+        <img class="image-card-person" src="{{url('image/crop/'.$teacher->image)}}" />
         <h3 class="role-card-person">
             @if($teacher->position != '')
                 <span class="position-card-person">{{$teacher->position}}</span>

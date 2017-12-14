@@ -3,7 +3,7 @@
 <li class="list-wrapper-card-all">
     <div class="card-news-vertical">
         <a href="{{url("blog/". $blog->slug)}}">
-            <img class="image-card-news-vertical" src="{{ url('image/show/'.$blog->cover) }}">
+            <img class="image-card-news-vertical" src="{{ url('image/crop/'.$blog->cover) }}">
         </a>
         <a href="{{url("blog/". $blog->slug)}}">
             <h3 class="title-card-news-vertical">{!! $blog->title !!}</h3>
