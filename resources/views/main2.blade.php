@@ -97,13 +97,13 @@
                 <h3 class="title-navbar-bottom">หลักสูตร</h3>
                 <ul class="menu-title-navbar-bottom">
                     <li>
-                        <a>ปริญญาตรี</a>
+                        <a href="curricula/bachelor">ปริญญาตรี</a>
                     </li>
                     <li>
-                        <a>ปริญญาโท</a>
+                        <a href="curricula/master">ปริญญาโท</a>
                     </li>
                     <li>
-                        <a>ปริญญาเอก</a>
+                        <a href="curricula/doctor">ปริญญาเอก</a>
                     </li>
                 </ul>
             </li>
@@ -111,10 +111,10 @@
                 <h3 class="title-navbar-bottom">บุคลากร</h3>
                 <ul class="menu-title-navbar-bottom">
                     <li>
-                        <a>สายวิชาการ</a>
+                        <a href="{{ url('teacher') }}">สายวิชาการ</a>
                     </li>
                     <li>
-                        <a>สายสนับสนุนวิชาการ</a>
+                        <a href="{{ url('staff') }}">สายสนับสนุนวิชาการ</a>
                     </li>
 
                 </ul>
@@ -123,10 +123,10 @@
                 <h3 class="title-navbar-bottom">เกี่ยวกับภาควิชา</h3>
                 <ul class="menu-title-navbar-bottom">
                     <li>
-                        <a>ประวัติภาควิชา</a>
+                        <a href="{{ url('history') }}">ประวัติภาควิชา</a>
                     </li>
                     <li>
-                        <a>ติดต่อภาควิชา</a>
+                        <a href="{{ url('contact') }}">ติดต่อภาควิชา</a>
                     </li>
 
                 </ul>

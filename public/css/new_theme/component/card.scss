@@ -251,6 +251,7 @@
   background-color: $color-light-gray;
   height: 100px;
   cursor: pointer;
+  margin-bottom: 10px;
 
   &:hover{
     background-color: $color-white;
@@ -293,9 +294,10 @@
         .field-card-detail-curricula{
           color: $color-green;
 
-          margin-top: 15px;
+          margin-top: 7px;
           font-size: $font-big-description-mobile;
           @media screen and (min-width: $device-tablet) {
+            margin-top: 5px;
             font-size: $font-big-description-tablet-computer;
           }
           @media screen and (min-width: $device-computer) {
@@ -323,6 +325,7 @@
 
   @media screen and (min-width: $device-tablet) {
     height: 110px;
+    margin-bottom: 20px;
   }
   @media screen and (min-width: $device-computer) {
 

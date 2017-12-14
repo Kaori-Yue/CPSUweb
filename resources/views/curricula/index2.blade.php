@@ -13,7 +13,7 @@
         <li class="list-nav">
             <img src="{{ URL::asset('image/chevron-right-green.svg') }}" class="image-chevron-right-list-nav">
         </li>
-        <li class="list-nav"><a href="{{url("/curricula")}}">หลักสูตร</a></li>
+        <li class="list-nav">หลักสูตร</li>
 
     </ul>
 
