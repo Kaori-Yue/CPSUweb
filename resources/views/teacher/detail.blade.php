@@ -81,7 +81,7 @@
                         $raw_website = $teacher_read->website;
                         $websites = explode("," , $raw_website);
                         for($i = 0 ; $i < count($websites) ; $i++){
-                        echo '<li class="list-small-detail">'.$websites[$i].'</li>';
+                            echo '<li class="list-small-detail"><a href='.$websites[$i].' target="_blank">'.$websites[$i].'</a></li>';
                         }
                         @endphp
 

@@ -87,7 +87,7 @@
                 <p class="follow-us">ติดตามภาควิชา</p>
                 <ul class="menu-social">
                     <li class="logo-social">
-                        <a href="" target="_blank">
+                        <a href="https://www.facebook.com/cpsilpakorn/" target="_blank">
                             <img src="{{URL::asset('image/Facebook_Color.svg')}}"/>
                         </a>
                     </li>
@@ -97,13 +97,13 @@
                 <h3 class="title-navbar-bottom">หลักสูตร</h3>
                 <ul class="menu-title-navbar-bottom">
                     <li>
-                        <a href="curricula/bachelor">ปริญญาตรี</a>
+                        <a href="{{url("curricula/bachelor")}}">ปริญญาตรี</a>
                     </li>
                     <li>
-                        <a href="curricula/master">ปริญญาโท</a>
+                        <a href="{{url("curricula/master")}}">ปริญญาโท</a>
                     </li>
                     <li>
-                        <a href="curricula/doctor">ปริญญาเอก</a>
+                        <a href="{{url("curricula/doctor")}}">ปริญญาเอก</a>
                     </li>
                 </ul>
             </li>
