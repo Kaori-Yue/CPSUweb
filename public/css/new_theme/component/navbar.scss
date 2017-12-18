@@ -50,9 +50,9 @@
       }
 
       .drop-down-menu{
-        display: none;
+        display: block;
         position: absolute;
-        width: 240px;
+        width: 200px;
         background-color: $color-white;
         right: 0;
         padding: 10px;
@@ -61,20 +61,27 @@
 
         list-style-type: none;
         .list-menu-drop-down{
-
+          height: 40px;
+          max-height: 40px;
           width: 100%;
+          line-height: 2;
           border-bottom: 1px solid $color-light-gray;
           text-align: center;
           &:hover{
             color: $color-green;
           }
 
+
           &:nth-last-of-type(1){
+            line-height: 2.5;
             border-bottom: none;
           }
           a{
 
             color: $color-black;
+            &:hover{
+              color: $color-green;
+            }
           }
         }
 

@@ -36,6 +36,9 @@ body{
   position: relative;
   min-height: 100%;
   height: auto;
+  margin: 0;
+  font-family: Kanit;
+
 }
 
 h1,h2,h3,h4,h5,h6,p,ul,li{
@@ -43,13 +46,6 @@ h1,h2,h3,h4,h5,h6,p,ul,li{
   padding: 0;
 }
 
-body{
-  margin: 0;
-  font-family: Kanit;
-
-
-
-}
 
 a{
   text-decoration: none;
