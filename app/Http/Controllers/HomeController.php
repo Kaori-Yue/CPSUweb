@@ -44,7 +44,7 @@ class HomeController extends Controller
 
         $blogs_f = Blog::orderBy('created_at', 'DESC')
             ->where('featured', '=', '1')
-            ->take(2)
+            ->take(5)
             ->get();
 
         $blogs = Blog::orderBy('created_at', 'DESC')
