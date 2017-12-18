@@ -95,6 +95,10 @@
     padding: 10px 10px 10px 0;
     border-bottom: 1px solid #F0F0F0;
     font-size: 12px; }
+    .wrapper-list-nav-mobile .list-nav-mobile a {
+      color: #000000;
+      width: 100%;
+      display: block; }
     .wrapper-list-nav-mobile .list-nav-mobile:nth-last-child(1) {
       border-bottom: none; }
     .wrapper-list-nav-mobile .list-nav-mobile .sub-wrapper-mobile {
@@ -104,6 +108,10 @@
         width: 100%;
         padding-top: 10px;
         padding-left: 10px; }
+        .wrapper-list-nav-mobile .list-nav-mobile .sub-wrapper-mobile .list-sub-wrapper-mobile a {
+          color: #000000;
+          width: 100%;
+          display: block; }
   @media screen and (min-width: 768px) {
     .wrapper-list-nav-mobile {
       display: none; } }

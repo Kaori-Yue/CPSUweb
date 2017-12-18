@@ -95,6 +95,13 @@
     padding: 10px 10px 10px 0;
     border-bottom: 1px solid $color-light-gray;
     font-size: $font-small-description-mobile;
+
+    a{
+      color: $color-black;
+      width: 100%;
+      display: block;
+    }
+
     &:nth-last-child(1){
       border-bottom: none;
     }
@@ -106,6 +113,11 @@
         width: 100%;
         padding-top: 10px;
         padding-left: 10px;
+        a{
+          color: $color-black;
+          width: 100%;
+          display: block;
+        }
       }
     }
 
