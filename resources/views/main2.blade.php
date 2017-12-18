@@ -136,12 +136,30 @@
     </div>
     <p class="copyright">© 2017 by Department of Computing, Faculty of Science, Silpakorn University.</p>
 </nav>
+<button onclick="topFunction()" id="goTopBtn" title="Go to top" class="btn-go-top">
+    <img src="{{ URL::asset('image/arrow-up.svg') }}"/>
+</button>
 
 <script src="{{ URL::asset('js/bower_components/jquery/dist/jquery.min.js') }}"></script>
 <script src="{{ URL::asset('js/bower_components/OwlCarousel2-2.2.1/dist/owl.carousel.min.js') }}"></script>
 <script src="{{URL::asset('js/slide.js')}}"></script>
 <script src="{{URL::asset('js/fb.js')}}"></script>
 <script>
+
+    window.onscroll = function() {scrollFunction()};
+
+    function scrollFunction() {
+        if (document.body.scrollTop > 800 || document.documentElement.scrollTop > 800) {
+            document.getElementById("goTopBtn").style.display = "block";
+        } else {
+            document.getElementById("goTopBtn").style.display = "none";
+        }
+    }
+
+    function topFunction() {
+        document.body.scrollTop = 0;
+        document.documentElement.scrollTop = 0;
+    }
 
     $('.owl-carousel-announcement-home-page').owlCarousel({
         loop: true,
