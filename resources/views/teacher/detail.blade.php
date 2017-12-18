@@ -27,7 +27,7 @@
 
         <div class="card-read-person">
             <div class="header-card-read-person">
-                <img class="image-header-card-person" src="{{url('image/show/'.$teacher_read->image)}}"/>
+                <img class="image-header-card-person" src="{{url('image/crop/'.$teacher_read->image)}}"/>
                 <p class="role-card-read-person">
                     @if($teacher->position != '')
                         <span class="position-card-person">{{$teacher_read->position}}</span>

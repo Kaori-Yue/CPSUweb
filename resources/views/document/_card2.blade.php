@@ -11,11 +11,11 @@
     <p class="name-card-document">{{ $document->name }}</p>
     <p class="decription-card-document">{{ $document->description }}</p>
 
-    {{--<a href="{{ url('file/show/'.$document->file_record->id) }}" target="_blank">--}}
+    <a href="{{ url('file/show/'.$document->file_record->id) }}" target="_blank">
         <button class="btn-download-card-document">
             <img src="{{ URL::asset('image/download-icon.svg') }}">
         </button>
-    {{--</a>--}}
+    </a>
 
 
 </div>
