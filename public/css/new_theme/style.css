@@ -44,6 +44,8 @@
     cursor: pointer; }
     .wrapper-nav .list-nav a {
       color: #888888; }
+      .wrapper-nav .list-nav a:hover {
+        color: #117167; }
     .wrapper-nav .list-nav:nth-last-child(1) {
       color: #117167;
       cursor: default; }
