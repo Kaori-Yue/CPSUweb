@@ -25,7 +25,7 @@ class BlogController extends Controller
         foreach ($categories as $category){
             $category->blogs;
             foreach ($category->blogs as $blog){
-                $blog['title'] = $this->cutTitle($blog['title']);
+                //$blog['title'] = $this->cutTitle($blog['title']);
                 $blog['description'] = $this->cutContent($blog['description']);
             }
         }
@@ -376,7 +376,7 @@ class BlogController extends Controller
 
     public function cutContent($content)
     {
-        if(strlen($content) > 50){
+        if(strlen($content) > 100){
             $content =  str_limit($content, 50);
         }
         return $content;

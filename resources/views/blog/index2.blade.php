@@ -40,7 +40,7 @@
                     <li class="list-card-news-category">
                         <ul class="wrapper-card-news">
                             @foreach($category->blogs as $blog)
-                                @if($loop->iteration > 2 && $loop->iteration <= 7)
+                                @if($loop->iteration > 2 && $loop->iteration <= 6)
                                     @include('blog._card3', $blog)
                                 @endif
                             @endforeach
