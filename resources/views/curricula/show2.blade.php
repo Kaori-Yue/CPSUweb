@@ -93,7 +93,7 @@
                 </li>
                 <li class="header-big-detail">รายละเอียดเพิ่มเติม</li>
                 <li class="list-detail-all">
-                    <p class="header-small-detail">PDF</p>
+                    <p class="header-small-detail">ดาวน์โหลดไฟล์ PDF</p>
                     <ul class="wrapper-small-detail">
                         <li class="list-small-detail">
                             <a href="{{ url('file/show/'.$curricula->file) }}">

@@ -21,7 +21,7 @@
         <li class="list-wrapper-card-all">
             <a href="curricula/bachelor">
                 <div class="card-curricula">
-                    <img src="{{ URL::asset('image/curricula.svg') }}" class="image-card-curricula">
+                    <img src="{{ URL::asset('image/012-book-2.svg') }}" class="image-card-curricula">
                     <h3 class="type-card-curricula">ปริญญาตรี</h3>
                     <p class="detail-card-curricula">วิทยาการคอมพิวเตอร์<br>เทคโนโลยีสารสนเทศ</p>
                 </div>
@@ -30,7 +30,7 @@
         <li class="list-wrapper-card-all">
             <a href="curricula/master">
                 <div class="card-curricula">
-                    <img src="{{ URL::asset('image/curricula.svg') }}" class="image-card-curricula">
+                    <img src="{{ URL::asset('image/012-book-2.svg') }}" class="image-card-curricula">
                     <h3 class="type-card-curricula">ปริญญาโท</h3>
                     <p class="detail-card-curricula">เทคโนโลยีสารสนเทศ</p>
                 </div>
@@ -39,7 +39,7 @@
         <li class="list-wrapper-card-all">
             <a href="curricula/doctor">
                 <div class="card-curricula">
-                    <img src="{{ URL::asset('image/curricula.svg') }}" class="image-card-curricula">
+                    <img src="{{ URL::asset('image/012-book-2.svg') }}" class="image-card-curricula">
                     <h3 class="type-card-curricula">ปริญญาเอก</h3>
                     <p class="detail-card-curricula">เทคโนโลยีสารสนเทศ</p>
                 </div>

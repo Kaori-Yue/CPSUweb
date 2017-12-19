@@ -46,15 +46,20 @@
                 <p class="time-create-card-news-vertical">{{$blog->publish_at}}</p>
             </div>
             <img src="{{ url('image/show/'.$blog->cover) }}" class="image-read-news">
-            <p class="description-read-news">{!! $blog->content !!}</p>
             <ul class="wrapper-btn-share">
+
                 <li class="list-btn-share">
-                    <button class="btn-square btn-share-facebook" id="shareToFB{{$blog->id}}">Share Facebook</button>
+                    <img src="{{ URL::asset('image/Facebook_Color.svg') }}" id="shareToFB{{$blog->id}}"/>
+
                 </li>
                 <li class="list-btn-share">
-                    <button class="btn-square btn-share-twitter" id="shareToTW{{$blog->id}}">Share Twitter</button>
+                    <img src="{{ URL::asset('image/Twitter_Color.svg') }}" id="shareToTW{{$blog->id}}"/>
+
                 </li>
+
             </ul>
+            <div class="description-read-news">{!!  $blog->content  !!}</div>
+
         </li>
         <li class="list-wrapper-read-news">
             <div class="wrapper-header-title">
@@ -71,27 +76,27 @@
 </div>
 
 
-    <div class="form-read-news">
-        <div class="header-form-read-news">
-            <div class="container">
-                <ul class="logos-share-card-news">
-                    <li class="logo-share-card-news" id="shareToFB{{$blog->id}}">
-                        <img src="{{ URL::asset('image/facebook_white.png') }}" />
-                        <p class="description-logo-share-card-news">Share Facebook</p>
-                    </li>
-                    <li class="logo-share-card-news" id="shareToTW{{$blog->id}}">
-                        <img src="{{ URL::asset('image/twitter_white.png') }}" />
-                        <p class="description-logo-share-card-news">Share Twitter</p>
-                    </li>
-                </ul>
-                <p class="category-header-form-read-news">ข่าวสาร / การแข่งขัน</p>
-                <h1 class="title">{{$blog->title}}</h1>
-                <p class="create-by-form-read-news">
-                    โดย : {{$blog->user->name}}
-                    <span class="time-create-form-read-news">{{$blog->publish_at}}</span>
-                </p>
-            </div>
-        </div>
+    {{--<div class="form-read-news">--}}
+        {{--<div class="header-form-read-news">--}}
+            {{--<div class="container">--}}
+                {{--<ul class="logos-share-card-news">--}}
+                    {{--<li class="logo-share-card-news" id="shareToFB{{$blog->id}}">--}}
+                        {{--<img src="{{ URL::asset('image/facebook_white.png') }}" />--}}
+                        {{--<p class="description-logo-share-card-news">Share Facebook</p>--}}
+                    {{--</li>--}}
+                    {{--<li class="logo-share-card-news" id="shareToTW{{$blog->id}}">--}}
+                        {{--<img src="{{ URL::asset('image/twitter_white.png') }}" />--}}
+                        {{--<p class="description-logo-share-card-news">Share Twitter</p>--}}
+                    {{--</li>--}}
+                {{--</ul>--}}
+                {{--<p class="category-header-form-read-news">ข่าวสาร / การแข่งขัน</p>--}}
+                {{--<h1 class="title">{{$blog->title}}</h1>--}}
+                {{--<p class="create-by-form-read-news">--}}
+                    {{--โดย : {{$blog->user->name}}--}}
+                    {{--<span class="time-create-form-read-news">{{$blog->publish_at}}</span>--}}
+                {{--</p>--}}
+            {{--</div>--}}
+        {{--</div>--}}
 
         <!--<div class="content-form-read-news">
             <div class="container">

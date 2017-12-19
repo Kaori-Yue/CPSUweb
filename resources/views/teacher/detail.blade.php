@@ -29,10 +29,10 @@
             <div class="header-card-read-person">
                 <img class="image-header-card-person" src="{{url('image/crop/'.$teacher_read->image)}}"/>
                 <p class="role-card-read-person">
-                    @if($teacher->position != '')
-                        <span class="position-card-person">{{$teacher_read->position}}</span>
-                    @else
+                    @if(str_contains($teacher_read->position, "") === true)
                         <span class="position-card-person">อาจารย์ประจำภาควิชา</span>
+                    @else
+                        <span class="position-card-person">{{$teacher_read->position}}</span>
                     @endif
                 </p>
                 <h3 class="name-th-card-read-person">{{$teacher_read->name_th}}</h3>

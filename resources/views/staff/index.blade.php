@@ -23,9 +23,9 @@
             <h1 class="header-title">บุคลากรสายสนับสนุนวิชาการ</h1>
             <div class="line-header-title"></div>
         </div>
-        <ul class="wrapper-cand-all">
+        <ul class="wrapper-4card">
             @foreach($staffs as $staff)
-                <li class="list-wrapper-card-all">
+                <li class="list-wrapper-4card">
                     @include('staff._card2', $staff)
                 </li>
             @endforeach
