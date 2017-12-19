@@ -26,7 +26,7 @@ class BlogController extends Controller
             $category->blogs;
             foreach ($category->blogs as $blog){
                 //$blog['title'] = $this->cutTitle($blog['title']);
-                $blog['description'] = $this->cutContent($blog['description']);
+                //$blog['description'] = $this->cutContent($blog['description']);
             }
         }
 
@@ -154,7 +154,7 @@ class BlogController extends Controller
             'status' => 'required|in:draft,disable,publish',
             'category_id' => 'required|integer|min:0',
             'featured' => 'required|integer|between:0,1',
-            'description' => 'required|max:50',
+            'description' => 'required|max:191',
 
 
         ]);
@@ -199,7 +199,7 @@ class BlogController extends Controller
             'status' => 'required|in:draft,disable,publish',
             'category_id' => 'required|integer|min:0',
             'featured' => 'required|integer|between:0,1',
-            'description' => 'required|max:50',
+            'description' => 'required|max:191',
 
         ]);
 
@@ -377,7 +377,7 @@ class BlogController extends Controller
     public function cutContent($content)
     {
         if(strlen($content) > 100){
-            $content =  str_limit($content, 50);
+            $content =  str_limit($content, 100);
         }
         return $content;
     }

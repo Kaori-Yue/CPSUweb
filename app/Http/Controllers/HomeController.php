@@ -53,15 +53,15 @@ class HomeController extends Controller
             ->get();
 
         foreach ($blogs as $blog){
-            $blog['description'] = $this->cutContent($blog['description']);
+            //$blog['description'] = $this->cutContent($blog['description']);
         }
 
         foreach ($blogs_a as $blog){
-            $blog['description'] = $this->cutContent($blog['description']);
+            //$blog['description'] = $this->cutContent($blog['description']);
         }
 
         foreach ($blogs_f as $blog){
-            $blog['description'] = $this->cutContent($blog['description']);
+            //$blog['description'] = $this->cutContent($blog['description']);
         }
 
         /*for($i = 0; $i < 4; ++$i){
@@ -89,8 +89,8 @@ class HomeController extends Controller
 
     public function cutContent($content)
     {
-        if(strlen($content) > 50){
-            $content =  str_limit($content, 50);
+        if(strlen($content) > 100){
+            $content =  str_limit($content, 100);
         }
         return $content;
     }
