@@ -24,9 +24,9 @@
         <div class="line-header-title"></div>
     </div>
 
-    <ul class="wrapper-cand-all">
+    <ul class="wrapper-4card">
         @foreach($teachers as $teacher)
-            <li class="list-wrapper-card-all">
+            <li class="list-wrapper-4card">
                 @include('teacher._card2', $teacher)
             </li>
         @endforeach

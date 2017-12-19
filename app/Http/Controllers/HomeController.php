@@ -49,7 +49,7 @@ class HomeController extends Controller
 
         $blogs = Blog::orderBy('created_at', 'DESC')
             ->publish()
-            ->take(5)
+            ->take(4)
             ->get();
 
         foreach ($blogs as $blog){
