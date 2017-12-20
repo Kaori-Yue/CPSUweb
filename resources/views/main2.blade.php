@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width">
     <title>@yield('title')</title>
+    <link rel="shortcut icon" href="{{ URL::asset('image/favicon.ico') }}">
     <link rel="stylesheet" href="{{ URL::asset('js/bower_components/OwlCarousel2-2.2.1/dist/assets/owl.carousel.min.css') }}" />
     <link rel="stylesheet" href="{{ URL::asset('js/bower_components/OwlCarousel2-2.2.1/dist/assets/owl.theme.default.min.css') }}" />
     <link rel="stylesheet" href="{{ URL::asset('css/font-awesome-4.7.0/css/font-awesome.css') }}" />

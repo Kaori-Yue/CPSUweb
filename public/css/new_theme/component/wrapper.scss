@@ -9,6 +9,9 @@
 
     a{
       color: $color-gray;
+      &:hover{
+        color: $color-green;
+      }
     }
 
     font-size: $font-small-description-mobile;
@@ -697,7 +700,7 @@
   margin: 10px 0;
   .list-btn-share{
     margin-left: 10px;
-    
+
     img{
       width: 30px;
       height: 30px;
