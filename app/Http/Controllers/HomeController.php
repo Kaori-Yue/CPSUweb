@@ -39,11 +39,13 @@ class HomeController extends Controller
 
         $blogs_a = Blog::orderBy('created_at', 'DESC')
             ->where('category_id','=',$category_id)
+            ->publish()
             ->take(3)
             ->get();
 
         $blogs_f = Blog::orderBy('created_at', 'DESC')
             ->where('featured', '=', '1')
+            ->publish()
             ->take(5)
             ->get();
 

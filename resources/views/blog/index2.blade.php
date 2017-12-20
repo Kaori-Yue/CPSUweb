@@ -33,15 +33,19 @@
             @if(count($category->blogs) != 0)
                 <ul class="wrapper-category-news">
                     @foreach($category->blogs as $blog)
-                        @if($loop->iteration <= 2)
-                            @include('blog._card2', $blog)
+                        @if($blog->status == 'publish')
+                            @if($loop->iteration <= 2)
+                                @include('blog._card2', $blog)
+                            @endif
                         @endif
                     @endforeach
                     <li class="list-card-news-category">
                         <ul class="wrapper-card-news">
                             @foreach($category->blogs as $blog)
-                                @if($loop->iteration > 2 && $loop->iteration <= 6)
-                                    @include('blog._card3', $blog)
+                                @if($blog->status == 'publish')
+                                    @if($loop->iteration > 2 && $loop->iteration <= 6)
+                                        @include('blog._card3', $blog)
+                                    @endif
                                 @endif
                             @endforeach
                                 <li class="list-wrapper-card-news">
