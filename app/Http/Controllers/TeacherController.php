@@ -177,8 +177,6 @@ class TeacherController extends Controller
         $teacher = Teacher::findOrFail($id);
         $editedTeacher = $request->all();
         $image = $request->file('image');
-        if(isset($image))
-        //$image = $this->base64_to_jpeg($request->get('new_image'), $image);
 
         $editedTeacher['rank'] = self::handleRank($editedTeacher);
 
