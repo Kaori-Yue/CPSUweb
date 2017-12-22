@@ -94,8 +94,7 @@ class StaffController extends Controller
         $editedStaff = $request->all();
 
         $image = $request->file('image');
-        if(isset($image))
-            //$image = $this->base64_to_jpeg($request->get('new_image'), $image);
+
         if(isset($image)){
             $file = self::storeImage($image, $request->get('new_image'), 'profile');
             $editedStaff['image'] = $file->id;
