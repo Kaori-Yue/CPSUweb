@@ -45,7 +45,11 @@
       &:hover{
         color: $color-green;
         .drop-down-menu{
-          display: block;
+
+
+          @media screen and (min-width: $device-computer) {
+            display: block;
+          }
         }
       }
 

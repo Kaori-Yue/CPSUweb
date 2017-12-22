@@ -34,9 +34,9 @@
                 เอกสาร
             </a>
 
-            <div class="menu-navbar-top">
+            <div class="menu-navbar-top" onclick="clickDescripttionMajor()">
                 เกี่ยวกับภาควิชา
-                <ul class="drop-down-menu">
+                <ul class="drop-down-menu" id="descriptionMenu">
                     <li class="list-menu-drop-down"><a href="{{ url('history') }}">ประวัติภาควิชา</a></li>
                     <li class="list-menu-drop-down"><a href="{{ url('contact') }}">ติดต่อภาควิชา</a></li>
                     <li class="list-menu-drop-down"><a href="{{ url('sitemap') }}">แผนผังเว็บไซต์</a></li>
@@ -147,6 +147,19 @@
 <script src="{{URL::asset('js/slide.js')}}"></script>
 <script src="{{URL::asset('js/fb.js')}}"></script>
 <script>
+    var isDescriptionMajor = false;
+
+    function clickDescripttionMajor() {
+
+        if(isDescriptionMajor){
+            var menu = document.getElementById("descriptionMenu");
+            menu.style.display = 'none';
+        }else{
+            var menu = document.getElementById("descriptionMenu");
+            menu.style.display = 'block';
+        }
+        isDescriptionMajor = !isDescriptionMajor;
+    }
 
     window.onscroll = function() {scrollFunction()};
 

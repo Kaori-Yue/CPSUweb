@@ -90,12 +90,8 @@
             {{--</ul>--}}
         {{--</div>--}}
     {{--</div>--}}
-@extends('main2')
 
-@section('title', "แผนผังเว็บไซต์")
 
-@section('content')
-    <div class="container-content">
         <ul class="wrapper-nav">
             <li class="list-nav">
                 <a href="{{url("")}}">
@@ -185,6 +181,5 @@
             </li>
 
         </ul>
-    </div>
 
-@endsection
+
