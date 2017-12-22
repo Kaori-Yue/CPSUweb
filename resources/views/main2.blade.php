@@ -39,6 +39,7 @@
                 <ul class="drop-down-menu">
                     <li class="list-menu-drop-down"><a href="{{ url('history') }}">ประวัติภาควิชา</a></li>
                     <li class="list-menu-drop-down"><a href="{{ url('contact') }}">ติดต่อภาควิชา</a></li>
+                    <li class="list-menu-drop-down"><a href="{{ url('sitemap') }}">แผนผังเว็บไซต์</a></li>
                 </ul>
             </div>
 

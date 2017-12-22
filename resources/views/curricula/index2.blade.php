@@ -16,6 +16,10 @@
         <li class="list-nav">หลักสูตร</li>
 
     </ul>
+    <div class="wrapper-header-title">
+        <h1 class="header-title ">หลักสูตร</h1>
+        <div class="line-header-title"></div>
+    </div>
 
     <ul class="wrapper-cand-all">
         <li class="list-wrapper-card-all">

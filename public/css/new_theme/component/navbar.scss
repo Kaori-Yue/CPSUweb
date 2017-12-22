@@ -70,7 +70,9 @@
           &:hover{
             color: $color-green;
           }
-
+          &:nth-last-of-type(2){
+            line-height: 2.5;
+          }
 
           &:nth-last-of-type(1){
             line-height: 2.5;

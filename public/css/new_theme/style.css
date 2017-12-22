@@ -567,6 +567,8 @@
           text-align: center; }
           .navbar-top .wrapper-manu-navbar-top .menu-navbar-top .drop-down-menu .list-menu-drop-down:hover {
             color: #117167; }
+          .navbar-top .wrapper-manu-navbar-top .menu-navbar-top .drop-down-menu .list-menu-drop-down:nth-last-of-type(2) {
+            line-height: 2.5; }
           .navbar-top .wrapper-manu-navbar-top .menu-navbar-top .drop-down-menu .list-menu-drop-down:nth-last-of-type(1) {
             line-height: 2.5;
             border-bottom: none; }
