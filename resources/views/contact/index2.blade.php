@@ -23,7 +23,7 @@
     <ul class="wrapper-detail-all">
         <li class="header-big-detail">ที่อยู่</li>
         <li class="list-detail-all">
-            <p class="header-small-detail">ภาษาไทย</p>
+            <p class="header-small-detail">ที่อยู่ภาษาไทย</p>
             <ul class="wrapper-small-detail">
                 <li class="list-small-detail">คณะวิทยาศาสตร์, มหาวิทยาลัยศิลปากร<br>
                     วิทยาเขต พระราชวังสนามจันทร์<br>
@@ -35,7 +35,7 @@
             </ul>
         </li>
         <li class="list-detail-all">
-            <p class="header-small-detail">ภาษาอังกฤษ</p>
+            <p class="header-small-detail">English Address</p>
             <ul class="wrapper-small-detail">
                 <li class="list-small-detail">Faculty of Science, Silpakorn University<br>
                     Sanam Chandra Palace Campus<br>
