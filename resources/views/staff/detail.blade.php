@@ -23,27 +23,7 @@
             <li class="list-nav">$staff_read->name_th</li>
         </ul>
         
-        <div class="wrapper-header-title">
-            <h1 class="header-title">บุคลากรสายสนับสนุนวิชาการ</h1>
-            <div class="wrapper-buttom-next-previous">
-                <button class="button-previous" id="btn-prve-staff">
-                    <img src="{{ URL::asset('image/chevron-left.svg') }}">
-                </button>
-                <button class="button-next" id="btn-next-staff">
-                    <img src="{{ URL::asset('image/chevron-right.svg') }}">
-                </button>
-            </div>
-            <div class="line-header-title"></div>
-        </div>
-
-        <ul class="wrapper-card-person-read-person owl-carousel-staff owl-carousel" id="staff">
-            @foreach($staffs as $staff)
-                <li class="list-wrapper-card-person-read-person">
-                    @include('staff._card2', $staff)
-                </li>
-            @endforeach
-
-        </ul>
+        
 
         <div class="card-read-person">
             <div class="header-card-read-person">
@@ -91,5 +71,26 @@
                 </li>
             </ul>
         </div>
+        <div class="wrapper-header-title">
+            <h1 class="header-title">บุคลากรสายสนับสนุนวิชาการ</h1>
+            <div class="wrapper-buttom-next-previous">
+                <button class="button-previous" id="btn-prve-staff">
+                    <img src="{{ URL::asset('image/chevron-left.svg') }}">
+                </button>
+                <button class="button-next" id="btn-next-staff">
+                    <img src="{{ URL::asset('image/chevron-right.svg') }}">
+                </button>
+            </div>
+            <div class="line-header-title"></div>
+        </div>
+
+        <ul class="wrapper-card-person-read-person owl-carousel-staff owl-carousel" id="staff">
+            @foreach($staffs as $staff)
+                <li class="list-wrapper-card-person-read-person">
+                    @include('staff._card2', $staff)
+                </li>
+            @endforeach
+
+        </ul>
     </div>
 @endsection

@@ -22,28 +22,7 @@
             </li>
             <li class="list-nav">$teacher_read->name_th</li>
         </ul>
-        <div class="wrapper-header-title">
-            <h1 class="header-title">บุคลากรสายวิชาการ</h1>
-            <div class="wrapper-buttom-next-previous">
-                <button class="button-previous" id="btn-prve-teacher">
-                    <img src="{{ URL::asset('image/chevron-left.svg') }}">
-                </button>
-                <button class="button-next" id="btn-next-teacher">
-                    <img src="{{ URL::asset('image/chevron-right.svg') }}">
-                </button>
-            </div>
-            <div class="line-header-title"></div>
-        </div>
-
-        <ul class="wrapper-card-person-read-person owl-carousel-teachers owl-carousel" id="teachers">
-            @foreach($teachers as $teacher)
-                <li class="list-wrapper-card-person-read-person">
-                    @include('teacher._card2', $teacher)
-                </li>
-            @endforeach
-
-        </ul>
-
+        
         <div class="card-read-person">
             <div class="header-card-read-person">
                 <img class="image-header-card-person" src="{{url('image/crop/'.$teacher_read->image)}}"/>
@@ -109,5 +88,26 @@
                 </li>
             </ul>
         </div>
+        <div class="wrapper-header-title">
+            <h1 class="header-title">บุคลากรสายวิชาการ</h1>
+            <div class="wrapper-buttom-next-previous">
+                <button class="button-previous" id="btn-prve-teacher">
+                    <img src="{{ URL::asset('image/chevron-left.svg') }}">
+                </button>
+                <button class="button-next" id="btn-next-teacher">
+                    <img src="{{ URL::asset('image/chevron-right.svg') }}">
+                </button>
+            </div>
+            <div class="line-header-title"></div>
+        </div>
+
+        <ul class="wrapper-card-person-read-person owl-carousel-teachers owl-carousel" id="teachers">
+            @foreach($teachers as $teacher)
+                <li class="list-wrapper-card-person-read-person">
+                    @include('teacher._card2', $teacher)
+                </li>
+            @endforeach
+
+        </ul>
     </div>
 @endsection
