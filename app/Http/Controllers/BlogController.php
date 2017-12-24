@@ -337,7 +337,10 @@ class BlogController extends Controller
             abort(404);
         }
 
-        $blogs = Blog::where('category_id', $category_id[0]['id'])->orderBy('created_at','DESC')->paginate(8);
+        $blogs = Blog::where('category_id', $category_id[0]['id'])
+            ->publish()
+            ->orderBy('created_at','DESC')
+            ->paginate(8);
 
         //$blogs = $categories->blogs()->paginate(8);
         /*if ($category == 'featured-news'){
