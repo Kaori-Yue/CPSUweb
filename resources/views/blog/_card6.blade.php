@@ -1,9 +1,9 @@
 <li class="list-wrapper-card-news">
     <div class="card-news-vertical">
-        <a href="{{url("blog/". $blog_f->slug)}}">
+        <a href="{{url("news/". $blog_f->slug)}}">
             <img class="image-card-news-vertical" src="{{ url('image/crop/'.$blog_f->cover) }}">
         </a>
-        <a href="{{url("blog/". $blog_f->slug)}}">
+        <a href="{{url("news/". $blog_f->slug)}}">
             <h3 class="title-card-news-vertical">{{$blog_f->title}}</h3>
         </a>
         <p class="description-card-news-vertical">{!! $blog_f->description !!}</p>
