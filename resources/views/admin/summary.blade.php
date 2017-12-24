@@ -8,8 +8,8 @@
         <div class="col-md-6 col-sm-6" style="padding: 10px">
             <div class="summary-card">
                 <h2>
-                    <a href="{{ url('admin/blog') }}">Blog</a>
-                    <a href="{{ url('admin/blog/create') }}" class="btn btn-default">Create</a>
+                    <a href="{{ url('admin/news') }}">News</a>
+                    <a href="{{ url('admin/news/create') }}" class="btn btn-default">Create</a>
                 </h2>
                 <hr>
                 <div id="blogchart" class="chart"></div>

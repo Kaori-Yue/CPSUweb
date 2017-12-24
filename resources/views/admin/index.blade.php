@@ -20,12 +20,12 @@
                         Curricula
                     </a>
 
-                    <a href="{{ url('admin/blog') }}" class="
-                    @if (Request::is('admin/blog/*'))btn btn-success
-                    @elseif(Request::is('admin/blog'))btn btn-success
-                    @elseif(Request::is('blog/*/edit'))btn btn-success
+                    <a href="{{ url('admin/news') }}" class="
+                    @if (Request::is('admin/news/*'))btn btn-success
+                    @elseif(Request::is('admin/news'))btn btn-success
+                    @elseif(Request::is('news/*/edit'))btn btn-success
                     @else btn btn-default @endif ">
-                        Blog
+                        News
                     </a>
                 </div>
             </div>
