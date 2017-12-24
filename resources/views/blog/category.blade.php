@@ -11,7 +11,7 @@
             <li class="list-nav">
                 <img src="{{ URL::asset('image/chevron-right-green.svg') }}" class="image-chevron-right-list-nav">
             </li>
-            <li class="list-nav"><a href={{url("blog")}}>ข่าวสาร</a></li>
+            <li class="list-nav"><a href={{url("news")}}>ข่าวสาร</a></li>
             <li class="list-nav">
                 <img src="{{ URL::asset('image/chevron-right-green.svg') }}" class="image-chevron-right-list-nav">
             </li>

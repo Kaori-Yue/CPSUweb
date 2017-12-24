@@ -19,7 +19,7 @@
         <h1 class="brand-navbar-top"><a href="{{ url('') }}">ภาควิชาคอมพิวเตอร์ มศก.</a></h1>
 
         <div class="wrapper-manu-navbar-top">
-            <a class="menu-navbar-top" href="{{ url('blog') }}">
+            <a class="menu-navbar-top" href="{{ url('news') }}">
                 ข่าวสาร
             </a>
             <a class="menu-navbar-top" href="{{ url('curricula') }}">
@@ -48,7 +48,7 @@
         <button class="btn-hamberger" onclick="clickBtnMenu()"><i class="fa fa-bars" aria-hidden="true"></i></button>
         <ul class="wrapper-list-nav-mobile" id="menuMobile">
             <li class="list-nav-mobile">
-                <a href="{{ url('blog') }}">
+                <a href="{{ url('news') }}">
                     ข่าวสาร
                 </a>
             </li>
