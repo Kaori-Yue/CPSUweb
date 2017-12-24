@@ -118,7 +118,7 @@
             ]);
 
             var options = {
-                title: 'Blog Summary',
+                title: 'News Summary',
                 pieHole: 0.2,
             };
 
