@@ -20,7 +20,7 @@
             <li class="list-nav">
                 <img src="{{ URL::asset('image/chevron-right-green.svg') }}" class="image-chevron-right-list-nav">
             </li>
-            <li class="list-nav">$staff_read->name_th</li>
+            <li class="list-nav">{{$staff_read->name_th}}</li>
         </ul>
         
         
