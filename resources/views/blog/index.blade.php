@@ -15,7 +15,7 @@
                     @foreach($features as $blog)
                         <div class="item @if($loop->first) active @endif"
                              style="background-image: url('{{ url('image/show/'.$blog->cover) }}');background-size: cover;">
-                            <a href="{{ url('blog/'.$blog->slug) }}">
+                            <a href="{{ url('news/'.$blog->slug) }}">
                                 <div class="carousel-caption">
                                     <h3>{{ $blog->title }}</h3>
                                 </div>
@@ -45,7 +45,7 @@
                 @include('blog._bcard', $blog)
             @endforeach
             <div class="col-md-12 col-xs-12" style="text-align: right">
-                <h4><a href="{{ url('blog/category/featured-news') }}">ข่าวเด่นเพิ่มเติม ></a></h4>
+                <h4><a href="{{ url('news/category/featured-news') }}">ข่าวเด่นเพิ่มเติม ></a></h4>
             </div>
             <script>
                 $(document).ready(function(){
@@ -64,7 +64,7 @@
                 @include('blog._card', $blog)
             @endforeach
             <div class="col-md-12 col-xs-12" style="text-align: right">
-                <h4><a href="{{ url('blog/category/latest-news') }}">ข่าวล่าสุดเพิ่มเติม ></a></h4>
+                <h4><a href="{{ url('news/category/latest-news') }}">ข่าวล่าสุดเพิ่มเติม ></a></h4>
             </div>
             <script>
                 $(document).ready(function(){

@@ -1,12 +1,12 @@
 <div class="col-md-6 col-sm-6 col-xs-12 row-card" style="padding: 10px;">
     <div class="blog-card">
         <div class="card-bg" style="background-image: url('{{ url('image/show/'.$blog->cover) }}')">
-            <a href="{{ url('blog/'.$blog->slug) }}">
+            <a href="{{ url('news/'.$blog->slug) }}">
                 <div style="height: 65%"></div>
             </a>
         </div>
         <div class="card-caption" data-toggle="tooltip" data-placement="auto bottom" title="{{ $blog->title }}">
-            <a href="{{ url('blog/'.$blog->slug) }}" style="text-decoration: none">
+            <a href="{{ url('news/'.$blog->slug) }}" style="text-decoration: none">
                 @if(mb_strlen($blog->title, 'UTF-8') < 35)
                     <h2><span>{!! iconv_substr($blog->title, 0, 35, 'UTF-8') !!}</span></h2>
                 @else
@@ -52,7 +52,7 @@
     </div>
     @if(Request::is('admin/*'))
         <div class="col-md-6 col-xs-6">
-            <a href="{{ url('blog/'.$blog->slug.'/edit') }}" class="btn btn-warning btn-lg btn-block">
+            <a href="{{ url('news/'.$blog->slug.'/edit') }}" class="btn btn-warning btn-lg btn-block">
                 Edit
                 <span class="glyphicon glyphicon-wrench"></span>
             </a>
@@ -71,7 +71,7 @@
                             <p>Do you want to delete this blog ?</p>
                         </div>
                         <div class="modal-footer">
-                            {!! Form::model($blog, ['method' => 'DELETE', 'url'=>'blog/'.$blog->id]) !!}
+                            {!! Form::model($blog, ['method' => 'DELETE', 'url'=>'news/'.$blog->id]) !!}
                             <button class="btn btn-danger btn-block" type="submit">
                                 Delete
                             </button>
