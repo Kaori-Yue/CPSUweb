@@ -64,7 +64,7 @@
                         @include('blog._card7', $blog)
                     @endforeach
                     <li class="list-wrapper-card-news">
-                        <a href="blog" class="watch-more-card-news">ดูข่าวทั้งหมด</a>
+                        <a href="news" class="watch-more-card-news">ดูข่าวทั้งหมด</a>
                     </li>
                 </ul>
             </li>
