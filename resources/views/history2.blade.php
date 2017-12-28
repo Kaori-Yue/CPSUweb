@@ -16,7 +16,7 @@
             <li class="list-nav">ประวัติภาควิชา</li>
         </ul>
         <div class="wrapper-header-title">
-            <h1 class="header-title color-green">ภาควิชาคอมพิวเตอร์ คณะวิทยาศาสตร์ มหาวิทยาลัยศิลปากร</h1>
+            <h1 class="header-title">ภาควิชาคอมพิวเตอร์ คณะวิทยาศาสตร์ มหาวิทยาลัยศิลปากร</h1>
             <div class="line-header-title"></div>
         </div>
         <img src="{{URL::asset('image/header_cp.jpg')}}" class="image-history">
