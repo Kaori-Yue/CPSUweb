@@ -130,6 +130,9 @@
                     <li>
                         <a href="{{ url('contact') }}">ติดต่อภาควิชา</a>
                     </li>
+                    <li>
+                        <a href="{{ url('sitemap') }}">แผนผังเว็บไซต์</a>
+                    </li>
 
                 </ul>
             </li>
@@ -174,7 +177,7 @@
 
 
 
-    
+
     function topFunction() {
         document.body.scrollTop = 0;
         document.documentElement.scrollTop = 0;
