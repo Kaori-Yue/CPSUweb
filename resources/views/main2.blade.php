@@ -34,14 +34,14 @@
                 เอกสาร
             </a>
 
-            <div class="menu-navbar-top" onclick="clickDescripttionMajor()">
+            <a class="menu-navbar-top" href="{{url('department')}}">
                 เกี่ยวกับภาควิชา
-                <ul class="drop-down-menu" id="descriptionMenu">
-                    <li class="list-menu-drop-down"><a href="{{ url('history') }}">ประวัติภาควิชา</a></li>
-                    <li class="list-menu-drop-down"><a href="{{ url('contact') }}">ติดต่อภาควิชา</a></li>
-                    <li class="list-menu-drop-down"><a href="{{ url('sitemap') }}">แผนผังเว็บไซต์</a></li>
-                </ul>
-            </div>
+                {{--<ul class="drop-down-menu" id="descriptionMenu">--}}
+                    {{--<li class="list-menu-drop-down"><a href="{{ url('history') }}">ประวัติภาควิชา</a></li>--}}
+                    {{--<li class="list-menu-drop-down"><a href="{{ url('contact') }}">ติดต่อภาควิชา</a></li>--}}
+                    {{--<li class="list-menu-drop-down"><a href="{{ url('sitemap') }}">แผนผังเว็บไซต์</a></li>--}}
+                {{--</ul>--}}
+            </a>
 
 
         </div>
@@ -68,13 +68,14 @@
                 </a>
             </li>
             <li class="list-nav-mobile">
-                เกี่ยวกับภาควิชา
-                <ul class="sub-wrapper-mobile">
-                    <li class="list-sub-wrapper-mobile">
-                        <a href="{{ url('history') }}">ประวัติภาควิชา</a>
-                    </li>
-                    <li class="list-sub-wrapper-mobile"><a href="{{ url('contact') }}">ติดต่อภาควิชา</a></li>
-                </ul>
+                <a href="{{ url('department') }}">เกี่ยวกับภาควิชา</a>
+
+                {{--<ul class="sub-wrapper-mobile">--}}
+                    {{--<li class="list-sub-wrapper-mobile">--}}
+                        {{--<a href="{{ url('history') }}">ประวัติภาควิชา</a>--}}
+                    {{--</li>--}}
+                    {{--<li class="list-sub-wrapper-mobile"><a href="{{ url('contact') }}">ติดต่อภาควิชา</a></li>--}}
+                {{--</ul>--}}
             </li>
         </ul>
     </div>

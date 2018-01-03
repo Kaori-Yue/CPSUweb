@@ -13,6 +13,11 @@
             <li class="list-nav">
                 <img src="{{ URL::asset('image/chevron-right-green.svg') }}" class="image-chevron-right-list-nav">
             </li>
+            <li class="list-nav"><a href="{{url("department")}}">เกี่ยวกับภาควิชา</a></li>
+
+            <li class="list-nav">
+                <img src="{{ URL::asset('image/chevron-right-green.svg') }}" class="image-chevron-right-list-nav">
+            </li>
             <li class="list-nav">ประวัติภาควิชา</li>
         </ul>
         <div class="wrapper-header-title">

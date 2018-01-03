@@ -161,7 +161,9 @@ Route::group(['middleware' => 'auth'], function (){
         #Route::get('teacher/blog', 'AdminController@blog');
     });
 });
-
+Route::get('department', function (){
+    return view('department');
+});
 
 Route::get('history', function (){
     return view('history2');
