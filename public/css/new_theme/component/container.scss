@@ -25,7 +25,8 @@
   padding: 0 10px;
   position: relative;
 
-  padding-bottom: 442px;
+  padding-bottom: 42px;
+  -webkit-padding-after: 42px;
 
   @media screen and (min-width: $device-tablet) {
     width: $device-tablet;
@@ -33,6 +34,7 @@
     padding: 0 20px;
     margin: auto;
     padding-bottom: 328px;
+
 
 
   }

@@ -17,7 +17,8 @@
   width: 100%;
   padding: 0 10px;
   position: relative;
-  padding-bottom: 442px; }
+  padding-bottom: 42px;
+  -webkit-padding-after: 42px; }
   @media screen and (min-width: 768px) {
     .container-content {
       width: 768px;
@@ -874,8 +875,8 @@
     background-color: #ffffff;
     box-shadow: 0 19px 38px rgba(0, 0, 0, 0.3), 0 15px 12px rgba(0, 0, 0, 0.22); }
   .card-type-person .image-card-type-person {
-    display: block;
     margin: auto;
+    display: block;
     width: 60px;
     height: 60px; }
     @media screen and (min-width: 768px) {
@@ -1209,7 +1210,8 @@ a {
 .description-history {
   font-weight: 100;
   font-family: Thonburi;
-  font-size: 14px; }
+  font-size: 14px;
+  margin-bottom: 10px; }
   @media screen and (min-width: 768px) {
     .description-history {
       font-size: 16px; } }
@@ -1279,8 +1281,5 @@ a {
   width: 100%;
   height: auto;
   margin-bottom: 10px; }
-  @media screen and (min-width: 768px) {
-    .image-history {
-      margin-bottom: 20px; } }
 
 /*# sourceMappingURL=style.css.map */

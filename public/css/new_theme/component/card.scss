@@ -88,6 +88,7 @@
 
 .card-news-horizontal{
   width: 100%;
+
   display: inline-block;
   a{
     color: black;
@@ -203,14 +204,13 @@
   max-height: 110px;
   cursor: pointer;
   padding: 10px 0;
-
   &:hover{
     background-color: $color-white;
     box-shadow: 0 19px 38px rgba(0,0,0,0.30), 0 15px 12px rgba(0,0,0,0.22);
   }
   .image-card-type-person{
-    display: block;
     margin: auto;
+    display: block;
     width: 60px;
     height: 60px;
     @media screen and (min-width: $device-tablet) {

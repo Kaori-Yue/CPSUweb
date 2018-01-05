@@ -56,6 +56,7 @@ a{
   font-weight: 100;
   font-family: Thonburi;
   font-size: $font-big-description-mobile;
+  margin-bottom: 10px;
   @media screen and (min-width: $device-tablet) {
     font-size: $font-big-description-tablet-computer;
 
@@ -154,7 +155,7 @@ a{
   height: auto;
   margin-bottom: 10px;
   @media screen and (min-width: $device-tablet) {
-    margin-bottom: 20px;
+    
   }
   @media screen and (min-width: $device-computer) {
 
