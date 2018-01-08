@@ -723,6 +723,7 @@
   display: flex;
   list-style-type: none;
   flex-wrap: wrap;
+  box-sizing: border-box;
   .list-wrapper-4card{
     margin-bottom: 10px;
     width: 100%;

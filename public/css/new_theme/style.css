@@ -422,7 +422,8 @@
 .wrapper-4card {
   display: flex;
   list-style-type: none;
-  flex-wrap: wrap; }
+  flex-wrap: wrap;
+  box-sizing: border-box; }
   .wrapper-4card .list-wrapper-4card {
     margin-bottom: 10px;
     width: 100%; }
