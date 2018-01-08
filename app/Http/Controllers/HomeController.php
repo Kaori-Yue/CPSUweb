@@ -76,7 +76,7 @@ class HomeController extends Controller
 
         $curriculas = Curricula::enable()->take(2)->get();
         return  view('home2', [
-            'bookmark' => $bookmark,
+            'bookmarks' => $bookmark,
             'blogs' => $blogs,
             'blogs_f' => $blogs_f,
             'blogs_a' => $blogs_a,
