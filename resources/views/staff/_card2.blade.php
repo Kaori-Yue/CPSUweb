@@ -41,14 +41,15 @@
             ">
 
         <img class="image-card-person" src="{{url('image/crop/'.$staff->image)}}" />
+        <p class="name-card-person">{{$staff->name_th}}</p>
         <h3 class="role-card-person">
             @if($staff->position != '')
                 <span class="position-card-person">{{$staff->position}}</span>
             @else
-                <span class="position-card-person"></span>
+                <span class="position-card-person">พนักงาน</span>
             @endif
         </h3>
-        <p class="name-card-person">{{$staff->name_th}}</p>
+
     </div>
 </a>
 

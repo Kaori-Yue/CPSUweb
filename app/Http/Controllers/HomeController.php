@@ -34,6 +34,9 @@ class HomeController extends Controller
             die("Could not connect to the database.  Please check your configuration.");
         }
 
+        $bookmark = Blog::where('featured')
+            ->publish();
+
         $category_id = Category::where('slug','=','ประกาศ')
             ->pluck('id');
 
@@ -73,6 +76,7 @@ class HomeController extends Controller
 
         $curriculas = Curricula::enable()->take(2)->get();
         return  view('home2', [
+            'bookmark' => $bookmark,
             'blogs' => $blogs,
             'blogs_f' => $blogs_f,
             'blogs_a' => $blogs_a,
