@@ -425,21 +425,23 @@
     height: auto;
   }
   .role-card-person{
-    font-size: $font-small-title-mobile;
+
+    font-size: $font-small-description-mobile;
     font-weight: 100;
     color: $color-green;
     margin-top: 10px;
     text-align: center;
     @media screen and (min-width: $device-tablet) {
-      font-size: $font-small-title-tablet-computer;
+      font-size: $font-small-description-tablet-computer;
+
     }
     @media screen and (min-width: $device-computer) {
 
     }
   }
   .name-card-person{
-    margin-top: 10px;
-    font-size: $font-big-description-mobile;
+
+    font-size: $font-big-title-mobile;
     font-weight: 100;
     text-align: center;
     @media screen and (min-width: $device-tablet) {

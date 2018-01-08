@@ -16,7 +16,7 @@
 <body>
 <nav class="navbar-top">
     <div class="container">
-        <h1 class="brand-navbar-top"><a href="{{ url('') }}">ภาควิชาคอมพิวเตอร์ มศก.</a></h1>
+        <h1 class="brand-navbar-top"><a href="{{ url('') }}">ภาควิชาคอมพิวเตอร์ มหาวิทยาลัยศิลปากร</a></h1>
 
         <div class="wrapper-manu-navbar-top">
             <a class="menu-navbar-top" href="{{ url('news') }}">
@@ -86,7 +86,7 @@
     <div class="container">
         <ul class="row-menu-navbar-bottom">
             <li class="col-menu-navbar-bottom">
-                <h2 class="brand-navbar-bottom">ภาควิชาคอมพิวเตอร์ คณะวิทยาศาสตร์ <br>มหาวิทยาลัยศิลปากร</h2>
+                <h2 class="brand-navbar-bottom">ภาควิชาคอมพิวเตอร์ คณะวิทยาศาสตร์ มหาวิทยาลัยศิลปากร</h2>
                 <p class="follow-us">ติดตามภาควิชา</p>
                 <ul class="menu-social">
                     <li class="logo-social">

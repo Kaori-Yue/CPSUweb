@@ -55,13 +55,14 @@
 ">
 
         <img class="image-card-person" src="{{url('image/crop/'.$teacher->image)}}" />
+        <p class="name-card-person">{{$teacher->name_th}}</p>
         <h3 class="role-card-person">
             @if($teacher->position != '')
                 <span class="position-card-person">{{$teacher->position}}</span>
             @else
-                <span class="position-card-person">อาจารย์</span>
+                <span class="position-card-person">อาจารย์ประจำภาควิชา</span>
             @endif
         </h3>
-        <p class="name-card-person">{{$teacher->name_th}}</p>
+
     </div>
 </a>

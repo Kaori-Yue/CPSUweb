@@ -22,7 +22,10 @@
             </li>
             <li class="list-nav">{{$staff_read->name_th}}</li>
         </ul>
-        
+        <div class="wrapper-header-title">
+            <h1 class="header-title">บุคลากรสายสนับสนุนวิชาการ</h1>
+            <div class="line-header-title"></div>
+        </div>
         
 
         <div class="card-read-person">

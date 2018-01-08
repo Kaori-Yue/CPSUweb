@@ -1006,17 +1006,16 @@
     width: 100%;
     height: auto; }
   .card-person .role-card-person {
-    font-size: 16px;
+    font-size: 12px;
     font-weight: 100;
     color: #117167;
     margin-top: 10px;
     text-align: center; }
     @media screen and (min-width: 768px) {
       .card-person .role-card-person {
-        font-size: 18px; } }
+        font-size: 12px; } }
   .card-person .name-card-person {
-    margin-top: 10px;
-    font-size: 14px;
+    font-size: 18px;
     font-weight: 100;
     text-align: center; }
     @media screen and (min-width: 768px) {
