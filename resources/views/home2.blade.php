@@ -26,9 +26,9 @@
     {{--</div>--}}
     <div class="container-content">
         <ul class="wrapper-image-slide-announcement owl-carousel-announcement-home-page owl-carousel owl-theme">
-            @foreach($bookmarks as $bookmark)
+            @foreach($blogs_a as $blog_a)
             <li class="wrapper-image-slide-announcement">
-                <a href="{{"blog/". $bookmark->slug}}"><img src="{{ url('image/crop/'.$bookmark->cover) }}" /></a>
+                <a href="{{"blog/". $blog_a->slug}}"><img src="{{ url('image/crop/'.$blog_a->cover) }}" /></a>
             </li>
             @endforeach
         </ul>

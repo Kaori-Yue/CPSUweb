@@ -34,7 +34,7 @@ class HomeController extends Controller
             die("Could not connect to the database.  Please check your configuration.");
         }
 
-        $bookmark = Blog::where('featured')
+        $bookmark = Blog::where('featured', '=', 1)
             ->publish();
 
         $category_id = Category::where('slug','=','ประกาศ')
