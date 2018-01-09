@@ -1,6 +1,6 @@
 @extends('main2')
 
-@section('title', "ไม่พบหน้านี้ในระบบ")
+@section('title', "404 - Page not found")
 
 @section('content')
     <div class="container-content">
