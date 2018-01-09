@@ -42,7 +42,7 @@ class HomeController extends Controller
             ->pluck('id');
 
         $blogs_a = Blog::orderBy('created_at', 'DESC')
-            ->where('category_id','=',$category_id)
+            ->where('category_id','=', $category_id)
             ->publish()
             ->take(3)
             ->get();
