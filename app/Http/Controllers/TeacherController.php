@@ -109,6 +109,9 @@ class TeacherController extends Controller
         if($teacher['position'] == 'หัวหน้าภาควิชา'){
             return 100;
         }
+        if (strpos($teacher['position'], 'รองหัวหน้าภาควิชาฝ่าย') !== false) {
+            return 85;
+        }
         if (strpos($teacher['position'], 'รองหัวหน้าภาควิชา') !== false) {
             return 90;
         }
