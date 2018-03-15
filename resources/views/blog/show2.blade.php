@@ -81,7 +81,7 @@
             FB.ui({
                 method: 'share',
                 display: 'popup',
-                href: '{{ $blog->id }}'
+                href: '{{ url() }}'
             }, function(response){});
         };
 
