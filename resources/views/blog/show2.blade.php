@@ -10,6 +10,8 @@
     <meta property="og:image" content="{{ url('image/show/'.$blog->cover) }}">
     <meta property="og:url" content="{{ url('news/'.$blog->slug) }}">
 
+
+
     <meta name="twitter:card" content="summary" />
     <meta name="twitter:title" content="{{ $blog->title }}" />
     <meta name="twitter:description" content="{{$blog->description}}" />
@@ -79,7 +81,7 @@
             FB.ui({
                 method: 'share',
                 display: 'popup',
-                href: '{{ url('news/'.$blog->slug) }}',
+                href: '{{ url('news/') }}',
             }, function(response){});
         };
 
