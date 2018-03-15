@@ -8,7 +8,7 @@
     <meta property="og:description" content="{{$blog->description}}">
     <meta property="og:locale" content="th_TH">
     <meta property="og:image" content="{{ url('image/show/'.$blog->cover) }}">
-    <meta property="og:url" content="{{ 'http://202.28.72.71/news/'.$blog->slug }}">
+    <meta property="og:url" content="{{ url('news/'.$blog->slug) }}">
 
     <meta name="twitter:card" content="summary" />
     <meta name="twitter:title" content="{{ $blog->title }}" />
