@@ -81,7 +81,7 @@
             FB.ui({
                 method: 'share',
                 display: 'popup',
-                href: '{{ url('news/') }}',
+                href: '{{ url('news/'.$blog->slug) }}'
             }, function(response){});
         };
 
