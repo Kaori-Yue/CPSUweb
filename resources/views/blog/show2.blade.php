@@ -7,6 +7,7 @@
     <meta property="og:type" content="article">
     <meta property="og:description" content="{{$blog->description}}">
     <meta property="og:image" content="{{ url('image/show/'.$blog->cover) }}">
+    <meta property="og:url" content="{{ url('news/'.$blog->slug) }}">
 
 
 
