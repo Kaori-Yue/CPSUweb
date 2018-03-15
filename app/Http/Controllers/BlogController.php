@@ -306,6 +306,7 @@ class BlogController extends Controller
 
         //return $relateBlogs;
         return view('blog.show2', [
+            'url' => 'https://cp.su.ac.th/news/'.$blog->slug,
             'title' => $title,
             'blog' => $blog,
             'relateBlogs' => $relateBlogs
