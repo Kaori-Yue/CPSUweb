@@ -6,7 +6,6 @@
     <meta property="og:title"  content="{{$blog->title}}" />
     <meta property="og:type" content="article">
     <meta property="og:description" content="{{$blog->description}}">
-    <meta property="og:locale" content="th_TH">
     <meta property="og:image" content="{{ url('image/show/'.$blog->cover) }}">
     <meta property="og:url" content="{{ url('news/'.$blog->slug) }}">
 
@@ -81,7 +80,7 @@
             FB.ui({
                 method: 'share',
                 display: 'popup',
-                href: '{{ url('') }}'
+                href: '{{ url('news/'.$blog->slug) }}'
             }, function(response){});
         };
 
