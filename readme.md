@@ -1,3 +1,5 @@
+![SCSulogo](https://raw.githubusercontent.com/MigMikael/CPSUweb/master/public/image/SC-SU-Formal-TH_resize.png)
+
 # CPSUweb
 เว็บไซต์ภาควิชาคอมพิวเตอร์ คณะวิทยาศาสตร์ มหาวิทยาลัยศิลปากร
 
