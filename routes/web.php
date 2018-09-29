@@ -21,7 +21,7 @@ Auth::routes();
 Route::get('/', 'HomeController@index');
 Route::get('home', 'HomeController@index')->name('home');
 Route::get('news', 'BlogController@index');
-//Route::get('research', 'ResearchController@index');
+Route::get('research', 'ResearchController@index');
 Route::get('staff', 'StaffController@index');
 Route::get('person', 'UserController@index');
 Route::get('teacher', 'TeacherController@index');
@@ -35,7 +35,7 @@ Route::get('curricula/doctor', 'CurriculaController@doctor');
 
 
 Route::get('news/{slug}', 'BlogController@show');
-//Route::get('research/{slug}', 'ResearchController@show');
+Route::get('research/{slug}', 'ResearchController@show');
 Route::get('curricula/{slug}', 'CurriculaController@show');
 Route::get('teacher/{id}', 'TeacherController@show');
 Route::get('staff/{id}', 'StaffController@show');

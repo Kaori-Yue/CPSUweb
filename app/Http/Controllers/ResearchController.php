@@ -7,6 +7,7 @@ use App\ResearchImage;
 use Illuminate\Http\Request;
 use App\Traits\FileTrait;
 use App\Traits\ImageTrait;
+use App\Teacher;
 
 class ResearchController extends Controller
 {
@@ -147,8 +148,10 @@ class ResearchController extends Controller
 
     public function show($slug)
     {
-        $research = Research::where('slug', $slug)->firstOrFail();
-        return view('research.show', ['research' => $research]);
+        $teacher = Teacher::findOrFail($slug);
+        return dd($teacher);
+        // $research = Research::where('slug', $slug)->firstOrFail();
+        // return view('research.show', ['research' => $research]);
     }
 
     public function handleSlug($str)
