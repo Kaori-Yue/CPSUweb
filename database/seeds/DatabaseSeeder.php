@@ -18,10 +18,11 @@ class DatabaseSeeder extends Seeder
         // $this->call(TagTableSeeder::class);
         // $this->call(BlogTagTableSeeder::class);
         $this->call(ImageTableSeeder::class);
-        // $this->call(FileTableSeeder::class);
+        $this->call(FileTableSeeder::class);
         $this->call(CurriculaTableSeeder::class);
         $this->call(StudentTableSeeder::class);
         $this->call(StaffTableSeeder::class);
         $this->call(DocumentTableSeeder::class);
+        $this->call(ResearchTableSeeder::class);
     }
 }

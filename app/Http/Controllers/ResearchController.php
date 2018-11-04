@@ -146,10 +146,23 @@ class ResearchController extends Controller
         //return $new_research;
     }
 
-    public function show($slug)
+    public function show($id)
     {
-        $teacher = Teacher::findOrFail($slug);
-        return dd($teacher);
+        $teacher = Teacher::findOrFail($id);
+        $teachers = $teachers = Teacher::duty()
+            ->orderBy('rank', 'desc')
+            ->orderBy('name_th')
+            ->get();;
+        return view('research.detail',['teacher_read' => $teacher, 'teachers' => $teachers]);
+
+
+        // $researches = Research::findOrFail($slug);
+        // return view('research.edit', ['research' => $research]);
+        // return dd($researches);
+        // return view('research.detail', ['research' => $researches])->render();
+
+        // return view('name', $data)->render();
+        // return dd($teacher);
         // $research = Research::where('slug', $slug)->firstOrFail();
         // return view('research.show', ['research' => $research]);
     }
