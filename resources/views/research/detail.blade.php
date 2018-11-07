@@ -22,7 +22,7 @@
             <li class="list-nav">
                 <img src="{{ URL::asset('image/chevron-right-green.svg') }}" class="image-chevron-right-list-nav">
             </li>
-			<li class="list-nav">{{$teacher_read->name_th}}</li>
+			<li class="list-nav"><a href="{{url("teacher/$teacher_read->id")}}">{{$teacher_read->name_th}}</a></li>
 			{{-- EDIT NAV BAR --}}
 			<li class="list-nav">
 					<img src="{{ URL::asset('image/chevron-right-green.svg') }}" class="image-chevron-right-list-nav">
@@ -37,7 +37,6 @@
 
 
 {{--  --}}
-
 
         <div class="card-read-person" style="font-weight: 100">
             <div style="display: flex"> {{-- CONTAINER --}}
