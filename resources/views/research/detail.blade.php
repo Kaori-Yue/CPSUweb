@@ -3,6 +3,7 @@
 
 @section('title', "บุคลากรสายวิชาการ")
 @section('content')
+<link rel="stylesheet" href="{{ URL::asset('css/new_theme/research.css') }}" />
     <div class="container-content">
         <ul class="wrapper-nav">
             <li class="list-nav">
@@ -33,9 +34,87 @@
             <h1 class="header-title">บุคลากรสายวิชาการ</h1>
             <div class="line-header-title"></div>
         </div>
-		
+
+
+{{--  --}}
+
+
+        <div class="card-read-person" style="font-weight: 100">
+            <div style="display: flex"> {{-- CONTAINER --}}
+                <div style="flex: 25%; background-color: #117167; border-radius: 50px 20px; padding: 15px; margin-bottom: 20px; height: 600px; min-width: 220px"> {{-- LEFT IMAGE --}} 
+                        <p class="name-th-card-read-person" style="text-align: center; color: #fff; margin-bottom: 5px; font-weight: bold">{{$teacher_read->name_th}}</p>
+                        <img class="image-header-card-person" style="width: 100%" src="{{url('image/crop/'.$teacher_read->image)}}"/>
+                        <div style="color: #fff"> {{-- HACK COLOR --}}
+                        <br />
+                        <span>Research Area</span>
+                        <br />
+                        Artificial Intelligence 
+                        <br />
+                        Natural Language Processing 
+                        <br />
+                        Deep Learning 
+                        <br />
+                        Network Security 
+                        <br />
+                        </div>
+                </div>
+
+                <div style="flex: 75%"> {{-- RIGHT CONTNET --}}
+                    <div style="float: right"> {{-- NAV BAR --}}
+                        <div class="dropdown">
+                            <button onclick="myFunction()" class="dropbtn">RECENT POST</button>
+                                <div id="myDropdown" class="dropdown-content">
+                                        <a href="#" style="font-size: 16px">เรื่องล่าสุด</a>
+                                        <a href="#" style="font-size: 16px">เรื่องเก่า</a>
+                                </div>
+                        </div>
+                        <button type="button" class="button" style="margin: 0px 5px; padding: 10px; background: #3498DB" id="addContainer">ADD RESEARCH</button>
+                    </div>
+                <div style="margin: 70px 30px"> {{-- CONTENT --}}
+                    <table id="reseach_container">
+                            <tr>
+                                    <td>
+                                        <div class="_container">
+                                            <h2 style="font-size: 20px">ข้อมูลผลงานวิจัย</h2>
+                                            <div class="card-content">
+                                                <div class="card-body">
+                                                    <p contenteditable="false">ข้อมูล research</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </td>
+                
+                                    <td>
+                                            <table style="margin-top: 25px">
+                                                <tr>
+                                                    <th>
+                                                        <button type="button" class="button" style="width: 75px;font-size: 14px; background: #007bff" onclick="editResearch(this)">EDIT</button>
+                                                    </th>
+                                                </tr>
+                                                <tr>
+                                                    <th>
+                                                        <button type="button" class="button" style="width: 75px;font-size: 14px; background: #dc3545" onclick="deleteResearch(this)">DELETE</button>
+                                                    </th>
+                                                </tr>
+                                                <tr>
+                                                    <th>
+                                                        <button type="button" class="button" style="width: 75px;font-size: 14px; background: #28a745" onclick="saveResearch(this)">SAVE</button>
+                                                    </th>
+                                                </tr>
+                                            </table>
+                                        </td>
+                                        
+                                </tr>
+                    </table>
+                </div>
+            </div>
+        </div>
+    
+    </div>
+
+
 		{{-- START --}}
-        <div class="card-read-person">
+        {{-- <div class="card-read-person">
             <div class="header-card-read-person">
                 <img class="image-header-card-person" src="{{url('image/crop/'.$teacher_read->image)}}"/>
                 <p class="role-card-read-person">
@@ -99,7 +178,8 @@
                     </ul>
                 </li>
             </ul>
-		</div>
+        </div> --}}
+        
 		{{-- END --}}
         <div class="wrapper-header-title">
             <h1 class="header-title">บุคลากรสายวิชาการ</h1>
@@ -123,4 +203,6 @@
 
         </ul>
     </div>
+
+    <script src="{{URL::asset('js/research.js')}}"></script>
 @endsection
