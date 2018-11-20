@@ -38,7 +38,7 @@ class HomeController extends Controller
             ->publish()
             ->get();
 
-        $category_id = Category::where('slug','=','ประกาศ')
+        $category_id = Category::where('slug','=','announce')
             ->pluck('id');
 
         $blogs_a = Blog::orderBy('created_at', 'DESC')
