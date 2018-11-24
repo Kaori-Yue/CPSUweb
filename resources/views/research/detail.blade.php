@@ -38,6 +38,21 @@
 
 {{--  --}}
 
+{{-- @if (isAdmin("9"))
+        <style>
+            body { background: #333}
+            </style>
+@endif --}}
+{{-- {{ dd(Auth::user()) }} --}}
+{{-- {{ dd(Auth::user()->id) }} --}}
+{{-- {{ dd( $teacher_read ) }} --}}
+
+{{-- @if (Auth::check() && Auth::user()->id == $teacher_read->user_id + 1)
+<style>
+        body { background: #333}
+        </style>
+@endif --}}
+
         <div class="card-read-person" style="font-weight: 100">
             <div style="display: flex"> {{-- CONTAINER --}}
                 <div style="flex: 25%; background-color: #117167; border-radius: 50px 20px; padding: 15px; margin-bottom: 20px; height: 600px; min-width: 220px"> {{-- LEFT IMAGE --}} 
@@ -67,43 +82,15 @@
                                         <a href="#" style="font-size: 16px">เรื่องเก่า</a>
                                 </div>
                         </div>
-                        <button type="button" class="button" style="margin: 0px 5px; padding: 10px; background: #3498DB" id="addContainer">ADD RESEARCH</button>
+                        @if (Auth::check() && Auth::user()->id == $teacher_read->user_id + 1)
+                            <button type="button" class="button" style="margin: 0px 5px; padding: 10px; background: #3498DB" id="addContainer">ADD RESEARCH</button>
+                        @endif
                     </div>
                 <div style="margin: 70px 30px"> {{-- CONTENT --}}
-                    <table id="reseach_container">
-                            <tr>
-                                    <td>
-                                        <div class="_container">
-                                            <h2 style="font-size: 20px">ข้อมูลผลงานวิจัย</h2>
-                                            <div class="card-content">
-                                                <div class="card-body">
-                                                    <p contenteditable="false">ข้อมูล research</p>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </td>
-                
-                                    <td>
-                                            <table style="margin-top: 25px">
-                                                <tr>
-                                                    <th>
-                                                        <button type="button" class="button" style="width: 75px;font-size: 14px; background: #007bff" onclick="editResearch(this)">EDIT</button>
-                                                    </th>
-                                                </tr>
-                                                <tr>
-                                                    <th>
-                                                        <button type="button" class="button" style="width: 75px;font-size: 14px; background: #dc3545" onclick="deleteResearch(this)">DELETE</button>
-                                                    </th>
-                                                </tr>
-                                                <tr>
-                                                    <th>
-                                                        <button type="button" class="button" style="width: 75px;font-size: 14px; background: #28a745" onclick="saveResearch(this)">SAVE</button>
-                                                    </th>
-                                                </tr>
-                                            </table>
-                                        </td>
-                                        
-                                </tr>
+                    <table id="reseach_container">  
+                        @foreach($researchs as $research)
+                                @include('research.researchBox', ['test' => $research->description])
+                        @endforeach
                     </table>
                 </div>
             </div>

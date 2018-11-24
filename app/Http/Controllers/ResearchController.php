@@ -14,9 +14,10 @@ class ResearchController extends Controller
     use FileTrait, ImageTrait;
     public function index()
     {
-        $researches = Research::paginate(10);
-
-        return view('research.index', ['researches' => $researches]);
+        $research = Research::with('images')->findOrFail(19);
+        return view('research.edit', ['research' => $research]);
+        // $researches = Research::paginate(10);
+        // return view('research.index', ['researches' => $researches]);
     }
 
     public function create()
@@ -153,7 +154,9 @@ class ResearchController extends Controller
             ->orderBy('rank', 'desc')
             ->orderBy('name_th')
             ->get();;
-        return view('research.detail',['teacher_read' => $teacher, 'teachers' => $teachers]);
+        // $researchs = Research::all();
+        $researchs = Research::paginate(10);
+        return view('research.detail',['teacher_read' => $teacher, 'teachers' => $teachers, 'researchs' => $researchs]);
 
 
         // $researches = Research::findOrFail($slug);
