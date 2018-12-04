@@ -88,9 +88,13 @@
                     </div>
                 <div style="margin: 70px 30px"> {{-- CONTENT --}}
                     <table id="reseach_container">  
-                        @foreach($researchs as $research)
-                                @include('research.researchBox', ['test' => $research->description])
-                        @endforeach
+                        @if($researchs)
+                            @foreach($researchs as $research)
+                                    @include('research.researchBox', ['research' => $research])
+                            @endforeach
+                        @else
+                            ไม่มีข้อมูลงานวิจัย
+                        @endif
                     </table>
                 </div>
             </div>

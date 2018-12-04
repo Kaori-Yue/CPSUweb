@@ -16,7 +16,13 @@ class Research extends Model
 
     public function images()
     {
-        return $this->belongsToMany('App\File', 'research_image', 'research_id','image_id')
+        return $this->belongsToMany('App\File', 'research_id','image_id')
             ->withPivot('name', 'description');
+        // return $this->belongsToMany('App\File', 'research_image', 'research_id','image_id')
+        //     ->withPivot('name', 'description');
+    }
+
+    public function owners() {
+        return $this->belongsToMany('App\ResearchOwner', 'research_owner', 'research_id', 'teacher_id');
     }
 }

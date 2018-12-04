@@ -4,12 +4,11 @@
 			<h2 style="font-size: 20px">ข้อมูลผลงานวิจัย</h2>
 			<div class="card-content">
 				<div class="card-body">
-				<p contenteditable="false">ข้อมูล research {{ $test }}</p>
+				<p contenteditable="false">ข้อมูล research + {{ dd( $research->researchs() ) }}</p>
 				</div>
 			</div>
 		</div>
-	</td>
-
+	</td
 	@if (Auth::check() && Auth::user()->id == $teacher_read->user_id + 1)
 		<td>
 			<table style="margin-top: 25px">

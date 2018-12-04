@@ -9,6 +9,8 @@ use App\Traits\FileTrait;
 use App\Traits\ImageTrait;
 use App\Teacher;
 
+use App\ResearchOwner;
+
 class ResearchController extends Controller
 {
     use FileTrait, ImageTrait;
@@ -149,14 +151,51 @@ class ResearchController extends Controller
 
     public function show($id)
     {
+        
+        // return dd(Teacher::find($id));
+
+        // $research = new Research;
+        // $research->name = 'name1';
+        // $research->slug = 'sname1';
+        // $research->description = 'dname1';
+        // $research->owner = 'oname1';
+
+        // $research->save();
+
+        // $teacher = Teacher::find($id);
+        // // $research->owners()->attach($teacher);
+
+
+        // $tmp = Research::find($id)->owners();
+        // return dd($tmp);
+
+
+        
+        // return dd( Research::find($id)->images() );
+
+
+
+        
+
+
         $teacher = Teacher::findOrFail($id);
         $teachers = $teachers = Teacher::duty()
             ->orderBy('rank', 'desc')
             ->orderBy('name_th')
             ->get();;
         // $researchs = Research::all();
-        $researchs = Research::paginate(10);
-        return view('research.detail',['teacher_read' => $teacher, 'teachers' => $teachers, 'researchs' => $researchs]);
+        
+        // $researchs = Research::paginate(10);
+
+        // return dd( ResearchOwner::where('teacher_id', $id)->get() );
+        // $researchs = [];
+        // return dd ( ResearchOwner::where('teacher_id', $id)->first()->researchs() );
+        $researchsOwner = ResearchOwner::where('teacher_id', $id)->get()->all();
+        // foreach($researchsOwner as $researchOwner) {
+        //     array_push($researchs, $researchOwner);
+        // }
+        // return dd ($researchsOwner  );
+        return view('research.detail',['teacher_read' => $teacher, 'teachers' => $teachers, 'researchs' => $researchsOwner]);
 
 
         // $researches = Research::findOrFail($slug);

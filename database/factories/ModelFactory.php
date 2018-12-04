@@ -22,3 +22,13 @@ $factory->define(App\User::class, function (Faker\Generator $faker) {
         'remember_token' => str_random(10),
     ];
 });
+
+$factory->define(App\Research::class, function (Faker\Generator $faker) {
+    $name = $faker->name;
+    return [
+        'name' => $name,
+        'slug' => $name . 'slug',
+        'description' => 'this tag for description in research',
+        // 'owner' => 'owner',
+    ];
+});
