@@ -20,7 +20,15 @@ class CreateResearchTable extends Migration
             $table->string('slug');
             $table->text('description');
             $table->text('owner');
+            $table->date('date');
             $table->timestamps();
+        });
+
+        Schema::create('research_teacher', function (Blueprint $table){
+            $table->increments('id');
+            $table->integer('research_id');
+            $table->integer('teacher_id');
+
         });
     }
 
@@ -32,5 +40,6 @@ class CreateResearchTable extends Migration
     public function down()
     {
         Schema::dropIfExists('research');
+        Schema::dropIfExists('research_teacher');
     }
 }

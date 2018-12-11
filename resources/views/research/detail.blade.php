@@ -78,8 +78,8 @@
                         <div class="dropdown">
                             <button onclick="myFunction()" class="dropbtn">RECENT POST</button>
                                 <div id="myDropdown" class="dropdown-content">
-                                        <a href="#" style="font-size: 16px">เรื่องล่าสุด</a>
-                                        <a href="#" style="font-size: 16px">เรื่องเก่า</a>
+                                        <a href="asc" style="font-size: 16px">เรื่องล่าสุด</a>
+                                        <a href="desc" style="font-size: 16px">เรื่องเก่า</a>
                                 </div>
                         </div>
                         @if (Auth::check() && Auth::user()->id == $teacher_read->user_id + 1)
@@ -87,8 +87,8 @@
                         @endif
                     </div>
                 <div style="margin: 70px 30px"> {{-- CONTENT --}}
-                    <table id="reseach_container">  
-                        @if($researchs)
+                    <table id="reseach_container"> 
+                        @if(count ($researchs)) {{-- << ARRAY --}}
                             @foreach($researchs as $research)
                                     @include('research.researchBox', ['research' => $research])
                             @endforeach

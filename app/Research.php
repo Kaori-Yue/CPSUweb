@@ -22,7 +22,12 @@ class Research extends Model
         //     ->withPivot('name', 'description');
     }
 
-    public function owners() {
-        return $this->belongsToMany('App\ResearchOwner', 'research_owner', 'research_id', 'teacher_id');
+    public function teachers() {
+        // return $this->belongsToMany('App\ResearchOwner', 'research_owner', 'research_id', 'teacher_id');
+        return $this->belongsToMany('App\Teacher');
+    }
+
+    static public function getResearch($id, $order) {
+        return \App\Teacher::findOrFail($id)->researchs()->orderBy('date', $order)->get();
     }
 }

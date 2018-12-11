@@ -1,10 +1,11 @@
 <tr>
-	<td>
+	<td style="padding-bottom: 20px">
 		<div class="_container">
-			<h2 style="font-size: 20px">ข้อมูลผลงานวิจัย</h2>
+			<h3 style="	 display:inline">ข้อมูลผลงานวิจัย</h3>
+			{{ $research->date }}
 			<div class="card-content">
 				<div class="card-body">
-				<p contenteditable="false">ข้อมูล research + {{ dd( $research->researchs() ) }}</p>
+				<p contenteditable="false">ข้อมูล research -> {{ ( $research->description ) }}</p>
 				</div>
 			</div>
 		</div>

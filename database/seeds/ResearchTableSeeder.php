@@ -25,16 +25,19 @@ class ResearchTableSeeder extends Seeder
         });
         */
 
+        factory(App\Research::class, 50)->create()->each(function ($research) {
+            $research->teachers()->attach(rand(15, 20));
+        });
 
-        for ($i = 1; $i <= 100; $i++) {
-            DB::table('research')->insert([
-                'name' => 'Research' . $i,
-                'slug' => 'research[slug]' . $i,
-                'description' => 'this tag for description in research' . $i,
-                'owner' => $i,
-                'created_at' => Carbon::now(),
-                'updated_at' => Carbon::now(),
-            ]);
-        }
+        // for ($i = 1; $i <= 100; $i++) {
+        //     DB::table('research')->insert([
+        //         'name' => 'Research' . $i,
+        //         'slug' => 'research[slug]' . $i,
+        //         'description' => 'this tag for description in research' . $i,
+        //         'owner' => $i,
+        //         'created_at' => Carbon::now(),
+        //         'updated_at' => Carbon::now(),
+        //     ]);
+        // }
     }
 }

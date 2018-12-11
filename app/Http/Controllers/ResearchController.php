@@ -149,7 +149,7 @@ class ResearchController extends Controller
         //return $new_research;
     }
 
-    public function show($id)
+    public function show($id, $order = "asc")
     {
         
         // return dd(Teacher::find($id));
@@ -163,7 +163,7 @@ class ResearchController extends Controller
         // $research->save();
 
         // $teacher = Teacher::find($id);
-        // // $research->owners()->attach($teacher);
+        // $research->teachers()->attach($teacher);
 
 
         // $tmp = Research::find($id)->owners();
@@ -172,10 +172,6 @@ class ResearchController extends Controller
 
         
         // return dd( Research::find($id)->images() );
-
-
-
-        
 
 
         $teacher = Teacher::findOrFail($id);
@@ -190,12 +186,16 @@ class ResearchController extends Controller
         // return dd( ResearchOwner::where('teacher_id', $id)->get() );
         // $researchs = [];
         // return dd ( ResearchOwner::where('teacher_id', $id)->first()->researchs() );
-        $researchsOwner = ResearchOwner::where('teacher_id', $id)->get()->all();
+
+        // return dd ( Research::find(1)->teachers() );
+
+        $researchsOwner = Teacher::findOrFail($id)->researchs()->get();
+        // return dd ($researchsOwner);
         // foreach($researchsOwner as $researchOwner) {
         //     array_push($researchs, $researchOwner);
         // }
-        // return dd ($researchsOwner  );
-        return view('research.detail',['teacher_read' => $teacher, 'teachers' => $teachers, 'researchs' => $researchsOwner]);
+        // return dd ($researchsOwner);
+        return view('research.detail',['teacher_read' => $teacher, 'teachers' => $teachers, 'researchs' => Research::getResearch($id, $order)]);
 
 
         // $researches = Research::findOrFail($slug);

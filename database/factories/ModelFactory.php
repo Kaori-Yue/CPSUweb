@@ -27,8 +27,9 @@ $factory->define(App\Research::class, function (Faker\Generator $faker) {
     $name = $faker->name;
     return [
         'name' => $name,
-        'slug' => $name . 'slug',
-        'description' => 'this tag for description in research',
-        // 'owner' => 'owner',
+        'slug' => $name . '[SLUG]: ' . $faker->realText(30),
+        'description' => $faker->realText(),
+        'owner' => 'owner: ' . $name,
+        'date' => $faker->dateTime()
     ];
 });

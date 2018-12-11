@@ -14,7 +14,7 @@ class ResearchOwner extends Model
     ];
 
     public function researchs() {
-        return $this->belongsToMany(Research::class, 'research', 'owner');
+        return $this->belongsToMany(Research::class);
     }
 
     public function teachers() {

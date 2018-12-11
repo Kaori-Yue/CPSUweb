@@ -35,7 +35,7 @@ Route::get('curricula/doctor', 'CurriculaController@doctor');
 
 
 Route::get('news/{slug}', 'BlogController@show');
-Route::get('research/{slug}', 'ResearchController@show');
+Route::get('research/{slug}/{order?}', 'ResearchController@show');
 Route::get('curricula/{slug}', 'CurriculaController@show');
 Route::get('teacher/{id}', 'TeacherController@show');
 Route::get('staff/{id}', 'StaffController@show');
