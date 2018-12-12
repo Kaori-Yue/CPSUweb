@@ -54,7 +54,7 @@ Route::group(['middleware' => 'auth'], function (){
     Route::get('profile', 'UserController@profile');
     Route::get('profile/edit', 'UserController@editProfile');
     Route::post('user/update', 'UserController@updateProfile');
-
+    Route::post('research', 'ResearchController@store');
     Route::group(['middleware' => 'adminAuth'], function (){
         #Admin Route
         Route::get('admin', 'AdminController@dashboard');
@@ -66,7 +66,7 @@ Route::group(['middleware' => 'auth'], function (){
         Route::post('teacher', 'TeacherController@store');
         Route::post('staff', 'StaffController@store');
         Route::post('thesis', 'ThesisController@store');
-        Route::post('research', 'ResearchController@store');
+        // Route::post('research', 'ResearchController@store');
         Route::post('curricula', 'CurriculaController@store');
         Route::post('document', 'DocumentController@store');
         Route::post('category', 'CategoryController@store');

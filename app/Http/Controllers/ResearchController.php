@@ -10,6 +10,8 @@ use App\Traits\ImageTrait;
 use App\Teacher;
 
 use App\ResearchOwner;
+use App\User;
+use Auth;
 
 class ResearchController extends Controller
 {
@@ -36,49 +38,68 @@ class ResearchController extends Controller
 
     public function store(Request $request)
     {
+        // return dd( Auth::user() );
+        // return $request . '<br>' . $request->description;
         $this->validate($request, [
-            'file' => 'mimes:pdf,doc,docx',
-            'name' => 'required|max:191|unique:research',
+            // 'file' => 'mimes:pdf,doc,docx',
+            // 'name' => 'required|max:191|unique:research',
             'description' => 'required|max:65534',
-            'owner' => 'required|max:191',
+            // 'owner' => 'required|max:191',
         ]);
-
-        $file = $request->file('file');
-        $file = self::storeFile($file);
-
-        $name = $request->get('name');
-        $slug = self::handleSlug($name);
-
         $research = [
-            'name' => $name,
-            'slug' => $slug,
-            'owner' => $request->get('owner'),
-            'description' => $request->get('description'),
-            'file' => $file->id
+            'file' => null,
+            'name' => "name",
+            'slug' => "slug",
+            'owner' => "123",
+            // 'date' => $request->date,
+            'date' => "2018-12-11 08:24:41",
+            'description' => $request->description,
+            // 'file' => $file->id
         ];
-
         $research = Research::create($research);
+        $research->user()->attach(Auth::user()->id);
+        // $research
 
-        $keys = ['image1', 'image2', 'image3', 'image4', 'image5'];
-        $i = 1;
-        foreach ($keys as $key){
-            $image = $request->file($key);
-            if(isset($image)){
-                $image = self::storeImage($image, 'normal');
-                $research_image = [
-                    'research_id' => $research->id,
-                    'image_id' => $image->id,
-                    'name' => $request->get('name'.$i),
-                    'description' => $request->get('description'.$i)
-                ];
 
-                ResearchImage::create($research_image);
-            }
-            $i++;
-        }
-        $research->images;
 
-        return redirect()->action('AdminController@research')->with('status', 'Create Complete!');
+        // return dd($request);
+
+        // $file = $request->file('file');
+        // $file = self::storeFile($file);
+
+        // $name = $request->get('name');
+        // $slug = self::handleSlug($name);
+
+        // $research = [
+        //     'name' => $name,
+        //     'slug' => $slug,
+        //     'owner' => $request->get('owner'),
+        //     'description' => $request->get('description'),
+        //     'file' => $file->id
+        // ];
+
+        // $research = Research::create($research);
+
+        // $keys = ['image1', 'image2', 'image3', 'image4', 'image5'];
+        // $i = 1;
+        // foreach ($keys as $key){
+        //     $image = $request->file($key);
+        //     if(isset($image)){
+        //         $image = self::storeImage($image, 'normal');
+        //         $research_image = [
+        //             'research_id' => $research->id,
+        //             'image_id' => $image->id,
+        //             'name' => $request->get('name'.$i),
+        //             'description' => $request->get('description'.$i)
+        //         ];
+
+        //         ResearchImage::create($research_image);
+        //     }
+        //     $i++;
+        // }
+        // $research->images;
+
+        // return redirect()->action('AdminController@research')->with('status', 'Create Complete!');
     }
 
     public function update(Request $request, $id)
@@ -188,14 +209,14 @@ class ResearchController extends Controller
         // return dd ( ResearchOwner::where('teacher_id', $id)->first()->researchs() );
 
         // return dd ( Research::find(1)->teachers() );
-
-        $researchsOwner = Teacher::findOrFail($id)->researchs()->get();
+        // return dd($teacher);
+        // $researchsOwner = User::findOrFail($teacher->user_id)->researchs()->get();
         // return dd ($researchsOwner);
         // foreach($researchsOwner as $researchOwner) {
         //     array_push($researchs, $researchOwner);
         // }
         // return dd ($researchsOwner);
-        return view('research.detail',['teacher_read' => $teacher, 'teachers' => $teachers, 'researchs' => Research::getResearch($id, $order)]);
+        return view('research.detail',['teacher_read' => $teacher, 'teachers' => $teachers, 'researchs' => Research::getResearch($teacher->user_id + 1, $order)]);
 
 
         // $researches = Research::findOrFail($slug);

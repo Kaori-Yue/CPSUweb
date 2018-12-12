@@ -51,8 +51,8 @@ class Teacher extends Model
         return $query->where('status', 'disable');
     }
 
-    public function researchs() {
-        // return $this->belongsToMany('App\ResearchOwner', 'research_owner', 'research_id', 'teacher_id');
-        return $this->belongsToMany('App\Research');
-    }
+    // public function researchs() {
+    //     // return $this->belongsToMany('App\ResearchOwner', 'research_owner', 'research_id', 'teacher_id');
+    //     return $this->belongsToMany('App\Research');
+    // }
 }

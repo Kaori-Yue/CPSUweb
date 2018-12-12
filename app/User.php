@@ -30,4 +30,9 @@ class User extends Authenticatable
     public function blogs(){
         return $this->hasMany('App\Blog');
     }
+
+    public function researchs() {
+        // return $this->belongsToMany('App\ResearchOwner', 'research_owner', 'research_id', 'teacher_id');
+        return $this->belongsToMany('App\Research');
+    }
 }

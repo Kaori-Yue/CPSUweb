@@ -26,7 +26,7 @@ class ResearchTableSeeder extends Seeder
         */
 
         factory(App\Research::class, 50)->create()->each(function ($research) {
-            $research->teachers()->attach(rand(15, 20));
+            $research->user()->attach(rand(18, 24));
         });
 
         // for ($i = 1; $i <= 100; $i++) {

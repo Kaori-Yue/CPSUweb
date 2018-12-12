@@ -80,7 +80,8 @@ $device-computer: 980px; */
 
 .card-content {
 	width: 300px;
-	height: 100px;
+  /* height: 100px; */
+  min-height: 100px;
 	font-size: 18px;
 	float: left;
 	background: #f8f9fa;
@@ -104,3 +105,6 @@ $device-computer: 980px; */
 	cursor: pointer;
 }
 
+.card-content > .card-body > p {
+  word-wrap: break-word;
+}

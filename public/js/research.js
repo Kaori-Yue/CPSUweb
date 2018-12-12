@@ -26,13 +26,17 @@ window.onload = () => {
 }
 
 function createResearchBox() {
-	const container = document.querySelector('#reseach_container')
+	const container = document.querySelector('#reseach_container > tbody')
 
-	const element = document.createElement('tr')
-	element.innerHTML = `
-	<td>
+	// const element = document.createElement('tr')
+	// letelement.innerHTML = `
+	let _date = new Date();
+	let date = `${_date.getDate()}-${_date.getMonth()}-${_date.getFullYear()}`
+	let element =`
+	<tr item-date="${date}" item-id="-1">
+	<td style="padding-bottom: 20px">
 	<div class="_container">
-		<h2 style="font-size: 20px">ข้อมูลผลงานวิจัย</h2>
+		<h3 style="font-weight: 100; color: #117167; display:inline">ข้อมูลผลงานวิจัย</h3>
 		<div class="card-content">
 			<div class="card-body">
 				<p contenteditable="false">ข้อมูล research</p>
@@ -40,7 +44,6 @@ function createResearchBox() {
 
 
 				<label for="start">date:</label>
-
 				<input type="date" id="start" name="trip-start">
 				
 
@@ -71,8 +74,9 @@ function createResearchBox() {
 			</tr>
 		</table>
 	</td>
+</tr>
 	`
-	container.appendChild(element)
+	container.insertAdjacentHTML('afterbegin' ,element)
 }
 
 function editResearch(event) {
@@ -84,6 +88,8 @@ function editResearch(event) {
 
 function saveResearch(event) {
 	event.parentElements(6).children[0].children[0].children[1].children[0].children[0].contentEditable = false
+	// console.log(event.parentElements(6).getAttribute('item-id'))
+	addResearch(event.parentElements(6).getAttribute('item-id'))
 }
 
 function deleteResearch(event) {
@@ -97,8 +103,6 @@ function sortTable(sort = asc) {
 	let clone = tbody.cloneNode(true)
 	// let rows = document.querySelector('#reseach_container > tbody').rows
 	let rows = clone.rows
-	console.log("length: " + rows.length)
-
 	let objElement = []
 
 	for (let index = 0; index < rows.length; index++) {
@@ -112,7 +116,6 @@ function sortTable(sort = asc) {
 	tbody.innerHTML = ""
 	if (sort === 'asc') {
 		objElement.sort(function (a, b) {
-			console.log("A: " + dateFormat(a.date) + " | B: " + dateFormat(b.date))
 			return (dateFormat(a.date)) - (dateFormat(b.date))
 		})
 		for (const iterator of objElement) {
@@ -120,7 +123,6 @@ function sortTable(sort = asc) {
 		}
 	} else {
 		objElement.sort(function (a, b) {
-			console.log("A: " + dateFormat(a.date) + " | B: " + dateFormat(b.date))
 			return (dateFormat(b.date)) - (dateFormat(a.date))
 		})
 		for (const iterator of objElement) {
@@ -128,6 +130,34 @@ function sortTable(sort = asc) {
 		}
 	}
 
+}
+
+
+// Add Research
+function addResearch(id) {
+	console.log("addR: " + id)
+	if (id == '-1') {
+		// new research
+		console.log('new')
+		fetch('/research', {
+			method: 'POST',
+			headers: {
+				'Content-Type': 'application/json',
+				'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+			},
+			body: JSON.stringify({
+				"description": '124',
+				"date": 'date'
+			})
+		})
+		.then(res => res.json())
+		.then(response => {
+			console.log(response)
+		})
+	} else {
+		// edit save
+		console.log('edit')
+	}
 }
 
 

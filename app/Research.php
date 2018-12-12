@@ -11,7 +11,7 @@ class Research extends Model
     public $timestamps = 'true';
     protected $table = 'research';
     protected $fillable = [
-        'file', 'name', 'slug', 'description', 'owner'
+        'file', 'name', 'slug', 'description', 'owner', 'date'
     ];
 
     public function images()
@@ -22,12 +22,12 @@ class Research extends Model
         //     ->withPivot('name', 'description');
     }
 
-    public function teachers() {
+    public function user() {
         // return $this->belongsToMany('App\ResearchOwner', 'research_owner', 'research_id', 'teacher_id');
-        return $this->belongsToMany('App\Teacher');
+        return $this->belongsToMany('App\User');
     }
 
     static public function getResearch($id, $order) {
-        return \App\Teacher::findOrFail($id)->researchs()->orderBy('date', $order)->get();
+        return \App\User::findOrFail($id)->researchs()->orderBy('date', $order)->get();
     }
 }
