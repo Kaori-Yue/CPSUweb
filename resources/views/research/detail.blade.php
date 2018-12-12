@@ -55,12 +55,12 @@
 
         <div class="card-read-person" style="font-weight: 100">
             <div style="display: flex"> {{-- CONTAINER --}}
-                <div style="flex: 25%; background-color: #117167; border-radius: 50px 20px; padding: 15px; margin-bottom: 20px; height: 600px; min-width: 220px"> {{-- LEFT IMAGE --}} 
-                        <p class="name-th-card-read-person" style="text-align: center; color: #fff; margin-bottom: 5px; font-weight: bold">{{$teacher_read->name_th}}</p>
+                <div style="flex: 25%; background-color: #117167; border-radius: 50px 20px; padding: 15px; margin-bottom: 20px;  min-width: 220px"> {{-- LEFT IMAGE --}} 
+                        <p class="name-th-card-read-person" style="text-align: center; color: #fff; margin-bottom: 5px; font-weight: 100">{{$teacher_read->name_th}}</p>
                         <img class="image-header-card-person" style="width: 100%" src="{{url('image/crop/'.$teacher_read->image)}}"/>
                         <div style="color: #fff"> {{-- HACK COLOR --}}
                         <br />
-                        <span>Research Area</span>
+                        {{-- <span>Research Area</span>
                         <br />
                         Artificial Intelligence 
                         <br />
@@ -69,7 +69,7 @@
                         Deep Learning 
                         <br />
                         Network Security 
-                        <br />
+                        <br /> --}}
                         </div>
                 </div>
 
@@ -78,8 +78,8 @@
                         <div class="dropdown">
                             <button onclick="myFunction()" class="dropbtn">RECENT POST</button>
                                 <div id="myDropdown" class="dropdown-content">
-                                        <a href="asc" style="font-size: 16px">เรื่องล่าสุด</a>
-                                        <a href="desc" style="font-size: 16px">เรื่องเก่า</a>
+                                        <a href="#" onclick="sortTable('asc')" style="font-size: 16px">เรื่องล่าสุด</a>
+                                        <a href="#" onclick="sortTable('desc')" style="font-size: 16px">เรื่องเก่า</a>
                                 </div>
                         </div>
                         @if (Auth::check() && Auth::user()->id == $teacher_read->user_id + 1)

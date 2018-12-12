@@ -36,6 +36,17 @@ function createResearchBox() {
 		<div class="card-content">
 			<div class="card-body">
 				<p contenteditable="false">ข้อมูล research</p>
+
+
+
+				<label for="start">date:</label>
+
+				<input type="date" id="start" name="trip-start">
+				
+
+
+
+
 			</div>
 		</div>
 	</div>
@@ -79,6 +90,47 @@ function deleteResearch(event) {
 	event.parentElements(6).remove()
 }
 
+
+// sort table
+function sortTable(sort = asc) {
+	let tbody = document.querySelector('#reseach_container > tbody')
+	let clone = tbody.cloneNode(true)
+	// let rows = document.querySelector('#reseach_container > tbody').rows
+	let rows = clone.rows
+	console.log("length: " + rows.length)
+
+	let objElement = []
+
+	for (let index = 0; index < rows.length; index++) {
+		const element = rows[index]
+		objElement.push({
+			'date': element.getAttribute('item-date'),
+			'element': element
+		})
+	}
+
+	tbody.innerHTML = ""
+	if (sort === 'asc') {
+		objElement.sort(function (a, b) {
+			console.log("A: " + dateFormat(a.date) + " | B: " + dateFormat(b.date))
+			return (dateFormat(a.date)) - (dateFormat(b.date))
+		})
+		for (const iterator of objElement) {
+			tbody.insertAdjacentElement('afterbegin', iterator.element)
+		}
+	} else {
+		objElement.sort(function (a, b) {
+			console.log("A: " + dateFormat(a.date) + " | B: " + dateFormat(b.date))
+			return (dateFormat(b.date)) - (dateFormat(a.date))
+		})
+		for (const iterator of objElement) {
+			tbody.insertAdjacentElement('afterbegin', iterator.element)
+		}
+	}
+
+}
+
+
 // Extension
 
 Object.defineProperty(Object.prototype, 'parentElements', {
@@ -92,3 +144,10 @@ Object.defineProperty(Object.prototype, 'parentElements', {
 		return _this
 	}
 });
+
+function dateFormat(date) {
+	// Native
+	const datePattern = /^(\d{2})-(\d{2})-(\d{4})$/;
+	const [, day, month, year] = datePattern.exec(date);
+	return new Date(`${month}, ${day} ${year}`);
+}

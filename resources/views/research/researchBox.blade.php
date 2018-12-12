@@ -1,15 +1,18 @@
-<tr>
+<tr item-date="{{ date('d-m-Y', strtotime($research->date)) }}">
 	<td style="padding-bottom: 20px">
 		<div class="_container">
-			<h3 style="	 display:inline">ข้อมูลผลงานวิจัย</h3>
-			{{ $research->date }}
+			<h3 style="font-weight: 100; color: #117167; display:inline">ข้อมูลผลงานวิจัย</h3>
+			{{ date('d-m-Y', strtotime($research->date)) }}
+			{{-- {{ $research->date }} --}}
 			<div class="card-content">
 				<div class="card-body">
 				<p contenteditable="false">ข้อมูล research -> {{ ( $research->description ) }}</p>
+
 				</div>
 			</div>
 		</div>
-	</td
+	</td>
+
 	@if (Auth::check() && Auth::user()->id == $teacher_read->user_id + 1)
 		<td>
 			<table style="margin-top: 25px">
