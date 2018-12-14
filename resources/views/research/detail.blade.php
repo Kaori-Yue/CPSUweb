@@ -4,7 +4,9 @@
 @section('title', "บุคลากรสายวิชาการ")
 @section('content')
 <meta name="csrf-token" content="{{ csrf_token() }}">
+
 <link rel="stylesheet" href="{{ URL::asset('css/new_theme/research.css') }}" />
+<link rel="stylesheet" href="{{ URL::asset('research-modal/css/bootstrap.min.css') }}"/>
     <div class="container-content">
         <ul class="wrapper-nav">
             <li class="list-nav">
@@ -61,6 +63,7 @@
                         <img class="image-header-card-person" style="width: 100%" src="{{url('image/crop/'.$teacher_read->image)}}"/>
                         {{-- {{Auth::user()->id}}
                         {{$teacher_read->user_id}} --}}
+                        {{-- {{ dd(Auth::user() )}} --}}
                         <div style="color: #fff"> {{-- HACK COLOR --}}
                         <br />
                         {{-- <span>Research Area</span>
@@ -75,7 +78,7 @@
                         <br /> --}}
                         </div>
                 </div>
-            
+
                 <div style="flex: 75%"> {{-- RIGHT CONTNET --}}
                     <div style="float: right"> {{-- NAV BAR --}}
                         <div class="dropdown">
@@ -91,19 +94,44 @@
                     </div>
                 <div style="margin: 70px 30px"> {{-- CONTENT --}}
                     <table id="reseach_container"> 
+                        <tbody>
                         @if(count ($researchs)) {{-- << ARRAY --}}
                             @foreach($researchs as $research)
                                     @include('research.researchBox', ['research' => $research])
                             @endforeach
                         @else
-                            ไม่มีข้อมูลงานวิจัย
+                        <tr>ไม่มีข้อมูลงานวิจัย</tr>
                         @endif
+                        </tbody>
                     </table>
                 </div>
             </div>
         </div>
     
     </div>
+
+    
+    {{-- Dialog confirm --}}
+    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              ...
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+              <button type="button" class="btn btn-primary">Save changes</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
 
 
 		{{-- START --}}
@@ -197,5 +225,8 @@
         </ul>
     </div>
 
-    <script src="{{URL::asset('js/research.js')}}"></script>
+    {{-- <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script> --}}
+    <script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+    {{-- <script type="text/javascript" src="{{URL::asset('research-modal/js/bootstrap.min.js')}}"></script> --}}
+    <script type="text/javascript" src="{{URL::asset('js/research.js')}}"></script>
 @endsection

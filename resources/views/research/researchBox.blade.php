@@ -2,11 +2,11 @@
 	<td style="padding-bottom: 20px">
 		<div class="_container">
 			<h3 style="font-weight: 100; color: #117167; display:inline">ข้อมูลผลงานวิจัย</h3>
-			{{ date('d-m-Y', strtotime($research->date)) }}
+			{{ ($research->publication) }}
 			{{-- {{ $research->date }} --}}
 			<div class="card-content">
 				<div class="card-body">
-				<p contenteditable="false">ข้อมูล research -> {{ ( $research->description ) }}</p>
+				<p contenteditable="false">{{ ( $research->info ) }}</p>
 
 				</div>
 			</div>

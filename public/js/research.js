@@ -32,7 +32,7 @@ function createResearchBox() {
 	// letelement.innerHTML = `
 	let _date = new Date();
 	let date = `${_date.getDate()}-${_date.getMonth()}-${_date.getFullYear()}`
-	let element =`
+	let element = `
 	<tr item-date="${date}" item-id="-1">
 	<td style="padding-bottom: 20px">
 	<div class="_container">
@@ -41,22 +41,16 @@ function createResearchBox() {
 			<div class="card-body">
 				<p contenteditable="false">ข้อมูล research</p>
 
-
-
-				<label for="start">date:</label>
-				<input type="date" id="start" name="trip-start">
+				pub
+				<input type="text" name="publication"><br>
 				
-
-
-
-
 			</div>
 		</div>
 	</div>
 </td>
 
 <td>
-		<table style="margin-top: 25px">
+		<table style="margin-top: 7px">
 			<tr>
 				<th>
 					<button type="button" class="button" style="width: 75px;font-size: 14px; background: #007bff" onclick="editResearch(this)">EDIT</button>
@@ -76,24 +70,27 @@ function createResearchBox() {
 	</td>
 </tr>
 	`
-	container.insertAdjacentHTML('afterbegin' ,element)
+	container.insertAdjacentHTML('afterbegin', element)
 }
 
 function editResearch(event) {
 	event.parentElements(6).children[0].children[0].children[1].children[0].children[0].contentEditable = true
-	// console.log(event.parentElements)
-	// console.log(event.parentElement.parentElement.parentElement.parentElement.parentElement.parentElement)
-	// console.log(event.parentElement.parentElement.parentElement.parentElement.parentElement.parentElement.children[0].children[0].children[1])
 }
 
 function saveResearch(event) {
-	event.parentElements(6).children[0].children[0].children[1].children[0].children[0].contentEditable = false
+	const parent = event.parentElements(6)
+	parent.children[0].children[0].children[1].children[0].children[0].contentEditable = false
 	// console.log(event.parentElements(6).getAttribute('item-id'))
-	addResearch(event.parentElements(6).getAttribute('item-id'))
+	let text = parent.querySelector('p').textContent
+	let date = parent.querySelector('input[name=publication]').value
+	addResearch(parent.getAttribute('item-id'), text, date)
 }
 
 function deleteResearch(event) {
-	event.parentElements(6).remove()
+	$("#exampleModal").modal('show');
+
+
+	// event.parentElements(6).remove()
 }
 
 
@@ -134,7 +131,7 @@ function sortTable(sort = asc) {
 
 
 // Add Research
-function addResearch(id) {
+function addResearch(id, text, date) {
 	console.log("addR: " + id)
 	if (id == '-1') {
 		// new research
@@ -146,19 +143,21 @@ function addResearch(id) {
 				'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
 			},
 			body: JSON.stringify({
-				"description": '124',
-				"date": 'date'
+				"info": text,
+				"publication": date
 			})
 		})
-		.then(res => res.json())
-		.then(response => {
-			console.log(response)
-		})
+			.then(res => res.json())
+			.then(response => {
+				console.log(response)
+			})
 	} else {
 		// edit save
 		console.log('edit')
 	}
 }
+
+
 
 
 // Extension
@@ -181,3 +180,36 @@ function dateFormat(date) {
 	const [, day, month, year] = datePattern.exec(date);
 	return new Date(`${month}, ${day} ${year}`);
 }
+
+// Bottstrap && JQ
+// modal dailog
+/*
+let el = $("table")
+console.log(el)
+var modalConfirm = function (callback) {
+	$("#btn-confirm").on("click", function () {
+		$("#mi-modal").modal('show');
+	});
+
+	$("#modal-btn-si").on("click", function () {
+		callback(true);
+		$("#mi-modal").modal('hide');
+	});
+
+	$("#modal-btn-no").on("click", function () {
+		callback(false);
+		$("#mi-modal").modal('hide');
+	});
+};
+
+modalConfirm(function (confirm) {
+	console.log(confirm)
+	if (confirm) {
+		//Acciones si el usuario confirma
+		// $("#result").html("CONFIRMADO");
+	} else {
+		//Acciones si el usuario no confirma
+		// $("#result").html("NO CONFIRMADO");
+	}
+});
+*/

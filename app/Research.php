@@ -11,7 +11,7 @@ class Research extends Model
     public $timestamps = 'true';
     protected $table = 'research';
     protected $fillable = [
-        'file', 'name', 'slug', 'description', 'owner', 'date'
+        'info', 'publication'
     ];
 
     public function images()

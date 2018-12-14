@@ -1,43 +1,48 @@
 <?php
 
 use Illuminate\Database\Seeder;
-use Carbon\Carbon;
 
 class ResearchTableSeeder extends Seeder
 {
+
     /**
-     * Run the database seeds.
+     * Auto generated seed file
      *
      * @return void
      */
     public function run()
     {
+        
 
-        /*
-        factory(App\Research::class, 10)->create()->each(function ($research) {
-            // Seed the relation with one address
-            $address = factory(App\CustomerAddress::class)->make();
-            $research->address()->save($address);
-
-            // Seed the relation with 5 purchases
-            $purchases = factory(App\CustomerPurchase::class, 5)->make();
-            $research->purchases()->saveMany($purchases);
-        });
-        */
-
-        factory(App\Research::class, 50)->create()->each(function ($research) {
-            $research->user()->attach(rand(18, 24));
-        });
-
-        // for ($i = 1; $i <= 100; $i++) {
-        //     DB::table('research')->insert([
-        //         'name' => 'Research' . $i,
-        //         'slug' => 'research[slug]' . $i,
-        //         'description' => 'this tag for description in research' . $i,
-        //         'owner' => $i,
-        //         'created_at' => Carbon::now(),
-        //         'updated_at' => Carbon::now(),
-        //     ]);
-        // }
+        \DB::table('research')->delete();
+        
+        \DB::table('research')->insert(array (
+            0 => 
+            array (
+                'id' => '1',
+            'info' => 'ต้องตา วาระกิจ, สัจจาภรณ์ ไวจรรยา และ ณัฐโชติ พรหมฤทธิ์. (2561). “เขียนไทย แอปพลิเคชันฝึกเขียนภาษาไทยสำหรับชาวต่างชาติ.” ใน Proceedings รวมบทความวิจัยนำเสนอใน 6th ASEAN Undergraduate Conference in Computing (AUCC2018), สถาบันเทคโนโลยีพระจอมเกล้าเจ้าคุณทหารลาดกระบัง, กรุงเทพฯ, 23-25 มีนาคม, 2561, 150-157.',
+                'publication' => '2561',
+                'created_at' => '2018-12-14 18:35:40',
+                'updated_at' => '2018-12-14 18:35:40',
+            ),
+            1 => 
+            array (
+                'id' => '2',
+            'info' => 'ชาญวิทย์ ญาติตาอินทร์, สัจจาภรณ์ ไวจรรยา และ ณัฐโชติ พรหมฤทธิ์. (2561). “ระบบประมวลผลข้อความจากบทวิจารณ์ภาพยนตร์และความคิดเห็นของผู้ชม.” ใน Proceedings รวมบทความวิจัยนำเสนอใน 6th ASEAN Undergraduate Conference in Computing (AUCC2018), สถาบันเทคโนโลยีพระจอมเกล้าเจ้าคุณทหารลาดกระบัง, กรุงเทพฯ, 23-25 มีนาคม, 2561, 2471-2478.',
+                'publication' => '2561',
+                'created_at' => '2018-12-14 18:37:05',
+                'updated_at' => '2018-12-14 18:37:05',
+            ),
+            2 => 
+            array (
+                'id' => '3',
+            'info' => 'ภัทรกร สุขสงวน, สัจจาภรณ์ ไวจรรยา และ ณัฐโชติ พรหมฤทธิ์. (2561). “ระบบแนะนําภาพยนตร์จากบทวิจารณ์ด้วยวิธีการแบบหลากหลาย.” ใน Proceedings รวมบทความวิจัยนำเสนอใน 6th ASEAN Undergraduate Conference in Computing (AUCC2018), สถาบันเทคโนโลยีพระจอมเกล้าเจ้าคุณทหารลาดกระบัง, กรุงเทพฯ, 23-25 มีนาคม, 2561, 2463-2470.',
+                'publication' => '2561',
+                'created_at' => '2018-12-14 18:46:44',
+                'updated_at' => '2018-12-14 18:46:44',
+            ),
+        ));
+        
+        
     }
 }

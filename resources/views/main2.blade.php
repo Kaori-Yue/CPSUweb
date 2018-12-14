@@ -9,7 +9,8 @@
     <link rel="stylesheet" href="{{ URL::asset('js/bower_components/OwlCarousel2-2.2.1/dist/assets/owl.theme.default.min.css') }}" />
     <link rel="stylesheet" href="{{ URL::asset('css/font-awesome-4.7.0/css/font-awesome.css') }}" />
     <link rel="stylesheet" href="{{ URL::asset('css/new_theme/style.css') }}" />
-
+    
+    <script src="{{ URL::asset('js/bower_components/jquery/dist/jquery.min.js') }}"></script>
 
     @yield('meta')
 </head>
@@ -146,7 +147,6 @@
     <img src="{{ URL::asset('image/arrow-up.svg') }}"/>
 </button>
 
-<script src="{{ URL::asset('js/bower_components/jquery/dist/jquery.min.js') }}"></script>
 <script src="{{ URL::asset('js/bower_components/OwlCarousel2-2.2.1/dist/owl.carousel.min.js') }}"></script>
 <script src="{{URL::asset('js/slide.js')}}"></script>
 <script src="{{URL::asset('js/fb.js')}}"></script>

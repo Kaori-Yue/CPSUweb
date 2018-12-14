@@ -18,8 +18,20 @@ class ResearchController extends Controller
     use FileTrait, ImageTrait;
     public function index()
     {
-        $research = Research::with('images')->findOrFail(19);
-        return view('research.edit', ['research' => $research]);
+        // $research = Research::with('images')->findOrFail(19);
+        // return view('research.edit', ['research' => $research]);
+        // return dd (Auth::user()->role);
+        if (Auth::user()->role == "teacher") {
+            $researches = Research::findOrFail(Auth::id())->paginate(10);
+            return view('research.index', ['researches' => $researches]);
+        } else if (Auth::user()->role == "admin") {
+
+        } else {
+
+        }
+
+
+
         // $researches = Research::paginate(10);
         // return view('research.index', ['researches' => $researches]);
     }
@@ -31,9 +43,9 @@ class ResearchController extends Controller
 
     public function edit($id)
     {
-        $research = Research::with('images')->findOrFail($id);
-        return view('research.edit', ['research' => $research]);
-        //return $research;
+            $research = Research::with('images')->findOrFail($id);
+            return view('research.edit', ['research' => $research]);
+            //return $research;
     }
 
     public function store(Request $request)
@@ -43,21 +55,18 @@ class ResearchController extends Controller
         $this->validate($request, [
             // 'file' => 'mimes:pdf,doc,docx',
             // 'name' => 'required|max:191|unique:research',
-            'description' => 'required|max:65534',
+            'info' => 'required|max:65534',
             // 'owner' => 'required|max:191',
         ]);
         $research = [
-            'file' => null,
-            'name' => "name",
-            'slug' => "slug",
-            'owner' => "123",
-            // 'date' => $request->date,
-            'date' => "2018-12-11 08:24:41",
-            'description' => $request->description,
+            'publication' => $request->publication,
+            'info' => $request->info,
             // 'file' => $file->id
         ];
         $research = Research::create($research);
         $research->user()->attach(Auth::user()->id);
+
+        // return redirect()->action('ResearchController@research', ['id' => Auth::id])->with('status', 'Create Complete!');
         // $research
 
 
@@ -171,7 +180,9 @@ class ResearchController extends Controller
     }
 
     public function show($id, $order = "asc")
-    {
+    {  
+        // return 1;
+        // return dd (Research::findOrFail(1)->user()->get()   );
         
         // return dd(Teacher::find($id));
 
@@ -210,7 +221,7 @@ class ResearchController extends Controller
 
         // return dd ( Research::find(1)->teachers() );
         // return dd($teacher);
-        // $researchsOwner = User::findOrFail($teacher->user_id)->researchs()->get();
+        $researchsOwner = User::findOrFail($teacher->user_id)->researchs()->get();
         // return dd ($researchsOwner);
         // foreach($researchsOwner as $researchOwner) {
         //     array_push($researchs, $researchOwner);
