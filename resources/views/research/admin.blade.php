@@ -6,14 +6,34 @@
             <a class="btn btn-primary btn-block btn-lg" href="{{ url('admin/research/create') }}">Create</a>
         </div>
 
-        {{--<div class="col-md-4" style="padding: 0; text-align: left">
-            {!! Form::open(['url' => 'admin/research/sort', 'class' => 'form-inline']) !!}
-            <div class="form-group">
-                {!! Form::select('sort_by', $orderOptions, null, ['class' => 'form-control']) !!}
+
+        <div class="col-md-4" style="padding: 0; text-align: left">
+                <div class="dropdown">
+                    <button class="btn btn-default btn-block btn-lg dropdown-toggle" type="button" data-toggle="dropdown">
+                        @if(Request::is('*/recent'))
+                            Recent
+                        @elseif(Request::is('*/old'))
+                            Old
+                        @else
+                            Recent
+                        @endif
+                        <span class="caret"></span></button>
+                    <ul class="dropdown-menu">
+                        <li>
+                            <a href="{{ url('admin/research/filter/recent') }}" class="btn btn-default btn-lg">
+                                Recent
+                            </a>
+                        </li>
+                        <li>
+                            <a href="{{ url('admin/research/filter/old') }}" class="btn btn-default btn-lg">
+                                Old
+                            </a>
+                        </li>
+                    </ul>
+                </div>
             </div>
-            {!! Form::submit('Sort', ['class' => 'btn btn-default']) !!}
-            {!! Form::close() !!}
-        </div>--}}
+
+
     </div>
 
     @if(session('status'))

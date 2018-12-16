@@ -14,22 +14,22 @@ class ResearchUserTableSeeder extends Seeder
     {
         
 
-        \DB::table('research_user')->delete();
+        // \DB::table('research_user')->delete();
         
-        \DB::table('research_user')->insert(array (
-            0 => 
-            array (
-                'id' => '1',
-                'research_id' => '1',
-                'user_id' => '22',
-            ),
-            1 => 
-            array (
-                'id' => '2',
-                'research_id' => '2',
-                'user_id' => '22',
-            ),
-        ));
+        // \DB::table('research_user')->insert(array (
+        //     0 => 
+        //     array (
+        //         'id' => '1',
+        //         'research_id' => '1',
+        //         'user_id' => '22',
+        //     ),
+        //     1 => 
+        //     array (
+        //         'id' => '2',
+        //         'research_id' => '2',
+        //         'user_id' => '22',
+        //     ),
+        // ));
         
         
     }

@@ -35,4 +35,8 @@ class User extends Authenticatable
         // return $this->belongsToMany('App\ResearchOwner', 'research_owner', 'research_id', 'teacher_id');
         return $this->belongsToMany('App\Research');
     }
+
+    public function teacher() {
+        return $this->hasOne('App\Teacher', 'teacher_id');
+    }
 }

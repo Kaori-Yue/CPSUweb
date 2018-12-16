@@ -11,7 +11,7 @@ class Research extends Model
     public $timestamps = 'true';
     protected $table = 'research';
     protected $fillable = [
-        'info', 'publication'
+        'info', 'publication', 'name_th'
     ];
 
     public function images()
@@ -23,11 +23,16 @@ class Research extends Model
     }
 
     public function user() {
-        // return $this->belongsToMany('App\ResearchOwner', 'research_owner', 'research_id', 'teacher_id');
-        return $this->belongsToMany('App\User');
+        return $this->belongsToMany('App\ResearchOwner', 'research_owner', 'research_id', 'teacher_id');
+        // return $this->belongsToMany('App\User');
+        // return $this->belongsToMany('App\ResearchOwner', 'ResearchOwner');
     }
 
-    static public function getResearch($id, $order) {
-        return \App\User::findOrFail($id)->researchs()->orderBy('date', $order)->get();
+    public function teacher() {
+        return $this->belongsToMany(Teacher::class, 'research_owner');
     }
+
+    // static public function getResearch($id, $order) {
+    //     return \App\Teacher::findOrFail($id)->researchs()->orderBy('publication', $order)->get();
+    // }
 }

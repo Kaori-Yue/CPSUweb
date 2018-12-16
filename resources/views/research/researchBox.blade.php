@@ -6,6 +6,7 @@
 			{{-- {{ $research->date }} --}}
 			<div class="card-content">
 				<div class="card-body">
+					{{-- {{dd($research)}} --}}
 				<p contenteditable="false">{{ ( $research->info ) }}</p>
 
 				</div>

@@ -18,13 +18,13 @@ class CreateResearchOwnerTable extends Migration
             $table->integer('teacher_id')->unsigned();
             $table->integer('research_id')->unsigned();
 
-            // $table->foreign('teacher_id')
-            //     ->references('id')
-            //     ->on('teacher');
+            $table->foreign('teacher_id')
+                ->references('id')
+                ->on('teacher');
 
-            // $table->foreign('research_id')
-            //     ->references('id')
-            //     ->on('research');
+            $table->foreign('research_id')
+                ->references('id')
+                ->on('research');
         });
     }
 

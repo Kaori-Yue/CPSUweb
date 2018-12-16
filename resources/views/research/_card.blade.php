@@ -2,12 +2,16 @@
     <div class="research-card">
         <div class="research-content col-md-8 col-sm-8">
             <a href="{{ url('research/'.$research->slug) }}" style="text-decoration: none">
-                <h3><b>{!! $research->name !!}</b></h3>
+                {{-- <h3><b>{!! $research->info !!}</b></h3> --}}
+                <h3><b>{!! str_limit($research->info, 190, '....') !!}</b></h3>
                 <div class="hidden-xs hidden-sm">
                     <br>
                 </div>
                 <hr>
-                <h4>โดย {{ $research->owner }}</h4>
+                {{-- {{ dd ( $research)}} --}}
+                {{-- {{ dd ( $research->teacher()->firstOrFail()->name_th  )}} --}}
+                {{-- {{ dd( $research->teacher()->get()->first() ) }} --}}
+                <h4>โดย {{ $research->teacher()->firstOrFail()->name_th }}</h4>
             </a>
         </div>
         @if(Request::is('admin/*'))

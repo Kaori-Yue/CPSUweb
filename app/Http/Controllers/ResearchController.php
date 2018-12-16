@@ -18,11 +18,12 @@ class ResearchController extends Controller
     use FileTrait, ImageTrait;
     public function index()
     {
-        // $research = Research::with('images')->findOrFail(19);
-        // return view('research.edit', ['research' => $research]);
-        // return dd (Auth::user()->role);
+        $research = Research::with('images')->findOrFail(19);
+        return view('research.edit', ['research' => $research]);
+        // return dd (Auth::user() );
+        return dd ( User::findOrFail(Auth::id())->researchs()->get() );
         if (Auth::user()->role == "teacher") {
-            $researches = Research::findOrFail(Auth::id())->paginate(10);
+            $researches = Teacher::findOrFail(Auth::id())->researchs()->paginate(10);
             return view('research.index', ['researches' => $researches]);
         } else if (Auth::user()->role == "admin") {
 
@@ -38,12 +39,17 @@ class ResearchController extends Controller
 
     public function create()
     {
-        return view('research.create');
+        $teachers = Teacher::duty()
+            ->orderBy('rank', 'desc')
+            ->orderBy('name_th')
+            ->pluck('name_th', 'id');
+        return view('research.create', ['teachers' => $teachers]);
     }
 
     public function edit($id)
     {
-            $research = Research::with('images')->findOrFail($id);
+        // return dd ( \App\Research::find(1)->teacher()->get() );
+            $research = Research::findOrFail($id);
             return view('research.edit', ['research' => $research]);
             //return $research;
     }
@@ -55,6 +61,8 @@ class ResearchController extends Controller
         $this->validate($request, [
             // 'file' => 'mimes:pdf,doc,docx',
             // 'name' => 'required|max:191|unique:research',
+            'publication' => 'required',
+            'owner' => 'required',
             'info' => 'required|max:65534',
             // 'owner' => 'required|max:191',
         ]);
@@ -64,9 +72,15 @@ class ResearchController extends Controller
             // 'file' => $file->id
         ];
         $research = Research::create($research);
-        $research->user()->attach(Auth::user()->id);
-
-        // return redirect()->action('ResearchController@research', ['id' => Auth::id])->with('status', 'Create Complete!');
+        // return dd($research);
+        if (Auth::user()->role == "admin") {
+            $research->user()->attach($request->owner);
+        } else {
+            $research->user()->attach(Auth::user()->id);
+        }
+        
+        
+        return redirect()->action('AdminController@research', ['id' => Auth::user()->id])->with('status', 'Create Complete!');
         // $research
 
 
@@ -114,67 +128,19 @@ class ResearchController extends Controller
     public function update(Request $request, $id)
     {
         $this->validate($request, [
-            'file' => 'mimes:pdf,doc,docx',
-            'name' => 'required|max:191',
-            'description' => 'required|max:65534',
-            'owner' => 'required|max:191',
+            'publication' => 'required',
+            'owner' => 'required',
+            'info' => 'required|max:65534',
         ]);
+        // return (dd($request->owner));
 
         $research = Research::findOrFail($id);
         $new_research = $request->all();
 
-        $name = $request->get('name');
-        $slug = self::handleSlug($name);
-        $new_research['slug'] = $slug;
 
-        $file = $request->file('file');
-        if(isset($file)){
-            $file = self::storeFile($file);
-            $new_research['file'] = $file->id;
-        }
         $research->update($new_research);
-
-        for ($i = 1; $i <= 5; $i++){
-            if(isset($new_research['image'.$i])){
-                $image = self::storeImage($new_research['image'.$i], 'normal');
-                if(isset($new_research['id'.$i])){
-                    $research_image = ResearchImage::where([
-                        ['research_id', $research->id],
-                        ['image_id', $new_research['id'.$i]]
-                    ])->first();
-
-                    $data = [
-                        'research_id' => $research->id,
-                        'image_id' => $image->id,
-                        'name' => $new_research['name'.$i],
-                        'description' => $new_research['description'.$i]
-                    ];
-                    $research_image->update($data);
-                }else{
-                    $research_image = new ResearchImage();
-                    $research_image->research_id = $research->id;
-                    $research_image->image_id = $image->id;
-                    $research_image->name = $new_research['name'.$i];
-                    $research_image->description = $new_research['description'.$i];
-                    $research_image->save();
-                }
-            }
-            else{
-                if(isset($new_research['id'.$i])) {
-                    $research_image = ResearchImage::where([
-                        ['research_id', $research->id],
-                        ['image_id', $new_research['id' . $i]]
-                    ])->first();
-
-                    $data = [
-                        'research_id' => $research->id,
-                        'name' => $new_research['name' . $i],
-                        'description' => $new_research['description' . $i]
-                    ];
-                    $research_image->update($data);
-                }
-            }
-        }
+        $research->user()->sync($request->owner);
+        // return dd( $research);
         return redirect()->action('AdminController@research')->with('status', 'Update Complete!');
         //return $new_research;
     }
@@ -205,12 +171,34 @@ class ResearchController extends Controller
         
         // return dd( Research::find($id)->images() );
 
+        // return dd ( \App\Teacher::find($id)->researchs()->get()  );
+
 
         $teacher = Teacher::findOrFail($id);
+        // return  dd( $teacher );
         $teachers = $teachers = Teacher::duty()
             ->orderBy('rank', 'desc')
             ->orderBy('name_th')
             ->get();;
+
+        $researchs = \App\Teacher::find($id)->researchs; // 404
+        // $researchs = \App\Teacher::find($id)->researchs ; // 404
+        // return dd($researchs);
+        if ($researchs == null) {
+            return view('research.detail',['teacher_read' => $teacher, 'teachers' => $teachers, 'researchs' => []]);
+        } else {
+            // return dd($researchs->researchs()->get());
+            // $researchs = $researchs->researchs;
+            $researchArr = [];
+            foreach ($researchs as $key => $value) {
+                // $tmp = $value->researchs;
+                // return dd($tmp[0]);
+                array_push($researchArr, $value->researchs[0]);
+            }
+            // return dd($researchArr[0]);
+            return view('research.detail',['teacher_read' => $teacher, 'teachers' => $teachers, 'researchs' => $researchArr]);
+        }
+        return dd($researchs);
         // $researchs = Research::all();
         
         // $researchs = Research::paginate(10);
@@ -221,13 +209,14 @@ class ResearchController extends Controller
 
         // return dd ( Research::find(1)->teachers() );
         // return dd($teacher);
-        $researchsOwner = User::findOrFail($teacher->user_id)->researchs()->get();
+        // $researchsOwner = User::findOrFail($teacher->user_id)->researchs()->get();
+        // return dd( Research::getResearch($teacher->user_id + 1, $order)  );
         // return dd ($researchsOwner);
         // foreach($researchsOwner as $researchOwner) {
         //     array_push($researchs, $researchOwner);
         // }
         // return dd ($researchsOwner);
-        return view('research.detail',['teacher_read' => $teacher, 'teachers' => $teachers, 'researchs' => Research::getResearch($teacher->user_id + 1, $order)]);
+        return view('research.detail',['teacher_read' => $teacher, 'teachers' => $teachers, 'researchs' => $researchs]);
 
 
         // $researches = Research::findOrFail($slug);
@@ -249,17 +238,54 @@ class ResearchController extends Controller
 
     public function destroy($id)
     {
+        // $research = Research::findOrFail($id);
+        // if (Auth::user()->role == "teacher" && Auth::user()->id == )
+        // $research->delete();
+
+
         $research = Research::findOrFail($id);
-        $research_images = ResearchImage::where('research_id', $research->id)->get();
-        foreach ($research_images as $image){
-            $image->delete();
-            $file = File::findOrFail($image->image_id);
-            self::deleteImage($file);
-        }
+        // $research_images = ResearchImage::where('research_id', $research->id)->get();
+        // foreach ($research_images as $image){
+        //     $image->delete();
+        //     $file = File::findOrFail($image->image_id);
+        //     self::deleteImage($file);
+        // }
+        $research->user()->detach();
         $research->delete();
-        $file = File::findOrFail($research->file);
-        self::deleteFile($file);
+        // $file = File::findOrFail($research->file);
+        // self::deleteFile($file);
 
         return redirect()->action('AdminController@research')->with('status', 'Delete Complete!');
+    }
+
+
+    public function filter(Request $request, $filter)
+    {
+        return dd ( $request );
+        return view('research.detail');
+        $teacher = Teacher::findOrFail($id);
+        // return  dd( $teacher );
+        $teachers = $teachers = Teacher::duty()
+            ->orderBy('rank', 'desc')
+            ->orderBy('name_th')
+            ->get();;
+
+        $researchs = \App\Teacher::find($id)->researchs; // 404
+        // $researchs = \App\Teacher::find($id)->researchs ; // 404
+        // return dd($researchs);
+        if ($researchs == null) {
+            return view('research.detail',['teacher_read' => $teacher, 'teachers' => $teachers, 'researchs' => []]);
+        } else {
+            // return dd($researchs->researchs()->get());
+            // $researchs = $researchs->researchs;
+            $researchArr = [];
+            foreach ($researchs as $key => $value) {
+                // $tmp = $value->researchs;
+                // return dd($tmp[0]);
+                array_push($researchArr, $value->researchs[0]);
+            }
+            // return dd($researchArr[0]);
+            return view('research.detail',['teacher_read' => $teacher, 'teachers' => $teachers, 'researchs' => $researchArr]);
+        }
     }
 }

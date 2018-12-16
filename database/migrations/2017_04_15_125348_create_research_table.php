@@ -20,12 +20,12 @@ class CreateResearchTable extends Migration
             $table->timestamps();
         });
 
-        Schema::create('research_user', function (Blueprint $table){
-            $table->increments('id');
-            $table->integer('research_id');
-            $table->integer('user_id');
+        // Schema::create('research_user', function (Blueprint $table){
+        //     $table->increments('id');
+        //     $table->integer('research_id');
+        //     $table->integer('user_id');
 
-        });
+        // });
     }
 
     /**
@@ -36,6 +36,6 @@ class CreateResearchTable extends Migration
     public function down()
     {
         Schema::dropIfExists('research');
-        Schema::dropIfExists('research_user');
+        // Schema::dropIfExists('research_user');
     }
 }

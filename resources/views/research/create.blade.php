@@ -2,6 +2,6 @@
 
 @section('show')
     {!! Form::open(['url' => 'research', 'class' => 'form-horizontal', 'files' => 'true']) !!}
-    @include('research._form', ['submit_text' => 'Create'])
+    @include('research._form', ['submit_text' => 'Create', 'teachers' => $teachers])
     {!! Form::close() !!}
 @endsection

@@ -90,7 +90,20 @@ class AdminController extends Controller
 
     public function research()
     {
+        // $teachers = Teacher::orderBy('rank', 'desc')
+        //     ->orderBy('name_th')
+        //     ->get();
         $researches = Research::paginate(10);
+        return view('research.admin', ['researches' => $researches]);
+    }
+
+    public function research_filter($filter) {
+        if ($filter == 'recent') {
+            $sort = 'desc';
+        } else {
+            $sort = 'asc';
+        }
+        $researches = Research::orderBy('created_at', $sort)->paginate(10);
         return view('research.admin', ['researches' => $researches]);
     }
 

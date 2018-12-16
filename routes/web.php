@@ -35,7 +35,8 @@ Route::get('curricula/doctor', 'CurriculaController@doctor');
 
 
 Route::get('news/{slug}', 'BlogController@show');
-Route::get('research/{slug}/{order?}', 'ResearchController@show');
+Route::get('research/{slug}', 'ResearchController@show');
+Route::get('research/{slug}/filter/{filter}', 'ResearchController@filter'); // <<<<<<<
 Route::get('curricula/{slug}', 'CurriculaController@show');
 Route::get('teacher/{id}', 'TeacherController@show');
 Route::get('staff/{id}', 'StaffController@show');
@@ -146,6 +147,7 @@ Route::group(['middleware' => 'auth'], function (){
 
 
         Route::get('admin/research', 'AdminController@research');
+        Route::get('admin/research/filter/{filter}', 'AdminController@research_filter');
         Route::get('admin/research/create', 'ResearchController@create');
 
 

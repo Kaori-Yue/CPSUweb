@@ -64,6 +64,24 @@
                         {{-- {{Auth::user()->id}}
                         {{$teacher_read->user_id}} --}}
                         {{-- {{ dd(Auth::user() )}} --}}
+                        {{-- {{ dd( $teacher_read->expertise ) }} --}}
+
+                        <br/>
+                        <br/>
+                        {{-- <li class="list-detail-all"> --}}
+                                <p class="header-small-detail">สาขาที่เชี่ยวชาญ</p>
+                                <ul class="wrapper-small-detail">
+                                    @php
+                                    $raw_expertises = $teacher_read->expertise;
+                                    $expertises = explode("," , $raw_expertises);
+                                    for($i = 0 ; $i < count($expertises) ; $i++){
+                                        echo '<li class="list-small-detail">'.$expertises[$i].'</li>';
+                                    }
+                                    @endphp
+            
+                                </ul>
+                        {{-- </li> --}}
+
                         <div style="color: #fff"> {{-- HACK COLOR --}}
                         <br />
                         {{-- <span>Research Area</span>
@@ -95,6 +113,7 @@
                 <div style="margin: 70px 30px"> {{-- CONTENT --}}
                     <table id="reseach_container"> 
                         <tbody>
+                            {{-- {{dd($researchs)}} --}}
                         @if(count ($researchs)) {{-- << ARRAY --}}
                             @foreach($researchs as $research)
                                     @include('research.researchBox', ['research' => $research])
