@@ -13,7 +13,7 @@
                         @if(Request::is('*/recent'))
                             Recent
                         @elseif(Request::is('*/old'))
-                            Old
+                            Old 
                         @else
                             Recent
                         @endif

@@ -12,6 +12,7 @@
                 {{-- {{ dd ( $research->teacher()->firstOrFail()->name_th  )}} --}}
                 {{-- {{ dd( $research->teacher()->get()->first() ) }} --}}
                 <h4>โดย {{ $research->teacher()->firstOrFail()->name_th }}</h4>
+                <h4>ตีพิมพ์เมื่อ พ.ศ. {{ $research->publication }}</h4>
             </a>
         </div>
         @if(Request::is('admin/*'))

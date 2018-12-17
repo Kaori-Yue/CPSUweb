@@ -1,4 +1,4 @@
-<tr item-date="{{ date('d-m-Y', strtotime($research->date)) }}" item-id="{{ $research->id }}">
+<tr item-date="{{ date('d-m-Y', strtotime($research->publication)) }}" item-id="{{ $research->id }}">
 	<td style="padding-bottom: 20px">
 		<div class="_container">
 			<h3 style="font-weight: 100; color: #117167; display:inline">ข้อมูลผลงานวิจัย</h3>

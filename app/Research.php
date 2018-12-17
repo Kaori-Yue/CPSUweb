@@ -23,7 +23,7 @@ class Research extends Model
     }
 
     public function user() {
-        return $this->belongsToMany('App\ResearchOwner', 'research_owner', 'research_id', 'teacher_id');
+        return $this->belongsToMany('App\Teacher', 'research_owner', 'research_id', 'teacher_id');
         // return $this->belongsToMany('App\User');
         // return $this->belongsToMany('App\ResearchOwner', 'ResearchOwner');
     }

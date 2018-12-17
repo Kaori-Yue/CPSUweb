@@ -93,7 +93,7 @@ class AdminController extends Controller
         // $teachers = Teacher::orderBy('rank', 'desc')
         //     ->orderBy('name_th')
         //     ->get();
-        $researches = Research::paginate(10);
+        $researches = Research::orderBy('publication', 'desc')->paginate(10);
         return view('research.admin', ['researches' => $researches]);
     }
 
@@ -103,7 +103,7 @@ class AdminController extends Controller
         } else {
             $sort = 'asc';
         }
-        $researches = Research::orderBy('created_at', $sort)->paginate(10);
+        $researches = Research::orderBy('publication', $sort)->paginate(10);
         return view('research.admin', ['researches' => $researches]);
     }
 

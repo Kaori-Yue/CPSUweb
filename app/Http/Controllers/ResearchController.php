@@ -132,14 +132,27 @@ class ResearchController extends Controller
             'owner' => 'required',
             'info' => 'required|max:65534',
         ]);
-        // return (dd($request->owner));
+
 
         $research = Research::findOrFail($id);
+        // return (dd($research->user()->first()));
         $new_research = $request->all();
+
+        // return (dd(  $research->user()  ));
+
+        
+        $owner =  ResearchOwner::where('teacher_id', '=', $research->user()->first()->id)->where('research_id', '=', $id)->first();
+        $owner->teacher_id = $request->owner;
+        $owner->save();
 
 
         $research->update($new_research);
-        $research->user()->sync($request->owner);
+        // $research->user()->attach($request->owner);
+
+
+        
+
+        // $research->user()->syncWithoutDetaching([$request->owner]);
         // return dd( $research);
         return redirect()->action('AdminController@research')->with('status', 'Update Complete!');
         //return $new_research;
@@ -147,6 +160,11 @@ class ResearchController extends Controller
 
     public function show($id, $order = "asc")
     {  
+
+
+        // $tmp = Teacher::find($id)->researchs ; 
+        // return (dd($tmp));
+
         // return 1;
         // return dd (Research::findOrFail(1)->user()->get()   );
         
@@ -181,22 +199,35 @@ class ResearchController extends Controller
             ->orderBy('name_th')
             ->get();;
 
-        $researchs = \App\Teacher::find($id)->researchs; // 404
+        $researchs = \App\Teacher::find($id)->researchs->orderBy('desc'); // 404
         // $researchs = \App\Teacher::find($id)->researchs ; // 404
         // return dd($researchs);
+
+
+
+        // return dd($researchs[0]->researchs()->get());
+
         if ($researchs == null) {
             return view('research.detail',['teacher_read' => $teacher, 'teachers' => $teachers, 'researchs' => []]);
         } else {
+
+
+            // foreach ($researchs as $key => $value) {
+            //     // $tmp = $value->researchs;
+            //     // return dd($tmp[0]);
+            //     echo $value->researchs()->get();
+            //     echo "<br><br>";
+            // }
+            // return ;    
+
+
+
+
+            // return dd($researchs);
             // return dd($researchs->researchs()->get());
             // $researchs = $researchs->researchs;
-            $researchArr = [];
-            foreach ($researchs as $key => $value) {
-                // $tmp = $value->researchs;
-                // return dd($tmp[0]);
-                array_push($researchArr, $value->researchs[0]);
-            }
             // return dd($researchArr[0]);
-            return view('research.detail',['teacher_read' => $teacher, 'teachers' => $teachers, 'researchs' => $researchArr]);
+            return view('research.detail',['teacher_read' => $teacher, 'teachers' => $teachers, 'researchs' => $researchs]);
         }
         return dd($researchs);
         // $researchs = Research::all();
@@ -261,14 +292,14 @@ class ResearchController extends Controller
 
     public function filter(Request $request, $filter)
     {
-        return dd ( $request );
-        return view('research.detail');
+        // return dd ( $request );
+        // return view('research.detail');
         $teacher = Teacher::findOrFail($id);
         // return  dd( $teacher );
         $teachers = $teachers = Teacher::duty()
             ->orderBy('rank', 'desc')
             ->orderBy('name_th')
-            ->get();;
+            ->get();
 
         $researchs = \App\Teacher::find($id)->researchs; // 404
         // $researchs = \App\Teacher::find($id)->researchs ; // 404
