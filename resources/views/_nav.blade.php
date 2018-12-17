@@ -23,9 +23,27 @@
                     </a>
                 </li>
                 <li>
-                    <a href="{{ url('research') }}">
-                        ผลงานวิจัย
-                    </a>
+
+
+                        {{-- $teacher = Teacher::where('user_id', '=', $login->id)->first(); --}}
+                    {{-- {{dd(  App\Teacher::where('user_id', '=', Auth::user()->id - 1)->first()  )}} --}}
+
+                    @if(is_null(Auth::user()))
+                    {{-- visitor --}}
+                        {{-- <a href="{{ url('research/') }}">
+                            ผลงานวิจัย
+                        </a> --}}
+                    @elseif(is_null(App\Teacher::where('user_id', '=', Auth::user()->id - 1)->first()))
+                    {{-- admin --}}
+                        <a href="{{ url('admin/research') }}">
+                            ผลงานวิจัย
+                        </a>
+                    @else
+                    {{-- teacher --}}
+                        <a href="{{ url('research/' . App\Teacher::where('user_id', '=', Auth::user()->id - 1)->first()->id) }}">
+                                ผลงานวิจัย
+                        </a>
+                    @endif
                 </li>
                 <li>
                     <a href="{{ url('teacher') }}">

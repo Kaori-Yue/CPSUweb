@@ -107,7 +107,7 @@
                                 </div>
                         </div>
                         @if (Auth::check() && Auth::user()->id == $teacher_read->user_id + 1)
-                            <button type="button" class="button" style="margin: 0px 5px; padding: 10px; background: #3498DB" id="addContainer">ADD RESEARCH</button>
+                            <button onclick="window.location.href = '/research/teacher/create';" type="button" class="button" style="margin: 0px 5px; padding: 10px; background: #3498DB" id="addContainer">ADD RESEARCH</button>
                         @endif
                     </div>
                 <div style="margin: 70px 30px"> {{-- CONTENT --}}

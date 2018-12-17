@@ -56,4 +56,8 @@ class Teacher extends Model
         // return $this->belongsToMany('App\Teacher', 'research_owner', 'research_id', 'teacher_id');
         // return $this->hasMany('App\ResearchOwner');
     }
+
+    // public function user() {
+
+    // }
 }

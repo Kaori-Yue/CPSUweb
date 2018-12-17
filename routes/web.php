@@ -48,14 +48,20 @@ Route::get('image/thumbnail/{id}', 'ImageController@thumbnail');
 Route::get('news/category/{category}', 'BlogController@category');
 Route::get('document/category/{category}', 'DocumentController@category');
 
-
 Route::group(['middleware' => 'auth'], function (){
 
     Route::get('dashboard', 'UserController@dashboard');
     Route::get('profile', 'UserController@profile');
     Route::get('profile/edit', 'UserController@editProfile');
+
+    Route::get('research/teacher/create', 'ResearchController@createTeacher');
+    Route::get('research/teacher/{id}/edit', 'ResearchController@editTeacher');
+    Route::patch('research/{id}', 'ResearchController@update');
+    Route::delete('research/{id}', 'ResearchController@destroy');
+
     Route::post('user/update', 'UserController@updateProfile');
     Route::post('research', 'ResearchController@store');
+
     Route::group(['middleware' => 'adminAuth'], function (){
         #Admin Route
         Route::get('admin', 'AdminController@dashboard');
@@ -91,7 +97,7 @@ Route::group(['middleware' => 'auth'], function (){
         Route::patch('user/{id}', 'UserController@update');
         Route::patch('teacher/{id}', 'TeacherController@update');
         Route::patch('staff/{id}', 'StaffController@update');
-        Route::patch('research/{id}', 'ResearchController@update');
+        // Route::patch('research/{id}', 'ResearchController@update');
         Route::patch('curricula/{id}', 'CurriculaController@update');
         Route::patch('document/{id}', 'DocumentController@update');
         Route::patch('category/{id}', 'CategoryController@update');
@@ -102,7 +108,7 @@ Route::group(['middleware' => 'auth'], function (){
         Route::delete('news/{id}', 'BlogController@destroy');
         Route::delete('teacher/{id}', 'TeacherController@destroy');
         Route::delete('staff/{id}', 'StaffController@destroy');
-        Route::delete('research/{id}', 'ResearchController@destroy');
+        // Route::delete('research/{id}', 'ResearchController@destroy');
         Route::delete('curricula/{id}', 'CurriculaController@destroy');
         Route::delete('document/{id}', 'DocumentController@destroy');
         Route::delete('category/{id}', 'CategoryController@destroy');

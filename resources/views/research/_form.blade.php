@@ -1,11 +1,12 @@
 <div class="panel panel-primary">
     <div class="panel-heading">
         <h1>Create Research</h1>
+        {{-- {{dd($teacher)}} --}}
     </div>
     <div class="panel-body">
         <div class="form-group{{ $errors->has('publication') ? ' has-error' : '' }}">
             {!! Form::label('publication', 'ปีที่ตีพิมพ์') !!}
-            {!! Form::selectRange('publication', date("Y") + 543 - 20, date("Y") + 543, null , ['class' => 'form-control', 'placeholder' => 'Pick a size...']   ) !!}
+            {!! Form::selectRange('publication', date("Y") + 543 - 20, date("Y") + 543, null , ['class' => 'form-control', 'placeholder' => 'ปี พ.ศ.']   ) !!}
             @if ($errors->has('publication'))
                 <span class="help-block">
                     <strong>{{ $errors->first('publication') }}</strong>
@@ -14,9 +15,8 @@
         </div>
 
         <div class="form-group{{ $errors->has('owner') ? ' has-error' : '' }}">
-            
             {!! Form::label('owner', 'เจ้าของ') !!}
-            {!! Form::select('owner',App\Teacher::pluck('name_th', 'id'), null , ['class' => 'form-control', 'placeholder' => 'Pick a size...']) !!}
+            {!! Form::select('owner',App\Teacher::pluck('name_th', 'id'), isset($teacher) ? $teacher->id - 1 : null , ['class' => 'form-control', 'disabled'=> isset($teacher) ? true : false, 'placeholder' => 'เจ้าของ']) !!}
             @if ($errors->has('owner'))
                 <span class="help-block">
                     <strong>{{ $errors->first('owner') }}</strong>
@@ -26,7 +26,7 @@
 
         <div class="form-group{{ $errors->has('info') ? ' has-error' : '' }}">
             {!! Form::label('info', 'รายละเอียด') !!}
-            {!! Form::textarea('info', null, ['class' => 'form-control', 'placeholder' => 'Pick a size...']) !!}
+            {!! Form::textarea('info', null, ['class' => 'form-control', 'placeholder' => 'รายละเอียด']) !!}
             @if ($errors->has('info'))
                 <span class="help-block">
                     <strong>{{ $errors->first('info') }}</strong>

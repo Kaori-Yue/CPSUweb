@@ -19,11 +19,11 @@ window.onclick = function (event) {
 
 /////
 
-window.onload = () => {
-	document.querySelector('#addContainer').addEventListener('click', () => {
-		createResearchBox()
-	})
-}
+// window.onload = () => {
+// 	document.querySelector('#addContainer').addEventListener('click', () => {
+// 		createResearchBox()
+// 	})
+// }
 
 function createResearchBox() {
 	const container = document.querySelector('#reseach_container > tbody')

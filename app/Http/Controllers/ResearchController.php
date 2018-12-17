@@ -78,8 +78,7 @@ class ResearchController extends Controller
         } else {
             $research->user()->attach(Auth::user()->id);
         }
-        
-        
+        // if (Auth::user())
         return redirect()->action('AdminController@research', ['id' => Auth::user()->id])->with('status', 'Create Complete!');
         // $research
 
@@ -127,6 +126,8 @@ class ResearchController extends Controller
 
     public function update(Request $request, $id)
     {
+        // return dd(Auth::user());
+
         $this->validate($request, [
             'publication' => 'required',
             'owner' => 'required',
@@ -154,6 +155,14 @@ class ResearchController extends Controller
 
         // $research->user()->syncWithoutDetaching([$request->owner]);
         // return dd( $research);
+        if (Auth::user()->role != 'admin') {
+            // $teacher = 
+            $login = Auth::user();
+            $teacher = Teacher::where('user_id', '=', $login->id)->first();
+
+            // return dd($teacher->id);
+            return redirect()->action('ResearchController@show', [$teacher->id - 1])->with('status', 'Update Complete!');
+        }
         return redirect()->action('AdminController@research')->with('status', 'Update Complete!');
         //return $new_research;
     }
@@ -228,6 +237,7 @@ class ResearchController extends Controller
             // return dd($researchs->researchs()->get());
             // $researchs = $researchs->researchs;
             // return dd($researchArr[0]);
+            // return dd ($researchs   );
             return view('research.detail',['teacher_read' => $teacher, 'teachers' => $teachers, 'researchs' => $researchs]);
         }
         return dd($researchs);
@@ -319,5 +329,32 @@ class ResearchController extends Controller
             // return dd($researchArr[0]);
             return view('research.detail',['teacher_read' => $teacher, 'teachers' => $teachers, 'researchs' => $researchArr]);
         }
+    }
+
+    public function createTeacher() {
+        $teachers = Teacher::duty()
+            ->orderBy('rank', 'desc')
+            ->orderBy('name_th')
+            ->pluck('name_th', 'id');
+        $login = Auth::user();
+        $teacher = Teacher::where('user_id', '=', $login->id)->first();
+        // return dd($teacher);
+        return view('research.createTeacher', ['teachers' => $teachers, 'teacher' => $teacher]);
+    }
+
+    public function editTeacher($id)
+    {
+        // return dd ( \App\Research::find(1)->teacher()->get() );
+
+        $teachers = Teacher::duty()
+        ->orderBy('rank', 'desc')
+        ->orderBy('name_th')
+        ->pluck('name_th', 'id');
+    $login = Auth::user();
+    $teacher = Teacher::where('user_id', '=', $login->id)->first();
+    $research = Research::findOrFail($id);
+
+            return view('research.editTeacher', ['teachers' => $teachers, 'teacher' => $teacher, 'research' => $research]);
+            //return $research;
     }
 }

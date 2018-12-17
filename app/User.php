@@ -36,7 +36,8 @@ class User extends Authenticatable
         return $this->belongsToMany('App\Research');
     }
 
-    public function teacher() {
-        return $this->hasOne('App\Teacher', 'teacher_id');
-    }
+    // public function teacher() {
+    //     // return $this->hasOne('App\Teacher');
+    //     return $this->hasOne('App\Teacher', 'teacher_id');
+    // }
 }
