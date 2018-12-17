@@ -199,7 +199,8 @@ class ResearchController extends Controller
             ->orderBy('name_th')
             ->get();;
 
-        $researchs = \App\Teacher::find($id)->researchs->orderBy('desc'); // 404
+        $researchs = \App\Teacher::find($id)->researchs()->orderBy('publication', 'desc')->get(); // 404
+        // return dd( $researchs    );
         // $researchs = \App\Teacher::find($id)->researchs ; // 404
         // return dd($researchs);
 
