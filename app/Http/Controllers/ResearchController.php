@@ -76,9 +76,14 @@ class ResearchController extends Controller
         if (Auth::user()->role == "admin") {
             $research->user()->attach($request->owner);
         } else {
-            $research->user()->attach(Auth::user()->id);
+            $research->user()->attach( \App\Teacher::where('user_id', '=', Auth::user()->id - 1 )->first()->id );
         }
-        // if (Auth::user())
+
+        if (Auth::user()->role != "admin") {
+            $login = Auth::user();
+            $teacher = Teacher::where('user_id', '=', $login->id)->first();
+            return redirect()->action('ResearchController@show', [$teacher->id - 1])->with('status', 'Create Complete!');
+        }
         return redirect()->action('AdminController@research', ['id' => Auth::user()->id])->with('status', 'Create Complete!');
         // $research
 
@@ -296,6 +301,12 @@ class ResearchController extends Controller
         $research->delete();
         // $file = File::findOrFail($research->file);
         // self::deleteFile($file);
+
+        if (Auth::user()->role != "admin") {
+            $login = Auth::user();
+            $teacher = Teacher::where('user_id', '=', $login->id)->first();
+            return redirect()->action('ResearchController@show', [$teacher->id - 1])->with('status', 'Delete Complete!');
+        }
 
         return redirect()->action('AdminController@research')->with('status', 'Delete Complete!');
     }

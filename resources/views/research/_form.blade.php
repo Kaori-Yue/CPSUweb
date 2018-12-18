@@ -13,10 +13,14 @@
                 </span>
             @endif
         </div>
-
+        {{-- {{ dd($teacher->id - 1)  }} --}}
+        {{-- {{dd(   App\Teacher::where('user_id', '=', $teacher->id )->first()->id  )}} --}}
         <div class="form-group{{ $errors->has('owner') ? ' has-error' : '' }}">
             {!! Form::label('owner', 'เจ้าของ') !!}
             {!! Form::select('owner',App\Teacher::pluck('name_th', 'id'), isset($teacher) ? $teacher->id - 1 : null , ['class' => 'form-control', 'disabled'=> isset($teacher) ? true : false, 'placeholder' => 'เจ้าของ']) !!}
+            @if(Auth::user()->role != 'admin')
+            {!! Form::hidden('owner', 'controller') !!}
+            @endif
             @if ($errors->has('owner'))
                 <span class="help-block">
                     <strong>{{ $errors->first('owner') }}</strong>
