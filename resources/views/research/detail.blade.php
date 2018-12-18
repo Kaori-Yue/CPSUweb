@@ -99,20 +99,20 @@
 
                 <div style="flex: 75%"> {{-- RIGHT CONTNET --}}
 
-
+                    
                      {{-- NAV BAR --}}
-                    {{-- <div style="float: right">
-                        <div class="dropdown">
+                    <div style="float: right">
+                        {{-- <div class="dropdown">
                             <button onclick="myFunction()" class="dropbtn">RECENT POST</button>
                                 <div id="myDropdown" class="dropdown-content">
                                         <a href="#" onclick="sortTable('asc')" style="font-size: 16px">เรื่องล่าสุด</a>
                                         <a href="#" onclick="sortTable('desc')" style="font-size: 16px">เรื่องเก่า</a>
                                 </div>
-                        </div>
+                        </div> --}}
                         @if (Auth::check() && Auth::user()->id == $teacher_read->user_id + 1)
                             <button onclick="window.location.href = '/research/teacher/create';" type="button" class="button" style="margin: 0px 5px; padding: 10px; background: #3498DB" id="addContainer">ADD RESEARCH</button>
                         @endif
-                    </div> --}}
+                    </div>
 
 
                 <div style="margin: 70px 30px"> {{-- CONTENT --}}
