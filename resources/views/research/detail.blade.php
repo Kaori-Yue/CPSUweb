@@ -98,7 +98,10 @@
                 </div>
 
                 <div style="flex: 75%"> {{-- RIGHT CONTNET --}}
-                    <div style="float: right"> {{-- NAV BAR --}}
+
+
+                     {{-- NAV BAR --}}
+                    {{-- <div style="float: right">
                         <div class="dropdown">
                             <button onclick="myFunction()" class="dropbtn">RECENT POST</button>
                                 <div id="myDropdown" class="dropdown-content">
@@ -109,7 +112,9 @@
                         @if (Auth::check() && Auth::user()->id == $teacher_read->user_id + 1)
                             <button onclick="window.location.href = '/research/teacher/create';" type="button" class="button" style="margin: 0px 5px; padding: 10px; background: #3498DB" id="addContainer">ADD RESEARCH</button>
                         @endif
-                    </div>
+                    </div> --}}
+
+
                 <div style="margin: 70px 30px"> {{-- CONTENT --}}
                     <table id="reseach_container"> 
                         <tbody>
@@ -242,6 +247,19 @@
 
         </ul>
     </div>
+
+
+    {{-- @if(session('status')) --}}
+    {{-- <div id="popup1" class="">
+            <div class="popup">
+                <h2>Here i am</h2>
+                <a class="close" href="#">&times;</a>
+                <div class="content">
+                    Thank to pop me out of that button, but now i'm done so you can close this window.
+                </div>
+            </div>
+    </div> --}}
+    {{-- @endif --}}
 
     {{-- <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script> --}}
     <script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>

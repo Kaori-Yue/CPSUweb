@@ -90,6 +90,15 @@
 
                     </ul>
                 </li>
+
+                <li class="list-detail-all">
+                        <p class="header-small-detail">งานจิจัย</p>
+                        <ul class="wrapper-small-detail">
+                            
+                            <li class="list-small-detail"><a href="/research/{{ $teacher_read->id }}" target="_blank">{{ URL::to('research/' . $teacher_read->id) }}    </a></li>
+                            
+                        </ul>
+                    </li>
             </ul>
         </div>
         <div class="wrapper-header-title">
