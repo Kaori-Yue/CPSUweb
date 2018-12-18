@@ -39,7 +39,7 @@
 											</div>
 											<div class="modal-footer">
 												{!! Form::model($research, ['method' => 'DELETE', 'url'=>'research/'.$research->id]) !!}
-												<button class="btn btn-primary" style="background-color:#00b300;color:white;width:45px" type="button">
+												<button class="btn btn-primary" style="background-color:#00b300;color:white;width:45px" type="submit">
 													Yes
 												</button>
 												{!! Form::close() !!}
