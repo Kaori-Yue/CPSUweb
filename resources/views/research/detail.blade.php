@@ -6,7 +6,8 @@
 <meta name="csrf-token" content="{{ csrf_token() }}">
 
 <link rel="stylesheet" href="{{ URL::asset('css/new_theme/research.css') }}" />
-<link rel="stylesheet" href="{{ URL::asset('research-modal/css/bootstrap.min.css') }}"/>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+{{-- <link rel="stylesheet" href="{{ URL::asset('research-modal/css/bootstrap.min.css') }}"/> --}}
     <div class="container-content">
         <ul class="wrapper-nav">
             <li class="list-nav">
@@ -116,45 +117,25 @@
 
 
                 <div style="margin: 70px 30px"> {{-- CONTENT --}}
-                    <table id="reseach_container"> 
-                        <tbody>
-                            {{-- {{dd($researchs)}} --}}
-                        @if(count ($researchs)) {{-- << ARRAY --}}
-                            @foreach($researchs as $research)
-                                    @include('research.researchBox', ['research' => $research])
-                            @endforeach
-                        @else
-                        <tr>ไม่มีข้อมูลงานวิจัย</tr>
-                        @endif
-                        </tbody>
-                    </table>
+                    <div class="panel-group" id="accordion">
+                        @php
+                            if(count ($researchs)) {
+                                $arr = array();
+                                foreach($researchs as $key => $item) {
+                                    $arr[$item['publication']][$key] = $item;
+                                }
+                            }
+                        @endphp
+                        @foreach($arr as $key => $research)
+                            @include('research.researchBox', ['researchs' => $research, 'year' => $key])
+                        @endforeach
+                        {{-- @include('research.researchBox', ['research' => $arr]) --}}
+                    </div>
                 </div>
             </div>
         </div>
     
     </div>
-
-    
-    {{-- Dialog confirm --}}
-<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <div class="modal-dialog" role="document" style="width:400px;height:300px">
-          <div class="modal-content">
-            <div class="modal-header">
-            <!-- <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button> -->
-        <h4 class="modal-title">Confirm</h4>
-      </div>
-      <div class="modal-body">
-        <p>Do you want to delete this ?</p>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-default" data-dismiss="modal" style="background-color:#b30000;color:white;width:45px">No</button>
-        <button type="button" class="btn btn-primary" style="background-color:#00b300;color:white;width:45px">Yes</button>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      
 
 
 		{{-- START --}}
@@ -262,7 +243,7 @@
     {{-- @endif --}}
 
     {{-- <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script> --}}
-    <script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     {{-- <script type="text/javascript" src="{{URL::asset('research-modal/js/bootstrap.min.js')}}"></script> --}}
     <script type="text/javascript" src="{{URL::asset('js/research.js')}}"></script>
 @endsection
