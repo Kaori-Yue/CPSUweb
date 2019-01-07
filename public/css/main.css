@@ -349,7 +349,8 @@ div {
     background-position:top right;
     background-repeat:no-repeat;
     background-size: 45%;
-    height: 350px;
+    height: auto;
+    overflow: hidden;
     box-shadow: 1px 1px 5px #888888;
 }
 

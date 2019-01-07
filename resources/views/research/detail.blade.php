@@ -40,22 +40,18 @@
         </div>
 
 
-{{--  --}}
+{{-- Flash Message --}}
 
-{{-- @if (isAdmin("9"))
-        <style>
-            body { background: #333}
-            </style>
-@endif --}}
-{{-- {{ dd(Auth::user()) }} --}}
-{{-- {{ dd(Auth::user()->id) }} --}}
-{{-- {{ dd( $teacher_read ) }} --}}
+@if(session('status'))
+    <div class="alert alert-success alert-dismissible fade show" role="alert" style="font-size:16px;width:100%;height:50px">
+        <strong>Success! </strong>{{session('success')}}
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close" style="size:20px">
+            <span aria-hidden="true">&times;</span>
+        </button> 
+    </div>
+@endif
 
-{{-- @if (Auth::check() && Auth::user()->id == $teacher_read->user_id + 1)
-<style>
-        body { background: #333}
-        </style>
-@endif --}}
+
 
         <div class="card-read-person" style="font-weight: 100">
             <div style="display: flex"> {{-- CONTAINER --}}
@@ -69,51 +65,22 @@
 
                         <br/>
                         <br/>
-                        {{-- <li class="list-detail-all"> --}}
                                 <p class="header-small-detail">สาขาที่เชี่ยวชาญ</p>
                                 <ul class="wrapper-small-detail">
                                     @php
                                     $raw_expertises = $teacher_read->expertise;
                                     $expertises = explode("," , $raw_expertises);
                                     for($i = 0 ; $i < count($expertises) ; $i++){
-                                        echo '<li class="list-small-detail">'.$expertises[$i].'</li>';
+                                        echo '<li class="list-small-detail" style="margin-left: 5px">'.$expertises[$i].'</li>';
                                     }
                                     @endphp
-            
                                 </ul>
-                        {{-- </li> --}}
-
-                        <div style="color: #fff"> {{-- HACK COLOR --}}
-                        <br />
-                        {{-- <span>Research Area</span>
-                        <br />
-                        Artificial Intelligence 
-                        <br />
-                        Natural Language Processing 
-                        <br />
-                        Deep Learning 
-                        <br />
-                        Network Security 
-                        <br /> --}}
-                        </div>
                 </div>
 
                 <div style="flex: 75%"> {{-- RIGHT CONTNET --}}
 
                     
                      {{-- NAV BAR --}}
-                    <div style="float: right">
-                        {{-- <div class="dropdown">
-                            <button onclick="myFunction()" class="dropbtn">RECENT POST</button>
-                                <div id="myDropdown" class="dropdown-content">
-                                        <a href="#" onclick="sortTable('asc')" style="font-size: 16px">เรื่องล่าสุด</a>
-                                        <a href="#" onclick="sortTable('desc')" style="font-size: 16px">เรื่องเก่า</a>
-                                </div>
-                        </div> --}}
-                        @if (Auth::check() && Auth::user()->id == $teacher_read->user_id + 1)
-                            <button onclick="window.location.href = '/research/teacher/create';" type="button" class="button" style="margin: 0px 5px; padding: 10px; background: #3498DB" id="addContainer">ADD RESEARCH</button>
-                        @endif
-                    </div>
 
 
                 <div style="margin: 70px 30px"> {{-- CONTENT --}}
@@ -126,9 +93,13 @@
                                 }
                             }
                         @endphp
-                        @foreach($arr as $key => $research)
-                            @include('research.researchBox', ['researchs' => $research, 'year' => $key])
-                        @endforeach
+                        @if(isset($arr))
+                            @foreach($arr as $key => $research)
+                                @include('research.researchBox', ['researchs' => $research, 'year' => $key])
+                            @endforeach
+                        @else
+                            ไม่มีผลงานวิจัย
+                        @endif
                         {{-- @include('research.researchBox', ['research' => $arr]) --}}
                     </div>
                 </div>
@@ -137,75 +108,6 @@
     
     </div>
 
-
-		{{-- START --}}
-        {{-- <div class="card-read-person">
-            <div class="header-card-read-person">
-                <img class="image-header-card-person" src="{{url('image/crop/'.$teacher_read->image)}}"/>
-                <p class="role-card-read-person">
-                    @if(str_contains($teacher_read->position, "") === true)
-                        <span class="position-card-person">อาจารย์ประจำภาควิชา</span>
-                    @else
-                        <span class="position-card-person">{{$teacher_read->position}}</span>
-                    @endif
-                </p>
-                <h3 class="name-th-card-read-person">{{$teacher_read->name_th}}</h3>
-                <h3 class="name-eng-card-read-person">{{$teacher_read->name_en}}</h3>
-            </div>
-
-            <ul class="wrapper-detail-all">
-
-                <li class="list-detail-all">
-                    <p class="header-small-detail">ประวัติการศึกษา</p>
-                    <ul class="wrapper-small-detail">
-                        <li class="list-small-detail">{{$teacher_read->doctor_degree}}</li>
-                        <li class="list-small-detail">{{$teacher_read->master_degree}}</li>
-                        <li class="list-small-detail">{{$teacher_read->bachelor_degree}}</li>
-                    </ul>
-                </li>
-                <li class="list-detail-all">
-                    <p class="header-small-detail">สาขาที่เชี่ยวชาญ</p>
-                    <ul class="wrapper-small-detail">
-                        @php
-                        $raw_expertises = $teacher_read->expertise;
-                        $expertises = explode("," , $raw_expertises);
-                        for($i = 0 ; $i < count($expertises) ; $i++){
-                            echo '<li class="list-small-detail">'.$expertises[$i].'</li>';
-                        }
-                        @endphp
-
-                    </ul>
-                </li>
-                <li class="list-detail-all">
-                    <p class="header-small-detail">อีเมล</p>
-                    <ul class="wrapper-small-detail">
-                        @php
-                            $raw_email = $teacher_read->email;
-                            $emails = explode("," , $raw_email);
-                            for($i = 0 ; $i < count($emails) ; $i++){
-                            echo '<li class="list-small-detail">'.$emails[$i].'</li>';
-                            }
-                        @endphp
-                    </ul>
-                </li>
-                <li class="list-detail-all">
-                    <p class="header-small-detail">เว็บไซต์</p>
-                    <ul class="wrapper-small-detail">
-                        @php
-                        $raw_website = $teacher_read->website;
-                        $websites = explode("," , $raw_website);
-                        for($i = 0 ; $i < count($websites) ; $i++){
-                            echo '<li class="list-small-detail"><a href='.$websites[$i].' target="_blank">'.$websites[$i].'</a></li>';
-                        }
-                        @endphp
-
-
-                    </ul>
-                </li>
-            </ul>
-        </div> --}}
-        
-		{{-- END --}}
         <div class="wrapper-header-title">
             <h1 class="header-title">บุคลากรสายวิชาการ</h1>
             <div class="wrapper-buttom-next-previous">

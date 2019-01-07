@@ -5,7 +5,7 @@
                 {{-- <h3><b>{!! $research->info !!}</b></h3> --}}
                 <h3 style="color: white"><b>{!! str_limit($research->info, 190, '....') !!}</b></h3>
                 <div class="hidden-xs hidden-sm">
-                    <br>
+                    
                 </div>
                 <hr>
                 {{-- {{ dd ( $research)}} --}}
