@@ -17,14 +17,13 @@
                 
             </div>
         
-
             <div class="col-md-12" style="text-align: left; background: #ffffff; padding: 1%">
                 <div class="dropdown">
                     <button class="btn btn-default btn-block btn-lg dropdown-toggle" type="button" data-toggle="dropdown">
                         @if(Request::is('*/recent'))
                             All
-                        @elseif(Request::is('*/old'))
-                            Old 
+                        @elseif(Request::is('*/filter/*'))
+                            {{ App\Teacher::find(explode('/', Request::path())[2])->name_th }}
                         @else
                             All
                         @endif
