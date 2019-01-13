@@ -86,9 +86,18 @@ $device-computer: 980px; */
 	float: left;
 	background: #f8f9fa;
 }
+
+.card-read-background {
+		display: flex;
+		flex-direction: column;
+}
 @media screen and (min-width: 980px) {
 	.card-content {
 		width: 550px;
+	}
+
+	.card-read-background {
+		flex-direction: row;
 	}
   }
 

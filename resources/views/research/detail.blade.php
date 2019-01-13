@@ -54,7 +54,7 @@
 
 
         <div class="card-read-person" style="font-weight: 100">
-            <div style="display: flex"> {{-- CONTAINER --}}
+            <div class="card-read-background"> {{-- CONTAINER --}}
                 <div style="flex: 25%; background-color: #117167; border-radius: 50px 20px; padding: 15px; margin-bottom: 20px;  min-width: 220px"> {{-- LEFT IMAGE --}} 
                         <p class="name-th-card-read-person" style="text-align: center; color: #fff; margin-bottom: 5px; font-weight: 100">{{$teacher_read->name_th}}</p>
                         <img class="image-header-card-person" style="width: 100%" src="{{url('image/crop/'.$teacher_read->image)}}"/>
