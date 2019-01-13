@@ -1,16 +1,11 @@
 <div class="col-md-12" style="padding: 10px">
     <div class="research-card">
         <div class="research-content col-md-8 col-sm-8">
-            {{-- <a href="{{ url('research/'.$research->slug) }}" style="text-decoration: none"> --}}
-                {{-- <h3><b>{!! $research->info !!}</b></h3> --}}
                 <h3 style="color: white"><b>{!! str_limit($research->info, 190, '....') !!}</b></h3>
                 <div class="hidden-xs hidden-sm">
                     
                 </div>
                 <hr>
-                {{-- {{ dd ( $research)}} --}}
-                {{-- {{ dd ( $research->teacher()->firstOrFail()->name_th  )}} --}}
-                {{-- {{ dd( $research->teacher()->get()->first() ) }} --}}
                 <h4 style="color: white">โดย {{ $research->teacher()->firstOrFail()->name_th }}</h4>
                 <h4 style="color: white">ตีพิมพ์เมื่อ พ.ศ. {{ $research->publication }}</h4>
             </a>

@@ -44,7 +44,6 @@ class ResearchController extends Controller
     public function edit($id)
     {
         if (Auth::check()) {
-            // if (Auth::user()
             if (Auth::user()->role == 'admin') {
                 $research = Research::findOrFail($id);
                 return view('research.edit', ['research' => $research]);
@@ -60,23 +59,16 @@ class ResearchController extends Controller
 
     public function store(Request $request)
     {
-        // return dd( Auth::user() );
-        // return $request . '<br>' . $request->description;
         $this->validate($request, [
-            // 'file' => 'mimes:pdf,doc,docx',
-            // 'name' => 'required|max:191|unique:research',
             'publication' => 'required',
             'owner' => 'required',
             'info' => 'required|max:65534',
-            // 'owner' => 'required|max:191',
         ]);
         $research = [
             'publication' => $request->publication,
             'info' => $request->info,
-            // 'file' => $file->id
         ];
         $research = Research::create($research);
-        // return dd($research);
         if (Auth::user()->role == "admin") {
             $research->user()->attach($request->owner);
         } else {
@@ -93,51 +85,31 @@ class ResearchController extends Controller
 
     public function update(Request $request, $id)
     {
-        // return dd(Auth::user());
-
         $this->validate($request, [
             'publication' => 'required',
             'owner' => 'required',
             'info' => 'required|max:65534',
         ]);
 
-
         $research = Research::findOrFail($id);
-        // return (dd($research->user()->first()));
         $new_research = $request->all();
-
-        // return (dd(  $research->user()  ));
-
-        
         $owner =  ResearchOwner::where('teacher_id', '=', $research->user()->first()->id)->where('research_id', '=', $id)->first();
         $owner->teacher_id = $request->owner;
         $owner->save();
 
-
         $research->update($new_research);
-        // $research->user()->attach($request->owner);
-
-
-        
-
-        // $research->user()->syncWithoutDetaching([$request->owner]);
-        // return dd( $research);
         if (Auth::user()->role != 'admin') {
-            // $teacher = 
             $login = Auth::user();
             $teacher = Teacher::where('user_id', '=', $login->id)->first();
 
-            // return dd($teacher->id);
             return redirect()->action('ResearchController@show', [$teacher->id - 1])->with('status', 'Update Complete!');
         }
         return redirect()->action('AdminController@research')->with('status', 'Update Complete!');
-        //return $new_research;
     }
 
     public function show($id, $order = "asc")
     {  
         $teacher = Teacher::findOrFail($id);
-        // return  dd( $teacher );
         $teachers = $teachers = Teacher::duty()
             ->orderBy('rank', 'desc')
             ->orderBy('name_th')
@@ -177,7 +149,6 @@ class ResearchController extends Controller
     public function filter($filter = 'all')
     {
         $researches = Teacher::findOrFail($filter)->researchs()->orderBy('publication')->paginate(10);
-        // $researches = Research::orderBy('publication', $filter)->paginate(10);
         return view('research.index', ['researches' => $researches]);
     }
 
@@ -188,7 +159,6 @@ class ResearchController extends Controller
             ->pluck('name_th', 'id');
         $login = Auth::user();
         $teacher = Teacher::where('user_id', '=', $login->id)->first();
-        // return dd($teacher);
         return view('research.createTeacher', ['teachers' => $teachers, 'teacher' => $teacher]);
     }
 }

@@ -58,11 +58,6 @@
                 <div style="flex: 25%; background-color: #117167; border-radius: 50px 20px; padding: 15px; margin-bottom: 20px;  min-width: 220px"> {{-- LEFT IMAGE --}} 
                         <p class="name-th-card-read-person" style="text-align: center; color: #fff; margin-bottom: 5px; font-weight: 100">{{$teacher_read->name_th}}</p>
                         <img class="image-header-card-person" style="width: 100%" src="{{url('image/crop/'.$teacher_read->image)}}"/>
-                        {{-- {{Auth::user()->id}}
-                        {{$teacher_read->user_id}} --}}
-                        {{-- {{ dd(Auth::user() )}} --}}
-                        {{-- {{ dd( $teacher_read->expertise ) }} --}}
-
                         <br/>
                         <br/>
                                 <p class="header-small-detail">สาขาที่เชี่ยวชาญ</p>

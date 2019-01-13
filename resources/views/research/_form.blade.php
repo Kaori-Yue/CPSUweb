@@ -1,7 +1,6 @@
 <div class="panel panel-primary">
     <div class="panel-heading">
         <h1>Create Research</h1>
-        {{-- {{dd($teacher)}} --}}
     </div>
     <div class="panel-body">
         <div class="form-group{{ $errors->has('publication') ? ' has-error' : '' }}">
@@ -13,8 +12,6 @@
                 </span>
             @endif
         </div>
-        {{-- {{ dd($teacher->id - 1)  }} --}}
-        {{-- {{dd(   App\Teacher::where('user_id', '=', $teacher->id )->first()->id  )}} --}}
         <div class="form-group{{ $errors->has('owner') ? ' has-error' : '' }}">
             {!! Form::label('owner', 'เจ้าของ') !!}
             {!! Form::select('owner',App\Teacher::pluck('name_th', 'id'), isset($teacher) ? $teacher->id - 1 : null , ['class' => 'form-control', 'disabled'=> isset($teacher) ? true : false, 'placeholder' => 'เจ้าของ']) !!}

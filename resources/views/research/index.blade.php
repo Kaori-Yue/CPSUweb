@@ -31,7 +31,6 @@
                         <span class="caret"></span></button>
                     <ul class="dropdown-menu">
                         @foreach(App\Teacher::all() as $key => $teacher)
-                        {{-- {{dd($teacher)}} --}}
                         <li>
                             <a href="{{ url('research/filter/' . $teacher->id ) }}" class="btn btn-default btn-lg">
                                 {{ $teacher->name_th }}

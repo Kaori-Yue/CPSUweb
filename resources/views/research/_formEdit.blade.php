@@ -13,11 +13,8 @@
                         </span>
                     @endif
                 </div>
-                {{-- {{ dd ($research->teacher()->firstOrFail()->id ) }} --}}
                 <div class="form-group{{ $errors->has('owner') ? ' has-error' : '' }}">
-                        {{-- {{ dd( $research->user()->first()->id ) }} --}}
                     {!! Form::label('owner', 'เจ้าของ') !!}
-                    {{-- {{dd($research->teacher->first()->id)}} --}}
                     @if($research)
                     1
                     {!! Form::select('owner',App\Teacher::pluck('name_th', 'id'), isset($research->teacher->first()->id) ? $research->teacher->first()->id  : null , ['class' => 'form-control', 'disabled'=> (Auth::user()->role == 'admin') ? false : true, 'placeholder' => 'เจ้าของ']) !!}
@@ -28,8 +25,6 @@
                     2
                     {!! Form::select('owner',App\Teacher::duty()->orderBy('rank', 'desc')->orderBy('name_th')->pluck('name_th', 'id'), $research->teacher()->firstOrFail()->id , ['class' => 'form-control']) !!}
                     @endif
-                    {{-- {!! Form::select('owner',$teachers, null , ['class' => 'form-control']) !!} --}}
-                    {{-- {!! Form::text('owner', null, ['class' => 'form-control']) !!} --}}
                     @if ($errors->has('owner'))
                         <span class="help-block">
                             <strong>{{ $errors->first('owner') }}</strong>
